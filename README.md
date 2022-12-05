@@ -9,7 +9,7 @@ Plataforma de programação: Visual Studio;
 IDE: WindowsFormApp.Net;
 Plataforma de versionalização: GitHub;
 Plataforma de design: Inkscape, Piskel;
-==============================================
+
 IDEIAS DE PROJETO
 
 
