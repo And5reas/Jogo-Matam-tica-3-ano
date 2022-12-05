@@ -25,9 +25,10 @@ Sinais: verde;
 
 PESQUISAS BIBLIOGRAFICAS
 ==============================================
-*Material do 3°ano para estudo*
+_Material do 3°ano para estudo_
 https://br.ixl.com/matematica/3-ano?partner=google&campaign=16530516633&adGroup=133601989119&gclid=CjwKCAiAhKycBhAQEiwAgf19elJr5_yav3V-1ewBImYn5OIEPfYz2c4zzzmoEd22ND5vo8j_ag0ShhoCPYsQAvD_BwE
-*Material enrelação de dimensionamento dos elementos do form*
+
+_Material em relação a dimensionamento dos elementos do form_
 http://www.andrealveslima.com.br/blog/index.php/2016/04/27/ajustando-o-formulario-dependendo-da-resolucao-no-windows-forms/
 
 REPOSITÓRIO GIT
