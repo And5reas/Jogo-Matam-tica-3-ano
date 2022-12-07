@@ -52,10 +52,11 @@ namespace Jogo_Matamática_3_ano
         {
             InitializeComponent();
         }
-        #region Alterar o tamanho do form para tela cheia
+        #region Load form
         private void FrmJogo_Load(object sender, EventArgs e)
         {
-
+            PnlFase1.Location = new Point(0, 0);
+            PnlMenu.Location = new Point(0, 0);
         }
         #endregion
     }
