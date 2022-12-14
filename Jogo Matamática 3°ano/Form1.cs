@@ -52,6 +52,16 @@ namespace Jogo_Matamática_3_ano
         {
             InitializeComponent();
         }
+        #region Andar
+        private void FrmJogo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar.ToString().ToLower() == "a" || e.KeyChar.ToString().ToLower() == "d" ||
+               e.KeyChar.ToString().ToLower() == "w" || e.KeyChar.ToString().ToLower() == "s")
+            {
+
+            }
+        }
+        #endregion
         #region Load form
         private void FrmJogo_Load(object sender, EventArgs e)
         {
