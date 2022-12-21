@@ -1,0 +1,11 @@
+E:\Projetos\Jogo-Matam-tica-3-ano\Jogo Matamática 3°ano\bin\Debug\Jogo Matamática 3°ano.exe.config
+E:\Projetos\Jogo-Matam-tica-3-ano\Jogo Matamática 3°ano\bin\Debug\Jogo Matamática 3°ano.exe
+E:\Projetos\Jogo-Matam-tica-3-ano\Jogo Matamática 3°ano\bin\Debug\Jogo Matamática 3°ano.pdb
+E:\Projetos\Jogo-Matam-tica-3-ano\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.AssemblyReference.cache
+E:\Projetos\Jogo-Matam-tica-3-ano\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.SuggestedBindingRedirects.cache
+E:\Projetos\Jogo-Matam-tica-3-ano\Jogo Matamática 3°ano\obj\Debug\Jogo_Matamática_3_ano.FrmJogo.resources
+E:\Projetos\Jogo-Matam-tica-3-ano\Jogo Matamática 3°ano\obj\Debug\Jogo_Matamática_3_ano.Properties.Resources.resources
+E:\Projetos\Jogo-Matam-tica-3-ano\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.GenerateResource.cache
+E:\Projetos\Jogo-Matam-tica-3-ano\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.CoreCompileInputs.cache
+E:\Projetos\Jogo-Matam-tica-3-ano\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.exe
+E:\Projetos\Jogo-Matam-tica-3-ano\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.pdb
