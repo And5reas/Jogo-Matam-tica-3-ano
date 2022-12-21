@@ -51,7 +51,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PnlMenu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.PnlMenu.Controls.Add(this.label1);
-            this.PnlMenu.Location = new System.Drawing.Point(990, 573);
+            this.PnlMenu.Location = new System.Drawing.Point(943, 586);
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(1123, 696);
             this.PnlMenu.TabIndex = 1;
