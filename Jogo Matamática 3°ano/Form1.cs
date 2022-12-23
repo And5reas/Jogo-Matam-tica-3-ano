@@ -16,7 +16,7 @@ namespace Jogo_Matamática_3_ano
     {
         #region Variáveis Globais
         int posLinha = 0, posColuna = 0, andarQtdPx = 22,
-            DebugSwith;
+            DebugSwith, posX, posY;
         string controle;
         bool goLeft, goRight, goDown, goUp;
         #endregion
@@ -141,18 +141,18 @@ namespace Jogo_Matamática_3_ano
         private void TmrMainGameManager_Tick(object sender, EventArgs e)
         {
             //Coletar a informação de onde o pesonagem está nas posições X e Y
-            int x = PbxPersonagem.Location.X;
-            int y = PbxPersonagem.Location.Y;
+            posX = PbxPersonagem.Location.X;
+            posY = PbxPersonagem.Location.Y;
 
-            labelX.Text = x.ToString();
-            labelY.Text = y.ToString();
+            labelX.Text = posX.ToString();
+            labelY.Text = posY.ToString();
             //Controles para fazer o player andar
             if (goLeft == true)
             {
                 if (posColuna == 0) return;
                 if (labirinto[posLinha, posColuna - 1] == "1")
                 {
-                    PbxPersonagem.Location = new Point(x - andarQtdPx, y);
+                    PbxPersonagem.Location = new Point(posX - andarQtdPx, posY);
                     posColuna--;
                 }
             }
@@ -161,7 +161,7 @@ namespace Jogo_Matamática_3_ano
                 if (posColuna == 30) return;
                 if (labirinto[posLinha, posColuna + 1] == "1")
                 {
-                    PbxPersonagem.Location = new Point(x + andarQtdPx, y);
+                    PbxPersonagem.Location = new Point(posX + andarQtdPx, posY);
                     posColuna++;
                 }
             }
@@ -170,7 +170,7 @@ namespace Jogo_Matamática_3_ano
                 if (posLinha == 0) return;
                 if (labirinto[posLinha - 1, posColuna] == "1")
                 {
-                    PbxPersonagem.Location = new Point(x, y - andarQtdPx);
+                    PbxPersonagem.Location = new Point(posX, posY - andarQtdPx);
                     posLinha--;
                 }
             }
@@ -179,7 +179,7 @@ namespace Jogo_Matamática_3_ano
                 if (posLinha == 22) return;
                 if (labirinto[posLinha + 1, posColuna] == "1")
                 {
-                    PbxPersonagem.Location = new Point(x, y + andarQtdPx);
+                    PbxPersonagem.Location = new Point(posX, posY + andarQtdPx);
                     posLinha++;
                 }
             }
