@@ -134,7 +134,6 @@
             // 
             // TmrAndar
             // 
-            this.TmrAndar.Tick += new System.EventHandler(this.TmrAndar_Tick);
             // 
             // labelX
             // 
