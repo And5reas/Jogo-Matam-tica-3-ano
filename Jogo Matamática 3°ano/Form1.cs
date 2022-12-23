@@ -147,6 +147,7 @@ namespace Jogo_Matamática_3_ano
             //PAINEL MENU
             PnlMenu.Location = new Point(0, 0);
             PnlMenu.Visible = true;
+            TmrMainGameManager.Start();
             //Esconder posição do personagem
             labelX.Visible = false;
             labelY.Visible = false;

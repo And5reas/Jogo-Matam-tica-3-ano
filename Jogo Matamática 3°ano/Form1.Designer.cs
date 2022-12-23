@@ -34,7 +34,7 @@
             this.PBX_Sair = new System.Windows.Forms.PictureBox();
             this.PBX_Opcoes = new System.Windows.Forms.PictureBox();
             this.PBX_Jogar = new System.Windows.Forms.PictureBox();
-            this.TmrAndar = new System.Windows.Forms.Timer(this.components);
+            this.TmrMainGameManager = new System.Windows.Forms.Timer(this.components);
             this.labelX = new System.Windows.Forms.Label();
             this.labelY = new System.Windows.Forms.Label();
             this.LblX = new System.Windows.Forms.Label();
@@ -132,13 +132,16 @@
             this.PBX_Jogar.MouseLeave += new System.EventHandler(this.PBX_Jogar_MouseLeave);
             this.PBX_Jogar.MouseHover += new System.EventHandler(this.PBX_Jogar_MouseHover);
             // 
-            // TmrAndar
+            // TmrMainGameManager
             // 
+            this.TmrMainGameManager.Enabled = true;
+            this.TmrMainGameManager.Tick += new System.EventHandler(this.TmrMainGameManager_Tick);
             // 
             // labelX
             // 
             this.labelX.AutoSize = true;
-            this.labelX.Location = new System.Drawing.Point(24, 344);
+            this.labelX.BackColor = System.Drawing.Color.GreenYellow;
+            this.labelX.Location = new System.Drawing.Point(35, 47);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(55, 13);
             this.labelX.TabIndex = 4;
@@ -147,7 +150,8 @@
             // labelY
             // 
             this.labelY.AutoSize = true;
-            this.labelY.Location = new System.Drawing.Point(35, 177);
+            this.labelY.BackColor = System.Drawing.Color.GreenYellow;
+            this.labelY.Location = new System.Drawing.Point(35, 23);
             this.labelY.Name = "labelY";
             this.labelY.Size = new System.Drawing.Size(55, 13);
             this.labelY.TabIndex = 4;
@@ -156,7 +160,8 @@
             // LblX
             // 
             this.LblX.AutoSize = true;
-            this.LblX.Location = new System.Drawing.Point(75, 148);
+            this.LblX.BackColor = System.Drawing.Color.GreenYellow;
+            this.LblX.Location = new System.Drawing.Point(96, 47);
             this.LblX.Name = "LblX";
             this.LblX.Size = new System.Drawing.Size(14, 13);
             this.LblX.TabIndex = 4;
@@ -165,7 +170,8 @@
             // LblY
             // 
             this.LblY.AutoSize = true;
-            this.LblY.Location = new System.Drawing.Point(75, 177);
+            this.LblY.BackColor = System.Drawing.Color.GreenYellow;
+            this.LblY.Location = new System.Drawing.Point(96, 23);
             this.LblY.Name = "LblY";
             this.LblY.Size = new System.Drawing.Size(14, 13);
             this.LblY.TabIndex = 4;
@@ -176,7 +182,7 @@
             this.PbxPersonagem.BackColor = System.Drawing.Color.Transparent;
             this.PbxPersonagem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbxPersonagem.BackgroundImage")));
             this.PbxPersonagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbxPersonagem.Location = new System.Drawing.Point(38, 91);
+            this.PbxPersonagem.Location = new System.Drawing.Point(46, 106);
             this.PbxPersonagem.Name = "PbxPersonagem";
             this.PbxPersonagem.Size = new System.Drawing.Size(32, 33);
             this.PbxPersonagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -359,7 +365,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jogo Matemática 3°ano";
             this.Load += new System.EventHandler(this.FrmJogo_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmJogo_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmJogo_KeyPress);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmJogo_KeyUp);
             this.PnlMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Opcoes)).EndInit();
@@ -386,7 +394,7 @@
         #endregion
         private System.Windows.Forms.Panel PnlMenu;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Timer TmrAndar;
+        private System.Windows.Forms.Timer TmrMainGameManager;
         private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.Label labelY;
         private System.Windows.Forms.Label LblX;
