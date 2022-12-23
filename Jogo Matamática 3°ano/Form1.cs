@@ -15,37 +15,9 @@ namespace Jogo_Matamática_3_ano
     public partial class FrmJogo : Form
     {
         #region Variáveis Globais
-        int posLinha = 0, posColuna = 0, andarQtdPx = 22,
-            DebugSwith, posX, posY;
+        int andarQtdPx = 6,
+            DebugSwith, posXPlayer, posYPlayer, posXColision, posYColision, posX2Player, posY2Player;
         bool goLeft, goRight, goDown, goUp;
-        #endregion
-        #region Fase 1
-        static string[,] labirinto = new string[23, 31]
-            {
-            {"1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"},
-            {"1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1"},
-            {"1","0","1","0","1","1","1","0","1","1","1","1","1","1","1","0","1","1","1","1","1","0","1","1","1","1","1","1","1","0","1"},
-            {"1","0","1","0","1","0","1","0","1","0","0","0","0","0","1","0","1","0","0","0","1","0","1","0","0","0","0","0","1","0","1"},
-            {"1","0","1","0","1","0","1","0","1","0","1","1","1","0","1","0","1","1","1","0","1","0","1","0","1","1","1","1","1","0","1"},
-            {"1","0","1","0","1","0","1","0","1","0","1","0","1","0","1","0","0","0","0","0","1","0","1","0","0","0","0","0","0","0","1"},
-            {"1","0","1","0","1","0","1","0","1","0","1","0","1","0","1","1","1","1","1","1","1","0","1","1","1","1","1","1","1","1","1"},
-            {"1","0","1","0","1","0","1","0","1","0","1","0","0","0","0","0","1","0","0","0","0","0","1","0","0","0","0","0","0","0","1"},
-            {"1","0","1","1","1","0","1","0","1","0","1","0","1","1","1","0","1","1","1","1","1","1","1","0","1","1","1","1","1","1","1"},
-            {"1","0","0","0","0","0","0","0","1","0","1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"},
-            {"1","1","1","1","1","1","1","0","1","0","1","1","1","0","1","1","1","1","1","1","1","1","1","0","1","1","1","1","1","1","1"},
-            {"0","0","0","0","0","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","0","0","0","0","1"},
-            {"1","1","1","1","1","0","1","0","1","1","1","1","1","1","1","1","1","1","1","1","1","0","1","0","1","0","1","1","1","0","1"},
-            {"1","0","0","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1","0","1","0","1","0","1","0","1"},
-            {"1","1","1","0","1","0","1","0","1","1","1","1","1","1","1","1","1","1","1","0","1","0","1","0","1","0","1","0","1","0","1"},
-            {"1","0","1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1","0","1","0","1","0","1"},
-            {"1","0","1","0","1","0","1","1","1","1","1","1","1","1","1","1","1","0","1","1","1","0","1","0","1","0","1","0","1","0","1"},
-            {"1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1","0","1","0","1","0","0","0","1"},
-            {"1","0","1","0","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","0","1","0","1","0","1","0","1","0","1","1","1"},
-            {"1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1","0","1","0","1","0","1","1","1"},
-            {"1","0","1","0","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","0","1","1","1","0","1","0","1","0","1","1","1"},
-            {"1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1","1","1"},
-            {"1","0","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","0","1","1","1"},
-            };
         #endregion
         public FrmJogo()
         {
@@ -153,57 +125,101 @@ namespace Jogo_Matamática_3_ano
             labelY.Visible = false;
             LblX.Visible = false;
             LblY.Visible = false;
+
+            //Setar a posição inicial da colisão e personagem
+            PbxColision.Location = new Point(46, 161);
+            PbxPersonagem.Location = new Point(46, 136);
         }
         #endregion
 
         #region Andar
-        private void TmrMainGameManager_Tick(object sender, EventArgs e)
+
+        private void TmrColisao_Tick(object sender, EventArgs e)
         {
             //Coletar a informação de onde o pesonagem está nas posições X e Y
-            posX = PbxPersonagem.Location.X;
-            posY = PbxPersonagem.Location.Y;
+            posXPlayer = PbxPersonagem.Location.X;
+            posYPlayer = PbxPersonagem.Location.Y;
 
-            labelX.Text = posX.ToString();
-            labelY.Text = posY.ToString();
-            
+            //Coletar a informação de onde a colisão do personagem está está nas posições X e Y
+            posXColision = PbxColision.Location.X;
+            posYColision = PbxColision.Location.Y;
+
+            //Colisão com paredes
+            foreach (Control g in this.Controls)
+            {
+                if (g is PictureBox)
+                {
+                    if ((string)g.Tag == "Parede")
+                    {
+                        if (PbxColision.Bounds.IntersectsWith(g.Bounds))
+                        {
+                            if (goUp == true)
+                            {
+                                PbxPersonagem.Location = new Point(posXPlayer, posYPlayer + andarQtdPx);
+                                PbxColision.Location = new Point(posXColision, posYColision + andarQtdPx);
+                                goUp = false;
+                            }
+                            else if (goLeft == true)
+                            {
+                                PbxPersonagem.Location = new Point(posXPlayer + andarQtdPx, posYPlayer);
+                                PbxColision.Location = new Point(posXColision + andarQtdPx, posYColision);
+                                goLeft = false;
+                            }
+                            else if (goRight == true)
+                            {
+                                PbxPersonagem.Location = new Point(posXPlayer - andarQtdPx, posYPlayer);
+                                PbxColision.Location = new Point(posXColision - andarQtdPx, posYColision);
+                                goRight = false;
+                            }
+                            else if (goDown == true)
+                            {
+                                PbxPersonagem.Location = new Point(posXPlayer, posYPlayer - andarQtdPx);
+                                PbxColision.Location = new Point(posXColision, posYColision - andarQtdPx);
+                                goDown = false;
+                            }
+                            else
+                            {
+                                PbxPersonagem.Location = new Point(posX2Player, posY2Player);
+                                PbxColision.Location = new Point(posX2Player, posY2Player + 25);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void TmrMainGameManager_Tick(object sender, EventArgs e)
+        {
+            //Coletar a informação de onde o pesonagem está nas posições X2 e Y2
+            posX2Player = PbxPersonagem.Location.X;
+            posY2Player = PbxPersonagem.Location.Y;
+
+            //Coletar insformação para o degubMode "y"
+            labelX.Text = posXPlayer.ToString();
+            labelY.Text = posYPlayer.ToString();
+
             //Controles para fazer o player andar
             if (goLeft == true)
             {
-                if (posColuna == 0) return;
-                if (labirinto[posLinha, posColuna - 1] == "1")
-                {
-                    PbxPersonagem.Location = new Point(posX - andarQtdPx, posY);
-                    posColuna--;
-                }
+                PbxPersonagem.Location = new Point(posXPlayer - andarQtdPx, posYPlayer);
+                PbxColision.Location = new Point(posXColision - andarQtdPx, posYColision);
             }
-            if (goRight == true)
+            else if (goRight == true)
             {
-                if (posColuna == 30) return;
-                if (labirinto[posLinha, posColuna + 1] == "1")
-                {
-                    PbxPersonagem.Location = new Point(posX + andarQtdPx, posY);
-                    posColuna++;
-                }
+                PbxPersonagem.Location = new Point(posXPlayer + andarQtdPx, posYPlayer);
+                PbxColision.Location = new Point(posXColision + andarQtdPx, posYColision);
             }
-            if (goUp == true)
+            else if (goUp == true)
             {
-                if (posLinha == 0) return;
-                if (labirinto[posLinha - 1, posColuna] == "1")
-                {
-                    PbxPersonagem.Location = new Point(posX, posY - andarQtdPx);
-                    posLinha--;
-                }
+                PbxPersonagem.Location = new Point(posXPlayer, posYPlayer - andarQtdPx);
+                PbxColision.Location = new Point(posXColision, posYColision - andarQtdPx);
             }
-            if (goDown == true)
+            else if (goDown == true)
             {
-                if (posLinha == 22) return;
-                if (labirinto[posLinha + 1, posColuna] == "1")
-                {
-                    PbxPersonagem.Location = new Point(posX, posY + andarQtdPx);
-                    posLinha++;
-                }
+                PbxPersonagem.Location = new Point(posXPlayer, posYPlayer + andarQtdPx);
+                PbxColision.Location = new Point(posXColision, posYColision + andarQtdPx);
             }
-            
+
             //Pegar moedas com Tag Vitamina
             foreach (Control f in this.Controls)
             {
@@ -227,13 +243,13 @@ namespace Jogo_Matamática_3_ano
         private void PBX_Jogar_MouseHover(object sender, EventArgs e)
         {
             PBX_Jogar.Size = new Size(250, 150);
-            PBX_Jogar.Location = new Point(290, 235);
+            PBX_Jogar.Location = new Point(530, 284);
         }
 
         private void PBX_Jogar_MouseLeave(object sender, EventArgs e)
         {
             PBX_Jogar.Size = new Size(220, 120);
-            PBX_Jogar.Location = new Point(307, 235);
+            PBX_Jogar.Location = new Point(547, 284);
         }
 
 
@@ -241,26 +257,26 @@ namespace Jogo_Matamática_3_ano
         private void PBX_Opcoes_MouseHover(object sender, EventArgs e)
         {
             PBX_Opcoes.Size = new Size(250, 150);
-            PBX_Opcoes.Location = new Point(290, 400);
+            PBX_Opcoes.Location = new Point(530, 449);
         }
 
         private void PBX_Opcoes_MouseLeave(object sender, EventArgs e)
         {
             PBX_Opcoes.Size = new Size(220, 120);
-            PBX_Opcoes.Location = new Point(307, 400);
+            PBX_Opcoes.Location = new Point(547, 449);
         }
 
         //ENTRAR E SAIR DO SAIR
         private void PBX_Sair_MouseHover(object sender, EventArgs e)
         {
             PBX_Sair.Size = new Size(250, 150);
-            PBX_Sair.Location = new Point(290, 562);
+            PBX_Sair.Location = new Point(530, 611);
         }
 
         private void PBX_Sair_MouseLeave(object sender, EventArgs e)
         {
             PBX_Sair.Size = new Size(220, 120);
-            PBX_Sair.Location = new Point(307, 562);
+            PBX_Sair.Location = new Point(547, 611);
         }
 
         //ENTRAR E SAIR DA FASE 1
@@ -291,8 +307,23 @@ namespace Jogo_Matamática_3_ano
 
         }
 
+        private void PbxPersonagem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PbxColision_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //ENTRAR E SAIR DA FASE 3
         private void PBX_Fase3_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PNL_Fases_Paint(object sender, PaintEventArgs e)
         {
 
         }
