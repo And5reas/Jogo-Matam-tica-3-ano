@@ -72,7 +72,7 @@
             this.PbxFases.Location = new System.Drawing.Point(179, 68);
             this.PbxFases.Name = "PbxFases";
             this.PbxFases.Size = new System.Drawing.Size(758, 550);
-            this.PbxFases.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PbxFases.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbxFases.TabIndex = 2;
             this.PbxFases.TabStop = false;
             // 
