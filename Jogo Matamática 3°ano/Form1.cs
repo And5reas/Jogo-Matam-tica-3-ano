@@ -92,8 +92,28 @@ namespace Jogo_Matamática_3_ano
         #region Load form
         private void FrmJogo_Load(object sender, EventArgs e)
         {
+            //FASES DESATIVADAS
+            PBX_Fase2.Enabled = false;
+            PBX_Fase3.Enabled = false;
+            PBX_Fase4.Enabled = false;
+            PBX_Fase5.Enabled = false;
+            PBX_Fase6.Enabled = false;
+
+            //ESCONDER FASES
+            PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase4.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase5.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase6.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+
+            //PAINEL DE FASES
+            PNL_Fases.Visible = false;
+            PNL_Fases.Location = new Point(0, 0);
+
+            //PAINEL MENU
             PnlMenu.Location = new Point(0, 0);
             PnlMenu.Visible = true;
+
             TmrAndar.Stop();
             //Esconder posição do personagem
             labelX.Visible = false;
@@ -152,17 +172,19 @@ namespace Jogo_Matamática_3_ano
         }
         #endregion
 
-        #region Menu
+        #region EFEITO BOTOES MENU
 
         //ENTRAR E SAIR DO JOGAR
         private void PBX_Jogar_MouseHover(object sender, EventArgs e)
         {
             PBX_Jogar.Size = new Size(250, 150);
+            PBX_Jogar.Location = new Point(290, 235);
         }
 
         private void PBX_Jogar_MouseLeave(object sender, EventArgs e)
         {
             PBX_Jogar.Size = new Size(220, 120);
+            PBX_Jogar.Location = new Point(307, 235);
         }
 
 
@@ -170,28 +192,100 @@ namespace Jogo_Matamática_3_ano
         private void PBX_Opcoes_MouseHover(object sender, EventArgs e)
         {
             PBX_Opcoes.Size = new Size(250, 150);
+            PBX_Opcoes.Location = new Point(290, 400);
         }
 
         private void PBX_Opcoes_MouseLeave(object sender, EventArgs e)
         {
             PBX_Opcoes.Size = new Size(220, 120);
+            PBX_Opcoes.Location = new Point(307, 400);
         }
 
         //ENTRAR E SAIR DO SAIR
         private void PBX_Sair_MouseHover(object sender, EventArgs e)
         {
             PBX_Sair.Size = new Size(250, 150);
+            PBX_Sair.Location = new Point(290, 562);
         }
+
         private void PBX_Sair_MouseLeave(object sender, EventArgs e)
         {
             PBX_Sair.Size = new Size(220, 120);
+            PBX_Sair.Location = new Point(307, 562);
+        }
+
+        //ENTRAR E SAIR DA FASE 1
+        private void PBX_Fase1_MouseHover(object sender, EventArgs e)
+        {
+            PBX_Fase1.Size = new Size(256, 196);
+            PBX_Fase1.Location = new Point(0, 0);
+        }
+        private void PBX_Fase1_MouseLeave(object sender, EventArgs e)
+        {
+            PBX_Fase1.Size = new Size(228, 170);
+            PBX_Fase1.Location = new Point(14, 14);
+        }
+
+        //ENTRAR E SAIR DA FASE 2
+        private void PBX_Fase2_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PBX_Fase2_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        //ENTRAR E SAIR DA FASE 3
+        private void PBX_Fase3_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PBX_Fase3_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        //ENTRAR E SAIR DA FASE 4
+        private void PBX_Fase4_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PBX_Fase4_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        //ENTRAR E SAIR DA FASE 5
+        private void PBX_Fase5_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PBX_Fase5_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        //ENTRAR E SAIR DA FASE 6
+        private void PBX_Fase6_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PBX_Fase6_MouseLeave(object sender, EventArgs e)
+        {
+
         }
         #endregion
 
         #region Click Jogar
         private void PBX_Jogar_Click(object sender, EventArgs e)
         {
-
+            PNL_Fases.Visible = true;
         }
         #endregion
     }
