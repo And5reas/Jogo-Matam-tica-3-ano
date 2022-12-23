@@ -9,44 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Reflection.Emit;
+using System.Threading;
 
 namespace Jogo_Matamática_3_ano
 {
     public partial class FrmJogo : Form
     {
         #region Variáveis Globais
-        int posLinha = 0, posColuna = 0, andarQtdPx = 22,
-            DebugSwith;
+        int posLinha = 0, posColuna = 0, andarQtdPx = 9,
+            DebugSwith, posX, posY;
         string controle;
         bool goLeft, goRight, goDown, goUp;
-        #endregion
-        #region Fase 1
-        static string[,] labirinto = new string[23, 31]
-            {
-            {"1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"},
-            {"1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1"},
-            {"1","0","1","0","1","1","1","0","1","1","1","1","1","1","1","0","1","1","1","1","1","0","1","1","1","1","1","1","1","0","1"},
-            {"1","0","1","0","1","0","1","0","1","0","0","0","0","0","1","0","1","0","0","0","1","0","1","0","0","0","0","0","1","0","1"},
-            {"1","0","1","0","1","0","1","0","1","0","1","1","1","0","1","0","1","1","1","0","1","0","1","0","1","1","1","1","1","0","1"},
-            {"1","0","1","0","1","0","1","0","1","0","1","0","1","0","1","0","0","0","0","0","1","0","1","0","0","0","0","0","0","0","1"},
-            {"1","0","1","0","1","0","1","0","1","0","1","0","1","0","1","1","1","1","1","1","1","0","1","1","1","1","1","1","1","1","1"},
-            {"1","0","1","0","1","0","1","0","1","0","1","0","0","0","0","0","1","0","0","0","0","0","1","0","0","0","0","0","0","0","1"},
-            {"1","0","1","1","1","0","1","0","1","0","1","0","1","1","1","0","1","1","1","1","1","1","1","0","1","1","1","1","1","1","1"},
-            {"1","0","0","0","0","0","0","0","1","0","1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"},
-            {"1","1","1","1","1","1","1","0","1","0","1","1","1","0","1","1","1","1","1","1","1","1","1","0","1","1","1","1","1","1","1"},
-            {"0","0","0","0","0","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","0","0","0","0","1"},
-            {"1","1","1","1","1","0","1","0","1","1","1","1","1","1","1","1","1","1","1","1","1","0","1","0","1","0","1","1","1","0","1"},
-            {"1","0","0","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1","0","1","0","1","0","1","0","1"},
-            {"1","1","1","0","1","0","1","0","1","1","1","1","1","1","1","1","1","1","1","0","1","0","1","0","1","0","1","0","1","0","1"},
-            {"1","0","1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1","0","1","0","1","0","1"},
-            {"1","0","1","0","1","0","1","1","1","1","1","1","1","1","1","1","1","0","1","1","1","0","1","0","1","0","1","0","1","0","1"},
-            {"1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1","0","1","0","1","0","0","0","1"},
-            {"1","0","1","0","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","0","1","0","1","0","1","0","1","0","1","1","1"},
-            {"1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1","0","1","0","1","0","1","1","1"},
-            {"1","0","1","0","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","0","1","1","1","0","1","0","1","0","1","1","1"},
-            {"1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1","1","1"},
-            {"1","0","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","0","1","1","1"},
-            };
         #endregion
         public FrmJogo()
         {
@@ -129,6 +102,7 @@ namespace Jogo_Matamática_3_ano
             PnlMenu.Location = new Point(0, 0);
             PnlMenu.Visible = true;
             TmrMainGameManager.Start();
+            
             //Esconder posição do personagem
             labelX.Visible = false;
             labelY.Visible = false;
@@ -138,51 +112,70 @@ namespace Jogo_Matamática_3_ano
         #endregion
 
         #region Andar
-        private void TmrMainGameManager_Tick(object sender, EventArgs e)
+
+        private void TmrColisao_Tick(object sender, EventArgs e)
         {
             //Coletar a informação de onde o pesonagem está nas posições X e Y
-            int x = PbxPersonagem.Location.X;
-            int y = PbxPersonagem.Location.Y;
+            posX = PbxPersonagem.Location.X;
+            posY = PbxPersonagem.Location.Y;
+            //Colisão com paredes
+            foreach (Control g in this.Controls)
+            {
+                if (g is PictureBox)
+                {
+                    if ((string)g.Tag == "Parede")
+                    {
+                        if (PbxPersonagem.Bounds.IntersectsWith(g.Bounds))
+                        {
+                            if (goUp == true)
+                            {
+                                PbxPersonagem.Location = new Point(posX, posY + andarQtdPx);
+                                goUp = false;
+                            }
+                            if (goLeft == true)
+                            {
+                                PbxPersonagem.Location = new Point(posX + andarQtdPx, posY);
+                                goLeft = false;
+                            }
+                            if (goRight == true)
+                            {
+                                PbxPersonagem.Location = new Point(posX - andarQtdPx, posY);
+                                goRight = false;
+                            }
+                            if (goDown == true)
+                            {
+                                PbxPersonagem.Location = new Point(posX, posY - andarQtdPx);
+                                goDown = false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
-            labelX.Text = x.ToString();
-            labelY.Text = y.ToString();
+        private void TmrMainGameManager_Tick(object sender, EventArgs e)
+        {
+            labelX.Text = posX.ToString();
+            labelY.Text = posY.ToString();
+
             //Controles para fazer o player andar
             if (goLeft == true)
             {
-                if (posColuna == 0) return;
-                if (labirinto[posLinha, posColuna - 1] == "1")
-                {
-                    PbxPersonagem.Location = new Point(x - andarQtdPx, y);
-                    posColuna--;
-                }
+                PbxPersonagem.Location = new Point(posX - andarQtdPx, posY);
             }
-            if (goRight == true)
+            else if (goRight == true)
             {
-                if (posColuna == 30) return;
-                if (labirinto[posLinha, posColuna + 1] == "1")
-                {
-                    PbxPersonagem.Location = new Point(x + andarQtdPx, y);
-                    posColuna++;
-                }
+                PbxPersonagem.Location = new Point(posX + andarQtdPx, posY);
             }
-            if (goUp == true)
+            else if (goUp == true)
             {
-                if (posLinha == 0) return;
-                if (labirinto[posLinha - 1, posColuna] == "1")
-                {
-                    PbxPersonagem.Location = new Point(x, y - andarQtdPx);
-                    posLinha--;
-                }
+                PbxPersonagem.Location = new Point(posX, posY - andarQtdPx);
             }
-            if (goDown == true)
-            {
-                if (posLinha == 22) return;
-                if (labirinto[posLinha + 1, posColuna] == "1")
-                {
-                    PbxPersonagem.Location = new Point(x, y + andarQtdPx);
-                    posLinha++;
-                }
+            else if (goDown == true)
+            {   
+                PbxPersonagem.Location = new Point(posX, posY + andarQtdPx);
             }
+            
             //Pegar moedas com Tag Vitamina
             foreach (Control f in this.Controls)
             {
