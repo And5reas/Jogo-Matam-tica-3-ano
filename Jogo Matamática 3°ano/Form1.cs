@@ -183,7 +183,7 @@ namespace Jogo_Matamática_3_ano
                     posLinha++;
                 }
             }
-
+            //Pegar moedas com Tag Vitamina
             foreach (Control f in this.Controls)
             {
                 if (f is PictureBox)
