@@ -34,14 +34,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.PbxFases = new System.Windows.Forms.PictureBox();
             this.PbxPersonagem = new System.Windows.Forms.PictureBox();
-            this.TmrAndar = new System.Windows.Forms.Timer(this.components);
             this.labelX = new System.Windows.Forms.Label();
             this.labelY = new System.Windows.Forms.Label();
             this.LblX = new System.Windows.Forms.Label();
             this.LblY = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TmrMainGameManager = new System.Windows.Forms.Timer(this.components);
             this.PnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxFases)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -83,10 +85,7 @@
             this.PbxPersonagem.Size = new System.Drawing.Size(32, 33);
             this.PbxPersonagem.TabIndex = 3;
             this.PbxPersonagem.TabStop = false;
-            // 
-            // TmrAndar
-            // 
-            this.TmrAndar.Tick += new System.EventHandler(this.TmrAndar_Tick);
+            this.PbxPersonagem.Tag = "Player";
             // 
             // labelX
             // 
@@ -124,6 +123,20 @@
             this.LblY.TabIndex = 4;
             this.LblY.Text = "Y";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(301, 94);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Tag = "Vitamina";
+            // 
+            // TmrMainGameManager
+            // 
+            this.TmrMainGameManager.Enabled = true;
+            this.TmrMainGameManager.Tick += new System.EventHandler(this.TmrMainGameManager_Tick);
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,6 +144,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(1116, 687);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LblY);
             this.Controls.Add(this.LblX);
             this.Controls.Add(this.labelY);
@@ -142,11 +156,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jogo Matemática 3°ano";
             this.Load += new System.EventHandler(this.FrmJogo_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmJogo_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmJogo_KeyPress);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmJogo_KeyUp);
             this.PnlMenu.ResumeLayout(false);
             this.PnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxFases)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,11 +174,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox PbxFases;
         private System.Windows.Forms.PictureBox PbxPersonagem;
-        private System.Windows.Forms.Timer TmrAndar;
         private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.Label labelY;
         private System.Windows.Forms.Label LblX;
         private System.Windows.Forms.Label LblY;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer TmrMainGameManager;
     }
 }
 
