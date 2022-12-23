@@ -58,7 +58,7 @@
             this.PnlMenu.Controls.Add(this.PBX_Sair);
             this.PnlMenu.Controls.Add(this.PBX_Opcoes);
             this.PnlMenu.Controls.Add(this.PBX_Jogar);
-            this.PnlMenu.Location = new System.Drawing.Point(485, 344);
+            this.PnlMenu.Location = new System.Drawing.Point(660, 493);
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(850, 800);
             this.PnlMenu.TabIndex = 1;
