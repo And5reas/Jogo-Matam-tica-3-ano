@@ -40,11 +40,20 @@
             this.LblX = new System.Windows.Forms.Label();
             this.LblY = new System.Windows.Forms.Label();
             this.PbxPersonagem = new System.Windows.Forms.PictureBox();
+            this.PbxColision = new System.Windows.Forms.PictureBox();
+            this.TmrColisao = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Opcoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxColision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -58,10 +67,12 @@
             this.PnlMenu.Controls.Add(this.PBX_Sair);
             this.PnlMenu.Controls.Add(this.PBX_Opcoes);
             this.PnlMenu.Controls.Add(this.PBX_Jogar);
-            this.PnlMenu.Location = new System.Drawing.Point(660, 493);
+            this.PnlMenu.Location = new System.Drawing.Point(919, 688);
             this.PnlMenu.Name = "PnlMenu";
-            this.PnlMenu.Size = new System.Drawing.Size(850, 800);
+            this.PnlMenu.Size = new System.Drawing.Size(1076, 838);
             this.PnlMenu.TabIndex = 1;
+            this.PnlMenu.Tag = "Caminho";
+            this.PnlMenu.Visible = false;
             // 
             // PBX_Sair
             // 
@@ -156,12 +167,61 @@
             this.PbxPersonagem.BackColor = System.Drawing.Color.Transparent;
             this.PbxPersonagem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbxPersonagem.BackgroundImage")));
             this.PbxPersonagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbxPersonagem.Location = new System.Drawing.Point(46, 106);
+            this.PbxPersonagem.Location = new System.Drawing.Point(55, 107);
             this.PbxPersonagem.Name = "PbxPersonagem";
-            this.PbxPersonagem.Size = new System.Drawing.Size(32, 33);
+            this.PbxPersonagem.Size = new System.Drawing.Size(24, 33);
             this.PbxPersonagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbxPersonagem.TabIndex = 3;
             this.PbxPersonagem.TabStop = false;
+            // 
+            // PbxColision
+            // 
+            this.PbxColision.BackColor = System.Drawing.Color.Yellow;
+            this.PbxColision.Location = new System.Drawing.Point(54, 132);
+            this.PbxColision.Name = "PbxColision";
+            this.PbxColision.Size = new System.Drawing.Size(15, 15);
+            this.PbxColision.TabIndex = 5;
+            this.PbxColision.TabStop = false;
+            this.PbxColision.Tag = "Colision";
+            // 
+            // TmrColisao
+            // 
+            this.TmrColisao.Enabled = true;
+            this.TmrColisao.Interval = 10;
+            this.TmrColisao.Tick += new System.EventHandler(this.TmrColisao_Tick);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Aqua;
+            this.pictureBox2.Location = new System.Drawing.Point(34, 129);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(967, 22);
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Tag = "Caminho";
+            this.pictureBox2.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Aqua;
+            this.pictureBox3.Location = new System.Drawing.Point(57, 313);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(217, 22);
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Tag = "Caminho";
+            this.pictureBox3.Visible = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Aqua;
+            this.pictureBox4.Location = new System.Drawing.Point(57, 146);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(33, 173);
+            this.pictureBox4.TabIndex = 8;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Tag = "Caminho";
+            this.pictureBox4.Visible = false;
             // 
             // FrmJogo
             // 
@@ -172,13 +232,17 @@
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(834, 761);
+            this.ClientSize = new System.Drawing.Size(1060, 799);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.PbxColision);
             this.Controls.Add(this.PnlMenu);
             this.Controls.Add(this.LblY);
             this.Controls.Add(this.LblX);
             this.Controls.Add(this.labelY);
             this.Controls.Add(this.labelX);
             this.Controls.Add(this.PbxPersonagem);
+            this.Controls.Add(this.pictureBox2);
             this.DoubleBuffered = true;
             this.Name = "FrmJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -192,6 +256,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Opcoes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxColision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,6 +277,11 @@
         private System.Windows.Forms.PictureBox PBX_Sair;
         private System.Windows.Forms.PictureBox PBX_Opcoes;
         private System.Windows.Forms.PictureBox PBX_Jogar;
+        private System.Windows.Forms.PictureBox PbxColision;
+        private System.Windows.Forms.Timer TmrColisao;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 
