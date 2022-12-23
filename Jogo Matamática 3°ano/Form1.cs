@@ -17,7 +17,6 @@ namespace Jogo_Matamática_3_ano
         #region Variáveis Globais
         int posLinha = 0, posColuna = 0, andarQtdPx = 22,
             DebugSwith, posX, posY;
-        string controle;
         bool goLeft, goRight, goDown, goUp;
         #endregion
         #region Fase 1
@@ -148,6 +147,7 @@ namespace Jogo_Matamática_3_ano
             PnlMenu.Location = new Point(0, 0);
             PnlMenu.Visible = true;
             TmrMainGameManager.Start();
+            
             //Esconder posição do personagem
             labelX.Visible = false;
             labelY.Visible = false;
@@ -165,6 +165,7 @@ namespace Jogo_Matamática_3_ano
 
             labelX.Text = posX.ToString();
             labelY.Text = posY.ToString();
+            
             //Controles para fazer o player andar
             if (goLeft == true)
             {
@@ -202,6 +203,7 @@ namespace Jogo_Matamática_3_ano
                     posLinha++;
                 }
             }
+            
             //Pegar moedas com Tag Vitamina
             foreach (Control f in this.Controls)
             {
@@ -272,7 +274,12 @@ namespace Jogo_Matamática_3_ano
             PBX_Fase1.Size = new Size(228, 170);
             PBX_Fase1.Location = new Point(14, 14);
         }
-
+        private void PBX_Fase1_Click(object sender, EventArgs e)
+        {
+            PNL_Fases.Visible = false;
+            PnlMenu.Visible = false;
+        }
+        
         //ENTRAR E SAIR DA FASE 2
         private void PBX_Fase2_MouseHover(object sender, EventArgs e)
         {

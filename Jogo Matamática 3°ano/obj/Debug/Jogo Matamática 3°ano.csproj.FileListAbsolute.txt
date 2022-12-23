@@ -20,3 +20,14 @@ C:\Users\and5r\Desktop\lol\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3�
 C:\Users\and5r\Desktop\lol\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.CoreCompileInputs.cache
 C:\Users\and5r\Desktop\lol\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.exe
 C:\Users\and5r\Desktop\lol\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.pdb
+C:\Users\and5r\Desktop\Jogo Matemática 3°ano\lol\Jogo Matamática 3°ano\bin\Debug\Jogo Matamática 3°ano.exe.config
+C:\Users\and5r\Desktop\Jogo Matemática 3°ano\lol\Jogo Matamática 3°ano\bin\Debug\Jogo Matamática 3°ano.exe
+C:\Users\and5r\Desktop\Jogo Matemática 3°ano\lol\Jogo Matamática 3°ano\bin\Debug\Jogo Matamática 3°ano.pdb
+C:\Users\and5r\Desktop\Jogo Matemática 3°ano\lol\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.AssemblyReference.cache
+C:\Users\and5r\Desktop\Jogo Matemática 3°ano\lol\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.SuggestedBindingRedirects.cache
+C:\Users\and5r\Desktop\Jogo Matemática 3°ano\lol\Jogo Matamática 3°ano\obj\Debug\Jogo_Matamática_3_ano.FrmJogo.resources
+C:\Users\and5r\Desktop\Jogo Matemática 3°ano\lol\Jogo Matamática 3°ano\obj\Debug\Jogo_Matamática_3_ano.Properties.Resources.resources
+C:\Users\and5r\Desktop\Jogo Matemática 3°ano\lol\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.GenerateResource.cache
+C:\Users\and5r\Desktop\Jogo Matemática 3°ano\lol\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.CoreCompileInputs.cache
+C:\Users\and5r\Desktop\Jogo Matemática 3°ano\lol\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.exe
+C:\Users\and5r\Desktop\Jogo Matemática 3°ano\lol\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.pdb

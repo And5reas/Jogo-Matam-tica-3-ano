@@ -41,36 +41,36 @@
             this.LblY = new System.Windows.Forms.Label();
             this.PbxPersonagem = new System.Windows.Forms.PictureBox();
             this.PNL_Fases = new System.Windows.Forms.Panel();
-            this.PBX_Fase1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.PBX_Fase2 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.PBX_Fase3 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.PBX_Fase6 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.PBX_Fase3 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.PBX_Fase5 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.PBX_Fase4 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.PBX_Fase2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.PBX_Fase1 = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Opcoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).BeginInit();
             this.PNL_Fases.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase2)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase3)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase6)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase3)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase5)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase4)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase2)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase1)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -84,9 +84,9 @@
             this.PnlMenu.Controls.Add(this.PBX_Sair);
             this.PnlMenu.Controls.Add(this.PBX_Opcoes);
             this.PnlMenu.Controls.Add(this.PBX_Jogar);
-            this.PnlMenu.Location = new System.Drawing.Point(708, 217);
+            this.PnlMenu.Location = new System.Drawing.Point(733, 599);
             this.PnlMenu.Name = "PnlMenu";
-            this.PnlMenu.Size = new System.Drawing.Size(850, 800);
+            this.PnlMenu.Size = new System.Drawing.Size(864, 815);
             this.PnlMenu.TabIndex = 1;
             // 
             // PBX_Sair
@@ -200,79 +200,10 @@
             this.PNL_Fases.Controls.Add(this.panel6);
             this.PNL_Fases.Controls.Add(this.panel2);
             this.PNL_Fases.Controls.Add(this.panel1);
-            this.PNL_Fases.Location = new System.Drawing.Point(2, 2);
+            this.PNL_Fases.Location = new System.Drawing.Point(705, 617);
             this.PNL_Fases.Name = "PNL_Fases";
             this.PNL_Fases.Size = new System.Drawing.Size(850, 800);
             this.PNL_Fases.TabIndex = 3;
-            // 
-            // PBX_Fase1
-            // 
-            this.PBX_Fase1.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_Fase1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_Fase1.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Fase1.Image")));
-            this.PBX_Fase1.Location = new System.Drawing.Point(14, 14);
-            this.PBX_Fase1.Name = "PBX_Fase1";
-            this.PBX_Fase1.Size = new System.Drawing.Size(228, 170);
-            this.PBX_Fase1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBX_Fase1.TabIndex = 0;
-            this.PBX_Fase1.TabStop = false;
-            this.PBX_Fase1.MouseLeave += new System.EventHandler(this.PBX_Fase1_MouseLeave);
-            this.PBX_Fase1.MouseHover += new System.EventHandler(this.PBX_Fase1_MouseHover);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.panel1.Controls.Add(this.PBX_Fase1);
-            this.panel1.Location = new System.Drawing.Point(14, 192);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 196);
-            this.panel1.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.panel2.Controls.Add(this.PBX_Fase2);
-            this.panel2.Location = new System.Drawing.Point(291, 192);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(256, 196);
-            this.panel2.TabIndex = 7;
-            // 
-            // PBX_Fase2
-            // 
-            this.PBX_Fase2.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_Fase2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_Fase2.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Fase2.Image")));
-            this.PBX_Fase2.Location = new System.Drawing.Point(14, 14);
-            this.PBX_Fase2.Name = "PBX_Fase2";
-            this.PBX_Fase2.Size = new System.Drawing.Size(228, 170);
-            this.PBX_Fase2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBX_Fase2.TabIndex = 0;
-            this.PBX_Fase2.TabStop = false;
-            this.PBX_Fase2.MouseLeave += new System.EventHandler(this.PBX_Fase2_MouseLeave);
-            this.PBX_Fase2.MouseHover += new System.EventHandler(this.PBX_Fase2_MouseHover);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.panel3.Controls.Add(this.PBX_Fase3);
-            this.panel3.Location = new System.Drawing.Point(560, 192);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(256, 196);
-            this.panel3.TabIndex = 7;
-            // 
-            // PBX_Fase3
-            // 
-            this.PBX_Fase3.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_Fase3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_Fase3.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Fase3.Image")));
-            this.PBX_Fase3.Location = new System.Drawing.Point(14, 14);
-            this.PBX_Fase3.Name = "PBX_Fase3";
-            this.PBX_Fase3.Size = new System.Drawing.Size(228, 170);
-            this.PBX_Fase3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBX_Fase3.TabIndex = 0;
-            this.PBX_Fase3.TabStop = false;
-            this.PBX_Fase3.MouseLeave += new System.EventHandler(this.PBX_Fase3_MouseLeave);
-            this.PBX_Fase3.MouseHover += new System.EventHandler(this.PBX_Fase3_MouseHover);
             // 
             // panel4
             // 
@@ -296,6 +227,29 @@
             this.PBX_Fase6.TabStop = false;
             this.PBX_Fase6.MouseLeave += new System.EventHandler(this.PBX_Fase6_MouseLeave);
             this.PBX_Fase6.MouseHover += new System.EventHandler(this.PBX_Fase6_MouseHover);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel3.Controls.Add(this.PBX_Fase3);
+            this.panel3.Location = new System.Drawing.Point(560, 192);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(256, 196);
+            this.panel3.TabIndex = 7;
+            // 
+            // PBX_Fase3
+            // 
+            this.PBX_Fase3.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_Fase3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_Fase3.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Fase3.Image")));
+            this.PBX_Fase3.Location = new System.Drawing.Point(14, 14);
+            this.PBX_Fase3.Name = "PBX_Fase3";
+            this.PBX_Fase3.Size = new System.Drawing.Size(228, 170);
+            this.PBX_Fase3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_Fase3.TabIndex = 0;
+            this.PBX_Fase3.TabStop = false;
+            this.PBX_Fase3.MouseLeave += new System.EventHandler(this.PBX_Fase3_MouseLeave);
+            this.PBX_Fase3.MouseHover += new System.EventHandler(this.PBX_Fase3_MouseHover);
             // 
             // panel5
             // 
@@ -343,6 +297,53 @@
             this.PBX_Fase4.MouseLeave += new System.EventHandler(this.PBX_Fase4_MouseLeave);
             this.PBX_Fase4.MouseHover += new System.EventHandler(this.PBX_Fase4_MouseHover);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel2.Controls.Add(this.PBX_Fase2);
+            this.panel2.Location = new System.Drawing.Point(291, 192);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(256, 196);
+            this.panel2.TabIndex = 7;
+            // 
+            // PBX_Fase2
+            // 
+            this.PBX_Fase2.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_Fase2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_Fase2.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Fase2.Image")));
+            this.PBX_Fase2.Location = new System.Drawing.Point(14, 14);
+            this.PBX_Fase2.Name = "PBX_Fase2";
+            this.PBX_Fase2.Size = new System.Drawing.Size(228, 170);
+            this.PBX_Fase2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_Fase2.TabIndex = 0;
+            this.PBX_Fase2.TabStop = false;
+            this.PBX_Fase2.MouseLeave += new System.EventHandler(this.PBX_Fase2_MouseLeave);
+            this.PBX_Fase2.MouseHover += new System.EventHandler(this.PBX_Fase2_MouseHover);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel1.Controls.Add(this.PBX_Fase1);
+            this.panel1.Location = new System.Drawing.Point(14, 192);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(256, 196);
+            this.panel1.TabIndex = 6;
+            // 
+            // PBX_Fase1
+            // 
+            this.PBX_Fase1.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_Fase1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_Fase1.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Fase1.Image")));
+            this.PBX_Fase1.Location = new System.Drawing.Point(14, 14);
+            this.PBX_Fase1.Name = "PBX_Fase1";
+            this.PBX_Fase1.Size = new System.Drawing.Size(228, 170);
+            this.PBX_Fase1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_Fase1.TabIndex = 0;
+            this.PBX_Fase1.TabStop = false;
+            this.PBX_Fase1.Click += new System.EventHandler(this.PBX_Fase1_Click);
+            this.PBX_Fase1.MouseLeave += new System.EventHandler(this.PBX_Fase1_MouseLeave);
+            this.PBX_Fase1.MouseHover += new System.EventHandler(this.PBX_Fase1_MouseHover);
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,18 +375,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).EndInit();
             this.PNL_Fases.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase2)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase3)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase6)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase3)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase5)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase4)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
