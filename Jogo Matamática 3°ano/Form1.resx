@@ -2331,7 +2331,7 @@
   <data name="PBX_Sair.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAM8AAABuCAYAAACAwUcUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        XwAAD18B14rayQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACM1SURBVHhe7Z1p
+        XgAAD14BBc04LQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACM1SURBVHhe7Z1p
         cGPZdd8Zx3GWD6kk5S+pRFV2SSZAssneFzb3FQAXAARJEOC+gysAshfubO5k7z3T6unumZ7e940NajSu
         SqKUXWU7lcQf8kFVrnIqsVIqRSo5lqLFE41mRifnXPABD8DB2iSW1vvwa7Lfe/e+A/D837333HPvSwOA
         HcVRmVHh1Kr/xKHN+MmkMeurWVMOTNflwIQ+8yunTvW3dq3q24PaPTlcWQWFnWK8Tp3u0Kpf2TXpPzpt
@@ -2488,7 +2488,7 @@
   <data name="PBX_Opcoes.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAM8AAABuCAYAAACAwUcUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        XwAAD18B14rayQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACbFSURBVHhe7Z1p
+        XgAAD14BBc04LQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACbFSURBVHhe7Z1p
         cFvZld+ZyWSyfEglqfmSSlw1U/aQIClR+0JR3BcAXABwA8F9X0ECpDbuqyiSWiipW1a3pFarte8iBdru
         qUri1EzVzKSSzId8cNVUTSoZp1yOXZ6MHS/j2O5un5z/BQE8ABfLA0mQVL8PPwnEe++++/Du/957zj33
         3gQi2lScRcmFgwbdnzgNyT8esaR+MVGRRmPlaTRsSvli0Jj0tw5D0rd6DXvSZNdqaGwWp8p1iU6D7o1D
@@ -2826,7 +2826,7 @@
         RU5ErkJggg==
 </value>
   </data>
-  <metadata name="TmrAndar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="TmrMainGameManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="PbxPersonagem.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
