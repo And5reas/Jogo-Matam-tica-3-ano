@@ -16,9 +16,8 @@ namespace Jogo_Matamática_3_ano
     public partial class FrmJogo : Form
     {
         #region Variáveis Globais
-        int posLinha = 0, posColuna = 0, andarQtdPx = 9,
-            DebugSwith, posX, posY;
-        string controle;
+        int andarQtdPx = 6,
+            DebugSwith, posXPlayer, posYPlayer, posXColision, posYColision, posX2Player, posY2Player;
         bool goLeft, goRight, goDown, goUp;
         #endregion
         public FrmJogo()
@@ -102,6 +101,8 @@ namespace Jogo_Matamática_3_ano
             PnlMenu.Location = new Point(0, 0);
             PnlMenu.Visible = true;
             TmrMainGameManager.Start();
+            PbxColision.Location = new Point(46, 161);
+            PbxPersonagem.Location = new Point(46, 136);
             
             //Esconder posição do personagem
             labelX.Visible = false;
@@ -116,8 +117,13 @@ namespace Jogo_Matamática_3_ano
         private void TmrColisao_Tick(object sender, EventArgs e)
         {
             //Coletar a informação de onde o pesonagem está nas posições X e Y
-            posX = PbxPersonagem.Location.X;
-            posY = PbxPersonagem.Location.Y;
+            posXPlayer = PbxPersonagem.Location.X;
+            posYPlayer = PbxPersonagem.Location.Y;
+
+            //Coletar a informação de onde a colisão do personagem está está nas posições X e Y
+            posXColision = PbxColision.Location.X;
+            posYColision = PbxColision.Location.Y;
+
             //Colisão com paredes
             foreach (Control g in this.Controls)
             {
@@ -125,27 +131,36 @@ namespace Jogo_Matamática_3_ano
                 {
                     if ((string)g.Tag == "Parede")
                     {
-                        if (PbxPersonagem.Bounds.IntersectsWith(g.Bounds))
+                        if (PbxColision.Bounds.IntersectsWith(g.Bounds))
                         {
                             if (goUp == true)
                             {
-                                PbxPersonagem.Location = new Point(posX, posY + andarQtdPx);
+                                PbxPersonagem.Location = new Point(posXPlayer, posYPlayer + andarQtdPx);
+                                PbxColision.Location = new Point(posXColision, posYColision + andarQtdPx);
                                 goUp = false;
                             }
-                            if (goLeft == true)
+                            else if (goLeft == true)
                             {
-                                PbxPersonagem.Location = new Point(posX + andarQtdPx, posY);
+                                PbxPersonagem.Location = new Point(posXPlayer + andarQtdPx, posYPlayer);
+                                PbxColision.Location = new Point(posXColision + andarQtdPx, posYColision);
                                 goLeft = false;
                             }
-                            if (goRight == true)
+                            else if (goRight == true)
                             {
-                                PbxPersonagem.Location = new Point(posX - andarQtdPx, posY);
+                                PbxPersonagem.Location = new Point(posXPlayer - andarQtdPx, posYPlayer);
+                                PbxColision.Location = new Point(posXColision - andarQtdPx, posYColision);
                                 goRight = false;
                             }
-                            if (goDown == true)
+                            else if (goDown == true)
                             {
-                                PbxPersonagem.Location = new Point(posX, posY - andarQtdPx);
+                                PbxPersonagem.Location = new Point(posXPlayer, posYPlayer - andarQtdPx);
+                                PbxColision.Location = new Point(posXColision, posYColision - andarQtdPx);
                                 goDown = false;
+                            }
+                            else
+                            {
+                                PbxPersonagem.Location = new Point(posX2Player, posY2Player);
+                                PbxColision.Location = new Point(posX2Player, posY2Player + 25);
                             }
                         }
                     }
@@ -155,25 +170,34 @@ namespace Jogo_Matamática_3_ano
 
         private void TmrMainGameManager_Tick(object sender, EventArgs e)
         {
-            labelX.Text = posX.ToString();
-            labelY.Text = posY.ToString();
+            //Coletar a informação de onde o pesonagem está nas posições X2 e Y2
+            posX2Player = PbxPersonagem.Location.X;
+            posY2Player = PbxPersonagem.Location.Y;
+
+            //Coletar insformação para o degubMode "y"
+            labelX.Text = posXPlayer.ToString();
+            labelY.Text = posYPlayer.ToString();
 
             //Controles para fazer o player andar
             if (goLeft == true)
             {
-                PbxPersonagem.Location = new Point(posX - andarQtdPx, posY);
+                PbxPersonagem.Location = new Point(posXPlayer - andarQtdPx, posYPlayer);
+                PbxColision.Location = new Point(posXColision - andarQtdPx, posYColision);
             }
             else if (goRight == true)
             {
-                PbxPersonagem.Location = new Point(posX + andarQtdPx, posY);
+                PbxPersonagem.Location = new Point(posXPlayer + andarQtdPx, posYPlayer);
+                PbxColision.Location = new Point(posXColision + andarQtdPx, posYColision);
             }
             else if (goUp == true)
             {
-                PbxPersonagem.Location = new Point(posX, posY - andarQtdPx);
+                PbxPersonagem.Location = new Point(posXPlayer, posYPlayer - andarQtdPx);
+                PbxColision.Location = new Point(posXColision, posYColision - andarQtdPx);
             }
             else if (goDown == true)
             {   
-                PbxPersonagem.Location = new Point(posX, posY + andarQtdPx);
+                PbxPersonagem.Location = new Point(posXPlayer, posYPlayer + andarQtdPx);
+                PbxColision.Location = new Point(posXColision, posYColision + andarQtdPx);
             }
             
             //Pegar moedas com Tag Vitamina

@@ -92,6 +92,8 @@
             this.pictureBox49 = new System.Windows.Forms.PictureBox();
             this.pictureBox50 = new System.Windows.Forms.PictureBox();
             this.pictureBox51 = new System.Windows.Forms.PictureBox();
+            this.PbxColision = new System.Windows.Forms.PictureBox();
+            this.pictureBox52 = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Opcoes)).BeginInit();
@@ -148,6 +150,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxColision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -271,7 +275,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(111, 179);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 176);
+            this.pictureBox1.Size = new System.Drawing.Size(33, 165);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "Parede";
@@ -281,7 +285,7 @@
             // 
             this.pictureBox3.Location = new System.Drawing.Point(183, 179);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 126);
+            this.pictureBox3.Size = new System.Drawing.Size(33, 150);
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Tag = "Parede";
@@ -289,9 +293,9 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(331, 179);
+            this.pictureBox4.Location = new System.Drawing.Point(331, 207);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(33, 349);
+            this.pictureBox4.Size = new System.Drawing.Size(33, 343);
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Tag = "Parede";
@@ -301,7 +305,7 @@
             // 
             this.pictureBox5.Location = new System.Drawing.Point(257, 400);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(33, 178);
+            this.pictureBox5.Size = new System.Drawing.Size(33, 167);
             this.pictureBox5.TabIndex = 7;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Tag = "Parede";
@@ -309,12 +313,13 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(30, 123);
+            this.pictureBox6.Location = new System.Drawing.Point(32, 123);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(1210, 5);
+            this.pictureBox6.Size = new System.Drawing.Size(1160, 29);
             this.pictureBox6.TabIndex = 6;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Tag = "Parede";
+            this.pictureBox6.Visible = false;
             // 
             // pictureBox7
             // 
@@ -334,9 +339,9 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(504, 326);
+            this.pictureBox8.Location = new System.Drawing.Point(512, 326);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(118, 5);
+            this.pictureBox8.Size = new System.Drawing.Size(104, 22);
             this.pictureBox8.TabIndex = 6;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Tag = "Parede";
@@ -356,7 +361,7 @@
             // 
             this.pictureBox2.Location = new System.Drawing.Point(401, 227);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 198);
+            this.pictureBox2.Size = new System.Drawing.Size(33, 188);
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Tag = "Parede";
@@ -366,7 +371,7 @@
             // 
             this.pictureBox10.Location = new System.Drawing.Point(763, 476);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(33, 52);
+            this.pictureBox10.Size = new System.Drawing.Size(33, 42);
             this.pictureBox10.TabIndex = 7;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Tag = "Parede";
@@ -374,9 +379,9 @@
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Location = new System.Drawing.Point(617, 179);
+            this.pictureBox11.Location = new System.Drawing.Point(617, 207);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(33, 97);
+            this.pictureBox11.Size = new System.Drawing.Size(33, 89);
             this.pictureBox11.TabIndex = 7;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Tag = "Parede";
@@ -384,9 +389,9 @@
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Location = new System.Drawing.Point(621, 325);
+            this.pictureBox12.Location = new System.Drawing.Point(622, 325);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(33, 51);
+            this.pictureBox12.Size = new System.Drawing.Size(33, 71);
             this.pictureBox12.TabIndex = 7;
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Tag = "Parede";
@@ -396,7 +401,7 @@
             // 
             this.pictureBox13.Location = new System.Drawing.Point(1125, 179);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(33, 97);
+            this.pictureBox13.Size = new System.Drawing.Size(33, 117);
             this.pictureBox13.TabIndex = 7;
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Tag = "Parede";
@@ -404,9 +409,9 @@
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Location = new System.Drawing.Point(183, 449);
+            this.pictureBox14.Location = new System.Drawing.Point(183, 476);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(33, 229);
+            this.pictureBox14.Size = new System.Drawing.Size(33, 193);
             this.pictureBox14.TabIndex = 7;
             this.pictureBox14.TabStop = false;
             this.pictureBox14.Tag = "Parede";
@@ -414,9 +419,9 @@
             // 
             // pictureBox15
             // 
-            this.pictureBox15.Location = new System.Drawing.Point(109, 502);
+            this.pictureBox15.Location = new System.Drawing.Point(108, 502);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(33, 247);
+            this.pictureBox15.Size = new System.Drawing.Size(33, 219);
             this.pictureBox15.TabIndex = 5;
             this.pictureBox15.TabStop = false;
             this.pictureBox15.Tag = "Parede";
@@ -424,27 +429,29 @@
             // 
             // pictureBox16
             // 
-            this.pictureBox16.Location = new System.Drawing.Point(30, 727);
+            this.pictureBox16.Location = new System.Drawing.Point(71, 727);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(1210, 18);
+            this.pictureBox16.Size = new System.Drawing.Size(1169, 18);
             this.pictureBox16.TabIndex = 6;
             this.pictureBox16.TabStop = false;
             this.pictureBox16.Tag = "Parede";
+            this.pictureBox16.Visible = false;
             // 
             // pictureBox17
             // 
             this.pictureBox17.Location = new System.Drawing.Point(1198, 123);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(33, 626);
+            this.pictureBox17.Size = new System.Drawing.Size(33, 598);
             this.pictureBox17.TabIndex = 5;
             this.pictureBox17.TabStop = false;
             this.pictureBox17.Tag = "Parede";
+            this.pictureBox17.Visible = false;
             // 
             // pictureBox18
             // 
             this.pictureBox18.Location = new System.Drawing.Point(834, 423);
             this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(33, 204);
+            this.pictureBox18.Size = new System.Drawing.Size(33, 228);
             this.pictureBox18.TabIndex = 7;
             this.pictureBox18.TabStop = false;
             this.pictureBox18.Tag = "Parede";
@@ -454,7 +461,7 @@
             // 
             this.pictureBox19.Location = new System.Drawing.Point(907, 227);
             this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(33, 49);
+            this.pictureBox19.Size = new System.Drawing.Size(33, 70);
             this.pictureBox19.TabIndex = 7;
             this.pictureBox19.TabStop = false;
             this.pictureBox19.Tag = "Parede";
@@ -462,9 +469,9 @@
             // 
             // pictureBox20
             // 
-            this.pictureBox20.Location = new System.Drawing.Point(1126, 423);
+            this.pictureBox20.Location = new System.Drawing.Point(1125, 423);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(33, 127);
+            this.pictureBox20.Size = new System.Drawing.Size(34, 144);
             this.pictureBox20.TabIndex = 7;
             this.pictureBox20.TabStop = false;
             this.pictureBox20.Tag = "Parede";
@@ -474,7 +481,7 @@
             // 
             this.pictureBox21.Location = new System.Drawing.Point(981, 423);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(33, 255);
+            this.pictureBox21.Size = new System.Drawing.Size(33, 279);
             this.pictureBox21.TabIndex = 7;
             this.pictureBox21.TabStop = false;
             this.pictureBox21.Tag = "Parede";
@@ -484,7 +491,7 @@
             // 
             this.pictureBox22.Location = new System.Drawing.Point(473, 275);
             this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(33, 101);
+            this.pictureBox22.Size = new System.Drawing.Size(33, 121);
             this.pictureBox22.TabIndex = 7;
             this.pictureBox22.TabStop = false;
             this.pictureBox22.Tag = "Parede";
@@ -494,7 +501,7 @@
             // 
             this.pictureBox23.Location = new System.Drawing.Point(551, 373);
             this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(33, 52);
+            this.pictureBox23.Size = new System.Drawing.Size(33, 42);
             this.pictureBox23.TabIndex = 7;
             this.pictureBox23.TabStop = false;
             this.pictureBox23.Tag = "Parede";
@@ -504,7 +511,7 @@
             // 
             this.pictureBox24.Location = new System.Drawing.Point(763, 575);
             this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(33, 103);
+            this.pictureBox24.Size = new System.Drawing.Size(33, 94);
             this.pictureBox24.TabIndex = 7;
             this.pictureBox24.TabStop = false;
             this.pictureBox24.Tag = "Parede";
@@ -512,9 +519,9 @@
             // 
             // pictureBox25
             // 
-            this.pictureBox25.Location = new System.Drawing.Point(693, 524);
+            this.pictureBox25.Location = new System.Drawing.Point(693, 556);
             this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(33, 54);
+            this.pictureBox25.Size = new System.Drawing.Size(33, 44);
             this.pictureBox25.TabIndex = 7;
             this.pictureBox25.TabStop = false;
             this.pictureBox25.Tag = "Parede";
@@ -524,7 +531,7 @@
             // 
             this.pictureBox26.Location = new System.Drawing.Point(907, 327);
             this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(33, 351);
+            this.pictureBox26.Size = new System.Drawing.Size(33, 342);
             this.pictureBox26.TabIndex = 7;
             this.pictureBox26.TabStop = false;
             this.pictureBox26.Tag = "Parede";
@@ -534,7 +541,7 @@
             // 
             this.pictureBox27.Location = new System.Drawing.Point(1054, 472);
             this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(33, 257);
+            this.pictureBox27.Size = new System.Drawing.Size(33, 249);
             this.pictureBox27.TabIndex = 7;
             this.pictureBox27.TabStop = false;
             this.pictureBox27.Tag = "Parede";
@@ -544,7 +551,7 @@
             // 
             this.pictureBox28.Location = new System.Drawing.Point(257, 227);
             this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(33, 128);
+            this.pictureBox28.Size = new System.Drawing.Size(33, 117);
             this.pictureBox28.TabIndex = 7;
             this.pictureBox28.TabStop = false;
             this.pictureBox28.Tag = "Parede";
@@ -554,7 +561,7 @@
             // 
             this.pictureBox29.Location = new System.Drawing.Point(548, 227);
             this.pictureBox29.Name = "pictureBox29";
-            this.pictureBox29.Size = new System.Drawing.Size(33, 102);
+            this.pictureBox29.Size = new System.Drawing.Size(33, 93);
             this.pictureBox29.TabIndex = 7;
             this.pictureBox29.TabStop = false;
             this.pictureBox29.Tag = "Parede";
@@ -562,9 +569,9 @@
             // 
             // pictureBox30
             // 
-            this.pictureBox30.Location = new System.Drawing.Point(212, 179);
+            this.pictureBox30.Location = new System.Drawing.Point(222, 179);
             this.pictureBox30.Name = "pictureBox30";
-            this.pictureBox30.Size = new System.Drawing.Size(920, 5);
+            this.pictureBox30.Size = new System.Drawing.Size(897, 22);
             this.pictureBox30.TabIndex = 6;
             this.pictureBox30.TabStop = false;
             this.pictureBox30.Tag = "Parede";
@@ -572,9 +579,9 @@
             // 
             // pictureBox31
             // 
-            this.pictureBox31.Location = new System.Drawing.Point(432, 227);
+            this.pictureBox31.Location = new System.Drawing.Point(440, 227);
             this.pictureBox31.Name = "pictureBox31";
-            this.pictureBox31.Size = new System.Drawing.Size(118, 5);
+            this.pictureBox31.Size = new System.Drawing.Size(102, 22);
             this.pictureBox31.TabIndex = 8;
             this.pictureBox31.TabStop = false;
             this.pictureBox31.Tag = "Parede";
@@ -582,9 +589,9 @@
             // 
             // pictureBox32
             // 
-            this.pictureBox32.Location = new System.Drawing.Point(645, 272);
+            this.pictureBox32.Location = new System.Drawing.Point(656, 272);
             this.pictureBox32.Name = "pictureBox32";
-            this.pictureBox32.Size = new System.Drawing.Size(120, 5);
+            this.pictureBox32.Size = new System.Drawing.Size(101, 25);
             this.pictureBox32.TabIndex = 9;
             this.pictureBox32.TabStop = false;
             this.pictureBox32.Tag = "Parede";
@@ -594,7 +601,7 @@
             // 
             this.pictureBox33.Location = new System.Drawing.Point(763, 227);
             this.pictureBox33.Name = "pictureBox33";
-            this.pictureBox33.Size = new System.Drawing.Size(33, 49);
+            this.pictureBox33.Size = new System.Drawing.Size(33, 70);
             this.pictureBox33.TabIndex = 7;
             this.pictureBox33.TabStop = false;
             this.pictureBox33.Tag = "Parede";
@@ -602,9 +609,9 @@
             // 
             // pictureBox34
             // 
-            this.pictureBox34.Location = new System.Drawing.Point(937, 227);
+            this.pictureBox34.Location = new System.Drawing.Point(946, 227);
             this.pictureBox34.Name = "pictureBox34";
-            this.pictureBox34.Size = new System.Drawing.Size(150, 5);
+            this.pictureBox34.Size = new System.Drawing.Size(141, 21);
             this.pictureBox34.TabIndex = 9;
             this.pictureBox34.TabStop = false;
             this.pictureBox34.Tag = "Parede";
@@ -612,9 +619,9 @@
             // 
             // pictureBox35
             // 
-            this.pictureBox35.Location = new System.Drawing.Point(1013, 421);
+            this.pictureBox35.Location = new System.Drawing.Point(1020, 421);
             this.pictureBox35.Name = "pictureBox35";
-            this.pictureBox35.Size = new System.Drawing.Size(118, 5);
+            this.pictureBox35.Size = new System.Drawing.Size(99, 24);
             this.pictureBox35.TabIndex = 6;
             this.pictureBox35.TabStop = false;
             this.pictureBox35.Tag = "Parede";
@@ -622,9 +629,9 @@
             // 
             // pictureBox36
             // 
-            this.pictureBox36.Location = new System.Drawing.Point(629, 375);
+            this.pictureBox36.Location = new System.Drawing.Point(660, 375);
             this.pictureBox36.Name = "pictureBox36";
-            this.pictureBox36.Size = new System.Drawing.Size(571, 5);
+            this.pictureBox36.Size = new System.Drawing.Size(241, 21);
             this.pictureBox36.TabIndex = 6;
             this.pictureBox36.TabStop = false;
             this.pictureBox36.Tag = "Parede";
@@ -634,7 +641,7 @@
             // 
             this.pictureBox37.Location = new System.Drawing.Point(688, 325);
             this.pictureBox37.Name = "pictureBox37";
-            this.pictureBox37.Size = new System.Drawing.Size(170, 5);
+            this.pictureBox37.Size = new System.Drawing.Size(140, 23);
             this.pictureBox37.TabIndex = 9;
             this.pictureBox37.TabStop = false;
             this.pictureBox37.Tag = "Parede";
@@ -642,9 +649,9 @@
             // 
             // pictureBox38
             // 
-            this.pictureBox38.Location = new System.Drawing.Point(1070, 545);
+            this.pictureBox38.Location = new System.Drawing.Point(1094, 547);
             this.pictureBox38.Name = "pictureBox38";
-            this.pictureBox38.Size = new System.Drawing.Size(70, 5);
+            this.pictureBox38.Size = new System.Drawing.Size(26, 22);
             this.pictureBox38.TabIndex = 6;
             this.pictureBox38.TabStop = false;
             this.pictureBox38.Tag = "Parede";
@@ -652,9 +659,9 @@
             // 
             // pictureBox39
             // 
-            this.pictureBox39.Location = new System.Drawing.Point(834, 181);
+            this.pictureBox39.Location = new System.Drawing.Point(834, 207);
             this.pictureBox39.Name = "pictureBox39";
-            this.pictureBox39.Size = new System.Drawing.Size(33, 150);
+            this.pictureBox39.Size = new System.Drawing.Size(33, 142);
             this.pictureBox39.TabIndex = 7;
             this.pictureBox39.TabStop = false;
             this.pictureBox39.Tag = "Parede";
@@ -662,9 +669,9 @@
             // 
             // pictureBox40
             // 
-            this.pictureBox40.Location = new System.Drawing.Point(937, 272);
+            this.pictureBox40.Location = new System.Drawing.Point(946, 272);
             this.pictureBox40.Name = "pictureBox40";
-            this.pictureBox40.Size = new System.Drawing.Size(190, 5);
+            this.pictureBox40.Size = new System.Drawing.Size(173, 25);
             this.pictureBox40.TabIndex = 9;
             this.pictureBox40.TabStop = false;
             this.pictureBox40.Tag = "Parede";
@@ -674,7 +681,7 @@
             // 
             this.pictureBox41.Location = new System.Drawing.Point(688, 226);
             this.pictureBox41.Name = "pictureBox41";
-            this.pictureBox41.Size = new System.Drawing.Size(103, 5);
+            this.pictureBox41.Size = new System.Drawing.Size(69, 23);
             this.pictureBox41.TabIndex = 10;
             this.pictureBox41.TabStop = false;
             this.pictureBox41.Tag = "Parede";
@@ -684,7 +691,7 @@
             // 
             this.pictureBox42.Location = new System.Drawing.Point(401, 421);
             this.pictureBox42.Name = "pictureBox42";
-            this.pictureBox42.Size = new System.Drawing.Size(448, 5);
+            this.pictureBox42.Size = new System.Drawing.Size(427, 24);
             this.pictureBox42.TabIndex = 11;
             this.pictureBox42.TabStop = false;
             this.pictureBox42.Tag = "Parede";
@@ -692,9 +699,9 @@
             // 
             // pictureBox43
             // 
-            this.pictureBox43.Location = new System.Drawing.Point(359, 473);
+            this.pictureBox43.Location = new System.Drawing.Point(370, 473);
             this.pictureBox43.Name = "pictureBox43";
-            this.pictureBox43.Size = new System.Drawing.Size(369, 5);
+            this.pictureBox43.Size = new System.Drawing.Size(358, 26);
             this.pictureBox43.TabIndex = 12;
             this.pictureBox43.TabStop = false;
             this.pictureBox43.Tag = "Parede";
@@ -702,9 +709,9 @@
             // 
             // pictureBox44
             // 
-            this.pictureBox44.Location = new System.Drawing.Point(331, 524);
+            this.pictureBox44.Location = new System.Drawing.Point(370, 524);
             this.pictureBox44.Name = "pictureBox44";
-            this.pictureBox44.Size = new System.Drawing.Size(464, 5);
+            this.pictureBox44.Size = new System.Drawing.Size(425, 26);
             this.pictureBox44.TabIndex = 13;
             this.pictureBox44.TabStop = false;
             this.pictureBox44.Tag = "Parede";
@@ -712,9 +719,9 @@
             // 
             // pictureBox45
             // 
-            this.pictureBox45.Location = new System.Drawing.Point(259, 573);
+            this.pictureBox45.Location = new System.Drawing.Point(257, 573);
             this.pictureBox45.Name = "pictureBox45";
-            this.pictureBox45.Size = new System.Drawing.Size(464, 5);
+            this.pictureBox45.Size = new System.Drawing.Size(430, 27);
             this.pictureBox45.TabIndex = 14;
             this.pictureBox45.TabStop = false;
             this.pictureBox45.Tag = "Parede";
@@ -722,9 +729,9 @@
             // 
             // pictureBox46
             // 
-            this.pictureBox46.Location = new System.Drawing.Point(216, 628);
+            this.pictureBox46.Location = new System.Drawing.Point(222, 628);
             this.pictureBox46.Name = "pictureBox46";
-            this.pictureBox46.Size = new System.Drawing.Size(509, 5);
+            this.pictureBox46.Size = new System.Drawing.Size(503, 23);
             this.pictureBox46.TabIndex = 15;
             this.pictureBox46.TabStop = false;
             this.pictureBox46.Tag = "Parede";
@@ -732,9 +739,9 @@
             // 
             // pictureBox47
             // 
-            this.pictureBox47.Location = new System.Drawing.Point(198, 675);
+            this.pictureBox47.Location = new System.Drawing.Point(183, 675);
             this.pictureBox47.Name = "pictureBox47";
-            this.pictureBox47.Size = new System.Drawing.Size(735, 5);
+            this.pictureBox47.Size = new System.Drawing.Size(757, 27);
             this.pictureBox47.TabIndex = 16;
             this.pictureBox47.TabStop = false;
             this.pictureBox47.Tag = "Parede";
@@ -742,9 +749,9 @@
             // 
             // pictureBox48
             // 
-            this.pictureBox48.Location = new System.Drawing.Point(925, 327);
+            this.pictureBox48.Location = new System.Drawing.Point(946, 327);
             this.pictureBox48.Name = "pictureBox48";
-            this.pictureBox48.Size = new System.Drawing.Size(234, 5);
+            this.pictureBox48.Size = new System.Drawing.Size(213, 21);
             this.pictureBox48.TabIndex = 17;
             this.pictureBox48.TabStop = false;
             this.pictureBox48.Tag = "Parede";
@@ -752,9 +759,9 @@
             // 
             // pictureBox49
             // 
-            this.pictureBox49.Location = new System.Drawing.Point(143, 350);
+            this.pictureBox49.Location = new System.Drawing.Point(111, 350);
             this.pictureBox49.Name = "pictureBox49";
-            this.pictureBox49.Size = new System.Drawing.Size(118, 5);
+            this.pictureBox49.Size = new System.Drawing.Size(214, 26);
             this.pictureBox49.TabIndex = 18;
             this.pictureBox49.TabStop = false;
             this.pictureBox49.Tag = "Parede";
@@ -762,9 +769,9 @@
             // 
             // pictureBox50
             // 
-            this.pictureBox50.Location = new System.Drawing.Point(47, 400);
+            this.pictureBox50.Location = new System.Drawing.Point(71, 400);
             this.pictureBox50.Name = "pictureBox50";
-            this.pictureBox50.Size = new System.Drawing.Size(235, 5);
+            this.pictureBox50.Size = new System.Drawing.Size(180, 25);
             this.pictureBox50.TabIndex = 19;
             this.pictureBox50.TabStop = false;
             this.pictureBox50.Tag = "Parede";
@@ -774,11 +781,31 @@
             // 
             this.pictureBox51.Location = new System.Drawing.Point(106, 449);
             this.pictureBox51.Name = "pictureBox51";
-            this.pictureBox51.Size = new System.Drawing.Size(109, 5);
+            this.pictureBox51.Size = new System.Drawing.Size(109, 25);
             this.pictureBox51.TabIndex = 20;
             this.pictureBox51.TabStop = false;
             this.pictureBox51.Tag = "Parede";
             this.pictureBox51.Visible = false;
+            // 
+            // PbxColision
+            // 
+            this.PbxColision.BackColor = System.Drawing.Color.Cyan;
+            this.PbxColision.Location = new System.Drawing.Point(46, 161);
+            this.PbxColision.Name = "PbxColision";
+            this.PbxColision.Size = new System.Drawing.Size(15, 15);
+            this.PbxColision.TabIndex = 21;
+            this.PbxColision.TabStop = false;
+            this.PbxColision.Tag = "Colision";
+            // 
+            // pictureBox52
+            // 
+            this.pictureBox52.Location = new System.Drawing.Point(946, 373);
+            this.pictureBox52.Name = "pictureBox52";
+            this.pictureBox52.Size = new System.Drawing.Size(246, 21);
+            this.pictureBox52.TabIndex = 6;
+            this.pictureBox52.TabStop = false;
+            this.pictureBox52.Tag = "Parede";
+            this.pictureBox52.Visible = false;
             // 
             // FrmJogo
             // 
@@ -790,6 +817,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1265, 952);
+            this.Controls.Add(this.PbxColision);
             this.Controls.Add(this.pictureBox51);
             this.Controls.Add(this.pictureBox50);
             this.Controls.Add(this.pictureBox49);
@@ -832,6 +860,7 @@
             this.Controls.Add(this.pictureBox16);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox30);
+            this.Controls.Add(this.pictureBox52);
             this.Controls.Add(this.pictureBox36);
             this.Controls.Add(this.pictureBox38);
             this.Controls.Add(this.pictureBox35);
@@ -911,6 +940,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxColision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -980,6 +1011,8 @@
         private System.Windows.Forms.PictureBox pictureBox49;
         private System.Windows.Forms.PictureBox pictureBox50;
         private System.Windows.Forms.PictureBox pictureBox51;
+        private System.Windows.Forms.PictureBox PbxColision;
+        private System.Windows.Forms.PictureBox pictureBox52;
     }
 }
 
