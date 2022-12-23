@@ -31,16 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJogo));
             this.PnlMenu = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.PbxFases = new System.Windows.Forms.PictureBox();
-            this.PbxPersonagem = new System.Windows.Forms.PictureBox();
+            this.PBX_Sair = new System.Windows.Forms.PictureBox();
+            this.PBX_Opcoes = new System.Windows.Forms.PictureBox();
+            this.PBX_Jogar = new System.Windows.Forms.PictureBox();
             this.TmrAndar = new System.Windows.Forms.Timer(this.components);
             this.labelX = new System.Windows.Forms.Label();
             this.labelY = new System.Windows.Forms.Label();
             this.LblX = new System.Windows.Forms.Label();
             this.LblY = new System.Windows.Forms.Label();
+            this.PbxPersonagem = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxFases)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Opcoes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,39 +53,58 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PnlMenu.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.PnlMenu.Controls.Add(this.label1);
-            this.PnlMenu.Location = new System.Drawing.Point(943, 586);
+            this.PnlMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PnlMenu.BackgroundImage")));
+            this.PnlMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PnlMenu.Controls.Add(this.PBX_Sair);
+            this.PnlMenu.Controls.Add(this.PBX_Opcoes);
+            this.PnlMenu.Controls.Add(this.PBX_Jogar);
+            this.PnlMenu.Location = new System.Drawing.Point(12, 12);
             this.PnlMenu.Name = "PnlMenu";
-            this.PnlMenu.Size = new System.Drawing.Size(1123, 696);
+            this.PnlMenu.Size = new System.Drawing.Size(850, 800);
             this.PnlMenu.TabIndex = 1;
             // 
-            // label1
+            // PBX_Sair
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 55);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Menu";
+            this.PBX_Sair.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_Sair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_Sair.BackgroundImage")));
+            this.PBX_Sair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PBX_Sair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_Sair.Location = new System.Drawing.Point(307, 538);
+            this.PBX_Sair.Name = "PBX_Sair";
+            this.PBX_Sair.Size = new System.Drawing.Size(220, 120);
+            this.PBX_Sair.TabIndex = 2;
+            this.PBX_Sair.TabStop = false;
+            this.PBX_Sair.MouseLeave += new System.EventHandler(this.PBX_Sair_MouseLeave);
+            this.PBX_Sair.MouseHover += new System.EventHandler(this.PBX_Sair_MouseHover);
             // 
-            // PbxFases
+            // PBX_Opcoes
             // 
-            this.PbxFases.Image = ((System.Drawing.Image)(resources.GetObject("PbxFases.Image")));
-            this.PbxFases.Location = new System.Drawing.Point(179, 68);
-            this.PbxFases.Name = "PbxFases";
-            this.PbxFases.Size = new System.Drawing.Size(758, 550);
-            this.PbxFases.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.PbxFases.TabIndex = 2;
-            this.PbxFases.TabStop = false;
+            this.PBX_Opcoes.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_Opcoes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_Opcoes.BackgroundImage")));
+            this.PBX_Opcoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PBX_Opcoes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_Opcoes.Location = new System.Drawing.Point(307, 393);
+            this.PBX_Opcoes.Name = "PBX_Opcoes";
+            this.PBX_Opcoes.Size = new System.Drawing.Size(220, 120);
+            this.PBX_Opcoes.TabIndex = 1;
+            this.PBX_Opcoes.TabStop = false;
+            this.PBX_Opcoes.MouseLeave += new System.EventHandler(this.PBX_Opcoes_MouseLeave);
+            this.PBX_Opcoes.MouseHover += new System.EventHandler(this.PBX_Opcoes_MouseHover);
             // 
-            // PbxPersonagem
+            // PBX_Jogar
             // 
-            this.PbxPersonagem.Location = new System.Drawing.Point(212, 86);
-            this.PbxPersonagem.Name = "PbxPersonagem";
-            this.PbxPersonagem.Size = new System.Drawing.Size(32, 33);
-            this.PbxPersonagem.TabIndex = 3;
-            this.PbxPersonagem.TabStop = false;
+            this.PBX_Jogar.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_Jogar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_Jogar.BackgroundImage")));
+            this.PBX_Jogar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PBX_Jogar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_Jogar.Location = new System.Drawing.Point(307, 249);
+            this.PBX_Jogar.Name = "PBX_Jogar";
+            this.PBX_Jogar.Size = new System.Drawing.Size(220, 120);
+            this.PBX_Jogar.TabIndex = 0;
+            this.PBX_Jogar.TabStop = false;
+            this.PBX_Jogar.Click += new System.EventHandler(this.PBX_Jogar_Click);
+            this.PBX_Jogar.MouseLeave += new System.EventHandler(this.PBX_Jogar_MouseLeave);
+            this.PBX_Jogar.MouseHover += new System.EventHandler(this.PBX_Jogar_MouseHover);
             // 
             // TmrAndar
             // 
@@ -91,7 +113,7 @@
             // labelX
             // 
             this.labelX.AutoSize = true;
-            this.labelX.Location = new System.Drawing.Point(35, 148);
+            this.labelX.Location = new System.Drawing.Point(24, 344);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(55, 13);
             this.labelX.TabIndex = 4;
@@ -124,28 +146,44 @@
             this.LblY.TabIndex = 4;
             this.LblY.Text = "Y";
             // 
+            // PbxPersonagem
+            // 
+            this.PbxPersonagem.BackColor = System.Drawing.Color.Transparent;
+            this.PbxPersonagem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbxPersonagem.BackgroundImage")));
+            this.PbxPersonagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbxPersonagem.Location = new System.Drawing.Point(38, 91);
+            this.PbxPersonagem.Name = "PbxPersonagem";
+            this.PbxPersonagem.Size = new System.Drawing.Size(32, 33);
+            this.PbxPersonagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxPersonagem.TabIndex = 3;
+            this.PbxPersonagem.TabStop = false;
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(1116, 687);
+            this.BackColor = System.Drawing.Color.DarkGreen;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(834, 761);
+            this.Controls.Add(this.PnlMenu);
             this.Controls.Add(this.LblY);
             this.Controls.Add(this.LblX);
             this.Controls.Add(this.labelY);
             this.Controls.Add(this.labelX);
             this.Controls.Add(this.PbxPersonagem);
-            this.Controls.Add(this.PbxFases);
-            this.Controls.Add(this.PnlMenu);
+            this.DoubleBuffered = true;
             this.Name = "FrmJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jogo Matemática 3°ano";
             this.Load += new System.EventHandler(this.FrmJogo_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmJogo_KeyPress);
             this.PnlMenu.ResumeLayout(false);
-            this.PnlMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxFases)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Opcoes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -155,13 +193,15 @@
         #endregion
         private System.Windows.Forms.Panel PnlMenu;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox PbxFases;
-        private System.Windows.Forms.PictureBox PbxPersonagem;
         private System.Windows.Forms.Timer TmrAndar;
         private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.Label labelY;
         private System.Windows.Forms.Label LblX;
         private System.Windows.Forms.Label LblY;
+        private System.Windows.Forms.PictureBox PbxPersonagem;
+        private System.Windows.Forms.PictureBox PBX_Sair;
+        private System.Windows.Forms.PictureBox PBX_Opcoes;
+        private System.Windows.Forms.PictureBox PBX_Jogar;
     }
 }
 

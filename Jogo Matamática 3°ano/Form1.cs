@@ -54,6 +54,7 @@ namespace Jogo_Matamática_3_ano
         {
             InitializeComponent();
         }
+
         #region Controles
         private void FrmJogo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -92,7 +93,7 @@ namespace Jogo_Matamática_3_ano
         private void FrmJogo_Load(object sender, EventArgs e)
         {
             PnlMenu.Location = new Point(0, 0);
-            PnlMenu.Visible = false;
+            PnlMenu.Visible = true;
             TmrAndar.Stop();
             //Esconder posição do personagem
             labelX.Visible = false;
@@ -148,6 +149,49 @@ namespace Jogo_Matamática_3_ano
                     posLinha++;
                 }
             }
+        }
+        #endregion
+
+        #region Menu
+
+        //ENTRAR E SAIR DO JOGAR
+        private void PBX_Jogar_MouseHover(object sender, EventArgs e)
+        {
+            PBX_Jogar.Size = new Size(250, 150);
+        }
+
+        private void PBX_Jogar_MouseLeave(object sender, EventArgs e)
+        {
+            PBX_Jogar.Size = new Size(220, 120);
+        }
+
+
+        //ENTRAR E SAIR DO OPCOES
+        private void PBX_Opcoes_MouseHover(object sender, EventArgs e)
+        {
+            PBX_Opcoes.Size = new Size(250, 150);
+        }
+
+        private void PBX_Opcoes_MouseLeave(object sender, EventArgs e)
+        {
+            PBX_Opcoes.Size = new Size(220, 120);
+        }
+
+        //ENTRAR E SAIR DO SAIR
+        private void PBX_Sair_MouseHover(object sender, EventArgs e)
+        {
+            PBX_Sair.Size = new Size(250, 150);
+        }
+        private void PBX_Sair_MouseLeave(object sender, EventArgs e)
+        {
+            PBX_Sair.Size = new Size(220, 120);
+        }
+        #endregion
+
+        #region Click Jogar
+        private void PBX_Jogar_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
     }
