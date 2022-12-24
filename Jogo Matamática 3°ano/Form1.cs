@@ -69,6 +69,7 @@ namespace Jogo_Matamática_3_ano
 
         private void FrmJogo_KeyPress(object sender, KeyPressEventArgs e)
         {
+            int ativou = 0;
             //Ativar e desativar o Debug Mode
             if(e.KeyChar.ToString().ToLower() == "y")
             {
@@ -91,12 +92,29 @@ namespace Jogo_Matamática_3_ano
                     LblY.Visible = false;
                 }
             }
+
+            if (e.KeyChar == 27)
+            {
+                if (ativou == 0 && PNL_Pause.Enabled != false) {
+                    PNL_Pause.Visible = true;
+                    ativou = 1;
+                }
+                else
+                {
+                    PNL_Pause.Visible = false;
+                    ativou = 0;
+                }
+            }
         }
         #endregion
 
         #region Load form
         private void FrmJogo_Load(object sender, EventArgs e)
         {
+            //PAUSE
+            PNL_Pause.Visible = false;
+            PNL_Pause.Enabled = false;
+
             //FASES DESATIVADAS
             PBX_Fase2.Enabled = false;
             PBX_Fase3.Enabled = false;
@@ -290,11 +308,6 @@ namespace Jogo_Matamática_3_ano
             PBX_Fase1.Size = new Size(228, 170);
             PBX_Fase1.Location = new Point(14, 14);
         }
-        private void PBX_Fase1_Click(object sender, EventArgs e)
-        {
-            PNL_Fases.Visible = false;
-            PnlMenu.Visible = false;
-        }
         
         //ENTRAR E SAIR DA FASE 2
         private void PBX_Fase2_MouseHover(object sender, EventArgs e)
@@ -364,6 +377,15 @@ namespace Jogo_Matamática_3_ano
         private void PBX_Fase6_MouseLeave(object sender, EventArgs e)
         {
 
+        }
+        #endregion
+
+        #region Start fase 1
+        private void PBX_Fase1_Click(object sender, EventArgs e)
+        {
+            PNL_Fases.Visible = false;
+            PnlMenu.Visible = false;
+            PNL_Pause.Enabled = true;
         }
         #endregion
 

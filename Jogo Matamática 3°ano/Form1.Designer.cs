@@ -108,6 +108,7 @@
             this.pictureBox52 = new System.Windows.Forms.PictureBox();
             this.pictureBox53 = new System.Windows.Forms.PictureBox();
             this.TmrColisao = new System.Windows.Forms.Timer(this.components);
+            this.PNL_Pause = new System.Windows.Forms.Panel();
             this.PnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Opcoes)).BeginInit();
@@ -193,7 +194,7 @@
             this.PnlMenu.Controls.Add(this.PBX_Sair);
             this.PnlMenu.Controls.Add(this.PBX_Opcoes);
             this.PnlMenu.Controls.Add(this.PBX_Jogar);
-            this.PnlMenu.Location = new System.Drawing.Point(915, 810);
+            this.PnlMenu.Location = new System.Drawing.Point(937, 846);
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(1314, 1015);
             this.PnlMenu.TabIndex = 1;
@@ -312,7 +313,7 @@
             this.PNL_Fases.Controls.Add(this.panel6);
             this.PNL_Fases.Controls.Add(this.panel2);
             this.PNL_Fases.Controls.Add(this.panel1);
-            this.PNL_Fases.Location = new System.Drawing.Point(1087, 759);
+            this.PNL_Fases.Location = new System.Drawing.Point(1060, 648);
             this.PNL_Fases.Name = "PNL_Fases";
             this.PNL_Fases.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Fases.TabIndex = 3;
@@ -1064,6 +1065,13 @@
             this.TmrColisao.Interval = 1;
             this.TmrColisao.Tick += new System.EventHandler(this.TmrColisao_Tick);
             // 
+            // PNL_Pause
+            // 
+            this.PNL_Pause.Location = new System.Drawing.Point(1035, 751);
+            this.PNL_Pause.Name = "PNL_Pause";
+            this.PNL_Pause.Size = new System.Drawing.Size(200, 100);
+            this.PNL_Pause.TabIndex = 7;
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1074,6 +1082,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.Controls.Add(this.PNL_Pause);
             this.Controls.Add(this.PNL_Fases);
             this.Controls.Add(this.PnlMenu);
             this.Controls.Add(this.PbxColision);
@@ -1301,6 +1310,7 @@
         private System.Windows.Forms.PictureBox pictureBox52;
         private System.Windows.Forms.PictureBox pictureBox53;
         private System.Windows.Forms.Timer TmrColisao;
+        private System.Windows.Forms.Panel PNL_Pause;
     }
 }
 
