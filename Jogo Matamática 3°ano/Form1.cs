@@ -102,8 +102,6 @@ namespace Jogo_Matamática_3_ano
                 if (ativouMenu == 0 && PNL_Pause.Enabled != false) {
                     PNL_Pause.Visible = true;
                     PNL_Pause.Location = new Point(0, 0);
-                    PBX_fundoPause.Location = new Point(0, 0);
-                    PBX_fundoPause.Size = new Size(1314, 1015);
                     ativouMenu = 1;
                 }else if (ativouMenu == 1)
                 {
@@ -468,6 +466,51 @@ namespace Jogo_Matamática_3_ano
         private void PBX_Jogar_Click(object sender, EventArgs e)
         {
             PNL_Fases.Visible = true;
+        }
+        #endregion
+
+        #region Fechar Jogo
+        //SAIR ATRAVES DO INICIO DO JOGO
+        private void PBX_Sair_Click(object sender, EventArgs e)
+        {
+            PNL_SairInicio.Visible = true;
+        }
+
+        private void PBX_SimInicio_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void PBX_NaoInicio_Click(object sender, EventArgs e)
+        {
+            PNL_SairInicio.Visible = false;
+        }
+
+
+        //SAIR ATRAVES DO MENU DE PAUSE
+        private void PBX_SairPause_Click(object sender, EventArgs e)
+        {
+            PNL_Sair.Visible = true;
+        }
+        private void BTN_NaoSair_Click(object sender, EventArgs e)
+        {
+            PNL_Sair.Visible = false;
+        }
+
+        private void BTN_SimSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        private void FrmJogo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+        #endregion
+
+        #region Continuar jogando
+        private void PBX_Continuar_Click(object sender, EventArgs e)
+        {
+            PNL_Pause.Visible = false;
         }
         #endregion
     }

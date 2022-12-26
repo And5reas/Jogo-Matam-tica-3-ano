@@ -109,10 +109,19 @@
             this.pictureBox53 = new System.Windows.Forms.PictureBox();
             this.TmrColisao = new System.Windows.Forms.Timer(this.components);
             this.PNL_Pause = new System.Windows.Forms.Panel();
-            this.PBX_fundoPause = new System.Windows.Forms.PictureBox();
+            this.PNL_InfoPause = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.PBX_Continuar = new System.Windows.Forms.PictureBox();
-            this.PBX_Inicio = new System.Windows.Forms.PictureBox();
             this.PBX_SairPause = new System.Windows.Forms.PictureBox();
+            this.PBX_Inicio = new System.Windows.Forms.PictureBox();
+            this.PNL_Sair = new System.Windows.Forms.Panel();
+            this.BTN_SimSair = new System.Windows.Forms.PictureBox();
+            this.BTN_NaoSair = new System.Windows.Forms.PictureBox();
+            this.pictureBox54 = new System.Windows.Forms.PictureBox();
+            this.PNL_SairInicio = new System.Windows.Forms.Panel();
+            this.pictureBox55 = new System.Windows.Forms.PictureBox();
+            this.PBX_NaoInicio = new System.Windows.Forms.PictureBox();
+            this.PBX_SimInicio = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Opcoes)).BeginInit();
@@ -186,10 +195,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).BeginInit();
             this.PNL_Pause.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_fundoPause)).BeginInit();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Continuar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Inicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_SairPause)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Inicio)).BeginInit();
+            this.PNL_Sair.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BTN_SimSair)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BTN_NaoSair)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).BeginInit();
+            this.PNL_SairInicio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_NaoInicio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_SimInicio)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -200,10 +217,11 @@
             this.PnlMenu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.PnlMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PnlMenu.BackgroundImage")));
             this.PnlMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PnlMenu.Controls.Add(this.PNL_SairInicio);
             this.PnlMenu.Controls.Add(this.PBX_Sair);
             this.PnlMenu.Controls.Add(this.PBX_Opcoes);
             this.PnlMenu.Controls.Add(this.PBX_Jogar);
-            this.PnlMenu.Location = new System.Drawing.Point(577, 897);
+            this.PnlMenu.Location = new System.Drawing.Point(1169, 659);
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(1314, 1015);
             this.PnlMenu.TabIndex = 1;
@@ -219,6 +237,7 @@
             this.PBX_Sair.Size = new System.Drawing.Size(220, 120);
             this.PBX_Sair.TabIndex = 2;
             this.PBX_Sair.TabStop = false;
+            this.PBX_Sair.Click += new System.EventHandler(this.PBX_Sair_Click);
             this.PBX_Sair.MouseLeave += new System.EventHandler(this.PBX_Sair_MouseLeave);
             this.PBX_Sair.MouseHover += new System.EventHandler(this.PBX_Sair_MouseHover);
             // 
@@ -321,7 +340,7 @@
             this.PNL_Fases.Controls.Add(this.panel6);
             this.PNL_Fases.Controls.Add(this.panel2);
             this.PNL_Fases.Controls.Add(this.panel1);
-            this.PNL_Fases.Location = new System.Drawing.Point(646, 789);
+            this.PNL_Fases.Location = new System.Drawing.Point(1131, 871);
             this.PNL_Fases.Name = "PNL_Fases";
             this.PNL_Fases.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Fases.TabIndex = 3;
@@ -1075,28 +1094,36 @@
             // 
             // PNL_Pause
             // 
-            this.PNL_Pause.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.PNL_Pause.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_Pause.BackgroundImage")));
+            this.PNL_Pause.BackColor = System.Drawing.Color.Transparent;
             this.PNL_Pause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PNL_Pause.Controls.Add(this.PBX_SairPause);
-            this.PNL_Pause.Controls.Add(this.PBX_Inicio);
-            this.PNL_Pause.Controls.Add(this.PBX_Continuar);
-            this.PNL_Pause.Controls.Add(this.PBX_fundoPause);
-            this.PNL_Pause.Location = new System.Drawing.Point(283, 928);
+            this.PNL_Pause.Controls.Add(this.PNL_InfoPause);
+            this.PNL_Pause.Controls.Add(this.panel7);
+            this.PNL_Pause.Location = new System.Drawing.Point(1220, 280);
             this.PNL_Pause.Name = "PNL_Pause";
             this.PNL_Pause.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Pause.TabIndex = 7;
             // 
-            // PBX_fundoPause
+            // PNL_InfoPause
             // 
-            this.PBX_fundoPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBX_fundoPause.Image = ((System.Drawing.Image)(resources.GetObject("PBX_fundoPause.Image")));
-            this.PBX_fundoPause.Location = new System.Drawing.Point(0, 3);
-            this.PBX_fundoPause.Name = "PBX_fundoPause";
-            this.PBX_fundoPause.Size = new System.Drawing.Size(300, 300);
-            this.PBX_fundoPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBX_fundoPause.TabIndex = 0;
-            this.PBX_fundoPause.TabStop = false;
+            this.PNL_InfoPause.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_InfoPause.BackgroundImage")));
+            this.PNL_InfoPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PNL_InfoPause.Location = new System.Drawing.Point(227, 710);
+            this.PNL_InfoPause.Name = "PNL_InfoPause";
+            this.PNL_InfoPause.Size = new System.Drawing.Size(846, 196);
+            this.PNL_InfoPause.TabIndex = 5;
+            // 
+            // panel7
+            // 
+            this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel7.Controls.Add(this.PNL_Sair);
+            this.panel7.Controls.Add(this.PBX_Continuar);
+            this.panel7.Controls.Add(this.PBX_SairPause);
+            this.panel7.Controls.Add(this.PBX_Inicio);
+            this.panel7.Location = new System.Drawing.Point(273, 118);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(760, 665);
+            this.panel7.TabIndex = 4;
             // 
             // PBX_Continuar
             // 
@@ -1104,23 +1131,12 @@
             this.PBX_Continuar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_Continuar.BackgroundImage")));
             this.PBX_Continuar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PBX_Continuar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_Continuar.Location = new System.Drawing.Point(550, 328);
+            this.PBX_Continuar.Location = new System.Drawing.Point(289, 102);
             this.PBX_Continuar.Name = "PBX_Continuar";
             this.PBX_Continuar.Size = new System.Drawing.Size(220, 120);
             this.PBX_Continuar.TabIndex = 1;
             this.PBX_Continuar.TabStop = false;
-            // 
-            // PBX_Inicio
-            // 
-            this.PBX_Inicio.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_Inicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_Inicio.BackgroundImage")));
-            this.PBX_Inicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBX_Inicio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_Inicio.Location = new System.Drawing.Point(550, 499);
-            this.PBX_Inicio.Name = "PBX_Inicio";
-            this.PBX_Inicio.Size = new System.Drawing.Size(220, 120);
-            this.PBX_Inicio.TabIndex = 2;
-            this.PBX_Inicio.TabStop = false;
+            this.PBX_Continuar.Click += new System.EventHandler(this.PBX_Continuar_Click);
             // 
             // PBX_SairPause
             // 
@@ -1128,11 +1144,123 @@
             this.PBX_SairPause.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_SairPause.BackgroundImage")));
             this.PBX_SairPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PBX_SairPause.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_SairPause.Location = new System.Drawing.Point(550, 680);
+            this.PBX_SairPause.Location = new System.Drawing.Point(289, 419);
             this.PBX_SairPause.Name = "PBX_SairPause";
             this.PBX_SairPause.Size = new System.Drawing.Size(220, 120);
             this.PBX_SairPause.TabIndex = 3;
             this.PBX_SairPause.TabStop = false;
+            this.PBX_SairPause.Click += new System.EventHandler(this.PBX_SairPause_Click);
+            // 
+            // PBX_Inicio
+            // 
+            this.PBX_Inicio.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_Inicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_Inicio.BackgroundImage")));
+            this.PBX_Inicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PBX_Inicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_Inicio.Location = new System.Drawing.Point(289, 261);
+            this.PBX_Inicio.Name = "PBX_Inicio";
+            this.PBX_Inicio.Size = new System.Drawing.Size(220, 120);
+            this.PBX_Inicio.TabIndex = 2;
+            this.PBX_Inicio.TabStop = false;
+            // 
+            // PNL_Sair
+            // 
+            this.PNL_Sair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_Sair.BackgroundImage")));
+            this.PNL_Sair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PNL_Sair.Controls.Add(this.pictureBox54);
+            this.PNL_Sair.Controls.Add(this.BTN_NaoSair);
+            this.PNL_Sair.Controls.Add(this.BTN_SimSair);
+            this.PNL_Sair.Location = new System.Drawing.Point(3, 3);
+            this.PNL_Sair.Name = "PNL_Sair";
+            this.PNL_Sair.Size = new System.Drawing.Size(757, 680);
+            this.PNL_Sair.TabIndex = 5;
+            this.PNL_Sair.Visible = false;
+            // 
+            // BTN_SimSair
+            // 
+            this.BTN_SimSair.BackColor = System.Drawing.Color.Transparent;
+            this.BTN_SimSair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTN_SimSair.BackgroundImage")));
+            this.BTN_SimSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTN_SimSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_SimSair.Location = new System.Drawing.Point(114, 344);
+            this.BTN_SimSair.Name = "BTN_SimSair";
+            this.BTN_SimSair.Size = new System.Drawing.Size(220, 120);
+            this.BTN_SimSair.TabIndex = 6;
+            this.BTN_SimSair.TabStop = false;
+            this.BTN_SimSair.Click += new System.EventHandler(this.BTN_SimSair_Click);
+            // 
+            // BTN_NaoSair
+            // 
+            this.BTN_NaoSair.BackColor = System.Drawing.Color.Transparent;
+            this.BTN_NaoSair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTN_NaoSair.BackgroundImage")));
+            this.BTN_NaoSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTN_NaoSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_NaoSair.Location = new System.Drawing.Point(435, 344);
+            this.BTN_NaoSair.Name = "BTN_NaoSair";
+            this.BTN_NaoSair.Size = new System.Drawing.Size(220, 120);
+            this.BTN_NaoSair.TabIndex = 7;
+            this.BTN_NaoSair.TabStop = false;
+            this.BTN_NaoSair.Click += new System.EventHandler(this.BTN_NaoSair_Click);
+            // 
+            // pictureBox54
+            // 
+            this.pictureBox54.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox54.Image")));
+            this.pictureBox54.Location = new System.Drawing.Point(66, 148);
+            this.pictureBox54.Name = "pictureBox54";
+            this.pictureBox54.Size = new System.Drawing.Size(674, 152);
+            this.pictureBox54.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox54.TabIndex = 8;
+            this.pictureBox54.TabStop = false;
+            // 
+            // PNL_SairInicio
+            // 
+            this.PNL_SairInicio.BackColor = System.Drawing.Color.Transparent;
+            this.PNL_SairInicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_SairInicio.BackgroundImage")));
+            this.PNL_SairInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PNL_SairInicio.Controls.Add(this.pictureBox55);
+            this.PNL_SairInicio.Controls.Add(this.PBX_NaoInicio);
+            this.PNL_SairInicio.Controls.Add(this.PBX_SimInicio);
+            this.PNL_SairInicio.Location = new System.Drawing.Point(279, 167);
+            this.PNL_SairInicio.Name = "PNL_SairInicio";
+            this.PNL_SairInicio.Size = new System.Drawing.Size(757, 680);
+            this.PNL_SairInicio.TabIndex = 8;
+            this.PNL_SairInicio.Visible = false;
+            // 
+            // pictureBox55
+            // 
+            this.pictureBox55.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox55.Image")));
+            this.pictureBox55.Location = new System.Drawing.Point(65, 162);
+            this.pictureBox55.Name = "pictureBox55";
+            this.pictureBox55.Size = new System.Drawing.Size(674, 152);
+            this.pictureBox55.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox55.TabIndex = 8;
+            this.pictureBox55.TabStop = false;
+            // 
+            // PBX_NaoInicio
+            // 
+            this.PBX_NaoInicio.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_NaoInicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_NaoInicio.BackgroundImage")));
+            this.PBX_NaoInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PBX_NaoInicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_NaoInicio.Location = new System.Drawing.Point(435, 344);
+            this.PBX_NaoInicio.Name = "PBX_NaoInicio";
+            this.PBX_NaoInicio.Size = new System.Drawing.Size(220, 120);
+            this.PBX_NaoInicio.TabIndex = 7;
+            this.PBX_NaoInicio.TabStop = false;
+            this.PBX_NaoInicio.Click += new System.EventHandler(this.PBX_NaoInicio_Click);
+            // 
+            // PBX_SimInicio
+            // 
+            this.PBX_SimInicio.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_SimInicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_SimInicio.BackgroundImage")));
+            this.PBX_SimInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PBX_SimInicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_SimInicio.Location = new System.Drawing.Point(114, 344);
+            this.PBX_SimInicio.Name = "PBX_SimInicio";
+            this.PBX_SimInicio.Size = new System.Drawing.Size(220, 120);
+            this.PBX_SimInicio.TabIndex = 6;
+            this.PBX_SimInicio.TabStop = false;
+            this.PBX_SimInicio.Click += new System.EventHandler(this.PBX_SimInicio_Click);
             // 
             // FrmJogo
             // 
@@ -1144,8 +1272,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
-            this.Controls.Add(this.PNL_Pause);
             this.Controls.Add(this.PNL_Fases);
+            this.Controls.Add(this.PNL_Pause);
             this.Controls.Add(this.PnlMenu);
             this.Controls.Add(this.PbxColision);
             this.Controls.Add(this.PbxPersonagem);
@@ -1211,6 +1339,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "Parede";
             this.Text = "Jogo Matemática 3°ano";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJogo_FormClosing);
             this.Load += new System.EventHandler(this.FrmJogo_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmJogo_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmJogo_KeyPress);
@@ -1288,10 +1417,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).EndInit();
             this.PNL_Pause.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_fundoPause)).EndInit();
+            this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Continuar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Inicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_SairPause)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Inicio)).EndInit();
+            this.PNL_Sair.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BTN_SimSair)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BTN_NaoSair)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).EndInit();
+            this.PNL_SairInicio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_NaoInicio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_SimInicio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1378,10 +1515,19 @@
         private System.Windows.Forms.PictureBox pictureBox53;
         private System.Windows.Forms.Timer TmrColisao;
         private System.Windows.Forms.Panel PNL_Pause;
-        private System.Windows.Forms.PictureBox PBX_fundoPause;
         private System.Windows.Forms.PictureBox PBX_SairPause;
         private System.Windows.Forms.PictureBox PBX_Inicio;
         private System.Windows.Forms.PictureBox PBX_Continuar;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel PNL_InfoPause;
+        private System.Windows.Forms.Panel PNL_Sair;
+        private System.Windows.Forms.PictureBox BTN_NaoSair;
+        private System.Windows.Forms.PictureBox BTN_SimSair;
+        private System.Windows.Forms.PictureBox pictureBox54;
+        private System.Windows.Forms.Panel PNL_SairInicio;
+        private System.Windows.Forms.PictureBox pictureBox55;
+        private System.Windows.Forms.PictureBox PBX_NaoInicio;
+        private System.Windows.Forms.PictureBox PBX_SimInicio;
     }
 }
 
