@@ -15,6 +15,9 @@ namespace Jogo_Matamática_3_ano
     public partial class FrmJogo : Form
     {
         #region Variáveis Globais
+        //MENU
+        int ativouMenu = 0;
+
         int andarQtdPx = 6,
             DebugSwith,
             posXPlayer, posYPlayer, posXColision, posYColision, posX2Player, posY2Player,
@@ -71,7 +74,6 @@ namespace Jogo_Matamática_3_ano
 
         private void FrmJogo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            int ativou = 0;
             //Ativar e desativar o Debug Mode
             if(e.KeyChar.ToString().ToLower() == "y")
             {
@@ -97,14 +99,16 @@ namespace Jogo_Matamática_3_ano
 
             if (e.KeyChar == 27)
             {
-                if (ativou == 0 && PNL_Pause.Enabled != false) {
+                if (ativouMenu == 0 && PNL_Pause.Enabled != false) {
                     PNL_Pause.Visible = true;
-                    ativou = 1;
-                }
-                else
+                    PNL_Pause.Location = new Point(0, 0);
+                    PBX_fundoPause.Location = new Point(0, 0);
+                    PBX_fundoPause.Size = new Size(1314, 1015);
+                    ativouMenu = 1;
+                }else if (ativouMenu == 1)
                 {
                     PNL_Pause.Visible = false;
-                    ativou = 0;
+                    ativouMenu = 0;
                 }
             }
         }
