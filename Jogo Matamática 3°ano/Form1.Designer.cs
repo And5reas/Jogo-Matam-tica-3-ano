@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJogo));
             this.PnlMenu = new System.Windows.Forms.Panel();
+            this.PNL_SairInicio = new System.Windows.Forms.Panel();
+            this.pictureBox55 = new System.Windows.Forms.PictureBox();
+            this.PBX_NaoInicio = new System.Windows.Forms.PictureBox();
+            this.PBX_SimInicio = new System.Windows.Forms.PictureBox();
             this.PBX_Sair = new System.Windows.Forms.PictureBox();
             this.PBX_Opcoes = new System.Windows.Forms.PictureBox();
             this.PBX_Jogar = new System.Windows.Forms.PictureBox();
@@ -111,18 +115,18 @@
             this.PNL_Pause = new System.Windows.Forms.Panel();
             this.PNL_InfoPause = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.PNL_Sair = new System.Windows.Forms.Panel();
+            this.pictureBox54 = new System.Windows.Forms.PictureBox();
+            this.BTN_NaoSair = new System.Windows.Forms.PictureBox();
+            this.BTN_SimSair = new System.Windows.Forms.PictureBox();
             this.PBX_Continuar = new System.Windows.Forms.PictureBox();
             this.PBX_SairPause = new System.Windows.Forms.PictureBox();
             this.PBX_Inicio = new System.Windows.Forms.PictureBox();
-            this.PNL_Sair = new System.Windows.Forms.Panel();
-            this.BTN_SimSair = new System.Windows.Forms.PictureBox();
-            this.BTN_NaoSair = new System.Windows.Forms.PictureBox();
-            this.pictureBox54 = new System.Windows.Forms.PictureBox();
-            this.PNL_SairInicio = new System.Windows.Forms.Panel();
-            this.pictureBox55 = new System.Windows.Forms.PictureBox();
-            this.PBX_NaoInicio = new System.Windows.Forms.PictureBox();
-            this.PBX_SimInicio = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
+            this.PNL_SairInicio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_NaoInicio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_SimInicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Opcoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).BeginInit();
@@ -196,17 +200,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).BeginInit();
             this.PNL_Pause.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.PNL_Sair.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BTN_NaoSair)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BTN_SimSair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Continuar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_SairPause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Inicio)).BeginInit();
-            this.PNL_Sair.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_SimSair)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_NaoSair)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).BeginInit();
-            this.PNL_SairInicio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_NaoInicio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_SimInicio)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -221,10 +221,60 @@
             this.PnlMenu.Controls.Add(this.PBX_Sair);
             this.PnlMenu.Controls.Add(this.PBX_Opcoes);
             this.PnlMenu.Controls.Add(this.PBX_Jogar);
-            this.PnlMenu.Location = new System.Drawing.Point(1169, 659);
+            this.PnlMenu.Location = new System.Drawing.Point(1121, 769);
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(1314, 1015);
             this.PnlMenu.TabIndex = 1;
+            // 
+            // PNL_SairInicio
+            // 
+            this.PNL_SairInicio.BackColor = System.Drawing.Color.Transparent;
+            this.PNL_SairInicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_SairInicio.BackgroundImage")));
+            this.PNL_SairInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PNL_SairInicio.Controls.Add(this.pictureBox55);
+            this.PNL_SairInicio.Controls.Add(this.PBX_NaoInicio);
+            this.PNL_SairInicio.Controls.Add(this.PBX_SimInicio);
+            this.PNL_SairInicio.Location = new System.Drawing.Point(279, 167);
+            this.PNL_SairInicio.Name = "PNL_SairInicio";
+            this.PNL_SairInicio.Size = new System.Drawing.Size(757, 680);
+            this.PNL_SairInicio.TabIndex = 8;
+            this.PNL_SairInicio.Visible = false;
+            // 
+            // pictureBox55
+            // 
+            this.pictureBox55.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox55.Image")));
+            this.pictureBox55.Location = new System.Drawing.Point(65, 162);
+            this.pictureBox55.Name = "pictureBox55";
+            this.pictureBox55.Size = new System.Drawing.Size(674, 152);
+            this.pictureBox55.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox55.TabIndex = 8;
+            this.pictureBox55.TabStop = false;
+            // 
+            // PBX_NaoInicio
+            // 
+            this.PBX_NaoInicio.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_NaoInicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_NaoInicio.BackgroundImage")));
+            this.PBX_NaoInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PBX_NaoInicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_NaoInicio.Location = new System.Drawing.Point(435, 344);
+            this.PBX_NaoInicio.Name = "PBX_NaoInicio";
+            this.PBX_NaoInicio.Size = new System.Drawing.Size(220, 120);
+            this.PBX_NaoInicio.TabIndex = 7;
+            this.PBX_NaoInicio.TabStop = false;
+            this.PBX_NaoInicio.Click += new System.EventHandler(this.PBX_NaoInicio_Click);
+            // 
+            // PBX_SimInicio
+            // 
+            this.PBX_SimInicio.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_SimInicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_SimInicio.BackgroundImage")));
+            this.PBX_SimInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PBX_SimInicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_SimInicio.Location = new System.Drawing.Point(114, 344);
+            this.PBX_SimInicio.Name = "PBX_SimInicio";
+            this.PBX_SimInicio.Size = new System.Drawing.Size(220, 120);
+            this.PBX_SimInicio.TabIndex = 6;
+            this.PBX_SimInicio.TabStop = false;
+            this.PBX_SimInicio.Click += new System.EventHandler(this.PBX_SimInicio_Click);
             // 
             // PBX_Sair
             // 
@@ -320,7 +370,7 @@
             // 
             this.PbxPersonagem.BackColor = System.Drawing.Color.Transparent;
             this.PbxPersonagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbxPersonagem.Location = new System.Drawing.Point(46, 136);
+            this.PbxPersonagem.Location = new System.Drawing.Point(17, 680);
             this.PbxPersonagem.Name = "PbxPersonagem";
             this.PbxPersonagem.Size = new System.Drawing.Size(31, 43);
             this.PbxPersonagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -340,7 +390,7 @@
             this.PNL_Fases.Controls.Add(this.panel6);
             this.PNL_Fases.Controls.Add(this.panel2);
             this.PNL_Fases.Controls.Add(this.panel1);
-            this.PNL_Fases.Location = new System.Drawing.Point(1131, 871);
+            this.PNL_Fases.Location = new System.Drawing.Point(976, 829);
             this.PNL_Fases.Name = "PNL_Fases";
             this.PNL_Fases.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Fases.TabIndex = 3;
@@ -391,6 +441,7 @@
             this.PBX_Fase3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Fase3.TabIndex = 0;
             this.PBX_Fase3.TabStop = false;
+            this.PBX_Fase3.Click += new System.EventHandler(this.PBX_Fase3_Click);
             this.PBX_Fase3.MouseLeave += new System.EventHandler(this.PBX_Fase3_MouseLeave);
             this.PBX_Fase3.MouseHover += new System.EventHandler(this.PBX_Fase3_MouseHover);
             // 
@@ -463,6 +514,7 @@
             this.PBX_Fase2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Fase2.TabIndex = 0;
             this.PBX_Fase2.TabStop = false;
+            this.PBX_Fase2.Click += new System.EventHandler(this.PBX_Fase2_Click);
             this.PBX_Fase2.MouseLeave += new System.EventHandler(this.PBX_Fase2_MouseLeave);
             this.PBX_Fase2.MouseHover += new System.EventHandler(this.PBX_Fase2_MouseHover);
             // 
@@ -494,7 +546,7 @@
             // PbxColision
             // 
             this.PbxColision.BackColor = System.Drawing.Color.Yellow;
-            this.PbxColision.Location = new System.Drawing.Point(46, 161);
+            this.PbxColision.Location = new System.Drawing.Point(17, 705);
             this.PbxColision.Name = "PbxColision";
             this.PbxColision.Size = new System.Drawing.Size(15, 15);
             this.PbxColision.TabIndex = 5;
@@ -506,7 +558,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(10, 10);
             this.pictureBox1.TabIndex = 6;
@@ -517,7 +569,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox2.Location = new System.Drawing.Point(66, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(11, 11);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(10, 10);
             this.pictureBox2.TabIndex = 6;
@@ -528,7 +580,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox3.Location = new System.Drawing.Point(77, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(11, 11);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(10, 10);
             this.pictureBox3.TabIndex = 6;
@@ -539,7 +591,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox4.Location = new System.Drawing.Point(44, 0);
+            this.pictureBox4.Location = new System.Drawing.Point(11, 11);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(10, 10);
             this.pictureBox4.TabIndex = 6;
@@ -550,7 +602,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox5.Location = new System.Drawing.Point(88, 0);
+            this.pictureBox5.Location = new System.Drawing.Point(11, 11);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(10, 10);
             this.pictureBox5.TabIndex = 6;
@@ -561,7 +613,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox6.Location = new System.Drawing.Point(55, 0);
+            this.pictureBox6.Location = new System.Drawing.Point(11, 11);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(10, 10);
             this.pictureBox6.TabIndex = 6;
@@ -572,7 +624,7 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox7.Location = new System.Drawing.Point(99, 0);
+            this.pictureBox7.Location = new System.Drawing.Point(11, 11);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(10, 10);
             this.pictureBox7.TabIndex = 6;
@@ -583,7 +635,7 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox8.Location = new System.Drawing.Point(0, 11);
+            this.pictureBox8.Location = new System.Drawing.Point(11, 11);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(10, 10);
             this.pictureBox8.TabIndex = 6;
@@ -605,7 +657,7 @@
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox10.Location = new System.Drawing.Point(22, 11);
+            this.pictureBox10.Location = new System.Drawing.Point(11, 11);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(10, 10);
             this.pictureBox10.TabIndex = 6;
@@ -616,7 +668,7 @@
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox11.Location = new System.Drawing.Point(33, 11);
+            this.pictureBox11.Location = new System.Drawing.Point(11, 11);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(10, 10);
             this.pictureBox11.TabIndex = 6;
@@ -627,7 +679,7 @@
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox12.Location = new System.Drawing.Point(44, 11);
+            this.pictureBox12.Location = new System.Drawing.Point(11, 11);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(10, 10);
             this.pictureBox12.TabIndex = 6;
@@ -638,7 +690,7 @@
             // pictureBox13
             // 
             this.pictureBox13.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox13.Location = new System.Drawing.Point(55, 11);
+            this.pictureBox13.Location = new System.Drawing.Point(11, 11);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(10, 10);
             this.pictureBox13.TabIndex = 6;
@@ -649,7 +701,7 @@
             // pictureBox14
             // 
             this.pictureBox14.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox14.Location = new System.Drawing.Point(66, 11);
+            this.pictureBox14.Location = new System.Drawing.Point(11, 11);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(10, 10);
             this.pictureBox14.TabIndex = 6;
@@ -660,7 +712,7 @@
             // pictureBox15
             // 
             this.pictureBox15.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox15.Location = new System.Drawing.Point(77, 11);
+            this.pictureBox15.Location = new System.Drawing.Point(11, 11);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(10, 10);
             this.pictureBox15.TabIndex = 6;
@@ -671,7 +723,7 @@
             // pictureBox16
             // 
             this.pictureBox16.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox16.Location = new System.Drawing.Point(88, 11);
+            this.pictureBox16.Location = new System.Drawing.Point(11, 11);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(10, 10);
             this.pictureBox16.TabIndex = 6;
@@ -682,7 +734,7 @@
             // pictureBox17
             // 
             this.pictureBox17.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox17.Location = new System.Drawing.Point(99, 11);
+            this.pictureBox17.Location = new System.Drawing.Point(11, 11);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(10, 10);
             this.pictureBox17.TabIndex = 6;
@@ -693,7 +745,7 @@
             // pictureBox18
             // 
             this.pictureBox18.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox18.Location = new System.Drawing.Point(0, 22);
+            this.pictureBox18.Location = new System.Drawing.Point(11, 11);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(10, 10);
             this.pictureBox18.TabIndex = 6;
@@ -704,7 +756,7 @@
             // pictureBox19
             // 
             this.pictureBox19.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox19.Location = new System.Drawing.Point(11, 22);
+            this.pictureBox19.Location = new System.Drawing.Point(11, 11);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(10, 10);
             this.pictureBox19.TabIndex = 6;
@@ -715,7 +767,7 @@
             // pictureBox20
             // 
             this.pictureBox20.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox20.Location = new System.Drawing.Point(22, 22);
+            this.pictureBox20.Location = new System.Drawing.Point(11, 11);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(10, 10);
             this.pictureBox20.TabIndex = 6;
@@ -726,7 +778,7 @@
             // pictureBox21
             // 
             this.pictureBox21.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox21.Location = new System.Drawing.Point(33, 22);
+            this.pictureBox21.Location = new System.Drawing.Point(11, 11);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(10, 10);
             this.pictureBox21.TabIndex = 6;
@@ -737,7 +789,7 @@
             // pictureBox22
             // 
             this.pictureBox22.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox22.Location = new System.Drawing.Point(44, 22);
+            this.pictureBox22.Location = new System.Drawing.Point(11, 11);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(10, 10);
             this.pictureBox22.TabIndex = 6;
@@ -748,7 +800,7 @@
             // pictureBox23
             // 
             this.pictureBox23.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox23.Location = new System.Drawing.Point(55, 22);
+            this.pictureBox23.Location = new System.Drawing.Point(11, 11);
             this.pictureBox23.Name = "pictureBox23";
             this.pictureBox23.Size = new System.Drawing.Size(10, 10);
             this.pictureBox23.TabIndex = 6;
@@ -759,7 +811,7 @@
             // pictureBox24
             // 
             this.pictureBox24.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox24.Location = new System.Drawing.Point(66, 22);
+            this.pictureBox24.Location = new System.Drawing.Point(11, 11);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(10, 10);
             this.pictureBox24.TabIndex = 6;
@@ -770,7 +822,7 @@
             // pictureBox25
             // 
             this.pictureBox25.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox25.Location = new System.Drawing.Point(77, 22);
+            this.pictureBox25.Location = new System.Drawing.Point(11, 11);
             this.pictureBox25.Name = "pictureBox25";
             this.pictureBox25.Size = new System.Drawing.Size(10, 10);
             this.pictureBox25.TabIndex = 6;
@@ -781,7 +833,7 @@
             // pictureBox26
             // 
             this.pictureBox26.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox26.Location = new System.Drawing.Point(88, 22);
+            this.pictureBox26.Location = new System.Drawing.Point(11, 11);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(10, 10);
             this.pictureBox26.TabIndex = 6;
@@ -792,7 +844,7 @@
             // pictureBox27
             // 
             this.pictureBox27.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox27.Location = new System.Drawing.Point(99, 22);
+            this.pictureBox27.Location = new System.Drawing.Point(11, 11);
             this.pictureBox27.Name = "pictureBox27";
             this.pictureBox27.Size = new System.Drawing.Size(10, 10);
             this.pictureBox27.TabIndex = 6;
@@ -803,7 +855,7 @@
             // pictureBox28
             // 
             this.pictureBox28.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox28.Location = new System.Drawing.Point(0, 33);
+            this.pictureBox28.Location = new System.Drawing.Point(11, 11);
             this.pictureBox28.Name = "pictureBox28";
             this.pictureBox28.Size = new System.Drawing.Size(10, 10);
             this.pictureBox28.TabIndex = 6;
@@ -814,7 +866,7 @@
             // pictureBox29
             // 
             this.pictureBox29.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox29.Location = new System.Drawing.Point(11, 33);
+            this.pictureBox29.Location = new System.Drawing.Point(11, 11);
             this.pictureBox29.Name = "pictureBox29";
             this.pictureBox29.Size = new System.Drawing.Size(10, 10);
             this.pictureBox29.TabIndex = 6;
@@ -825,7 +877,7 @@
             // pictureBox30
             // 
             this.pictureBox30.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox30.Location = new System.Drawing.Point(22, 33);
+            this.pictureBox30.Location = new System.Drawing.Point(11, 11);
             this.pictureBox30.Name = "pictureBox30";
             this.pictureBox30.Size = new System.Drawing.Size(10, 10);
             this.pictureBox30.TabIndex = 6;
@@ -836,7 +888,7 @@
             // pictureBox31
             // 
             this.pictureBox31.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox31.Location = new System.Drawing.Point(33, 33);
+            this.pictureBox31.Location = new System.Drawing.Point(11, 11);
             this.pictureBox31.Name = "pictureBox31";
             this.pictureBox31.Size = new System.Drawing.Size(10, 10);
             this.pictureBox31.TabIndex = 6;
@@ -847,7 +899,7 @@
             // pictureBox32
             // 
             this.pictureBox32.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox32.Location = new System.Drawing.Point(44, 33);
+            this.pictureBox32.Location = new System.Drawing.Point(11, 11);
             this.pictureBox32.Name = "pictureBox32";
             this.pictureBox32.Size = new System.Drawing.Size(10, 10);
             this.pictureBox32.TabIndex = 6;
@@ -858,7 +910,7 @@
             // pictureBox33
             // 
             this.pictureBox33.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox33.Location = new System.Drawing.Point(55, 33);
+            this.pictureBox33.Location = new System.Drawing.Point(11, 11);
             this.pictureBox33.Name = "pictureBox33";
             this.pictureBox33.Size = new System.Drawing.Size(10, 10);
             this.pictureBox33.TabIndex = 6;
@@ -869,7 +921,7 @@
             // pictureBox34
             // 
             this.pictureBox34.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox34.Location = new System.Drawing.Point(66, 33);
+            this.pictureBox34.Location = new System.Drawing.Point(11, 11);
             this.pictureBox34.Name = "pictureBox34";
             this.pictureBox34.Size = new System.Drawing.Size(10, 10);
             this.pictureBox34.TabIndex = 6;
@@ -880,7 +932,7 @@
             // pictureBox35
             // 
             this.pictureBox35.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox35.Location = new System.Drawing.Point(77, 33);
+            this.pictureBox35.Location = new System.Drawing.Point(11, 11);
             this.pictureBox35.Name = "pictureBox35";
             this.pictureBox35.Size = new System.Drawing.Size(10, 10);
             this.pictureBox35.TabIndex = 6;
@@ -891,7 +943,7 @@
             // pictureBox36
             // 
             this.pictureBox36.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox36.Location = new System.Drawing.Point(88, 33);
+            this.pictureBox36.Location = new System.Drawing.Point(11, 11);
             this.pictureBox36.Name = "pictureBox36";
             this.pictureBox36.Size = new System.Drawing.Size(10, 10);
             this.pictureBox36.TabIndex = 6;
@@ -902,7 +954,7 @@
             // pictureBox37
             // 
             this.pictureBox37.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox37.Location = new System.Drawing.Point(99, 33);
+            this.pictureBox37.Location = new System.Drawing.Point(11, 11);
             this.pictureBox37.Name = "pictureBox37";
             this.pictureBox37.Size = new System.Drawing.Size(10, 10);
             this.pictureBox37.TabIndex = 6;
@@ -913,7 +965,7 @@
             // pictureBox38
             // 
             this.pictureBox38.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox38.Location = new System.Drawing.Point(0, 44);
+            this.pictureBox38.Location = new System.Drawing.Point(11, 11);
             this.pictureBox38.Name = "pictureBox38";
             this.pictureBox38.Size = new System.Drawing.Size(10, 10);
             this.pictureBox38.TabIndex = 6;
@@ -924,7 +976,7 @@
             // pictureBox39
             // 
             this.pictureBox39.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox39.Location = new System.Drawing.Point(11, 44);
+            this.pictureBox39.Location = new System.Drawing.Point(11, 11);
             this.pictureBox39.Name = "pictureBox39";
             this.pictureBox39.Size = new System.Drawing.Size(10, 10);
             this.pictureBox39.TabIndex = 6;
@@ -935,7 +987,7 @@
             // pictureBox40
             // 
             this.pictureBox40.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox40.Location = new System.Drawing.Point(22, 44);
+            this.pictureBox40.Location = new System.Drawing.Point(11, 11);
             this.pictureBox40.Name = "pictureBox40";
             this.pictureBox40.Size = new System.Drawing.Size(10, 10);
             this.pictureBox40.TabIndex = 6;
@@ -946,7 +998,7 @@
             // pictureBox41
             // 
             this.pictureBox41.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox41.Location = new System.Drawing.Point(33, 44);
+            this.pictureBox41.Location = new System.Drawing.Point(11, 11);
             this.pictureBox41.Name = "pictureBox41";
             this.pictureBox41.Size = new System.Drawing.Size(10, 10);
             this.pictureBox41.TabIndex = 6;
@@ -957,7 +1009,7 @@
             // pictureBox42
             // 
             this.pictureBox42.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox42.Location = new System.Drawing.Point(44, 44);
+            this.pictureBox42.Location = new System.Drawing.Point(11, 11);
             this.pictureBox42.Name = "pictureBox42";
             this.pictureBox42.Size = new System.Drawing.Size(10, 10);
             this.pictureBox42.TabIndex = 6;
@@ -968,7 +1020,7 @@
             // pictureBox43
             // 
             this.pictureBox43.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox43.Location = new System.Drawing.Point(55, 44);
+            this.pictureBox43.Location = new System.Drawing.Point(11, 11);
             this.pictureBox43.Name = "pictureBox43";
             this.pictureBox43.Size = new System.Drawing.Size(10, 10);
             this.pictureBox43.TabIndex = 6;
@@ -979,7 +1031,7 @@
             // pictureBox44
             // 
             this.pictureBox44.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox44.Location = new System.Drawing.Point(66, 44);
+            this.pictureBox44.Location = new System.Drawing.Point(11, 11);
             this.pictureBox44.Name = "pictureBox44";
             this.pictureBox44.Size = new System.Drawing.Size(10, 10);
             this.pictureBox44.TabIndex = 6;
@@ -990,7 +1042,7 @@
             // pictureBox45
             // 
             this.pictureBox45.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox45.Location = new System.Drawing.Point(77, 44);
+            this.pictureBox45.Location = new System.Drawing.Point(11, 11);
             this.pictureBox45.Name = "pictureBox45";
             this.pictureBox45.Size = new System.Drawing.Size(10, 10);
             this.pictureBox45.TabIndex = 6;
@@ -1001,7 +1053,7 @@
             // pictureBox46
             // 
             this.pictureBox46.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox46.Location = new System.Drawing.Point(88, 44);
+            this.pictureBox46.Location = new System.Drawing.Point(11, 11);
             this.pictureBox46.Name = "pictureBox46";
             this.pictureBox46.Size = new System.Drawing.Size(10, 10);
             this.pictureBox46.TabIndex = 6;
@@ -1012,7 +1064,7 @@
             // pictureBox47
             // 
             this.pictureBox47.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox47.Location = new System.Drawing.Point(99, 44);
+            this.pictureBox47.Location = new System.Drawing.Point(11, 11);
             this.pictureBox47.Name = "pictureBox47";
             this.pictureBox47.Size = new System.Drawing.Size(10, 10);
             this.pictureBox47.TabIndex = 6;
@@ -1056,7 +1108,7 @@
             // pictureBox51
             // 
             this.pictureBox51.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox51.Location = new System.Drawing.Point(0, 55);
+            this.pictureBox51.Location = new System.Drawing.Point(11, 11);
             this.pictureBox51.Name = "pictureBox51";
             this.pictureBox51.Size = new System.Drawing.Size(10, 10);
             this.pictureBox51.TabIndex = 6;
@@ -1067,7 +1119,7 @@
             // pictureBox52
             // 
             this.pictureBox52.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox52.Location = new System.Drawing.Point(11, 55);
+            this.pictureBox52.Location = new System.Drawing.Point(11, 11);
             this.pictureBox52.Name = "pictureBox52";
             this.pictureBox52.Size = new System.Drawing.Size(10, 10);
             this.pictureBox52.TabIndex = 6;
@@ -1078,7 +1130,7 @@
             // pictureBox53
             // 
             this.pictureBox53.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox53.Location = new System.Drawing.Point(22, 55);
+            this.pictureBox53.Location = new System.Drawing.Point(11, 11);
             this.pictureBox53.Name = "pictureBox53";
             this.pictureBox53.Size = new System.Drawing.Size(10, 10);
             this.pictureBox53.TabIndex = 6;
@@ -1098,7 +1150,7 @@
             this.PNL_Pause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PNL_Pause.Controls.Add(this.PNL_InfoPause);
             this.PNL_Pause.Controls.Add(this.panel7);
-            this.PNL_Pause.Location = new System.Drawing.Point(1220, 280);
+            this.PNL_Pause.Location = new System.Drawing.Point(1018, 795);
             this.PNL_Pause.Name = "PNL_Pause";
             this.PNL_Pause.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Pause.TabIndex = 7;
@@ -1124,6 +1176,55 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(760, 665);
             this.panel7.TabIndex = 4;
+            // 
+            // PNL_Sair
+            // 
+            this.PNL_Sair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_Sair.BackgroundImage")));
+            this.PNL_Sair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PNL_Sair.Controls.Add(this.pictureBox54);
+            this.PNL_Sair.Controls.Add(this.BTN_NaoSair);
+            this.PNL_Sair.Controls.Add(this.BTN_SimSair);
+            this.PNL_Sair.Location = new System.Drawing.Point(3, 3);
+            this.PNL_Sair.Name = "PNL_Sair";
+            this.PNL_Sair.Size = new System.Drawing.Size(757, 680);
+            this.PNL_Sair.TabIndex = 5;
+            this.PNL_Sair.Visible = false;
+            // 
+            // pictureBox54
+            // 
+            this.pictureBox54.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox54.Image")));
+            this.pictureBox54.Location = new System.Drawing.Point(66, 148);
+            this.pictureBox54.Name = "pictureBox54";
+            this.pictureBox54.Size = new System.Drawing.Size(674, 152);
+            this.pictureBox54.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox54.TabIndex = 8;
+            this.pictureBox54.TabStop = false;
+            // 
+            // BTN_NaoSair
+            // 
+            this.BTN_NaoSair.BackColor = System.Drawing.Color.Transparent;
+            this.BTN_NaoSair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTN_NaoSair.BackgroundImage")));
+            this.BTN_NaoSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTN_NaoSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_NaoSair.Location = new System.Drawing.Point(435, 344);
+            this.BTN_NaoSair.Name = "BTN_NaoSair";
+            this.BTN_NaoSair.Size = new System.Drawing.Size(220, 120);
+            this.BTN_NaoSair.TabIndex = 7;
+            this.BTN_NaoSair.TabStop = false;
+            this.BTN_NaoSair.Click += new System.EventHandler(this.BTN_NaoSair_Click);
+            // 
+            // BTN_SimSair
+            // 
+            this.BTN_SimSair.BackColor = System.Drawing.Color.Transparent;
+            this.BTN_SimSair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTN_SimSair.BackgroundImage")));
+            this.BTN_SimSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTN_SimSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_SimSair.Location = new System.Drawing.Point(114, 344);
+            this.BTN_SimSair.Name = "BTN_SimSair";
+            this.BTN_SimSair.Size = new System.Drawing.Size(220, 120);
+            this.BTN_SimSair.TabIndex = 6;
+            this.BTN_SimSair.TabStop = false;
+            this.BTN_SimSair.Click += new System.EventHandler(this.BTN_SimSair_Click);
             // 
             // PBX_Continuar
             // 
@@ -1162,105 +1263,6 @@
             this.PBX_Inicio.Size = new System.Drawing.Size(220, 120);
             this.PBX_Inicio.TabIndex = 2;
             this.PBX_Inicio.TabStop = false;
-            // 
-            // PNL_Sair
-            // 
-            this.PNL_Sair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_Sair.BackgroundImage")));
-            this.PNL_Sair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PNL_Sair.Controls.Add(this.pictureBox54);
-            this.PNL_Sair.Controls.Add(this.BTN_NaoSair);
-            this.PNL_Sair.Controls.Add(this.BTN_SimSair);
-            this.PNL_Sair.Location = new System.Drawing.Point(3, 3);
-            this.PNL_Sair.Name = "PNL_Sair";
-            this.PNL_Sair.Size = new System.Drawing.Size(757, 680);
-            this.PNL_Sair.TabIndex = 5;
-            this.PNL_Sair.Visible = false;
-            // 
-            // BTN_SimSair
-            // 
-            this.BTN_SimSair.BackColor = System.Drawing.Color.Transparent;
-            this.BTN_SimSair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTN_SimSair.BackgroundImage")));
-            this.BTN_SimSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BTN_SimSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_SimSair.Location = new System.Drawing.Point(114, 344);
-            this.BTN_SimSair.Name = "BTN_SimSair";
-            this.BTN_SimSair.Size = new System.Drawing.Size(220, 120);
-            this.BTN_SimSair.TabIndex = 6;
-            this.BTN_SimSair.TabStop = false;
-            this.BTN_SimSair.Click += new System.EventHandler(this.BTN_SimSair_Click);
-            // 
-            // BTN_NaoSair
-            // 
-            this.BTN_NaoSair.BackColor = System.Drawing.Color.Transparent;
-            this.BTN_NaoSair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTN_NaoSair.BackgroundImage")));
-            this.BTN_NaoSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BTN_NaoSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_NaoSair.Location = new System.Drawing.Point(435, 344);
-            this.BTN_NaoSair.Name = "BTN_NaoSair";
-            this.BTN_NaoSair.Size = new System.Drawing.Size(220, 120);
-            this.BTN_NaoSair.TabIndex = 7;
-            this.BTN_NaoSair.TabStop = false;
-            this.BTN_NaoSair.Click += new System.EventHandler(this.BTN_NaoSair_Click);
-            // 
-            // pictureBox54
-            // 
-            this.pictureBox54.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox54.Image")));
-            this.pictureBox54.Location = new System.Drawing.Point(66, 148);
-            this.pictureBox54.Name = "pictureBox54";
-            this.pictureBox54.Size = new System.Drawing.Size(674, 152);
-            this.pictureBox54.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox54.TabIndex = 8;
-            this.pictureBox54.TabStop = false;
-            // 
-            // PNL_SairInicio
-            // 
-            this.PNL_SairInicio.BackColor = System.Drawing.Color.Transparent;
-            this.PNL_SairInicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_SairInicio.BackgroundImage")));
-            this.PNL_SairInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PNL_SairInicio.Controls.Add(this.pictureBox55);
-            this.PNL_SairInicio.Controls.Add(this.PBX_NaoInicio);
-            this.PNL_SairInicio.Controls.Add(this.PBX_SimInicio);
-            this.PNL_SairInicio.Location = new System.Drawing.Point(279, 167);
-            this.PNL_SairInicio.Name = "PNL_SairInicio";
-            this.PNL_SairInicio.Size = new System.Drawing.Size(757, 680);
-            this.PNL_SairInicio.TabIndex = 8;
-            this.PNL_SairInicio.Visible = false;
-            // 
-            // pictureBox55
-            // 
-            this.pictureBox55.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox55.Image")));
-            this.pictureBox55.Location = new System.Drawing.Point(65, 162);
-            this.pictureBox55.Name = "pictureBox55";
-            this.pictureBox55.Size = new System.Drawing.Size(674, 152);
-            this.pictureBox55.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox55.TabIndex = 8;
-            this.pictureBox55.TabStop = false;
-            // 
-            // PBX_NaoInicio
-            // 
-            this.PBX_NaoInicio.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_NaoInicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_NaoInicio.BackgroundImage")));
-            this.PBX_NaoInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBX_NaoInicio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_NaoInicio.Location = new System.Drawing.Point(435, 344);
-            this.PBX_NaoInicio.Name = "PBX_NaoInicio";
-            this.PBX_NaoInicio.Size = new System.Drawing.Size(220, 120);
-            this.PBX_NaoInicio.TabIndex = 7;
-            this.PBX_NaoInicio.TabStop = false;
-            this.PBX_NaoInicio.Click += new System.EventHandler(this.PBX_NaoInicio_Click);
-            // 
-            // PBX_SimInicio
-            // 
-            this.PBX_SimInicio.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_SimInicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_SimInicio.BackgroundImage")));
-            this.PBX_SimInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBX_SimInicio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_SimInicio.Location = new System.Drawing.Point(114, 344);
-            this.PBX_SimInicio.Name = "PBX_SimInicio";
-            this.PBX_SimInicio.Size = new System.Drawing.Size(220, 120);
-            this.PBX_SimInicio.TabIndex = 6;
-            this.PBX_SimInicio.TabStop = false;
-            this.PBX_SimInicio.Click += new System.EventHandler(this.PBX_SimInicio_Click);
             // 
             // FrmJogo
             // 
@@ -1345,6 +1347,10 @@
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmJogo_KeyPress);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmJogo_KeyUp);
             this.PnlMenu.ResumeLayout(false);
+            this.PNL_SairInicio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_NaoInicio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_SimInicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Opcoes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).EndInit();
@@ -1418,17 +1424,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).EndInit();
             this.PNL_Pause.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.PNL_Sair.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BTN_NaoSair)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BTN_SimSair)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Continuar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_SairPause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Inicio)).EndInit();
-            this.PNL_Sair.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_SimSair)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_NaoSair)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).EndInit();
-            this.PNL_SairInicio.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_NaoInicio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_SimInicio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
