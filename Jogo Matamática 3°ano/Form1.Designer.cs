@@ -552,6 +552,7 @@
             this.PbxColision.TabIndex = 5;
             this.PbxColision.TabStop = false;
             this.PbxColision.Tag = "Colision";
+            this.PbxColision.Visible = false;
             this.PbxColision.Click += new System.EventHandler(this.PbxColision_Click);
             // 
             // pictureBox1
@@ -563,6 +564,7 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "Parede";
+            this.pictureBox1.Visible = false;
             // 
             // pictureBox2
             // 
@@ -573,6 +575,7 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Tag = "Parede";
+            this.pictureBox2.Visible = false;
             // 
             // pictureBox3
             // 
@@ -583,6 +586,7 @@
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Tag = "Parede";
+            this.pictureBox3.Visible = false;
             // 
             // pictureBox4
             // 
@@ -593,6 +597,7 @@
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Tag = "Parede";
+            this.pictureBox4.Visible = false;
             // 
             // pictureBox5
             // 
@@ -603,6 +608,7 @@
             this.pictureBox5.TabIndex = 6;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Tag = "Parede";
+            this.pictureBox5.Visible = false;
             // 
             // pictureBox6
             // 
@@ -613,6 +619,7 @@
             this.pictureBox6.TabIndex = 6;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Tag = "Parede";
+            this.pictureBox6.Visible = false;
             // 
             // pictureBox7
             // 
@@ -623,6 +630,7 @@
             this.pictureBox7.TabIndex = 6;
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Tag = "Parede";
+            this.pictureBox7.Visible = false;
             // 
             // pictureBox8
             // 
@@ -633,6 +641,7 @@
             this.pictureBox8.TabIndex = 6;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Tag = "Parede";
+            this.pictureBox8.Visible = false;
             // 
             // pictureBox9
             // 
@@ -643,6 +652,7 @@
             this.pictureBox9.TabIndex = 6;
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Tag = "Parede";
+            this.pictureBox9.Visible = false;
             // 
             // pictureBox10
             // 
@@ -653,6 +663,7 @@
             this.pictureBox10.TabIndex = 6;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Tag = "Parede";
+            this.pictureBox10.Visible = false;
             // 
             // pictureBox11
             // 
@@ -663,6 +674,7 @@
             this.pictureBox11.TabIndex = 6;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Tag = "Parede";
+            this.pictureBox11.Visible = false;
             // 
             // pictureBox12
             // 
@@ -673,6 +685,7 @@
             this.pictureBox12.TabIndex = 6;
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Tag = "Parede";
+            this.pictureBox12.Visible = false;
             // 
             // pictureBox13
             // 
@@ -683,6 +696,7 @@
             this.pictureBox13.TabIndex = 6;
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Tag = "Parede";
+            this.pictureBox13.Visible = false;
             // 
             // pictureBox14
             // 
@@ -693,6 +707,7 @@
             this.pictureBox14.TabIndex = 6;
             this.pictureBox14.TabStop = false;
             this.pictureBox14.Tag = "Parede";
+            this.pictureBox14.Visible = false;
             // 
             // pictureBox15
             // 
@@ -703,6 +718,7 @@
             this.pictureBox15.TabIndex = 6;
             this.pictureBox15.TabStop = false;
             this.pictureBox15.Tag = "Parede";
+            this.pictureBox15.Visible = false;
             // 
             // pictureBox16
             // 
@@ -713,6 +729,7 @@
             this.pictureBox16.TabIndex = 6;
             this.pictureBox16.TabStop = false;
             this.pictureBox16.Tag = "Parede";
+            this.pictureBox16.Visible = false;
             // 
             // pictureBox17
             // 
@@ -723,6 +740,7 @@
             this.pictureBox17.TabIndex = 6;
             this.pictureBox17.TabStop = false;
             this.pictureBox17.Tag = "Parede";
+            this.pictureBox17.Visible = false;
             // 
             // pictureBox18
             // 
@@ -733,6 +751,7 @@
             this.pictureBox18.TabIndex = 6;
             this.pictureBox18.TabStop = false;
             this.pictureBox18.Tag = "Parede";
+            this.pictureBox18.Visible = false;
             // 
             // pictureBox19
             // 
@@ -743,6 +762,7 @@
             this.pictureBox19.TabIndex = 6;
             this.pictureBox19.TabStop = false;
             this.pictureBox19.Tag = "Parede";
+            this.pictureBox19.Visible = false;
             // 
             // pictureBox20
             // 
@@ -753,6 +773,7 @@
             this.pictureBox20.TabIndex = 6;
             this.pictureBox20.TabStop = false;
             this.pictureBox20.Tag = "Parede";
+            this.pictureBox20.Visible = false;
             // 
             // pictureBox21
             // 
@@ -763,6 +784,7 @@
             this.pictureBox21.TabIndex = 6;
             this.pictureBox21.TabStop = false;
             this.pictureBox21.Tag = "Parede";
+            this.pictureBox21.Visible = false;
             // 
             // pictureBox22
             // 
@@ -773,6 +795,7 @@
             this.pictureBox22.TabIndex = 6;
             this.pictureBox22.TabStop = false;
             this.pictureBox22.Tag = "Parede";
+            this.pictureBox22.Visible = false;
             // 
             // pictureBox23
             // 
@@ -783,6 +806,7 @@
             this.pictureBox23.TabIndex = 6;
             this.pictureBox23.TabStop = false;
             this.pictureBox23.Tag = "Parede";
+            this.pictureBox23.Visible = false;
             // 
             // pictureBox24
             // 
@@ -793,6 +817,7 @@
             this.pictureBox24.TabIndex = 6;
             this.pictureBox24.TabStop = false;
             this.pictureBox24.Tag = "Parede";
+            this.pictureBox24.Visible = false;
             // 
             // pictureBox25
             // 
@@ -803,6 +828,7 @@
             this.pictureBox25.TabIndex = 6;
             this.pictureBox25.TabStop = false;
             this.pictureBox25.Tag = "Parede";
+            this.pictureBox25.Visible = false;
             // 
             // pictureBox26
             // 
@@ -813,6 +839,7 @@
             this.pictureBox26.TabIndex = 6;
             this.pictureBox26.TabStop = false;
             this.pictureBox26.Tag = "Parede";
+            this.pictureBox26.Visible = false;
             // 
             // pictureBox27
             // 
@@ -823,6 +850,7 @@
             this.pictureBox27.TabIndex = 6;
             this.pictureBox27.TabStop = false;
             this.pictureBox27.Tag = "Parede";
+            this.pictureBox27.Visible = false;
             // 
             // pictureBox28
             // 
@@ -833,6 +861,7 @@
             this.pictureBox28.TabIndex = 6;
             this.pictureBox28.TabStop = false;
             this.pictureBox28.Tag = "Parede";
+            this.pictureBox28.Visible = false;
             // 
             // pictureBox29
             // 
@@ -843,6 +872,7 @@
             this.pictureBox29.TabIndex = 6;
             this.pictureBox29.TabStop = false;
             this.pictureBox29.Tag = "Parede";
+            this.pictureBox29.Visible = false;
             // 
             // pictureBox30
             // 
@@ -853,6 +883,7 @@
             this.pictureBox30.TabIndex = 6;
             this.pictureBox30.TabStop = false;
             this.pictureBox30.Tag = "Parede";
+            this.pictureBox30.Visible = false;
             // 
             // pictureBox31
             // 
@@ -863,6 +894,7 @@
             this.pictureBox31.TabIndex = 6;
             this.pictureBox31.TabStop = false;
             this.pictureBox31.Tag = "Parede";
+            this.pictureBox31.Visible = false;
             // 
             // pictureBox32
             // 
@@ -873,6 +905,7 @@
             this.pictureBox32.TabIndex = 6;
             this.pictureBox32.TabStop = false;
             this.pictureBox32.Tag = "Parede";
+            this.pictureBox32.Visible = false;
             // 
             // pictureBox33
             // 
@@ -883,6 +916,7 @@
             this.pictureBox33.TabIndex = 6;
             this.pictureBox33.TabStop = false;
             this.pictureBox33.Tag = "Parede";
+            this.pictureBox33.Visible = false;
             // 
             // pictureBox34
             // 
@@ -893,6 +927,7 @@
             this.pictureBox34.TabIndex = 6;
             this.pictureBox34.TabStop = false;
             this.pictureBox34.Tag = "Parede";
+            this.pictureBox34.Visible = false;
             // 
             // pictureBox35
             // 
@@ -903,6 +938,7 @@
             this.pictureBox35.TabIndex = 6;
             this.pictureBox35.TabStop = false;
             this.pictureBox35.Tag = "Parede";
+            this.pictureBox35.Visible = false;
             // 
             // pictureBox36
             // 
@@ -913,6 +949,7 @@
             this.pictureBox36.TabIndex = 6;
             this.pictureBox36.TabStop = false;
             this.pictureBox36.Tag = "Parede";
+            this.pictureBox36.Visible = false;
             // 
             // pictureBox37
             // 
@@ -923,6 +960,7 @@
             this.pictureBox37.TabIndex = 6;
             this.pictureBox37.TabStop = false;
             this.pictureBox37.Tag = "Parede";
+            this.pictureBox37.Visible = false;
             // 
             // pictureBox38
             // 
@@ -933,6 +971,7 @@
             this.pictureBox38.TabIndex = 6;
             this.pictureBox38.TabStop = false;
             this.pictureBox38.Tag = "Parede";
+            this.pictureBox38.Visible = false;
             // 
             // pictureBox39
             // 
@@ -943,6 +982,7 @@
             this.pictureBox39.TabIndex = 6;
             this.pictureBox39.TabStop = false;
             this.pictureBox39.Tag = "Parede";
+            this.pictureBox39.Visible = false;
             // 
             // pictureBox40
             // 
@@ -953,6 +993,7 @@
             this.pictureBox40.TabIndex = 6;
             this.pictureBox40.TabStop = false;
             this.pictureBox40.Tag = "Parede";
+            this.pictureBox40.Visible = false;
             // 
             // pictureBox41
             // 
@@ -963,6 +1004,7 @@
             this.pictureBox41.TabIndex = 6;
             this.pictureBox41.TabStop = false;
             this.pictureBox41.Tag = "Parede";
+            this.pictureBox41.Visible = false;
             // 
             // pictureBox42
             // 
@@ -973,6 +1015,7 @@
             this.pictureBox42.TabIndex = 6;
             this.pictureBox42.TabStop = false;
             this.pictureBox42.Tag = "Parede";
+            this.pictureBox42.Visible = false;
             // 
             // pictureBox43
             // 
@@ -983,6 +1026,7 @@
             this.pictureBox43.TabIndex = 6;
             this.pictureBox43.TabStop = false;
             this.pictureBox43.Tag = "Parede";
+            this.pictureBox43.Visible = false;
             // 
             // pictureBox44
             // 
@@ -993,6 +1037,7 @@
             this.pictureBox44.TabIndex = 6;
             this.pictureBox44.TabStop = false;
             this.pictureBox44.Tag = "Parede";
+            this.pictureBox44.Visible = false;
             // 
             // pictureBox45
             // 
@@ -1003,6 +1048,7 @@
             this.pictureBox45.TabIndex = 6;
             this.pictureBox45.TabStop = false;
             this.pictureBox45.Tag = "Parede";
+            this.pictureBox45.Visible = false;
             // 
             // pictureBox46
             // 
@@ -1013,6 +1059,7 @@
             this.pictureBox46.TabIndex = 6;
             this.pictureBox46.TabStop = false;
             this.pictureBox46.Tag = "Parede";
+            this.pictureBox46.Visible = false;
             // 
             // pictureBox47
             // 
@@ -1034,6 +1081,7 @@
             this.pictureBox48.TabIndex = 6;
             this.pictureBox48.TabStop = false;
             this.pictureBox48.Tag = "Parede";
+            this.pictureBox48.Visible = false;
             // 
             // pictureBox49
             // 
@@ -1044,6 +1092,7 @@
             this.pictureBox49.TabIndex = 6;
             this.pictureBox49.TabStop = false;
             this.pictureBox49.Tag = "Parede";
+            this.pictureBox49.Visible = false;
             // 
             // pictureBox50
             // 
@@ -1054,6 +1103,7 @@
             this.pictureBox50.TabIndex = 6;
             this.pictureBox50.TabStop = false;
             this.pictureBox50.Tag = "Parede";
+            this.pictureBox50.Visible = false;
             // 
             // pictureBox51
             // 
