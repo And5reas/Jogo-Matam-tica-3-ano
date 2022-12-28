@@ -15,6 +15,9 @@ namespace Jogo_Matamática_3_ano
     public partial class FrmJogo : Form
     {
         #region Variáveis Globais
+        //TEMPO DE JOGO
+        int tempSeg, tempMin;
+
         //MENU
         int ativouMenu = 0;
 
@@ -104,10 +107,14 @@ namespace Jogo_Matamática_3_ano
                 if (ativouMenu == 0 && PNL_Pause.Enabled != false) {
                     PNL_Pause.Visible = true;
                     PNL_Pause.Location = new Point(0, 0);
+                    TmrMainGameManager.Stop();
+                    TMR_Tempo.Stop();
                     ativouMenu = 1;
                 }else if (ativouMenu == 1)
                 {
                     PNL_Pause.Visible = false;
+                    TmrMainGameManager.Start();
+                    TMR_Tempo.Start();
                     ativouMenu = 0;
                 }
             }
@@ -142,7 +149,6 @@ namespace Jogo_Matamática_3_ano
             //PAINEL MENU
             PnlMenu.Location = new Point(0, 0);
             PnlMenu.Visible = true;
-            TmrMainGameManager.Start();
             
             //Esconder posição do personagem 
             labelX.Visible = false;
@@ -329,12 +335,66 @@ namespace Jogo_Matamática_3_ano
         //ENTRAR E SAIR DA FASE 2
         private void PBX_Fase2_MouseHover(object sender, EventArgs e)
         {
-
+            PBX_Fase2.Size = new Size(256, 196);
+            PBX_Fase2.Location = new Point(0, 0);
         }
 
         private void PBX_Fase2_MouseLeave(object sender, EventArgs e)
         {
+            PBX_Fase2.Size = new Size(228, 170);
+            PBX_Fase2.Location = new Point(14, 14);
+        }
 
+        //ENTRAR E SAIR DA FASE 3
+        private void PBX_Fase3_MouseHover(object sender, EventArgs e)
+        {
+            PBX_Fase3.Size = new Size(256, 196);
+            PBX_Fase3.Location = new Point(0, 0);
+        }
+
+        private void PBX_Fase3_MouseLeave(object sender, EventArgs e)
+        {
+            PBX_Fase3.Size = new Size(228, 170);
+            PBX_Fase3.Location = new Point(14, 14);
+        }
+
+        //ENTRAR E SAIR DA FASE 4
+        private void PBX_Fase4_MouseHover(object sender, EventArgs e)
+        {
+            PBX_Fase4.Size = new Size(256, 196);
+            PBX_Fase4.Location = new Point(0, 0);
+        }
+
+        private void PBX_Fase4_MouseLeave(object sender, EventArgs e)
+        {
+            PBX_Fase4.Size = new Size(228, 170);
+            PBX_Fase4.Location = new Point(14, 14);
+        }
+
+        //ENTRAR E SAIR DA FASE 5
+        private void PBX_Fase5_MouseHover(object sender, EventArgs e)
+        {
+            PBX_Fase5.Size = new Size(256, 196);
+            PBX_Fase5.Location = new Point(0, 0);
+        }
+
+        private void PBX_Fase5_MouseLeave(object sender, EventArgs e)
+        {
+            PBX_Fase5.Size = new Size(228, 170);
+            PBX_Fase5.Location = new Point(14, 14);
+        }
+
+        //ENTRAR E SAIR DA FASE 6
+        private void PBX_Fase6_MouseHover(object sender, EventArgs e)
+        {
+            PBX_Fase6.Size = new Size(256, 196);
+            PBX_Fase6.Location = new Point(0, 0);
+        }
+
+        private void PBX_Fase6_MouseLeave(object sender, EventArgs e)
+        {
+            PBX_Fase6.Size = new Size(228, 170);
+            PBX_Fase6.Location = new Point(14, 14);
         }
 
         private void PbxPersonagem_Click(object sender, EventArgs e)
@@ -347,51 +407,18 @@ namespace Jogo_Matamática_3_ano
 
         }
 
-        //ENTRAR E SAIR DA FASE 3
-        private void PBX_Fase3_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
         private void PNL_Fases_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void PBX_Fase3_MouseLeave(object sender, EventArgs e)
+        //ENTRAR E SAIR BTN VOLTAR INICIO SETA
+        private void PBX_VoltarInicio_MouseHover(object sender, EventArgs e)
         {
 
         }
 
-        //ENTRAR E SAIR DA FASE 4
-        private void PBX_Fase4_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PBX_Fase4_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        //ENTRAR E SAIR DA FASE 5
-        private void PBX_Fase5_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PBX_Fase5_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        //ENTRAR E SAIR DA FASE 6
-        private void PBX_Fase6_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PBX_Fase6_MouseLeave(object sender, EventArgs e)
+        private void PBX_VoltarInicio_MouseLeave(object sender, EventArgs e)
         {
 
         }
@@ -400,6 +427,14 @@ namespace Jogo_Matamática_3_ano
         #region Start fase 1
         private void PBX_Fase1_Click(object sender, EventArgs e)
         {
+            //TEMPO DE FASE
+            tempMin = 1;
+            tempSeg = 0;
+
+            //Start da fase
+            TmrMainGameManager.Start();
+            TMR_Tempo.Start();
+
             PNL_Fases.Visible = false;
             PnlMenu.Visible = false;
             PNL_Pause.Enabled = true;
@@ -480,6 +515,14 @@ namespace Jogo_Matamática_3_ano
         #region Start fase 2
         private void PBX_Fase2_Click(object sender, EventArgs e)
         {
+            //TEMPO DE FASE
+            tempMin = 1;
+            tempSeg = 15;
+
+            //Start da fase
+            TmrMainGameManager.Start();
+            TMR_Tempo.Start();
+
             PNL_Fases.Visible = false;
             PnlMenu.Visible = false;
             PNL_Pause.Enabled = true;
@@ -557,6 +600,14 @@ namespace Jogo_Matamática_3_ano
         #region Start fase 3
         private void PBX_Fase3_Click(object sender, EventArgs e)
         {
+            //TEMPO DE FASE
+            tempMin = 1;
+            tempSeg = 15;
+
+            //Start da fase
+            TmrMainGameManager.Start();
+            TMR_Tempo.Start();
+
             PNL_Fases.Visible = false;
             PnlMenu.Visible = false;
             PNL_Pause.Enabled = true;
@@ -569,7 +620,7 @@ namespace Jogo_Matamática_3_ano
             PbxPersonagem.Location = new Point(25, 684);
             PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_1.png");
 
-            #region Load Wall fase 1
+            #region Load Wall fase 3
 
             //Colocando as paredes em seus lugares
             pictureBox1.Location = new Point(94, 167); pictureBox1.Size = new Size(871, 25);
@@ -737,6 +788,56 @@ namespace Jogo_Matamática_3_ano
         private void PBX_Continuar_Click(object sender, EventArgs e)
         {
             PNL_Pause.Visible = false;
+            TmrMainGameManager.Start();
+            ativouMenu = 0;
+        }
+        #endregion
+
+        #region MODOS DE VOLTAR AO INICIO
+        private void PBX_VoltarInicio_Click(object sender, EventArgs e)
+        {
+            PNL_Fases.Visible = false;
+            PnlMenu.Visible = true;
+        }
+        #endregion
+
+        #region LÓGICA DE TEMPO DE JOGO
+        private void TMR_Tempo_Tick(object sender, EventArgs e)
+        {
+            if (tempSeg <= 60)
+            {
+                if (tempSeg == 0)
+                {
+                    tempMin--;
+
+                    if (tempMin >= 0)
+                    {
+                        tempSeg = 60;
+                    }
+
+                }
+                if (tempSeg <= 10)
+                {
+                    tempSeg--;
+                    if (tempSeg == -1)
+                    {
+                        TMR_Tempo.Stop();
+                        LBL_Tempo.Text = "Tempo Esgotado";
+                        TmrMainGameManager.Stop();
+                    }
+                    else
+                    {
+                        LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + "0" + tempSeg.ToString();
+                    }
+                    
+                }
+                if (tempSeg >= 10)
+                {
+                    tempSeg--;
+                    LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + tempSeg.ToString();
+                }
+
+            }
         }
         #endregion
     }
