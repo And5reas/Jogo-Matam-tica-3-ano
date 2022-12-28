@@ -45,6 +45,7 @@
             this.LblY = new System.Windows.Forms.Label();
             this.PbxPersonagem = new System.Windows.Forms.PictureBox();
             this.PNL_Fases = new System.Windows.Forms.Panel();
+            this.PBX_VoltarInicio = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.PBX_Fase6 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -132,6 +133,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).BeginInit();
             this.PNL_Fases.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_VoltarInicio)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase6)).BeginInit();
             this.panel3.SuspendLayout();
@@ -384,17 +386,33 @@
             this.PNL_Fases.BackColor = System.Drawing.Color.LightBlue;
             this.PNL_Fases.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_Fases.BackgroundImage")));
             this.PNL_Fases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PNL_Fases.Controls.Add(this.PBX_VoltarInicio);
             this.PNL_Fases.Controls.Add(this.panel4);
             this.PNL_Fases.Controls.Add(this.panel3);
             this.PNL_Fases.Controls.Add(this.panel5);
             this.PNL_Fases.Controls.Add(this.panel6);
             this.PNL_Fases.Controls.Add(this.panel2);
             this.PNL_Fases.Controls.Add(this.panel1);
-            this.PNL_Fases.Location = new System.Drawing.Point(976, 829);
+            this.PNL_Fases.Location = new System.Drawing.Point(0, 0);
             this.PNL_Fases.Name = "PNL_Fases";
             this.PNL_Fases.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Fases.TabIndex = 3;
             this.PNL_Fases.Paint += new System.Windows.Forms.PaintEventHandler(this.PNL_Fases_Paint);
+            // 
+            // PBX_VoltarInicio
+            // 
+            this.PBX_VoltarInicio.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_VoltarInicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_VoltarInicio.Image = ((System.Drawing.Image)(resources.GetObject("PBX_VoltarInicio.Image")));
+            this.PBX_VoltarInicio.Location = new System.Drawing.Point(557, 708);
+            this.PBX_VoltarInicio.Name = "PBX_VoltarInicio";
+            this.PBX_VoltarInicio.Size = new System.Drawing.Size(200, 100);
+            this.PBX_VoltarInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_VoltarInicio.TabIndex = 11;
+            this.PBX_VoltarInicio.TabStop = false;
+            this.PBX_VoltarInicio.Click += new System.EventHandler(this.PBX_VoltarInicio_Click);
+            this.PBX_VoltarInicio.MouseLeave += new System.EventHandler(this.PBX_VoltarInicio_MouseLeave);
+            this.PBX_VoltarInicio.MouseHover += new System.EventHandler(this.PBX_VoltarInicio_MouseHover);
             // 
             // panel4
             // 
@@ -1356,6 +1374,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).EndInit();
             this.PNL_Fases.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_VoltarInicio)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase6)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -1530,6 +1549,7 @@
         private System.Windows.Forms.PictureBox pictureBox55;
         private System.Windows.Forms.PictureBox PBX_NaoInicio;
         private System.Windows.Forms.PictureBox PBX_SimInicio;
+        private System.Windows.Forms.PictureBox PBX_VoltarInicio;
     }
 }
 
