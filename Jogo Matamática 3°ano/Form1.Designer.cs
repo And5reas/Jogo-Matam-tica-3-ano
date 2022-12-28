@@ -122,6 +122,8 @@
             this.PBX_Continuar = new System.Windows.Forms.PictureBox();
             this.PBX_SairPause = new System.Windows.Forms.PictureBox();
             this.PBX_Inicio = new System.Windows.Forms.PictureBox();
+            this.TMR_Tempo = new System.Windows.Forms.Timer(this.components);
+            this.LBL_Tempo = new System.Windows.Forms.Label();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -1264,6 +1266,22 @@
             this.PBX_Inicio.TabIndex = 2;
             this.PBX_Inicio.TabStop = false;
             // 
+            // TMR_Tempo
+            // 
+            this.TMR_Tempo.Interval = 1000;
+            this.TMR_Tempo.Tick += new System.EventHandler(this.TMR_Tempo_Tick);
+            // 
+            // LBL_Tempo
+            // 
+            this.LBL_Tempo.AutoSize = true;
+            this.LBL_Tempo.BackColor = System.Drawing.Color.Transparent;
+            this.LBL_Tempo.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_Tempo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LBL_Tempo.Location = new System.Drawing.Point(597, 25);
+            this.LBL_Tempo.Name = "LBL_Tempo";
+            this.LBL_Tempo.Size = new System.Drawing.Size(0, 40);
+            this.LBL_Tempo.TabIndex = 8;
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1274,6 +1292,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.Controls.Add(this.LBL_Tempo);
             this.Controls.Add(this.PNL_Fases);
             this.Controls.Add(this.PNL_Pause);
             this.Controls.Add(this.PnlMenu);
@@ -1530,6 +1549,8 @@
         private System.Windows.Forms.PictureBox pictureBox55;
         private System.Windows.Forms.PictureBox PBX_NaoInicio;
         private System.Windows.Forms.PictureBox PBX_SimInicio;
+        private System.Windows.Forms.Timer TMR_Tempo;
+        private System.Windows.Forms.Label LBL_Tempo;
     }
 }
 

@@ -15,6 +15,9 @@ namespace Jogo_Matamática_3_ano
     public partial class FrmJogo : Form
     {
         #region Variáveis Globais
+        //TEMPO DE JOGO
+        int tempSeg, tempMin;
+
         //MENU
         int ativouMenu = 0;
 
@@ -105,11 +108,13 @@ namespace Jogo_Matamática_3_ano
                     PNL_Pause.Visible = true;
                     PNL_Pause.Location = new Point(0, 0);
                     TmrMainGameManager.Stop();
+                    TMR_Tempo.Stop();
                     ativouMenu = 1;
                 }else if (ativouMenu == 1)
                 {
                     PNL_Pause.Visible = false;
                     TmrMainGameManager.Start();
+                    TMR_Tempo.Start();
                     ativouMenu = 0;
                 }
             }
@@ -422,8 +427,13 @@ namespace Jogo_Matamática_3_ano
         #region Start fase 1
         private void PBX_Fase1_Click(object sender, EventArgs e)
         {
+            //TEMPO DE FASE
+            tempMin = 1;
+            tempSeg = 0;
+
             //Start da fase
             TmrMainGameManager.Start();
+            TMR_Tempo.Start();
 
             PNL_Fases.Visible = false;
             PnlMenu.Visible = false;
@@ -505,8 +515,13 @@ namespace Jogo_Matamática_3_ano
         #region Start fase 2
         private void PBX_Fase2_Click(object sender, EventArgs e)
         {
+            //TEMPO DE FASE
+            tempMin = 1;
+            tempSeg = 15;
+
             //Start da fase
             TmrMainGameManager.Start();
+            TMR_Tempo.Start();
 
             PNL_Fases.Visible = false;
             PnlMenu.Visible = false;
@@ -585,6 +600,14 @@ namespace Jogo_Matamática_3_ano
         #region Start fase 3
         private void PBX_Fase3_Click(object sender, EventArgs e)
         {
+            //TEMPO DE FASE
+            tempMin = 1;
+            tempSeg = 15;
+
+            //Start da fase
+            TmrMainGameManager.Start();
+            TMR_Tempo.Start();
+
             PNL_Fases.Visible = false;
             PnlMenu.Visible = false;
             PNL_Pause.Enabled = true;
@@ -597,7 +620,7 @@ namespace Jogo_Matamática_3_ano
             PbxPersonagem.Location = new Point(25, 684);
             PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_1.png");
 
-            #region Load Wall fase 1
+            #region Load Wall fase 3
 
             //Colocando as paredes em seus lugares
             pictureBox1.Location = new Point(94, 167); pictureBox1.Size = new Size(871, 25);
@@ -775,6 +798,46 @@ namespace Jogo_Matamática_3_ano
         {
             PNL_Fases.Visible = false;
             PnlMenu.Visible = true;
+        }
+        #endregion
+
+        #region LÓGICA DE TEMPO DE JOGO
+        private void TMR_Tempo_Tick(object sender, EventArgs e)
+        {
+            if (tempSeg <= 60)
+            {
+                if (tempSeg == 0)
+                {
+                    tempMin--;
+
+                    if (tempMin >= 0)
+                    {
+                        tempSeg = 60;
+                    }
+
+                }
+                if (tempSeg <= 10)
+                {
+                    tempSeg--;
+                    if (tempSeg == -1)
+                    {
+                        TMR_Tempo.Stop();
+                        LBL_Tempo.Text = "Tempo Esgotado";
+                        TmrMainGameManager.Stop();
+                    }
+                    else
+                    {
+                        LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + "0" + tempSeg.ToString();
+                    }
+                    
+                }
+                if (tempSeg >= 10)
+                {
+                    tempSeg--;
+                    LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + tempSeg.ToString();
+                }
+
+            }
         }
         #endregion
     }
