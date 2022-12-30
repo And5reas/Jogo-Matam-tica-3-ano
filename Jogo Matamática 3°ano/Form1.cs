@@ -214,6 +214,7 @@ namespace Jogo_Matamática_3_ano
                                 PbxColision.Location = new Point(posXColision, posYColision - andarQtdPx);
                                 goDown = false;
                             }
+                            //Se caso a colisão entrar na parede
                             else
                             {
                                 PbxPersonagem.Location = new Point(posX2Player, posY2Player);
@@ -447,6 +448,7 @@ namespace Jogo_Matamática_3_ano
             TmrMainGameManager.Start();
             TMR_Tempo.Start();
 
+            //Esconder os paineis
             PNL_Fases.Visible = false;
             PnlMenu.Visible = false;
             PNL_Pause.Enabled = true;
@@ -538,6 +540,7 @@ namespace Jogo_Matamática_3_ano
             TmrMainGameManager.Start();
             TMR_Tempo.Start();
 
+            //Esconder os paineis
             PNL_Fases.Visible = false;
             PnlMenu.Visible = false;
             PNL_Pause.Enabled = true;
@@ -626,6 +629,7 @@ namespace Jogo_Matamática_3_ano
             TmrMainGameManager.Start();
             TMR_Tempo.Start();
 
+            //Esconder os paineis
             PNL_Fases.Visible = false;
             PnlMenu.Visible = false;
             PNL_Pause.Enabled = true;
