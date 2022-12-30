@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Reflection.Emit;
+using System.Net.Http.Headers;
 
 namespace Jogo_Matamática_3_ano
 {
@@ -19,9 +20,10 @@ namespace Jogo_Matamática_3_ano
         int tempSeg, tempMin;
 
         //MENU
-        int ativouMenu = 0;
+        int ativouMenu = 0, infoMenu;
 
         int andarQtdPx = 6,
+            fase,
             DebugSwith,
             posXPlayer, posYPlayer, posXColision, posYColision, posX2Player, posY2Player,
             animationPlayer, countAnimation, animationSpeed;
@@ -104,19 +106,26 @@ namespace Jogo_Matamática_3_ano
             //Pause
             if (e.KeyChar == 27)
             {
-                if (ativouMenu == 0 && PNL_Pause.Enabled != false) {
-                    PNL_Pause.Visible = true;
-                    PNL_Pause.Location = new Point(0, 0);
-                    TmrMainGameManager.Stop();
-                    TMR_Tempo.Stop();
-                    ativouMenu = 1;
-                }else if (ativouMenu == 1)
+                if (PNL_SemTempo.Visible != true)
                 {
-                    PNL_Pause.Visible = false;
-                    TmrMainGameManager.Start();
-                    TMR_Tempo.Start();
-                    ativouMenu = 0;
+                    if (ativouMenu == 0 && PNL_Pause.Enabled != false)
+                    {
+                        PNL_Pause.Visible = true;
+                        PNL_Pause.Location = new Point(0, 109);
+                        PNL_Info.Location = new Point(281, 3);
+                        TmrMainGameManager.Stop();
+                        TMR_Tempo.Stop();
+                        ativouMenu = 1;
+                    }
+                    else if (ativouMenu == 1)
+                    {
+                        PNL_Pause.Visible = false;
+                        TmrMainGameManager.Start();
+                        TMR_Tempo.Start();
+                        ativouMenu = 0;
+                    }
                 }
+                
             }
         }
         #endregion
@@ -427,6 +436,9 @@ namespace Jogo_Matamática_3_ano
         #region Start fase 1
         private void PBX_Fase1_Click(object sender, EventArgs e)
         {
+            //Fase atual
+            fase = 1;
+
             //TEMPO DE FASE
             tempMin = 1;
             tempSeg = 0;
@@ -515,6 +527,9 @@ namespace Jogo_Matamática_3_ano
         #region Start fase 2
         private void PBX_Fase2_Click(object sender, EventArgs e)
         {
+            //Fase atual
+            fase = 2;
+
             //TEMPO DE FASE
             tempMin = 1;
             tempSeg = 15;
@@ -600,6 +615,9 @@ namespace Jogo_Matamática_3_ano
         #region Start fase 3
         private void PBX_Fase3_Click(object sender, EventArgs e)
         {
+            //Fase atual
+            fase = 3;
+
             //TEMPO DE FASE
             tempMin = 1;
             tempSeg = 15;
@@ -763,33 +781,81 @@ namespace Jogo_Matamática_3_ano
             PNL_SairInicio.Visible = false;
         }
 
-
-        //SAIR ATRAVES DO MENU DE PAUSE
-        private void PBX_SairPause_Click(object sender, EventArgs e)
-        {
-            PNL_Sair.Visible = true;
-        }
-        private void BTN_NaoSair_Click(object sender, EventArgs e)
-        {
-            PNL_Sair.Visible = false;
-        }
-
-        private void BTN_SimSair_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
         private void FrmJogo_FormClosing(object sender, FormClosingEventArgs e)
         {
             
         }
         #endregion
 
-        #region Continuar jogando
+        #region MENU PA USE
+        //CONTINUAR JOGANDO
         private void PBX_Continuar_Click(object sender, EventArgs e)
         {
             PNL_Pause.Visible = false;
             TmrMainGameManager.Start();
+            TMR_Tempo.Start();
             ativouMenu = 0;
+        }
+
+        //BOTAO SAIR
+        private void PBX_SairPause_Click(object sender, EventArgs e)
+        {
+            infoMenu = 1;
+            PNL_Info.Visible = true;
+            PBX_Info.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\textos\\txtSair.png");
+        }
+        private void BTN_NaoInfo_Click(object sender, EventArgs e)
+        {
+            PNL_Info.Visible = false;
+        }
+
+        private void BTN_SimInfo_Click(object sender, EventArgs e)
+        {
+            //FECHAR O JOGO
+            if (infoMenu == 1)
+            {
+                Close();
+            }
+
+            //REINICIAR JOGO
+            if (infoMenu == 2)
+            {
+                ReiniciarJogo();
+                ativouMenu = 0;
+                TmrMainGameManager.Start();
+                TMR_Tempo.Start();
+                PNL_Info.Visible = false;
+                PNL_Pause.Visible = false;
+            }
+            if (infoMenu == 3)
+            {
+                ativouMenu = 0;
+                TmrMainGameManager.Stop();
+                TMR_Tempo.Stop();
+                PNL_Pause.Visible = false;
+                PNL_Info.Visible = false;
+                PNL_Fases.Visible = true;
+                LBL_Tempo.Text = "";
+            }
+        }
+
+        //REINICIAR FASE
+        private void PBX_Reiniciar_Click(object sender, EventArgs e)
+        {
+            infoMenu = 2;
+            PNL_Info.Location = new Point(281, 3);
+            PNL_Info.Visible = true;
+            PBX_Info.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\textos\\txtReiniciar.png");
+        }
+
+        //VOLTAR A SELECAO DE FASES
+        private void PBX_Inicio_Click(object sender, EventArgs e)
+        {
+            infoMenu = 3;
+            PNL_Info.Location = new Point(281, 3);
+            PNL_Info.Visible = true;
+            PBX_Info.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\textos\\txtInicio.png");
+
         }
         #endregion
 
@@ -822,7 +888,9 @@ namespace Jogo_Matamática_3_ano
                     if (tempSeg == -1)
                     {
                         TMR_Tempo.Stop();
-                        LBL_Tempo.Text = "Tempo Esgotado";
+                        TMR_SemTempo.Start();
+                        PNL_SemTempo.Location = new Point(365, 307);
+                        PNL_SemTempo.Visible = true;
                         TmrMainGameManager.Stop();
                     }
                     else
@@ -837,6 +905,67 @@ namespace Jogo_Matamática_3_ano
                     LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + tempSeg.ToString();
                 }
 
+            }
+        }
+
+        //ANIMACAO SEM TEMPO
+        private void TMR_SemTempo_Tick(object sender, EventArgs e)
+        {
+            LBL_SemTempo.ForeColor = LBL_SemTempo.ForeColor == Color.Brown ? Color.Gainsboro : Color.Brown;
+            LBL_SemTempo2.ForeColor = LBL_SemTempo2.ForeColor == Color.Brown ? Color.Gainsboro : Color.Brown;
+        }
+
+        //VOLTAR A JOGAR
+        private void BTN_SimTempo_Click(object sender, EventArgs e)
+        {
+            PNL_SemTempo.Visible = false;
+            PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_1.png");
+            ReiniciarJogo();
+            TmrMainGameManager.Start();
+            TMR_Tempo.Start();
+        }
+
+        //APERTAR NO BOTAO NAO
+        private void BTN_NaoTempo_Click(object sender, EventArgs e)
+        {
+            PNL_SemTempo.Visible = false;
+            PNL_SemTempo2.Location = new Point(365, 307);
+            PNL_SemTempo2.Visible = true;
+        }
+
+        private void BTN_NaoTempo2_Click(object sender, EventArgs e)
+        {
+            PNL_SemTempo2.Visible = false;
+            PNL_SemTempo.Visible = true;
+        }
+        #endregion
+
+        #region FUNCAO REINICIAR JOGO
+        public void ReiniciarJogo()
+        {
+            //FASE 1
+            if (fase == 1)
+            {
+                tempMin = 1;
+                tempSeg = 0;
+                PbxColision.Location = new Point(59, 169);
+                PbxPersonagem.Location = new Point(46, 136);
+            }
+            //FASE 2
+            if (fase == 2)
+            {
+                tempMin = 1;
+                tempSeg = 15;
+                PbxColision.Location = new Point(25, 713);
+                PbxPersonagem.Location = new Point(17, 680);
+            }
+            //FASE 3
+            if (fase == 3)
+            {
+                tempMin = 1;
+                tempSeg = 15;
+                PbxColision.Location = new Point(36, 717);
+                PbxPersonagem.Location = new Point(25, 684);
             }
         }
         #endregion
