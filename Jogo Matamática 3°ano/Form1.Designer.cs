@@ -140,6 +140,7 @@
             this.BTN_SimTempo2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.LBL_SemTempo2 = new System.Windows.Forms.Label();
+            this.lblOutputRequest = new System.Windows.Forms.Label();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -1504,6 +1505,16 @@
             this.LBL_SemTempo2.TabIndex = 9;
             this.LBL_SemTempo2.Text = "Tempo Esgotado";
             // 
+            // lblOutputRequest
+            // 
+            this.lblOutputRequest.AutoSize = true;
+            this.lblOutputRequest.BackColor = System.Drawing.Color.GreenYellow;
+            this.lblOutputRequest.Location = new System.Drawing.Point(643, 88);
+            this.lblOutputRequest.Name = "lblOutputRequest";
+            this.lblOutputRequest.Size = new System.Drawing.Size(77, 13);
+            this.lblOutputRequest.TabIndex = 4;
+            this.lblOutputRequest.Text = "Output request";
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1514,6 +1525,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.Controls.Add(this.LblY);
+            this.Controls.Add(this.LblX);
+            this.Controls.Add(this.lblOutputRequest);
+            this.Controls.Add(this.labelY);
+            this.Controls.Add(this.labelX);
             this.Controls.Add(this.PNL_SemTempo2);
             this.Controls.Add(this.PNL_SemTempo);
             this.Controls.Add(this.LBL_Tempo);
@@ -1522,10 +1538,6 @@
             this.Controls.Add(this.PnlMenu);
             this.Controls.Add(this.PbxColision);
             this.Controls.Add(this.PbxPersonagem);
-            this.Controls.Add(this.LblY);
-            this.Controls.Add(this.LblX);
-            this.Controls.Add(this.labelY);
-            this.Controls.Add(this.labelX);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox19);
             this.Controls.Add(this.pictureBox20);
@@ -1804,6 +1816,7 @@
         private System.Windows.Forms.PictureBox PBX_OpcoesPause;
         private System.Windows.Forms.PictureBox PBX_Salvar;
         private System.Windows.Forms.PictureBox PBX_Reiniciar;
+        private System.Windows.Forms.Label lblOutputRequest;
     }
 }
 
