@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Reflection.Emit;
 using System.Net.Http.Headers;
+using System.Security.AccessControl;
+using System.Threading;
 
 namespace Jogo_Matamática_3_ano
 {
@@ -22,11 +24,15 @@ namespace Jogo_Matamática_3_ano
         //MENU
         int ativouMenu = 0, infoMenu;
 
-        int andarQtdPx = 6,
-            fase,
+        int fase,
             DebugSwith,
+
+            //Variáveis de posição do player
+            andarQtdPx = 6,
             posXPlayer, posYPlayer, posXColision, posYColision, posX2Player, posY2Player,
             animationPlayer, countAnimation, animationSpeed;
+
+        //Controles do player
         bool goLeft, goRight, goDown, goUp;
         #endregion
 
@@ -83,6 +89,7 @@ namespace Jogo_Matamática_3_ano
             //Ativar e desativar o Debug Mode
             if(e.KeyChar.ToString().ToLower() == "y")
             {
+                //Debug ativo
                 if(DebugSwith % 2 == 0)
                 {
                     //Mostrar posição do personagem
@@ -92,6 +99,7 @@ namespace Jogo_Matamática_3_ano
                     LblX.Visible = true;
                     LblY.Visible = true;
                 }
+                //Debug Desativo
                 else
                 {
                     //Esconder posição do personagem
@@ -100,6 +108,7 @@ namespace Jogo_Matamática_3_ano
                     labelY.Visible = false;
                     LblX.Visible = false;
                     LblY.Visible = false;
+                    andarQtdPx = 6;
                 }
             }
 
@@ -111,8 +120,6 @@ namespace Jogo_Matamática_3_ano
                     if (ativouMenu == 0 && PNL_Pause.Enabled != false)
                     {
                         PNL_Pause.Visible = true;
-                        PNL_Pause.Location = new Point(0, 109);
-                        PNL_Info.Location = new Point(281, 3);
                         TmrMainGameManager.Stop();
                         TMR_Tempo.Stop();
                         ativouMenu = 1;
@@ -133,20 +140,25 @@ namespace Jogo_Matamática_3_ano
         #region Load form
         private void FrmJogo_Load(object sender, EventArgs e)
         {
+            //GameMenager
+            TmrMainGameManager.Stop();
+
             //PAUSE
+            PNL_Pause.Location = new Point(0, 109);
+            PNL_Info.Location = new Point(281, 3);
             PNL_Pause.Visible = false;
             PNL_Pause.Enabled = false;
 
             //FASES DESATIVADAS
-            //PBX_Fase2.Enabled = false;
-            //PBX_Fase3.Enabled = false;
+            PBX_Fase2.Enabled = false;
+            PBX_Fase3.Enabled = false;
             PBX_Fase4.Enabled = false;
             PBX_Fase5.Enabled = false;
             PBX_Fase6.Enabled = false;
 
             //ESCONDER FASES
-            //PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-            //PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
             PBX_Fase4.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
             PBX_Fase5.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
             PBX_Fase6.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
@@ -241,8 +253,23 @@ namespace Jogo_Matamática_3_ano
 
             animationPlayer = (animationSpeed % 3) + 1;
 
+            //Condição para ganhar/passar de fase
+            if (((posXPlayer > 1232 && posXPlayer < 1250) && (posYPlayer > 633 && posYPlayer < 717)) && tempSeg != -1)
+            {
+                if (fase == 1)
+                {
+                    PBX_Fase2.Enabled = true;
+                    PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
+                    TmrMainGameManager.Stop();
+                    TMR_Tempo.Stop();
+                    AnimationPlayerPassFase();
+                    PNL_Fases.Enabled = true;
+                    PNL_Fases.Visible = true;
+                }
+            }
+
             //Controles para fazer o player andar
-            if (goLeft == true)
+            else if (goLeft == true)
             {
                 PbxPersonagem.Location = new Point(posXPlayer - andarQtdPx, posYPlayer);
                 PbxColision.Location = new Point(posXColision - andarQtdPx, posYColision);
@@ -405,11 +432,6 @@ namespace Jogo_Matamática_3_ano
         {
             PBX_Fase6.Size = new Size(228, 170);
             PBX_Fase6.Location = new Point(14, 14);
-        }
-
-        private void PbxPersonagem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void PbxColision_Click(object sender, EventArgs e)
@@ -774,7 +796,6 @@ namespace Jogo_Matamática_3_ano
         {
             PNL_SairInicio.Visible = true;
         }
-
         private void PBX_SimInicio_Click(object sender, EventArgs e)
         {
             Close();
@@ -783,6 +804,11 @@ namespace Jogo_Matamática_3_ano
         private void PBX_NaoInicio_Click(object sender, EventArgs e)
         {
             PNL_SairInicio.Visible = false;
+        }
+
+        private void PbxPersonagem_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void FrmJogo_FormClosing(object sender, FormClosingEventArgs e)
@@ -811,6 +837,12 @@ namespace Jogo_Matamática_3_ano
         private void BTN_NaoInfo_Click(object sender, EventArgs e)
         {
             PNL_Info.Visible = false;
+        }
+
+        //Botão salvar
+        private void PBX_Salvar_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void BTN_SimInfo_Click(object sender, EventArgs e)
@@ -970,6 +1002,23 @@ namespace Jogo_Matamática_3_ano
                 tempSeg = 15;
                 PbxColision.Location = new Point(36, 717);
                 PbxPersonagem.Location = new Point(25, 684);
+            }
+        }
+        #endregion
+
+        #region Animação do personagem passando de safe tentativa :(
+        private void AnimationPlayerPassFase()
+        {
+            int animacao = 0, aux = 0, aux1 = 0;
+            Thread.Sleep(1000);
+            PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_1.png");
+            Thread.Sleep(1200);
+            for (int i = 0; i < 30; i++) {
+                aux++;
+                aux = aux1 / 4;
+                animacao = (aux % 2) + 1;
+                PbxPersonagem.Location = new Point(posXPlayer, posYPlayer + 2);
+                PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_pulo_" + animacao + ".png");
             }
         }
         #endregion
