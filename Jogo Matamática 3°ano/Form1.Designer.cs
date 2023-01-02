@@ -141,6 +141,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.LBL_SemTempo2 = new System.Windows.Forms.Label();
             this.lblOutputRequest = new System.Windows.Forms.Label();
+            this.LblBust = new System.Windows.Forms.Label();
+            this.TmrAnimationWinFase = new System.Windows.Forms.Timer(this.components);
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -1060,7 +1062,7 @@
             // pictureBox44
             // 
             this.pictureBox44.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox44.Location = new System.Drawing.Point(1250, 717);
+            this.pictureBox44.Location = new System.Drawing.Point(1169, 670);
             this.pictureBox44.Name = "pictureBox44";
             this.pictureBox44.Size = new System.Drawing.Size(10, 10);
             this.pictureBox44.TabIndex = 6;
@@ -1515,6 +1517,21 @@
             this.lblOutputRequest.TabIndex = 4;
             this.lblOutputRequest.Text = "Output request";
             // 
+            // LblBust
+            // 
+            this.LblBust.AutoSize = true;
+            this.LblBust.BackColor = System.Drawing.Color.GreenYellow;
+            this.LblBust.Location = new System.Drawing.Point(643, 65);
+            this.LblBust.Name = "LblBust";
+            this.LblBust.Size = new System.Drawing.Size(28, 13);
+            this.LblBust.TabIndex = 4;
+            this.LblBust.Text = "Bust";
+            // 
+            // TmrAnimationWinFase
+            // 
+            this.TmrAnimationWinFase.Interval = 1;
+            this.TmrAnimationWinFase.Tick += new System.EventHandler(this.TmrAnimationWinFase_Tick);
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1527,6 +1544,7 @@
             this.ClientSize = new System.Drawing.Size(1284, 961);
             this.Controls.Add(this.LblY);
             this.Controls.Add(this.LblX);
+            this.Controls.Add(this.LblBust);
             this.Controls.Add(this.lblOutputRequest);
             this.Controls.Add(this.labelY);
             this.Controls.Add(this.labelX);
@@ -1817,6 +1835,8 @@
         private System.Windows.Forms.PictureBox PBX_Salvar;
         private System.Windows.Forms.PictureBox PBX_Reiniciar;
         private System.Windows.Forms.Label lblOutputRequest;
+        private System.Windows.Forms.Label LblBust;
+        private System.Windows.Forms.Timer TmrAnimationWinFase;
     }
 }
 

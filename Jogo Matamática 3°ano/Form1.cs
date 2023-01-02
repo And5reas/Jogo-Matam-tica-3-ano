@@ -24,16 +24,29 @@ namespace Jogo_Matamática_3_ano
         //MENU
         int ativouMenu = 0, infoMenu;
 
+            //Alocar a fase que o player está 1, 2 ,3, 4...
         int fase,
-            DebugSwith,
+
+            //Swiths do debugMode
+            DebugSwith, DebugSwithBust,
 
             //Variáveis de posição do player
             andarQtdPx = 6,
             posXPlayer, posYPlayer, posXColision, posYColision, posX2Player, posY2Player,
-            animationPlayer, countAnimation, animationSpeed;
+            animationPlayer, countAnimation, animationSpeed,
 
-        //Controles do player
-        bool goLeft, goRight, goDown, goUp;
+            //Variáveis que controla a animação do personagem ganhando a fase
+            ControleAnimacaoWin, ControleAnimacaoWinAux, animcaoWin = 1;
+
+             //Controles do player
+        bool goLeft, goRight, goDown, goUp,
+
+            //Variável para ver se o debug está ativo ou não
+            DebugSwithB,
+            
+            //Fazer o payer andar mais rápido
+            Bust;
+
         #endregion
 
         public FrmJogo()
@@ -99,6 +112,8 @@ namespace Jogo_Matamática_3_ano
                     LblX.Visible = true;
                     LblY.Visible = true;
                     lblOutputRequest.Visible = true;
+                    LblBust.Visible = true;
+                    DebugSwithB = true;
                 }
                 //Debug Desativo
                 else
@@ -110,7 +125,23 @@ namespace Jogo_Matamática_3_ano
                     LblX.Visible = false;
                     LblY.Visible = false;
                     lblOutputRequest.Visible = false;
-                    andarQtdPx = 6;
+                    LblBust.Visible = false;
+                    DebugSwithB = false;
+                }
+            }
+
+            //Fazer o Personagem andar mais
+            if (e.KeyChar.ToString().ToLower() == "b")
+            {
+                if (DebugSwithBust % 2 == 0)
+                {
+                    DebugSwithBust++;
+                    Bust = true;
+                }
+                else
+                {
+                    DebugSwithBust++;
+                    Bust = false;
                 }
             }
 
@@ -173,12 +204,13 @@ namespace Jogo_Matamática_3_ano
             PnlMenu.Location = new Point(0, 0);
             PnlMenu.Visible = true;
             
-            //Esconder posição do personagem e o output resquest
+            //Esconder opções debugMode
             labelX.Visible = false;
             labelY.Visible = false;
             LblX.Visible = false;
             LblY.Visible = false;
             lblOutputRequest.Visible = false;
+            LblBust.Visible = false;
 
             //Resetar as paredes
             ResetWalls();
@@ -257,7 +289,7 @@ namespace Jogo_Matamática_3_ano
             animationPlayer = (animationSpeed % 3) + 1;
 
             //Condição para ganhar/passar de fase
-            if (((posXPlayer > 1232 && posXPlayer < 1250) && (posYPlayer > 633 && posYPlayer < 717)) && tempSeg != -1)
+            if (((posXPlayer > 1169 && posXPlayer < 1250) && (posYPlayer > 670 && posYPlayer < 717)) && tempSeg != -1)
             {
                 if (fase == 1)
                 {
@@ -265,9 +297,7 @@ namespace Jogo_Matamática_3_ano
                     PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
                     TmrMainGameManager.Stop();
                     TMR_Tempo.Stop();
-                    AnimationPlayerPassFase();
-                    PNL_Fases.Enabled = true;
-                    PNL_Fases.Visible = true;
+                    TmrAnimationWinFase.Start();
                 }
             }
 
@@ -313,6 +343,19 @@ namespace Jogo_Matamática_3_ano
                             f.Visible = false;
                         }
                     }
+                }
+            }
+
+            if (DebugSwithB == true)
+            {
+                if (Bust == true) {
+                    andarQtdPx = 50;
+                    LblBust.Text = "Busted";
+                }
+                else
+                {
+                    andarQtdPx = 6;
+                    LblBust.Text = "Normal";
                 }
             }
         }
@@ -812,6 +855,7 @@ namespace Jogo_Matamática_3_ano
         {
             PNL_SairInicio.Visible = true;
         }
+
         private void PBX_SimInicio_Click(object sender, EventArgs e)
         {
             Close();
@@ -1031,18 +1075,60 @@ namespace Jogo_Matamática_3_ano
         #endregion
 
         #region Animação do personagem passando de safe tentativa :(
-        private void AnimationPlayerPassFase()
+        private void TmrAnimationWinFase_Tick(object sender, EventArgs e)
         {
-            int animacao = 0, aux = 0, aux1 = 0;
-            Thread.Sleep(1000);
-            PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_1.png");
-            Thread.Sleep(1200);
-            for (int i = 0; i < 30; i++) {
-                aux++;
-                aux = aux1 / 4;
-                animacao = (aux % 2) + 1;
-                PbxPersonagem.Location = new Point(posXPlayer, posYPlayer + 2);
-                PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_pulo_" + animacao + ".png");
+            ControleAnimacaoWin++;
+            //Olha pro player
+            if (ControleAnimacaoWin > 0 && ControleAnimacaoWin < 250)
+            {
+                if (ControleAnimacaoWin == 50 || ControleAnimacaoWin == 100 || ControleAnimacaoWin == 150) {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_" + animcaoWin + ".png");
+                    animcaoWin++;
+                }
+                if (ControleAnimacaoWin == 200)
+                {
+                    animcaoWin = 1;
+                }
+            }
+            //Dá uns pulo
+            if (ControleAnimacaoWin > 250 && ControleAnimacaoWin < 520) //700 para colocar todos os 5 pulos;
+            {
+                ControleAnimacaoWinAux++;
+                if ((ControleAnimacaoWin > 250 && ControleAnimacaoWin < 295) || (ControleAnimacaoWin > 340 && ControleAnimacaoWin < 385) || (ControleAnimacaoWin > 430 && ControleAnimacaoWin < 475)/* Tirar alguns pulos || (ControleAnimacaoWin > 520 && ControleAnimacaoWin < 565) || (ControleAnimacaoWin > 610 && ControleAnimacaoWin < 655)*/)
+                {
+                    if (ControleAnimacaoWin % 5 == 0) {
+                        PbxPersonagem.Location = new Point(posXPlayer, posYPlayer - 5);
+                    }
+                }
+                else if ((ControleAnimacaoWin > 295 && ControleAnimacaoWin < 340) || (ControleAnimacaoWin > 385 && ControleAnimacaoWin < 430) || (ControleAnimacaoWin > 475 && ControleAnimacaoWin < 520)/* Tirar alguns pulos || (ControleAnimacaoWin > 565 && ControleAnimacaoWin < 610) || (ControleAnimacaoWin > 655 && ControleAnimacaoWin < 700)*/)
+                {
+                    if (ControleAnimacaoWin % 5 == 0)
+                    {
+                        PbxPersonagem.Location = new Point(posXPlayer, posYPlayer + 5);
+                    }
+                }
+                if (ControleAnimacaoWinAux % 40 == 0)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_pulo_" + animcaoWin + ".png");
+                    animcaoWin++;
+                    if (animcaoWin > 2)
+                    {
+                        animcaoWin = 1;
+                    }
+                }
+            }
+            if (ControleAnimacaoWin > 520 && ControleAnimacaoWin < 620)
+            {
+                PbxPersonagem.Location = new Point(posXPlayer + 3, posYPlayer);
+                animcaoWin = (ControleAnimacaoWin % 2) + 1;
+                PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_" + animcaoWin + ".png");
+            }
+            if (ControleAnimacaoWin == 670)
+            {
+                PNL_Fases.Enabled = true;
+                PNL_Fases.Visible = true;
+                TmrAnimationWinFase.Stop();
+                ControleAnimacaoWin = 0;
             }
         }
         #endregion
