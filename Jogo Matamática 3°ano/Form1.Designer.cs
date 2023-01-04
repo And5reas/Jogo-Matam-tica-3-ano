@@ -143,6 +143,7 @@
             this.lblOutputRequest = new System.Windows.Forms.Label();
             this.LblBust = new System.Windows.Forms.Label();
             this.TmrAnimationWinFase = new System.Windows.Forms.Timer(this.components);
+            this.TmrAnimationStartFase = new System.Windows.Forms.Timer(this.components);
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -1062,7 +1063,7 @@
             // pictureBox44
             // 
             this.pictureBox44.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox44.Location = new System.Drawing.Point(1169, 670);
+            this.pictureBox44.Location = new System.Drawing.Point(1148, 662);
             this.pictureBox44.Name = "pictureBox44";
             this.pictureBox44.Size = new System.Drawing.Size(10, 10);
             this.pictureBox44.TabIndex = 6;
@@ -1532,6 +1533,11 @@
             this.TmrAnimationWinFase.Interval = 1;
             this.TmrAnimationWinFase.Tick += new System.EventHandler(this.TmrAnimationWinFase_Tick);
             // 
+            // TmrAnimationStartFase
+            // 
+            this.TmrAnimationStartFase.Interval = 1;
+            this.TmrAnimationStartFase.Tick += new System.EventHandler(this.TmrAnimationStartFase_Tick);
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1837,6 +1843,7 @@
         private System.Windows.Forms.Label lblOutputRequest;
         private System.Windows.Forms.Label LblBust;
         private System.Windows.Forms.Timer TmrAnimationWinFase;
+        private System.Windows.Forms.Timer TmrAnimationStartFase;
     }
 }
 

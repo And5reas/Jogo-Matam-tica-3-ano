@@ -289,16 +289,14 @@ namespace Jogo_Matamática_3_ano
             animationPlayer = (animationSpeed % 3) + 1;
 
             //Condição para ganhar/passar de fase
-            if (((posXPlayer > 1169 && posXPlayer < 1250) && (posYPlayer > 670 && posYPlayer < 717)) && tempSeg != -1)
+            if (((posXPlayer > 1148 && posXPlayer < 1300) && (posYPlayer > 662 && posYPlayer < 750)) && tempSeg != -1 && fase == 1)
             {
-                if (fase == 1)
-                {
-                    PBX_Fase2.Enabled = true;
-                    PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
-                    TmrMainGameManager.Stop();
-                    TMR_Tempo.Stop();
-                    TmrAnimationWinFase.Start();
-                }
+                TmrMainGameManager.Stop();
+                TMR_Tempo.Stop();
+                animcaoWin = 1;
+                PBX_Fase2.Enabled = true;
+                PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
+                TmrAnimationWinFase.Start();
             }
 
             //Controles para fazer o player andar
@@ -513,7 +511,6 @@ namespace Jogo_Matamática_3_ano
             tempSeg = 0;
 
             //Start da fase
-            TmrMainGameManager.Start();
             TMR_Tempo.Start();
 
             //Esconder os paineis
@@ -526,7 +523,8 @@ namespace Jogo_Matamática_3_ano
 
             //Setar a posição inicial da colisão e personagem e imagen
             PbxColision.Location = new Point(59, 169);
-            PbxPersonagem.Location = new Point(46, 136);
+            PbxPersonagem.Location = new Point(-104, 136);
+            TmrAnimationStartFase.Start();
             PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_1.png");
 
             #region Load Wall fase 1
@@ -1074,10 +1072,11 @@ namespace Jogo_Matamática_3_ano
         }
         #endregion
 
-        #region Animação do personagem passando de safe tentativa :(
+        #region Animação do personagem
         private void TmrAnimationWinFase_Tick(object sender, EventArgs e)
         {
             ControleAnimacaoWin++;
+
             //Olha pro player
             if (ControleAnimacaoWin > 0 && ControleAnimacaoWin < 250)
             {
@@ -1090,10 +1089,15 @@ namespace Jogo_Matamática_3_ano
                     animcaoWin = 1;
                 }
             }
+
             //Dá uns pulo
             if (ControleAnimacaoWin > 250 && ControleAnimacaoWin < 520) //700 para colocar todos os 5 pulos;
             {
                 ControleAnimacaoWinAux++;
+                if (ControleAnimacaoWin == 252)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_pulo_2.png");
+                }
                 if ((ControleAnimacaoWin > 250 && ControleAnimacaoWin < 295) || (ControleAnimacaoWin > 340 && ControleAnimacaoWin < 385) || (ControleAnimacaoWin > 430 && ControleAnimacaoWin < 475)/* Tirar alguns pulos || (ControleAnimacaoWin > 520 && ControleAnimacaoWin < 565) || (ControleAnimacaoWin > 610 && ControleAnimacaoWin < 655)*/)
                 {
                     if (ControleAnimacaoWin % 5 == 0) {
@@ -1117,18 +1121,45 @@ namespace Jogo_Matamática_3_ano
                     }
                 }
             }
+
+            //Sai do mapa
             if (ControleAnimacaoWin > 520 && ControleAnimacaoWin < 620)
             {
                 PbxPersonagem.Location = new Point(posXPlayer + 3, posYPlayer);
                 animcaoWin = (ControleAnimacaoWin % 2) + 1;
                 PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_" + animcaoWin + ".png");
             }
+
+            //Encerra a animação
             if (ControleAnimacaoWin == 670)
             {
                 PNL_Fases.Enabled = true;
                 PNL_Fases.Visible = true;
                 TmrAnimationWinFase.Stop();
                 ControleAnimacaoWin = 0;
+            }
+        }
+        #endregion
+
+        #region Animações do personagem entrando na fase
+        private void TmrAnimationStartFase_Tick(object sender, EventArgs e)
+        {
+            ControleAnimacaoWin++;
+            //Entra no mapa
+            if (fase == 1) {
+                if (ControleAnimacaoWin > 0 && ControleAnimacaoWin < 52)
+                {
+                    PbxPersonagem.Location = new Point(posXPlayer + 3, posYPlayer);
+                    animcaoWin = (ControleAnimacaoWin % 2) + 1;
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_" + animcaoWin + ".png");
+                }
+                if (ControleAnimacaoWin == 52)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_1.png");
+                    TmrAnimationStartFase.Stop();
+                    TmrMainGameManager.Start();
+                    ControleAnimacaoWin = 0;
+                }
             }
         }
         #endregion
