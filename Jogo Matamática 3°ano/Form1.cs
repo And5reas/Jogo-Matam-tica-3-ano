@@ -299,6 +299,17 @@ namespace Jogo_Matamática_3_ano
                 TmrAnimationWinFase.Start();
             }
 
+            //Condição para ganhar/fase2
+            if (((posXPlayer > 1148 && posXPlayer < 1300) && (posYPlayer > 662 && posYPlayer < 750)) && tempSeg != -1 && fase == 2)
+            {
+                TmrMainGameManager.Stop();
+                TMR_Tempo.Stop();
+                animcaoWin = 1;
+                PBX_Fase3.Enabled = true;
+                PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_3.png");
+                TmrAnimationWinFase.Start();
+            }
+
             //Controles para fazer o player andar
             else if (goLeft == true)
             {
@@ -527,6 +538,24 @@ namespace Jogo_Matamática_3_ano
             TmrAnimationStartFase.Start();
             PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_1.png");
 
+            //SETAR TRANSPARENCIA ITENS
+            ItensTrans();
+
+            //SETAR IMAGEM DOS ITENS
+            PBX_Vitamina1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\maca_animada.gif");
+
+            //SETAR POSICAO DOS ITENS
+            PBX_Vitamina1.Location = new Point(212, 150);
+
+            //SETAR TAMANHO ITENS
+            PBX_Vitamina1.Size = new Size(26, 30);
+
+            //DEIXAR ITENS VISIVEIS
+            ItensVisible();
+
+            //SETAR TRANSPARENCIA
+            AmbienteTrans();
+
             //Setar a posiçao das imagens do ambiente
             PBX_Ambiente1.Location = new Point(282, 306);
             PBX_Ambiente2.Location = new Point(502, 272);
@@ -555,13 +584,7 @@ namespace Jogo_Matamática_3_ano
             PBX_Ambiente7.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\ambiente\\mapa_1\\arbusto_macas_mapa1.png");
 
             //DEIXAR VISIVEL
-            PBX_Ambiente1.Visible = true;
-            PBX_Ambiente2.Visible = true;
-            PBX_Ambiente3.Visible = true;
-            PBX_Ambiente4.Visible = true;
-            PBX_Ambiente5.Visible = true;
-            PBX_Ambiente6.Visible = true;
-            PBX_Ambiente7.Visible = true;
+            verAmbiente();
 
             #region Load Wall fase 1
 
@@ -804,7 +827,8 @@ namespace Jogo_Matamática_3_ano
         }
         #endregion
 
-        #region Resetar as paredes
+        #region Funções e Utilidades
+        //RESETAR PAREDES
         public void ResetWalls()
         {
             pictureBox1.Location = new Point(0, 0); pictureBox1.Size = new Size(10, 10);
@@ -860,6 +884,58 @@ namespace Jogo_Matamática_3_ano
             pictureBox51.Location = new Point(0, 55); pictureBox51.Size = new Size(10, 10);
             pictureBox52.Location = new Point(11, 55); pictureBox52.Size = new Size(10, 10);
             pictureBox53.Location = new Point(22, 55); pictureBox53.Size = new Size(10, 10);
+        }
+
+        //RESETAR AMBIENTE
+        public void ResetAmbiente()
+        {
+            PBX_Ambiente1.Visible = false;
+            PBX_Ambiente2.Visible = false;
+            PBX_Ambiente3.Visible = false;
+            PBX_Ambiente4.Visible = false;
+            PBX_Ambiente5.Visible = false;
+            PBX_Ambiente6.Visible = false;
+            PBX_Ambiente7.Visible = false;
+        }
+
+        //Visible ambiente
+        public void verAmbiente()
+        {
+            PBX_Ambiente1.Visible = true;
+            PBX_Ambiente2.Visible = true;
+            PBX_Ambiente3.Visible = true;
+            PBX_Ambiente4.Visible = true;
+            PBX_Ambiente5.Visible = true;
+            PBX_Ambiente6.Visible = true;
+            PBX_Ambiente7.Visible = true;
+        }
+
+        //SETAR TRANSPARENCIA AMBIENTE
+        public void AmbienteTrans()
+        {
+            PBX_Ambiente1.BackColor = Color.Transparent;
+            PBX_Ambiente2.BackColor = Color.Transparent;
+            PBX_Ambiente3.BackColor = Color.Transparent;
+            PBX_Ambiente4.BackColor = Color.Transparent;
+            PBX_Ambiente5.BackColor = Color.Transparent;
+            PBX_Ambiente6.BackColor = Color.Transparent;
+            PBX_Ambiente7.BackColor = Color.Transparent;
+        }
+
+        //SETAR TRANSPARENCIA ITENS
+        public void ItensTrans()
+        {
+            PBX_Vitamina1.BackColor = Color.Transparent;
+        }
+
+        public void ItensVisible()
+        {
+            PBX_Vitamina1.Visible = true;
+        }
+
+        public void IensNotVisible()
+        {
+            PBX_Vitamina1.Visible = false;
         }
         #endregion
 
@@ -1025,6 +1101,7 @@ namespace Jogo_Matamática_3_ano
                     tempSeg--;
                     if (tempSeg == -1)
                     {
+                        PNL_Pause.Enabled = false;
                         TMR_Tempo.Stop();
                         TMR_SemTempo.Start();
                         PNL_SemTempo.Location = new Point(365, 307);
@@ -1056,11 +1133,18 @@ namespace Jogo_Matamática_3_ano
         //VOLTAR A JOGAR
         private void BTN_SimTempo_Click(object sender, EventArgs e)
         {
+            PNL_Pause.Enabled = true;
             PNL_SemTempo.Visible = false;
             PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_1.png");
             ReiniciarJogo();
             TmrMainGameManager.Start();
             TMR_Tempo.Start();
+        }
+
+        //SAIR DO JOGO
+        private void BTN_SimTempo2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         //APERTAR NO BOTAO NAO
@@ -1171,6 +1255,8 @@ namespace Jogo_Matamática_3_ano
             {
                 PNL_Fases.Enabled = true;
                 PNL_Fases.Visible = true;
+                LBL_Tempo.Text = "";
+                ResetAmbiente();
                 TmrAnimationWinFase.Stop();
                 ControleAnimacaoWin = 0;
             }
