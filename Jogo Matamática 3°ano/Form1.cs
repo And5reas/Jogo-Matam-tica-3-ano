@@ -529,6 +529,42 @@ namespace Jogo_Matamática_3_ano
             PbxPersonagem.Location = new Point(46, 136);
             PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_1.png");
 
+            //Setar a posiçao das imagens do ambiente
+            PBX_Ambiente1.Location = new Point(282, 306);
+            PBX_Ambiente2.Location = new Point(502, 272);
+            PBX_Ambiente3.Location = new Point(720, 235);
+            PBX_Ambiente4.Location = new Point(946, 235);
+            PBX_Ambiente5.Location = new Point(367, 487);
+            PBX_Ambiente6.Location = new Point(224, 642);
+            PBX_Ambiente7.Location = new Point(1092, 503);
+
+            //SETANDO TAMANHO DAS IMAGENS DO AMBIENTE
+            PBX_Ambiente1.Size = new Size(66, 55);
+            PBX_Ambiente2.Size = new Size(66, 55);
+            PBX_Ambiente3.Size = new Size(66, 55);
+            PBX_Ambiente4.Size = new Size(66, 55);
+            PBX_Ambiente5.Size = new Size(66, 55);
+            PBX_Ambiente6.Size = new Size(66, 55);
+            PBX_Ambiente7.Size = new Size(66, 55);
+
+            //SETANDO IMAGEM DO AMBIENTE
+            PBX_Ambiente1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\ambiente\\mapa_1\\arbusto_macas_mapa1.png");
+            PBX_Ambiente2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\ambiente\\mapa_1\\arbusto_macas_mapa1.png");
+            PBX_Ambiente3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\ambiente\\mapa_1\\arbusto_macas_mapa1.png");
+            PBX_Ambiente4.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\ambiente\\mapa_1\\arbusto_macas_mapa1.png");
+            PBX_Ambiente5.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\ambiente\\mapa_1\\arbusto_macas_mapa1.png");
+            PBX_Ambiente6.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\ambiente\\mapa_1\\arbusto_macas_mapa1.png");
+            PBX_Ambiente7.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\ambiente\\mapa_1\\arbusto_macas_mapa1.png");
+
+            //DEIXAR VISIVEL
+            PBX_Ambiente1.Visible = true;
+            PBX_Ambiente2.Visible = true;
+            PBX_Ambiente3.Visible = true;
+            PBX_Ambiente4.Visible = true;
+            PBX_Ambiente5.Visible = true;
+            PBX_Ambiente6.Visible = true;
+            PBX_Ambiente7.Visible = true;
+
             #region Load Wall fase 1
 
             //Colocando as paredes em seus lugares
