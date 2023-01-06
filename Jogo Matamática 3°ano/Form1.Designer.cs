@@ -601,7 +601,6 @@
             this.PbxColision.TabIndex = 5;
             this.PbxColision.TabStop = false;
             this.PbxColision.Tag = "Colision";
-            this.PbxColision.Visible = false;
             this.PbxColision.Click += new System.EventHandler(this.PbxColision_Click);
             // 
             // pictureBox1
