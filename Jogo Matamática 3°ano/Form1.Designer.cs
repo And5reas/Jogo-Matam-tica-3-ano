@@ -161,6 +161,9 @@
             this.PBX_Vitamina7 = new System.Windows.Forms.PictureBox();
             this.PbxCerca = new System.Windows.Forms.PictureBox();
             this.TmrPortao = new System.Windows.Forms.Timer(this.components);
+            this.PnlPerguntas = new System.Windows.Forms.Panel();
+            this.TxtResposta = new System.Windows.Forms.TextBox();
+            this.LblResposta = new System.Windows.Forms.Label();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -271,6 +274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCerca)).BeginInit();
+            this.PnlPerguntas.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -1212,9 +1216,7 @@
             this.PNL_Pause.BackColor = System.Drawing.Color.Transparent;
             this.PNL_Pause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PNL_Pause.Controls.Add(this.PNL_InfoPause);
-            this.PNL_Pause.Controls.Add(this.PNL_Info);
-            this.PNL_Pause.Controls.Add(this.panel7);
-            this.PNL_Pause.Location = new System.Drawing.Point(831, 794);
+            this.PNL_Pause.Location = new System.Drawing.Point(946, 824);
             this.PNL_Pause.Name = "PNL_Pause";
             this.PNL_Pause.Size = new System.Drawing.Size(1314, 906);
             this.PNL_Pause.TabIndex = 7;
@@ -1230,12 +1232,13 @@
             // 
             // PNL_Info
             // 
+            this.PNL_Info.BackColor = System.Drawing.Color.Transparent;
             this.PNL_Info.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_Info.BackgroundImage")));
             this.PNL_Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PNL_Info.Controls.Add(this.PBX_Info);
             this.PNL_Info.Controls.Add(this.BTN_NaoInfo);
             this.PNL_Info.Controls.Add(this.BTN_SimInfo);
-            this.PNL_Info.Location = new System.Drawing.Point(256, 24);
+            this.PNL_Info.Location = new System.Drawing.Point(1241, 700);
             this.PNL_Info.Name = "PNL_Info";
             this.PNL_Info.Size = new System.Drawing.Size(757, 680);
             this.PNL_Info.TabIndex = 5;
@@ -1279,6 +1282,7 @@
             // 
             // panel7
             // 
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
             this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel7.Controls.Add(this.PBX_OpcoesPause);
@@ -1287,7 +1291,7 @@
             this.panel7.Controls.Add(this.PBX_Continuar);
             this.panel7.Controls.Add(this.PBX_SairPause);
             this.panel7.Controls.Add(this.PBX_Inicio);
-            this.panel7.Location = new System.Drawing.Point(281, 3);
+            this.panel7.Location = new System.Drawing.Point(1169, 732);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(760, 665);
             this.panel7.TabIndex = 4;
@@ -1749,6 +1753,44 @@
             this.TmrPortao.Interval = 30;
             this.TmrPortao.Tick += new System.EventHandler(this.TmrPortao_Tick);
             // 
+            // PnlPerguntas
+            // 
+            this.PnlPerguntas.BackColor = System.Drawing.Color.DarkGreen;
+            this.PnlPerguntas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PnlPerguntas.BackgroundImage")));
+            this.PnlPerguntas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PnlPerguntas.Controls.Add(this.LblResposta);
+            this.PnlPerguntas.Controls.Add(this.TxtResposta);
+            this.PnlPerguntas.Location = new System.Drawing.Point(8, 761);
+            this.PnlPerguntas.Name = "PnlPerguntas";
+            this.PnlPerguntas.Size = new System.Drawing.Size(1285, 237);
+            this.PnlPerguntas.TabIndex = 24;
+            // 
+            // TxtResposta
+            // 
+            this.TxtResposta.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.TxtResposta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtResposta.Enabled = false;
+            this.TxtResposta.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtResposta.ForeColor = System.Drawing.Color.DarkOrange;
+            this.TxtResposta.Location = new System.Drawing.Point(583, 114);
+            this.TxtResposta.MaxLength = 27;
+            this.TxtResposta.Name = "TxtResposta";
+            this.TxtResposta.Size = new System.Drawing.Size(3, 42);
+            this.TxtResposta.TabIndex = 2;
+            this.TxtResposta.TextChanged += new System.EventHandler(this.TxtResposta_TextChanged);
+            // 
+            // LblResposta
+            // 
+            this.LblResposta.AutoSize = true;
+            this.LblResposta.BackColor = System.Drawing.Color.Transparent;
+            this.LblResposta.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblResposta.Location = new System.Drawing.Point(584, 114);
+            this.LblResposta.Name = "LblResposta";
+            this.LblResposta.Size = new System.Drawing.Size(580, 42);
+            this.LblResposta.TabIndex = 1;
+            this.LblResposta.Text = "Escreva a quantidade de ovos ";
+            this.LblResposta.Click += new System.EventHandler(this.LblResposta_Click);
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1759,6 +1801,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.Controls.Add(this.PnlPerguntas);
+            this.Controls.Add(this.PNL_SemTempo);
+            this.Controls.Add(this.PNL_Fases);
+            this.Controls.Add(this.PNL_Pause);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.PnlMenu);
+            this.Controls.Add(this.PNL_Info);
             this.Controls.Add(this.PbxCerca);
             this.Controls.Add(this.PBX_Vitamina7);
             this.Controls.Add(this.PBX_Vitamina6);
@@ -1766,8 +1815,6 @@
             this.Controls.Add(this.PBX_Vitamina4);
             this.Controls.Add(this.PBX_Vitamina3);
             this.Controls.Add(this.PNL_SemTempo2);
-            this.Controls.Add(this.PNL_SemTempo);
-            this.Controls.Add(this.PNL_Pause);
             this.Controls.Add(this.PBX_Ambiente7);
             this.Controls.Add(this.PBX_Ambiente6);
             this.Controls.Add(this.PBX_Ambiente5);
@@ -1782,8 +1829,6 @@
             this.Controls.Add(this.labelY);
             this.Controls.Add(this.labelX);
             this.Controls.Add(this.LBL_Tempo);
-            this.Controls.Add(this.PNL_Fases);
-            this.Controls.Add(this.PnlMenu);
             this.Controls.Add(this.PbxColision);
             this.Controls.Add(this.PbxPersonagem);
             this.Controls.Add(this.pictureBox9);
@@ -1964,6 +2009,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCerca)).EndInit();
+            this.PnlPerguntas.ResumeLayout(false);
+            this.PnlPerguntas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2102,6 +2149,9 @@
         private System.Windows.Forms.PictureBox PBX_Vitamina7;
         private System.Windows.Forms.PictureBox PbxCerca;
         private System.Windows.Forms.Timer TmrPortao;
+        private System.Windows.Forms.Panel PnlPerguntas;
+        private System.Windows.Forms.TextBox TxtResposta;
+        private System.Windows.Forms.Label LblResposta;
     }
 }
 

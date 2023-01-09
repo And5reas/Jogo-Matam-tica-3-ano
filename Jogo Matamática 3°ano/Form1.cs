@@ -179,6 +179,10 @@ namespace Jogo_Matamática_3_ano
             //GameMenager
             TmrMainGameManager.Stop();
 
+            //Setar configurações do form
+            this.Size = new Size(1300, 1000);
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+
             //PAUSE
             PNL_Pause.Location = new Point(0, 109);
             PNL_Info.Location = new Point(281, 3);
@@ -1407,6 +1411,19 @@ namespace Jogo_Matamática_3_ano
                 TmrPortao.Stop();
                 ControleAnimacao = 0;
             }
+        }
+        #endregion
+
+        #region Respostas
+        //Recebimento das respostas
+        private void TxtResposta_TextChanged(object sender, EventArgs e)
+        {
+            LblResposta.Text = TxtResposta.Text + "|";
+        }
+        private void LblResposta_Click(object sender, EventArgs e)
+        {
+            TxtResposta.Focus();
+            TxtResposta.Enabled = true;
         }
         #endregion
     }
