@@ -153,6 +153,14 @@
             this.PBX_Ambiente7 = new System.Windows.Forms.PictureBox();
             this.TMR_PulaPula = new System.Windows.Forms.Timer(this.components);
             this.PBX_Vitamina1 = new System.Windows.Forms.PictureBox();
+            this.PBX_Vitamina2 = new System.Windows.Forms.PictureBox();
+            this.PBX_Vitamina3 = new System.Windows.Forms.PictureBox();
+            this.PBX_Vitamina4 = new System.Windows.Forms.PictureBox();
+            this.PBX_Vitamina5 = new System.Windows.Forms.PictureBox();
+            this.PBX_Vitamina6 = new System.Windows.Forms.PictureBox();
+            this.PBX_Vitamina7 = new System.Windows.Forms.PictureBox();
+            this.PbxCerca = new System.Windows.Forms.PictureBox();
+            this.TmrPortao = new System.Windows.Forms.Timer(this.components);
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -256,6 +264,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Ambiente6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Ambiente7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxCerca)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -1123,7 +1138,7 @@
             // pictureBox48
             // 
             this.pictureBox48.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox48.Location = new System.Drawing.Point(55, 88);
+            this.pictureBox48.Location = new System.Drawing.Point(0, 0);
             this.pictureBox48.Name = "pictureBox48";
             this.pictureBox48.Size = new System.Drawing.Size(10, 10);
             this.pictureBox48.TabIndex = 6;
@@ -1629,13 +1644,110 @@
             // 
             this.PBX_Vitamina1.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina1.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina1.Image")));
-            this.PBX_Vitamina1.Location = new System.Drawing.Point(212, 150);
+            this.PBX_Vitamina1.Location = new System.Drawing.Point(671, 553);
             this.PBX_Vitamina1.Name = "PBX_Vitamina1";
-            this.PBX_Vitamina1.Size = new System.Drawing.Size(26, 30);
+            this.PBX_Vitamina1.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Vitamina1.TabIndex = 21;
             this.PBX_Vitamina1.TabStop = false;
+            this.PBX_Vitamina1.Tag = "Vitamina";
             this.PBX_Vitamina1.Visible = false;
+            // 
+            // PBX_Vitamina2
+            // 
+            this.PBX_Vitamina2.BackColor = System.Drawing.Color.Turquoise;
+            this.PBX_Vitamina2.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina2.Image")));
+            this.PBX_Vitamina2.Location = new System.Drawing.Point(667, 299);
+            this.PBX_Vitamina2.Name = "PBX_Vitamina2";
+            this.PBX_Vitamina2.Size = new System.Drawing.Size(22, 26);
+            this.PBX_Vitamina2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_Vitamina2.TabIndex = 21;
+            this.PBX_Vitamina2.TabStop = false;
+            this.PBX_Vitamina2.Tag = "Vitamina";
+            this.PBX_Vitamina2.Visible = false;
+            // 
+            // PBX_Vitamina3
+            // 
+            this.PBX_Vitamina3.BackColor = System.Drawing.Color.Turquoise;
+            this.PBX_Vitamina3.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina3.Image")));
+            this.PBX_Vitamina3.Location = new System.Drawing.Point(228, 431);
+            this.PBX_Vitamina3.Name = "PBX_Vitamina3";
+            this.PBX_Vitamina3.Size = new System.Drawing.Size(22, 26);
+            this.PBX_Vitamina3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_Vitamina3.TabIndex = 22;
+            this.PBX_Vitamina3.TabStop = false;
+            this.PBX_Vitamina3.Tag = "Vitamina";
+            this.PBX_Vitamina3.Visible = false;
+            // 
+            // PBX_Vitamina4
+            // 
+            this.PBX_Vitamina4.BackColor = System.Drawing.Color.Turquoise;
+            this.PBX_Vitamina4.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina4.Image")));
+            this.PBX_Vitamina4.Location = new System.Drawing.Point(1112, 298);
+            this.PBX_Vitamina4.Name = "PBX_Vitamina4";
+            this.PBX_Vitamina4.Size = new System.Drawing.Size(22, 26);
+            this.PBX_Vitamina4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_Vitamina4.TabIndex = 22;
+            this.PBX_Vitamina4.TabStop = false;
+            this.PBX_Vitamina4.Tag = "Vitamina";
+            this.PBX_Vitamina4.Visible = false;
+            // 
+            // PBX_Vitamina5
+            // 
+            this.PBX_Vitamina5.BackColor = System.Drawing.Color.Turquoise;
+            this.PBX_Vitamina5.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina5.Image")));
+            this.PBX_Vitamina5.Location = new System.Drawing.Point(230, 321);
+            this.PBX_Vitamina5.Name = "PBX_Vitamina5";
+            this.PBX_Vitamina5.Size = new System.Drawing.Size(22, 26);
+            this.PBX_Vitamina5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_Vitamina5.TabIndex = 22;
+            this.PBX_Vitamina5.TabStop = false;
+            this.PBX_Vitamina5.Tag = "Vitamina";
+            this.PBX_Vitamina5.Visible = false;
+            // 
+            // PBX_Vitamina6
+            // 
+            this.PBX_Vitamina6.BackColor = System.Drawing.Color.Turquoise;
+            this.PBX_Vitamina6.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina6.Image")));
+            this.PBX_Vitamina6.Location = new System.Drawing.Point(965, 684);
+            this.PBX_Vitamina6.Name = "PBX_Vitamina6";
+            this.PBX_Vitamina6.Size = new System.Drawing.Size(22, 26);
+            this.PBX_Vitamina6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_Vitamina6.TabIndex = 22;
+            this.PBX_Vitamina6.TabStop = false;
+            this.PBX_Vitamina6.Tag = "Vitamina";
+            this.PBX_Vitamina6.Visible = false;
+            // 
+            // PBX_Vitamina7
+            // 
+            this.PBX_Vitamina7.BackColor = System.Drawing.Color.Turquoise;
+            this.PBX_Vitamina7.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina7.Image")));
+            this.PBX_Vitamina7.Location = new System.Drawing.Point(892, 409);
+            this.PBX_Vitamina7.Name = "PBX_Vitamina7";
+            this.PBX_Vitamina7.Size = new System.Drawing.Size(22, 26);
+            this.PBX_Vitamina7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_Vitamina7.TabIndex = 22;
+            this.PBX_Vitamina7.TabStop = false;
+            this.PBX_Vitamina7.Tag = "Vitamina";
+            this.PBX_Vitamina7.Visible = false;
+            // 
+            // PbxCerca
+            // 
+            this.PbxCerca.BackColor = System.Drawing.Color.Transparent;
+            this.PbxCerca.Image = ((System.Drawing.Image)(resources.GetObject("PbxCerca.Image")));
+            this.PbxCerca.Location = new System.Drawing.Point(1181, 554);
+            this.PbxCerca.Name = "PbxCerca";
+            this.PbxCerca.Size = new System.Drawing.Size(30, 16);
+            this.PbxCerca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PbxCerca.TabIndex = 23;
+            this.PbxCerca.TabStop = false;
+            this.PbxCerca.Tag = "Parede";
+            this.PbxCerca.Visible = false;
+            // 
+            // TmrPortao
+            // 
+            this.TmrPortao.Interval = 30;
+            this.TmrPortao.Tick += new System.EventHandler(this.TmrPortao_Tick);
             // 
             // FrmJogo
             // 
@@ -1647,7 +1759,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
-            this.Controls.Add(this.PBX_Vitamina1);
+            this.Controls.Add(this.PbxCerca);
+            this.Controls.Add(this.PBX_Vitamina7);
+            this.Controls.Add(this.PBX_Vitamina6);
+            this.Controls.Add(this.PBX_Vitamina5);
+            this.Controls.Add(this.PBX_Vitamina4);
+            this.Controls.Add(this.PBX_Vitamina3);
             this.Controls.Add(this.PNL_SemTempo2);
             this.Controls.Add(this.PNL_SemTempo);
             this.Controls.Add(this.PNL_Pause);
@@ -1723,6 +1840,8 @@
             this.Controls.Add(this.pictureBox49);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox56);
+            this.Controls.Add(this.PBX_Vitamina2);
+            this.Controls.Add(this.PBX_Vitamina1);
             this.DoubleBuffered = true;
             this.Name = "FrmJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1838,6 +1957,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Ambiente6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Ambiente7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxCerca)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1968,6 +2094,14 @@
         private System.Windows.Forms.PictureBox PBX_Ambiente7;
         private System.Windows.Forms.Timer TMR_PulaPula;
         private System.Windows.Forms.PictureBox PBX_Vitamina1;
+        private System.Windows.Forms.PictureBox PBX_Vitamina2;
+        private System.Windows.Forms.PictureBox PBX_Vitamina3;
+        private System.Windows.Forms.PictureBox PBX_Vitamina4;
+        private System.Windows.Forms.PictureBox PBX_Vitamina5;
+        private System.Windows.Forms.PictureBox PBX_Vitamina6;
+        private System.Windows.Forms.PictureBox PBX_Vitamina7;
+        private System.Windows.Forms.PictureBox PbxCerca;
+        private System.Windows.Forms.Timer TmrPortao;
     }
 }
 
