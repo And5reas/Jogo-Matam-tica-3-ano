@@ -1180,6 +1180,7 @@ namespace Jogo_Matamática_3_ano
             {
                 tempMin++;
                 tempSeg = tempSeg - 60;
+                LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + "0" + tempSeg.ToString();
             }
         }
 
