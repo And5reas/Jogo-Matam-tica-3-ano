@@ -1649,7 +1649,7 @@
             // 
             this.PBX_Vitamina1.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina1.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina1.Image")));
-            this.PBX_Vitamina1.Location = new System.Drawing.Point(671, 553);
+            this.PBX_Vitamina1.Location = new System.Drawing.Point(486, 655);
             this.PBX_Vitamina1.Name = "PBX_Vitamina1";
             this.PBX_Vitamina1.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

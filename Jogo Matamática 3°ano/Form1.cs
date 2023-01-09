@@ -567,7 +567,7 @@ namespace Jogo_Matamática_3_ano
             PBX_Vitamina7.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\maca_animada.gif");
 
             //SETAR POSICAO DOS ITENS
-            PBX_Vitamina1.Location = new Point(671, 553);
+            PBX_Vitamina1.Location = new Point(486, 655);
             PBX_Vitamina2.Location = new Point(667, 299);
             PBX_Vitamina3.Location = new Point(228, 431);
             PBX_Vitamina4.Location = new Point(1112, 298);
