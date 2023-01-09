@@ -142,8 +142,7 @@
             this.LBL_SemTempo2 = new System.Windows.Forms.Label();
             this.lblOutputRequest = new System.Windows.Forms.Label();
             this.LblBust = new System.Windows.Forms.Label();
-            this.TmrAnimationWinFase = new System.Windows.Forms.Timer(this.components);
-            this.TmrAnimationStartFase = new System.Windows.Forms.Timer(this.components);
+            this.TmrAnimation = new System.Windows.Forms.Timer(this.components);
             this.PBX_Ambiente1 = new System.Windows.Forms.PictureBox();
             this.PBX_Ambiente2 = new System.Windows.Forms.PictureBox();
             this.PBX_Ambiente3 = new System.Windows.Forms.PictureBox();
@@ -160,7 +159,6 @@
             this.PBX_Vitamina6 = new System.Windows.Forms.PictureBox();
             this.PBX_Vitamina7 = new System.Windows.Forms.PictureBox();
             this.PbxCerca = new System.Windows.Forms.PictureBox();
-            this.TmrPortao = new System.Windows.Forms.Timer(this.components);
             this.PnlPerguntas = new System.Windows.Forms.Panel();
             this.LblResposta = new System.Windows.Forms.Label();
             this.TxtResposta = new System.Windows.Forms.TextBox();
@@ -1565,15 +1563,10 @@
             this.LblBust.TabIndex = 4;
             this.LblBust.Text = "Bust";
             // 
-            // TmrAnimationWinFase
+            // TmrAnimation
             // 
-            this.TmrAnimationWinFase.Interval = 1;
-            this.TmrAnimationWinFase.Tick += new System.EventHandler(this.TmrAnimationWinFase_Tick);
-            // 
-            // TmrAnimationStartFase
-            // 
-            this.TmrAnimationStartFase.Interval = 1;
-            this.TmrAnimationStartFase.Tick += new System.EventHandler(this.TmrAnimationStartFase_Tick);
+            this.TmrAnimation.Interval = 1;
+            this.TmrAnimation.Tick += new System.EventHandler(this.TmrAnimation_Tick);
             // 
             // PBX_Ambiente1
             // 
@@ -1749,11 +1742,6 @@
             this.PbxCerca.Tag = "Parede";
             this.PbxCerca.Visible = false;
             // 
-            // TmrPortao
-            // 
-            this.TmrPortao.Interval = 30;
-            this.TmrPortao.Tick += new System.EventHandler(this.TmrPortao_Tick);
-            // 
             // PnlPerguntas
             // 
             this.PnlPerguntas.BackColor = System.Drawing.Color.DarkGreen;
@@ -1761,21 +1749,22 @@
             this.PnlPerguntas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.PnlPerguntas.Controls.Add(this.LblResposta);
             this.PnlPerguntas.Controls.Add(this.TxtResposta);
-            this.PnlPerguntas.Location = new System.Drawing.Point(1140, 473);
+            this.PnlPerguntas.Location = new System.Drawing.Point(0, 419);
             this.PnlPerguntas.Name = "PnlPerguntas";
             this.PnlPerguntas.Size = new System.Drawing.Size(1285, 237);
             this.PnlPerguntas.TabIndex = 24;
             // 
             // LblResposta
             // 
-            this.LblResposta.AutoSize = true;
             this.LblResposta.BackColor = System.Drawing.Color.Transparent;
             this.LblResposta.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblResposta.Location = new System.Drawing.Point(584, 114);
+            this.LblResposta.Location = new System.Drawing.Point(581, 114);
             this.LblResposta.Name = "LblResposta";
-            this.LblResposta.Size = new System.Drawing.Size(580, 42);
+            this.LblResposta.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblResposta.Size = new System.Drawing.Size(591, 42);
             this.LblResposta.TabIndex = 1;
-            this.LblResposta.Text = "Escreva a quantidade de ovos ";
+            this.LblResposta.Text = "Clique aqui e responda";
+            this.LblResposta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LblResposta.Click += new System.EventHandler(this.LblResposta_Click);
             // 
             // TxtResposta
@@ -2130,8 +2119,7 @@
         private System.Windows.Forms.PictureBox PBX_Reiniciar;
         private System.Windows.Forms.Label lblOutputRequest;
         private System.Windows.Forms.Label LblBust;
-        private System.Windows.Forms.Timer TmrAnimationWinFase;
-        private System.Windows.Forms.Timer TmrAnimationStartFase;
+        private System.Windows.Forms.Timer TmrAnimation;
         private System.Windows.Forms.PictureBox PBX_Ambiente1;
         private System.Windows.Forms.PictureBox PBX_Ambiente2;
         private System.Windows.Forms.PictureBox PBX_Ambiente3;
@@ -2148,7 +2136,6 @@
         private System.Windows.Forms.PictureBox PBX_Vitamina6;
         private System.Windows.Forms.PictureBox PBX_Vitamina7;
         private System.Windows.Forms.PictureBox PbxCerca;
-        private System.Windows.Forms.Timer TmrPortao;
         private System.Windows.Forms.Panel PnlPerguntas;
         private System.Windows.Forms.TextBox TxtResposta;
         private System.Windows.Forms.Label LblResposta;
