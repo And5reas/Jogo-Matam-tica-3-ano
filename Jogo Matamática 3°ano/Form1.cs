@@ -149,26 +149,23 @@ namespace Jogo_Matamática_3_ano
             }
 
             //Pause
-            if (e.KeyChar == 27)
+            if (e.KeyChar == 27 && PNL_SemTempo.Visible != true && PNL_Fases.Visible != true)
             {
-                if (PNL_SemTempo.Visible != true)
+
+                if (ativouMenu == 0 && PNL_Pause.Enabled != false)
                 {
-                    if (ativouMenu == 0 && PNL_Pause.Enabled != false)
-                    {
-                        PNL_Pause.Visible = true;
-                        TmrMainGameManager.Stop();
-                        TMR_Tempo.Stop();
-                        ativouMenu = 1;
-                    }
-                    else if (ativouMenu == 1)
-                    {
-                        PNL_Pause.Visible = false;
-                        TmrMainGameManager.Start();
-                        TMR_Tempo.Start();
-                        ativouMenu = 0;
-                    }
+                    PNL_Pause.Visible = true;
+                    TmrMainGameManager.Stop();
+                    TMR_Tempo.Stop();
+                    ativouMenu = 1;
                 }
-                
+                else if (ativouMenu == 1)
+                {
+                    PNL_Pause.Visible = false;
+                    TmrMainGameManager.Start();
+                    TMR_Tempo.Start();
+                    ativouMenu = 0;
+                }
             }
         }
         #endregion
@@ -364,7 +361,7 @@ namespace Jogo_Matamática_3_ano
                         {
                             f.Visible = false;
                             contVitaminas++;
-                            tempSeg = 5;
+                            tempSeg = tempSeg + 5;
                         }
                     }
                 }
@@ -1177,7 +1174,12 @@ namespace Jogo_Matamática_3_ano
                     tempSeg--;
                     LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + tempSeg.ToString();
                 }
-
+            }
+            //Correção por conta das vitaminas que add 5s
+            else
+            {
+                tempMin++;
+                tempSeg = tempSeg - 60;
             }
         }
 
