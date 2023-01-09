@@ -179,10 +179,6 @@ namespace Jogo_Matamática_3_ano
             //GameMenager
             TmrMainGameManager.Stop();
 
-            //Setar configurações do form
-            this.Size = new Size(1300, 1000);
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-
             //PAUSE
             PNL_Pause.Location = new Point(0, 109);
             PNL_Info.Location = new Point(281, 3);
@@ -368,6 +364,7 @@ namespace Jogo_Matamática_3_ano
                         {
                             f.Visible = false;
                             contVitaminas++;
+                            tempSeg = 5;
                         }
                     }
                 }
@@ -1003,6 +1000,7 @@ namespace Jogo_Matamática_3_ano
         private void PBX_Jogar_Click(object sender, EventArgs e)
         {
             PNL_Fases.Visible = true;
+            PnlMenu.Visible = false;
             string loadSave = File.ReadAllText(Directory.GetCurrentDirectory() + "\\Save.txt");
             if (loadSave == "2")
             {
@@ -1252,6 +1250,8 @@ namespace Jogo_Matamática_3_ano
         }
         #endregion
 
+        #region Animações
+
         #region Animação do personagem
         private void TmrAnimationWinFase_Tick(object sender, EventArgs e)
         {
@@ -1414,7 +1414,9 @@ namespace Jogo_Matamática_3_ano
         }
         #endregion
 
-        #region Respostas
+        #endregion
+
+        #region Respostas/Perguntas
         //Recebimento das respostas
         private void TxtResposta_TextChanged(object sender, EventArgs e)
         {
