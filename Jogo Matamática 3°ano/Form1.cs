@@ -220,6 +220,9 @@ namespace Jogo_Matamática_3_ano
 
             //Colocar contador de animações para 0
             ControleAnimacao = 0;
+
+            //Organizer objetos do pnlPergunta
+            resetarObjetosPergunta();
         }
         #endregion
 
@@ -367,9 +370,49 @@ namespace Jogo_Matamática_3_ano
                         {
                             f.Visible = false;
                             contVitaminas++;
-                            tempSeg = tempSeg + 5;
                             TMR_Tempo.Stop();
                             TmrMainGameManager.Stop();
+
+                            //Perguntas fase 1 e verificar se está correta
+                            if (fase == 1)
+                            {
+                                if (contVitaminas == 1)
+                                {
+                                    setarBtnPergunta4();
+                                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\pergunta_" + contVitaminas + ".png");
+                                }
+                                if (contVitaminas == 2)
+                                {
+                                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\pergunta_" + contVitaminas + ".png");
+
+                                    LblResposta.Location = new Point(581, 114);
+                                    LblResposta.Size = new Size(591, 42);
+                                    TxtResposta.Location = new Point(583, 114);
+                                    TxtResposta.Size = new Size(3, 42);
+                                    LblResposta.Visible = true;
+                                    TxtResposta.Visible = true;
+                                }
+                                if (contVitaminas == 3)
+                                {
+
+                                }
+                                if (contVitaminas == 4)
+                                {
+
+                                }
+                                if (contVitaminas == 5)
+                                {
+
+                                }
+                                if (contVitaminas == 6)
+                                {
+
+                                }
+                                if (contVitaminas == 7)
+                                {
+
+                                }
+                            }
                             ControleAnimacao = 900;
                             TmrAnimation.Start();
                         }
@@ -1005,6 +1048,89 @@ namespace Jogo_Matamática_3_ano
             PBX_Vitamina6.Visible = false;
             PBX_Vitamina7.Visible = false;
         }
+        public void setarBtnPergunta4()
+        {
+            int sizeX = 116, sizeY = 59;
+
+            PbxBtn1.Enabled = true;
+            PbxBtn2.Enabled = true;
+            PbxBtn3.Enabled = true;
+            PbxBtnCerto.Enabled = true;
+
+            PbxBtn1.Visible = true;
+            PbxBtn2.Visible = true;
+            PbxBtn3.Visible = true;
+            PbxBtnCerto.Visible = true;
+
+            if (fase == 1)
+            {
+                PbxBtn1.Location = new Point(1099, 27);
+                PbxBtn2.Location = new Point(1099, 114);
+                PbxBtn3.Location = new Point(948, 27);
+                PbxBtn4.Location = new Point(10, 10);
+                PbxBtnCerto.Location = new Point(948, 114);
+
+                PbxBtn1.Size = new Size(sizeX, sizeY);
+                PbxBtn2.Size = new Size(sizeX, sizeY);
+                PbxBtn3.Size = new Size(sizeX, sizeY);
+                PbxBtn4.Size = new Size(10, 10);
+                PbxBtnCerto.Size = new Size(sizeX, sizeY); //R$5,50
+            }
+        }
+        public void setarBtnPergunta5()
+        {
+
+        }
+        public void setarTxtPergunta1()
+        {
+
+        }
+        public void setarTxtPergunta2()
+        {
+
+        }
+        public void resetarObjetosPergunta()
+        {
+            PbxBtn1.Location = new Point(10, 10);
+            PbxBtn2.Location = new Point(10, 10);
+            PbxBtn3.Location = new Point(10, 10);
+            PbxBtn4.Location = new Point(10, 10);
+            PbxBtnCerto.Location = new Point(10, 10);
+            TxtResposta.Location = new Point(10, 10);
+            LblResposta.Location = new Point(10, 10);
+
+            PbxBtn1.Size = new Size(10, 10);
+            PbxBtn2.Size = new Size(10, 10);
+            PbxBtn3.Size = new Size(10, 10);
+            PbxBtn4.Size = new Size(10, 10);
+            PbxBtnCerto.Size = new Size(10, 10);
+            TxtResposta.Size = new Size(10, 10);
+            LblResposta.Size = new Size(10, 10);
+
+            PbxBtn1.BackColor = Color.Transparent;
+            PbxBtn2.BackColor = Color.Transparent;
+            PbxBtn3.BackColor = Color.Transparent;
+            PbxBtn4.BackColor = Color.Transparent;
+            PbxBtnCerto.BackColor = Color.Transparent;
+
+            PbxBtn1.Visible = false;
+            PbxBtn2.Visible = false;
+            PbxBtn3.Visible = false;
+            PbxBtn4.Visible = false;
+            PbxBtnCerto.Visible = false;
+            TxtResposta.Visible = false;
+            LblResposta.Visible = false;
+
+            TxtResposta.Enabled = false;
+        }
+
+        public void rodarSaidaPerguntas()
+        {
+            TmrMainGameManager.Start();
+            TMR_Tempo.Start();
+            ControleAnimacao = 1000;
+            TmrAnimation.Start();
+        }
         #endregion
 
         #region Click Jogar
@@ -1448,10 +1574,10 @@ namespace Jogo_Matamática_3_ano
             LblResposta.Text = TxtResposta.Text + "|";
             if (TxtResposta.Text.ToLower() == "36 ovos")
             {
-                TmrMainGameManager.Start();
-                TMR_Tempo.Start();
                 TxtResposta.Enabled = false;
                 this.Focus();
+                TmrMainGameManager.Start();
+                TMR_Tempo.Start();
                 ControleAnimacao = 1000;
                 TmrAnimation.Start();
             }
@@ -1461,6 +1587,55 @@ namespace Jogo_Matamática_3_ano
             LblResposta.Text = "|";
             TxtResposta.Enabled = true;
             TxtResposta.Focus();
+        }
+        private void PbxBtnCerto_Click(object sender, EventArgs e)
+        {
+            if (fase == 1)
+            {
+                tempSeg = tempSeg + 5;
+            }
+            rodarSaidaPerguntas();
+            resetarObjetosPergunta();
+        }
+
+        private void PbxBtn3_Click(object sender, EventArgs e)
+        {
+            if (fase == 1)
+            {
+                tempSeg = tempSeg - 3;
+            }
+            rodarSaidaPerguntas();
+            resetarObjetosPergunta();
+        }
+
+        private void PbxBtn1_Click(object sender, EventArgs e)
+        {
+            if (fase == 1)
+            {
+                tempSeg = tempSeg - 3;
+            }
+            rodarSaidaPerguntas();
+            resetarObjetosPergunta();
+        }
+
+        private void PbxBtn2_Click(object sender, EventArgs e)
+        {
+            if (fase == 1)
+            {
+                tempSeg = tempSeg - 3;
+            }
+            rodarSaidaPerguntas();
+            resetarObjetosPergunta();
+        }
+
+        private void PbxBtn4_Click(object sender, EventArgs e)
+        {
+            if (fase == 1)
+            {
+                //Não faz nada
+            }
+            rodarSaidaPerguntas();
+            resetarObjetosPergunta();
         }
         #endregion
     }
