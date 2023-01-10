@@ -28,7 +28,7 @@ namespace Jogo_Matamática_3_ano
         int fase,
 
             //Swiths do debugMode
-            DebugSwith, DebugSwithBust,
+            DebugSwith, DebugSwithBust, DebugParedeSwith,
 
             //Variáveis de posição do player
             andarQtdPx = 6,
@@ -39,17 +39,28 @@ namespace Jogo_Matamática_3_ano
             ControleAnimacao = 0, ControleAnimacaoAux, animcaoWin = 1,
             
             //Contador de Vitaminas
-            contVitaminas = 0;
+            contVitaminas = 0,
+            
+            //Controla o TmrPergunta
+            tempPergunta = 0;
 
              //Controles do player
         bool goLeft, goRight, goDown, goUp,
 
             //Variável para ver se o debug está ativo ou não
             DebugSwithB,
-            
-            //Fazer o payer andar mais rápido
-            Bust;
 
+            //Fazer o payer andar mais rápido e pelas paredes
+            Bust, paredesStatus,
+            
+            //Ativar apenas números
+            JustNum;
+
+               //Tirar as paredes no modo degub
+        string paredesStatusDebug = "Parede";
+
+               //Variáveis para as osperações matemáticas de perguntas
+        Double num1, num2, num3, resultado;
         #endregion
 
         public FrmJogo()
@@ -148,8 +159,23 @@ namespace Jogo_Matamática_3_ano
                 }
             }
 
+            //Fazer o Personagem andar pelas paredes
+            if (e.KeyChar.ToString().ToLower() == "n")
+            {
+                if (DebugParedeSwith % 2 == 0)
+                {
+                    DebugParedeSwith++;
+                    paredesStatus = true;
+                }
+                else
+                {
+                    DebugParedeSwith++;
+                    paredesStatus = false;
+                }
+            }
+
             //Pause
-            if (e.KeyChar == 27 && PNL_SemTempo.Visible != true && PNL_Fases.Visible != true)
+            if (e.KeyChar == 27 && PNL_SemTempo.Visible != true && PNL_Fases.Visible != true && PnlPerguntas.Visible != true)
             {
 
                 if (ativouMenu == 0 && PNL_Pause.Enabled != false)
@@ -166,6 +192,25 @@ namespace Jogo_Matamática_3_ano
                     TMR_Tempo.Start();
                     ativouMenu = 0;
                 }
+            }
+        }
+        //Verificar se são números que estão entrando, apenas.
+        private void Verificar(object sender, KeyPressEventArgs e)
+        {
+            if (JustNum == true)
+            {
+                if (e.KeyChar == 8 || e.KeyChar == 46 || e.KeyChar == 45 || (e.KeyChar > 47 && e.KeyChar < 58))
+                {
+                    e.KeyChar = e.KeyChar;
+                }
+                else
+                {
+                    e.KeyChar = Convert.ToChar(0);
+                }
+            }
+            else
+            {
+                e.KeyChar = e.KeyChar;
             }
         }
         #endregion
@@ -206,6 +251,7 @@ namespace Jogo_Matamática_3_ano
 
             //Painel perguntas
             PnlPerguntas.Location = new Point(9, 960);
+            PnlPerguntas.Visible = false;
             
             //Esconder opções debugMode
             labelX.Visible = false;
@@ -223,6 +269,9 @@ namespace Jogo_Matamática_3_ano
 
             //Organizer objetos do pnlPergunta
             resetarObjetosPergunta();
+
+            //Definir o que pode digitar nos txt de pergunta
+            JustNum = false;
         }
         #endregion
 
@@ -242,7 +291,7 @@ namespace Jogo_Matamática_3_ano
             {
                 if (g is PictureBox)
                 {
-                    if ((string)g.Tag == "Parede")
+                    if ((string)g.Tag == paredesStatusDebug)
                     {
                         if (PbxColision.Bounds.IntersectsWith(g.Bounds))
                         {
@@ -351,14 +400,6 @@ namespace Jogo_Matamática_3_ano
                 PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_" + animationPlayer + ".png");
             }
 
-            //Abrir o portão da fase
-            if (contVitaminas == 7)
-            {
-                ControleAnimacao = 800;
-                TmrAnimation.Start();
-                contVitaminas = 0;
-            }
-
             //Pegar moedas com Tag Vitamina
             foreach (Control f in this.Controls)
             {
@@ -370,6 +411,7 @@ namespace Jogo_Matamática_3_ano
                         {
                             f.Visible = false;
                             contVitaminas++;
+                            lblOutputRequest.Text = contVitaminas.ToString();
                             TMR_Tempo.Stop();
                             TmrMainGameManager.Stop();
 
@@ -383,44 +425,44 @@ namespace Jogo_Matamática_3_ano
                                 }
                                 if (contVitaminas == 2)
                                 {
+                                    setarTxtPergunta();
                                     PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\pergunta_" + contVitaminas + ".png");
-
-                                    LblResposta.Location = new Point(581, 114);
-                                    LblResposta.Size = new Size(591, 42);
-                                    TxtResposta.Location = new Point(583, 114);
-                                    TxtResposta.Size = new Size(3, 42);
-                                    LblResposta.Visible = true;
-                                    TxtResposta.Visible = true;
                                 }
                                 if (contVitaminas == 3)
                                 {
-
+                                    setarTxtPergunta();
+                                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\pergunta_" + contVitaminas + ".png");
                                 }
                                 if (contVitaminas == 4)
                                 {
-
+                                    setarBtnPergunta5();
+                                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\pergunta_" + contVitaminas + ".png");
                                 }
                                 if (contVitaminas == 5)
                                 {
-
+                                    setarTxtPergunta();
+                                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\pergunta_" + contVitaminas + ".png");
                                 }
                                 if (contVitaminas == 6)
                                 {
-
+                                    setarTxtPergunta();
+                                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\pergunta_" + contVitaminas + ".png");
                                 }
                                 if (contVitaminas == 7)
                                 {
-
+                                    setarTxtPergunta();
+                                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\pergunta_" + contVitaminas + ".png");
                                 }
                             }
                             ControleAnimacao = 900;
                             TmrAnimation.Start();
+                            TmrPergunta.Start();
                         }
                     }
                 }
             }
 
-            //Ativar desativar a bust do modo debug
+            //Ativar desativar o bust do modo debug
             if (DebugSwithB == true)
             {
                 if (Bust == true) {
@@ -431,6 +473,19 @@ namespace Jogo_Matamática_3_ano
                 {
                     andarQtdPx = 6;
                     LblBust.Text = "Normal";
+                }
+            }
+
+            //Ativar desativar as paredes no modo debug
+            if (DebugSwithB == true)
+            {
+                if (paredesStatus == true)
+                {
+                    paredesStatusDebug = "Sem paredes";
+                }
+                else
+                {
+                    paredesStatusDebug = "Parede";
                 }
             }
         }
@@ -1079,33 +1134,193 @@ namespace Jogo_Matamática_3_ano
         }
         public void setarBtnPergunta5()
         {
+            int sizeX = 116, sizeY = 59;
 
+            PbxBtn1.Enabled = true;
+            PbxBtn2.Enabled = true;
+            PbxBtn3.Enabled = true;
+            PbxBtn4.Enabled = true;
+            PbxBtnCerto.Enabled = true;
+
+            PbxBtn1.Visible = true;
+            PbxBtn2.Visible = true;
+            PbxBtn3.Visible = true;
+            PbxBtn4.Visible = true;
+            PbxBtnCerto.Visible = true;
+
+            if (fase == 1)
+            {
+                PbxBtn1.Location = new Point(1103, 125);
+                PbxBtn2.Location = new Point(951, 124);
+                PbxBtn3.Location = new Point(951, 37);
+                PbxBtn4.Location = new Point(805, 124);
+                PbxBtnCerto.Location = new Point(1103, 36);
+
+                PbxBtn1.Size = new Size(sizeX, sizeY);
+                PbxBtn2.Size = new Size(sizeX, sizeY);
+                PbxBtn3.Size = new Size(sizeX, sizeY);
+                PbxBtn4.Size = new Size(sizeX, sizeY);
+                PbxBtnCerto.Size = new Size(sizeX, sizeY); //R$436
+            }
         }
-        public void setarTxtPergunta1()
+        public void setarTxtPergunta()
         {
+            if (fase == 1)
+            {
+                if (contVitaminas == 2)
+                {
+                    Lbl_de_Ajuda.Location = new Point(580, 88);
+                    LblResposta.Location = new Point(581, 114);
+                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    
+                    LblResposta.Size = new Size(591, 42);
+                    
+                    Lbl_de_Ajuda.Visible = true;
+                    LblResposta.Visible = true;
+                    TxtResposta.Visible = true;
 
-        }
-        public void setarTxtPergunta2()
-        {
+                    Lbl_de_Ajuda.Enabled = true;
+                    LblResposta.Enabled = true;
+                }
+                if (contVitaminas == 3)
+                {
+                    Lbl_de_Ajuda.Location = new Point(101, 91);
+                    LblResposta.Location = new Point(92, 109);
+                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
 
+                    LblResposta.Size = new Size(591, 42);
+
+                    Lbl_de_Ajuda.Visible = true;
+                    LblResposta.Visible = true;
+                    TxtResposta.Visible = true;
+
+                    Lbl_de_Ajuda.Enabled = true;
+                    LblResposta.Enabled = true;
+                }
+                if (contVitaminas == 5)
+                {
+                    Lbl_de_Ajuda.Location = new Point(614, 29);
+                    LblResposta.Location = new Point(531, 76);
+                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    LblResposta2.Location = new Point(674, 76);
+                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+
+                    LblResposta.Size = new Size(75, 46);
+                    LblResposta2.Size = new Size(75, 46);
+
+                    LblResposta.Font = new Font("Snap ITC", 12);
+                    LblResposta2.Font = new Font("Snap ITC", 12);
+
+                    LblResposta.Text = "Clique aqui";
+                    LblResposta2.Text = "Clique aqui";
+                    Lbl_de_Ajuda.Text = "";
+
+                    Lbl_de_Ajuda.Visible = true;
+                    LblResposta.Visible = true;
+                    TxtResposta.Visible = true;
+                    LblResposta2.Visible = true;
+                    TxtResposta2.Visible = true;
+
+                    Lbl_de_Ajuda.Enabled = true;
+                    LblResposta.Enabled = true;
+                    LblResposta2.Enabled = true;
+
+                    TxtResposta.MaxLength = 2;
+                    TxtResposta2.MaxLength = 2;
+
+                    JustNum = true;
+                }
+                if (contVitaminas == 6)
+                {
+                    Lbl_de_Ajuda.Location = new Point(643, 95);
+                    LblResposta.Location = new Point(639, 118);
+                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+
+                    LblResposta.Size = new Size(572, 46);
+
+                    Lbl_de_Ajuda.Visible = true;
+                    LblResposta.Visible = true;
+                    TxtResposta.Visible = true;
+
+                    Lbl_de_Ajuda.Enabled = true;
+                    LblResposta.Enabled = true;
+                }
+                if (contVitaminas == 7)
+                {
+                    Lbl_de_Ajuda.Location = new Point(485, 25);
+                    LblResposta.Location = new Point(396, 77);
+                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    LblResposta2.Location = new Point(532, 78);
+                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    LblResposta3.Location = new Point(670, 78);
+                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+
+                    LblResposta.Size = new Size(75, 46);
+                    LblResposta2.Size = new Size(75, 46);
+                    LblResposta3.Size = new Size(75, 46);
+
+                    LblResposta.Font = new Font("Snap ITC", 12);
+                    LblResposta2.Font = new Font("Snap ITC", 12);
+                    LblResposta3.Font = new Font("Snap ITC", 12);
+
+                    LblResposta.Text = "Clique aqui";
+                    LblResposta2.Text = "Clique aqui";
+                    LblResposta3.Text = "Clique aqui";
+                    Lbl_de_Ajuda.Text = "";
+
+                    Lbl_de_Ajuda.Visible = true;
+                    LblResposta.Visible = true;
+                    TxtResposta.Visible = true;
+                    LblResposta2.Visible = true;
+                    TxtResposta2.Visible = true;
+                    LblResposta3.Visible = true;
+                    TxtResposta3.Visible = true;
+
+                    Lbl_de_Ajuda.Enabled = true;
+                    LblResposta.Enabled = true;
+                    LblResposta2.Enabled = true;
+                    LblResposta3.Enabled = true;
+
+                    TxtResposta.MaxLength = 2;
+                    TxtResposta2.MaxLength = 2;
+                    TxtResposta3.MaxLength = 2;
+
+                    JustNum = true;
+                }
+            }
         }
         public void resetarObjetosPergunta()
         {
+            //Abrir o portão da fase
+            if (contVitaminas == 7)
+            {
+                ControleAnimacao = 800;
+                TmrAnimation.Start();
+                contVitaminas = 0;
+            }
             PbxBtn1.Location = new Point(10, 10);
             PbxBtn2.Location = new Point(10, 10);
             PbxBtn3.Location = new Point(10, 10);
             PbxBtn4.Location = new Point(10, 10);
             PbxBtnCerto.Location = new Point(10, 10);
             TxtResposta.Location = new Point(10, 10);
+            TxtResposta2.Location = new Point(10, 10);
+            TxtResposta3.Location = new Point(10, 10);
             LblResposta.Location = new Point(10, 10);
+            LblResposta2.Location = new Point(10, 10);
+            LblResposta3.Location = new Point(10, 10);
 
             PbxBtn1.Size = new Size(10, 10);
             PbxBtn2.Size = new Size(10, 10);
             PbxBtn3.Size = new Size(10, 10);
             PbxBtn4.Size = new Size(10, 10);
             PbxBtnCerto.Size = new Size(10, 10);
-            TxtResposta.Size = new Size(10, 10);
+            TxtResposta.Size = new Size(3, 42);
             LblResposta.Size = new Size(10, 10);
+            TxtResposta2.Size = new Size(3, 42);
+            LblResposta2.Size = new Size(10, 10);
+            TxtResposta3.Size = new Size(3, 42);
+            LblResposta3.Size = new Size(10, 10);
 
             PbxBtn1.BackColor = Color.Transparent;
             PbxBtn2.BackColor = Color.Transparent;
@@ -1120,8 +1335,41 @@ namespace Jogo_Matamática_3_ano
             PbxBtnCerto.Visible = false;
             TxtResposta.Visible = false;
             LblResposta.Visible = false;
+            TxtResposta2.Visible = false;
+            LblResposta2.Visible = false;
+            TxtResposta3.Visible = false;
+            LblResposta3.Visible = false;
+            Lbl_de_Ajuda.Visible = false;
 
             TxtResposta.Enabled = false;
+            LblResposta.Enabled = false;
+            TxtResposta2.Enabled = false;
+            LblResposta2.Enabled = false;
+            TxtResposta3.Enabled = false;
+            LblResposta3.Enabled = false;
+            Lbl_de_Ajuda.Enabled = false;
+
+            TxtResposta.Clear();
+            TxtResposta2.Clear();
+            TxtResposta3.Clear();
+            LblResposta.Text = "Clique aqui e responda";
+            LblResposta2.Text = "Clique aqui e responda";
+            LblResposta3.Text = "Clique aqui e responda";
+            Lbl_de_Ajuda.Text = "Escreva a frase completa";
+
+            LblResposta.Font = new Font("Snap ITC", 24);
+            LblResposta2.Font = new Font("Snap ITC", 24);
+            LblResposta3.Font = new Font("Snap ITC", 24);
+
+            TxtResposta.MaxLength = 27;
+            TxtResposta2.MaxLength = 27;
+            TxtResposta3.MaxLength = 27;
+
+            tempPergunta = 0;
+
+            JustNum = false;
+
+            this.Focus();
         }
 
         public void rodarSaidaPerguntas()
@@ -1174,6 +1422,12 @@ namespace Jogo_Matamática_3_ano
         private void PbxPersonagem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            contVitaminas++;
+            lblOutputRequest.Text = contVitaminas.ToString();
         }
 
         private void FrmJogo_FormClosing(object sender, FormClosingEventArgs e)
@@ -1545,6 +1799,10 @@ namespace Jogo_Matamática_3_ano
 
             //controleAnimações = 900
             //Animação da pergunta aparecendo
+            if (ControleAnimacao == 901)
+            {
+                PnlPerguntas.Visible = true;
+            }
             if (ControleAnimacao > 900 && ControleAnimacao < 968)
             {
                 PnlPerguntas.Location = new Point(PnlPerguntas.Location.X, PnlPerguntas.Location.Y - 3);
@@ -1556,13 +1814,19 @@ namespace Jogo_Matamática_3_ano
 
             //controleAnimações = 1000
             //Animação da pergunta desaparecendo
+            if (ControleAnimacao == 1001)
+            {
+                TmrPergunta.Stop();
+            }
             if (ControleAnimacao > 1000 && ControleAnimacao < 1068)
             {
                 PnlPerguntas.Location = new Point(PnlPerguntas.Location.X, PnlPerguntas.Location.Y + 3);
             }
             if (ControleAnimacao == 1070)
             {
+                PnlPerguntas.Visible = false;
                 TmrAnimation.Stop();
+                resetarObjetosPergunta();
             }
         }
         #endregion
@@ -1572,21 +1836,65 @@ namespace Jogo_Matamática_3_ano
         private void TxtResposta_TextChanged(object sender, EventArgs e)
         {
             LblResposta.Text = TxtResposta.Text + "|";
-            if (TxtResposta.Text.ToLower() == "36 ovos")
+            if (fase == 1) 
             {
-                TxtResposta.Enabled = false;
-                this.Focus();
-                TmrMainGameManager.Start();
-                TMR_Tempo.Start();
-                ControleAnimacao = 1000;
-                TmrAnimation.Start();
+                if (contVitaminas == 2)
+                {
+                    if (TxtResposta.Text.ToLower() == "36 ovos" || TxtResposta.Text.ToLower() == "trinta e seis ovos")
+                    {
+                        tempSeg = tempSeg + 5;
+                        rodarSaidaPerguntas();
+                    }
+                }
+                if (contVitaminas == 3)
+                {
+                    if (TxtResposta.Text.ToLower() == "3 patos" || TxtResposta.Text.ToLower() == "três patos")
+                    {
+                        tempSeg = tempSeg + 5;
+                        rodarSaidaPerguntas();
+                    }
+                }
+                if (contVitaminas == 6)
+                {
+                    if (TxtResposta.Text.ToLower() == "12 pessoas" || TxtResposta.Text.ToLower() == "doze pessoas")
+                    {
+                        tempSeg = tempSeg + 5;
+                        rodarSaidaPerguntas();
+                    }
+                }
             }
+        }
+        private void TxtResposta2_TextChanged(object sender, EventArgs e)
+        {
+            LblResposta2.Text = TxtResposta2.Text + "|";
+        }
+        private void TxtResposta3_TextChanged(object sender, EventArgs e)
+        {
+            LblResposta3.Text = TxtResposta3.Text + "|";
         }
         private void LblResposta_Click(object sender, EventArgs e)
         {
+            LblResposta.Font = new Font("Snap ITC", 24);
             LblResposta.Text = "|";
             TxtResposta.Enabled = true;
             TxtResposta.Focus();
+            TxtResposta.Clear();
+        }
+        private void LblResposta2_Click(object sender, EventArgs e)
+        {
+            LblResposta2.Font = new Font("Snap ITC", 24);
+            LblResposta2.Text = "|";
+            TxtResposta2.Enabled = true;
+            TxtResposta2.Focus();
+            TxtResposta2.Clear();
+        }
+        private void LblResposta3_Click(object sender, EventArgs e)
+        {
+            LblResposta3.Font = new Font("Snap ITC", 24);
+            LblResposta3.Text = "|";
+            TxtResposta3.Enabled = true;
+            TxtResposta3.Focus();
+            TxtResposta3.Clear();
         }
         private void PbxBtnCerto_Click(object sender, EventArgs e)
         {
@@ -1595,7 +1903,6 @@ namespace Jogo_Matamática_3_ano
                 tempSeg = tempSeg + 5;
             }
             rodarSaidaPerguntas();
-            resetarObjetosPergunta();
         }
 
         private void PbxBtn3_Click(object sender, EventArgs e)
@@ -1605,7 +1912,6 @@ namespace Jogo_Matamática_3_ano
                 tempSeg = tempSeg - 3;
             }
             rodarSaidaPerguntas();
-            resetarObjetosPergunta();
         }
 
         private void PbxBtn1_Click(object sender, EventArgs e)
@@ -1615,7 +1921,6 @@ namespace Jogo_Matamática_3_ano
                 tempSeg = tempSeg - 3;
             }
             rodarSaidaPerguntas();
-            resetarObjetosPergunta();
         }
 
         private void PbxBtn2_Click(object sender, EventArgs e)
@@ -1625,17 +1930,81 @@ namespace Jogo_Matamática_3_ano
                 tempSeg = tempSeg - 3;
             }
             rodarSaidaPerguntas();
-            resetarObjetosPergunta();
         }
 
         private void PbxBtn4_Click(object sender, EventArgs e)
         {
             if (fase == 1)
             {
-                //Não faz nada
+                tempSeg = tempSeg - 3;
             }
             rodarSaidaPerguntas();
-            resetarObjetosPergunta();
+        }
+
+        private void TmrPergunta_Tick(object sender, EventArgs e)
+        {
+            tempPergunta++;
+            if (tempPergunta == PrbTempPerg.Maximum - 2)
+            {
+                tempSeg = tempSeg - 5;
+                rodarSaidaPerguntas();
+            }
+            if (tempPergunta >= 0 && tempPergunta <= 2000)
+            {
+                PrbTempPerg.Value = tempPergunta;
+            }
+            if (fase == 1)
+            {
+                if (contVitaminas == 5)
+                {
+                    if (TxtResposta.Text != "" && TxtResposta2.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                        resultado = 0;
+                        resultado = num1 + num2;
+                    }
+                    if (resultado == 46)
+                    {
+                        tempSeg = tempSeg + 5;
+                        Lbl_de_Ajuda.Text = "Você Acertou!! ＜（＾－＾）＞";
+                        rodarSaidaPerguntas();
+                    }
+                    else if (resultado > 40 && resultado < 52)
+                    {
+                        Lbl_de_Ajuda.Text = "Você está perto! :)";
+                    }
+                    else
+                    {
+                        Lbl_de_Ajuda.Text = num1.ToString() + " + " + num2.ToString() + " é igua a " + resultado + "\nVocê está longe do resultado :(";
+                    }
+                }
+                if (contVitaminas == 7)
+                {
+                    if (TxtResposta.Text != "" && TxtResposta2.Text != "" && TxtResposta3.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                        num3 = Convert.ToDouble(TxtResposta3.Text);
+                        resultado = 0;
+                        resultado = num1 - (num2 * num3);
+                    }
+                    if (resultado == -37)
+                    {
+                        tempSeg = tempSeg + 5;
+                        Lbl_de_Ajuda.Text = "Você Acertou!! ＜（＾－＾）＞";
+                        rodarSaidaPerguntas();
+                    }
+                    else if (resultado > -32 && resultado < -42)
+                    {
+                        Lbl_de_Ajuda.Text = "Você está perto! :)";
+                    }
+                    else
+                    {
+                        Lbl_de_Ajuda.Text = num1.ToString() + " - " + num2.ToString() + " + " + num3.ToString() + " é igua a " + resultado + "\nVocê está longe do resultado :(";
+                    }
+                }
+            }
         }
         #endregion
     }
