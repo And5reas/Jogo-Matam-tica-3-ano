@@ -36,7 +36,7 @@ namespace Jogo_Matamática_3_ano
             animationPlayer, countAnimation, animationSpeed,
 
             //Variáveis que controla as animações
-            ControleAnimacao, ControleAnimacaoAux, animcaoWin = 1,
+            ControleAnimacao = 0, ControleAnimacaoAux, animcaoWin = 1,
             
             //Contador de Vitaminas
             contVitaminas = 0;
@@ -149,26 +149,23 @@ namespace Jogo_Matamática_3_ano
             }
 
             //Pause
-            if (e.KeyChar == 27)
+            if (e.KeyChar == 27 && PNL_SemTempo.Visible != true && PNL_Fases.Visible != true)
             {
-                if (PNL_SemTempo.Visible != true)
+
+                if (ativouMenu == 0 && PNL_Pause.Enabled != false)
                 {
-                    if (ativouMenu == 0 && PNL_Pause.Enabled != false)
-                    {
-                        PNL_Pause.Visible = true;
-                        TmrMainGameManager.Stop();
-                        TMR_Tempo.Stop();
-                        ativouMenu = 1;
-                    }
-                    else if (ativouMenu == 1)
-                    {
-                        PNL_Pause.Visible = false;
-                        TmrMainGameManager.Start();
-                        TMR_Tempo.Start();
-                        ativouMenu = 0;
-                    }
+                    PNL_Pause.Visible = true;
+                    TmrMainGameManager.Stop();
+                    TMR_Tempo.Stop();
+                    ativouMenu = 1;
                 }
-                
+                else if (ativouMenu == 1)
+                {
+                    PNL_Pause.Visible = false;
+                    TmrMainGameManager.Start();
+                    TMR_Tempo.Start();
+                    ativouMenu = 0;
+                }
             }
         }
         #endregion
@@ -206,6 +203,9 @@ namespace Jogo_Matamática_3_ano
             //PAINEL MENU
             PnlMenu.Location = new Point(0, 0);
             PnlMenu.Visible = true;
+
+            //Painel perguntas
+            PnlPerguntas.Location = new Point(9, 960);
             
             //Esconder opções debugMode
             labelX.Visible = false;
@@ -220,6 +220,9 @@ namespace Jogo_Matamática_3_ano
 
             //Colocar contador de animações para 0
             ControleAnimacao = 0;
+
+            //Organizer objetos do pnlPergunta
+            resetarObjetosPergunta();
         }
         #endregion
 
@@ -302,7 +305,8 @@ namespace Jogo_Matamática_3_ano
                 animcaoWin = 1;
                 PBX_Fase2.Enabled = true;
                 PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
-                TmrAnimationWinFase.Start();
+                ControleAnimacao = 0;
+                TmrAnimation.Start();
             }
 
             //Condição para ganhar/fase2
@@ -313,7 +317,8 @@ namespace Jogo_Matamática_3_ano
                 animcaoWin = 1;
                 PBX_Fase3.Enabled = true;
                 PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_3.png");
-                TmrAnimationWinFase.Start();
+                ControleAnimacao = 0;
+                TmrAnimation.Start();
             }
 
             //Controles para fazer o player andar
@@ -349,7 +354,8 @@ namespace Jogo_Matamática_3_ano
             //Abrir o portão da fase
             if (contVitaminas == 7)
             {
-                TmrPortao.Start();
+                ControleAnimacao = 800;
+                TmrAnimation.Start();
                 contVitaminas = 0;
             }
 
@@ -364,11 +370,57 @@ namespace Jogo_Matamática_3_ano
                         {
                             f.Visible = false;
                             contVitaminas++;
+                            TMR_Tempo.Stop();
+                            TmrMainGameManager.Stop();
+
+                            //Perguntas fase 1 e verificar se está correta
+                            if (fase == 1)
+                            {
+                                if (contVitaminas == 1)
+                                {
+                                    setarBtnPergunta4();
+                                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\pergunta_" + contVitaminas + ".png");
+                                }
+                                if (contVitaminas == 2)
+                                {
+                                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\pergunta_" + contVitaminas + ".png");
+
+                                    LblResposta.Location = new Point(581, 114);
+                                    LblResposta.Size = new Size(591, 42);
+                                    TxtResposta.Location = new Point(583, 114);
+                                    TxtResposta.Size = new Size(3, 42);
+                                    LblResposta.Visible = true;
+                                    TxtResposta.Visible = true;
+                                }
+                                if (contVitaminas == 3)
+                                {
+
+                                }
+                                if (contVitaminas == 4)
+                                {
+
+                                }
+                                if (contVitaminas == 5)
+                                {
+
+                                }
+                                if (contVitaminas == 6)
+                                {
+
+                                }
+                                if (contVitaminas == 7)
+                                {
+
+                                }
+                            }
+                            ControleAnimacao = 900;
+                            TmrAnimation.Start();
                         }
                     }
                 }
             }
 
+            //Ativar desativar a bust do modo debug
             if (DebugSwithB == true)
             {
                 if (Bust == true) {
@@ -553,7 +605,8 @@ namespace Jogo_Matamática_3_ano
             //Setar a posição inicial da colisão e personagem e imagen
             PbxColision.Location = new Point(59, 169);
             PbxPersonagem.Location = new Point(-104, 136);
-            TmrAnimationStartFase.Start();
+            ControleAnimacao = 700;
+            TmrAnimation.Start();
             PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_1.png");
 
             //SETAR TRANSPARENCIA ITENS
@@ -569,7 +622,7 @@ namespace Jogo_Matamática_3_ano
             PBX_Vitamina7.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\maca_animada.gif");
 
             //SETAR POSICAO DOS ITENS
-            PBX_Vitamina1.Location = new Point(671, 553);
+            PBX_Vitamina1.Location = new Point(486, 655);
             PBX_Vitamina2.Location = new Point(667, 299);
             PBX_Vitamina3.Location = new Point(228, 431);
             PBX_Vitamina4.Location = new Point(1112, 298);
@@ -705,7 +758,8 @@ namespace Jogo_Matamática_3_ano
             //Start da fase
             TmrMainGameManager.Start();
             TMR_Tempo.Start();
-            TmrAnimationStartFase.Start();
+            ControleAnimacao = 700;
+            TmrAnimation.Start();
 
             //Esconder os paineis
             PNL_Fases.Visible = false;
@@ -795,7 +849,8 @@ namespace Jogo_Matamática_3_ano
             //Start da fase
             TmrMainGameManager.Start();
             TMR_Tempo.Start();
-            TmrAnimationStartFase.Start();
+            ControleAnimacao = 700;
+            TmrAnimation.Start();
 
             //Esconder os paineis
             PNL_Fases.Visible = false;
@@ -993,12 +1048,96 @@ namespace Jogo_Matamática_3_ano
             PBX_Vitamina6.Visible = false;
             PBX_Vitamina7.Visible = false;
         }
+        public void setarBtnPergunta4()
+        {
+            int sizeX = 116, sizeY = 59;
+
+            PbxBtn1.Enabled = true;
+            PbxBtn2.Enabled = true;
+            PbxBtn3.Enabled = true;
+            PbxBtnCerto.Enabled = true;
+
+            PbxBtn1.Visible = true;
+            PbxBtn2.Visible = true;
+            PbxBtn3.Visible = true;
+            PbxBtnCerto.Visible = true;
+
+            if (fase == 1)
+            {
+                PbxBtn1.Location = new Point(1099, 27);
+                PbxBtn2.Location = new Point(1099, 114);
+                PbxBtn3.Location = new Point(948, 27);
+                PbxBtn4.Location = new Point(10, 10);
+                PbxBtnCerto.Location = new Point(948, 114);
+
+                PbxBtn1.Size = new Size(sizeX, sizeY);
+                PbxBtn2.Size = new Size(sizeX, sizeY);
+                PbxBtn3.Size = new Size(sizeX, sizeY);
+                PbxBtn4.Size = new Size(10, 10);
+                PbxBtnCerto.Size = new Size(sizeX, sizeY); //R$5,50
+            }
+        }
+        public void setarBtnPergunta5()
+        {
+
+        }
+        public void setarTxtPergunta1()
+        {
+
+        }
+        public void setarTxtPergunta2()
+        {
+
+        }
+        public void resetarObjetosPergunta()
+        {
+            PbxBtn1.Location = new Point(10, 10);
+            PbxBtn2.Location = new Point(10, 10);
+            PbxBtn3.Location = new Point(10, 10);
+            PbxBtn4.Location = new Point(10, 10);
+            PbxBtnCerto.Location = new Point(10, 10);
+            TxtResposta.Location = new Point(10, 10);
+            LblResposta.Location = new Point(10, 10);
+
+            PbxBtn1.Size = new Size(10, 10);
+            PbxBtn2.Size = new Size(10, 10);
+            PbxBtn3.Size = new Size(10, 10);
+            PbxBtn4.Size = new Size(10, 10);
+            PbxBtnCerto.Size = new Size(10, 10);
+            TxtResposta.Size = new Size(10, 10);
+            LblResposta.Size = new Size(10, 10);
+
+            PbxBtn1.BackColor = Color.Transparent;
+            PbxBtn2.BackColor = Color.Transparent;
+            PbxBtn3.BackColor = Color.Transparent;
+            PbxBtn4.BackColor = Color.Transparent;
+            PbxBtnCerto.BackColor = Color.Transparent;
+
+            PbxBtn1.Visible = false;
+            PbxBtn2.Visible = false;
+            PbxBtn3.Visible = false;
+            PbxBtn4.Visible = false;
+            PbxBtnCerto.Visible = false;
+            TxtResposta.Visible = false;
+            LblResposta.Visible = false;
+
+            TxtResposta.Enabled = false;
+        }
+
+        public void rodarSaidaPerguntas()
+        {
+            TmrMainGameManager.Start();
+            TMR_Tempo.Start();
+            ControleAnimacao = 1000;
+            TmrAnimation.Start();
+        }
         #endregion
 
         #region Click Jogar
         private void PBX_Jogar_Click(object sender, EventArgs e)
         {
             PNL_Fases.Visible = true;
+            PnlMenu.Visible = false;
             string loadSave = File.ReadAllText(Directory.GetCurrentDirectory() + "\\Save.txt");
             if (loadSave == "2")
             {
@@ -1175,7 +1314,13 @@ namespace Jogo_Matamática_3_ano
                     tempSeg--;
                     LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + tempSeg.ToString();
                 }
-
+            }
+            //Correção por conta das vitaminas que add 5s
+            else
+            {
+                tempMin++;
+                tempSeg = tempSeg - 60;
+                LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + "0" + tempSeg.ToString();
             }
         }
 
@@ -1248,11 +1393,14 @@ namespace Jogo_Matamática_3_ano
         }
         #endregion
 
-        #region Animação do personagem
-        private void TmrAnimationWinFase_Tick(object sender, EventArgs e)
+        #region Animações
+        private void TmrAnimation_Tick(object sender, EventArgs e)
         {
+            //Contador de todas as animações
             ControleAnimacao++;
-            //Olha pro player
+
+            //ControleAnimacao = 0 | Animação personagem ganhando fase
+            //Olha pro player 
             if (ControleAnimacao > 0 && ControleAnimacao < 250)
             {
                 ControleAnimacao++;
@@ -1320,19 +1468,14 @@ namespace Jogo_Matamática_3_ano
                 PNL_Fases.Visible = true;
                 LBL_Tempo.Text = "";
                 ResetAmbiente();
-                TmrAnimationWinFase.Stop();
-                ControleAnimacao = 0;
+                TmrAnimation.Stop();
             }
-        }
-        #endregion
 
-        #region Animações do personagem entrando na fase
-        private void TmrAnimationStartFase_Tick(object sender, EventArgs e)
-        {
-            ControleAnimacao++;
+            //ControleAnimacao = 700 | Animações do personagem entrando na fase
             //Entra no mapa 1
-            if (fase == 1) {
-                if (ControleAnimacao > 0 && ControleAnimacao < 52)
+            if (fase == 1)
+            {
+                if (ControleAnimacao > 700 && ControleAnimacao < 752)
                 {
                     PbxPersonagem.Location = new Point(posXPlayer + 3, posYPlayer);
                     if (ControleAnimacao % 5 == 0)
@@ -1341,19 +1484,18 @@ namespace Jogo_Matamática_3_ano
                         PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_" + animcaoWin + ".png");
                     }
                 }
-                if (ControleAnimacao == 52)
+                if (ControleAnimacao == 752)
                 {
                     PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_1.png");
-                    TmrAnimationStartFase.Stop();
+                    TmrAnimation.Stop();
                     TmrMainGameManager.Start();
-                    ControleAnimacao = 0;
                 }
             }
 
             //Entra no mapa 2
             if (fase == 2)
             {
-                if (ControleAnimacao > 0 && ControleAnimacao < 52)
+                if (ControleAnimacao > 700 && ControleAnimacao < 752)
                 {
                     PbxPersonagem.Location = new Point(posXPlayer + 3, posYPlayer);
                     if (ControleAnimacao % 5 == 0)
@@ -1362,19 +1504,18 @@ namespace Jogo_Matamática_3_ano
                         PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_" + animcaoWin + ".png");
                     }
                 }
-                if (ControleAnimacao == 52)
+                if (ControleAnimacao == 752)
                 {
                     PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_1.png");
-                    TmrAnimationStartFase.Stop();
+                    TmrAnimation.Stop();
                     TmrMainGameManager.Start();
-                    ControleAnimacao = 0;
                 }
             }
 
             //Entra no mapa 3
             if (fase == 3)
             {
-                if (ControleAnimacao > 0 && ControleAnimacao < 52)
+                if (ControleAnimacao > 700 && ControleAnimacao < 752)
                 {
                     PbxPersonagem.Location = new Point(posXPlayer + 3, posYPlayer);
                     if (ControleAnimacao % 5 == 0)
@@ -1383,30 +1524,118 @@ namespace Jogo_Matamática_3_ano
                         PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_" + animcaoWin + ".png");
                     }
                 }
-                if (ControleAnimacao == 52)
+                if (ControleAnimacao == 752)
                 {
                     PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_1.png");
-                    TmrAnimationStartFase.Stop();
+                    TmrAnimation.Stop();
                     TmrMainGameManager.Start();
-                    ControleAnimacao = 0;
                 }
+            }
+
+            //ControleAnimacao = 800
+            //Animação do portão
+            if (ControleAnimacao > 800 && ControleAnimacao < 835)
+            {
+                PbxCerca.Location = new Point(PbxCerca.Location.X + 1, PbxCerca.Location.Y);
+            }
+            if (ControleAnimacao == 836)
+            {
+                TmrAnimation.Stop();
+            }
+
+            //controleAnimações = 900
+            //Animação da pergunta aparecendo
+            if (ControleAnimacao > 900 && ControleAnimacao < 968)
+            {
+                PnlPerguntas.Location = new Point(PnlPerguntas.Location.X, PnlPerguntas.Location.Y - 3);
+            }
+            if (ControleAnimacao == 970)
+            {
+                TmrAnimation.Stop();
+            }
+
+            //controleAnimações = 1000
+            //Animação da pergunta desaparecendo
+            if (ControleAnimacao > 1000 && ControleAnimacao < 1068)
+            {
+                PnlPerguntas.Location = new Point(PnlPerguntas.Location.X, PnlPerguntas.Location.Y + 3);
+            }
+            if (ControleAnimacao == 1070)
+            {
+                TmrAnimation.Stop();
             }
         }
         #endregion
 
-        #region Animação do portão
-        private void TmrPortao_Tick(object sender, EventArgs e)
+        #region Respostas/Perguntas
+        //Recebimento das respostas
+        private void TxtResposta_TextChanged(object sender, EventArgs e)
         {
-            ControleAnimacao++;
-            if (ControleAnimacao < 35)
+            LblResposta.Text = TxtResposta.Text + "|";
+            if (TxtResposta.Text.ToLower() == "36 ovos")
             {
-                PbxCerca.Location = new Point(PbxCerca.Location.X + 1, PbxCerca.Location.Y);
+                TxtResposta.Enabled = false;
+                this.Focus();
+                TmrMainGameManager.Start();
+                TMR_Tempo.Start();
+                ControleAnimacao = 1000;
+                TmrAnimation.Start();
             }
-            if (ControleAnimacao == 36)
+        }
+        private void LblResposta_Click(object sender, EventArgs e)
+        {
+            LblResposta.Text = "|";
+            TxtResposta.Enabled = true;
+            TxtResposta.Focus();
+        }
+        private void PbxBtnCerto_Click(object sender, EventArgs e)
+        {
+            if (fase == 1)
             {
-                TmrPortao.Stop();
-                ControleAnimacao = 0;
+                tempSeg = tempSeg + 5;
             }
+            rodarSaidaPerguntas();
+            resetarObjetosPergunta();
+        }
+
+        private void PbxBtn3_Click(object sender, EventArgs e)
+        {
+            if (fase == 1)
+            {
+                tempSeg = tempSeg - 3;
+            }
+            rodarSaidaPerguntas();
+            resetarObjetosPergunta();
+        }
+
+        private void PbxBtn1_Click(object sender, EventArgs e)
+        {
+            if (fase == 1)
+            {
+                tempSeg = tempSeg - 3;
+            }
+            rodarSaidaPerguntas();
+            resetarObjetosPergunta();
+        }
+
+        private void PbxBtn2_Click(object sender, EventArgs e)
+        {
+            if (fase == 1)
+            {
+                tempSeg = tempSeg - 3;
+            }
+            rodarSaidaPerguntas();
+            resetarObjetosPergunta();
+        }
+
+        private void PbxBtn4_Click(object sender, EventArgs e)
+        {
+            if (fase == 1)
+            {
+                //Não faz nada
+            }
+            rodarSaidaPerguntas();
+            resetarObjetosPergunta();
         }
         #endregion
     }
