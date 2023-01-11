@@ -1844,15 +1844,36 @@ namespace Jogo_Matamática_3_ano
         #region Estética das caixas de texto
         private void TxtResposta_TextChanged(object sender, EventArgs e)
         {
-            LblResposta.Text = TxtResposta.Text + "|";
+            if (TxtResposta.MaxLength == 2)
+            {
+                LblResposta.Text = TxtResposta.Text;
+            }
+            else
+            {
+                LblResposta.Text = TxtResposta.Text + "|";
+            }
         }
         private void TxtResposta2_TextChanged(object sender, EventArgs e)
         {
-            LblResposta2.Text = TxtResposta2.Text + "|";
+            if (TxtResposta2.MaxLength == 2)
+            {
+                LblResposta2.Text = TxtResposta2.Text;
+            }
+            else
+            {
+                LblResposta2.Text = TxtResposta2.Text + "|";
+            }
         }
         private void TxtResposta3_TextChanged(object sender, EventArgs e)
         {
-            LblResposta3.Text = TxtResposta3.Text + "|";
+            if (TxtResposta3.MaxLength == 2)
+            {
+                LblResposta3.Text = TxtResposta3.Text;
+            }
+            else
+            {
+                LblResposta3.Text = TxtResposta3.Text + "|";
+            }
         }
         private void LblResposta_Click(object sender, EventArgs e)
         {
@@ -1940,17 +1961,17 @@ namespace Jogo_Matamática_3_ano
             {
                 PrbTempPerg.Value = tempPergunta;
             }
-            if (fase == 1)
+            if (fase == 1) //Resposta de texto da fase 1
             {
-                if (contVitaminas == 2)
+                if (contVitaminas == 2) //Segunda pergunta
                 {
-                    if (TxtResposta.Text.ToLower() == "36 ovos" || TxtResposta.Text.ToLower() == "trinta e seis ovos" || TxtResposta.Text.ToLower() == "joaquina encontrou 36 ovos")
+                    if (TxtResposta.Text.ToLower() == "36 ovos" || TxtResposta.Text.ToLower() == "trinta e seis ovos" || TxtResposta.Text.ToLower() == "joaquina encontrou 36 ovos" || TxtResposta.Text.ToLower() == "ela encontrou 36 ovos")
                     {
                         tempSeg = tempSeg + 5;
                         rodarSaidaPerguntas();
                     }
                 }
-                if (contVitaminas == 3)
+                if (contVitaminas == 3) //Terceira pergunta
                 {
                     if (TxtResposta.Text.ToLower() == "3 patos" || TxtResposta.Text.ToLower() == "três patos" || TxtResposta.Text.ToLower() == "há 3 patos")
                     {
@@ -1958,7 +1979,7 @@ namespace Jogo_Matamática_3_ano
                         rodarSaidaPerguntas();
                     }
                 }
-                if (contVitaminas == 5)
+                if (contVitaminas == 5) //Quinta pergunta
                 {
                     if (TxtResposta.Text != "" && TxtResposta2.Text != "")
                     {
@@ -1982,7 +2003,7 @@ namespace Jogo_Matamática_3_ano
                         Lbl_de_Ajuda.Text = num1.ToString() + " + " + num2.ToString() + " é igua a " + resultado + "\nVocê está longe do resultado :(";
                     }
                 }
-                if (contVitaminas == 6)
+                if (contVitaminas == 6) //Sexta pergunta
                 {
                     if (TxtResposta.Text.ToLower() == "12 pessoas" || TxtResposta.Text.ToLower() == "doze pessoas" || TxtResposta.Text.ToLower() == "há doze pessoas" || TxtResposta.Text.ToLower() == "há 12 pessoas")
                     {
@@ -1990,7 +2011,7 @@ namespace Jogo_Matamática_3_ano
                         rodarSaidaPerguntas();
                     }
                 }
-                if (contVitaminas == 7)
+                if (contVitaminas == 7) //Setima (Última) pergunta
                 {
                     if (TxtResposta.Text != "" && TxtResposta2.Text != "" && TxtResposta3.Text != "")
                     {
