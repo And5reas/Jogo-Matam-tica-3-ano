@@ -467,6 +467,22 @@ namespace Jogo_Matamática_3_ano
                 }
             }
 
+            //Pegar moedas com Tag Cristal
+            foreach(Control h in this.Controls)
+            {
+                if(h is PictureBox)
+                {
+                    if((string)h.Tag == "Cristal" && h.Visible == true)
+                    {
+                        if (PbxColision.Bounds.IntersectsWith(h.Bounds))
+                        {
+                            h.Visible = false;
+                        }
+                    }
+                }
+            }
+
+
             //Ativar desativar o bust do modo debug
             if (DebugSwithB == true)
             {
@@ -642,8 +658,9 @@ namespace Jogo_Matamática_3_ano
         #region Start fase 1
         private void PBX_Fase1_Click(object sender, EventArgs e)
         {
-                   //Diretório das imagens que estamos usando para a fase
-            string diretorioItem = "\\img\\itens\\maca_animada.gif",
+            //Diretório das imagens que estamos usando para a fase
+            string diretorioVit = "\\img\\itens\\maca_animada.gif",
+                   diretorioCristal = "\\img\\itens\\cristal_animado.gif",
                    diretorioAmbiente = "\\img\\ambiente\\mapa_1\\arbusto_macas_mapa1.png";
 
             //Fase atual
@@ -673,19 +690,21 @@ namespace Jogo_Matamática_3_ano
             PbxPersonagem.Location = new Point(-104, 136);
             ControleAnimacao = 700;
             TmrAnimation.Start();
-            PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_1.png");
 
             //SETAR TRANSPARENCIA ITENS
             ItensTrans();
 
             //SETAR IMAGEM DOS ITENS
-            setarImagensVitaminas(diretorioItem);
+            setarImagensVitaminas(diretorioVit);
+            setImagendsCrital(diretorioCristal);
 
-            //SETAR POSICAO DAS VITAMINAS
+            //SETAR POSICAO DOS ITENS
             setPosVitaminas();
+            setPosCrist();
 
             //SETAR TAMANHO ITENS
             setVitSize(22, 26);
+            setCrisSize(22, 26);
 
             //DEIXAR ITENS VISIVEIS
             ItensVisible();
@@ -1057,7 +1076,10 @@ namespace Jogo_Matamática_3_ano
                 PBX_Vitamina5.BackColor = Color.Transparent;
                 PBX_Vitamina6.BackColor = Color.Transparent;
                 PBX_Vitamina7.BackColor = Color.Transparent;
-            }
+                PbxCristal1.BackColor = Color.Transparent;
+                PbxCristal2.BackColor = Color.Transparent;
+                PbxCristal3.BackColor = Color.Transparent;
+        }
 
             public void ItensVisible()
             {
@@ -1068,7 +1090,10 @@ namespace Jogo_Matamática_3_ano
                 PBX_Vitamina5.Visible = true;
                 PBX_Vitamina6.Visible = true;
                 PBX_Vitamina7.Visible = true;
-            }
+                PbxCristal1.Visible = true;
+                PbxCristal2.Visible = true;
+                PbxCristal3.Visible = true;
+        }
 
             public void IensNotVisible()
             {
@@ -1079,7 +1104,10 @@ namespace Jogo_Matamática_3_ano
                 PBX_Vitamina5.Visible = false;
                 PBX_Vitamina6.Visible = false;
                 PBX_Vitamina7.Visible = false;
-            }
+                PbxCristal1.Visible = false;
+                PbxCristal2.Visible = false;
+                PbxCristal3.Visible = false;
+        }
 
             #region Organizar o layout das perguntas, de acordo com a pergunta | Resetar as perguntas | Rodas a saída das perguntas
             public void setarBtnPergunta4()
@@ -1360,16 +1388,16 @@ namespace Jogo_Matamática_3_ano
             }
             #endregion
 
-            #region SETAR IMAGEM DOS ITENS
-            public void setarImagensVitaminas(string item)
+            #region SETAR IMAGEM DAS VITAMINAS
+            public void setarImagensVitaminas(string img)
             {
-                PBX_Vitamina1.Image = Image.FromFile(Directory.GetCurrentDirectory() + item);
-                PBX_Vitamina2.Image = Image.FromFile(Directory.GetCurrentDirectory() + item);
-                PBX_Vitamina3.Image = Image.FromFile(Directory.GetCurrentDirectory() + item);
-                PBX_Vitamina4.Image = Image.FromFile(Directory.GetCurrentDirectory() + item);
-                PBX_Vitamina5.Image = Image.FromFile(Directory.GetCurrentDirectory() + item);
-                PBX_Vitamina6.Image = Image.FromFile(Directory.GetCurrentDirectory() + item);
-                PBX_Vitamina7.Image = Image.FromFile(Directory.GetCurrentDirectory() + item);
+                PBX_Vitamina1.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
+                PBX_Vitamina2.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
+                PBX_Vitamina3.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
+                PBX_Vitamina4.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
+                PBX_Vitamina5.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
+                PBX_Vitamina6.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
+                PBX_Vitamina7.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
             }
             #endregion
 
@@ -1389,7 +1417,7 @@ namespace Jogo_Matamática_3_ano
             }
             #endregion
 
-            #region SETAR TAMANHO ITENS
+            #region SETAR TAMANHO VITAMINAS
             public void setVitSize(int tamX, int tamY)
             {
                 PBX_Vitamina1.Size = new Size(tamX, tamY);
@@ -1440,6 +1468,33 @@ namespace Jogo_Matamática_3_ano
                 PBX_Ambiente5.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
                 PBX_Ambiente6.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
                 PBX_Ambiente7.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
+            }
+        #endregion
+
+            #region SETAR POSIÇÃO DOS CRISTAIS
+            public void setPosCrist()
+            {
+                PbxCristal1.Location = new Point(525, 297);
+                PbxCristal2.Location = new Point(676, 554);
+                PbxCristal3.Location = new Point(1113, 524);
+            }
+        #endregion
+
+            #region SETAR TAMANHO CRISTAIS
+            public void setCrisSize(int tamX, int tamY)
+            {
+                PbxCristal1.Size = new Size(tamX, tamY);
+                PbxCristal2.Size = new Size(tamX, tamY);
+                PbxCristal3.Size = new Size(tamX, tamY);
+            }
+        #endregion
+
+            #region SETAR IMAGEM DOS CRISTAIS
+            public void setImagendsCrital(string img)
+            {
+                PbxCristal1.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
+                PbxCristal2.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
+                PbxCristal3.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
             }
             #endregion
 

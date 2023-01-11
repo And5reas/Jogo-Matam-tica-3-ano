@@ -175,6 +175,9 @@
             this.Lbl_de_Ajuda = new System.Windows.Forms.Label();
             this.TmrPergunta = new System.Windows.Forms.Timer(this.components);
             this.LblWallStatus = new System.Windows.Forms.Label();
+            this.PbxCristal1 = new System.Windows.Forms.PictureBox();
+            this.PbxCristal2 = new System.Windows.Forms.PictureBox();
+            this.PbxCristal3 = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -291,6 +294,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxBtn4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxBtn3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxBtn1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxCristal1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxCristal2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxCristal3)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -1975,6 +1981,45 @@
             this.LblWallStatus.TabIndex = 4;
             this.LblWallStatus.Text = "WallSatatus";
             // 
+            // PbxCristal1
+            // 
+            this.PbxCristal1.BackColor = System.Drawing.Color.Blue;
+            this.PbxCristal1.Image = ((System.Drawing.Image)(resources.GetObject("PbxCristal1.Image")));
+            this.PbxCristal1.Location = new System.Drawing.Point(525, 297);
+            this.PbxCristal1.Name = "PbxCristal1";
+            this.PbxCristal1.Size = new System.Drawing.Size(22, 26);
+            this.PbxCristal1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxCristal1.TabIndex = 22;
+            this.PbxCristal1.TabStop = false;
+            this.PbxCristal1.Tag = "Cristal";
+            this.PbxCristal1.Visible = false;
+            // 
+            // PbxCristal2
+            // 
+            this.PbxCristal2.BackColor = System.Drawing.Color.Blue;
+            this.PbxCristal2.Image = ((System.Drawing.Image)(resources.GetObject("PbxCristal2.Image")));
+            this.PbxCristal2.Location = new System.Drawing.Point(676, 554);
+            this.PbxCristal2.Name = "PbxCristal2";
+            this.PbxCristal2.Size = new System.Drawing.Size(22, 26);
+            this.PbxCristal2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxCristal2.TabIndex = 22;
+            this.PbxCristal2.TabStop = false;
+            this.PbxCristal2.Tag = "Cristal";
+            this.PbxCristal2.Visible = false;
+            // 
+            // PbxCristal3
+            // 
+            this.PbxCristal3.BackColor = System.Drawing.Color.Blue;
+            this.PbxCristal3.Image = ((System.Drawing.Image)(resources.GetObject("PbxCristal3.Image")));
+            this.PbxCristal3.Location = new System.Drawing.Point(1113, 524);
+            this.PbxCristal3.Name = "PbxCristal3";
+            this.PbxCristal3.Size = new System.Drawing.Size(22, 26);
+            this.PbxCristal3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxCristal3.TabIndex = 22;
+            this.PbxCristal3.TabStop = false;
+            this.PbxCristal3.Tag = "Cristal";
+            this.PbxCristal3.Visible = false;
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2071,11 +2116,14 @@
             this.Controls.Add(this.pictureBox56);
             this.Controls.Add(this.PBX_Vitamina2);
             this.Controls.Add(this.PBX_Vitamina1);
+            this.Controls.Add(this.PbxCristal3);
+            this.Controls.Add(this.PbxCristal2);
+            this.Controls.Add(this.PbxCristal1);
             this.DoubleBuffered = true;
             this.Name = "FrmJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "Parede";
-            this.Text = "Jogo Matemática 3°ano";
+            this.Text = "";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJogo_FormClosing);
             this.Load += new System.EventHandler(this.FrmJogo_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmJogo_KeyDown);
@@ -2200,6 +2248,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxBtn4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxBtn3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxBtn1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxCristal1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxCristal2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxCristal3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2352,6 +2403,9 @@
         private System.Windows.Forms.Label LblResposta3;
         private System.Windows.Forms.TextBox TxtResposta3;
         private System.Windows.Forms.Label LblWallStatus;
+        private System.Windows.Forms.PictureBox PbxCristal1;
+        private System.Windows.Forms.PictureBox PbxCristal2;
+        private System.Windows.Forms.PictureBox PbxCristal3;
     }
 }
 
