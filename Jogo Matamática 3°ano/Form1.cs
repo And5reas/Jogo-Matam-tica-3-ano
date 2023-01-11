@@ -40,8 +40,8 @@ namespace Jogo_Matamática_3_ano
             //Variáveis que controla as animações
             ControleAnimacao = 0, ControleAnimacaoAux, animcaoWin = 1,
             
-            //Contador de Vitaminas
-            contVitaminas = 0,
+            //Contador de Vitaminas e Cristais
+            contVitaminas = 0, contCristais = 0,
             
             //Controla o TmrPergunta
             tempPergunta = 0;
@@ -416,9 +416,11 @@ namespace Jogo_Matamática_3_ano
                         {
                             f.Visible = false;
                             contVitaminas++;
-                            lblOutputRequest.Text = contVitaminas.ToString();
                             TMR_Tempo.Stop();
                             TmrMainGameManager.Stop();
+
+                            //Exibir para o player
+                            LblContVitaminas.Text = contVitaminas + "/7";
 
                             //Perguntas fase 1 e verificar se está correta
                             if (fase == 1)
@@ -477,6 +479,11 @@ namespace Jogo_Matamática_3_ano
                         if (PbxColision.Bounds.IntersectsWith(h.Bounds))
                         {
                             h.Visible = false;
+                            contCristais++;
+
+                            //Exibir para o player
+                            LblContCristais.Text = contCristais + "/3";
+                            
                         }
                     }
                 }
@@ -690,6 +697,9 @@ namespace Jogo_Matamática_3_ano
             PbxPersonagem.Location = new Point(-104, 136);
             ControleAnimacao = 700;
             TmrAnimation.Start();
+
+            //ORGANIZAR O PLACAR DA FASE
+            setPlacar();
 
             //SETAR TRANSPARENCIA ITENS
             ItensTrans();
@@ -1496,7 +1506,44 @@ namespace Jogo_Matamática_3_ano
                 PbxCristal2.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
                 PbxCristal3.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
             }
-            #endregion
+        #endregion
+
+        #region SETAR A QUANTIDADES DE ITENS QUE PLAYER PEGO
+        public void setPlacar()
+        {
+            if (fase == 1)
+            {
+
+                //Setar a imagen certa
+                PbxContVitaminas.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\maca_animada.gif");
+                PbxContCristais.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\cristal_animado.gif");
+
+                //Setar a posição e tamanho da maça no placar
+                PbxContVitaminas.Location = new Point(1205, 23);
+                PbxContVitaminas.Size = new Size(26, 30);
+
+                //Setar a posição e tamanho do cristal no placar
+                PbxContCristais.Location = new Point(1205, 60);
+                PbxContCristais.Size = new Size(26, 30);
+
+                //Setar a posição das labels
+                LblContVitaminas.Location = new Point(1156, 28);
+                LblContCristais.Location = new Point(1156, 65);
+
+                //Setar o texto da fase
+                LblContVitaminas.Text = "0/7";
+                LblContCristais.Text = "0/3";
+
+                //Setar a visibilidade do placar
+                PbxContVitaminas.Visible = true;
+                PbxContCristais.Visible = true;
+                LblContCristais.Visible = true;
+                LblContVitaminas.Visible = true;
+            }
+
+
+        }
+        #endregion
 
         #endregion
 

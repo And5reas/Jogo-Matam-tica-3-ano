@@ -178,6 +178,10 @@
             this.PbxCristal1 = new System.Windows.Forms.PictureBox();
             this.PbxCristal2 = new System.Windows.Forms.PictureBox();
             this.PbxCristal3 = new System.Windows.Forms.PictureBox();
+            this.PbxContVitaminas = new System.Windows.Forms.PictureBox();
+            this.PbxContCristais = new System.Windows.Forms.PictureBox();
+            this.LblContVitaminas = new System.Windows.Forms.Label();
+            this.LblContCristais = new System.Windows.Forms.Label();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -297,6 +301,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxContVitaminas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxContCristais)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -420,7 +426,7 @@
             // 
             this.labelX.AutoSize = true;
             this.labelX.BackColor = System.Drawing.Color.GreenYellow;
-            this.labelX.Location = new System.Drawing.Point(643, 138);
+            this.labelX.Location = new System.Drawing.Point(643, 220);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(55, 13);
             this.labelX.TabIndex = 4;
@@ -430,7 +436,7 @@
             // 
             this.labelY.AutoSize = true;
             this.labelY.BackColor = System.Drawing.Color.GreenYellow;
-            this.labelY.Location = new System.Drawing.Point(643, 118);
+            this.labelY.Location = new System.Drawing.Point(643, 200);
             this.labelY.Name = "labelY";
             this.labelY.Size = new System.Drawing.Size(55, 13);
             this.labelY.TabIndex = 4;
@@ -440,7 +446,7 @@
             // 
             this.LblX.AutoSize = true;
             this.LblX.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblX.Location = new System.Drawing.Point(704, 138);
+            this.LblX.Location = new System.Drawing.Point(704, 220);
             this.LblX.Name = "LblX";
             this.LblX.Size = new System.Drawing.Size(14, 13);
             this.LblX.TabIndex = 4;
@@ -450,7 +456,7 @@
             // 
             this.LblY.AutoSize = true;
             this.LblY.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblY.Location = new System.Drawing.Point(704, 118);
+            this.LblY.Location = new System.Drawing.Point(704, 200);
             this.LblY.Name = "LblY";
             this.LblY.Size = new System.Drawing.Size(14, 13);
             this.LblY.TabIndex = 4;
@@ -1571,7 +1577,7 @@
             // 
             this.lblOutputRequest.AutoSize = true;
             this.lblOutputRequest.BackColor = System.Drawing.Color.GreenYellow;
-            this.lblOutputRequest.Location = new System.Drawing.Point(643, 88);
+            this.lblOutputRequest.Location = new System.Drawing.Point(643, 170);
             this.lblOutputRequest.Name = "lblOutputRequest";
             this.lblOutputRequest.Size = new System.Drawing.Size(77, 13);
             this.lblOutputRequest.TabIndex = 4;
@@ -1581,7 +1587,7 @@
             // 
             this.LblBust.AutoSize = true;
             this.LblBust.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblBust.Location = new System.Drawing.Point(643, 65);
+            this.LblBust.Location = new System.Drawing.Point(643, 147);
             this.LblBust.Name = "LblBust";
             this.LblBust.Size = new System.Drawing.Size(28, 13);
             this.LblBust.TabIndex = 4;
@@ -1679,7 +1685,7 @@
             // 
             this.PBX_Vitamina2.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina2.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina2.Image")));
-            this.PBX_Vitamina2.Location = new System.Drawing.Point(667, 299);
+            this.PBX_Vitamina2.Location = new System.Drawing.Point(776, 297);
             this.PBX_Vitamina2.Name = "PBX_Vitamina2";
             this.PBX_Vitamina2.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1975,7 +1981,7 @@
             // 
             this.LblWallStatus.AutoSize = true;
             this.LblWallStatus.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblWallStatus.Location = new System.Drawing.Point(643, 41);
+            this.LblWallStatus.Location = new System.Drawing.Point(643, 123);
             this.LblWallStatus.Name = "LblWallStatus";
             this.LblWallStatus.Size = new System.Drawing.Size(64, 13);
             this.LblWallStatus.TabIndex = 4;
@@ -2020,6 +2026,58 @@
             this.PbxCristal3.Tag = "Cristal";
             this.PbxCristal3.Visible = false;
             // 
+            // PbxContVitaminas
+            // 
+            this.PbxContVitaminas.BackColor = System.Drawing.Color.Transparent;
+            this.PbxContVitaminas.Image = ((System.Drawing.Image)(resources.GetObject("PbxContVitaminas.Image")));
+            this.PbxContVitaminas.Location = new System.Drawing.Point(1205, 23);
+            this.PbxContVitaminas.Name = "PbxContVitaminas";
+            this.PbxContVitaminas.Size = new System.Drawing.Size(26, 30);
+            this.PbxContVitaminas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxContVitaminas.TabIndex = 21;
+            this.PbxContVitaminas.TabStop = false;
+            this.PbxContVitaminas.Tag = "Vitamina";
+            this.PbxContVitaminas.Visible = false;
+            // 
+            // PbxContCristais
+            // 
+            this.PbxContCristais.BackColor = System.Drawing.Color.Transparent;
+            this.PbxContCristais.Image = ((System.Drawing.Image)(resources.GetObject("PbxContCristais.Image")));
+            this.PbxContCristais.Location = new System.Drawing.Point(1205, 60);
+            this.PbxContCristais.Name = "PbxContCristais";
+            this.PbxContCristais.Size = new System.Drawing.Size(26, 30);
+            this.PbxContCristais.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxContCristais.TabIndex = 22;
+            this.PbxContCristais.TabStop = false;
+            this.PbxContCristais.Tag = "Cristal";
+            this.PbxContCristais.Visible = false;
+            // 
+            // LblContVitaminas
+            // 
+            this.LblContVitaminas.AutoSize = true;
+            this.LblContVitaminas.BackColor = System.Drawing.Color.Transparent;
+            this.LblContVitaminas.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblContVitaminas.ForeColor = System.Drawing.Color.Black;
+            this.LblContVitaminas.Location = new System.Drawing.Point(1156, 28);
+            this.LblContVitaminas.Name = "LblContVitaminas";
+            this.LblContVitaminas.Size = new System.Drawing.Size(45, 22);
+            this.LblContVitaminas.TabIndex = 25;
+            this.LblContVitaminas.Text = "0/7";
+            this.LblContVitaminas.Visible = false;
+            // 
+            // LblContCristais
+            // 
+            this.LblContCristais.AutoSize = true;
+            this.LblContCristais.BackColor = System.Drawing.Color.Transparent;
+            this.LblContCristais.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblContCristais.ForeColor = System.Drawing.Color.Black;
+            this.LblContCristais.Location = new System.Drawing.Point(1156, 65);
+            this.LblContCristais.Name = "LblContCristais";
+            this.LblContCristais.Size = new System.Drawing.Size(45, 22);
+            this.LblContCristais.TabIndex = 25;
+            this.LblContCristais.Text = "0/3";
+            this.LblContCristais.Visible = false;
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2030,6 +2088,15 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.Controls.Add(this.LblY);
+            this.Controls.Add(this.LblX);
+            this.Controls.Add(this.LblWallStatus);
+            this.Controls.Add(this.LblBust);
+            this.Controls.Add(this.lblOutputRequest);
+            this.Controls.Add(this.labelY);
+            this.Controls.Add(this.labelX);
+            this.Controls.Add(this.LblContCristais);
+            this.Controls.Add(this.LblContVitaminas);
             this.Controls.Add(this.PnlMenu);
             this.Controls.Add(this.PNL_Info);
             this.Controls.Add(this.PNL_Fases);
@@ -2050,13 +2117,6 @@
             this.Controls.Add(this.PBX_Ambiente3);
             this.Controls.Add(this.PBX_Ambiente2);
             this.Controls.Add(this.PBX_Ambiente1);
-            this.Controls.Add(this.LblY);
-            this.Controls.Add(this.LblX);
-            this.Controls.Add(this.LblWallStatus);
-            this.Controls.Add(this.LblBust);
-            this.Controls.Add(this.lblOutputRequest);
-            this.Controls.Add(this.labelY);
-            this.Controls.Add(this.labelX);
             this.Controls.Add(this.LBL_Tempo);
             this.Controls.Add(this.PbxColision);
             this.Controls.Add(this.PbxPersonagem);
@@ -2114,8 +2174,10 @@
             this.Controls.Add(this.pictureBox49);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox56);
+            this.Controls.Add(this.PbxContVitaminas);
             this.Controls.Add(this.PBX_Vitamina2);
             this.Controls.Add(this.PBX_Vitamina1);
+            this.Controls.Add(this.PbxContCristais);
             this.Controls.Add(this.PbxCristal3);
             this.Controls.Add(this.PbxCristal2);
             this.Controls.Add(this.PbxCristal1);
@@ -2251,6 +2313,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxContVitaminas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxContCristais)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2406,6 +2470,10 @@
         private System.Windows.Forms.PictureBox PbxCristal1;
         private System.Windows.Forms.PictureBox PbxCristal2;
         private System.Windows.Forms.PictureBox PbxCristal3;
+        private System.Windows.Forms.PictureBox PbxContVitaminas;
+        private System.Windows.Forms.PictureBox PbxContCristais;
+        private System.Windows.Forms.Label LblContVitaminas;
+        private System.Windows.Forms.Label LblContCristais;
     }
 }
 
