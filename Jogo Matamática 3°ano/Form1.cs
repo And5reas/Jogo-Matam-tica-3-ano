@@ -1405,13 +1405,15 @@ namespace Jogo_Matamática_3_ano
             #region Setar a posiçao das imagens do ambiente
             public void setPosAmbiente()
             {
-                PBX_Ambiente1.Location = new Point(282, 306);
-                PBX_Ambiente2.Location = new Point(502, 272);
-                PBX_Ambiente3.Location = new Point(720, 235);
-                PBX_Ambiente4.Location = new Point(946, 235);
-                PBX_Ambiente5.Location = new Point(367, 487);
-                PBX_Ambiente6.Location = new Point(224, 642);
-                PBX_Ambiente7.Location = new Point(1092, 503);
+                if (fase == 1) {
+                    PBX_Ambiente1.Location = new Point(282, 306);
+                    PBX_Ambiente2.Location = new Point(502, 272);
+                    PBX_Ambiente3.Location = new Point(720, 235);
+                    PBX_Ambiente4.Location = new Point(946, 235);
+                    PBX_Ambiente5.Location = new Point(367, 487);
+                    PBX_Ambiente6.Location = new Point(224, 642);
+                    PBX_Ambiente7.Location = new Point(1092, 503);
+                }
             }
             #endregion
 
