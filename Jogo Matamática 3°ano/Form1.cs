@@ -127,6 +127,7 @@ namespace Jogo_Matamática_3_ano
                     LblY.Visible = true;
                     lblOutputRequest.Visible = true;
                     LblBust.Visible = true;
+                    LblWallStatus.Visible = true;
                     DebugSwithB = true;
                 }
                 //Debug Desativo
@@ -140,6 +141,7 @@ namespace Jogo_Matamática_3_ano
                     LblY.Visible = false;
                     lblOutputRequest.Visible = false;
                     LblBust.Visible = false;
+                    LblWallStatus.Visible = false;
                     DebugSwithB = false;
                 }
             }
@@ -260,6 +262,7 @@ namespace Jogo_Matamática_3_ano
             LblY.Visible = false;
             lblOutputRequest.Visible = false;
             LblBust.Visible = false;
+            LblWallStatus.Visible = false;
 
             //Resetar as paredes
             ResetWalls();
@@ -482,10 +485,12 @@ namespace Jogo_Matamática_3_ano
                 if (paredesStatus == true)
                 {
                     paredesStatusDebug = "Sem paredes";
+                    LblWallStatus.Text = "Paredes desativadas";
                 }
                 else
                 {
                     paredesStatusDebug = "Parede";
+                    LblWallStatus.Text = "Ativas";
                 }
             }
         }
@@ -1103,6 +1108,8 @@ namespace Jogo_Matamática_3_ano
             PBX_Vitamina6.Visible = false;
             PBX_Vitamina7.Visible = false;
         }
+
+        //Organizar o layout das perguntas, de acordo com a pergunta
         public void setarBtnPergunta4()
         {
             int sizeX = 116, sizeY = 59;
@@ -1289,6 +1296,7 @@ namespace Jogo_Matamática_3_ano
                 }
             }
         }
+        //Resetar o layout das perguntas
         public void resetarObjetosPergunta()
         {
             //Abrir o portão da fase
@@ -1832,37 +1840,11 @@ namespace Jogo_Matamática_3_ano
         #endregion
 
         #region Respostas/Perguntas
-        //Recebimento das respostas
+
+        #region Estética das caixas de texto
         private void TxtResposta_TextChanged(object sender, EventArgs e)
         {
             LblResposta.Text = TxtResposta.Text + "|";
-            if (fase == 1) 
-            {
-                if (contVitaminas == 2)
-                {
-                    if (TxtResposta.Text.ToLower() == "36 ovos" || TxtResposta.Text.ToLower() == "trinta e seis ovos")
-                    {
-                        tempSeg = tempSeg + 5;
-                        rodarSaidaPerguntas();
-                    }
-                }
-                if (contVitaminas == 3)
-                {
-                    if (TxtResposta.Text.ToLower() == "3 patos" || TxtResposta.Text.ToLower() == "três patos")
-                    {
-                        tempSeg = tempSeg + 5;
-                        rodarSaidaPerguntas();
-                    }
-                }
-                if (contVitaminas == 6)
-                {
-                    if (TxtResposta.Text.ToLower() == "12 pessoas" || TxtResposta.Text.ToLower() == "doze pessoas")
-                    {
-                        tempSeg = tempSeg + 5;
-                        rodarSaidaPerguntas();
-                    }
-                }
-            }
         }
         private void TxtResposta2_TextChanged(object sender, EventArgs e)
         {
@@ -1896,6 +1878,9 @@ namespace Jogo_Matamática_3_ano
             TxtResposta3.Focus();
             TxtResposta3.Clear();
         }
+        #endregion
+
+        #region Btn perguntas correção
         private void PbxBtnCerto_Click(object sender, EventArgs e)
         {
             if (fase == 1)
@@ -1940,7 +1925,9 @@ namespace Jogo_Matamática_3_ano
             }
             rodarSaidaPerguntas();
         }
+        #endregion
 
+        #region Correção de perguntas e tempo das perguntas
         private void TmrPergunta_Tick(object sender, EventArgs e)
         {
             tempPergunta++;
@@ -1955,6 +1942,22 @@ namespace Jogo_Matamática_3_ano
             }
             if (fase == 1)
             {
+                if (contVitaminas == 2)
+                {
+                    if (TxtResposta.Text.ToLower() == "36 ovos" || TxtResposta.Text.ToLower() == "trinta e seis ovos" || TxtResposta.Text.ToLower() == "joaquina encontrou 36 ovos")
+                    {
+                        tempSeg = tempSeg + 5;
+                        rodarSaidaPerguntas();
+                    }
+                }
+                if (contVitaminas == 3)
+                {
+                    if (TxtResposta.Text.ToLower() == "3 patos" || TxtResposta.Text.ToLower() == "três patos" || TxtResposta.Text.ToLower() == "há 3 patos")
+                    {
+                        tempSeg = tempSeg + 5;
+                        rodarSaidaPerguntas();
+                    }
+                }
                 if (contVitaminas == 5)
                 {
                     if (TxtResposta.Text != "" && TxtResposta2.Text != "")
@@ -1977,6 +1980,14 @@ namespace Jogo_Matamática_3_ano
                     else
                     {
                         Lbl_de_Ajuda.Text = num1.ToString() + " + " + num2.ToString() + " é igua a " + resultado + "\nVocê está longe do resultado :(";
+                    }
+                }
+                if (contVitaminas == 6)
+                {
+                    if (TxtResposta.Text.ToLower() == "12 pessoas" || TxtResposta.Text.ToLower() == "doze pessoas" || TxtResposta.Text.ToLower() == "há doze pessoas" || TxtResposta.Text.ToLower() == "há 12 pessoas")
+                    {
+                        tempSeg = tempSeg + 5;
+                        rodarSaidaPerguntas();
                     }
                 }
                 if (contVitaminas == 7)
@@ -2006,6 +2017,8 @@ namespace Jogo_Matamática_3_ano
                 }
             }
         }
+        #endregion
+
         #endregion
     }
 }
