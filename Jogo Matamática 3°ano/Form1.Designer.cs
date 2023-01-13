@@ -426,7 +426,7 @@
             // 
             this.labelX.AutoSize = true;
             this.labelX.BackColor = System.Drawing.Color.GreenYellow;
-            this.labelX.Location = new System.Drawing.Point(643, 220);
+            this.labelX.Location = new System.Drawing.Point(1071, 106);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(55, 13);
             this.labelX.TabIndex = 4;
@@ -436,7 +436,7 @@
             // 
             this.labelY.AutoSize = true;
             this.labelY.BackColor = System.Drawing.Color.GreenYellow;
-            this.labelY.Location = new System.Drawing.Point(643, 200);
+            this.labelY.Location = new System.Drawing.Point(1071, 86);
             this.labelY.Name = "labelY";
             this.labelY.Size = new System.Drawing.Size(55, 13);
             this.labelY.TabIndex = 4;
@@ -446,7 +446,7 @@
             // 
             this.LblX.AutoSize = true;
             this.LblX.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblX.Location = new System.Drawing.Point(704, 220);
+            this.LblX.Location = new System.Drawing.Point(1132, 106);
             this.LblX.Name = "LblX";
             this.LblX.Size = new System.Drawing.Size(14, 13);
             this.LblX.TabIndex = 4;
@@ -456,7 +456,7 @@
             // 
             this.LblY.AutoSize = true;
             this.LblY.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblY.Location = new System.Drawing.Point(704, 200);
+            this.LblY.Location = new System.Drawing.Point(1132, 86);
             this.LblY.Name = "LblY";
             this.LblY.Size = new System.Drawing.Size(14, 13);
             this.LblY.TabIndex = 4;
@@ -1577,7 +1577,7 @@
             // 
             this.lblOutputRequest.AutoSize = true;
             this.lblOutputRequest.BackColor = System.Drawing.Color.GreenYellow;
-            this.lblOutputRequest.Location = new System.Drawing.Point(643, 170);
+            this.lblOutputRequest.Location = new System.Drawing.Point(1071, 56);
             this.lblOutputRequest.Name = "lblOutputRequest";
             this.lblOutputRequest.Size = new System.Drawing.Size(77, 13);
             this.lblOutputRequest.TabIndex = 4;
@@ -1587,7 +1587,7 @@
             // 
             this.LblBust.AutoSize = true;
             this.LblBust.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblBust.Location = new System.Drawing.Point(643, 147);
+            this.LblBust.Location = new System.Drawing.Point(1071, 33);
             this.LblBust.Name = "LblBust";
             this.LblBust.Size = new System.Drawing.Size(28, 13);
             this.LblBust.TabIndex = 4;
@@ -1672,7 +1672,7 @@
             // 
             this.PBX_Vitamina1.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina1.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina1.Image")));
-            this.PBX_Vitamina1.Location = new System.Drawing.Point(486, 655);
+            this.PBX_Vitamina1.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina1.Name = "PBX_Vitamina1";
             this.PBX_Vitamina1.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1685,7 +1685,7 @@
             // 
             this.PBX_Vitamina2.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina2.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina2.Image")));
-            this.PBX_Vitamina2.Location = new System.Drawing.Point(776, 297);
+            this.PBX_Vitamina2.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina2.Name = "PBX_Vitamina2";
             this.PBX_Vitamina2.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1698,7 +1698,7 @@
             // 
             this.PBX_Vitamina3.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina3.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina3.Image")));
-            this.PBX_Vitamina3.Location = new System.Drawing.Point(228, 431);
+            this.PBX_Vitamina3.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina3.Name = "PBX_Vitamina3";
             this.PBX_Vitamina3.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1711,7 +1711,7 @@
             // 
             this.PBX_Vitamina4.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina4.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina4.Image")));
-            this.PBX_Vitamina4.Location = new System.Drawing.Point(1112, 298);
+            this.PBX_Vitamina4.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina4.Name = "PBX_Vitamina4";
             this.PBX_Vitamina4.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1724,7 +1724,7 @@
             // 
             this.PBX_Vitamina5.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina5.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina5.Image")));
-            this.PBX_Vitamina5.Location = new System.Drawing.Point(230, 321);
+            this.PBX_Vitamina5.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina5.Name = "PBX_Vitamina5";
             this.PBX_Vitamina5.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1737,7 +1737,7 @@
             // 
             this.PBX_Vitamina6.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina6.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina6.Image")));
-            this.PBX_Vitamina6.Location = new System.Drawing.Point(965, 684);
+            this.PBX_Vitamina6.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina6.Name = "PBX_Vitamina6";
             this.PBX_Vitamina6.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1750,7 +1750,7 @@
             // 
             this.PBX_Vitamina7.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina7.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina7.Image")));
-            this.PBX_Vitamina7.Location = new System.Drawing.Point(892, 409);
+            this.PBX_Vitamina7.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina7.Name = "PBX_Vitamina7";
             this.PBX_Vitamina7.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1981,7 +1981,7 @@
             // 
             this.LblWallStatus.AutoSize = true;
             this.LblWallStatus.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblWallStatus.Location = new System.Drawing.Point(643, 123);
+            this.LblWallStatus.Location = new System.Drawing.Point(1071, 9);
             this.LblWallStatus.Name = "LblWallStatus";
             this.LblWallStatus.Size = new System.Drawing.Size(64, 13);
             this.LblWallStatus.TabIndex = 4;
@@ -1991,7 +1991,7 @@
             // 
             this.PbxCristal1.BackColor = System.Drawing.Color.Blue;
             this.PbxCristal1.Image = ((System.Drawing.Image)(resources.GetObject("PbxCristal1.Image")));
-            this.PbxCristal1.Location = new System.Drawing.Point(525, 297);
+            this.PbxCristal1.Location = new System.Drawing.Point(90, 130);
             this.PbxCristal1.Name = "PbxCristal1";
             this.PbxCristal1.Size = new System.Drawing.Size(22, 26);
             this.PbxCristal1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2004,7 +2004,7 @@
             // 
             this.PbxCristal2.BackColor = System.Drawing.Color.Blue;
             this.PbxCristal2.Image = ((System.Drawing.Image)(resources.GetObject("PbxCristal2.Image")));
-            this.PbxCristal2.Location = new System.Drawing.Point(676, 554);
+            this.PbxCristal2.Location = new System.Drawing.Point(90, 130);
             this.PbxCristal2.Name = "PbxCristal2";
             this.PbxCristal2.Size = new System.Drawing.Size(22, 26);
             this.PbxCristal2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2017,7 +2017,7 @@
             // 
             this.PbxCristal3.BackColor = System.Drawing.Color.Blue;
             this.PbxCristal3.Image = ((System.Drawing.Image)(resources.GetObject("PbxCristal3.Image")));
-            this.PbxCristal3.Location = new System.Drawing.Point(1113, 524);
+            this.PbxCristal3.Location = new System.Drawing.Point(90, 130);
             this.PbxCristal3.Name = "PbxCristal3";
             this.PbxCristal3.Size = new System.Drawing.Size(22, 26);
             this.PbxCristal3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2182,6 +2182,7 @@
             this.Controls.Add(this.PbxCristal3);
             this.Controls.Add(this.PbxCristal2);
             this.DoubleBuffered = true;
+            this.Location = new System.Drawing.Point(60, 130);
             this.Name = "FrmJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "Parede";
