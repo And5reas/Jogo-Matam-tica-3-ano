@@ -45,7 +45,10 @@ namespace Jogo_Matamática_3_ano
             contVitaminas = 0, contCristais = 0,
 
             //Controla o TmrPergunta
-            tempPergunta = 0;
+            tempPergunta = 0,
+            
+            //Score do player
+            Score = 0, CristalBuffTime = 0;
 
         //Controles do player
         bool goLeft, goRight, goDown, goUp,
@@ -495,17 +498,19 @@ namespace Jogo_Matamática_3_ano
                             LblContCristais.Text = contCristais + "/3";
                             if (contCristais == 1)
                             {
-                                andarQtdPx = 9;
+                                andarQtdPx = 8;
                             }
                             if (contCristais == 2)
                             {
-                                andarQtdPx = 12;
+                                andarQtdPx = 10;
                             }
                             if (contCristais == 3)
                             {
-                                andarQtdPx = 16;
+                                andarQtdPx = 12;
+                                LblScore.ForeColor = Color.OrangeRed;
+                                LblScore.Text = "Score: " + Score + " +200";
                             }
-                            lblOutputRequest.Text = andarQtdPx.ToString();
+                            CristalBuffTime = 6;
                         }
                     }
                 }
@@ -519,7 +524,7 @@ namespace Jogo_Matamática_3_ano
                     andarQtdPx = 50;
                     LblBust.Text = "Busted";
                 }
-                else
+                else 
                 {
                     andarQtdPx = 6;
                     LblBust.Text = "Normal";
@@ -539,6 +544,17 @@ namespace Jogo_Matamática_3_ano
                     paredesStatusDebug = "Parede";
                     LblWallStatus.Text = "Ativas";
                 }
+            }
+
+            //Para o Score e o tempo quando pegar todos os "itens"
+            if (contCristais == 3 && contVitaminas == 7)
+            {
+                Score = Score + 200;
+                LblScore.ForeColor = Color.Black;
+                LblScore.Text = "Score: " + Score;
+                TMR_Tempo.Stop();
+                contVitaminas = 0;
+                contCristais = 0;
             }
         }
 
@@ -1340,7 +1356,6 @@ namespace Jogo_Matamática_3_ano
             {
                 ControleAnimacao = 800;
                 TmrAnimation.Start();
-                contVitaminas = 0;
             }
             PbxBtn1.Location = new Point(10, 10);
             PbxBtn2.Location = new Point(10, 10);
@@ -1802,12 +1817,37 @@ namespace Jogo_Matamática_3_ano
                     LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + tempSeg.ToString();
                 }
             }
+
             //Correção por conta das vitaminas que add 5s
             else
             {
                 tempMin++;
                 tempSeg = tempSeg - 60;
                 LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + "0" + tempSeg.ToString();
+            }
+
+            //Sistema de pontos
+            Score++;
+            if (CristalBuffTime == 0)
+            {
+                LblScore.ForeColor = Color.Black;
+                LblScore.Text = "Score: " + Score;
+            }
+            else
+            {
+                if (contCristais == 1)
+                {
+                    Score++;
+                    LblScore.ForeColor = Color.Yellow;
+                    LblScore.Text = "Score: " + Score + "x" + (contCristais + 1);
+                }
+                else if (contCristais == 2)
+                {
+                    Score = Score + 2;
+                    LblScore.ForeColor = Color.Orange;
+                    LblScore.Text = "Score: " + Score + "x" + (contCristais + 1);
+                }
+                CristalBuffTime--;
             }
         }
 
@@ -1952,7 +1992,7 @@ namespace Jogo_Matamática_3_ano
                 }
             }
 
-            //Encerra a animação
+            //Encerra a animação de saida do mapa
             if (ControleAnimacao == 670)
             {
                 PNL_Fases.Enabled = true;
@@ -2135,46 +2175,46 @@ namespace Jogo_Matamática_3_ano
 
         private void PbxBtnCerto_Click(object sender, EventArgs e)
         {
-            if (fase == 1)
-            {
-                AddTempo(10);
-            }
+            AddTempo(10);
+            Score = Score + 20;
+            LblScore.ForeColor = Color.Green;
+            LblScore.Text = "Score: " + Score + " +20";
             rodarSaidaPerguntas();
         }
 
         private void PbxBtn3_Click(object sender, EventArgs e)
         {
-            if (fase == 1)
-            {
-                AddTempo(-3);
-            }
+            AddTempo(-3);
+            Score = Score - 20;
+            LblScore.ForeColor = Color.Red;
+            LblScore.Text = "Score: " + Score + " -20";
             rodarSaidaPerguntas();
         }
 
         private void PbxBtn1_Click(object sender, EventArgs e)
         {
-            if (fase == 1)
-            {
-                AddTempo(-3);
-            }
+            AddTempo(-3);
+            Score = Score - 20;
+            LblScore.ForeColor = Color.Red;
+            LblScore.Text = "Score: " + Score + " -20";
             rodarSaidaPerguntas();
         }
 
         private void PbxBtn2_Click(object sender, EventArgs e)
         {
-            if (fase == 1)
-            {
-                AddTempo(-3);
-            }
+            AddTempo(-3);
+            Score = Score - 20;
+            LblScore.ForeColor = Color.Red;
+            LblScore.Text = "Score: " + Score + " -20";
             rodarSaidaPerguntas();
         }
 
         private void PbxBtn4_Click(object sender, EventArgs e)
         {
-            if (fase == 1)
-            {
-                AddTempo(-3);
-            }
+            AddTempo(-3);
+            Score = Score - 20;
+            LblScore.ForeColor = Color.Red;
+            LblScore.Text = "Score: " + Score + " -20";
             rodarSaidaPerguntas();
         }
 
@@ -2188,6 +2228,9 @@ namespace Jogo_Matamática_3_ano
             if (tempPergunta == PrbTempPerg.Maximum - 2)
             {
                 AddTempo(-5);
+                Score = Score - 20;
+                LblScore.ForeColor = Color.Red;
+                LblScore.Text = "Score: " + Score + " -20";
                 rodarSaidaPerguntas();
             }
             if (tempPergunta >= 0 && tempPergunta <= 2000)
@@ -2201,6 +2244,9 @@ namespace Jogo_Matamática_3_ano
                     if (TxtResposta.Text.ToLower() == "36 ovos" || TxtResposta.Text.ToLower() == "trinta e seis ovos" || TxtResposta.Text.ToLower() == "joaquina encontrou 36 ovos" || TxtResposta.Text.ToLower() == "ela encontrou 36 ovos")
                     {
                         AddTempo(10);
+                        Score = Score + 20;
+                        LblScore.ForeColor = Color.Green;
+                        LblScore.Text = "Score: " + Score + " +20";
                         rodarSaidaPerguntas();
                     }
                 }
@@ -2209,6 +2255,9 @@ namespace Jogo_Matamática_3_ano
                     if (TxtResposta.Text.ToLower() == "3 patos" || TxtResposta.Text.ToLower() == "três patos" || TxtResposta.Text.ToLower() == "há 3 patos")
                     {
                         AddTempo(10);
+                        Score = Score + 20;
+                        LblScore.ForeColor = Color.Green;
+                        LblScore.Text = "Score: " + Score + " +20";
                         rodarSaidaPerguntas();
                     }
                 }
@@ -2224,6 +2273,9 @@ namespace Jogo_Matamática_3_ano
                     if (resultado == 46)
                     {
                         AddTempo(10);
+                        Score = Score + 20;
+                        LblScore.ForeColor = Color.Green;
+                        LblScore.Text = "Score: " + Score + " +20";
                         Lbl_de_Ajuda.Text = "Você Acertou!! ＜（＾－＾）＞";
                         rodarSaidaPerguntas();
                     }
@@ -2241,6 +2293,9 @@ namespace Jogo_Matamática_3_ano
                     if (TxtResposta.Text.ToLower() == "12 pessoas" || TxtResposta.Text.ToLower() == "doze pessoas" || TxtResposta.Text.ToLower() == "há doze pessoas" || TxtResposta.Text.ToLower() == "há 12 pessoas")
                     {
                         AddTempo(10);
+                        Score = Score + 20;
+                        LblScore.ForeColor = Color.Green;
+                        LblScore.Text = "Score: " + Score + " +20";
                         rodarSaidaPerguntas();
                     }
                 }
@@ -2257,6 +2312,9 @@ namespace Jogo_Matamática_3_ano
                     if (resultado == -37)
                     {
                         AddTempo(10);
+                        Score = Score + 20;
+                        LblScore.ForeColor = Color.Green;
+                        LblScore.Text = "Score: " + Score + " +20";
                         Lbl_de_Ajuda.Text = "Você Acertou!! ＜（＾－＾）＞";
                         rodarSaidaPerguntas();
                     }

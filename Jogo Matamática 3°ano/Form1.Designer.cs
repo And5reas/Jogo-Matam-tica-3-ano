@@ -182,6 +182,7 @@
             this.PbxContCristais = new System.Windows.Forms.PictureBox();
             this.LblContVitaminas = new System.Windows.Forms.Label();
             this.LblContCristais = new System.Windows.Forms.Label();
+            this.LblScore = new System.Windows.Forms.Label();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -2078,6 +2079,18 @@
             this.LblContCristais.Text = "0/3";
             this.LblContCristais.Visible = false;
             // 
+            // LblScore
+            // 
+            this.LblScore.AutoSize = true;
+            this.LblScore.BackColor = System.Drawing.Color.Transparent;
+            this.LblScore.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblScore.ForeColor = System.Drawing.Color.Black;
+            this.LblScore.Location = new System.Drawing.Point(554, 35);
+            this.LblScore.Name = "LblScore";
+            this.LblScore.Size = new System.Drawing.Size(176, 42);
+            this.LblScore.TabIndex = 26;
+            this.LblScore.Text = "Score: 0";
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2088,7 +2101,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
-            this.Controls.Add(this.PbxCristal1);
             this.Controls.Add(this.LblY);
             this.Controls.Add(this.LblX);
             this.Controls.Add(this.LblWallStatus);
@@ -2096,8 +2108,6 @@
             this.Controls.Add(this.lblOutputRequest);
             this.Controls.Add(this.labelY);
             this.Controls.Add(this.labelX);
-            this.Controls.Add(this.LblContCristais);
-            this.Controls.Add(this.LblContVitaminas);
             this.Controls.Add(this.PnlMenu);
             this.Controls.Add(this.PNL_Info);
             this.Controls.Add(this.PNL_Fases);
@@ -2170,8 +2180,12 @@
             this.Controls.Add(this.pictureBox49);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox56);
+            this.Controls.Add(this.LblContCristais);
+            this.Controls.Add(this.LblContVitaminas);
             this.Controls.Add(this.PbxContVitaminas);
             this.Controls.Add(this.PbxContCristais);
+            this.Controls.Add(this.LblScore);
+            this.Controls.Add(this.PbxCristal1);
             this.Controls.Add(this.PBX_Vitamina7);
             this.Controls.Add(this.PBX_Vitamina6);
             this.Controls.Add(this.PBX_Vitamina5);
@@ -2475,6 +2489,7 @@
         private System.Windows.Forms.PictureBox PbxContCristais;
         private System.Windows.Forms.Label LblContVitaminas;
         private System.Windows.Forms.Label LblContCristais;
+        private System.Windows.Forms.Label LblScore;
     }
 }
 
