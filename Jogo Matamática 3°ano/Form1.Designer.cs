@@ -2088,6 +2088,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.Controls.Add(this.PbxCristal1);
             this.Controls.Add(this.LblY);
             this.Controls.Add(this.LblX);
             this.Controls.Add(this.LblWallStatus);
@@ -2104,11 +2105,6 @@
             this.Controls.Add(this.PNL_SemTempo);
             this.Controls.Add(this.PNL_Pause);
             this.Controls.Add(this.PbxCerca);
-            this.Controls.Add(this.PBX_Vitamina7);
-            this.Controls.Add(this.PBX_Vitamina6);
-            this.Controls.Add(this.PBX_Vitamina5);
-            this.Controls.Add(this.PBX_Vitamina4);
-            this.Controls.Add(this.PBX_Vitamina3);
             this.Controls.Add(this.PNL_SemTempo2);
             this.Controls.Add(this.PBX_Ambiente7);
             this.Controls.Add(this.PBX_Ambiente6);
@@ -2175,12 +2171,16 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox56);
             this.Controls.Add(this.PbxContVitaminas);
+            this.Controls.Add(this.PbxContCristais);
+            this.Controls.Add(this.PBX_Vitamina7);
+            this.Controls.Add(this.PBX_Vitamina6);
+            this.Controls.Add(this.PBX_Vitamina5);
+            this.Controls.Add(this.PBX_Vitamina4);
+            this.Controls.Add(this.PBX_Vitamina3);
             this.Controls.Add(this.PBX_Vitamina2);
             this.Controls.Add(this.PBX_Vitamina1);
-            this.Controls.Add(this.PbxContCristais);
             this.Controls.Add(this.PbxCristal3);
             this.Controls.Add(this.PbxCristal2);
-            this.Controls.Add(this.PbxCristal1);
             this.DoubleBuffered = true;
             this.Name = "FrmJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
