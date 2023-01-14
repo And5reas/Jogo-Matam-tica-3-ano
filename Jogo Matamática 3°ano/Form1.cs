@@ -493,17 +493,12 @@ namespace Jogo_Matamática_3_ano
 
                             //Exibir para o player (Placar)
                             LblContCristais.Text = contCristais + "/3";
-                            if (contCristais == 1)
+                            if (contCristais == 2)
                             {
                                 andarQtdPx = 8;
                             }
-                            if (contCristais == 2)
-                            {
-                                andarQtdPx = 10;
-                            }
                             if (contCristais == 3)
                             {
-                                andarQtdPx = 12;
                                 LblScore.ForeColor = Color.OrangeRed;
                                 LblScore.Text = "Score: " + Score + " +200";
                             }
@@ -1535,12 +1530,12 @@ namespace Jogo_Matamática_3_ano
             Score = Score + pontos;
             if (pontos > 0)
             {
-                LBL_Tempo.ForeColor = Color.Green;
+                LblScore.ForeColor = Color.Green;
                 LblScore.Text += " +" + pontos;
             }
             else
             {
-                LBL_Tempo.ForeColor = Color.Red;
+                LblScore.ForeColor = Color.Red;
                 LblScore.Text += " " + pontos;
             }
         }
