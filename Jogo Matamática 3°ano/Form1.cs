@@ -1579,6 +1579,16 @@ namespace Jogo_Matamática_3_ano
         public void AddTempo(int tempo)
         {
             tempSeg = tempSeg + tempo;
+            if(tempo > 0)
+            {
+                LBL_Tempo.ForeColor = Color.Green;
+                LBL_Tempo.Text += " +" + tempo;
+            }
+            else
+            {
+                LBL_Tempo.ForeColor = Color.Red;
+                LBL_Tempo.Text += " " + tempo;
+            }
         }
 
         #region SETAR A QUANTIDADES DE ITENS QUE PLAYER PEGO
@@ -1755,7 +1765,7 @@ namespace Jogo_Matamática_3_ano
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        #region LÓGICA DE TEMPO DE JOGO //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #region LÓGICA DE TEMPO DE JOGO E DO SCORE //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         private void TMR_Tempo_Tick(object sender, EventArgs e)
         {
@@ -1818,15 +1828,15 @@ namespace Jogo_Matamática_3_ano
             {
                 if (contCristais == 1)
                 {
-                    Score++;
+                    Score = Score + 3;
                     LblScore.ForeColor = Color.Yellow;
-                    LblScore.Text = "Score: " + Score + "x" + (contCristais + 1);
+                    LblScore.Text = "Score: " + Score + "+" + (contCristais + 3);
                 }
                 else if (contCristais == 2)
                 {
-                    Score = Score + 2;
+                    Score = Score + 7;
                     LblScore.ForeColor = Color.Orange;
-                    LblScore.Text = "Score: " + Score + "x" + (contCristais + 1);
+                    LblScore.Text = "Score: " + Score + "+" + (contCristais + 6);
                 }
                 CristalBuffTime--;
             }
@@ -2157,8 +2167,6 @@ namespace Jogo_Matamática_3_ano
         private void PbxBtnCerto_Click(object sender, EventArgs e)
         {
             AddTempo(10);
-            LBL_Tempo.ForeColor = Color.Green;
-            LBL_Tempo.Text += " +10";
             Score = Score + 20;
             LblScore.ForeColor = Color.Green;
             LblScore.Text = "Score: " + Score + " +20";
@@ -2168,8 +2176,6 @@ namespace Jogo_Matamática_3_ano
         private void PbxBtn3_Click(object sender, EventArgs e)
         {
             AddTempo(-5);
-            LBL_Tempo.ForeColor = Color.Red;
-            LBL_Tempo.Text += " -5";
             Score = Score - 20;
             LblScore.ForeColor = Color.Red;
             LblScore.Text = "Score: " + Score + " -20";
@@ -2179,8 +2185,6 @@ namespace Jogo_Matamática_3_ano
         private void PbxBtn1_Click(object sender, EventArgs e)
         {
             AddTempo(-5);
-            LBL_Tempo.ForeColor = Color.Red;
-            LBL_Tempo.Text += " -5";
             Score = Score - 20;
             LblScore.ForeColor = Color.Red;
             LblScore.Text = "Score: " + Score + " -20";
@@ -2190,8 +2194,6 @@ namespace Jogo_Matamática_3_ano
         private void PbxBtn2_Click(object sender, EventArgs e)
         {
             AddTempo(-5);
-            LBL_Tempo.ForeColor = Color.Red;
-            LBL_Tempo.Text += " -5";
             Score = Score - 20;
             LblScore.ForeColor = Color.Red;
             LblScore.Text = "Score: " + Score + " -20";
@@ -2201,8 +2203,6 @@ namespace Jogo_Matamática_3_ano
         private void PbxBtn4_Click(object sender, EventArgs e)
         {
             AddTempo(-5);
-            LBL_Tempo.ForeColor = Color.Red;
-            LBL_Tempo.Text += " -5";
             Score = Score - 20;
             LblScore.ForeColor = Color.Red;
             LblScore.Text = "Score: " + Score + " -20";
@@ -2219,8 +2219,6 @@ namespace Jogo_Matamática_3_ano
             if (tempPergunta == PrbTempPerg.Maximum - 2)
             {
                 AddTempo(-10);
-                LBL_Tempo.ForeColor = Color.Red;
-                LBL_Tempo.Text += " -10";
                 Score = Score - 20;
                 LblScore.ForeColor = Color.Red;
                 LblScore.Text = "Score: " + Score + " -20";
@@ -2237,8 +2235,6 @@ namespace Jogo_Matamática_3_ano
                     if (TxtResposta.Text.ToLower() == "36 ovos" || TxtResposta.Text.ToLower() == "trinta e seis ovos" || TxtResposta.Text.ToLower() == "joaquina encontrou 36 ovos" || TxtResposta.Text.ToLower() == "ela encontrou 36 ovos")
                     {
                         AddTempo(10);
-                        LBL_Tempo.ForeColor = Color.Green;
-                        LBL_Tempo.Text += " +10";
                         Score = Score + 20;
                         LblScore.ForeColor = Color.Green;
                         LblScore.Text = "Score: " + Score + " +20";
@@ -2250,8 +2246,6 @@ namespace Jogo_Matamática_3_ano
                     if (TxtResposta.Text.ToLower() == "3 patos" || TxtResposta.Text.ToLower() == "três patos" || TxtResposta.Text.ToLower() == "há 3 patos")
                     {
                         AddTempo(10);
-                        LBL_Tempo.ForeColor = Color.Green;
-                        LBL_Tempo.Text += " +10";
                         Score = Score + 20;
                         LblScore.ForeColor = Color.Green;
                         LblScore.Text = "Score: " + Score + " +20";
@@ -2270,8 +2264,6 @@ namespace Jogo_Matamática_3_ano
                     if (resultado == 46)
                     {
                         AddTempo(10);
-                        LBL_Tempo.ForeColor = Color.Green;
-                        LBL_Tempo.Text += " +10";
                         Score = Score + 20;
                         LblScore.ForeColor = Color.Green;
                         LblScore.Text = "Score: " + Score + " +20";
@@ -2292,8 +2284,6 @@ namespace Jogo_Matamática_3_ano
                     if (TxtResposta.Text.ToLower() == "12 pessoas" || TxtResposta.Text.ToLower() == "doze pessoas" || TxtResposta.Text.ToLower() == "há doze pessoas" || TxtResposta.Text.ToLower() == "há 12 pessoas")
                     {
                         AddTempo(10);
-                        LBL_Tempo.ForeColor = Color.Green;
-                        LBL_Tempo.Text += " +10";
                         Score = Score + 20;
                         LblScore.ForeColor = Color.Green;
                         LblScore.Text = "Score: " + Score + " +20";
@@ -2313,8 +2303,6 @@ namespace Jogo_Matamática_3_ano
                     if (resultado == -37)
                     {
                         AddTempo(10);
-                        LBL_Tempo.ForeColor = Color.Green;
-                        LBL_Tempo.Text += " +10";
                         Score = Score + 20;
                         LblScore.ForeColor = Color.Green;
                         LblScore.Text = "Score: " + Score + " +20";
