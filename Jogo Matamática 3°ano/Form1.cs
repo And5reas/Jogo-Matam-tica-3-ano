@@ -1785,6 +1785,7 @@ namespace Jogo_Matamática_3_ano
                     }
                     else
                     {
+                        LBL_Tempo.ForeColor = Color.White;
                         LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + "0" + tempSeg.ToString();
                     }
 
@@ -1792,15 +1793,17 @@ namespace Jogo_Matamática_3_ano
                 if (tempSeg >= 10)
                 {
                     tempSeg--;
+                    LBL_Tempo.ForeColor = Color.White;
                     LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + tempSeg.ToString();
                 }
             }
 
-            //Correção por conta das vitaminas que add 5s
+            //Correção por conta das vitaminas que add tempo
             else
             {
                 tempMin++;
                 tempSeg = tempSeg - 60;
+                LBL_Tempo.ForeColor = Color.White;
                 LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + "0" + tempSeg.ToString();
             }
 
@@ -2154,6 +2157,8 @@ namespace Jogo_Matamática_3_ano
         private void PbxBtnCerto_Click(object sender, EventArgs e)
         {
             AddTempo(10);
+            LBL_Tempo.ForeColor = Color.Green;
+            LBL_Tempo.Text += " +10";
             Score = Score + 20;
             LblScore.ForeColor = Color.Green;
             LblScore.Text = "Score: " + Score + " +20";
@@ -2162,7 +2167,9 @@ namespace Jogo_Matamática_3_ano
 
         private void PbxBtn3_Click(object sender, EventArgs e)
         {
-            AddTempo(-3);
+            AddTempo(-5);
+            LBL_Tempo.ForeColor = Color.Red;
+            LBL_Tempo.Text += " -5";
             Score = Score - 20;
             LblScore.ForeColor = Color.Red;
             LblScore.Text = "Score: " + Score + " -20";
@@ -2171,7 +2178,9 @@ namespace Jogo_Matamática_3_ano
 
         private void PbxBtn1_Click(object sender, EventArgs e)
         {
-            AddTempo(-3);
+            AddTempo(-5);
+            LBL_Tempo.ForeColor = Color.Red;
+            LBL_Tempo.Text += " -5";
             Score = Score - 20;
             LblScore.ForeColor = Color.Red;
             LblScore.Text = "Score: " + Score + " -20";
@@ -2180,7 +2189,9 @@ namespace Jogo_Matamática_3_ano
 
         private void PbxBtn2_Click(object sender, EventArgs e)
         {
-            AddTempo(-3);
+            AddTempo(-5);
+            LBL_Tempo.ForeColor = Color.Red;
+            LBL_Tempo.Text += " -5";
             Score = Score - 20;
             LblScore.ForeColor = Color.Red;
             LblScore.Text = "Score: " + Score + " -20";
@@ -2189,7 +2200,9 @@ namespace Jogo_Matamática_3_ano
 
         private void PbxBtn4_Click(object sender, EventArgs e)
         {
-            AddTempo(-3);
+            AddTempo(-5);
+            LBL_Tempo.ForeColor = Color.Red;
+            LBL_Tempo.Text += " -5";
             Score = Score - 20;
             LblScore.ForeColor = Color.Red;
             LblScore.Text = "Score: " + Score + " -20";
@@ -2205,7 +2218,9 @@ namespace Jogo_Matamática_3_ano
             tempPergunta++;
             if (tempPergunta == PrbTempPerg.Maximum - 2)
             {
-                AddTempo(-5);
+                AddTempo(-10);
+                LBL_Tempo.ForeColor = Color.Red;
+                LBL_Tempo.Text += " -10";
                 Score = Score - 20;
                 LblScore.ForeColor = Color.Red;
                 LblScore.Text = "Score: " + Score + " -20";
@@ -2222,6 +2237,8 @@ namespace Jogo_Matamática_3_ano
                     if (TxtResposta.Text.ToLower() == "36 ovos" || TxtResposta.Text.ToLower() == "trinta e seis ovos" || TxtResposta.Text.ToLower() == "joaquina encontrou 36 ovos" || TxtResposta.Text.ToLower() == "ela encontrou 36 ovos")
                     {
                         AddTempo(10);
+                        LBL_Tempo.ForeColor = Color.Green;
+                        LBL_Tempo.Text += " +10";
                         Score = Score + 20;
                         LblScore.ForeColor = Color.Green;
                         LblScore.Text = "Score: " + Score + " +20";
@@ -2233,6 +2250,8 @@ namespace Jogo_Matamática_3_ano
                     if (TxtResposta.Text.ToLower() == "3 patos" || TxtResposta.Text.ToLower() == "três patos" || TxtResposta.Text.ToLower() == "há 3 patos")
                     {
                         AddTempo(10);
+                        LBL_Tempo.ForeColor = Color.Green;
+                        LBL_Tempo.Text += " +10";
                         Score = Score + 20;
                         LblScore.ForeColor = Color.Green;
                         LblScore.Text = "Score: " + Score + " +20";
@@ -2251,6 +2270,8 @@ namespace Jogo_Matamática_3_ano
                     if (resultado == 46)
                     {
                         AddTempo(10);
+                        LBL_Tempo.ForeColor = Color.Green;
+                        LBL_Tempo.Text += " +10";
                         Score = Score + 20;
                         LblScore.ForeColor = Color.Green;
                         LblScore.Text = "Score: " + Score + " +20";
@@ -2271,6 +2292,8 @@ namespace Jogo_Matamática_3_ano
                     if (TxtResposta.Text.ToLower() == "12 pessoas" || TxtResposta.Text.ToLower() == "doze pessoas" || TxtResposta.Text.ToLower() == "há doze pessoas" || TxtResposta.Text.ToLower() == "há 12 pessoas")
                     {
                         AddTempo(10);
+                        LBL_Tempo.ForeColor = Color.Green;
+                        LBL_Tempo.Text += " +10";
                         Score = Score + 20;
                         LblScore.ForeColor = Color.Green;
                         LblScore.Text = "Score: " + Score + " +20";
@@ -2290,6 +2313,8 @@ namespace Jogo_Matamática_3_ano
                     if (resultado == -37)
                     {
                         AddTempo(10);
+                        LBL_Tempo.ForeColor = Color.Green;
+                        LBL_Tempo.Text += " +10";
                         Score = Score + 20;
                         LblScore.ForeColor = Color.Green;
                         LblScore.Text = "Score: " + Score + " +20";
