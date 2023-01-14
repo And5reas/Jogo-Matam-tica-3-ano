@@ -277,9 +277,6 @@ namespace Jogo_Matamática_3_ano
             LblBust.Visible = false;
             LblWallStatus.Visible = false;
 
-            //Resetar as paredes
-            ResetWalls();
-
             //Colocar contador de animações para 0
             ControleAnimacao = 0;
 
@@ -1023,65 +1020,6 @@ namespace Jogo_Matamática_3_ano
 
         #region Funções e Utilidades //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        #region RESETAR PAREDES
-        public void ResetWalls()
-        {
-            pictureBox1.Location = new Point(0, 0); pictureBox1.Size = new Size(10, 10);
-            pictureBox2.Location = new Point(11, 0); pictureBox2.Size = new Size(10, 10);
-            pictureBox3.Location = new Point(22, 0); pictureBox3.Size = new Size(10, 10);
-            pictureBox4.Location = new Point(33, 0); pictureBox4.Size = new Size(10, 10);
-            pictureBox5.Location = new Point(44, 0); pictureBox5.Size = new Size(10, 10);
-            pictureBox6.Location = new Point(55, 0); pictureBox6.Size = new Size(10, 10);
-            pictureBox7.Location = new Point(66, 0); pictureBox7.Size = new Size(10, 10);
-            pictureBox8.Location = new Point(77, 0); pictureBox8.Size = new Size(10, 10);
-            pictureBox9.Location = new Point(88, 0); pictureBox9.Size = new Size(10, 10);
-            pictureBox10.Location = new Point(99, 0); pictureBox10.Size = new Size(10, 10);
-            pictureBox11.Location = new Point(0, 11); pictureBox11.Size = new Size(10, 10);
-            pictureBox12.Location = new Point(11, 11); pictureBox12.Size = new Size(10, 10);
-            pictureBox13.Location = new Point(22, 11); pictureBox13.Size = new Size(10, 10);
-            pictureBox14.Location = new Point(33, 11); pictureBox14.Size = new Size(10, 10);
-            pictureBox15.Location = new Point(44, 11); pictureBox15.Size = new Size(10, 10);
-            pictureBox16.Location = new Point(55, 11); pictureBox16.Size = new Size(10, 10);
-            pictureBox17.Location = new Point(66, 11); pictureBox17.Size = new Size(10, 10);
-            pictureBox18.Location = new Point(77, 11); pictureBox18.Size = new Size(10, 10);
-            pictureBox19.Location = new Point(88, 11); pictureBox19.Size = new Size(10, 10);
-            pictureBox20.Location = new Point(99, 11); pictureBox20.Size = new Size(10, 10);
-            pictureBox21.Location = new Point(0, 22); pictureBox21.Size = new Size(10, 10);
-            pictureBox22.Location = new Point(11, 22); pictureBox22.Size = new Size(10, 10);
-            pictureBox23.Location = new Point(22, 22); pictureBox23.Size = new Size(10, 10);
-            pictureBox24.Location = new Point(33, 22); pictureBox24.Size = new Size(10, 10);
-            pictureBox25.Location = new Point(44, 22); pictureBox25.Size = new Size(10, 10);
-            pictureBox26.Location = new Point(55, 22); pictureBox26.Size = new Size(10, 10);
-            pictureBox27.Location = new Point(66, 22); pictureBox27.Size = new Size(10, 10);
-            pictureBox28.Location = new Point(77, 22); pictureBox28.Size = new Size(10, 10);
-            pictureBox29.Location = new Point(88, 22); pictureBox29.Size = new Size(10, 10);
-            pictureBox30.Location = new Point(99, 22); pictureBox30.Size = new Size(10, 10);
-            pictureBox31.Location = new Point(0, 33); pictureBox31.Size = new Size(10, 10);
-            pictureBox32.Location = new Point(11, 33); pictureBox32.Size = new Size(10, 10);
-            pictureBox33.Location = new Point(22, 33); pictureBox33.Size = new Size(10, 10);
-            pictureBox34.Location = new Point(33, 33); pictureBox34.Size = new Size(10, 10);
-            pictureBox35.Location = new Point(44, 33); pictureBox35.Size = new Size(10, 10);
-            pictureBox36.Location = new Point(55, 33); pictureBox36.Size = new Size(10, 10);
-            pictureBox37.Location = new Point(66, 33); pictureBox37.Size = new Size(10, 10);
-            pictureBox38.Location = new Point(77, 33); pictureBox38.Size = new Size(10, 10);
-            pictureBox39.Location = new Point(88, 33); pictureBox39.Size = new Size(10, 10);
-            pictureBox40.Location = new Point(99, 33); pictureBox40.Size = new Size(10, 10);
-            pictureBox41.Location = new Point(0, 44); pictureBox41.Size = new Size(10, 10);
-            pictureBox42.Location = new Point(11, 44); pictureBox42.Size = new Size(10, 10);
-            pictureBox43.Location = new Point(22, 44); pictureBox43.Size = new Size(10, 10);
-            pictureBox44.Location = new Point(33, 44); pictureBox44.Size = new Size(10, 10);
-            pictureBox45.Location = new Point(44, 44); pictureBox45.Size = new Size(10, 10);
-            pictureBox46.Location = new Point(55, 44); pictureBox46.Size = new Size(10, 10);
-            pictureBox47.Location = new Point(66, 44); pictureBox47.Size = new Size(10, 10);
-            pictureBox48.Location = new Point(77, 44); pictureBox48.Size = new Size(10, 10);
-            pictureBox49.Location = new Point(88, 44); pictureBox49.Size = new Size(10, 10);
-            pictureBox50.Location = new Point(99, 44); pictureBox50.Size = new Size(10, 10);
-            pictureBox51.Location = new Point(0, 55); pictureBox51.Size = new Size(10, 10);
-            pictureBox52.Location = new Point(11, 55); pictureBox52.Size = new Size(10, 10);
-            pictureBox53.Location = new Point(22, 55); pictureBox53.Size = new Size(10, 10);
-        }
-        #endregion
-
         //RESETAR AMBIENTE
         public void ResetAmbiente()
         {
@@ -1357,6 +1295,7 @@ namespace Jogo_Matamática_3_ano
                 ControleAnimacao = 800;
                 TmrAnimation.Start();
             }
+
             PbxBtn1.Location = new Point(10, 10);
             PbxBtn2.Location = new Point(10, 10);
             PbxBtn3.Location = new Point(10, 10);
@@ -1591,7 +1530,22 @@ namespace Jogo_Matamática_3_ano
             }
         }
 
-        #region SETAR A QUANTIDADES DE ITENS QUE PLAYER PEGO
+        public void AddScorePonto(int pontos)
+        {
+            Score = Score + pontos;
+            if (pontos > 0)
+            {
+                LBL_Tempo.ForeColor = Color.Green;
+                LblScore.Text += " +" + pontos;
+            }
+            else
+            {
+                LBL_Tempo.ForeColor = Color.Red;
+                LblScore.Text += " " + pontos;
+            }
+        }
+
+        #region SETAR O PLACAR
         public void setPlacar()
         {
             if (fase == 1)
@@ -1891,8 +1845,28 @@ namespace Jogo_Matamática_3_ano
             {
                 tempMin = 1;
                 tempSeg = 0;
+
+                //Resetar animação do personagem entrando no mapa
                 PbxColision.Location = new Point(59, 169);
-                PbxPersonagem.Location = new Point(46, 136);
+                PbxPersonagem.Location = new Point(-104, 136);
+                ControleAnimacao = 700;
+                TmrAnimation.Start();
+
+                //Resetar placar
+                LblContVitaminas.Text = "0/7";
+                LblContCristais.Text = "0/3";
+                contCristais = 0;
+                contVitaminas = 0;
+
+                //Resetar visibilidade dos itens
+                mostrarTodasPbx();
+
+                //Resetar a velocidade que o player anda
+                andarQtdPx = 6;
+
+                //Resetar Score
+                Score = 0;
+                LblScore.Text = "Score: 0";
             }
             //FASE 2
             if (fase == 2)
@@ -2084,6 +2058,7 @@ namespace Jogo_Matamática_3_ano
             //Animação da pergunta desaparecendo
             if (ControleAnimacao == 1001)
             {
+                this.Focus();
                 TmrPergunta.Stop();
             }
             if (ControleAnimacao > 1000 && ControleAnimacao < 1068)
@@ -2167,45 +2142,35 @@ namespace Jogo_Matamática_3_ano
         private void PbxBtnCerto_Click(object sender, EventArgs e)
         {
             AddTempo(10);
-            Score = Score + 20;
-            LblScore.ForeColor = Color.Green;
-            LblScore.Text = "Score: " + Score + " +20";
+            AddScorePonto(20);
             rodarSaidaPerguntas();
         }
 
         private void PbxBtn3_Click(object sender, EventArgs e)
         {
             AddTempo(-5);
-            Score = Score - 20;
-            LblScore.ForeColor = Color.Red;
-            LblScore.Text = "Score: " + Score + " -20";
+            AddScorePonto(-20);
             rodarSaidaPerguntas();
         }
 
         private void PbxBtn1_Click(object sender, EventArgs e)
         {
             AddTempo(-5);
-            Score = Score - 20;
-            LblScore.ForeColor = Color.Red;
-            LblScore.Text = "Score: " + Score + " -20";
+            AddScorePonto(-20);
             rodarSaidaPerguntas();
         }
 
         private void PbxBtn2_Click(object sender, EventArgs e)
         {
             AddTempo(-5);
-            Score = Score - 20;
-            LblScore.ForeColor = Color.Red;
-            LblScore.Text = "Score: " + Score + " -20";
+            AddScorePonto(-20);
             rodarSaidaPerguntas();
         }
 
         private void PbxBtn4_Click(object sender, EventArgs e)
         {
             AddTempo(-5);
-            Score = Score - 20;
-            LblScore.ForeColor = Color.Red;
-            LblScore.Text = "Score: " + Score + " -20";
+            AddScorePonto(-20);
             rodarSaidaPerguntas();
         }
 
@@ -2219,9 +2184,7 @@ namespace Jogo_Matamática_3_ano
             if (tempPergunta == PrbTempPerg.Maximum - 2)
             {
                 AddTempo(-10);
-                Score = Score - 20;
-                LblScore.ForeColor = Color.Red;
-                LblScore.Text = "Score: " + Score + " -20";
+                AddScorePonto(-20);
                 rodarSaidaPerguntas();
             }
             if (tempPergunta >= 0 && tempPergunta <= 2000)
@@ -2235,9 +2198,7 @@ namespace Jogo_Matamática_3_ano
                     if (TxtResposta.Text.ToLower() == "36 ovos" || TxtResposta.Text.ToLower() == "trinta e seis ovos" || TxtResposta.Text.ToLower() == "joaquina encontrou 36 ovos" || TxtResposta.Text.ToLower() == "ela encontrou 36 ovos")
                     {
                         AddTempo(10);
-                        Score = Score + 20;
-                        LblScore.ForeColor = Color.Green;
-                        LblScore.Text = "Score: " + Score + " +20";
+                        AddScorePonto(20);
                         rodarSaidaPerguntas();
                     }
                 }
@@ -2246,9 +2207,7 @@ namespace Jogo_Matamática_3_ano
                     if (TxtResposta.Text.ToLower() == "3 patos" || TxtResposta.Text.ToLower() == "três patos" || TxtResposta.Text.ToLower() == "há 3 patos")
                     {
                         AddTempo(10);
-                        Score = Score + 20;
-                        LblScore.ForeColor = Color.Green;
-                        LblScore.Text = "Score: " + Score + " +20";
+                        AddScorePonto(20);
                         rodarSaidaPerguntas();
                     }
                 }
@@ -2264,9 +2223,7 @@ namespace Jogo_Matamática_3_ano
                     if (resultado == 46)
                     {
                         AddTempo(10);
-                        Score = Score + 20;
-                        LblScore.ForeColor = Color.Green;
-                        LblScore.Text = "Score: " + Score + " +20";
+                        AddScorePonto(20);
                         Lbl_de_Ajuda.Text = "Você Acertou!! ＜（＾－＾）＞";
                         rodarSaidaPerguntas();
                     }
@@ -2284,9 +2241,7 @@ namespace Jogo_Matamática_3_ano
                     if (TxtResposta.Text.ToLower() == "12 pessoas" || TxtResposta.Text.ToLower() == "doze pessoas" || TxtResposta.Text.ToLower() == "há doze pessoas" || TxtResposta.Text.ToLower() == "há 12 pessoas")
                     {
                         AddTempo(10);
-                        Score = Score + 20;
-                        LblScore.ForeColor = Color.Green;
-                        LblScore.Text = "Score: " + Score + " +20";
+                        AddScorePonto(20);
                         rodarSaidaPerguntas();
                     }
                 }
@@ -2303,9 +2258,7 @@ namespace Jogo_Matamática_3_ano
                     if (resultado == -37)
                     {
                         AddTempo(10);
-                        Score = Score + 20;
-                        LblScore.ForeColor = Color.Green;
-                        LblScore.Text = "Score: " + Score + " +20";
+                        AddScorePonto(20);
                         Lbl_de_Ajuda.Text = "Você Acertou!! ＜（＾－＾）＞";
                         rodarSaidaPerguntas();
                     }
