@@ -1626,19 +1626,6 @@ namespace Jogo_Matamática_3_ano
         {
             PNL_Fases.Visible = true;
             PnlMenu.Visible = false;
-            string loadSave = File.ReadAllText(Directory.GetCurrentDirectory() + "\\Save.txt");
-            if (loadSave == "2")
-            {
-                PBX_Fase2.Enabled = true;
-                PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
-            }
-            else if (loadSave == "3")
-            {
-                PBX_Fase2.Enabled = true;
-                PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
-                PBX_Fase3.Enabled = true;
-                PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_3.png");
-            }
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1705,15 +1692,6 @@ namespace Jogo_Matamática_3_ano
         //Botão salvar
         private void PBX_Salvar_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 2; i++) {
-                string filePath = Directory.GetCurrentDirectory() + "\\Save.txt";
-                string Save = File.ReadAllText(filePath);
-                Save.Replace(Save, fase.ToString());
-                lblOutputRequest.Text = Save;
-                File.WriteAllText(filePath, fase.ToString());
-            }
-
-
         }
 
         private void BTN_SimInfo_Click(object sender, EventArgs e)
