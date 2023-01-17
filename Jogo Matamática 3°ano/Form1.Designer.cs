@@ -45,12 +45,6 @@
             this.LblY = new System.Windows.Forms.Label();
             this.PbxPersonagem = new System.Windows.Forms.PictureBox();
             this.PNL_Fases = new System.Windows.Forms.Panel();
-            this.LBL_Fase6 = new System.Windows.Forms.Label();
-            this.LBL_Fase5 = new System.Windows.Forms.Label();
-            this.LBL_Fase4 = new System.Windows.Forms.Label();
-            this.LBL_Fase3 = new System.Windows.Forms.Label();
-            this.LBL_Fase2 = new System.Windows.Forms.Label();
-            this.LBL_Fase1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.PBX_Fase6 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -188,6 +182,7 @@
             this.PbxContCristais = new System.Windows.Forms.PictureBox();
             this.LblContVitaminas = new System.Windows.Forms.Label();
             this.LblContCristais = new System.Windows.Forms.Label();
+            this.LblScore = new System.Windows.Forms.Label();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -432,7 +427,7 @@
             // 
             this.labelX.AutoSize = true;
             this.labelX.BackColor = System.Drawing.Color.GreenYellow;
-            this.labelX.Location = new System.Drawing.Point(643, 220);
+            this.labelX.Location = new System.Drawing.Point(1071, 106);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(55, 13);
             this.labelX.TabIndex = 4;
@@ -442,7 +437,7 @@
             // 
             this.labelY.AutoSize = true;
             this.labelY.BackColor = System.Drawing.Color.GreenYellow;
-            this.labelY.Location = new System.Drawing.Point(643, 200);
+            this.labelY.Location = new System.Drawing.Point(1071, 86);
             this.labelY.Name = "labelY";
             this.labelY.Size = new System.Drawing.Size(55, 13);
             this.labelY.TabIndex = 4;
@@ -452,7 +447,7 @@
             // 
             this.LblX.AutoSize = true;
             this.LblX.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblX.Location = new System.Drawing.Point(704, 220);
+            this.LblX.Location = new System.Drawing.Point(1132, 106);
             this.LblX.Name = "LblX";
             this.LblX.Size = new System.Drawing.Size(14, 13);
             this.LblX.TabIndex = 4;
@@ -462,7 +457,7 @@
             // 
             this.LblY.AutoSize = true;
             this.LblY.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblY.Location = new System.Drawing.Point(704, 200);
+            this.LblY.Location = new System.Drawing.Point(1132, 86);
             this.LblY.Name = "LblY";
             this.LblY.Size = new System.Drawing.Size(14, 13);
             this.LblY.TabIndex = 4;
@@ -486,98 +481,17 @@
             this.PNL_Fases.BackColor = System.Drawing.Color.LightBlue;
             this.PNL_Fases.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_Fases.BackgroundImage")));
             this.PNL_Fases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PNL_Fases.Controls.Add(this.LBL_Fase6);
-            this.PNL_Fases.Controls.Add(this.LBL_Fase5);
-            this.PNL_Fases.Controls.Add(this.LBL_Fase4);
-            this.PNL_Fases.Controls.Add(this.LBL_Fase3);
-            this.PNL_Fases.Controls.Add(this.LBL_Fase2);
-            this.PNL_Fases.Controls.Add(this.LBL_Fase1);
             this.PNL_Fases.Controls.Add(this.panel4);
             this.PNL_Fases.Controls.Add(this.panel3);
             this.PNL_Fases.Controls.Add(this.panel5);
             this.PNL_Fases.Controls.Add(this.panel6);
             this.PNL_Fases.Controls.Add(this.panel2);
             this.PNL_Fases.Controls.Add(this.panel1);
-            this.PNL_Fases.Location = new System.Drawing.Point(760, 912);
+            this.PNL_Fases.Location = new System.Drawing.Point(776, 884);
             this.PNL_Fases.Name = "PNL_Fases";
             this.PNL_Fases.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Fases.TabIndex = 3;
             this.PNL_Fases.Paint += new System.Windows.Forms.PaintEventHandler(this.PNL_Fases_Paint);
-            // 
-            // LBL_Fase6
-            // 
-            this.LBL_Fase6.AutoSize = true;
-            this.LBL_Fase6.BackColor = System.Drawing.Color.Transparent;
-            this.LBL_Fase6.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_Fase6.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.LBL_Fase6.Location = new System.Drawing.Point(892, 655);
-            this.LBL_Fase6.Name = "LBL_Fase6";
-            this.LBL_Fase6.Size = new System.Drawing.Size(60, 25);
-            this.LBL_Fase6.TabIndex = 16;
-            this.LBL_Fase6.Text = "???";
-            this.LBL_Fase6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LBL_Fase5
-            // 
-            this.LBL_Fase5.AutoSize = true;
-            this.LBL_Fase5.BackColor = System.Drawing.Color.Transparent;
-            this.LBL_Fase5.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_Fase5.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.LBL_Fase5.Location = new System.Drawing.Point(624, 655);
-            this.LBL_Fase5.Name = "LBL_Fase5";
-            this.LBL_Fase5.Size = new System.Drawing.Size(60, 25);
-            this.LBL_Fase5.TabIndex = 15;
-            this.LBL_Fase5.Text = "???";
-            this.LBL_Fase5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LBL_Fase4
-            // 
-            this.LBL_Fase4.AutoSize = true;
-            this.LBL_Fase4.BackColor = System.Drawing.Color.Transparent;
-            this.LBL_Fase4.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_Fase4.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.LBL_Fase4.Location = new System.Drawing.Point(340, 655);
-            this.LBL_Fase4.Name = "LBL_Fase4";
-            this.LBL_Fase4.Size = new System.Drawing.Size(60, 25);
-            this.LBL_Fase4.TabIndex = 14;
-            this.LBL_Fase4.Text = "???";
-            this.LBL_Fase4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LBL_Fase3
-            // 
-            this.LBL_Fase3.AutoSize = true;
-            this.LBL_Fase3.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_Fase3.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.LBL_Fase3.Location = new System.Drawing.Point(892, 393);
-            this.LBL_Fase3.Name = "LBL_Fase3";
-            this.LBL_Fase3.Size = new System.Drawing.Size(60, 25);
-            this.LBL_Fase3.TabIndex = 13;
-            this.LBL_Fase3.Text = "???";
-            this.LBL_Fase3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LBL_Fase2
-            // 
-            this.LBL_Fase2.AutoSize = true;
-            this.LBL_Fase2.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_Fase2.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.LBL_Fase2.Location = new System.Drawing.Point(624, 395);
-            this.LBL_Fase2.Name = "LBL_Fase2";
-            this.LBL_Fase2.Size = new System.Drawing.Size(60, 25);
-            this.LBL_Fase2.TabIndex = 12;
-            this.LBL_Fase2.Text = "???";
-            this.LBL_Fase2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LBL_Fase1
-            // 
-            this.LBL_Fase1.AutoSize = true;
-            this.LBL_Fase1.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_Fase1.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.LBL_Fase1.Location = new System.Drawing.Point(315, 395);
-            this.LBL_Fase1.Name = "LBL_Fase1";
-            this.LBL_Fase1.Size = new System.Drawing.Size(112, 25);
-            this.LBL_Fase1.TabIndex = 11;
-            this.LBL_Fase1.Text = "O Bosque";
-            this.LBL_Fase1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -1664,7 +1578,7 @@
             // 
             this.lblOutputRequest.AutoSize = true;
             this.lblOutputRequest.BackColor = System.Drawing.Color.GreenYellow;
-            this.lblOutputRequest.Location = new System.Drawing.Point(643, 170);
+            this.lblOutputRequest.Location = new System.Drawing.Point(1071, 56);
             this.lblOutputRequest.Name = "lblOutputRequest";
             this.lblOutputRequest.Size = new System.Drawing.Size(77, 13);
             this.lblOutputRequest.TabIndex = 4;
@@ -1674,7 +1588,7 @@
             // 
             this.LblBust.AutoSize = true;
             this.LblBust.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblBust.Location = new System.Drawing.Point(643, 147);
+            this.LblBust.Location = new System.Drawing.Point(1071, 33);
             this.LblBust.Name = "LblBust";
             this.LblBust.Size = new System.Drawing.Size(28, 13);
             this.LblBust.TabIndex = 4;
@@ -1759,7 +1673,7 @@
             // 
             this.PBX_Vitamina1.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina1.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina1.Image")));
-            this.PBX_Vitamina1.Location = new System.Drawing.Point(486, 655);
+            this.PBX_Vitamina1.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina1.Name = "PBX_Vitamina1";
             this.PBX_Vitamina1.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1772,7 +1686,7 @@
             // 
             this.PBX_Vitamina2.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina2.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina2.Image")));
-            this.PBX_Vitamina2.Location = new System.Drawing.Point(776, 297);
+            this.PBX_Vitamina2.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina2.Name = "PBX_Vitamina2";
             this.PBX_Vitamina2.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1785,7 +1699,7 @@
             // 
             this.PBX_Vitamina3.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina3.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina3.Image")));
-            this.PBX_Vitamina3.Location = new System.Drawing.Point(228, 431);
+            this.PBX_Vitamina3.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina3.Name = "PBX_Vitamina3";
             this.PBX_Vitamina3.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1798,7 +1712,7 @@
             // 
             this.PBX_Vitamina4.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina4.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina4.Image")));
-            this.PBX_Vitamina4.Location = new System.Drawing.Point(1112, 298);
+            this.PBX_Vitamina4.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina4.Name = "PBX_Vitamina4";
             this.PBX_Vitamina4.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1811,7 +1725,7 @@
             // 
             this.PBX_Vitamina5.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina5.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina5.Image")));
-            this.PBX_Vitamina5.Location = new System.Drawing.Point(230, 321);
+            this.PBX_Vitamina5.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina5.Name = "PBX_Vitamina5";
             this.PBX_Vitamina5.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1824,7 +1738,7 @@
             // 
             this.PBX_Vitamina6.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina6.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina6.Image")));
-            this.PBX_Vitamina6.Location = new System.Drawing.Point(965, 684);
+            this.PBX_Vitamina6.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina6.Name = "PBX_Vitamina6";
             this.PBX_Vitamina6.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1837,7 +1751,7 @@
             // 
             this.PBX_Vitamina7.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina7.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina7.Image")));
-            this.PBX_Vitamina7.Location = new System.Drawing.Point(892, 409);
+            this.PBX_Vitamina7.Location = new System.Drawing.Point(60, 130);
             this.PBX_Vitamina7.Name = "PBX_Vitamina7";
             this.PBX_Vitamina7.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2068,7 +1982,7 @@
             // 
             this.LblWallStatus.AutoSize = true;
             this.LblWallStatus.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblWallStatus.Location = new System.Drawing.Point(643, 123);
+            this.LblWallStatus.Location = new System.Drawing.Point(1071, 9);
             this.LblWallStatus.Name = "LblWallStatus";
             this.LblWallStatus.Size = new System.Drawing.Size(64, 13);
             this.LblWallStatus.TabIndex = 4;
@@ -2078,7 +1992,7 @@
             // 
             this.PbxCristal1.BackColor = System.Drawing.Color.Blue;
             this.PbxCristal1.Image = ((System.Drawing.Image)(resources.GetObject("PbxCristal1.Image")));
-            this.PbxCristal1.Location = new System.Drawing.Point(525, 297);
+            this.PbxCristal1.Location = new System.Drawing.Point(90, 130);
             this.PbxCristal1.Name = "PbxCristal1";
             this.PbxCristal1.Size = new System.Drawing.Size(22, 26);
             this.PbxCristal1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2091,7 +2005,7 @@
             // 
             this.PbxCristal2.BackColor = System.Drawing.Color.Blue;
             this.PbxCristal2.Image = ((System.Drawing.Image)(resources.GetObject("PbxCristal2.Image")));
-            this.PbxCristal2.Location = new System.Drawing.Point(676, 554);
+            this.PbxCristal2.Location = new System.Drawing.Point(90, 130);
             this.PbxCristal2.Name = "PbxCristal2";
             this.PbxCristal2.Size = new System.Drawing.Size(22, 26);
             this.PbxCristal2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2104,7 +2018,7 @@
             // 
             this.PbxCristal3.BackColor = System.Drawing.Color.Blue;
             this.PbxCristal3.Image = ((System.Drawing.Image)(resources.GetObject("PbxCristal3.Image")));
-            this.PbxCristal3.Location = new System.Drawing.Point(1113, 524);
+            this.PbxCristal3.Location = new System.Drawing.Point(90, 130);
             this.PbxCristal3.Name = "PbxCristal3";
             this.PbxCristal3.Size = new System.Drawing.Size(22, 26);
             this.PbxCristal3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2165,6 +2079,18 @@
             this.LblContCristais.Text = "0/3";
             this.LblContCristais.Visible = false;
             // 
+            // LblScore
+            // 
+            this.LblScore.AutoSize = true;
+            this.LblScore.BackColor = System.Drawing.Color.Transparent;
+            this.LblScore.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblScore.ForeColor = System.Drawing.Color.Black;
+            this.LblScore.Location = new System.Drawing.Point(554, 35);
+            this.LblScore.Name = "LblScore";
+            this.LblScore.Size = new System.Drawing.Size(176, 42);
+            this.LblScore.TabIndex = 26;
+            this.LblScore.Text = "Score: 0";
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2182,8 +2108,6 @@
             this.Controls.Add(this.lblOutputRequest);
             this.Controls.Add(this.labelY);
             this.Controls.Add(this.labelX);
-            this.Controls.Add(this.LblContCristais);
-            this.Controls.Add(this.LblContVitaminas);
             this.Controls.Add(this.PnlMenu);
             this.Controls.Add(this.PNL_Info);
             this.Controls.Add(this.PNL_Fases);
@@ -2191,11 +2115,6 @@
             this.Controls.Add(this.PNL_SemTempo);
             this.Controls.Add(this.PNL_Pause);
             this.Controls.Add(this.PbxCerca);
-            this.Controls.Add(this.PBX_Vitamina7);
-            this.Controls.Add(this.PBX_Vitamina6);
-            this.Controls.Add(this.PBX_Vitamina5);
-            this.Controls.Add(this.PBX_Vitamina4);
-            this.Controls.Add(this.PBX_Vitamina3);
             this.Controls.Add(this.PNL_SemTempo2);
             this.Controls.Add(this.PBX_Ambiente7);
             this.Controls.Add(this.PBX_Ambiente6);
@@ -2261,14 +2180,23 @@
             this.Controls.Add(this.pictureBox49);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox56);
+            this.Controls.Add(this.LblContCristais);
+            this.Controls.Add(this.LblContVitaminas);
             this.Controls.Add(this.PbxContVitaminas);
+            this.Controls.Add(this.PbxContCristais);
+            this.Controls.Add(this.LblScore);
+            this.Controls.Add(this.PbxCristal1);
+            this.Controls.Add(this.PBX_Vitamina7);
+            this.Controls.Add(this.PBX_Vitamina6);
+            this.Controls.Add(this.PBX_Vitamina5);
+            this.Controls.Add(this.PBX_Vitamina4);
+            this.Controls.Add(this.PBX_Vitamina3);
             this.Controls.Add(this.PBX_Vitamina2);
             this.Controls.Add(this.PBX_Vitamina1);
-            this.Controls.Add(this.PbxContCristais);
             this.Controls.Add(this.PbxCristal3);
             this.Controls.Add(this.PbxCristal2);
-            this.Controls.Add(this.PbxCristal1);
             this.DoubleBuffered = true;
+            this.Location = new System.Drawing.Point(60, 130);
             this.Name = "FrmJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "Parede";
@@ -2288,7 +2216,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).EndInit();
             this.PNL_Fases.ResumeLayout(false);
-            this.PNL_Fases.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase6)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -2562,12 +2489,7 @@
         private System.Windows.Forms.PictureBox PbxContCristais;
         private System.Windows.Forms.Label LblContVitaminas;
         private System.Windows.Forms.Label LblContCristais;
-        private System.Windows.Forms.Label LBL_Fase3;
-        private System.Windows.Forms.Label LBL_Fase2;
-        private System.Windows.Forms.Label LBL_Fase1;
-        private System.Windows.Forms.Label LBL_Fase6;
-        private System.Windows.Forms.Label LBL_Fase5;
-        private System.Windows.Forms.Label LBL_Fase4;
+        private System.Windows.Forms.Label LblScore;
     }
 }
 
