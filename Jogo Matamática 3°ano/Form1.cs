@@ -1089,7 +1089,7 @@ namespace Jogo_Matamática_3_ano
                 PbxCristal1.BackColor = Color.Transparent;
                 PbxCristal2.BackColor = Color.Transparent;
                 PbxCristal3.BackColor = Color.Transparent;
-        }
+            }
 
             public void ItensVisible()
             {
@@ -1103,7 +1103,7 @@ namespace Jogo_Matamática_3_ano
                 PbxCristal1.Visible = true;
                 PbxCristal2.Visible = true;
                 PbxCristal3.Visible = true;
-        }
+            }
 
             public void IensNotVisible()
             {
@@ -1117,7 +1117,7 @@ namespace Jogo_Matamática_3_ano
                 PbxCristal1.Visible = false;
                 PbxCristal2.Visible = false;
                 PbxCristal3.Visible = false;
-        }
+            }
 
             #region Organizar o layout das perguntas, de acordo com a pergunta | Resetar as perguntas | Rodas a saída das perguntas
             public void setarBtnPergunta4()
@@ -1508,7 +1508,7 @@ namespace Jogo_Matamática_3_ano
             }
         #endregion
 
-        #region SETAR A QUANTIDADES DE ITENS QUE PLAYER PEGO
+            #region SETAR A QUANTIDADES DE ITENS QUE PLAYER PEGO
         public void setPlacar()
         {
             if (fase == 1)

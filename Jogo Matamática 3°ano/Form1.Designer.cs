@@ -45,6 +45,12 @@
             this.LblY = new System.Windows.Forms.Label();
             this.PbxPersonagem = new System.Windows.Forms.PictureBox();
             this.PNL_Fases = new System.Windows.Forms.Panel();
+            this.LBL_Fase6 = new System.Windows.Forms.Label();
+            this.LBL_Fase5 = new System.Windows.Forms.Label();
+            this.LBL_Fase4 = new System.Windows.Forms.Label();
+            this.LBL_Fase3 = new System.Windows.Forms.Label();
+            this.LBL_Fase2 = new System.Windows.Forms.Label();
+            this.LBL_Fase1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.PBX_Fase6 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -480,17 +486,98 @@
             this.PNL_Fases.BackColor = System.Drawing.Color.LightBlue;
             this.PNL_Fases.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_Fases.BackgroundImage")));
             this.PNL_Fases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PNL_Fases.Controls.Add(this.LBL_Fase6);
+            this.PNL_Fases.Controls.Add(this.LBL_Fase5);
+            this.PNL_Fases.Controls.Add(this.LBL_Fase4);
+            this.PNL_Fases.Controls.Add(this.LBL_Fase3);
+            this.PNL_Fases.Controls.Add(this.LBL_Fase2);
+            this.PNL_Fases.Controls.Add(this.LBL_Fase1);
             this.PNL_Fases.Controls.Add(this.panel4);
             this.PNL_Fases.Controls.Add(this.panel3);
             this.PNL_Fases.Controls.Add(this.panel5);
             this.PNL_Fases.Controls.Add(this.panel6);
             this.PNL_Fases.Controls.Add(this.panel2);
             this.PNL_Fases.Controls.Add(this.panel1);
-            this.PNL_Fases.Location = new System.Drawing.Point(776, 884);
+            this.PNL_Fases.Location = new System.Drawing.Point(760, 912);
             this.PNL_Fases.Name = "PNL_Fases";
             this.PNL_Fases.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Fases.TabIndex = 3;
             this.PNL_Fases.Paint += new System.Windows.Forms.PaintEventHandler(this.PNL_Fases_Paint);
+            // 
+            // LBL_Fase6
+            // 
+            this.LBL_Fase6.AutoSize = true;
+            this.LBL_Fase6.BackColor = System.Drawing.Color.Transparent;
+            this.LBL_Fase6.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_Fase6.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.LBL_Fase6.Location = new System.Drawing.Point(892, 655);
+            this.LBL_Fase6.Name = "LBL_Fase6";
+            this.LBL_Fase6.Size = new System.Drawing.Size(60, 25);
+            this.LBL_Fase6.TabIndex = 16;
+            this.LBL_Fase6.Text = "???";
+            this.LBL_Fase6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_Fase5
+            // 
+            this.LBL_Fase5.AutoSize = true;
+            this.LBL_Fase5.BackColor = System.Drawing.Color.Transparent;
+            this.LBL_Fase5.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_Fase5.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.LBL_Fase5.Location = new System.Drawing.Point(624, 655);
+            this.LBL_Fase5.Name = "LBL_Fase5";
+            this.LBL_Fase5.Size = new System.Drawing.Size(60, 25);
+            this.LBL_Fase5.TabIndex = 15;
+            this.LBL_Fase5.Text = "???";
+            this.LBL_Fase5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_Fase4
+            // 
+            this.LBL_Fase4.AutoSize = true;
+            this.LBL_Fase4.BackColor = System.Drawing.Color.Transparent;
+            this.LBL_Fase4.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_Fase4.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.LBL_Fase4.Location = new System.Drawing.Point(340, 655);
+            this.LBL_Fase4.Name = "LBL_Fase4";
+            this.LBL_Fase4.Size = new System.Drawing.Size(60, 25);
+            this.LBL_Fase4.TabIndex = 14;
+            this.LBL_Fase4.Text = "???";
+            this.LBL_Fase4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_Fase3
+            // 
+            this.LBL_Fase3.AutoSize = true;
+            this.LBL_Fase3.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_Fase3.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.LBL_Fase3.Location = new System.Drawing.Point(892, 393);
+            this.LBL_Fase3.Name = "LBL_Fase3";
+            this.LBL_Fase3.Size = new System.Drawing.Size(60, 25);
+            this.LBL_Fase3.TabIndex = 13;
+            this.LBL_Fase3.Text = "???";
+            this.LBL_Fase3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_Fase2
+            // 
+            this.LBL_Fase2.AutoSize = true;
+            this.LBL_Fase2.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_Fase2.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.LBL_Fase2.Location = new System.Drawing.Point(624, 395);
+            this.LBL_Fase2.Name = "LBL_Fase2";
+            this.LBL_Fase2.Size = new System.Drawing.Size(60, 25);
+            this.LBL_Fase2.TabIndex = 12;
+            this.LBL_Fase2.Text = "???";
+            this.LBL_Fase2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_Fase1
+            // 
+            this.LBL_Fase1.AutoSize = true;
+            this.LBL_Fase1.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_Fase1.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.LBL_Fase1.Location = new System.Drawing.Point(315, 395);
+            this.LBL_Fase1.Name = "LBL_Fase1";
+            this.LBL_Fase1.Size = new System.Drawing.Size(112, 25);
+            this.LBL_Fase1.TabIndex = 11;
+            this.LBL_Fase1.Text = "O Bosque";
+            this.LBL_Fase1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
@@ -2201,6 +2288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).EndInit();
             this.PNL_Fases.ResumeLayout(false);
+            this.PNL_Fases.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase6)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -2474,6 +2562,12 @@
         private System.Windows.Forms.PictureBox PbxContCristais;
         private System.Windows.Forms.Label LblContVitaminas;
         private System.Windows.Forms.Label LblContCristais;
+        private System.Windows.Forms.Label LBL_Fase3;
+        private System.Windows.Forms.Label LBL_Fase2;
+        private System.Windows.Forms.Label LBL_Fase1;
+        private System.Windows.Forms.Label LBL_Fase6;
+        private System.Windows.Forms.Label LBL_Fase5;
+        private System.Windows.Forms.Label LBL_Fase4;
     }
 }
 
