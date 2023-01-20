@@ -245,15 +245,15 @@ namespace Jogo_Matamática_3_ano
             PNL_Pause.Enabled = false;
 
             //FASES DESATIVADAS
-            PBX_Fase2.Enabled = false;
-            PBX_Fase3.Enabled = false;
+            //PBX_Fase2.Enabled = false;
+            //PBX_Fase3.Enabled = false;
             PBX_Fase4.Enabled = false;
             PBX_Fase5.Enabled = false;
             PBX_Fase6.Enabled = false;
 
             //ESCONDER FASES
-            PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-            PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            //PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            //PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
             PBX_Fase4.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
             PBX_Fase5.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
             PBX_Fase6.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
@@ -723,7 +723,7 @@ namespace Jogo_Matamática_3_ano
             //Setar o mapa da fase
             this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_1.png");
 
-            //Setar a cerca da safe
+            //Setar a cerca da fase
             PbxCerca.Location = new Point(1181, 554);
             PbxCerca.Visible = true;
 
@@ -835,6 +835,11 @@ namespace Jogo_Matamática_3_ano
 
         private void PBX_Fase2_Click(object sender, EventArgs e)
         {
+            //Diretório das imagens que estamos usando para a fase
+            string diretorioVit = "\\img\\itens\\bifeCru_animado.gif",
+                   diretorioCristal = "\\img\\itens\\cristal_animado.gif",
+                   diretorioAmbiente = "\\img\\ambiente\\mapa_2\\buracos_mapa2.png";
+
             //Fase atual
             fase = 2;
 
@@ -842,16 +847,8 @@ namespace Jogo_Matamática_3_ano
             tempMin = 1;
             tempSeg = 15;
 
-            //Setar a posição inicial da colisão e personagem e imagen
-            PbxColision.Location = new Point(25, 713);
-            PbxPersonagem.Location = new Point(-133, 680);
-            PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson +"\\direita\\direita_1.png");
-
             //Start da fase
-            TmrMainGameManager.Start();
             TMR_Tempo.Start();
-            ControleAnimacao = 700;
-            TmrAnimation.Start();
 
             //Esconder os paineis
             PNL_Fases.Visible = false;
@@ -860,6 +857,49 @@ namespace Jogo_Matamática_3_ano
 
             //Setar o mapa da fase
             this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_2.png");
+
+            //Setar a cerca da fase
+            PbxCerca.Location = new Point(1191, 650);
+            PbxCerca.Visible = true;
+
+            //Setar a posição inicial da colisão e personagem e imagen
+            PbxColision.Location = new Point(25, 713);
+            PbxPersonagem.Location = new Point(-133, 680);
+            ControleAnimacao = 700;
+            TmrAnimation.Start();
+
+            //ORGANIZAR O PLACAR DA FASE
+            setPlacar();
+
+            //SETAR TRANSPARENCIA ITENS
+            ItensTrans();
+
+            //SETAR IMAGEM DOS ITENS
+            setarImagensVitaminas(diretorioVit);
+            setImagendsCrital(diretorioCristal);
+
+            //SETAR POSICAO DOS ITENS -arumar
+            setPosVitaminas();
+            setPosCrist();
+
+            //SETAR TAMANHO ITENS
+            setVitSize(22, 26);
+            setCrisSize(22, 26);
+
+            //DEIXAR ITENS VISIVEIS, AMBIENTE E PERSONAGEM
+            mostrarTodasPbx();
+
+            //SETAR TRANSPARENCIA
+            AmbienteTrans();
+
+            //Setar a posiçao das imagens do ambiente - arumar
+            setPosAmbiente();
+
+            //SETAR TAMANHO DAS IMAGENS DO AMBIENTE
+            setAmbSize(45, 49);
+
+            //SETAR IMAGEM DO AMBIENTE
+            setAmbImagem(diretorioAmbiente);
 
             #region Load Wall fase 2
 
@@ -1401,6 +1441,16 @@ namespace Jogo_Matamática_3_ano
                 PBX_Vitamina6.Location = new Point(965, 684);
                 PBX_Vitamina7.Location = new Point(892, 409);
             }
+            if (fase == 2)
+            {
+                PBX_Vitamina1.Location = new Point(60, 263);
+                PBX_Vitamina2.Location = new Point(1195, 212);
+                PBX_Vitamina3.Location = new Point(1037, 547);
+                PBX_Vitamina4.Location = new Point(879, 329);
+                PBX_Vitamina5.Location = new Point(516, 683);
+                PBX_Vitamina6.Location = new Point(345, 383);
+                PBX_Vitamina7.Location = new Point(131, 646);
+            }
         }
         #endregion
 
@@ -1428,6 +1478,15 @@ namespace Jogo_Matamática_3_ano
                 PBX_Ambiente5.Location = new Point(367, 487);
                 PBX_Ambiente6.Location = new Point(224, 642);
                 PBX_Ambiente7.Location = new Point(1092, 503);
+            }
+            if (fase == 2) {
+                PBX_Ambiente1.Location = new Point(118, 561);
+                PBX_Ambiente2.Location = new Point(189, 201);
+                PBX_Ambiente3.Location = new Point(189, 239);
+                PBX_Ambiente4.Location = new Point(406, 462);
+                PBX_Ambiente5.Location = new Point(714, 487);
+                PBX_Ambiente6.Location = new Point(1103, 343);
+                PBX_Ambiente7.Location = new Point(788, 594);
             }
         }
         #endregion
@@ -1461,9 +1520,18 @@ namespace Jogo_Matamática_3_ano
         #region SETAR POSIÇÃO DOS CRISTAIS
         public void setPosCrist()
         {
-            PbxCristal1.Location = new Point(525, 297);
-            PbxCristal2.Location = new Point(676, 554);
-            PbxCristal3.Location = new Point(1113, 524);
+            if (fase == 1)
+            {
+                PbxCristal1.Location = new Point(525, 297);
+                PbxCristal2.Location = new Point(676, 554);
+                PbxCristal3.Location = new Point(1113, 524);
+            }
+            if (fase == 2)
+            {
+                PbxCristal1.Location = new Point(201, 443);
+                PbxCristal2.Location = new Point(418, 431);
+                PbxCristal3.Location = new Point(1113, 315);
+            }
         }
         #endregion
 
@@ -1547,6 +1615,8 @@ namespace Jogo_Matamática_3_ano
         {
             if (fase == 1)
             {
+                Score = 0;
+                LblScore.Text = "Score: 0";
 
                 //Setar a imagen certa
                 PbxContVitaminas.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\maca_animada.gif");
@@ -1574,7 +1644,37 @@ namespace Jogo_Matamática_3_ano
                 LblContCristais.Visible = true;
                 LblContVitaminas.Visible = true;
             }
+            if (fase == 2)
+            {
+                Score = 0;
+                LblScore.Text = "Score: 0";
 
+                //Setar a imagen certa
+                PbxContVitaminas.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\bifeCru_animado.gif");
+                PbxContCristais.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\cristal_animado.gif");
+
+                //Setar a posição e tamanho da maça no placar
+                PbxContVitaminas.Location = new Point(1205, 23);
+                PbxContVitaminas.Size = new Size(26, 30);
+
+                //Setar a posição e tamanho do cristal no placar
+                PbxContCristais.Location = new Point(1205, 60);
+                PbxContCristais.Size = new Size(26, 30);
+
+                //Setar a posição das labels
+                LblContVitaminas.Location = new Point(1156, 28);
+                LblContCristais.Location = new Point(1156, 65);
+
+                //Setar o texto da fase
+                LblContVitaminas.Text = "0/7";
+                LblContCristais.Text = "0/3";
+
+                //Setar a visibilidade do placar
+                PbxContVitaminas.Visible = true;
+                PbxContCristais.Visible = true;
+                LblContCristais.Visible = true;
+                LblContVitaminas.Visible = true;
+            }
 
         }
         #endregion
@@ -2305,6 +2405,10 @@ namespace Jogo_Matamática_3_ano
                         Lbl_de_Ajuda.Text = num1.ToString() + " - " + num2.ToString() + " + " + num3.ToString() + " é igua a " + resultado + "\nVocê está longe do resultado :(";
                     }
                 }
+            }
+            if (fase == 2)
+            {
+
             }
         }
 

@@ -45,10 +45,8 @@
             this.LblY = new System.Windows.Forms.Label();
             this.PbxPersonagem = new System.Windows.Forms.PictureBox();
             this.PNL_Fases = new System.Windows.Forms.Panel();
-            this.PBX_Escolha2 = new System.Windows.Forms.PictureBox();
-            this.LBL_Person = new System.Windows.Forms.Label();
-            this.PBX_Escolha1 = new System.Windows.Forms.PictureBox();
             this.PNL_MostrarFases = new System.Windows.Forms.Panel();
+            this.PBX_VoltarFase = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PBX_Fase1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -61,6 +59,9 @@
             this.PBX_Fase3 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.PBX_Fase4 = new System.Windows.Forms.PictureBox();
+            this.PBX_Escolha2 = new System.Windows.Forms.PictureBox();
+            this.LBL_Person = new System.Windows.Forms.Label();
+            this.PBX_Escolha1 = new System.Windows.Forms.PictureBox();
             this.PbxColision = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -187,7 +188,6 @@
             this.LblContVitaminas = new System.Windows.Forms.Label();
             this.LblContCristais = new System.Windows.Forms.Label();
             this.LblScore = new System.Windows.Forms.Label();
-            this.PBX_VoltarFase = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -198,9 +198,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).BeginInit();
             this.PNL_Fases.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Escolha2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Escolha1)).BeginInit();
             this.PNL_MostrarFases.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_VoltarFase)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -213,6 +212,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase3)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Escolha2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Escolha1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxColision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -312,7 +313,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxContVitaminas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxContCristais)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_VoltarFase)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -495,55 +495,11 @@
             this.PNL_Fases.Controls.Add(this.LBL_Person);
             this.PNL_Fases.Controls.Add(this.PBX_Escolha1);
             this.PNL_Fases.ForeColor = System.Drawing.Color.Firebrick;
-            this.PNL_Fases.Location = new System.Drawing.Point(12, 5);
+            this.PNL_Fases.Location = new System.Drawing.Point(1257, 279);
             this.PNL_Fases.Name = "PNL_Fases";
             this.PNL_Fases.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Fases.TabIndex = 3;
             this.PNL_Fases.Paint += new System.Windows.Forms.PaintEventHandler(this.PNL_Fases_Paint);
-            // 
-            // PBX_Escolha2
-            // 
-            this.PBX_Escolha2.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_Escolha2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBX_Escolha2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_Escolha2.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Escolha2.Image")));
-            this.PBX_Escolha2.Location = new System.Drawing.Point(695, 304);
-            this.PBX_Escolha2.Name = "PBX_Escolha2";
-            this.PBX_Escolha2.Size = new System.Drawing.Size(296, 372);
-            this.PBX_Escolha2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBX_Escolha2.TabIndex = 14;
-            this.PBX_Escolha2.TabStop = false;
-            this.PBX_Escolha2.Click += new System.EventHandler(this.PBX_Escolha2_Click);
-            this.PBX_Escolha2.MouseLeave += new System.EventHandler(this.PBX_Escolha2_MouseLeave);
-            this.PBX_Escolha2.MouseHover += new System.EventHandler(this.PBX_Escolha2_MouseHover);
-            // 
-            // LBL_Person
-            // 
-            this.LBL_Person.AutoSize = true;
-            this.LBL_Person.BackColor = System.Drawing.Color.Transparent;
-            this.LBL_Person.Font = new System.Drawing.Font("Snap ITC", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_Person.Location = new System.Drawing.Point(271, 134);
-            this.LBL_Person.Name = "LBL_Person";
-            this.LBL_Person.Size = new System.Drawing.Size(749, 63);
-            this.LBL_Person.TabIndex = 13;
-            this.LBL_Person.Text = "Escolha o seu personagem!";
-            this.LBL_Person.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // PBX_Escolha1
-            // 
-            this.PBX_Escolha1.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_Escolha1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBX_Escolha1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_Escolha1.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Escolha1.Image")));
-            this.PBX_Escolha1.Location = new System.Drawing.Point(303, 304);
-            this.PBX_Escolha1.Name = "PBX_Escolha1";
-            this.PBX_Escolha1.Size = new System.Drawing.Size(263, 372);
-            this.PBX_Escolha1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBX_Escolha1.TabIndex = 12;
-            this.PBX_Escolha1.TabStop = false;
-            this.PBX_Escolha1.Click += new System.EventHandler(this.PBX_Escolha1_Click);
-            this.PBX_Escolha1.MouseLeave += new System.EventHandler(this.PBX_Escolha1_MouseLeave);
-            this.PBX_Escolha1.MouseHover += new System.EventHandler(this.PBX_Escolha1_MouseHover);
             // 
             // PNL_MostrarFases
             // 
@@ -560,6 +516,17 @@
             this.PNL_MostrarFases.Size = new System.Drawing.Size(992, 756);
             this.PNL_MostrarFases.TabIndex = 11;
             this.PNL_MostrarFases.Visible = false;
+            // 
+            // PBX_VoltarFase
+            // 
+            this.PBX_VoltarFase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_VoltarFase.Image = ((System.Drawing.Image)(resources.GetObject("PBX_VoltarFase.Image")));
+            this.PBX_VoltarFase.Location = new System.Drawing.Point(396, 647);
+            this.PBX_VoltarFase.Name = "PBX_VoltarFase";
+            this.PBX_VoltarFase.Size = new System.Drawing.Size(200, 81);
+            this.PBX_VoltarFase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_VoltarFase.TabIndex = 11;
+            this.PBX_VoltarFase.TabStop = false;
             // 
             // panel1
             // 
@@ -707,6 +674,50 @@
             this.PBX_Fase4.TabStop = false;
             this.PBX_Fase4.MouseLeave += new System.EventHandler(this.PBX_Fase4_MouseLeave);
             this.PBX_Fase4.MouseHover += new System.EventHandler(this.PBX_Fase4_MouseHover);
+            // 
+            // PBX_Escolha2
+            // 
+            this.PBX_Escolha2.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_Escolha2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PBX_Escolha2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_Escolha2.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Escolha2.Image")));
+            this.PBX_Escolha2.Location = new System.Drawing.Point(695, 304);
+            this.PBX_Escolha2.Name = "PBX_Escolha2";
+            this.PBX_Escolha2.Size = new System.Drawing.Size(296, 372);
+            this.PBX_Escolha2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_Escolha2.TabIndex = 14;
+            this.PBX_Escolha2.TabStop = false;
+            this.PBX_Escolha2.Click += new System.EventHandler(this.PBX_Escolha2_Click);
+            this.PBX_Escolha2.MouseLeave += new System.EventHandler(this.PBX_Escolha2_MouseLeave);
+            this.PBX_Escolha2.MouseHover += new System.EventHandler(this.PBX_Escolha2_MouseHover);
+            // 
+            // LBL_Person
+            // 
+            this.LBL_Person.AutoSize = true;
+            this.LBL_Person.BackColor = System.Drawing.Color.Transparent;
+            this.LBL_Person.Font = new System.Drawing.Font("Snap ITC", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_Person.Location = new System.Drawing.Point(271, 134);
+            this.LBL_Person.Name = "LBL_Person";
+            this.LBL_Person.Size = new System.Drawing.Size(749, 63);
+            this.LBL_Person.TabIndex = 13;
+            this.LBL_Person.Text = "Escolha o seu personagem!";
+            this.LBL_Person.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PBX_Escolha1
+            // 
+            this.PBX_Escolha1.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_Escolha1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PBX_Escolha1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_Escolha1.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Escolha1.Image")));
+            this.PBX_Escolha1.Location = new System.Drawing.Point(303, 304);
+            this.PBX_Escolha1.Name = "PBX_Escolha1";
+            this.PBX_Escolha1.Size = new System.Drawing.Size(263, 372);
+            this.PBX_Escolha1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_Escolha1.TabIndex = 12;
+            this.PBX_Escolha1.TabStop = false;
+            this.PBX_Escolha1.Click += new System.EventHandler(this.PBX_Escolha1_Click);
+            this.PBX_Escolha1.MouseLeave += new System.EventHandler(this.PBX_Escolha1_MouseLeave);
+            this.PBX_Escolha1.MouseHover += new System.EventHandler(this.PBX_Escolha1_MouseHover);
             // 
             // PbxColision
             // 
@@ -1668,9 +1679,9 @@
             // 
             // PBX_Ambiente1
             // 
-            this.PBX_Ambiente1.Location = new System.Drawing.Point(153, 0);
+            this.PBX_Ambiente1.Location = new System.Drawing.Point(178, 12);
             this.PBX_Ambiente1.Name = "PBX_Ambiente1";
-            this.PBX_Ambiente1.Size = new System.Drawing.Size(36, 33);
+            this.PBX_Ambiente1.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Ambiente1.TabIndex = 14;
             this.PBX_Ambiente1.TabStop = false;
@@ -1678,9 +1689,9 @@
             // 
             // PBX_Ambiente2
             // 
-            this.PBX_Ambiente2.Location = new System.Drawing.Point(190, 0);
+            this.PBX_Ambiente2.Location = new System.Drawing.Point(484, 12);
             this.PBX_Ambiente2.Name = "PBX_Ambiente2";
-            this.PBX_Ambiente2.Size = new System.Drawing.Size(36, 33);
+            this.PBX_Ambiente2.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Ambiente2.TabIndex = 15;
             this.PBX_Ambiente2.TabStop = false;
@@ -1688,9 +1699,9 @@
             // 
             // PBX_Ambiente3
             // 
-            this.PBX_Ambiente3.Location = new System.Drawing.Point(232, 0);
+            this.PBX_Ambiente3.Location = new System.Drawing.Point(433, 12);
             this.PBX_Ambiente3.Name = "PBX_Ambiente3";
-            this.PBX_Ambiente3.Size = new System.Drawing.Size(36, 33);
+            this.PBX_Ambiente3.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Ambiente3.TabIndex = 16;
             this.PBX_Ambiente3.TabStop = false;
@@ -1698,9 +1709,9 @@
             // 
             // PBX_Ambiente4
             // 
-            this.PBX_Ambiente4.Location = new System.Drawing.Point(274, 0);
+            this.PBX_Ambiente4.Location = new System.Drawing.Point(382, 12);
             this.PBX_Ambiente4.Name = "PBX_Ambiente4";
-            this.PBX_Ambiente4.Size = new System.Drawing.Size(36, 33);
+            this.PBX_Ambiente4.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Ambiente4.TabIndex = 17;
             this.PBX_Ambiente4.TabStop = false;
@@ -1708,9 +1719,9 @@
             // 
             // PBX_Ambiente5
             // 
-            this.PBX_Ambiente5.Location = new System.Drawing.Point(316, 0);
+            this.PBX_Ambiente5.Location = new System.Drawing.Point(331, 12);
             this.PBX_Ambiente5.Name = "PBX_Ambiente5";
-            this.PBX_Ambiente5.Size = new System.Drawing.Size(36, 33);
+            this.PBX_Ambiente5.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Ambiente5.TabIndex = 18;
             this.PBX_Ambiente5.TabStop = false;
@@ -1718,9 +1729,9 @@
             // 
             // PBX_Ambiente6
             // 
-            this.PBX_Ambiente6.Location = new System.Drawing.Point(358, 0);
+            this.PBX_Ambiente6.Location = new System.Drawing.Point(280, 12);
             this.PBX_Ambiente6.Name = "PBX_Ambiente6";
-            this.PBX_Ambiente6.Size = new System.Drawing.Size(36, 33);
+            this.PBX_Ambiente6.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Ambiente6.TabIndex = 19;
             this.PBX_Ambiente6.TabStop = false;
@@ -1728,9 +1739,9 @@
             // 
             // PBX_Ambiente7
             // 
-            this.PBX_Ambiente7.Location = new System.Drawing.Point(400, 0);
+            this.PBX_Ambiente7.Location = new System.Drawing.Point(229, 12);
             this.PBX_Ambiente7.Name = "PBX_Ambiente7";
-            this.PBX_Ambiente7.Size = new System.Drawing.Size(36, 33);
+            this.PBX_Ambiente7.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Ambiente7.TabIndex = 20;
             this.PBX_Ambiente7.TabStop = false;
@@ -1740,7 +1751,7 @@
             // 
             this.PBX_Vitamina1.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina1.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina1.Image")));
-            this.PBX_Vitamina1.Location = new System.Drawing.Point(60, 130);
+            this.PBX_Vitamina1.Location = new System.Drawing.Point(74, 106);
             this.PBX_Vitamina1.Name = "PBX_Vitamina1";
             this.PBX_Vitamina1.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1753,7 +1764,7 @@
             // 
             this.PBX_Vitamina2.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina2.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina2.Image")));
-            this.PBX_Vitamina2.Location = new System.Drawing.Point(60, 130);
+            this.PBX_Vitamina2.Location = new System.Drawing.Point(74, 106);
             this.PBX_Vitamina2.Name = "PBX_Vitamina2";
             this.PBX_Vitamina2.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1766,7 +1777,7 @@
             // 
             this.PBX_Vitamina3.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina3.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina3.Image")));
-            this.PBX_Vitamina3.Location = new System.Drawing.Point(60, 130);
+            this.PBX_Vitamina3.Location = new System.Drawing.Point(74, 106);
             this.PBX_Vitamina3.Name = "PBX_Vitamina3";
             this.PBX_Vitamina3.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1779,7 +1790,7 @@
             // 
             this.PBX_Vitamina4.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina4.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina4.Image")));
-            this.PBX_Vitamina4.Location = new System.Drawing.Point(60, 130);
+            this.PBX_Vitamina4.Location = new System.Drawing.Point(74, 106);
             this.PBX_Vitamina4.Name = "PBX_Vitamina4";
             this.PBX_Vitamina4.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1792,7 +1803,7 @@
             // 
             this.PBX_Vitamina5.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina5.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina5.Image")));
-            this.PBX_Vitamina5.Location = new System.Drawing.Point(60, 130);
+            this.PBX_Vitamina5.Location = new System.Drawing.Point(74, 106);
             this.PBX_Vitamina5.Name = "PBX_Vitamina5";
             this.PBX_Vitamina5.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1805,7 +1816,7 @@
             // 
             this.PBX_Vitamina6.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina6.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina6.Image")));
-            this.PBX_Vitamina6.Location = new System.Drawing.Point(60, 130);
+            this.PBX_Vitamina6.Location = new System.Drawing.Point(74, 106);
             this.PBX_Vitamina6.Name = "PBX_Vitamina6";
             this.PBX_Vitamina6.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1818,7 +1829,7 @@
             // 
             this.PBX_Vitamina7.BackColor = System.Drawing.Color.Turquoise;
             this.PBX_Vitamina7.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitamina7.Image")));
-            this.PBX_Vitamina7.Location = new System.Drawing.Point(60, 130);
+            this.PBX_Vitamina7.Location = new System.Drawing.Point(74, 106);
             this.PBX_Vitamina7.Name = "PBX_Vitamina7";
             this.PBX_Vitamina7.Size = new System.Drawing.Size(22, 26);
             this.PBX_Vitamina7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1831,7 +1842,7 @@
             // 
             this.PbxCerca.BackColor = System.Drawing.Color.Transparent;
             this.PbxCerca.Image = ((System.Drawing.Image)(resources.GetObject("PbxCerca.Image")));
-            this.PbxCerca.Location = new System.Drawing.Point(1181, 554);
+            this.PbxCerca.Location = new System.Drawing.Point(1191, 650);
             this.PbxCerca.Name = "PbxCerca";
             this.PbxCerca.Size = new System.Drawing.Size(30, 16);
             this.PbxCerca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1858,7 +1869,7 @@
             this.PnlPerguntas.Controls.Add(this.TxtResposta3);
             this.PnlPerguntas.Controls.Add(this.TxtResposta);
             this.PnlPerguntas.Controls.Add(this.Lbl_de_Ajuda);
-            this.PnlPerguntas.Location = new System.Drawing.Point(1247, 361);
+            this.PnlPerguntas.Location = new System.Drawing.Point(1240, 373);
             this.PnlPerguntas.Name = "PnlPerguntas";
             this.PnlPerguntas.Size = new System.Drawing.Size(1285, 237);
             this.PnlPerguntas.TabIndex = 24;
@@ -2059,7 +2070,7 @@
             // 
             this.PbxCristal1.BackColor = System.Drawing.Color.Blue;
             this.PbxCristal1.Image = ((System.Drawing.Image)(resources.GetObject("PbxCristal1.Image")));
-            this.PbxCristal1.Location = new System.Drawing.Point(90, 130);
+            this.PbxCristal1.Location = new System.Drawing.Point(102, 106);
             this.PbxCristal1.Name = "PbxCristal1";
             this.PbxCristal1.Size = new System.Drawing.Size(22, 26);
             this.PbxCristal1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2072,7 +2083,7 @@
             // 
             this.PbxCristal2.BackColor = System.Drawing.Color.Blue;
             this.PbxCristal2.Image = ((System.Drawing.Image)(resources.GetObject("PbxCristal2.Image")));
-            this.PbxCristal2.Location = new System.Drawing.Point(90, 130);
+            this.PbxCristal2.Location = new System.Drawing.Point(102, 106);
             this.PbxCristal2.Name = "PbxCristal2";
             this.PbxCristal2.Size = new System.Drawing.Size(22, 26);
             this.PbxCristal2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2085,7 +2096,7 @@
             // 
             this.PbxCristal3.BackColor = System.Drawing.Color.Blue;
             this.PbxCristal3.Image = ((System.Drawing.Image)(resources.GetObject("PbxCristal3.Image")));
-            this.PbxCristal3.Location = new System.Drawing.Point(90, 130);
+            this.PbxCristal3.Location = new System.Drawing.Point(102, 106);
             this.PbxCristal3.Name = "PbxCristal3";
             this.PbxCristal3.Size = new System.Drawing.Size(22, 26);
             this.PbxCristal3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2157,17 +2168,6 @@
             this.LblScore.Size = new System.Drawing.Size(176, 42);
             this.LblScore.TabIndex = 26;
             this.LblScore.Text = "Score: 0";
-            // 
-            // PBX_VoltarFase
-            // 
-            this.PBX_VoltarFase.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_VoltarFase.Image = ((System.Drawing.Image)(resources.GetObject("PBX_VoltarFase.Image")));
-            this.PBX_VoltarFase.Location = new System.Drawing.Point(396, 647);
-            this.PBX_VoltarFase.Name = "PBX_VoltarFase";
-            this.PBX_VoltarFase.Size = new System.Drawing.Size(200, 81);
-            this.PBX_VoltarFase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBX_VoltarFase.TabIndex = 11;
-            this.PBX_VoltarFase.TabStop = false;
             // 
             // FrmJogo
             // 
@@ -2274,7 +2274,7 @@
             this.Controls.Add(this.PbxCristal3);
             this.Controls.Add(this.PbxCristal2);
             this.DoubleBuffered = true;
-            this.Location = new System.Drawing.Point(60, 130);
+            this.Location = new System.Drawing.Point(100, 100);
             this.Name = "FrmJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "Parede";
@@ -2295,9 +2295,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).EndInit();
             this.PNL_Fases.ResumeLayout(false);
             this.PNL_Fases.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Escolha2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Escolha1)).EndInit();
             this.PNL_MostrarFases.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_VoltarFase)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase1)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -2310,6 +2309,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase3)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Escolha2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Escolha1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxColision)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -2412,7 +2413,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxContVitaminas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxContCristais)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_VoltarFase)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
