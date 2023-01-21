@@ -494,7 +494,7 @@ namespace Jogo_Matamática_3_ano
                             contCristais++;
 
                             //Exibir para o player (Placar)
-                            LblContCristais.Text = contCristais + "/3";
+                            LblContCristais.Text ="x" + contCristais;
                             if (contCristais == 2)
                             {
                                 andarQtdPx = 8;
@@ -502,7 +502,7 @@ namespace Jogo_Matamática_3_ano
                             if (contCristais == 3)
                             {
                                 LblScore.ForeColor = Color.OrangeRed;
-                                LblScore.Text = "Score: " + Score + " +200";
+                                LblScore.Text = Score + " +200";
                             }
                             CristalBuffTime = 6;
                         }
@@ -1600,80 +1600,46 @@ namespace Jogo_Matamática_3_ano
             Score = Score + pontos;
             if (pontos > 0)
             {
+                LblScore.Location = new Point(520, 23);
                 LblScore.ForeColor = Color.Green;
                 LblScore.Text += " +" + pontos;
             }
             else
             {
+                LblScore.Location = new Point(550, 23);
                 LblScore.ForeColor = Color.Red;
                 LblScore.Text += " " + pontos;
             }
+
         }
 
         #region SETAR O PLACAR
         public void setPlacar()
         {
+            Score = 0;
+            LblScore.Text = "0";
+
+            //Setar o texto da fase
+            LblContVitaminas.Text = "0/7";
+            LblContCristais.Text = "x";
+
+            //Setar a visibilidade do placar
+            PbxContVitaminas.Visible = true;
+            PbxContCristais.Visible = true;
+            LblContCristais.Visible = true;
+            LblContVitaminas.Visible = true;
+
             if (fase == 1)
             {
-                Score = 0;
-                LblScore.Text = "Score: 0";
-
                 //Setar a imagen certa
                 PbxContVitaminas.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\maca_animada.gif");
                 PbxContCristais.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\cristal_animado.gif");
-
-                //Setar a posição e tamanho da maça no placar
-                PbxContVitaminas.Location = new Point(1205, 23);
-                PbxContVitaminas.Size = new Size(26, 30);
-
-                //Setar a posição e tamanho do cristal no placar
-                PbxContCristais.Location = new Point(1205, 60);
-                PbxContCristais.Size = new Size(26, 30);
-
-                //Setar a posição das labels
-                LblContVitaminas.Location = new Point(1156, 28);
-                LblContCristais.Location = new Point(1156, 65);
-
-                //Setar o texto da fase
-                LblContVitaminas.Text = "0/7";
-                LblContCristais.Text = "0/3";
-
-                //Setar a visibilidade do placar
-                PbxContVitaminas.Visible = true;
-                PbxContCristais.Visible = true;
-                LblContCristais.Visible = true;
-                LblContVitaminas.Visible = true;
             }
             if (fase == 2)
             {
-                Score = 0;
-                LblScore.Text = "Score: 0";
-
                 //Setar a imagen certa
                 PbxContVitaminas.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\bifeCru_animado.gif");
                 PbxContCristais.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\cristal_animado.gif");
-
-                //Setar a posição e tamanho da maça no placar
-                PbxContVitaminas.Location = new Point(1205, 23);
-                PbxContVitaminas.Size = new Size(26, 30);
-
-                //Setar a posição e tamanho do cristal no placar
-                PbxContCristais.Location = new Point(1205, 60);
-                PbxContCristais.Size = new Size(26, 30);
-
-                //Setar a posição das labels
-                LblContVitaminas.Location = new Point(1156, 28);
-                LblContCristais.Location = new Point(1156, 65);
-
-                //Setar o texto da fase
-                LblContVitaminas.Text = "0/7";
-                LblContCristais.Text = "0/3";
-
-                //Setar a visibilidade do placar
-                PbxContVitaminas.Visible = true;
-                PbxContCristais.Visible = true;
-                LblContCristais.Visible = true;
-                LblContVitaminas.Visible = true;
             }
 
         }
@@ -1910,7 +1876,7 @@ namespace Jogo_Matamática_3_ano
             if (CristalBuffTime == 0)
             {
                 LblScore.ForeColor = Color.Black;
-                LblScore.Text = "Score: " + Score;
+                LblScore.Text = Score.ToString();
             }
             else
             {
@@ -1918,13 +1884,13 @@ namespace Jogo_Matamática_3_ano
                 {
                     Score = Score + 3;
                     LblScore.ForeColor = Color.Yellow;
-                    LblScore.Text = "Score: " + Score + "+" + (contCristais + 3);
+                    LblScore.Text = Score + "+" + (contCristais + 3);
                 }
                 else if (contCristais == 2)
                 {
                     Score = Score + 7;
                     LblScore.ForeColor = Color.Orange;
-                    LblScore.Text = "Score: " + Score + "+" + (contCristais + 6);
+                    LblScore.Text = Score + "+" + (contCristais + 6);
                 }
                 CristalBuffTime--;
             }
@@ -1988,7 +1954,7 @@ namespace Jogo_Matamática_3_ano
 
                 //Resetar placar
                 LblContVitaminas.Text = "0/7";
-                LblContCristais.Text = "0/3";
+                LblContCristais.Text = "x";
                 contCristais = 0;
                 contVitaminas = 0;
 
@@ -2280,28 +2246,7 @@ namespace Jogo_Matamática_3_ano
             rodarSaidaPerguntas();
         }
 
-        private void PbxBtn3_Click(object sender, EventArgs e)
-        {
-            AddTempo(-5);
-            AddScorePonto(-20);
-            rodarSaidaPerguntas();
-        }
-
         private void PbxBtn1_Click(object sender, EventArgs e)
-        {
-            AddTempo(-5);
-            AddScorePonto(-20);
-            rodarSaidaPerguntas();
-        }
-
-        private void PbxBtn2_Click(object sender, EventArgs e)
-        {
-            AddTempo(-5);
-            AddScorePonto(-20);
-            rodarSaidaPerguntas();
-        }
-
-        private void PbxBtn4_Click(object sender, EventArgs e)
         {
             AddTempo(-5);
             AddScorePonto(-20);

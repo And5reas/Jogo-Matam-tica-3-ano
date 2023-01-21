@@ -188,6 +188,8 @@
             this.LblContVitaminas = new System.Windows.Forms.Label();
             this.LblContCristais = new System.Windows.Forms.Label();
             this.LblScore = new System.Windows.Forms.Label();
+            this.PNL_InfoFase = new System.Windows.Forms.Panel();
+            this.pictureBox54 = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -313,6 +315,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxContVitaminas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxContCristais)).BeginInit();
+            this.PNL_InfoFase.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -1493,7 +1497,7 @@
             this.LBL_Tempo.BackColor = System.Drawing.Color.Transparent;
             this.LBL_Tempo.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBL_Tempo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LBL_Tempo.Location = new System.Drawing.Point(140, 38);
+            this.LBL_Tempo.Location = new System.Drawing.Point(85, 23);
             this.LBL_Tempo.Name = "LBL_Tempo";
             this.LBL_Tempo.Size = new System.Drawing.Size(0, 40);
             this.LBL_Tempo.TabIndex = 8;
@@ -1502,7 +1506,7 @@
             // 
             this.pictureBox56.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox56.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox56.Image")));
-            this.pictureBox56.Location = new System.Drawing.Point(55, 26);
+            this.pictureBox56.Location = new System.Drawing.Point(0, 11);
             this.pictureBox56.Name = "pictureBox56";
             this.pictureBox56.Size = new System.Drawing.Size(79, 62);
             this.pictureBox56.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1679,7 +1683,7 @@
             // 
             // PBX_Ambiente1
             // 
-            this.PBX_Ambiente1.Location = new System.Drawing.Point(178, 12);
+            this.PBX_Ambiente1.Location = new System.Drawing.Point(129, 106);
             this.PBX_Ambiente1.Name = "PBX_Ambiente1";
             this.PBX_Ambiente1.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1689,7 +1693,7 @@
             // 
             // PBX_Ambiente2
             // 
-            this.PBX_Ambiente2.Location = new System.Drawing.Point(484, 12);
+            this.PBX_Ambiente2.Location = new System.Drawing.Point(435, 106);
             this.PBX_Ambiente2.Name = "PBX_Ambiente2";
             this.PBX_Ambiente2.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1699,7 +1703,7 @@
             // 
             // PBX_Ambiente3
             // 
-            this.PBX_Ambiente3.Location = new System.Drawing.Point(433, 12);
+            this.PBX_Ambiente3.Location = new System.Drawing.Point(384, 106);
             this.PBX_Ambiente3.Name = "PBX_Ambiente3";
             this.PBX_Ambiente3.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1709,7 +1713,7 @@
             // 
             // PBX_Ambiente4
             // 
-            this.PBX_Ambiente4.Location = new System.Drawing.Point(382, 12);
+            this.PBX_Ambiente4.Location = new System.Drawing.Point(333, 106);
             this.PBX_Ambiente4.Name = "PBX_Ambiente4";
             this.PBX_Ambiente4.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1719,7 +1723,7 @@
             // 
             // PBX_Ambiente5
             // 
-            this.PBX_Ambiente5.Location = new System.Drawing.Point(331, 12);
+            this.PBX_Ambiente5.Location = new System.Drawing.Point(282, 106);
             this.PBX_Ambiente5.Name = "PBX_Ambiente5";
             this.PBX_Ambiente5.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1729,7 +1733,7 @@
             // 
             // PBX_Ambiente6
             // 
-            this.PBX_Ambiente6.Location = new System.Drawing.Point(280, 12);
+            this.PBX_Ambiente6.Location = new System.Drawing.Point(231, 106);
             this.PBX_Ambiente6.Name = "PBX_Ambiente6";
             this.PBX_Ambiente6.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1739,7 +1743,7 @@
             // 
             // PBX_Ambiente7
             // 
-            this.PBX_Ambiente7.Location = new System.Drawing.Point(229, 12);
+            this.PBX_Ambiente7.Location = new System.Drawing.Point(180, 106);
             this.PBX_Ambiente7.Name = "PBX_Ambiente7";
             this.PBX_Ambiente7.Size = new System.Drawing.Size(45, 49);
             this.PBX_Ambiente7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1950,7 +1954,7 @@
             this.PbxBtn2.TabIndex = 4;
             this.PbxBtn2.TabStop = false;
             this.PbxBtn2.Visible = false;
-            this.PbxBtn2.Click += new System.EventHandler(this.PbxBtn2_Click);
+            this.PbxBtn2.Click += new System.EventHandler(this.PbxBtn1_Click);
             // 
             // PbxBtn4
             // 
@@ -1962,7 +1966,7 @@
             this.PbxBtn4.TabIndex = 3;
             this.PbxBtn4.TabStop = false;
             this.PbxBtn4.Visible = false;
-            this.PbxBtn4.Click += new System.EventHandler(this.PbxBtn4_Click);
+            this.PbxBtn4.Click += new System.EventHandler(this.PbxBtn1_Click);
             // 
             // PbxBtn3
             // 
@@ -1974,7 +1978,7 @@
             this.PbxBtn3.TabIndex = 3;
             this.PbxBtn3.TabStop = false;
             this.PbxBtn3.Visible = false;
-            this.PbxBtn3.Click += new System.EventHandler(this.PbxBtn3_Click);
+            this.PbxBtn3.Click += new System.EventHandler(this.PbxBtn1_Click);
             // 
             // PbxBtn1
             // 
@@ -2109,7 +2113,7 @@
             // 
             this.PbxContVitaminas.BackColor = System.Drawing.Color.Transparent;
             this.PbxContVitaminas.Image = ((System.Drawing.Image)(resources.GetObject("PbxContVitaminas.Image")));
-            this.PbxContVitaminas.Location = new System.Drawing.Point(1205, 23);
+            this.PbxContVitaminas.Location = new System.Drawing.Point(1155, 27);
             this.PbxContVitaminas.Name = "PbxContVitaminas";
             this.PbxContVitaminas.Size = new System.Drawing.Size(26, 30);
             this.PbxContVitaminas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2122,9 +2126,9 @@
             // 
             this.PbxContCristais.BackColor = System.Drawing.Color.Transparent;
             this.PbxContCristais.Image = ((System.Drawing.Image)(resources.GetObject("PbxContCristais.Image")));
-            this.PbxContCristais.Location = new System.Drawing.Point(1205, 60);
+            this.PbxContCristais.Location = new System.Drawing.Point(702, 18);
             this.PbxContCristais.Name = "PbxContCristais";
-            this.PbxContCristais.Size = new System.Drawing.Size(26, 30);
+            this.PbxContCristais.Size = new System.Drawing.Size(36, 51);
             this.PbxContCristais.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbxContCristais.TabIndex = 22;
             this.PbxContCristais.TabStop = false;
@@ -2137,7 +2141,7 @@
             this.LblContVitaminas.BackColor = System.Drawing.Color.Transparent;
             this.LblContVitaminas.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblContVitaminas.ForeColor = System.Drawing.Color.Black;
-            this.LblContVitaminas.Location = new System.Drawing.Point(1156, 28);
+            this.LblContVitaminas.Location = new System.Drawing.Point(1106, 32);
             this.LblContVitaminas.Name = "LblContVitaminas";
             this.LblContVitaminas.Size = new System.Drawing.Size(45, 22);
             this.LblContVitaminas.TabIndex = 25;
@@ -2150,11 +2154,11 @@
             this.LblContCristais.BackColor = System.Drawing.Color.Transparent;
             this.LblContCristais.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblContCristais.ForeColor = System.Drawing.Color.Black;
-            this.LblContCristais.Location = new System.Drawing.Point(1156, 65);
+            this.LblContCristais.Location = new System.Drawing.Point(735, 35);
             this.LblContCristais.Name = "LblContCristais";
-            this.LblContCristais.Size = new System.Drawing.Size(45, 22);
+            this.LblContCristais.Size = new System.Drawing.Size(23, 22);
             this.LblContCristais.TabIndex = 25;
-            this.LblContCristais.Text = "0/3";
+            this.LblContCristais.Text = "x";
             this.LblContCristais.Visible = false;
             // 
             // LblScore
@@ -2163,11 +2167,38 @@
             this.LblScore.BackColor = System.Drawing.Color.Transparent;
             this.LblScore.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblScore.ForeColor = System.Drawing.Color.Black;
-            this.LblScore.Location = new System.Drawing.Point(554, 35);
+            this.LblScore.Image = ((System.Drawing.Image)(resources.GetObject("LblScore.Image")));
+            this.LblScore.Location = new System.Drawing.Point(570, 23);
             this.LblScore.Name = "LblScore";
-            this.LblScore.Size = new System.Drawing.Size(176, 42);
+            this.LblScore.Size = new System.Drawing.Size(45, 42);
             this.LblScore.TabIndex = 26;
-            this.LblScore.Text = "Score: 0";
+            this.LblScore.Text = "0";
+            // 
+            // PNL_InfoFase
+            // 
+            this.PNL_InfoFase.BackColor = System.Drawing.Color.Transparent;
+            this.PNL_InfoFase.Controls.Add(this.PbxContCristais);
+            this.PNL_InfoFase.Controls.Add(this.PbxContVitaminas);
+            this.PNL_InfoFase.Controls.Add(this.LblContVitaminas);
+            this.PNL_InfoFase.Controls.Add(this.LblContCristais);
+            this.PNL_InfoFase.Controls.Add(this.LblScore);
+            this.PNL_InfoFase.Controls.Add(this.pictureBox56);
+            this.PNL_InfoFase.Controls.Add(this.LBL_Tempo);
+            this.PNL_InfoFase.Controls.Add(this.pictureBox54);
+            this.PNL_InfoFase.Location = new System.Drawing.Point(55, 15);
+            this.PNL_InfoFase.Name = "PNL_InfoFase";
+            this.PNL_InfoFase.Size = new System.Drawing.Size(1184, 85);
+            this.PNL_InfoFase.TabIndex = 27;
+            // 
+            // pictureBox54
+            // 
+            this.pictureBox54.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox54.Image")));
+            this.pictureBox54.Location = new System.Drawing.Point(465, 3);
+            this.pictureBox54.Name = "pictureBox54";
+            this.pictureBox54.Size = new System.Drawing.Size(231, 85);
+            this.pictureBox54.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox54.TabIndex = 27;
+            this.pictureBox54.TabStop = false;
             // 
             // FrmJogo
             // 
@@ -2201,7 +2232,6 @@
             this.Controls.Add(this.PBX_Ambiente3);
             this.Controls.Add(this.PBX_Ambiente2);
             this.Controls.Add(this.PBX_Ambiente1);
-            this.Controls.Add(this.LBL_Tempo);
             this.Controls.Add(this.PbxColision);
             this.Controls.Add(this.PbxPersonagem);
             this.Controls.Add(this.pictureBox9);
@@ -2257,12 +2287,6 @@
             this.Controls.Add(this.pictureBox50);
             this.Controls.Add(this.pictureBox49);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox56);
-            this.Controls.Add(this.LblContCristais);
-            this.Controls.Add(this.LblContVitaminas);
-            this.Controls.Add(this.PbxContVitaminas);
-            this.Controls.Add(this.PbxContCristais);
-            this.Controls.Add(this.LblScore);
             this.Controls.Add(this.PbxCristal1);
             this.Controls.Add(this.PBX_Vitamina7);
             this.Controls.Add(this.PBX_Vitamina6);
@@ -2273,6 +2297,7 @@
             this.Controls.Add(this.PBX_Vitamina1);
             this.Controls.Add(this.PbxCristal3);
             this.Controls.Add(this.PbxCristal2);
+            this.Controls.Add(this.PNL_InfoFase);
             this.DoubleBuffered = true;
             this.Location = new System.Drawing.Point(100, 100);
             this.Name = "FrmJogo";
@@ -2413,6 +2438,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxContVitaminas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxContCristais)).EndInit();
+            this.PNL_InfoFase.ResumeLayout(false);
+            this.PNL_InfoFase.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2578,6 +2606,8 @@
         private System.Windows.Forms.Label LBL_Person;
         private System.Windows.Forms.PictureBox PBX_Escolha1;
         private System.Windows.Forms.PictureBox PBX_VoltarFase;
+        private System.Windows.Forms.Panel PNL_InfoFase;
+        private System.Windows.Forms.PictureBox pictureBox54;
     }
 }
 
