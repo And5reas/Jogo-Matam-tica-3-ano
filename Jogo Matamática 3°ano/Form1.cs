@@ -273,6 +273,9 @@ namespace Jogo_Matamática_3_ano
             PnlPerguntas.Location = new Point(9, 960);
             PnlPerguntas.Visible = false;
 
+            //Painel de help
+            PNL_Help.Location = new Point(273, 170);
+
             //Esconder opções debugMode
             labelX.Visible = false;
             labelY.Visible = false;
