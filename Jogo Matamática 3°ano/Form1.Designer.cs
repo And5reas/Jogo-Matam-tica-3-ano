@@ -190,6 +190,13 @@
             this.LblScore = new System.Windows.Forms.Label();
             this.PNL_InfoFase = new System.Windows.Forms.Panel();
             this.pictureBox54 = new System.Windows.Forms.PictureBox();
+            this.PNL_Help = new System.Windows.Forms.Panel();
+            this.PBX_bntVaiHelp = new System.Windows.Forms.PictureBox();
+            this.PBX_btnVoltaHelp = new System.Windows.Forms.PictureBox();
+            this.LBL_txtHelp = new System.Windows.Forms.Label();
+            this.PBX_Help = new System.Windows.Forms.PictureBox();
+            this.LBL_HelpSair = new System.Windows.Forms.Label();
+            this.LBL_txtHelp2 = new System.Windows.Forms.Label();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -317,6 +324,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxContCristais)).BeginInit();
             this.PNL_InfoFase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).BeginInit();
+            this.PNL_Help.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_bntVaiHelp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_btnVoltaHelp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Help)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -732,6 +743,7 @@
             this.PbxColision.TabIndex = 5;
             this.PbxColision.TabStop = false;
             this.PbxColision.Tag = "Colision";
+            this.PbxColision.Visible = false;
             this.PbxColision.Click += new System.EventHandler(this.PbxColision_Click);
             // 
             // pictureBox1
@@ -2113,9 +2125,9 @@
             // 
             this.PbxContVitaminas.BackColor = System.Drawing.Color.Transparent;
             this.PbxContVitaminas.Image = ((System.Drawing.Image)(resources.GetObject("PbxContVitaminas.Image")));
-            this.PbxContVitaminas.Location = new System.Drawing.Point(1155, 27);
+            this.PbxContVitaminas.Location = new System.Drawing.Point(412, 18);
             this.PbxContVitaminas.Name = "PbxContVitaminas";
-            this.PbxContVitaminas.Size = new System.Drawing.Size(26, 30);
+            this.PbxContVitaminas.Size = new System.Drawing.Size(50, 45);
             this.PbxContVitaminas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbxContVitaminas.TabIndex = 21;
             this.PbxContVitaminas.TabStop = false;
@@ -2139,11 +2151,11 @@
             // 
             this.LblContVitaminas.AutoSize = true;
             this.LblContVitaminas.BackColor = System.Drawing.Color.Transparent;
-            this.LblContVitaminas.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblContVitaminas.ForeColor = System.Drawing.Color.Black;
-            this.LblContVitaminas.Location = new System.Drawing.Point(1106, 32);
+            this.LblContVitaminas.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblContVitaminas.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LblContVitaminas.Location = new System.Drawing.Point(360, 31);
             this.LblContVitaminas.Name = "LblContVitaminas";
-            this.LblContVitaminas.Size = new System.Drawing.Size(45, 22);
+            this.LblContVitaminas.Size = new System.Drawing.Size(57, 27);
             this.LblContVitaminas.TabIndex = 25;
             this.LblContVitaminas.Text = "0/7";
             this.LblContVitaminas.Visible = false;
@@ -2152,11 +2164,11 @@
             // 
             this.LblContCristais.AutoSize = true;
             this.LblContCristais.BackColor = System.Drawing.Color.Transparent;
-            this.LblContCristais.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblContCristais.ForeColor = System.Drawing.Color.Black;
-            this.LblContCristais.Location = new System.Drawing.Point(735, 35);
+            this.LblContCristais.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblContCristais.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LblContCristais.Location = new System.Drawing.Point(734, 31);
             this.LblContCristais.Name = "LblContCristais";
-            this.LblContCristais.Size = new System.Drawing.Size(23, 22);
+            this.LblContCristais.Size = new System.Drawing.Size(28, 27);
             this.LblContCristais.TabIndex = 25;
             this.LblContCristais.Text = "x";
             this.LblContCristais.Visible = false;
@@ -2166,7 +2178,7 @@
             this.LblScore.AutoSize = true;
             this.LblScore.BackColor = System.Drawing.Color.Transparent;
             this.LblScore.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblScore.ForeColor = System.Drawing.Color.Black;
+            this.LblScore.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.LblScore.Image = ((System.Drawing.Image)(resources.GetObject("LblScore.Image")));
             this.LblScore.Location = new System.Drawing.Point(570, 23);
             this.LblScore.Name = "LblScore";
@@ -2200,6 +2212,92 @@
             this.pictureBox54.TabIndex = 27;
             this.pictureBox54.TabStop = false;
             // 
+            // PNL_Help
+            // 
+            this.PNL_Help.BackColor = System.Drawing.Color.Transparent;
+            this.PNL_Help.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_Help.BackgroundImage")));
+            this.PNL_Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PNL_Help.Controls.Add(this.LBL_txtHelp2);
+            this.PNL_Help.Controls.Add(this.LBL_HelpSair);
+            this.PNL_Help.Controls.Add(this.PBX_bntVaiHelp);
+            this.PNL_Help.Controls.Add(this.PBX_btnVoltaHelp);
+            this.PNL_Help.Controls.Add(this.LBL_txtHelp);
+            this.PNL_Help.Controls.Add(this.PBX_Help);
+            this.PNL_Help.Location = new System.Drawing.Point(273, 170);
+            this.PNL_Help.Name = "PNL_Help";
+            this.PNL_Help.Size = new System.Drawing.Size(761, 548);
+            this.PNL_Help.TabIndex = 28;
+            this.PNL_Help.Visible = false;
+            // 
+            // PBX_bntVaiHelp
+            // 
+            this.PBX_bntVaiHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_bntVaiHelp.Image = ((System.Drawing.Image)(resources.GetObject("PBX_bntVaiHelp.Image")));
+            this.PBX_bntVaiHelp.Location = new System.Drawing.Point(404, 422);
+            this.PBX_bntVaiHelp.Name = "PBX_bntVaiHelp";
+            this.PBX_bntVaiHelp.Size = new System.Drawing.Size(126, 59);
+            this.PBX_bntVaiHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_bntVaiHelp.TabIndex = 3;
+            this.PBX_bntVaiHelp.TabStop = false;
+            this.PBX_bntVaiHelp.Click += new System.EventHandler(this.PBX_bntVaiHelp_Click);
+            // 
+            // PBX_btnVoltaHelp
+            // 
+            this.PBX_btnVoltaHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_btnVoltaHelp.Image = ((System.Drawing.Image)(resources.GetObject("PBX_btnVoltaHelp.Image")));
+            this.PBX_btnVoltaHelp.Location = new System.Drawing.Point(220, 422);
+            this.PBX_btnVoltaHelp.Name = "PBX_btnVoltaHelp";
+            this.PBX_btnVoltaHelp.Size = new System.Drawing.Size(125, 59);
+            this.PBX_btnVoltaHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_btnVoltaHelp.TabIndex = 2;
+            this.PBX_btnVoltaHelp.TabStop = false;
+            this.PBX_btnVoltaHelp.Click += new System.EventHandler(this.PBX_btnVoltaHelp_Click);
+            // 
+            // LBL_txtHelp
+            // 
+            this.LBL_txtHelp.AutoSize = true;
+            this.LBL_txtHelp.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_txtHelp.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LBL_txtHelp.Location = new System.Drawing.Point(189, 348);
+            this.LBL_txtHelp.Name = "LBL_txtHelp";
+            this.LBL_txtHelp.Size = new System.Drawing.Size(403, 25);
+            this.LBL_txtHelp.TabIndex = 1;
+            this.LBL_txtHelp.Text = "Você deve pegar todas as vitaminas";
+            // 
+            // PBX_Help
+            // 
+            this.PBX_Help.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Help.Image")));
+            this.PBX_Help.Location = new System.Drawing.Point(100, 52);
+            this.PBX_Help.Name = "PBX_Help";
+            this.PBX_Help.Size = new System.Drawing.Size(570, 284);
+            this.PBX_Help.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_Help.TabIndex = 0;
+            this.PBX_Help.TabStop = false;
+            // 
+            // LBL_HelpSair
+            // 
+            this.LBL_HelpSair.AutoSize = true;
+            this.LBL_HelpSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LBL_HelpSair.Font = new System.Drawing.Font("Snap ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_HelpSair.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LBL_HelpSair.Location = new System.Drawing.Point(676, 40);
+            this.LBL_HelpSair.Name = "LBL_HelpSair";
+            this.LBL_HelpSair.Size = new System.Drawing.Size(38, 35);
+            this.LBL_HelpSair.TabIndex = 4;
+            this.LBL_HelpSair.Text = "X";
+            this.LBL_HelpSair.Click += new System.EventHandler(this.LBL_HelpSair_Click);
+            // 
+            // LBL_txtHelp2
+            // 
+            this.LBL_txtHelp2.AutoSize = true;
+            this.LBL_txtHelp2.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_txtHelp2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LBL_txtHelp2.Location = new System.Drawing.Point(281, 378);
+            this.LBL_txtHelp2.Name = "LBL_txtHelp2";
+            this.LBL_txtHelp2.Size = new System.Drawing.Size(239, 25);
+            this.LBL_txtHelp2.TabIndex = 5;
+            this.LBL_txtHelp2.Text = "para passar de fase!";
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2210,6 +2308,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.Controls.Add(this.PNL_Help);
             this.Controls.Add(this.LblY);
             this.Controls.Add(this.LblX);
             this.Controls.Add(this.LblWallStatus);
@@ -2441,6 +2540,11 @@
             this.PNL_InfoFase.ResumeLayout(false);
             this.PNL_InfoFase.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).EndInit();
+            this.PNL_Help.ResumeLayout(false);
+            this.PNL_Help.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_bntVaiHelp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_btnVoltaHelp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Help)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2608,6 +2712,13 @@
         private System.Windows.Forms.PictureBox PBX_VoltarFase;
         private System.Windows.Forms.Panel PNL_InfoFase;
         private System.Windows.Forms.PictureBox pictureBox54;
+        private System.Windows.Forms.Panel PNL_Help;
+        private System.Windows.Forms.PictureBox PBX_Help;
+        private System.Windows.Forms.PictureBox PBX_bntVaiHelp;
+        private System.Windows.Forms.PictureBox PBX_btnVoltaHelp;
+        private System.Windows.Forms.Label LBL_txtHelp;
+        private System.Windows.Forms.Label LBL_HelpSair;
+        private System.Windows.Forms.Label LBL_txtHelp2;
     }
 }
 

@@ -27,7 +27,7 @@ namespace Jogo_Matamática_3_ano
         int tempSeg, tempMin;
 
         //MENU
-        int ativouMenu = 0, infoMenu;
+        int ativouMenu = 0, infoMenu, helpIndex = 1;
 
         //Alocar a fase que o player está 1, 2 ,3, 4...
         int fase,
@@ -714,14 +714,13 @@ namespace Jogo_Matamática_3_ano
             //TEMPO DE FASE
             tempMin = 1;
             tempSeg = 0;
-
-            //Start da fase
-            TMR_Tempo.Start();
+            LBL_Tempo.Text = "1:00";
 
             //Esconder os paineis
             PNL_Fases.Visible = false;
             PnlMenu.Visible = false;
-            PNL_Pause.Enabled = true;
+            PBX_btnVoltaHelp.Visible = false;
+            PNL_Help.Visible = true;
 
             //Setar o mapa da fase
             this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_1.png");
@@ -734,7 +733,6 @@ namespace Jogo_Matamática_3_ano
             PbxColision.Location = new Point(59, 169);
             PbxPersonagem.Location = new Point(-104, 136);
             ControleAnimacao = 700;
-            TmrAnimation.Start();
 
             //ORGANIZAR O PLACAR DA FASE
             setPlacar();
@@ -1588,12 +1586,12 @@ namespace Jogo_Matamática_3_ano
             tempSeg = tempSeg + tempo;
             if(tempo > 0)
             {
-                LBL_Tempo.ForeColor = Color.Green;
+                LBL_Tempo.ForeColor = Color.GreenYellow;
                 LBL_Tempo.Text += " +" + tempo;
             }
             else
             {
-                LBL_Tempo.ForeColor = Color.Red;
+                LBL_Tempo.ForeColor = Color.IndianRed;
                 LBL_Tempo.Text += " " + tempo;
             }
         }
@@ -1611,14 +1609,14 @@ namespace Jogo_Matamática_3_ano
            
             if (pontos > 0)
             {
-                LblScore.Location = new Point(520, 23);
-                LblScore.ForeColor = Color.Green;
+                LBLScore(520, 510, 500);
+                LblScore.ForeColor = Color.GreenYellow;
                 LblScore.Text += " +" + pontos;
             }
             else
             {
-                LblScore.Location = new Point(520, 23);
-                LblScore.ForeColor = Color.Red;
+                LBLScore(520, 510, 500);
+                LblScore.ForeColor = Color.IndianRed;
                 if (Score <= 0)
                 {
                     LblScore.Text = "0";
@@ -1632,22 +1630,60 @@ namespace Jogo_Matamática_3_ano
 
         }
 
-        public void LBLScore()
+        //função que define a posição do LBL SCORE
+        public void LBLScore(int posicao1, int posicao2, int posicao3)
         {
             if (LblScore.Text.Length == 1)
             {
-                LblScore.Location = new Point(570, 23);
+                LblScore.Location = new Point(posicao1, 23);
             }
 
             if (LblScore.Text.Length == 2)
             {
-                LblScore.Location = new Point(550, 23);
+                LblScore.Location = new Point(posicao2, 23);
             }
 
             if (LblScore.Text.Length == 3)
             {
-                LblScore.Location = new Point(540, 23);
+                LblScore.Location = new Point(posicao3, 23);
             }
+        }
+
+        //Função de Alterar IMG do HELP
+        public void HelpImg(int mapa, int help)
+        {
+            if (help == 1 && mapa == 1)
+            {
+                HelpLBL(189, 281);
+                LBL_txtHelp.Text = "Você deve pegar todas as vitaminas";
+                LBL_txtHelp2.Text = "para passar de fase!";
+            }
+            else if (help == 2 && mapa == 1)
+            {
+                HelpLBL(189, 265);
+                LBL_txtHelp.Text = "Responda corretamente as perguntas";
+                LBL_txtHelp2.Text = "e ganhe pontos e tempo!";
+            }
+            else if (help == 3 && mapa == 1)
+            {
+                HelpLBL(189, 220);
+                LBL_txtHelp.Text = "Os cristais te dão bonus incriveis,";
+                LBL_txtHelp2.Text = "pegue-os e ganhe mais pontos!";
+            }
+            else if (help == 4 && mapa == 1)
+            {
+                HelpLBL(135, 200);
+                LBL_txtHelp.Text = "Cuidado com seu tempo, não deixe ele acabar,";
+                LBL_txtHelp2.Text = "você não vai querer perder tudo!";
+            }
+            PBX_Help.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\help\\mapa_"+mapa+ "\\infoHelp_"+help+".png");   
+        }
+
+        //funçaõ auxiliar, alterar posicao do lbl help
+        public void HelpLBL(int posX1, int posX2)
+        {
+            LBL_txtHelp.Location = new Point(posX1, 348);
+            LBL_txtHelp2.Location = new Point(posX2, 378);
         }
 
         #region SETAR O PLACAR
@@ -1887,7 +1923,7 @@ namespace Jogo_Matamática_3_ano
                     else
                     {
                         LBL_Tempo.ForeColor = Color.White;
-                        LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + "0" + tempSeg.ToString();
+                        LBL_Tempo.Text = tempMin.ToString() + ":" + "0" + tempSeg.ToString();
                     }
 
                 }
@@ -1895,7 +1931,7 @@ namespace Jogo_Matamática_3_ano
                 {
                     tempSeg--;
                     LBL_Tempo.ForeColor = Color.White;
-                    LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + tempSeg.ToString();
+                    LBL_Tempo.Text = tempMin.ToString() + ":" + tempSeg.ToString();
                 }
             }
 
@@ -1905,14 +1941,14 @@ namespace Jogo_Matamática_3_ano
                 tempMin++;
                 tempSeg = tempSeg - 60;
                 LBL_Tempo.ForeColor = Color.White;
-                LBL_Tempo.Text = "0" + tempMin.ToString() + ":" + "0" + tempSeg.ToString();
+                LBL_Tempo.Text = tempMin.ToString() + ":" + "0" + tempSeg.ToString();
             }
 
             //Sistema de pontos
             Score++;
             if (CristalBuffTime == 0)
             {
-                LblScore.ForeColor = Color.Black;
+                LblScore.ForeColor = Color.WhiteSmoke;
                 LblScore.Text = Score.ToString();
             }
             else
@@ -1923,7 +1959,7 @@ namespace Jogo_Matamática_3_ano
                     LblScore.ForeColor = Color.Yellow;
                     LblScore.Text = Score + "+" + (contCristais + 3);
                     addCristal = 1;
-                    LblScore.Location = new Point(520, 23);
+                    LBLScore(520, 510, 500);
                 }
                 else if (contCristais == 2)
                 {
@@ -1931,11 +1967,11 @@ namespace Jogo_Matamática_3_ano
                     LblScore.ForeColor = Color.Orange;
                     LblScore.Text = Score + "+" + (contCristais + 6);
                     addCristal = 1;
-                    LblScore.Location = new Point(520, 23);
+                    LBLScore(520, 510, 500);
                 }
                 CristalBuffTime--;
             }
-            LBLScore();
+            LBLScore(570, 550, 545);
         }
 
         //ANIMACAO SEM TEMPO
@@ -2407,5 +2443,48 @@ namespace Jogo_Matamática_3_ano
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        #region HELP do jogo //-----------------------------------------------------------------------------------------------------------------------------------------------------------
+        private void PBX_bntVaiHelp_Click(object sender, EventArgs e)
+        {
+            helpIndex++;
+            PBX_btnVoltaHelp.Visible = true;
+            if (helpIndex == 5)
+            {
+                PNL_Pause.Enabled = true;
+                PNL_Help.Visible = false;
+                TMR_Tempo.Start();
+                TmrAnimation.Start();
+            }
+            else
+            {
+                HelpImg(fase, helpIndex);
+            }
+        }
+        private void PBX_btnVoltaHelp_Click(object sender, EventArgs e)
+        {
+            helpIndex--;
+            PBX_bntVaiHelp.Visible = true;
+            if (helpIndex == 1)
+            {
+                PBX_btnVoltaHelp.Visible = false;
+                HelpImg(fase, helpIndex);
+            }
+            else
+            {
+                HelpImg(fase, helpIndex);
+            }   
+        }
+
+        private void LBL_HelpSair_Click(object sender, EventArgs e)
+        {
+            helpIndex = 1;
+            PNL_Pause.Enabled = true;
+            PNL_Help.Visible = false;
+            TMR_Tempo.Start();
+            TmrAnimation.Start();
+        }
+
+        #endregion
     }
 }
