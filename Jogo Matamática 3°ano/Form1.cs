@@ -44,16 +44,13 @@ namespace Jogo_Matamática_3_ano
             ControleAnimacao = 0, ControleAnimacaoAux, animcaoWin = 1,
 
             //Contador de Vitaminas e Cristais
-            contVitaminas = 0, contCristais = 0,
+            contVitaminas = 0, contCristais = 0, contVitaTotal = 0, contCrisTotal = 0,
 
             //Controla o TmrPergunta
             tempPergunta = 0,
-            
-            //Score do player
-            Score = 0, CristalBuffTime = 0, 
 
-            //Animacao do score
-            acertei = 0, contAcertei = 0, addCristal = 0, timeCristal = 0;
+            //Score do player
+            Score = 0, CristalBuffTime = 0;
 
         //Controles do player
         bool goLeft, goRight, goDown, goUp,
@@ -243,7 +240,7 @@ namespace Jogo_Matamática_3_ano
 
             //PAUSE
             PNL_Pause.Location = new Point(0, 109);
-            PNL_Info.Location = new Point(281, 3);
+            PNL_Info.Location = new Point(281, -18);
             PNL_Pause.Visible = false;
             PNL_Pause.Enabled = false;
 
@@ -434,11 +431,13 @@ namespace Jogo_Matamática_3_ano
                         {
                             f.Visible = false;
                             contVitaminas++;
+                            contVitaTotal++;
                             TMR_Tempo.Stop();
                             TmrMainGameManager.Stop();
 
                             //Exibir para o player (Placar)
                             LblContVitaminas.Text = contVitaminas + "/7";
+                            LBL_VitaTotal.Text = contVitaTotal + "/48";
 
                             //Perguntas fase 1 e verificar se está correta
                             if (fase == 1)
@@ -498,9 +497,11 @@ namespace Jogo_Matamática_3_ano
                         {
                             h.Visible = false;
                             contCristais++;
+                            contCrisTotal++;
 
                             //Exibir para o player (Placar)
                             LblContCristais.Text ="x" + contCristais;
+                            LBL_CrisTotal.Text = contCrisTotal + "/18";
                             if (contCristais == 2)
                             {
                                 andarQtdPx = 8;
@@ -1829,11 +1830,6 @@ namespace Jogo_Matamática_3_ano
             PNL_Info.Visible = false;
         }
 
-        //Botão salvar
-        private void PBX_Salvar_Click(object sender, EventArgs e)
-        {
-        }
-
         private void BTN_SimInfo_Click(object sender, EventArgs e)
         {
             //FECHAR O JOGO
@@ -1868,7 +1864,6 @@ namespace Jogo_Matamática_3_ano
         private void PBX_Reiniciar_Click(object sender, EventArgs e)
         {
             infoMenu = 2;
-            PNL_Info.Location = new Point(281, 3);
             PNL_Info.Visible = true;
             PBX_Info.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\textos\\txtReiniciar.png");
         }
@@ -1877,7 +1872,6 @@ namespace Jogo_Matamática_3_ano
         private void PBX_Inicio_Click(object sender, EventArgs e)
         {
             infoMenu = 3;
-            PNL_Info.Location = new Point(281, 3);
             PNL_Info.Visible = true;
             PBX_Info.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\textos\\txtInicio.png");
 
@@ -1953,6 +1947,7 @@ namespace Jogo_Matamática_3_ano
             {
                 LblScore.ForeColor = Color.WhiteSmoke;
                 LblScore.Text = Score.ToString();
+                LBL_ScoreTotal.Text = LblScore.Text;
             }
             else
             {
@@ -1961,7 +1956,7 @@ namespace Jogo_Matamática_3_ano
                     Score = Score + 3;
                     LblScore.ForeColor = Color.Yellow;
                     LblScore.Text = Score + "+" + (contCristais + 3);
-                    addCristal = 1;
+                    LBL_ScoreTotal.Text = LblScore.Text;
                     LBLScore(520, 510, 500);
                 }
                 else if (contCristais == 2)
@@ -1969,7 +1964,7 @@ namespace Jogo_Matamática_3_ano
                     Score = Score + 7;
                     LblScore.ForeColor = Color.Orange;
                     LblScore.Text = Score + "+" + (contCristais + 6);
-                    addCristal = 1;
+                    LBL_ScoreTotal.Text = LblScore.Text;
                     LBLScore(520, 510, 500);
                 }
                 CristalBuffTime--;
@@ -2326,7 +2321,6 @@ namespace Jogo_Matamática_3_ano
             AddTempo(10);
             AddScorePonto(20);
             rodarSaidaPerguntas();
-            acertei = 1;
         }
 
         private void PbxBtn1_Click(object sender, EventArgs e)
@@ -2359,7 +2353,6 @@ namespace Jogo_Matamática_3_ano
                 {
                     if (TxtResposta.Text.ToLower() == "36 ovos" || TxtResposta.Text.ToLower() == "trinta e seis ovos" || TxtResposta.Text.ToLower() == "joaquina encontrou 36 ovos" || TxtResposta.Text.ToLower() == "ela encontrou 36 ovos")
                     {
-                        acertei = 1;
                         AddTempo(10);
                         AddScorePonto(20);
                         rodarSaidaPerguntas();
@@ -2369,7 +2362,6 @@ namespace Jogo_Matamática_3_ano
                 {
                     if (TxtResposta.Text.ToLower() == "3 patos" || TxtResposta.Text.ToLower() == "três patos" || TxtResposta.Text.ToLower() == "há 3 patos")
                     {
-                        acertei = 1;
                         AddTempo(10);
                         AddScorePonto(20);
                         rodarSaidaPerguntas();
@@ -2386,7 +2378,6 @@ namespace Jogo_Matamática_3_ano
                     }
                     if (resultado == 46)
                     {
-                        acertei = 1;
                         AddTempo(10);
                         AddScorePonto(20);
                         Lbl_de_Ajuda.Text = "Você Acertou!! ＜（＾－＾）＞";
@@ -2405,7 +2396,6 @@ namespace Jogo_Matamática_3_ano
                 {
                     if (TxtResposta.Text.ToLower() == "12 pessoas" || TxtResposta.Text.ToLower() == "doze pessoas" || TxtResposta.Text.ToLower() == "há doze pessoas" || TxtResposta.Text.ToLower() == "há 12 pessoas")
                     {
-                        acertei = 1;
                         AddTempo(10);
                         AddScorePonto(20);
                         rodarSaidaPerguntas();
@@ -2423,7 +2413,6 @@ namespace Jogo_Matamática_3_ano
                     }
                     if (resultado == -37)
                     {
-                        acertei = 1;
                         AddTempo(10);
                         AddScorePonto(20);
                         Lbl_de_Ajuda.Text = "Você Acertou!! ＜（＾－＾）＞";

@@ -119,9 +119,14 @@
             this.TmrColisao = new System.Windows.Forms.Timer(this.components);
             this.PNL_Pause = new System.Windows.Forms.Panel();
             this.PNL_InfoPause = new System.Windows.Forms.Panel();
+            this.pictureBox57 = new System.Windows.Forms.PictureBox();
+            this.PBX_VitaAtual = new System.Windows.Forms.PictureBox();
+            this.LBL_VitaTotal = new System.Windows.Forms.Label();
+            this.LBL_CrisTotal = new System.Windows.Forms.Label();
+            this.LBL_ScoreTotal = new System.Windows.Forms.Label();
+            this.pictureBox59 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.PBX_OpcoesPause = new System.Windows.Forms.PictureBox();
-            this.PBX_Salvar = new System.Windows.Forms.PictureBox();
             this.PBX_Reiniciar = new System.Windows.Forms.PictureBox();
             this.PBX_Continuar = new System.Windows.Forms.PictureBox();
             this.PBX_SairPause = new System.Windows.Forms.PictureBox();
@@ -191,12 +196,12 @@
             this.PNL_InfoFase = new System.Windows.Forms.Panel();
             this.pictureBox54 = new System.Windows.Forms.PictureBox();
             this.PNL_Help = new System.Windows.Forms.Panel();
+            this.LBL_txtHelp2 = new System.Windows.Forms.Label();
+            this.LBL_HelpSair = new System.Windows.Forms.Label();
             this.PBX_bntVaiHelp = new System.Windows.Forms.PictureBox();
             this.PBX_btnVoltaHelp = new System.Windows.Forms.PictureBox();
             this.LBL_txtHelp = new System.Windows.Forms.Label();
             this.PBX_Help = new System.Windows.Forms.PictureBox();
-            this.LBL_HelpSair = new System.Windows.Forms.Label();
-            this.LBL_txtHelp2 = new System.Windows.Forms.Label();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -278,9 +283,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).BeginInit();
             this.PNL_Pause.SuspendLayout();
+            this.PNL_InfoPause.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_VitaAtual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox59)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_OpcoesPause)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Salvar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Reiniciar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Continuar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_SairPause)).BeginInit();
@@ -1340,8 +1348,9 @@
             this.PNL_Pause.BackColor = System.Drawing.Color.Transparent;
             this.PNL_Pause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PNL_Pause.Controls.Add(this.PNL_InfoPause);
+            this.PNL_Pause.Controls.Add(this.PNL_Info);
             this.PNL_Pause.Controls.Add(this.panel7);
-            this.PNL_Pause.Location = new System.Drawing.Point(707, 945);
+            this.PNL_Pause.Location = new System.Drawing.Point(0, 109);
             this.PNL_Pause.Name = "PNL_Pause";
             this.PNL_Pause.Size = new System.Drawing.Size(1314, 906);
             this.PNL_Pause.TabIndex = 7;
@@ -1350,10 +1359,87 @@
             // 
             this.PNL_InfoPause.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_InfoPause.BackgroundImage")));
             this.PNL_InfoPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PNL_InfoPause.Controls.Add(this.pictureBox57);
+            this.PNL_InfoPause.Controls.Add(this.PBX_VitaAtual);
+            this.PNL_InfoPause.Controls.Add(this.LBL_VitaTotal);
+            this.PNL_InfoPause.Controls.Add(this.LBL_CrisTotal);
+            this.PNL_InfoPause.Controls.Add(this.LBL_ScoreTotal);
+            this.PNL_InfoPause.Controls.Add(this.pictureBox59);
             this.PNL_InfoPause.Location = new System.Drawing.Point(234, 572);
             this.PNL_InfoPause.Name = "PNL_InfoPause";
             this.PNL_InfoPause.Size = new System.Drawing.Size(846, 196);
             this.PNL_InfoPause.TabIndex = 5;
+            // 
+            // pictureBox57
+            // 
+            this.pictureBox57.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox57.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox57.Image")));
+            this.pictureBox57.Location = new System.Drawing.Point(551, 68);
+            this.pictureBox57.Name = "pictureBox57";
+            this.pictureBox57.Size = new System.Drawing.Size(36, 51);
+            this.pictureBox57.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox57.TabIndex = 29;
+            this.pictureBox57.TabStop = false;
+            this.pictureBox57.Tag = "Cristal";
+            // 
+            // PBX_VitaAtual
+            // 
+            this.PBX_VitaAtual.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_VitaAtual.Image = ((System.Drawing.Image)(resources.GetObject("PBX_VitaAtual.Image")));
+            this.PBX_VitaAtual.Location = new System.Drawing.Point(261, 68);
+            this.PBX_VitaAtual.Name = "PBX_VitaAtual";
+            this.PBX_VitaAtual.Size = new System.Drawing.Size(50, 45);
+            this.PBX_VitaAtual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_VitaAtual.TabIndex = 28;
+            this.PBX_VitaAtual.TabStop = false;
+            this.PBX_VitaAtual.Tag = "";
+            // 
+            // LBL_VitaTotal
+            // 
+            this.LBL_VitaTotal.AutoSize = true;
+            this.LBL_VitaTotal.BackColor = System.Drawing.Color.Transparent;
+            this.LBL_VitaTotal.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_VitaTotal.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LBL_VitaTotal.Location = new System.Drawing.Point(178, 81);
+            this.LBL_VitaTotal.Name = "LBL_VitaTotal";
+            this.LBL_VitaTotal.Size = new System.Drawing.Size(77, 27);
+            this.LBL_VitaTotal.TabIndex = 30;
+            this.LBL_VitaTotal.Text = "0/48";
+            // 
+            // LBL_CrisTotal
+            // 
+            this.LBL_CrisTotal.AutoSize = true;
+            this.LBL_CrisTotal.BackColor = System.Drawing.Color.Transparent;
+            this.LBL_CrisTotal.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_CrisTotal.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LBL_CrisTotal.Location = new System.Drawing.Point(593, 81);
+            this.LBL_CrisTotal.Name = "LBL_CrisTotal";
+            this.LBL_CrisTotal.Size = new System.Drawing.Size(69, 27);
+            this.LBL_CrisTotal.TabIndex = 31;
+            this.LBL_CrisTotal.Text = "0/18";
+            // 
+            // LBL_ScoreTotal
+            // 
+            this.LBL_ScoreTotal.AutoSize = true;
+            this.LBL_ScoreTotal.BackColor = System.Drawing.Color.Transparent;
+            this.LBL_ScoreTotal.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_ScoreTotal.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LBL_ScoreTotal.Image = ((System.Drawing.Image)(resources.GetObject("LBL_ScoreTotal.Image")));
+            this.LBL_ScoreTotal.Location = new System.Drawing.Point(419, 73);
+            this.LBL_ScoreTotal.Name = "LBL_ScoreTotal";
+            this.LBL_ScoreTotal.Size = new System.Drawing.Size(45, 42);
+            this.LBL_ScoreTotal.TabIndex = 32;
+            this.LBL_ScoreTotal.Text = "0";
+            // 
+            // pictureBox59
+            // 
+            this.pictureBox59.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox59.Image")));
+            this.pictureBox59.Location = new System.Drawing.Point(314, 53);
+            this.pictureBox59.Name = "pictureBox59";
+            this.pictureBox59.Size = new System.Drawing.Size(231, 85);
+            this.pictureBox59.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox59.TabIndex = 33;
+            this.pictureBox59.TabStop = false;
             // 
             // panel7
             // 
@@ -1361,7 +1447,6 @@
             this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel7.Controls.Add(this.PBX_OpcoesPause);
-            this.panel7.Controls.Add(this.PBX_Salvar);
             this.panel7.Controls.Add(this.PBX_Reiniciar);
             this.panel7.Controls.Add(this.PBX_Continuar);
             this.panel7.Controls.Add(this.PBX_SairPause);
@@ -1382,19 +1467,6 @@
             this.PBX_OpcoesPause.Size = new System.Drawing.Size(220, 120);
             this.PBX_OpcoesPause.TabIndex = 6;
             this.PBX_OpcoesPause.TabStop = false;
-            // 
-            // PBX_Salvar
-            // 
-            this.PBX_Salvar.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_Salvar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_Salvar.BackgroundImage")));
-            this.PBX_Salvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBX_Salvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_Salvar.Location = new System.Drawing.Point(132, 425);
-            this.PBX_Salvar.Name = "PBX_Salvar";
-            this.PBX_Salvar.Size = new System.Drawing.Size(220, 120);
-            this.PBX_Salvar.TabIndex = 5;
-            this.PBX_Salvar.TabStop = false;
-            this.PBX_Salvar.Click += new System.EventHandler(this.PBX_Salvar_Click);
             // 
             // PBX_Reiniciar
             // 
@@ -1428,7 +1500,7 @@
             this.PBX_SairPause.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_SairPause.BackgroundImage")));
             this.PBX_SairPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PBX_SairPause.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_SairPause.Location = new System.Drawing.Point(442, 425);
+            this.PBX_SairPause.Location = new System.Drawing.Point(282, 427);
             this.PBX_SairPause.Name = "PBX_SairPause";
             this.PBX_SairPause.Size = new System.Drawing.Size(220, 120);
             this.PBX_SairPause.TabIndex = 3;
@@ -1456,7 +1528,7 @@
             this.PNL_Info.Controls.Add(this.PBX_Info);
             this.PNL_Info.Controls.Add(this.BTN_NaoInfo);
             this.PNL_Info.Controls.Add(this.BTN_SimInfo);
-            this.PNL_Info.Location = new System.Drawing.Point(892, 868);
+            this.PNL_Info.Location = new System.Drawing.Point(258, 17);
             this.PNL_Info.Name = "PNL_Info";
             this.PNL_Info.Size = new System.Drawing.Size(757, 680);
             this.PNL_Info.TabIndex = 5;
@@ -2229,6 +2301,30 @@
             this.PNL_Help.TabIndex = 28;
             this.PNL_Help.Visible = false;
             // 
+            // LBL_txtHelp2
+            // 
+            this.LBL_txtHelp2.AutoSize = true;
+            this.LBL_txtHelp2.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_txtHelp2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LBL_txtHelp2.Location = new System.Drawing.Point(281, 378);
+            this.LBL_txtHelp2.Name = "LBL_txtHelp2";
+            this.LBL_txtHelp2.Size = new System.Drawing.Size(239, 25);
+            this.LBL_txtHelp2.TabIndex = 5;
+            this.LBL_txtHelp2.Text = "para passar de fase!";
+            // 
+            // LBL_HelpSair
+            // 
+            this.LBL_HelpSair.AutoSize = true;
+            this.LBL_HelpSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LBL_HelpSair.Font = new System.Drawing.Font("Snap ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_HelpSair.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.LBL_HelpSair.Location = new System.Drawing.Point(676, 40);
+            this.LBL_HelpSair.Name = "LBL_HelpSair";
+            this.LBL_HelpSair.Size = new System.Drawing.Size(38, 35);
+            this.LBL_HelpSair.TabIndex = 4;
+            this.LBL_HelpSair.Text = "X";
+            this.LBL_HelpSair.Click += new System.EventHandler(this.LBL_HelpSair_Click);
+            // 
             // PBX_bntVaiHelp
             // 
             this.PBX_bntVaiHelp.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -2274,30 +2370,6 @@
             this.PBX_Help.TabIndex = 0;
             this.PBX_Help.TabStop = false;
             // 
-            // LBL_HelpSair
-            // 
-            this.LBL_HelpSair.AutoSize = true;
-            this.LBL_HelpSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LBL_HelpSair.Font = new System.Drawing.Font("Snap ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_HelpSair.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LBL_HelpSair.Location = new System.Drawing.Point(676, 40);
-            this.LBL_HelpSair.Name = "LBL_HelpSair";
-            this.LBL_HelpSair.Size = new System.Drawing.Size(38, 35);
-            this.LBL_HelpSair.TabIndex = 4;
-            this.LBL_HelpSair.Text = "X";
-            this.LBL_HelpSair.Click += new System.EventHandler(this.LBL_HelpSair_Click);
-            // 
-            // LBL_txtHelp2
-            // 
-            this.LBL_txtHelp2.AutoSize = true;
-            this.LBL_txtHelp2.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_txtHelp2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LBL_txtHelp2.Location = new System.Drawing.Point(281, 378);
-            this.LBL_txtHelp2.Name = "LBL_txtHelp2";
-            this.LBL_txtHelp2.Size = new System.Drawing.Size(239, 25);
-            this.LBL_txtHelp2.TabIndex = 5;
-            this.LBL_txtHelp2.Text = "para passar de fase!";
-            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2308,6 +2380,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.Controls.Add(this.PNL_Pause);
             this.Controls.Add(this.PNL_Help);
             this.Controls.Add(this.LblY);
             this.Controls.Add(this.LblX);
@@ -2317,11 +2390,9 @@
             this.Controls.Add(this.labelY);
             this.Controls.Add(this.labelX);
             this.Controls.Add(this.PnlMenu);
-            this.Controls.Add(this.PNL_Info);
             this.Controls.Add(this.PNL_Fases);
             this.Controls.Add(this.PnlPerguntas);
             this.Controls.Add(this.PNL_SemTempo);
-            this.Controls.Add(this.PNL_Pause);
             this.Controls.Add(this.PbxCerca);
             this.Controls.Add(this.PNL_SemTempo2);
             this.Controls.Add(this.PBX_Ambiente7);
@@ -2490,9 +2561,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).EndInit();
             this.PNL_Pause.ResumeLayout(false);
+            this.PNL_InfoPause.ResumeLayout(false);
+            this.PNL_InfoPause.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_VitaAtual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox59)).EndInit();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_OpcoesPause)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Salvar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Reiniciar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Continuar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_SairPause)).EndInit();
@@ -2660,7 +2735,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LBL_SemTempo2;
         private System.Windows.Forms.PictureBox PBX_OpcoesPause;
-        private System.Windows.Forms.PictureBox PBX_Salvar;
         private System.Windows.Forms.PictureBox PBX_Reiniciar;
         private System.Windows.Forms.Label lblOutputRequest;
         private System.Windows.Forms.Label LblBust;
@@ -2719,6 +2793,12 @@
         private System.Windows.Forms.Label LBL_txtHelp;
         private System.Windows.Forms.Label LBL_HelpSair;
         private System.Windows.Forms.Label LBL_txtHelp2;
+        private System.Windows.Forms.PictureBox pictureBox57;
+        private System.Windows.Forms.PictureBox PBX_VitaAtual;
+        private System.Windows.Forms.Label LBL_VitaTotal;
+        private System.Windows.Forms.Label LBL_CrisTotal;
+        private System.Windows.Forms.Label LBL_ScoreTotal;
+        private System.Windows.Forms.PictureBox pictureBox59;
     }
 }
 
