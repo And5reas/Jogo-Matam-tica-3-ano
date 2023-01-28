@@ -245,15 +245,15 @@ namespace Jogo_Matamática_3_ano
             PNL_Pause.Enabled = false;
 
             //FASES DESATIVADAS
-            //PBX_Fase2.Enabled = false;
-            //PBX_Fase3.Enabled = false;
+            PBX_Fase2.Enabled = false;
+            PBX_Fase3.Enabled = false;
             PBX_Fase4.Enabled = false;
             PBX_Fase5.Enabled = false;
             PBX_Fase6.Enabled = false;
 
             //ESCONDER FASES
-            //PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-            //PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
             PBX_Fase4.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
             PBX_Fase5.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
             PBX_Fase6.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
@@ -1947,7 +1947,7 @@ namespace Jogo_Matamática_3_ano
             {
                 LblScore.ForeColor = Color.WhiteSmoke;
                 LblScore.Text = Score.ToString();
-                LBL_ScoreTotal.Text = LblScore.Text;
+                LBL_ScoreTotal.Text = Score.ToString();
             }
             else
             {
@@ -1956,7 +1956,7 @@ namespace Jogo_Matamática_3_ano
                     Score = Score + 3;
                     LblScore.ForeColor = Color.Yellow;
                     LblScore.Text = Score + "+" + (contCristais + 3);
-                    LBL_ScoreTotal.Text = LblScore.Text;
+                    LBL_ScoreTotal.Text = Score.ToString();
                     LBLScore(520, 510, 500);
                 }
                 else if (contCristais == 2)
@@ -1964,7 +1964,7 @@ namespace Jogo_Matamática_3_ano
                     Score = Score + 7;
                     LblScore.ForeColor = Color.Orange;
                     LblScore.Text = Score + "+" + (contCristais + 6);
-                    LBL_ScoreTotal.Text = LblScore.Text;
+                    LBL_ScoreTotal.Text = Score.ToString();
                     LBLScore(520, 510, 500);
                 }
                 CristalBuffTime--;
@@ -2026,7 +2026,6 @@ namespace Jogo_Matamática_3_ano
                 PbxColision.Location = new Point(59, 169);
                 PbxPersonagem.Location = new Point(-104, 136);
                 ControleAnimacao = 700;
-                TmrAnimation.Start();
 
                 //Resetar placar
                 LblContVitaminas.Text = "0/7";
@@ -2042,7 +2041,8 @@ namespace Jogo_Matamática_3_ano
 
                 //Resetar Score
                 Score = 0;
-                LblScore.Text = "Score: 0";
+                LblScore.Text = "0";
+                TmrAnimation.Start();
             }
             //FASE 2
             if (fase == 2)
