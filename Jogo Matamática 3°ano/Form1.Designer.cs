@@ -202,6 +202,8 @@
             this.PBX_btnVoltaHelp = new System.Windows.Forms.PictureBox();
             this.LBL_txtHelp = new System.Windows.Forms.Label();
             this.PBX_Help = new System.Windows.Forms.PictureBox();
+            this.LBL_Nome1 = new System.Windows.Forms.Label();
+            this.LBL_Nome2 = new System.Windows.Forms.Label();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -514,11 +516,13 @@
             this.PNL_Fases.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_Fases.BackgroundImage")));
             this.PNL_Fases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PNL_Fases.Controls.Add(this.PNL_MostrarFases);
+            this.PNL_Fases.Controls.Add(this.LBL_Nome2);
+            this.PNL_Fases.Controls.Add(this.LBL_Nome1);
             this.PNL_Fases.Controls.Add(this.PBX_Escolha2);
             this.PNL_Fases.Controls.Add(this.LBL_Person);
             this.PNL_Fases.Controls.Add(this.PBX_Escolha1);
             this.PNL_Fases.ForeColor = System.Drawing.Color.Firebrick;
-            this.PNL_Fases.Location = new System.Drawing.Point(1257, 279);
+            this.PNL_Fases.Location = new System.Drawing.Point(1238, 548);
             this.PNL_Fases.Name = "PNL_Fases";
             this.PNL_Fases.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Fases.TabIndex = 3;
@@ -719,6 +723,7 @@
             this.LBL_Person.AutoSize = true;
             this.LBL_Person.BackColor = System.Drawing.Color.Transparent;
             this.LBL_Person.Font = new System.Drawing.Font("Snap ITC", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_Person.ForeColor = System.Drawing.Color.Coral;
             this.LBL_Person.Location = new System.Drawing.Point(271, 134);
             this.LBL_Person.Name = "LBL_Person";
             this.LBL_Person.Size = new System.Drawing.Size(749, 63);
@@ -2373,6 +2378,32 @@
             this.PBX_Help.TabIndex = 0;
             this.PBX_Help.TabStop = false;
             // 
+            // LBL_Nome1
+            // 
+            this.LBL_Nome1.AutoSize = true;
+            this.LBL_Nome1.BackColor = System.Drawing.Color.Transparent;
+            this.LBL_Nome1.Font = new System.Drawing.Font("Snap ITC", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_Nome1.ForeColor = System.Drawing.Color.Coral;
+            this.LBL_Nome1.Location = new System.Drawing.Point(308, 679);
+            this.LBL_Nome1.Name = "LBL_Nome1";
+            this.LBL_Nome1.Size = new System.Drawing.Size(235, 63);
+            this.LBL_Nome1.TabIndex = 15;
+            this.LBL_Nome1.Text = "Geraldo";
+            this.LBL_Nome1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LBL_Nome2
+            // 
+            this.LBL_Nome2.AutoSize = true;
+            this.LBL_Nome2.BackColor = System.Drawing.Color.Transparent;
+            this.LBL_Nome2.Font = new System.Drawing.Font("Snap ITC", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_Nome2.ForeColor = System.Drawing.Color.Coral;
+            this.LBL_Nome2.Location = new System.Drawing.Point(709, 694);
+            this.LBL_Nome2.Name = "LBL_Nome2";
+            this.LBL_Nome2.Size = new System.Drawing.Size(268, 63);
+            this.LBL_Nome2.TabIndex = 16;
+            this.LBL_Nome2.Text = "Joaquina";
+            this.LBL_Nome2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2383,6 +2414,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.Controls.Add(this.PNL_Fases);
             this.Controls.Add(this.PNL_Pause);
             this.Controls.Add(this.PNL_Help);
             this.Controls.Add(this.LblY);
@@ -2394,7 +2426,6 @@
             this.Controls.Add(this.labelY);
             this.Controls.Add(this.labelX);
             this.Controls.Add(this.PnlMenu);
-            this.Controls.Add(this.PNL_Fases);
             this.Controls.Add(this.PNL_SemTempo);
             this.Controls.Add(this.PbxCerca);
             this.Controls.Add(this.PNL_SemTempo2);
@@ -2802,6 +2833,8 @@
         private System.Windows.Forms.Label LBL_CrisTotal;
         private System.Windows.Forms.Label LBL_ScoreTotal;
         private System.Windows.Forms.PictureBox pictureBox59;
+        private System.Windows.Forms.Label LBL_Nome2;
+        private System.Windows.Forms.Label LBL_Nome1;
     }
 }
 

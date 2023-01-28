@@ -1751,22 +1751,26 @@ namespace Jogo_Matamática_3_ano
         private void PBX_Escolha1_MouseHover(object sender, EventArgs e)
         {
             PBX_Escolha1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_maior2.png");
+            LBL_Nome1.ForeColor = Color.GreenYellow;
         }
 
         private void PBX_Escolha1_MouseLeave(object sender, EventArgs e)
         {
             PBX_Escolha1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_maior.png");
+            LBL_Nome1.ForeColor = Color.Coral;
         }
 
         //Animação escolha JOAQUINA
         private void PBX_Escolha2_MouseHover(object sender, EventArgs e)
         {
             PBX_Escolha2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\feminino\\frente\\frente_pedra_maior2.png");
+            LBL_Nome2.ForeColor = Color.GreenYellow;
         }
 
         private void PBX_Escolha2_MouseLeave(object sender, EventArgs e)
         {
             PBX_Escolha2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\feminino\\frente\\frente_pedra_maior.png");
+            LBL_Nome2.ForeColor = Color.Coral;
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1948,28 +1952,26 @@ namespace Jogo_Matamática_3_ano
                 LblScore.ForeColor = Color.WhiteSmoke;
                 LblScore.Text = Score.ToString();
                 LBL_ScoreTotal.Text = Score.ToString();
+                LBLScore(570, 550, 545);
             }
             else
             {
+                LBLScore(530, 520, 490);
                 if (contCristais == 1)
                 {
                     Score = Score + 3;
                     LblScore.ForeColor = Color.Yellow;
                     LblScore.Text = Score + "+" + (contCristais + 3);
-                    LBL_ScoreTotal.Text = Score.ToString();
-                    LBLScore(520, 510, 500);
                 }
                 else if (contCristais == 2)
                 {
                     Score = Score + 7;
                     LblScore.ForeColor = Color.Orange;
                     LblScore.Text = Score + "+" + (contCristais + 6);
-                    LBL_ScoreTotal.Text = Score.ToString();
-                    LBLScore(520, 510, 500);
                 }
+                LBL_ScoreTotal.Text = Score.ToString();
                 CristalBuffTime--;
             }
-            LBLScore(570, 550, 545);
         }
 
         //ANIMACAO SEM TEMPO
