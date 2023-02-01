@@ -248,14 +248,14 @@ namespace Jogo_Matamática_3_ano
             PBX_Fase2.Enabled = false;
             PBX_Fase3.Enabled = false;
             PBX_Fase4.Enabled = false;
-            PBX_Fase5.Enabled = false;
+            //PBX_Fase5.Enabled = false;
             PBX_Fase6.Enabled = false;
 
             //ESCONDER FASES
             PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
             PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
             PBX_Fase4.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-            PBX_Fase5.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            //PBX_Fase5.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
             PBX_Fase6.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
 
             //PAINEL DE FASES
@@ -1059,6 +1059,100 @@ namespace Jogo_Matamática_3_ano
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        #region Start fase 5
+        private void PBX_Fase5_Click(object sender, EventArgs e)
+        {
+            //Fase atual
+            fase = 5;
+
+            //TEMPO DE FASE
+            tempMin = 1;
+            tempSeg = 15;
+
+            //Setar a posição inicial da colisão e personagem e imagen
+            PbxColision.Location = new Point(39, 711);
+            PbxPersonagem.Location = new Point(-125, 678);
+            PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + "\\direita\\direita_1.png");
+
+            //Start da fase
+            TmrMainGameManager.Start();
+            TMR_Tempo.Start();
+            ControleAnimacao = 700;
+            TmrAnimation.Start();
+
+            //Esconder os paineis
+            PNL_Fases.Visible = false;
+            PnlMenu.Visible = false;
+            PNL_Pause.Enabled = true;
+
+            //Setar o mapa da fase
+            this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_5.png");
+
+            #region Load Wall fase 5
+
+            pictureBox1.Location = new Point(153, 673); pictureBox1.Size = new Size(41, 31);
+            pictureBox2.Location = new Point(188, 431); pictureBox2.Size = new Size(34, 33);
+            pictureBox3.Location = new Point(189, 252); pictureBox3.Size = new Size(33, 69);
+            pictureBox4.Location = new Point(259, 325); pictureBox4.Size = new Size(37, 39);
+            pictureBox5.Location = new Point(329, 164); pictureBox5.Size = new Size(38, 35);
+            pictureBox6.Location = new Point(329, 274); pictureBox6.Size = new Size(38, 35);
+            pictureBox7.Location = new Point(329, 622); pictureBox7.Size = new Size(38, 119);
+            pictureBox8.Location = new Point(147, 464); pictureBox8.Size = new Size(76, 26);
+            pictureBox9.Location = new Point(549, 196); pictureBox9.Size = new Size(42, 454);
+            pictureBox10.Location = new Point(1051, 250); pictureBox10.Size = new Size(40, 431);
+
+            pictureBox11.Location = new Point(625, 252); pictureBox11.Size = new Size(39, 420);
+            pictureBox12.Location = new Point(25, 724); pictureBox12.Size = new Size(1222, 30);
+            pictureBox13.Location = new Point(838, 218); pictureBox13.Size = new Size(37, 432);
+            pictureBox14.Location = new Point(188, 406); pictureBox14.Size = new Size(107, 27);
+            pictureBox15.Location = new Point(259, 306); pictureBox15.Size = new Size(108, 25);
+            pictureBox16.Location = new Point(129, 299); pictureBox16.Size = new Size(93, 32);
+            pictureBox17.Location = new Point(189, 568); pictureBox17.Size = new Size(34, 137);
+            pictureBox18.Location = new Point(583, 196); pictureBox18.Size = new Size(538, 31);
+            pictureBox19.Location = new Point(471, 672); pictureBox19.Size = new Size(620, 31);
+            pictureBox20.Location = new Point(474, 254); pictureBox20.Size = new Size(41, 415);
+
+            pictureBox21.Location = new Point(259, 568); pictureBox21.Size = new Size(34, 159);
+            pictureBox22.Location = new Point(329, 251); pictureBox22.Size = new Size(158, 29);
+            pictureBox23.Location = new Point(119, 384); pictureBox23.Size = new Size(38, 106);
+            pictureBox24.Location = new Point(329, 359); pictureBox24.Size = new Size(38, 126);
+            pictureBox25.Location = new Point(1211, 164); pictureBox25.Size = new Size(47, 526);
+            pictureBox26.Location = new Point(906, 250); pictureBox26.Size = new Size(175, 30);
+            pictureBox27.Location = new Point(694, 513); pictureBox27.Size = new Size(148, 29);
+            pictureBox28.Location = new Point(866, 304); pictureBox28.Size = new Size(152, 31);
+            pictureBox29.Location = new Point(767, 303); pictureBox29.Size = new Size(37, 71);
+            pictureBox30.Location = new Point(721, 357); pictureBox30.Size = new Size(83, 28);
+
+            pictureBox31.Location = new Point(695, 274); pictureBox31.Size = new Size(36, 110);
+            pictureBox32.Location = new Point(908, 357); pictureBox32.Size = new Size(148, 28);
+            pictureBox33.Location = new Point(653, 566); pictureBox33.Size = new Size(153, 30);
+            pictureBox34.Location = new Point(910, 464); pictureBox34.Size = new Size(37, 215);
+            pictureBox35.Location = new Point(654, 464); pictureBox35.Size = new Size(154, 29);
+            pictureBox36.Location = new Point(117, 213); pictureBox36.Size = new Size(41, 118);
+            pictureBox37.Location = new Point(120, 359); pictureBox37.Size = new Size(176, 28);
+            pictureBox38.Location = new Point(660, 252); pictureBox38.Size = new Size(147, 28);
+            pictureBox39.Location = new Point(118, 541); pictureBox39.Size = new Size(37, 162);
+            pictureBox40.Location = new Point(118, 517); pictureBox40.Size = new Size(289, 29);
+
+            pictureBox41.Location = new Point(64, 124); pictureBox41.Size = new Size(1194, 47);
+            pictureBox42.Location = new Point(696, 408); pictureBox42.Size = new Size(320, 31);
+            pictureBox43.Location = new Point(983, 464); pictureBox43.Size = new Size(35, 217);
+            pictureBox44.Location = new Point(1125, 197); pictureBox44.Size = new Size(44, 530);
+            pictureBox45.Location = new Point(286, 568); pictureBox45.Size = new Size(84, 32);
+            pictureBox46.Location = new Point(256, 459); pictureBox46.Size = new Size(95, 26);
+            pictureBox47.Location = new Point(400, 306); pictureBox47.Size = new Size(39, 421);
+            pictureBox48.Location = new Point(222, 254); pictureBox48.Size = new Size(72, 27);
+            pictureBox49.Location = new Point(115, 196); pictureBox49.Size = new Size(252, 32);
+            pictureBox50.Location = new Point(25, 124); pictureBox50.Size = new Size(49, 577);
+
+            pictureBox51.Location = new Point(256, 429); pictureBox51.Size = new Size(40, 31);
+            pictureBox52.Location = new Point(400, 164); pictureBox52.Size = new Size(40, 117);
+            pictureBox53.Location = new Point(694, 619); pictureBox53.Size = new Size(148, 28);
+
+            #endregion
+        }
+        #endregion
 
         #region Funções e Utilidades //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
