@@ -204,6 +204,8 @@
             this.PBX_btnVoltaHelp = new System.Windows.Forms.PictureBox();
             this.LBL_txtHelp = new System.Windows.Forms.Label();
             this.PBX_Help = new System.Windows.Forms.PictureBox();
+            this.pictureBox58 = new System.Windows.Forms.PictureBox();
+            this.pictureBox60 = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -338,6 +340,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_bntVaiHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_btnVoltaHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Help)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -522,7 +526,7 @@
             this.PNL_Fases.Controls.Add(this.LBL_Person);
             this.PNL_Fases.Controls.Add(this.PBX_Escolha1);
             this.PNL_Fases.ForeColor = System.Drawing.Color.Firebrick;
-            this.PNL_Fases.Location = new System.Drawing.Point(1261, 546);
+            this.PNL_Fases.Location = new System.Drawing.Point(1243, 740);
             this.PNL_Fases.Name = "PNL_Fases";
             this.PNL_Fases.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Fases.TabIndex = 3;
@@ -813,7 +817,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.MediumBlue;
             this.pictureBox3.Location = new System.Drawing.Point(189, 254);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 46);
+            this.pictureBox3.Size = new System.Drawing.Size(33, 39);
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Tag = "Parede";
@@ -901,7 +905,7 @@
             this.pictureBox11.BackColor = System.Drawing.Color.MediumBlue;
             this.pictureBox11.Location = new System.Drawing.Point(625, 252);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(39, 420);
+            this.pictureBox11.Size = new System.Drawing.Size(39, 414);
             this.pictureBox11.TabIndex = 6;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Tag = "Parede";
@@ -987,9 +991,9 @@
             // pictureBox19
             // 
             this.pictureBox19.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox19.Location = new System.Drawing.Point(471, 672);
+            this.pictureBox19.Location = new System.Drawing.Point(491, 672);
             this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(620, 31);
+            this.pictureBox19.Size = new System.Drawing.Size(596, 31);
             this.pictureBox19.TabIndex = 6;
             this.pictureBox19.TabStop = false;
             this.pictureBox19.Tag = "Parede";
@@ -998,9 +1002,9 @@
             // pictureBox20
             // 
             this.pictureBox20.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox20.Location = new System.Drawing.Point(474, 254);
+            this.pictureBox20.Location = new System.Drawing.Point(476, 254);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(41, 412);
+            this.pictureBox20.Size = new System.Drawing.Size(39, 412);
             this.pictureBox20.TabIndex = 6;
             this.pictureBox20.TabStop = false;
             this.pictureBox20.Tag = "Parede";
@@ -1055,7 +1059,7 @@
             this.pictureBox25.BackColor = System.Drawing.Color.MediumBlue;
             this.pictureBox25.Location = new System.Drawing.Point(1211, 177);
             this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(47, 513);
+            this.pictureBox25.Size = new System.Drawing.Size(47, 226);
             this.pictureBox25.TabIndex = 6;
             this.pictureBox25.TabStop = false;
             this.pictureBox25.Tag = "Parede";
@@ -1086,9 +1090,9 @@
             // pictureBox28
             // 
             this.pictureBox28.BackColor = System.Drawing.Color.MediumBlue;
-            this.pictureBox28.Location = new System.Drawing.Point(866, 304);
+            this.pictureBox28.Location = new System.Drawing.Point(881, 304);
             this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(152, 31);
+            this.pictureBox28.Size = new System.Drawing.Size(137, 31);
             this.pictureBox28.TabIndex = 6;
             this.pictureBox28.TabStop = false;
             this.pictureBox28.Tag = "Parede";
@@ -1297,7 +1301,7 @@
             this.pictureBox47.BackColor = System.Drawing.Color.MediumBlue;
             this.pictureBox47.Location = new System.Drawing.Point(400, 306);
             this.pictureBox47.Name = "pictureBox47";
-            this.pictureBox47.Size = new System.Drawing.Size(39, 412);
+            this.pictureBox47.Size = new System.Drawing.Size(38, 412);
             this.pictureBox47.TabIndex = 6;
             this.pictureBox47.TabStop = false;
             this.pictureBox47.Tag = "Parede";
@@ -1996,7 +2000,7 @@
             this.PnlPerguntas.Controls.Add(this.TxtResposta3);
             this.PnlPerguntas.Controls.Add(this.TxtResposta);
             this.PnlPerguntas.Controls.Add(this.Lbl_de_Ajuda);
-            this.PnlPerguntas.Location = new System.Drawing.Point(1261, 303);
+            this.PnlPerguntas.Location = new System.Drawing.Point(1243, 278);
             this.PnlPerguntas.Name = "PnlPerguntas";
             this.PnlPerguntas.Size = new System.Drawing.Size(1285, 237);
             this.PnlPerguntas.TabIndex = 24;
@@ -2200,7 +2204,7 @@
             // 
             this.PbxCristal1.BackColor = System.Drawing.Color.Blue;
             this.PbxCristal1.Image = ((System.Drawing.Image)(resources.GetObject("PbxCristal1.Image")));
-            this.PbxCristal1.Location = new System.Drawing.Point(102, 106);
+            this.PbxCristal1.Location = new System.Drawing.Point(231, 552);
             this.PbxCristal1.Name = "PbxCristal1";
             this.PbxCristal1.Size = new System.Drawing.Size(22, 26);
             this.PbxCristal1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2344,7 +2348,7 @@
             this.PNL_Help.Controls.Add(this.PBX_btnVoltaHelp);
             this.PNL_Help.Controls.Add(this.LBL_txtHelp);
             this.PNL_Help.Controls.Add(this.PBX_Help);
-            this.PNL_Help.Location = new System.Drawing.Point(1264, 124);
+            this.PNL_Help.Location = new System.Drawing.Point(1264, 170);
             this.PNL_Help.Name = "PNL_Help";
             this.PNL_Help.Size = new System.Drawing.Size(761, 548);
             this.PNL_Help.TabIndex = 28;
@@ -2419,6 +2423,28 @@
             this.PBX_Help.TabIndex = 0;
             this.PBX_Help.TabStop = false;
             // 
+            // pictureBox58
+            // 
+            this.pictureBox58.BackColor = System.Drawing.Color.MediumBlue;
+            this.pictureBox58.Location = new System.Drawing.Point(1243, 406);
+            this.pictureBox58.Name = "pictureBox58";
+            this.pictureBox58.Size = new System.Drawing.Size(47, 33);
+            this.pictureBox58.TabIndex = 29;
+            this.pictureBox58.TabStop = false;
+            this.pictureBox58.Tag = "Parede";
+            this.pictureBox58.Visible = false;
+            // 
+            // pictureBox60
+            // 
+            this.pictureBox60.BackColor = System.Drawing.Color.MediumBlue;
+            this.pictureBox60.Location = new System.Drawing.Point(1211, 445);
+            this.pictureBox60.Name = "pictureBox60";
+            this.pictureBox60.Size = new System.Drawing.Size(47, 241);
+            this.pictureBox60.TabIndex = 30;
+            this.pictureBox60.TabStop = false;
+            this.pictureBox60.Tag = "Parede";
+            this.pictureBox60.Visible = false;
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2429,6 +2455,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.Controls.Add(this.pictureBox60);
+            this.Controls.Add(this.pictureBox58);
             this.Controls.Add(this.PNL_Fases);
             this.Controls.Add(this.PNL_Pause);
             this.Controls.Add(this.PNL_Help);
@@ -2662,6 +2690,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_bntVaiHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_btnVoltaHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Help)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2843,6 +2873,8 @@
         private System.Windows.Forms.PictureBox pictureBox59;
         private System.Windows.Forms.Label LBL_Nome2;
         private System.Windows.Forms.Label LBL_Nome1;
+        private System.Windows.Forms.PictureBox pictureBox58;
+        private System.Windows.Forms.PictureBox pictureBox60;
     }
 }
 
