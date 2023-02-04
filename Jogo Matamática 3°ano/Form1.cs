@@ -21,7 +21,7 @@ namespace Jogo_Matamática_3_ano
     {
         #region Variáveis Globais //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        string escolhaPerson;
+        string escolhaPerson, objPerson;
 
         //TEMPO DE JOGO
         int tempSeg, tempMin;
@@ -396,28 +396,28 @@ namespace Jogo_Matamática_3_ano
                 PbxPersonagem.Location = new Point(posXPlayer - andarQtdPx, posYPlayer);
                 PbxColision.Location = new Point(posXColision - andarQtdPx, posYColision);
                 countAnimation++;
-                PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+escolhaPerson+"\\esquerda\\esquerda_" + animationPlayer + ".png");
+                PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\esquerda\\esquerda_" + animationPlayer + ".png");
             }
             else if (goRight == true)
             {
                 PbxPersonagem.Location = new Point(posXPlayer + andarQtdPx, posYPlayer);
                 PbxColision.Location = new Point(posXColision + andarQtdPx, posYColision);
                 countAnimation++;
-                PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+escolhaPerson+"\\direita\\direita_" + animationPlayer + ".png");
+                PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\direita\\direita_" + animationPlayer + ".png");
             }
             else if (goUp == true)
             {
                 PbxPersonagem.Location = new Point(posXPlayer, posYPlayer - andarQtdPx);
                 PbxColision.Location = new Point(posXColision, posYColision - andarQtdPx);
                 countAnimation++;
-                PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+escolhaPerson+"\\costas\\costas_" + animationPlayer + ".png");
+                PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\costas\\costas_" + animationPlayer + ".png");
             }
             else if (goDown == true)
             {
                 PbxPersonagem.Location = new Point(posXPlayer, posYPlayer + andarQtdPx);
                 PbxColision.Location = new Point(posXColision, posYColision + andarQtdPx);
                 countAnimation++;
-                PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+escolhaPerson+"\\frente\\frente_" + animationPlayer + ".png");
+                PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\frente\\frente_" + animationPlayer + ".png");
             }
 
             //Pegar moedas com Tag Vitamina
@@ -983,7 +983,7 @@ namespace Jogo_Matamática_3_ano
             //Setar a posição inicial da colisão e personagem e imagen
             PbxColision.Location = new Point(36, 717);
             PbxPersonagem.Location = new Point(-125, 684);
-            PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson +"\\direita\\direita_1.png");
+            PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\direita\\direita_1.png");
 
             //Start da fase
             TmrMainGameManager.Start();
@@ -1078,7 +1078,7 @@ namespace Jogo_Matamática_3_ano
             //Setar a posição inicial da colisão e personagem e imagen
             PbxColision.Location = new Point(39, 711);
             PbxPersonagem.Location = new Point(28, 678);
-            PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + "\\direita\\direita_1.png");
+            PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_1.png");
 
             //Start da fase
             TmrMainGameManager.Start();
@@ -1100,13 +1100,14 @@ namespace Jogo_Matamática_3_ano
             setarImagensVitaminas(diretorioVit);
             setImagendsCrital(diretorioCristal);
 
-            //SETAR POSICAO DOS ITENS -arumar
+            /*//SETAR POSICAO DOS ITENS -arumar
             setPosVitaminas();
             setPosCrist();
 
             //SETAR TAMANHO ITENS
             setVitSize(28, 33);
             setCrisSize(22, 26);
+            */
 
             //DEIXAR ITENS VISIVEIS, AMBIENTE E PERSONAGEM
             mostrarTodasPbx();
@@ -1241,6 +1242,7 @@ namespace Jogo_Matamática_3_ano
             PbxCristal1.BackColor = Color.Transparent;
             PbxCristal2.BackColor = Color.Transparent;
             PbxCristal3.BackColor = Color.Transparent;
+            PBX_Vitoria.BackColor = Color.Transparent;
         }
 
         public void ItensVisible()
@@ -1255,6 +1257,7 @@ namespace Jogo_Matamática_3_ano
             PbxCristal1.Visible = true;
             PbxCristal2.Visible = true;
             PbxCristal3.Visible = true;
+            PBX_Vitoria.Visible = true;
         }
 
         public void IensNotVisible()
@@ -1269,6 +1272,7 @@ namespace Jogo_Matamática_3_ano
             PbxCristal1.Visible = false;
             PbxCristal2.Visible = false;
             PbxCristal3.Visible = false;
+            PBX_Vitoria.Visible = false;
         }
 
         #region Organizar o layout das perguntas, de acordo com a pergunta | Resetar as perguntas | Rodas a saída das perguntas
@@ -1575,6 +1579,7 @@ namespace Jogo_Matamática_3_ano
                 PBX_Vitamina5.Location = new Point(230, 321);
                 PBX_Vitamina6.Location = new Point(965, 684);
                 PBX_Vitamina7.Location = new Point(892, 409);
+                PBX_Vitoria.Location = new Point(1170, 674);
             }
             if (fase == 2)
             {
@@ -1682,6 +1687,12 @@ namespace Jogo_Matamática_3_ano
                 PbxCristal1.Location = new Point(201, 443);
                 PbxCristal2.Location = new Point(418, 431);
                 PbxCristal3.Location = new Point(1113, 315);
+            }
+            if (fase == 5)
+            {
+                PbxCristal1.Location = new Point(476, 188);
+                PbxCristal2.Location = new Point(669, 288);
+                PbxCristal3.Location = new Point(376, 695);
             }
         }
         #endregion
@@ -1884,6 +1895,7 @@ namespace Jogo_Matamática_3_ano
         {
             PNL_MostrarFases.Visible = true;
             escolhaPerson = "masculino";
+            objPerson = "Madeira";
         }
 
         //ESCOLHER JOAQUINA
@@ -1896,13 +1908,13 @@ namespace Jogo_Matamática_3_ano
         //Animação escolha GERALDO
         private void PBX_Escolha1_MouseHover(object sender, EventArgs e)
         {
-            PBX_Escolha1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_maior2.png");
+            PBX_Escolha1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculinoMadeira\\frente\\frente_maior2.png");
             LBL_Nome1.ForeColor = Color.GreenYellow;
         }
 
         private void PBX_Escolha1_MouseLeave(object sender, EventArgs e)
         {
-            PBX_Escolha1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\frente\\frente_maior.png");
+            PBX_Escolha1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculinoMadeira\\frente\\frente_maior.png");
             LBL_Nome1.ForeColor = Color.Coral;
         }
 
@@ -2226,7 +2238,7 @@ namespace Jogo_Matamática_3_ano
                 ControleAnimacao++;
                 if (ControleAnimacao == 50 || ControleAnimacao == 100 || ControleAnimacao == 150) {
                     ControleAnimacao++;
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" +  escolhaPerson + "\\frente\\frente_" + animcaoWin + ".png");
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" +  escolhaPerson + objPerson + "\\frente\\frente_" + animcaoWin + ".png");
                 }
                 if (ControleAnimacao == 200)
                 {
@@ -2240,7 +2252,7 @@ namespace Jogo_Matamática_3_ano
                 ControleAnimacaoAux++;
                 if (ControleAnimacao == 252)
                 {
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson +"\\frente\\frente_pulo_2.png");
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson + objPerson + "\\frente\\frente_pulo_2.png");
                 }
                 if ((ControleAnimacao > 250 && ControleAnimacao < 295) || (ControleAnimacao > 340 && ControleAnimacao < 385) || (ControleAnimacao > 430 && ControleAnimacao < 475)/* Tirar alguns pulos || (ControleAnimacao > 520 && ControleAnimacao < 565) || (ControleAnimacao > 610 && ControleAnimacao < 655)*/)
                 {
@@ -2257,7 +2269,7 @@ namespace Jogo_Matamática_3_ano
                 }
                 if (ControleAnimacaoAux % 40 == 0)
                 {
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson +"\\frente\\frente_pulo_" + animcaoWin + ".png");
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +  "\\frente\\frente_pulo_" + animcaoWin + ".png");
                     animcaoWin++;
                     if (animcaoWin > 2)
                     {
@@ -2271,13 +2283,13 @@ namespace Jogo_Matamática_3_ano
             {
                 if (ControleAnimacao == 520)
                 {
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson +"\\direita\\direita_1.png");
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\direita\\direita_1.png");
                 }
                 PbxPersonagem.Location = new Point(posXPlayer + 3, posYPlayer);
                 if (ControleAnimacao % 5 == 0)
                 {
                     animcaoWin = (ControleAnimacao % 2) + 1;
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson +"\\direita\\direita_" + animcaoWin + ".png");
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\direita\\direita_" + animcaoWin + ".png");
                 }
             }
 
@@ -2301,12 +2313,12 @@ namespace Jogo_Matamática_3_ano
                     if (ControleAnimacao % 5 == 0)
                     {
                         animcaoWin = (ControleAnimacao % 2) + 1;
-                        PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson +"\\direita\\direita_" + animcaoWin + ".png");
+                        PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\direita\\direita_" + animcaoWin + ".png");
                     }
                 }
                 if (ControleAnimacao == 752)
                 {
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson +"\\frente\\frente_1.png");
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson + objPerson +"\\frente\\frente_1.png");
                     TmrAnimation.Stop();
                     TmrMainGameManager.Start();
                 }
@@ -2321,12 +2333,12 @@ namespace Jogo_Matamática_3_ano
                     if (ControleAnimacao % 5 == 0)
                     {
                         animcaoWin = (ControleAnimacao % 2) + 1;
-                        PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson +"\\direita\\direita_" + animcaoWin + ".png");
+                        PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\direita\\direita_" + animcaoWin + ".png");
                     }
                 }
                 if (ControleAnimacao == 752)
                 {
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson +"\\frente\\frente_1.png");
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\frente\\frente_1.png");
                     TmrAnimation.Stop();
                     TmrMainGameManager.Start();
                 }
@@ -2341,12 +2353,12 @@ namespace Jogo_Matamática_3_ano
                     if (ControleAnimacao % 5 == 0)
                     {
                         animcaoWin = (ControleAnimacao % 2) + 1;
-                        PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson +"\\direita\\direita_" + animcaoWin + ".png");
+                        PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\direita\\direita_" + animcaoWin + ".png");
                     }
                 }
                 if (ControleAnimacao == 752)
                 {
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson +"\\frente\\frente_1.png");
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\frente\\frente_1.png");
                     TmrAnimation.Stop();
                     TmrMainGameManager.Start();
                 }
