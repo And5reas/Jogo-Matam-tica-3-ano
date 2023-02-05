@@ -367,12 +367,14 @@ namespace Jogo_Matamática_3_ano
             animationPlayer = (animationSpeed % 3) + 1;
 
             //Condição para o player ganhar
-            if (((posXPlayer > 1148 && posXPlayer < 1300) && (posYPlayer > 662 && posYPlayer < 750)) && tempSeg != -1 && fase == 1)
+            if (posYPlayer >= 674 && posXPlayer >= 1170 && tempSeg != -1 && fase == 1)
             {
                 TmrMainGameManager.Stop();
                 TMR_Tempo.Stop();
                 animcaoWin = 1;
                 PBX_Fase2.Enabled = true;
+                objPerson = "Tocha";
+                PBX_Vitoria.Visible = false;
                 PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
                 ControleAnimacao = 0;
                 TmrAnimation.Start();

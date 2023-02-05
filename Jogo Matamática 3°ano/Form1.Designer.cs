@@ -196,6 +196,7 @@
             this.LblContCristais = new System.Windows.Forms.Label();
             this.LblScore = new System.Windows.Forms.Label();
             this.PNL_InfoFase = new System.Windows.Forms.Panel();
+            this.PBX_AmbVilao = new System.Windows.Forms.PictureBox();
             this.pictureBox54 = new System.Windows.Forms.PictureBox();
             this.PNL_Help = new System.Windows.Forms.Panel();
             this.LBL_txtHelp2 = new System.Windows.Forms.Label();
@@ -206,7 +207,6 @@
             this.PBX_Help = new System.Windows.Forms.PictureBox();
             this.pictureBox58 = new System.Windows.Forms.PictureBox();
             this.pictureBox60 = new System.Windows.Forms.PictureBox();
-            this.PBX_AmbVilao = new System.Windows.Forms.PictureBox();
             this.PBX_Vitoria = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
@@ -337,6 +337,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxContVitaminas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxContCristais)).BeginInit();
             this.PNL_InfoFase.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_AmbVilao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).BeginInit();
             this.PNL_Help.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_bntVaiHelp)).BeginInit();
@@ -344,7 +345,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Help)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_AmbVilao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -2322,6 +2322,18 @@
             this.PNL_InfoFase.Size = new System.Drawing.Size(1184, 85);
             this.PNL_InfoFase.TabIndex = 27;
             // 
+            // PBX_AmbVilao
+            // 
+            this.PBX_AmbVilao.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_AmbVilao.Image = ((System.Drawing.Image)(resources.GetObject("PBX_AmbVilao.Image")));
+            this.PBX_AmbVilao.Location = new System.Drawing.Point(827, 3);
+            this.PBX_AmbVilao.Name = "PBX_AmbVilao";
+            this.PBX_AmbVilao.Size = new System.Drawing.Size(71, 64);
+            this.PBX_AmbVilao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBX_AmbVilao.TabIndex = 31;
+            this.PBX_AmbVilao.TabStop = false;
+            this.PBX_AmbVilao.Visible = false;
+            // 
             // pictureBox54
             // 
             this.pictureBox54.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox54.Image")));
@@ -2440,23 +2452,14 @@
             this.pictureBox60.Tag = "Parede";
             this.pictureBox60.Visible = false;
             // 
-            // PBX_AmbVilao
-            // 
-            this.PBX_AmbVilao.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_AmbVilao.Image = ((System.Drawing.Image)(resources.GetObject("PBX_AmbVilao.Image")));
-            this.PBX_AmbVilao.Location = new System.Drawing.Point(827, 3);
-            this.PBX_AmbVilao.Name = "PBX_AmbVilao";
-            this.PBX_AmbVilao.Size = new System.Drawing.Size(71, 64);
-            this.PBX_AmbVilao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBX_AmbVilao.TabIndex = 31;
-            this.PBX_AmbVilao.TabStop = false;
-            this.PBX_AmbVilao.Visible = false;
-            // 
             // PBX_Vitoria
             // 
+            this.PBX_Vitoria.BackColor = System.Drawing.Color.Magenta;
+            this.PBX_Vitoria.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitoria.Image")));
             this.PBX_Vitoria.Location = new System.Drawing.Point(1170, 674);
             this.PBX_Vitoria.Name = "PBX_Vitoria";
             this.PBX_Vitoria.Size = new System.Drawing.Size(36, 43);
+            this.PBX_Vitoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Vitoria.TabIndex = 31;
             this.PBX_Vitoria.TabStop = false;
             this.PBX_Vitoria.Visible = false;
@@ -2706,6 +2709,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxContCristais)).EndInit();
             this.PNL_InfoFase.ResumeLayout(false);
             this.PNL_InfoFase.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_AmbVilao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).EndInit();
             this.PNL_Help.ResumeLayout(false);
             this.PNL_Help.PerformLayout();
@@ -2714,7 +2718,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Help)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_AmbVilao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
