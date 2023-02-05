@@ -367,14 +367,12 @@ namespace Jogo_Matamática_3_ano
             animationPlayer = (animationSpeed % 3) + 1;
 
             //Condição para o player ganhar
-            if (posYPlayer >= 674 && posXPlayer >= 1170 && tempSeg != -1 && fase == 1)
+            if (((posXPlayer > 1148 && posXPlayer < 1300) && (posYPlayer > 662 && posYPlayer < 750)) && tempSeg != -1 && fase == 1)
             {
                 TmrMainGameManager.Stop();
                 TMR_Tempo.Stop();
                 animcaoWin = 1;
                 PBX_Fase2.Enabled = true;
-                objPerson = "Tocha";
-                PBX_Vitoria.Visible = false;
                 PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
                 ControleAnimacao = 0;
                 TmrAnimation.Start();
@@ -1062,7 +1060,7 @@ namespace Jogo_Matamática_3_ano
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        #region Start fase 5
+        #region Start fase 5 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void PBX_Fase5_Click(object sender, EventArgs e)
         {
             //Diretório das imagens que estamos usando para a fase
@@ -1189,7 +1187,7 @@ namespace Jogo_Matamática_3_ano
             pictureBox58.Location = new Point(1243, 382); pictureBox58.Size = new Size(47, 35);
             pictureBox60.Location = new Point(1211, 428); pictureBox60.Size = new Size(47, 258);
 
-            #endregion
+            #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         }
         #endregion
 

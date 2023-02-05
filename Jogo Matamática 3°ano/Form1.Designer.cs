@@ -2003,7 +2003,7 @@
             this.PnlPerguntas.Controls.Add(this.TxtResposta3);
             this.PnlPerguntas.Controls.Add(this.TxtResposta);
             this.PnlPerguntas.Controls.Add(this.Lbl_de_Ajuda);
-            this.PnlPerguntas.Location = new System.Drawing.Point(1253, 278);
+            this.PnlPerguntas.Location = new System.Drawing.Point(2, 269);
             this.PnlPerguntas.Name = "PnlPerguntas";
             this.PnlPerguntas.Size = new System.Drawing.Size(1285, 237);
             this.PnlPerguntas.TabIndex = 24;
@@ -2306,7 +2306,6 @@
             // PNL_InfoFase
             // 
             this.PNL_InfoFase.BackColor = System.Drawing.Color.Transparent;
-            this.PNL_InfoFase.Controls.Add(this.PBX_AmbVilao);
             this.PNL_InfoFase.Controls.Add(this.PbxContCristais);
             this.PNL_InfoFase.Controls.Add(this.PbxContVitaminas);
             this.PNL_InfoFase.Controls.Add(this.LblContVitaminas);
@@ -2317,6 +2316,7 @@
             this.PNL_InfoFase.Controls.Add(this.pictureBox54);
             this.PNL_InfoFase.Controls.Add(this.PBX_Ambiente4);
             this.PNL_InfoFase.Controls.Add(this.PBX_Ambiente2);
+            this.PNL_InfoFase.Controls.Add(this.PBX_AmbVilao);
             this.PNL_InfoFase.Location = new System.Drawing.Point(55, 15);
             this.PNL_InfoFase.Name = "PNL_InfoFase";
             this.PNL_InfoFase.Size = new System.Drawing.Size(1184, 85);
@@ -2454,12 +2454,9 @@
             // 
             // PBX_Vitoria
             // 
-            this.PBX_Vitoria.BackColor = System.Drawing.Color.Magenta;
-            this.PBX_Vitoria.Image = ((System.Drawing.Image)(resources.GetObject("PBX_Vitoria.Image")));
             this.PBX_Vitoria.Location = new System.Drawing.Point(1170, 674);
             this.PBX_Vitoria.Name = "PBX_Vitoria";
             this.PBX_Vitoria.Size = new System.Drawing.Size(36, 43);
-            this.PBX_Vitoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Vitoria.TabIndex = 31;
             this.PBX_Vitoria.TabStop = false;
             this.PBX_Vitoria.Visible = false;
