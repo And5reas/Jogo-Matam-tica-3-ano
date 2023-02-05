@@ -1859,10 +1859,10 @@ namespace Jogo_Matamática_3_ano
                     LblResposta3.Enabled = true;
                     LblResposta4.Enabled = true;
 
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-                    TxtResposta4.MaxLength = 2;
+                    TxtResposta.MaxLength = 3;
+                    TxtResposta2.MaxLength = 3;
+                    TxtResposta3.MaxLength = 3;
+                    TxtResposta4.MaxLength = 3;
 
                     JustNum = true;
                 }
@@ -3113,6 +3113,18 @@ namespace Jogo_Matamática_3_ano
                     {
                         LblResposta3.ForeColor = Color.GreenYellow;
                     }
+                    if (num1 < 78 && num1 > 98)
+                    {
+                        LblResposta.ForeColor = Color.White;
+                    }
+                    if (num2 < 83 && num2 > 103)
+                    {
+                        LblResposta2.ForeColor = Color.White;
+                    }
+                    if (num3 < 142 && num3 > 162)
+                    {
+                        LblResposta3.ForeColor = Color.White;
+                    }
                 }
                 if (contVitaminas == 2)
                 {
@@ -3157,6 +3169,18 @@ namespace Jogo_Matamática_3_ano
                     if (num3 == 21)
                     {
                         LblResposta3.ForeColor = Color.GreenYellow;
+                    }
+                    if (num1 < 39 - 10 && num1 > 39 + 10)
+                    {
+                        LblResposta.ForeColor = Color.White;
+                    }
+                    if (num2 < 18 - 10 && num2 > 18 + 10)
+                    {
+                        LblResposta2.ForeColor = Color.White;
+                    }
+                    if (num3 < 21 - 10 && num3 > 21 + 10)
+                    {
+                        LblResposta3.ForeColor = Color.White;
                     }
                 }
                 if (contVitaminas == 3)
@@ -3203,6 +3227,18 @@ namespace Jogo_Matamática_3_ano
                     {
                         LblResposta3.ForeColor = Color.GreenYellow;
                     }
+                    if (num1 < 72 - 10 && num1 > 72 + 10)
+                    {
+                        LblResposta.ForeColor = Color.White;
+                    }
+                    if (num2 < 95 - 10 && num2 > 95 + 10)
+                    {
+                        LblResposta2.ForeColor = Color.White;
+                    }
+                    if (num3 < 93 - 10 && num3 > 93 + 10)
+                    {
+                        LblResposta3.ForeColor = Color.White;
+                    }
                 }
                 if (contVitaminas == 4)
                 {
@@ -3247,6 +3283,18 @@ namespace Jogo_Matamática_3_ano
                     if (num3 == 12)
                     {
                         LblResposta3.ForeColor = Color.GreenYellow;
+                    }
+                    if (num1 < 19 - 10 && num1 > 19 + 10)
+                    {
+                        LblResposta.ForeColor = Color.White;
+                    }
+                    if (num2 < 42 - 10 && num2 > 42 + 10)
+                    {
+                        LblResposta2.ForeColor = Color.White;
+                    }
+                    if (num3 < 12 - 10 && num3 > 12 + 10)
+                    {
+                        LblResposta3.ForeColor = Color.White;
                     }
                 }
                 if (contVitaminas == 6)
@@ -3304,6 +3352,22 @@ namespace Jogo_Matamática_3_ano
                     if (num4 == 107)
                     {
                         LblResposta4.ForeColor = Color.GreenYellow;
+                    }
+                    if (num1 < 32 - 10 && num1 > 32 + 10)
+                    {
+                        LblResposta.ForeColor = Color.White;
+                    }
+                    if (num2 < 112 - 10 && num2 > 112 + 10)
+                    {
+                        LblResposta2.ForeColor = Color.White;
+                    }
+                    if (num3 < 31 - 10 && num3 > 31 + 10)
+                    {
+                        LblResposta3.ForeColor = Color.White;
+                    }
+                    if (num4 < 107 - 10 && num4 > 107 + 10)
+                    {
+                        LblResposta4.ForeColor = Color.White;
                     }
                 }
                 if (contVitaminas == 7)
