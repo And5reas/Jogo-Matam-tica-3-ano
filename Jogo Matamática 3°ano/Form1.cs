@@ -367,13 +367,15 @@ namespace Jogo_Matamática_3_ano
             animationPlayer = (animationSpeed % 3) + 1;
 
             //Condição para o player ganhar
-            if (((posXPlayer > 1148 && posXPlayer < 1300) && (posYPlayer > 662 && posYPlayer < 750)) && tempSeg != -1 && fase == 1)
+            if (posXPlayer >= 1140 && posYPlayer >= 645 && tempSeg != -1 && fase == 1)
             {
                 TmrMainGameManager.Stop();
                 TMR_Tempo.Stop();
                 animcaoWin = 1;
                 PBX_Fase2.Enabled = true;
                 PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
+                PBX_Vitoria.Visible = false;
+                objPerson = "Tocha";
                 ControleAnimacao = 0;
                 TmrAnimation.Start();
             }
@@ -386,6 +388,8 @@ namespace Jogo_Matamática_3_ano
                 animcaoWin = 1;
                 PBX_Fase3.Enabled = true;
                 PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_3.png");
+                PBX_Vitoria.Visible = false;
+                objPerson = "Flores";
                 ControleAnimacao = 0;
                 TmrAnimation.Start();
             }
@@ -900,7 +904,8 @@ namespace Jogo_Matamática_3_ano
             //Diretório das imagens que estamos usando para a fase
             string diretorioVit = "\\img\\itens\\maca_animada.gif",
                    diretorioCristal = "\\img\\itens\\cristal_animado.gif",
-                   diretorioAmbiente = "\\img\\ambiente\\mapa_1\\arbusto_macas_mapa1.png";
+                   diretorioAmbiente = "\\img\\ambiente\\mapa_1\\arbusto_macas_mapa1.png",
+                   diretorioObjeto = "\\img\\itens\\tocha_animada.gif";
 
             //Fase atual
             fase = 1;
@@ -918,6 +923,7 @@ namespace Jogo_Matamática_3_ano
 
             //Setar o mapa da fase
             this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_1.png");
+            PBX_Vitoria.Image = Image.FromFile(Directory.GetCurrentDirectory() + diretorioObjeto);
 
             //Setar a cerca da fase
             PbxCerca.Location = new Point(1181, 554);
@@ -1033,7 +1039,8 @@ namespace Jogo_Matamática_3_ano
             //Diretório das imagens que estamos usando para a fase
             string diretorioVit = "\\img\\itens\\bifeCru_animado.gif",
                    diretorioCristal = "\\img\\itens\\cristal_animado.gif",
-                   diretorioAmbiente = "\\img\\ambiente\\mapa_2\\buracos_mapa2.png";
+                   diretorioAmbiente = "\\img\\ambiente\\mapa_2\\buracos_mapa2.png",
+                   diretorioObjeto = "\\img\\itens\\bastao_flores.gif";
 
             //Fase atual
             fase = 2;
@@ -1052,6 +1059,7 @@ namespace Jogo_Matamática_3_ano
 
             //Setar o mapa da fase
             this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_2.png");
+            PBX_Vitoria.Image = Image.FromFile(Directory.GetCurrentDirectory() + diretorioObjeto);
 
             //Setar a cerca da fase
             PbxCerca.Location = new Point(1191, 650);
@@ -2050,6 +2058,7 @@ namespace Jogo_Matamática_3_ano
                 PBX_Vitamina5.Location = new Point(516, 683);
                 PBX_Vitamina6.Location = new Point(345, 383);
                 PBX_Vitamina7.Location = new Point(131, 646);
+                PBX_Vitoria.Location = new Point(1192, 675); 
             }
 
             if(fase == 5)
