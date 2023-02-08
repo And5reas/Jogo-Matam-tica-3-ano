@@ -189,20 +189,21 @@ namespace Jogo_Matamática_3_ano
             //Pause
             if (e.KeyChar == 27 && PNL_SemTempo.Visible != true && PNL_Fases.Visible != true && PnlPerguntas.Visible != true)
             {
-
-                if (ativouMenu == 0 && PNL_Pause.Enabled != false)
-                {
-                    PNL_Pause.Visible = true;
-                    TmrMainGameManager.Stop();
-                    TMR_Tempo.Stop();
-                    ativouMenu = 1;
-                }
-                else if (ativouMenu == 1)
-                {
-                    PNL_Pause.Visible = false;
-                    TmrMainGameManager.Start();
-                    TMR_Tempo.Start();
-                    ativouMenu = 0;
+                if (ControleAnimacao == 0) {
+                    if (ativouMenu == 0 && PNL_Pause.Enabled != false)
+                    {
+                        PNL_Pause.Visible = true;
+                        TmrMainGameManager.Stop();
+                        TMR_Tempo.Stop();
+                        ativouMenu = 1;
+                    }
+                    else if (ativouMenu == 1)
+                    {
+                        PNL_Pause.Visible = false;
+                        TmrMainGameManager.Start();
+                        TMR_Tempo.Start();
+                        ativouMenu = 0;
+                    }
                 }
             }
         }
@@ -930,8 +931,6 @@ namespace Jogo_Matamática_3_ano
             PbxCerca.Visible = true;
 
             //Setar a posição inicial da colisão e personagem e imagen
-            PbxColision.Location = new Point(59, 169);
-            PbxPersonagem.Location = new Point(-104, 136);
             ControleAnimacao = 700;
 
             //ORGANIZAR O PLACAR DA FASE
@@ -2502,10 +2501,11 @@ namespace Jogo_Matamática_3_ano
         //VOLTAR A SELECAO DE FASES
         private void PBX_Inicio_Click(object sender, EventArgs e)
         {
+            helpIndex = 1;
             infoMenu = 3;
             PNL_Info.Visible = true;
             PBX_Info.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\textos\\txtInicio.png");
-
+            ReiniciarJogo();
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2641,7 +2641,7 @@ namespace Jogo_Matamática_3_ano
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        #region FUNCAO REINICIAR JOGO //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #region REINICIAR JOGO //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         public void ReiniciarJogo()
         {
@@ -2651,10 +2651,12 @@ namespace Jogo_Matamática_3_ano
                 tempMin = 1;
                 tempSeg = 0;
 
-                //Resetar animação do personagem entrando no mapa
-                PbxColision.Location = new Point(59, 169);
-                PbxPersonagem.Location = new Point(-104, 136);
+                //Resetar a velocidade que o player anda
+                andarQtdPx = 6;
+
+                //Resetar animação do personagem entrando no
                 ControleAnimacao = 700;
+                TmrAnimation.Start();
 
                 //Resetar placar
                 LblContVitaminas.Text = "0/7";
@@ -2665,13 +2667,9 @@ namespace Jogo_Matamática_3_ano
                 //Resetar visibilidade dos itens
                 mostrarTodasPbx();
 
-                //Resetar a velocidade que o player anda
-                andarQtdPx = 6;
-
                 //Resetar Score
                 Score = 0;
                 LblScore.Text = "0";
-                TmrAnimation.Start();
             }
             //FASE 2
             if (fase == 2)
@@ -2770,13 +2768,20 @@ namespace Jogo_Matamática_3_ano
                 LBL_Tempo.Text = "";
                 ResetAmbiente();
                 TmrAnimation.Stop();
+                ControleAnimacao = 0;
             }
 
             //ControleAnimacao = 700 | Animações do personagem entrando na fase
             //Entra no mapa 1
             if (fase == 1)
             {
-                if (ControleAnimacao > 700 && ControleAnimacao < 752)
+                if(ControleAnimacao == 701)
+                {
+                    PbxPersonagem.Location = new Point(-104, 136);
+                    PbxColision.Location = new Point(59, 169);
+                    TmrMainGameManager.Stop();
+                }
+                if (ControleAnimacao > 701 && ControleAnimacao < 752)
                 {
                     PbxPersonagem.Location = new Point(posXPlayer + 3, posYPlayer);
                     if (ControleAnimacao % 5 == 0)
@@ -2789,6 +2794,7 @@ namespace Jogo_Matamática_3_ano
                 {
                     PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson + objPerson +"\\frente\\frente_1.png");
                     TmrAnimation.Stop();
+                    ControleAnimacao = 0;
                     TmrMainGameManager.Start();
                 }
             }
@@ -2809,6 +2815,7 @@ namespace Jogo_Matamática_3_ano
                 {
                     PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\frente\\frente_1.png");
                     TmrAnimation.Stop();
+                    ControleAnimacao = 0;
                     TmrMainGameManager.Start();
                 }
             }
@@ -2829,6 +2836,7 @@ namespace Jogo_Matamática_3_ano
                 {
                     PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\frente\\frente_1.png");
                     TmrAnimation.Stop();
+                    ControleAnimacao = 0;
                     TmrMainGameManager.Start();
                 }
             }
@@ -2842,6 +2850,7 @@ namespace Jogo_Matamática_3_ano
             if (ControleAnimacao == 836)
             {
                 TmrAnimation.Stop();
+                ControleAnimacao = 0;
             }
 
             //controleAnimações = 900
@@ -2857,6 +2866,7 @@ namespace Jogo_Matamática_3_ano
             if (ControleAnimacao == 970)
             {
                 TmrAnimation.Stop();
+                ControleAnimacao = 0;
             }
 
             //controleAnimações = 1000
@@ -2874,6 +2884,7 @@ namespace Jogo_Matamática_3_ano
             {
                 PnlPerguntas.Visible = false;
                 TmrAnimation.Stop();
+                ControleAnimacao = 0;
                 resetarObjetosPergunta();
             }
 
@@ -3206,7 +3217,7 @@ namespace Jogo_Matamática_3_ano
                     {
                         num3 = Convert.ToDouble(TxtResposta3.Text);
                     }
-                    if (num1 == 72 && num2 == 95 && num3 == 93)
+                    if (num1 == 72 && num2 == 95 && num3 == 63)
                     {
                         AddTempo(10);
                         AddScorePonto(20);
@@ -3220,7 +3231,7 @@ namespace Jogo_Matamática_3_ano
                     {
                         LblResposta2.ForeColor = Color.Yellow;
                     }
-                    if (num3 >= 93 - 10 && num3 <= 93 + 10 && num3 != 93)
+                    if (num3 >= 63 - 10 && num3 <= 63 + 10 && num3 != 63)
                     {
                         LblResposta3.ForeColor = Color.Yellow;
                     }
@@ -3232,7 +3243,7 @@ namespace Jogo_Matamática_3_ano
                     {
                         LblResposta2.ForeColor = Color.GreenYellow;
                     }
-                    if (num3 == 93)
+                    if (num3 == 63)
                     {
                         LblResposta3.ForeColor = Color.GreenYellow;
                     }
@@ -3244,7 +3255,7 @@ namespace Jogo_Matamática_3_ano
                     {
                         LblResposta2.ForeColor = Color.White;
                     }
-                    if (num3 < 93 - 10 && num3 > 93 + 10)
+                    if (num3 < 63 - 10 && num3 > 63 + 10)
                     {
                         LblResposta3.ForeColor = Color.White;
                     }

@@ -1391,7 +1391,7 @@
             this.PNL_Pause.Controls.Add(this.PNL_InfoPause);
             this.PNL_Pause.Controls.Add(this.PNL_Info);
             this.PNL_Pause.Controls.Add(this.panel7);
-            this.PNL_Pause.Location = new System.Drawing.Point(1057, 793);
+            this.PNL_Pause.Location = new System.Drawing.Point(1061, 857);
             this.PNL_Pause.Name = "PNL_Pause";
             this.PNL_Pause.Size = new System.Drawing.Size(1314, 906);
             this.PNL_Pause.TabIndex = 7;
@@ -2389,7 +2389,7 @@
             this.PNL_Help.Controls.Add(this.PBX_btnVoltaHelp);
             this.PNL_Help.Controls.Add(this.LBL_txtHelp);
             this.PNL_Help.Controls.Add(this.PBX_Help);
-            this.PNL_Help.Location = new System.Drawing.Point(1264, 170);
+            this.PNL_Help.Location = new System.Drawing.Point(1255, 116);
             this.PNL_Help.Name = "PNL_Help";
             this.PNL_Help.Size = new System.Drawing.Size(761, 548);
             this.PNL_Help.TabIndex = 28;
