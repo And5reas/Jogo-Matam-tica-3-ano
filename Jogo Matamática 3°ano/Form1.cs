@@ -196,7 +196,7 @@ namespace Jogo_Matamática_3_ano
             }
 
             //Pular o tempo da pergunta
-            if (e.KeyChar.ToString().ToLower() == "o")
+            if (e.KeyChar.ToString().ToLower() == "o" && DebugSwithB == true && PnlPerguntas.Visible == true)
             {
                 rodarSaidaPerguntas();
             }
@@ -2105,7 +2105,8 @@ namespace Jogo_Matamática_3_ano
 
             //Aleatorizar as perguntas
             Random randNum = new Random();
-            randomPergunta = randNum.Next(1, 3);
+            randomPergunta = randNum.Next(1, 4);
+            lblOutputRequest.Text = randomPergunta.ToString();
 
             //Perguntas fase 1 e verificar se está correta
             if (fase == 1)
