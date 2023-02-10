@@ -43,8 +43,8 @@ namespace Jogo_Matamática_3_ano
             //Variáveis que controla as animações
             ControleAnimacao = 0, ControleAnimacaoAux, animcaoWin = 1,
 
-            //Contador de Vitaminas e Cristais
-            contVitaminas = 0, contCristais = 0, contVitaTotal = 0, contCrisTotal = 0,
+            //Variáveis de Vitaminas, Cristais e aleatorizar as perguntas
+            contVitaminas = 0, contCristais = 0, contVitaTotal = 0, contCrisTotal = 0, randomPergunta = 0,
 
             //Controla o TmrPergunta
             tempPergunta = 0,
@@ -185,9 +185,20 @@ namespace Jogo_Matamática_3_ano
                 }
             }
 
-            if (e.KeyChar.ToString().ToLower() == "p" && DebugSwithB == true)
+            //Mostrar a pergunta sem pegar vitaminas
+            if (e.KeyChar.ToString().ToLower() == "p" && DebugSwithB == true && PnlPerguntas.Visible != true)
             {
+                if (contVitaminas == 8)
+                {
+                    contVitaminas = 1;
+                }
                 Perguntas_entrada();
+            }
+
+            //Pular o tempo da pergunta
+            if (e.KeyChar.ToString().ToLower() == "o")
+            {
+                rodarSaidaPerguntas();
             }
 
             //Pause
@@ -2092,233 +2103,195 @@ namespace Jogo_Matamática_3_ano
             LblContVitaminas.Text = contVitaminas + "/7";
             LBL_VitaTotal.Text = contVitaTotal + "/48";
 
+            //Aleatorizar as perguntas
+            Random randNum = new Random();
+            randomPergunta = randNum.Next(1, 3);
+
             //Perguntas fase 1 e verificar se está correta
             if (fase == 1)
             {
                 if (contVitaminas == 1)
                 {
-                    setarBtnPergunta4();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "a.png");
                 }
                 else if (contVitaminas == 2)
                 {
-                    setarTxtPergunta();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "b.png");
                 }
                 else if (contVitaminas == 3)
                 {
-                    setarTxtPergunta();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "c.png");
                 }
                 else if (contVitaminas == 4)
                 {
-                    setarBtnPergunta5();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "d.png");
                 }
                 else if (contVitaminas == 5)
                 {
-                    setarTxtPergunta();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "e.png");
                 }
                 else if (contVitaminas == 6)
                 {
-                    setarTxtPergunta();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "f.png");
                 }
                 else if (contVitaminas == 7)
                 {
-                    setarTxtPergunta();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "g.png");
                 }
             }
             else if (fase == 2)
             {
                 if (contVitaminas == 1)
                 {
-                    setarTxtPergunta();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "a.png");
                 }
                 else if (contVitaminas == 2)
                 {
-                    setarTxtPergunta();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "b.png");
                 }
                 else if (contVitaminas == 3)
                 {
-                    setarTxtPergunta();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "c.png");
                 }
                 else if (contVitaminas == 4)
                 {
-                    setarTxtPergunta();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "d.png");
                 }
                 else if (contVitaminas == 5)
                 {
-                    setarBtnPergunta4();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "e.png");
                 }
                 else if (contVitaminas == 6)
                 {
-                    setarTxtPergunta();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "f.png");
                 }
                 else if (contVitaminas == 7)
                 {
-                    setarTxtPergunta();
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "g.png");
                 }
             }
             else if (fase == 3)
             {
                 if (contVitaminas == 1)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "a.png");
                 }
                 else if (contVitaminas == 2)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "b.png");
                 }
                 else if (contVitaminas == 3)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "c.png");
                 }
                 else if (contVitaminas == 4)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "d.png");
                 }
                 else if (contVitaminas == 5)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "e.png");
                 }
                 else if (contVitaminas == 6)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "f.png");
                 }
                 else if (contVitaminas == 7)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "g.png");
                 }
             }
             else if (fase == 4)
             {
                 if (contVitaminas == 1)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "a.png");
                 }
                 else if (contVitaminas == 2)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "b.png");
                 }
                 else if (contVitaminas == 3)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "c.png");
                 }
                 else if (contVitaminas == 4)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "d.png");
                 }
                 else if (contVitaminas == 5)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "e.png");
                 }
                 else if (contVitaminas == 6)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "f.png");
                 }
                 else if (contVitaminas == 7)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "g.png");
                 }
             }
             else if (fase == 5)
             {
                 if (contVitaminas == 1)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "a.png");
                 }
                 else if (contVitaminas == 2)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "b.png");
                 }
                 else if (contVitaminas == 3)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "c.png");
                 }
                 else if (contVitaminas == 4)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "d.png");
                 }
                 else if (contVitaminas == 5)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "e.png");
                 }
                 else if (contVitaminas == 6)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "f.png");
                 }
                 else if (contVitaminas == 7)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "g.png");
                 }
             }
             else if (fase == 6)
             {
                 if (contVitaminas == 1)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "a.png");
                 }
                 else if (contVitaminas == 2)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "b.png");
                 }
                 else if (contVitaminas == 3)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "c.png");
                 }
                 else if (contVitaminas == 4)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "d.png");
                 }
                 else if (contVitaminas == 5)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "e.png");
                 }
                 else if (contVitaminas == 6)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "f.png");
                 }
                 else if (contVitaminas == 7)
                 {
-
-                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + contVitaminas + ".png");
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + "g.png");
                 }
             }
             ControleAnimacao = 900;
