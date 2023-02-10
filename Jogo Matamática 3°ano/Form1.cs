@@ -58,9 +58,6 @@ namespace Jogo_Matamática_3_ano
             //Variável para ver se o debug está ativo ou não
             DebugSwithB,
 
-            //Fazer o payer andar mais rápido e pelas paredes
-            Bust, paredesStatus,
-
             //Ativar apenas números
             JustNum;
 
@@ -156,33 +153,35 @@ namespace Jogo_Matamática_3_ano
                 }
             }
 
-            //Fazer o Personagem andar mais
-            if (e.KeyChar.ToString().ToLower() == "b")
+            //Fazer o Personagem andar mais rápido
+            if (e.KeyChar.ToString().ToLower() == "b" && DebugSwithB == true)
             {
+                DebugSwithBust++;
                 if (DebugSwithBust % 2 == 0)
                 {
-                    DebugSwithBust++;
-                    Bust = true;
+                    andarQtdPx = 50;
+                    LblBust.Text = "Busted";
                 }
                 else
                 {
-                    DebugSwithBust++;
-                    Bust = false;
+                    andarQtdPx = 6;
+                    LblBust.Text = "Normal";
                 }
             }
 
             //Fazer o Personagem andar pelas paredes
-            if (e.KeyChar.ToString().ToLower() == "n")
+            if (e.KeyChar.ToString().ToLower() == "n" && DebugSwithB == true)
             {
+                DebugParedeSwith++;
                 if (DebugParedeSwith % 2 == 0)
                 {
-                    DebugParedeSwith++;
-                    paredesStatus = true;
+                    paredesStatusDebug = "Sem paredes";
+                    LblWallStatus.Text = "Paredes desativadas";
                 }
                 else
                 {
-                    DebugParedeSwith++;
-                    paredesStatus = false;
+                    paredesStatusDebug = "Parede";
+                    LblWallStatus.Text = "Ativas";
                 }
             }
 
@@ -474,36 +473,6 @@ namespace Jogo_Matamática_3_ano
                             CristalBuffTime = 6;
                         }
                     }
-                }
-            }
-
-
-            //Ativar desativar o bust do modo debug
-            if (DebugSwithB == true)
-            {
-                if (Bust == true) {
-                    andarQtdPx = 50;
-                    LblBust.Text = "Busted";
-                }
-                else 
-                {
-                    andarQtdPx = 6;
-                    LblBust.Text = "Normal";
-                }
-            }
-
-            //Ativar desativar as paredes no modo debug
-            if (DebugSwithB == true)
-            {
-                if (paredesStatus == true)
-                {
-                    paredesStatusDebug = "Sem paredes";
-                    LblWallStatus.Text = "Paredes desativadas";
-                }
-                else
-                {
-                    paredesStatusDebug = "Parede";
-                    LblWallStatus.Text = "Ativas";
                 }
             }
 
