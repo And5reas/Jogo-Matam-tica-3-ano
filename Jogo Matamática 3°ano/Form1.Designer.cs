@@ -210,6 +210,8 @@
             this.pictureBox58 = new System.Windows.Forms.PictureBox();
             this.pictureBox60 = new System.Windows.Forms.PictureBox();
             this.PBX_Vitoria = new System.Windows.Forms.PictureBox();
+            this.PbxVinheta1 = new System.Windows.Forms.PictureBox();
+            this.PbxVinheta2 = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -348,6 +350,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta2)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -2497,6 +2501,24 @@
             this.PBX_Vitoria.TabStop = false;
             this.PBX_Vitoria.Visible = false;
             // 
+            // PbxVinheta1
+            // 
+            this.PbxVinheta1.BackColor = System.Drawing.Color.Black;
+            this.PbxVinheta1.Location = new System.Drawing.Point(12, 168);
+            this.PbxVinheta1.Name = "PbxVinheta1";
+            this.PbxVinheta1.Size = new System.Drawing.Size(100, 50);
+            this.PbxVinheta1.TabIndex = 32;
+            this.PbxVinheta1.TabStop = false;
+            // 
+            // PbxVinheta2
+            // 
+            this.PbxVinheta2.Image = ((System.Drawing.Image)(resources.GetObject("PbxVinheta2.Image")));
+            this.PbxVinheta2.Location = new System.Drawing.Point(154, 168);
+            this.PbxVinheta2.Name = "PbxVinheta2";
+            this.PbxVinheta2.Size = new System.Drawing.Size(100, 50);
+            this.PbxVinheta2.TabIndex = 32;
+            this.PbxVinheta2.TabStop = false;
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2507,6 +2529,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.Controls.Add(this.PbxVinheta2);
+            this.Controls.Add(this.PbxVinheta1);
             this.Controls.Add(this.PBX_Vitoria);
             this.Controls.Add(this.pictureBox60);
             this.Controls.Add(this.pictureBox58);
@@ -2605,7 +2629,7 @@
             this.Name = "FrmJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "Parede";
-            this.Text = "";
+            this.Text = "Path Math";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJogo_FormClosing);
             this.Load += new System.EventHandler(this.FrmJogo_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmJogo_KeyDown);
@@ -2756,6 +2780,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2943,6 +2969,8 @@
         private System.Windows.Forms.PictureBox PBX_Vitoria;
         private System.Windows.Forms.Label LblResposta4;
         private System.Windows.Forms.TextBox TxtResposta4;
+        private System.Windows.Forms.PictureBox PbxVinheta1;
+        private System.Windows.Forms.PictureBox PbxVinheta2;
     }
 }
 

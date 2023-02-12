@@ -14,6 +14,8 @@ using System.Security.AccessControl;
 using System.Threading;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Web;
+using System.Security.Cryptography.X509Certificates;
+using System.Runtime.InteropServices;
 
 namespace Jogo_Matamática_3_ano
 {
@@ -303,6 +305,9 @@ namespace Jogo_Matamática_3_ano
 
             //Organizer objetos do pnlPergunta
             resetarObjetosPergunta();
+
+            //Mostrar a "vinheta"
+            Vinheta();
 
             //Definir o que pode digitar nos txt de pergunta
             JustNum = false;
@@ -1757,6 +1762,7 @@ namespace Jogo_Matamática_3_ano
 
             this.Focus();
         }
+
         public void rodarSaidaPerguntas()
         {
             TmrMainGameManager.Start();
@@ -1942,19 +1948,6 @@ namespace Jogo_Matamática_3_ano
             }
         }
 
-        public void ocultarTodasPbx()
-        {
-            foreach (Control j in this.Controls)
-            {
-                if (j is PictureBox)
-                {
-                    if (j.Visible == true)
-                    {
-                        j.Visible = false;
-                    }
-                }
-            }
-        }
         public void AddTempo(int tempo)
         {
             tempSeg = tempSeg + tempo;
@@ -2300,6 +2293,18 @@ namespace Jogo_Matamática_3_ano
             TmrPergunta.Start();
         }
 
+        public void Vinheta()
+        {
+            int TAMANHO_X = 1300;
+            int TAMANHO_Y = 1000;
+            PbxVinheta1.Size = new Size(TAMANHO_X, TAMANHO_Y);
+            PbxVinheta1.Location = new Point(0, 0);
+            PbxVinheta2.Size = new Size(TAMANHO_X, TAMANHO_Y);
+            PbxVinheta2.Location = new Point(TAMANHO_X, 0);
+            PbxVinheta2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\Vinheta\\Logo_UNISANTA.png");
+            ControleAnimacao = 1100;
+            TmrAnimation.Start();
+        }
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         #region Abertura de jogo/Funções Iniciais //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2841,6 +2846,42 @@ namespace Jogo_Matamática_3_ano
                 resetarObjetosPergunta();
             }
 
+            //controleAnimações = 1100
+            //Animação da pergunta desaparecendo
+            if (ControleAnimacao > 1101 && ControleAnimacao < 1202)
+            {
+                PbxVinheta2.Location = new Point(PbxVinheta2.Location.X - 13, 0);
+            }
+            if (ControleAnimacao > 1302 && ControleAnimacao < 1403)
+            {
+                PbxVinheta2.Location = new Point(PbxVinheta2.Location.X - 13, 0);
+            }
+            if (ControleAnimacao == 1404)
+            {
+                PbxVinheta2.Location = new Point(1300, 0);
+                PbxVinheta2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\Vinheta\\Logo_PathMath.png");
+            }
+            if (ControleAnimacao > 1404 && ControleAnimacao < 1505)
+            {
+                PbxVinheta2.Location = new Point(PbxVinheta2.Location.X - 13, 0);
+            }
+            if (ControleAnimacao == 1506)
+            {
+                PbxVinheta1.Visible = false;
+            }
+
+            if (ControleAnimacao > 1606 && ControleAnimacao < 1707)
+            {
+                PbxVinheta2.Location = new Point(PbxVinheta2.Location.X - 13, 0);
+            }
+            if (ControleAnimacao == 1708)
+            {
+                PbxVinheta1.Size = new Size(1, 1);
+                PbxVinheta2.Size = new Size(1, 1);
+                PbxVinheta2.Visible = false;
+                ControleAnimacao = 0;
+                TmrAnimation.Stop();
+            }
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
