@@ -16,12 +16,16 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Web;
 using System.Security.Cryptography.X509Certificates;
 using System.Runtime.InteropServices;
+using System.Media;
 
 namespace Jogo_Matamática_3_ano
 {
     public partial class FrmJogo : Form
     {
         #region Variáveis Globais //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //Colocar som no jogo
+        public SoundPlayer SomTema;
 
         string escolhaPerson, objPerson;
 
@@ -252,6 +256,9 @@ namespace Jogo_Matamática_3_ano
         {
             //Ocultar qualquer pbx do form
             //ocultarTodasPbx();
+
+            SomTema = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\Tema.wav");
+            SomTema.Play();
 
             //GameMenager
             TmrMainGameManager.Stop();
