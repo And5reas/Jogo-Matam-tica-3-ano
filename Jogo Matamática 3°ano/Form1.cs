@@ -263,6 +263,11 @@ namespace Jogo_Matamática_3_ano
             SomTema = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\Tema.wav");
             SomTema.Play();
 
+            //Desabilitar btn menu
+            PBX_Jogar.Enabled = false;
+            PBX_Sair.Enabled = false;
+            PBX_Opcoes.Enabled = false;
+
             //GameMenager
             TmrMainGameManager.Stop();
 
@@ -2104,9 +2109,6 @@ namespace Jogo_Matamática_3_ano
             //Aleatorizar as perguntas
             Random randNum = new Random();
             randomPergunta = randNum.Next(1, 4);
-            lblOutputRequest.Text = randomPergunta.ToString();
-
-            randomPergunta = 3;
 
             //Perguntas fase 1 e verificar se está correta
             if (fase == 1)
@@ -2322,6 +2324,7 @@ namespace Jogo_Matamática_3_ano
             }
             if (infoMenu == 3)
             {
+                ReiniciarJogo();
                 ativouMenu = 0;
                 TmrMainGameManager.Stop();
                 TMR_Tempo.Stop();
@@ -2347,7 +2350,6 @@ namespace Jogo_Matamática_3_ano
             infoMenu = 3;
             PNL_Info.Visible = true;
             PBX_Info.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\textos\\txtInicio.png");
-            ReiniciarJogo();
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2761,6 +2763,9 @@ namespace Jogo_Matamática_3_ano
             }
             if (ControleAnimacao == 1708)
             {
+                PBX_Jogar.Enabled = true;
+                PBX_Sair.Enabled = true;
+                PBX_Opcoes.Enabled = true;
                 PbxVinheta1.Size = new Size(1, 1);
                 PbxVinheta2.Size = new Size(1, 1);
                 PbxVinheta2.Visible = false;
