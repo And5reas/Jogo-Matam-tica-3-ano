@@ -2011,7 +2011,7 @@
             this.PnlPerguntas.Controls.Add(this.TxtResposta3);
             this.PnlPerguntas.Controls.Add(this.TxtResposta);
             this.PnlPerguntas.Controls.Add(this.Lbl_de_Ajuda);
-            this.PnlPerguntas.Location = new System.Drawing.Point(1229, 296);
+            this.PnlPerguntas.Location = new System.Drawing.Point(0, 282);
             this.PnlPerguntas.Name = "PnlPerguntas";
             this.PnlPerguntas.Size = new System.Drawing.Size(1285, 237);
             this.PnlPerguntas.TabIndex = 24;
@@ -2022,7 +2022,7 @@
             this.LblResposta4.Enabled = false;
             this.LblResposta4.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblResposta4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LblResposta4.Location = new System.Drawing.Point(594, 110);
+            this.LblResposta4.Location = new System.Drawing.Point(753, 27);
             this.LblResposta4.Name = "LblResposta4";
             this.LblResposta4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblResposta4.Size = new System.Drawing.Size(76, 46);
@@ -2038,7 +2038,7 @@
             this.LblResposta3.Enabled = false;
             this.LblResposta3.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblResposta3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LblResposta3.Location = new System.Drawing.Point(864, 42);
+            this.LblResposta3.Location = new System.Drawing.Point(604, 21);
             this.LblResposta3.Name = "LblResposta3";
             this.LblResposta3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblResposta3.Size = new System.Drawing.Size(76, 46);
@@ -2054,7 +2054,7 @@
             this.LblResposta2.Enabled = false;
             this.LblResposta2.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblResposta2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LblResposta2.Location = new System.Drawing.Point(946, 82);
+            this.LblResposta2.Location = new System.Drawing.Point(467, 15);
             this.LblResposta2.Name = "LblResposta2";
             this.LblResposta2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblResposta2.Size = new System.Drawing.Size(76, 46);
@@ -2070,7 +2070,7 @@
             this.LblResposta.Enabled = false;
             this.LblResposta.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblResposta.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LblResposta.Location = new System.Drawing.Point(458, 82);
+            this.LblResposta.Location = new System.Drawing.Point(1055, 98);
             this.LblResposta.Name = "LblResposta";
             this.LblResposta.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblResposta.Size = new System.Drawing.Size(76, 46);
@@ -2093,9 +2093,9 @@
             // 
             this.PbxBtnCerto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbxBtnCerto.Enabled = false;
-            this.PbxBtnCerto.Location = new System.Drawing.Point(10, 10);
+            this.PbxBtnCerto.Location = new System.Drawing.Point(364, 86);
             this.PbxBtnCerto.Name = "PbxBtnCerto";
-            this.PbxBtnCerto.Size = new System.Drawing.Size(10, 10);
+            this.PbxBtnCerto.Size = new System.Drawing.Size(109, 56);
             this.PbxBtnCerto.TabIndex = 4;
             this.PbxBtnCerto.TabStop = false;
             this.PbxBtnCerto.Visible = false;
@@ -2105,9 +2105,9 @@
             // 
             this.PbxBtn2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbxBtn2.Enabled = false;
-            this.PbxBtn2.Location = new System.Drawing.Point(10, 10);
+            this.PbxBtn2.Location = new System.Drawing.Point(794, 86);
             this.PbxBtn2.Name = "PbxBtn2";
-            this.PbxBtn2.Size = new System.Drawing.Size(10, 10);
+            this.PbxBtn2.Size = new System.Drawing.Size(109, 56);
             this.PbxBtn2.TabIndex = 4;
             this.PbxBtn2.TabStop = false;
             this.PbxBtn2.Visible = false;
@@ -2117,9 +2117,9 @@
             // 
             this.PbxBtn4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbxBtn4.Enabled = false;
-            this.PbxBtn4.Location = new System.Drawing.Point(10, 10);
+            this.PbxBtn4.Location = new System.Drawing.Point(1061, 39);
             this.PbxBtn4.Name = "PbxBtn4";
-            this.PbxBtn4.Size = new System.Drawing.Size(10, 10);
+            this.PbxBtn4.Size = new System.Drawing.Size(109, 56);
             this.PbxBtn4.TabIndex = 3;
             this.PbxBtn4.TabStop = false;
             this.PbxBtn4.Visible = false;
@@ -2129,9 +2129,9 @@
             // 
             this.PbxBtn3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbxBtn3.Enabled = false;
-            this.PbxBtn3.Location = new System.Drawing.Point(10, 10);
+            this.PbxBtn3.Location = new System.Drawing.Point(510, 86);
             this.PbxBtn3.Name = "PbxBtn3";
-            this.PbxBtn3.Size = new System.Drawing.Size(10, 10);
+            this.PbxBtn3.Size = new System.Drawing.Size(109, 56);
             this.PbxBtn3.TabIndex = 3;
             this.PbxBtn3.TabStop = false;
             this.PbxBtn3.Visible = false;
@@ -2141,9 +2141,9 @@
             // 
             this.PbxBtn1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbxBtn1.Enabled = false;
-            this.PbxBtn1.Location = new System.Drawing.Point(10, 10);
+            this.PbxBtn1.Location = new System.Drawing.Point(651, 87);
             this.PbxBtn1.Name = "PbxBtn1";
-            this.PbxBtn1.Size = new System.Drawing.Size(10, 10);
+            this.PbxBtn1.Size = new System.Drawing.Size(109, 56);
             this.PbxBtn1.TabIndex = 3;
             this.PbxBtn1.TabStop = false;
             this.PbxBtn1.Visible = false;
@@ -2219,7 +2219,7 @@
             this.Lbl_de_Ajuda.Enabled = false;
             this.Lbl_de_Ajuda.Font = new System.Drawing.Font("Snap ITC", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_de_Ajuda.ForeColor = System.Drawing.Color.Peru;
-            this.Lbl_de_Ajuda.Location = new System.Drawing.Point(483, 17);
+            this.Lbl_de_Ajuda.Location = new System.Drawing.Point(529, 27);
             this.Lbl_de_Ajuda.Name = "Lbl_de_Ajuda";
             this.Lbl_de_Ajuda.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Lbl_de_Ajuda.Size = new System.Drawing.Size(192, 44);
