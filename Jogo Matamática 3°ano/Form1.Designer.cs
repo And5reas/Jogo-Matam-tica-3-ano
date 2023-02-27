@@ -2015,6 +2015,7 @@
             this.PnlPerguntas.Name = "PnlPerguntas";
             this.PnlPerguntas.Size = new System.Drawing.Size(1285, 237);
             this.PnlPerguntas.TabIndex = 24;
+            this.PnlPerguntas.Visible = false;
             // 
             // LblResposta4
             // 

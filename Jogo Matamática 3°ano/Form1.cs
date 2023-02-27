@@ -211,7 +211,7 @@ namespace Jogo_Matamática_3_ano
             }
 
             //Pause
-            if (e.KeyChar == 27 && PNL_SemTempo.Visible != true && PNL_Fases.Visible != true && PnlPerguntas.Visible != true)
+            if (e.KeyChar == 27 && (PNL_SemTempo.Visible != true && PNL_Fases.Visible != true && PnlPerguntas.Visible != true))
             {
                 if (ControleAnimacao == 0) {
                     if (ativouMenu == 0 && PNL_Pause.Enabled != false)
@@ -260,8 +260,8 @@ namespace Jogo_Matamática_3_ano
             //Ocultar qualquer pbx do form
             //ocultarTodasPbx();
 
-            SomTema = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\Tema.wav");
-            SomTema.Play();
+            SomTema = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\menu.wav");
+            SomTema.PlayLooping();
 
             //Desabilitar btn menu
             PBX_Jogar.Enabled = false;
@@ -793,6 +793,9 @@ namespace Jogo_Matamática_3_ano
             pictureBox52.Location = new Point(1218, 159); pictureBox52.Size = new Size(37, 509);
             pictureBox53.Location = new Point(1261, 648); pictureBox53.Size = new Size(21, 82);
             #endregion
+
+            //Setar a música da fase
+            setMusic("floresta_1");
         }
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -927,6 +930,9 @@ namespace Jogo_Matamática_3_ano
 
             pictureBox50.Location = new Point(1274, 680); pictureBox50.Size = new Size(10, 45);
             #endregion
+
+            //Setar a música da fase
+            setMusic("caverna");
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1018,6 +1024,8 @@ namespace Jogo_Matamática_3_ano
             pictureBox48.Location = new Point(1006, 480); pictureBox48.Size = new Size(35, 253);
             pictureBox49.Location = new Point(777, 692); pictureBox49.Size = new Size(36, 41);
             #endregion
+            //Setar a música da fase
+            setMusic("floresta_1"); // ainda não tem musiquinha :(
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1039,19 +1047,21 @@ namespace Jogo_Matamática_3_ano
 
             //Setar a posição inicial da colisão e personagem e imagen
             PbxColision.Location = new Point(39, 711);
-            PbxPersonagem.Location = new Point(28, 678);
+            PbxPersonagem.Location = new Point(-125, 684);
             PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_1.png");
 
             //Start da fase
             TmrMainGameManager.Start();
             TMR_Tempo.Start();
             ControleAnimacao = 700;
+            TmrAnimation.Start(); 
 
             //Esconder os paineis
             PNL_Fases.Visible = false;
             PnlMenu.Visible = false;
             PNL_Pause.Enabled = true;
             PBX_AmbVilao.Visible = true;
+
             //Setar o mapa da fase
             this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_5.png");
 
@@ -1148,8 +1158,10 @@ namespace Jogo_Matamática_3_ano
             pictureBox53.Location = new Point(694, 619); pictureBox53.Size = new Size(138, 28);
             pictureBox58.Location = new Point(1243, 382); pictureBox58.Size = new Size(47, 35);
             pictureBox60.Location = new Point(1211, 428); pictureBox60.Size = new Size(47, 258);
-
             #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            
+            //Setar a música da fase
+            setMusic("gelo");
         }
         #endregion
 
@@ -2191,6 +2203,13 @@ namespace Jogo_Matamática_3_ano
             ControleAnimacao = 1100;
             TmrAnimation.Start();
         }
+
+        public void setMusic(string music)
+        {
+            SomTema.Stop();
+            SomTema.SoundLocation = @Directory.GetCurrentDirectory() + "\\Sons\\" + music + ".wav";
+            SomTema.Play();
+        }
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         #region Abertura de jogo/Funções Iniciais //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2679,6 +2698,27 @@ namespace Jogo_Matamática_3_ano
                 if (ControleAnimacao == 752)
                 {
                     PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\frente\\frente_1.png");
+                    TmrAnimation.Stop();
+                    ControleAnimacao = 0;
+                    TmrMainGameManager.Start();
+                }
+            }
+
+            //Entra no mapa 5
+            if (fase == 5)
+            {
+                if (ControleAnimacao > 700 && ControleAnimacao < 752)
+                {
+                    PbxPersonagem.Location = new Point(posXPlayer + 3, posYPlayer);
+                    if (ControleAnimacao % 5 == 0)
+                    {
+                        animcaoWin = (ControleAnimacao % 2) + 1;
+                        PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_" + animcaoWin + ".png");
+                    }
+                }
+                if (ControleAnimacao == 752)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\frente\\frente_1.png");
                     TmrAnimation.Stop();
                     ControleAnimacao = 0;
                     TmrMainGameManager.Start();
