@@ -26,6 +26,7 @@ namespace Jogo_Matamática_3_ano
 
         //Colocar som no jogo
         public SoundPlayer SomTema;
+        Save salvar = new Save();
 
         string escolhaPerson, objPerson;
 
@@ -81,6 +82,7 @@ namespace Jogo_Matamática_3_ano
         public FrmJogo()
         {
             InitializeComponent();
+            SomTema = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\menu.wav");
         }
 
         #region Controles //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -260,7 +262,6 @@ namespace Jogo_Matamática_3_ano
             //Ocultar qualquer pbx do form
             //ocultarTodasPbx();
 
-            SomTema = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\menu.wav");
             SomTema.PlayLooping();
 
             //Desabilitar btn menu
@@ -2200,7 +2201,7 @@ namespace Jogo_Matamática_3_ano
             PbxVinheta2.Size = new Size(TAMANHO_X, TAMANHO_Y);
             PbxVinheta2.Location = new Point(TAMANHO_X, 0);
             PbxVinheta2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\Vinheta\\Logo_UNISANTA.png");
-            ControleAnimacao = 1100;
+            ControleAnimacao = 1700;
             TmrAnimation.Start();
         }
 
@@ -2369,6 +2370,11 @@ namespace Jogo_Matamática_3_ano
             infoMenu = 3;
             PNL_Info.Visible = true;
             PBX_Info.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\textos\\txtInicio.png");
+        }
+
+        private void PBX_Salvar_Click(object sender, EventArgs e)
+        {
+            salvar.save(fase);
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
