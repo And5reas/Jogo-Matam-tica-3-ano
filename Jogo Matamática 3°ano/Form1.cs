@@ -27,7 +27,6 @@ namespace Jogo_Matamática_3_ano
         //Colocar som no jogo
         public SoundPlayer SomTema;
         Save salvar;
-        Animation animation;
         Utilits utilits;
 
         string escolhaPerson, objPerson;
@@ -270,7 +269,6 @@ namespace Jogo_Matamática_3_ano
         {
             //Estanciar as classes
             salvar = new Save(PBX_Fase2, PBX_Fase3);
-            animation = new Animation(PbxPersonagem, TmrAnimation, PNL_Fases, LBL_Tempo);
             #region Estanciar Utilits
             utilits = new Utilits
                 (
@@ -464,6 +462,10 @@ namespace Jogo_Matamática_3_ano
             //Ocultar qualquer pbx do form
             //ocultarTodasPbx();
 
+            //"Remover" os paineis 4 5 e 6
+            utilits.removePnlsFases_4_5_6();
+
+            //Manter a musica em loop
             SomTema.PlayLooping();
 
             //Desabilitar btn menu
@@ -847,16 +849,6 @@ namespace Jogo_Matamática_3_ano
         {
             PBX_Fase6.Size = new Size(228, 170);
             PBX_Fase6.Location = new Point(14, 14);
-        }
-
-        private void PbxColision_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PNL_Fases_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         //ENTRAR E SAIR BTN VOLTAR INICIO SETA

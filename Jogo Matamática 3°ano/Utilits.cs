@@ -1549,6 +1549,20 @@ namespace Jogo_Matamática_3_ano
             SomTema.Play();
         }
 
+        //REMOVER PAINEIS DO MENU FASE E REORGANIZAR DENOVO
+        public void removePnlsFases_4_5_6()
+        {
+            panel4.Visible = false;
+            panel4.Enabled = false;
+            panel5.Visible = false;
+            panel5.Enabled = false;
+            panel6.Visible = false;
+            panel6.Enabled = false;
+
+            panel1.Location = new Point(panel1.Location.X, 280);
+            panel2.Location = new Point(panel2.Location.X, 280);
+            panel3.Location = new Point(panel3.Location.X, 280);
+        }
 
     }
 }

@@ -135,6 +135,7 @@
             this.PBX_OpcoesPause = new System.Windows.Forms.PictureBox();
             this.PBX_Reiniciar = new System.Windows.Forms.PictureBox();
             this.PBX_Continuar = new System.Windows.Forms.PictureBox();
+            this.PBX_Salvar = new System.Windows.Forms.PictureBox();
             this.PBX_SairPause = new System.Windows.Forms.PictureBox();
             this.PBX_Inicio = new System.Windows.Forms.PictureBox();
             this.TMR_Tempo = new System.Windows.Forms.Timer(this.components);
@@ -212,7 +213,6 @@
             this.PBX_Vitoria = new System.Windows.Forms.PictureBox();
             this.PbxVinheta1 = new System.Windows.Forms.PictureBox();
             this.PbxVinheta2 = new System.Windows.Forms.PictureBox();
-            this.PBX_Salvar = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -306,6 +306,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_OpcoesPause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Reiniciar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Continuar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Salvar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_SairPause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Inicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox56)).BeginInit();
@@ -353,7 +354,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Salvar)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -538,11 +538,10 @@
             this.PNL_Fases.Controls.Add(this.LBL_Person);
             this.PNL_Fases.Controls.Add(this.PBX_Escolha1);
             this.PNL_Fases.ForeColor = System.Drawing.Color.Firebrick;
-            this.PNL_Fases.Location = new System.Drawing.Point(1243, 740);
+            this.PNL_Fases.Location = new System.Drawing.Point(1074, 790);
             this.PNL_Fases.Name = "PNL_Fases";
             this.PNL_Fases.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Fases.TabIndex = 3;
-            this.PNL_Fases.Paint += new System.Windows.Forms.PaintEventHandler(this.PNL_Fases_Paint);
             // 
             // PNL_MostrarFases
             // 
@@ -799,7 +798,6 @@
             this.PbxColision.TabIndex = 5;
             this.PbxColision.TabStop = false;
             this.PbxColision.Tag = "Colision";
-            this.PbxColision.Click += new System.EventHandler(this.PbxColision_Click);
             // 
             // pictureBox1
             // 
@@ -1591,6 +1589,19 @@
             this.PBX_Continuar.TabIndex = 1;
             this.PBX_Continuar.TabStop = false;
             this.PBX_Continuar.Click += new System.EventHandler(this.PBX_Continuar_Click);
+            // 
+            // PBX_Salvar
+            // 
+            this.PBX_Salvar.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_Salvar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_Salvar.BackgroundImage")));
+            this.PBX_Salvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PBX_Salvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_Salvar.Location = new System.Drawing.Point(132, 427);
+            this.PBX_Salvar.Name = "PBX_Salvar";
+            this.PBX_Salvar.Size = new System.Drawing.Size(220, 120);
+            this.PBX_Salvar.TabIndex = 3;
+            this.PBX_Salvar.TabStop = false;
+            this.PBX_Salvar.Click += new System.EventHandler(this.PBX_Salvar_Click);
             // 
             // PBX_SairPause
             // 
@@ -2523,19 +2534,6 @@
             this.PbxVinheta2.TabIndex = 32;
             this.PbxVinheta2.TabStop = false;
             // 
-            // PBX_Salvar
-            // 
-            this.PBX_Salvar.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_Salvar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_Salvar.BackgroundImage")));
-            this.PBX_Salvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBX_Salvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_Salvar.Location = new System.Drawing.Point(132, 427);
-            this.PBX_Salvar.Name = "PBX_Salvar";
-            this.PBX_Salvar.Size = new System.Drawing.Size(220, 120);
-            this.PBX_Salvar.TabIndex = 3;
-            this.PBX_Salvar.TabStop = false;
-            this.PBX_Salvar.Click += new System.EventHandler(this.PBX_Salvar_Click);
-            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2747,6 +2745,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_OpcoesPause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Reiniciar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Continuar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Salvar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_SairPause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Inicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox56)).EndInit();
@@ -2799,7 +2798,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Salvar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
