@@ -10,9 +10,13 @@ namespace Jogo_Matamática_3_ano
 {
     public class Save
     {
-        FrmJogo jogo;
-        public Save()
+        PictureBox fase2;
+        PictureBox fase3;
+
+        public Save(PictureBox fase2, PictureBox fase3)
         {
+            this.fase2 = fase2;
+            this.fase3 = fase3;
         }
 
         public void Load()
@@ -20,15 +24,15 @@ namespace Jogo_Matamática_3_ano
             string loadSave = File.ReadAllText(Directory.GetCurrentDirectory() + "\\Save.txt");
             if (loadSave == "2")
             {
-                jogo.PBX_Fase2.Enabled = true;
-                jogo.PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
+                fase2.Enabled = true;
+                fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
             }
             else if (loadSave == "3")
             {
-                jogo.PBX_Fase2.Enabled = true;
-                jogo.PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
-                jogo.PBX_Fase3.Enabled = true;
-                jogo.PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_3.png");
+                fase2.Enabled = true;
+                fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
+                fase3.Enabled = true;
+                fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_3.png");
             }
         }
         public void save(int fase)
