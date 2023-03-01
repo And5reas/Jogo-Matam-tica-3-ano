@@ -10,11 +10,13 @@ namespace Jogo_Matamática_3_ano
 {
     public class Animation
     {
-        FrmJogo jogo;
         Panel PNL_Fases;
         PictureBox personagem;
         Timer animacao;
         Label LBL_Tempo;
+        int animcaoWin = 1;
+        int ControleAnimacao = 0;
+        int ControleAnimacaoAux = 0;
         public Animation(PictureBox personagem, Timer animacao, Panel PNL_Fases, Label LBL_Tempo) 
         {
             this.personagem = personagem;
@@ -23,9 +25,9 @@ namespace Jogo_Matamática_3_ano
             this.LBL_Tempo = LBL_Tempo;
         }
 
-        public void winFasePlayer(string escolhaPerson, string objPerson, int animcaoWin, int ControleAnimacao, int posXPlayer, int posYPlayer)
+        public bool winFasePlayer(string escolhaPerson, string objPerson, int posXPlayer, int posYPlayer)
         {
-            int ControleAnimacaoAux = 0;
+            ControleAnimacao++;
             //Olha pro player 
             if (ControleAnimacao > 0 && ControleAnimacao < 250)
             {
@@ -40,7 +42,6 @@ namespace Jogo_Matamática_3_ano
                     animcaoWin = 1;
                 }
             }
-
             //Dá uns pulo
             if (ControleAnimacao > 250 && ControleAnimacao < 520) //700 para colocar todos os 5 pulos;
             {
@@ -73,7 +74,6 @@ namespace Jogo_Matamática_3_ano
                     }
                 }
             }
-
             //Sai do mapa
             if (ControleAnimacao > 520 && ControleAnimacao < 620)
             {
@@ -88,18 +88,17 @@ namespace Jogo_Matamática_3_ano
                     personagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_" + animcaoWin + ".png");
                 }
             }
-
             //Encerra a animação de saida do mapa
             if (ControleAnimacao == 670)
             {
                 PNL_Fases.Enabled = true;
                 PNL_Fases.Visible = true;
                 LBL_Tempo.Text = "";
-                jogo.ResetAmbiente();
                 animacao.Stop();
                 ControleAnimacao = 0;
+                return true;
             }
+            return false;
         }
-
     }
 }

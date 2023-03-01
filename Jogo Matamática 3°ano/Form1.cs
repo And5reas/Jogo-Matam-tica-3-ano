@@ -28,6 +28,7 @@ namespace Jogo_Matamática_3_ano
         public SoundPlayer SomTema;
         Save salvar;
         Animation animation;
+        Utilits utilits;
 
         string escolhaPerson, objPerson;
 
@@ -52,7 +53,7 @@ namespace Jogo_Matamática_3_ano
             animationPlayer, countAnimation, animationSpeed,
 
             //Variáveis que controla as animações
-            ControleAnimacao = 0, ControleAnimacaoAux, animcaoWin = 1,
+            ControleAnimacao = 0, ControleAnimacaoAux, animcaoWin = 1, // vai ser removido
 
             //Variáveis de Vitaminas, Cristais e aleatorizar as perguntas
             contVitaminas = 0, contCristais = 0, contVitaTotal = 0, contCrisTotal = 0, randomPergunta = 0,
@@ -204,13 +205,20 @@ namespace Jogo_Matamática_3_ano
                 {
                     contVitaminas = 0;
                 }
-                Perguntas_entrada();
+                contVitaminas++;
+                contVitaTotal++;
+                PerguntaLetra = utilits.perguntasEntrada(fase, contVitaminas, contVitaTotal);
+                randomPergunta = utilits.getRandom();
+                ControleAnimacao = 900;
+                TmrAnimation.Start();
+                TmrPergunta.Start();
             }
 
             //Pular o tempo da pergunta
             if (e.KeyChar.ToString().ToLower() == "o" && DebugSwithB == true && PnlPerguntas.Visible == true)
             {
-                rodarSaidaPerguntas();
+                ControleAnimacao = utilits.rodarSaidaPerguntas();
+                TmrAnimation.Start();
             }
 
             //Pause
@@ -263,6 +271,195 @@ namespace Jogo_Matamática_3_ano
             //Estanciar as classes
             salvar = new Save(PBX_Fase2, PBX_Fase3);
             animation = new Animation(PbxPersonagem, TmrAnimation, PNL_Fases, LBL_Tempo);
+            #region Estanciar Utilits
+            utilits = new Utilits
+                (
+                PnlMenu,
+                label1,
+                TmrMainGameManager,
+                labelX,
+                labelY,
+                LblX,
+                LblY,
+                PbxPersonagem,
+                PBX_Sair,
+                PBX_Opcoes,
+                PBX_Jogar,
+                PNL_Fases,
+                panel4,
+                PBX_Fase6,
+                panel3,
+                PBX_Fase3,
+                panel5,
+                PBX_Fase5,
+                panel6,
+                PBX_Fase4,
+                panel2,
+                PBX_Fase2,
+                panel1,
+                PBX_Fase1,
+                PbxColision,
+                pictureBox1,
+                pictureBox2,
+                pictureBox3,
+                pictureBox4,
+                pictureBox5,
+                pictureBox6,
+                pictureBox7,
+                pictureBox8,
+                pictureBox9,
+                pictureBox10,
+                pictureBox11,
+                pictureBox12,
+                pictureBox13,
+                pictureBox14,
+                pictureBox15,
+                pictureBox16,
+                pictureBox17,
+                pictureBox18,
+                pictureBox19,
+                pictureBox20,
+                pictureBox21,
+                pictureBox22,
+                pictureBox23,
+                pictureBox24,
+                pictureBox25,
+                pictureBox26,
+                pictureBox27,
+                pictureBox28,
+                pictureBox29,
+                pictureBox30,
+                pictureBox31,
+                pictureBox32,
+                pictureBox33,
+                pictureBox34,
+                pictureBox35,
+                pictureBox36,
+                pictureBox37,
+                pictureBox38,
+                pictureBox39,
+                pictureBox40,
+                pictureBox41,
+                pictureBox42,
+                pictureBox43,
+                pictureBox44,
+                pictureBox45,
+                pictureBox46,
+                pictureBox47,
+                pictureBox48,
+                pictureBox49,
+                pictureBox50,
+                pictureBox51,
+                pictureBox52,
+                pictureBox53,
+                TmrColisao,
+                PNL_Pause,
+                PBX_SairPause,
+                PBX_Inicio,
+                PBX_Continuar,
+                panel7,
+                PNL_InfoPause,
+                PNL_Info,
+                BTN_NaoInfo,
+                BTN_SimInfo,
+                PBX_Info,
+                PNL_SairInicio,
+                pictureBox55,
+                PBX_NaoInicio,
+                PBX_SimInicio,
+                TMR_Tempo,
+                LBL_Tempo,
+                pictureBox56,
+                PNL_SemTempo,
+                BTN_NaoTempo,
+                BTN_SimTempo,
+                label3,
+                LBL_SemTempo,
+                TMR_SemTempo,
+                PNL_SemTempo2,
+                label5,
+                BTN_NaoTempo2,
+                BTN_SimTempo2,
+                label2,
+                LBL_SemTempo2,
+                PBX_OpcoesPause,
+                PBX_Reiniciar,
+                lblOutputRequest,
+                LblBust,
+                TmrAnimation,
+                PBX_Ambiente1,
+                PBX_Ambiente2,
+                PBX_Ambiente3,
+                PBX_Ambiente4,
+                PBX_Ambiente5,
+                PBX_Ambiente6,
+                PBX_Ambiente7,
+                TMR_PulaPula,
+                PBX_Vitamina1,
+                PBX_Vitamina2,
+                PBX_Vitamina3,
+                PBX_Vitamina4,
+                PBX_Vitamina5,
+                PBX_Vitamina6,
+                PBX_Vitamina7,
+                PbxCerca,
+                PnlPerguntas,
+                TxtResposta,
+                LblResposta,
+                PbxBtnCerto,
+                PbxBtn2,
+                PbxBtn4,
+                PbxBtn3,
+                PbxBtn1,
+                PrbTempPerg,
+                Lbl_de_Ajuda,
+                TmrPergunta,
+                LblResposta2,
+                TxtResposta2,
+                LblResposta3,
+                TxtResposta3,
+                LblWallStatus,
+                PbxCristal1,
+                PbxCristal2,
+                PbxCristal3,
+                PbxContVitaminas,
+                PbxContCristais,
+                LblContVitaminas,
+                LblContCristais,
+                LblScore,
+                PNL_MostrarFases,
+                PBX_Escolha2,
+                LBL_Person,
+                PBX_Escolha1,
+                PBX_VoltarFase,
+                PNL_InfoFase,
+                pictureBox54,
+                PNL_Help,
+                PBX_Help,
+                PBX_bntVaiHelp,
+                PBX_btnVoltaHelp,
+                LBL_txtHelp,
+                LBL_HelpSair,
+                LBL_txtHelp2,
+                pictureBox57,
+                PBX_VitaAtual,
+                LBL_VitaTotal,
+                LBL_CrisTotal,
+                LBL_ScoreTotal,
+                pictureBox59,
+                LBL_Nome2,
+                LBL_Nome1,
+                pictureBox58,
+                pictureBox60,
+                PBX_AmbVilao,
+                PBX_Vitoria,
+                LblResposta4,
+                TxtResposta4,
+                PbxVinheta1,
+                PbxVinheta2,
+                PBX_Salvar
+                );
+            #endregion
 
             //Ocultar qualquer pbx do form
             //ocultarTodasPbx();
@@ -322,10 +519,11 @@ namespace Jogo_Matamática_3_ano
             LblWallStatus.Visible = false;
 
             //Organizer objetos do pnlPergunta
-            resetarObjetosPergunta();
+            utilits.resetarObjetosPergunta(contVitaminas);
 
             //Mostrar a "vinheta"
-            Vinheta();
+            ControleAnimacao = utilits.vinheta();
+            TmrAnimation.Start();
 
             //Definir o que pode digitar nos txt de pergunta
             JustNum = false;
@@ -475,7 +673,13 @@ namespace Jogo_Matamática_3_ano
                         if (PbxColision.Bounds.IntersectsWith(f.Bounds))
                         {
                             f.Visible = false;
-                            Perguntas_entrada();
+                            contVitaminas++;
+                            contVitaTotal++;
+                            PerguntaLetra = utilits.perguntasEntrada(fase, contVitaminas, contVitaTotal);
+                            randomPergunta = utilits.getRandom();
+                            ControleAnimacao = 900;
+                            TmrAnimation.Start();
+                            TmrPergunta.Start();
                         }
                     }
                 }
@@ -704,37 +908,21 @@ namespace Jogo_Matamática_3_ano
             ControleAnimacao = 700;
 
             //ORGANIZAR O PLACAR DA FASE
-            setPlacar();
+            utilits.setPlacar(fase);
+            Score = 0;
 
             //SETAR TRANSPARENCIA ITENS
-            ItensTrans();
+            utilits.itensTrans();
 
             //SETAR IMAGEM DOS ITENS
-            setarImagensVitaminas(diretorioVit);
-            setImagendsCrital(diretorioCristal);
-
-            //SETAR POSICAO DOS ITENS
-            setPosVitaminas();
-            setPosCrist();
-
-            //SETAR TAMANHO ITENS
-            setVitSize(22, 26);
-            setCrisSize(22, 26);
+            utilits.setarVitaminas(fase, 22, 26, diretorioVit);
+            utilits.setCrist(fase, 22, 26, diretorioCristal);
 
             //DEIXAR ITENS VISIVEIS, AMBIENTE E PERSONAGEM
             mostrarTodasPbx();
 
-            //SETAR TRANSPARENCIA
-            AmbienteTrans();
-
-            //Setar a posiçao das imagens do ambiente
-            setPosAmbiente();
-
-            //SETAR TAMANHO DAS IMAGENS DO AMBIENTE
-            setAmbSize(66, 55);
-
-            //SETAR IMAGEM DO AMBIENTE
-            setAmbImagem(diretorioAmbiente);
+            //SETAR AMBIENTE
+            utilits.setAmbiente(fase, 66, 55, diretorioAmbiente);
 
             #region Load Wall fase 1
 
@@ -800,7 +988,7 @@ namespace Jogo_Matamática_3_ano
             #endregion
 
             //Setar a música da fase
-            setMusic("floresta_1");
+            utilits.setMusic("floresta_1", SomTema);
         }
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -844,37 +1032,21 @@ namespace Jogo_Matamática_3_ano
             TmrAnimation.Start();
 
             //ORGANIZAR O PLACAR DA FASE
-            setPlacar();
+            utilits.setPlacar(fase);
+            Score = 0;
 
             //SETAR TRANSPARENCIA ITENS
-            ItensTrans();
+            utilits.itensTrans();
 
             //SETAR IMAGEM DOS ITENS
-            setarImagensVitaminas(diretorioVit);
-            setImagendsCrital(diretorioCristal);
-
-            //SETAR POSICAO DOS ITENS -arumar
-            setPosVitaminas();
-            setPosCrist();
-
-            //SETAR TAMANHO ITENS
-            setVitSize(22, 26);
-            setCrisSize(22, 26);
+            utilits.setarVitaminas(fase, 22, 26, diretorioVit);
+            utilits.setCrist(fase, 22, 26, diretorioCristal);
 
             //DEIXAR ITENS VISIVEIS, AMBIENTE E PERSONAGEM
             mostrarTodasPbx();
 
             //SETAR TRANSPARENCIA
-            AmbienteTrans();
-
-            //Setar a posiçao das imagens do ambiente - arumar
-            setPosAmbiente();
-
-            //SETAR TAMANHO DAS IMAGENS DO AMBIENTE
-            setAmbSize(45, 49);
-
-            //SETAR IMAGEM DO AMBIENTE
-            setAmbImagem(diretorioAmbiente);
+            utilits.setAmbiente(fase, 45, 49, diretorioAmbiente);
 
             #region Load Wall fase 2
 
@@ -937,7 +1109,7 @@ namespace Jogo_Matamática_3_ano
             #endregion
 
             //Setar a música da fase
-            setMusic("caverna");
+            utilits.setMusic("caverna", SomTema);
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1030,7 +1202,8 @@ namespace Jogo_Matamática_3_ano
             pictureBox49.Location = new Point(777, 692); pictureBox49.Size = new Size(36, 41);
             #endregion
             //Setar a música da fase
-            setMusic("floresta_1"); // ainda não tem musiquinha :(
+
+            utilits.setMusic("caverna", SomTema); // ainda não tem musiquinha :(
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1071,35 +1244,17 @@ namespace Jogo_Matamática_3_ano
             this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_5.png");
 
             //SETAR TRANSPARENCIA ITENS
-            ItensTrans();
+            utilits.itensTrans();
 
             //SETAR IMAGEM DOS ITENS
-            setarImagensVitaminas(diretorioVit);
-            setImagendsCrital(diretorioCristal);
-
-            /*//SETAR POSICAO DOS ITENS -arumar
-            setPosVitaminas();
-            setPosCrist();
-
-            //SETAR TAMANHO ITENS
-            setVitSize(28, 33);
-            setCrisSize(22, 26);
-            */
+            utilits.setarVitaminas(fase, 28, 33, diretorioVit);
+            utilits.setCrist(fase, 22, 26, diretorioCristal);
 
             //DEIXAR ITENS VISIVEIS, AMBIENTE E PERSONAGEM
             mostrarTodasPbx();
 
-            //SETAR TRANSPARENCIA
-            AmbienteTrans();
-
-            //Setar a posiçao das imagens do ambiente - arumar
-            setPosAmbiente();
-
-            //SETAR TAMANHO DAS IMAGENS DO AMBIENTE
-            setAmbSize(66, 55);
-
-            //SETAR IMAGEM DO AMBIENTE
-            setAmbImagem(diretorioAmbiente);
+            //SETAR AMBIENTE
+            utilits.setAmbiente(fase, 66, 55, diretorioAmbiente);
 
             #region Load Wall fase 5
 
@@ -1164,803 +1319,13 @@ namespace Jogo_Matamática_3_ano
             pictureBox58.Location = new Point(1243, 382); pictureBox58.Size = new Size(47, 35);
             pictureBox60.Location = new Point(1211, 428); pictureBox60.Size = new Size(47, 258);
             #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            
+
             //Setar a música da fase
-            setMusic("gelo");
+            utilits.setMusic("gelo", SomTema);
         }
         #endregion
 
-        #region Funções e Utilidades //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        //RESETAR AMBIENTE
-        public void ResetAmbiente()
-        {
-            PBX_Ambiente1.Visible = false;
-            PBX_Ambiente2.Visible = false;
-            PBX_Ambiente3.Visible = false;
-            PBX_Ambiente4.Visible = false;
-            PBX_Ambiente5.Visible = false;
-            PBX_Ambiente6.Visible = false;
-            PBX_Ambiente7.Visible = false;
-        }
-
-        //Visible ambiente
-        public void verAmbiente()
-        {
-            PBX_Ambiente1.Visible = true;
-            PBX_Ambiente2.Visible = true;
-            PBX_Ambiente3.Visible = true;
-            PBX_Ambiente4.Visible = true;
-            PBX_Ambiente5.Visible = true;
-            PBX_Ambiente6.Visible = true;
-            PBX_Ambiente7.Visible = true;
-        }
-
-        //SETAR TRANSPARENCIA AMBIENTE
-        public void AmbienteTrans()
-        {
-            PBX_Ambiente1.BackColor = Color.Transparent;
-            PBX_Ambiente2.BackColor = Color.Transparent;
-            PBX_Ambiente3.BackColor = Color.Transparent;
-            PBX_Ambiente4.BackColor = Color.Transparent;
-            PBX_Ambiente5.BackColor = Color.Transparent;
-            PBX_Ambiente6.BackColor = Color.Transparent;
-            PBX_Ambiente7.BackColor = Color.Transparent;
-        }
-
-        //SETAR TRANSPARENCIA ITENS
-        public void ItensTrans()
-        {
-            PBX_Vitamina1.BackColor = Color.Transparent;
-            PBX_Vitamina2.BackColor = Color.Transparent;
-            PBX_Vitamina3.BackColor = Color.Transparent;
-            PBX_Vitamina4.BackColor = Color.Transparent;
-            PBX_Vitamina5.BackColor = Color.Transparent;
-            PBX_Vitamina6.BackColor = Color.Transparent;
-            PBX_Vitamina7.BackColor = Color.Transparent;
-            PbxCristal1.BackColor = Color.Transparent;
-            PbxCristal2.BackColor = Color.Transparent;
-            PbxCristal3.BackColor = Color.Transparent;
-            PBX_Vitoria.BackColor = Color.Transparent;
-        }
-
-        public void ItensVisible()
-        {
-            PBX_Vitamina1.Visible = true;
-            PBX_Vitamina2.Visible = true;
-            PBX_Vitamina3.Visible = true;
-            PBX_Vitamina4.Visible = true;
-            PBX_Vitamina5.Visible = true;
-            PBX_Vitamina6.Visible = true;
-            PBX_Vitamina7.Visible = true;
-            PbxCristal1.Visible = true;
-            PbxCristal2.Visible = true;
-            PbxCristal3.Visible = true;
-            PBX_Vitoria.Visible = true;
-        }
-
-        public void IensNotVisible()
-        {
-            PBX_Vitamina1.Visible = false;
-            PBX_Vitamina2.Visible = false;
-            PBX_Vitamina3.Visible = false;
-            PBX_Vitamina4.Visible = false;
-            PBX_Vitamina5.Visible = false;
-            PBX_Vitamina6.Visible = false;
-            PBX_Vitamina7.Visible = false;
-            PbxCristal1.Visible = false;
-            PbxCristal2.Visible = false;
-            PbxCristal3.Visible = false;
-            PBX_Vitoria.Visible = false;
-        }
-
-        #region Organizar o layout das perguntas, de acordo com a pergunta | Resetar as perguntas | Rodas a saída das perguntas
-        public void setarBtnPergunta()
-        {
-            int SizeX = 109,
-                SizeY = 56;
-
-            PbxBtn1.Enabled = true;
-            PbxBtn2.Enabled = true;
-            PbxBtn3.Enabled = true;
-            PbxBtn4.Enabled = true;
-            PbxBtnCerto.Enabled = true;
-
-            PbxBtn1.Visible = true;
-            PbxBtn2.Visible = true;
-            PbxBtn3.Visible = true;
-            PbxBtn4.Visible = true;
-            PbxBtnCerto.Visible = true;
-
-            PbxBtn1.Size = new Size(SizeX, SizeY);
-            PbxBtn2.Size = new Size(SizeX, SizeY);
-            PbxBtn3.Size = new Size(SizeX, SizeY);
-            PbxBtn4.Size = new Size(SizeX, SizeY);
-            PbxBtnCerto.Size = new Size(SizeX, SizeY);
-
-            if (fase == 1)
-            {
-                if (randomPergunta == 1 && PerguntaLetra == 'a')
-                {
-                    PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
-
-                    PbxBtn1.Location = new Point(681, 104);
-                    PbxBtn2.Location = new Point(835, 104);
-                    PbxBtn3.Location = new Point(981, 104);
-                    PbxBtnCerto.Location = new Point(533, 104);
-                }
-                if (randomPergunta == 1 && PerguntaLetra == 'b')
-                {
-                    SizeX = 389;
-                    SizeY = 53;
-
-                    PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
-
-                    PbxBtn1.Size = new Size(SizeX, SizeY);
-                    PbxBtn2.Size = new Size(SizeX, SizeY);
-                    PbxBtn3.Size = new Size(SizeX, SizeY);
-                    PbxBtnCerto.Size = new Size(SizeX, SizeY);
-
-                    PbxBtn1.Location = new Point(208, 61);
-                    PbxBtn2.Location = new Point(208, 117);
-                    PbxBtn3.Location = new Point(615, 117);
-                    PbxBtnCerto.Location = new Point(615, 61);
-                }
-                if (randomPergunta == 1 && PerguntaLetra == 'c')
-                {
-                    PbxBtn1.Location = new Point(833, 28);
-                    PbxBtn2.Location = new Point(1057, 111);
-                    PbxBtn3.Location = new Point(752, 111);
-                    PbxBtn4.Location = new Point(905, 111);
-                    PbxBtnCerto.Location = new Point(978, 28);
-                }
-                if (randomPergunta == 1 && PerguntaLetra == 'd')
-                {
-                    SizeX = 148;
-                    SizeY = 77;
-
-                    PbxBtn2.Enabled = false;
-                    PbxBtn3.Enabled = false;
-                    PbxBtn4.Enabled = false;
-
-                    PbxBtn2.Visible = false;
-                    PbxBtn3.Visible = false;
-                    PbxBtn4.Visible = false;
-
-                    PbxBtn1.Size = new Size(SizeX, SizeY);
-                    PbxBtnCerto.Size = new Size(SizeX, SizeY);
-
-                    PbxBtn1.Location = new Point(823, 56);
-                    PbxBtnCerto.Location = new Point(1023, 56);
-                }
-                if (randomPergunta == 1 && PerguntaLetra == 'e')
-                {
-                    PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
-
-                    PbxBtn1.Location = new Point(766, 98);
-                    PbxBtn2.Location = new Point(620, 98);
-                    PbxBtn3.Location = new Point(335, 98);
-                    PbxBtnCerto.Location = new Point(479, 98);
-                }
-                if (randomPergunta == 1 && PerguntaLetra == 'f')
-                {
-                    PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
-
-                    PbxBtn1.Location = new Point(792, 97);
-                    PbxBtn2.Location = new Point(649, 97);
-                    PbxBtn3.Location = new Point(361, 97);
-                    PbxBtnCerto.Location = new Point(508, 97);
-                }
-                if (randomPergunta == 1 && PerguntaLetra == 'g')
-                {
-                    SizeX = 58;
-                    SizeY = 58;
-
-                    PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
-
-                    PbxBtn1.Size = new Size(SizeX, SizeY);
-                    PbxBtn2.Size = new Size(SizeX, SizeY);
-                    PbxBtn3.Size = new Size(SizeX + 9, SizeY);
-                    PbxBtnCerto.Size = new Size(SizeX + 54, SizeY);
-
-                    PbxBtn1.Location = new Point(1053, 78);
-                    PbxBtn2.Location = new Point(208, 117);
-                    PbxBtn3.Location = new Point(813, 78);
-                    PbxBtnCerto.Location = new Point(689, 78);
-                }
-                if (randomPergunta == 2 && PerguntaLetra == 'a')
-                {
-                    PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
-
-                    PbxBtn1.Location = new Point(90, 105);
-                    PbxBtn2.Location = new Point(385, 105);
-                    PbxBtn3.Location = new Point(240, 105);
-                    PbxBtnCerto.Location = new Point(532, 105);
-                }
-                if (randomPergunta == 2 && PerguntaLetra == 'b')
-                {
-                    setarTxtPergunta();
-                }
-                if (randomPergunta == 2 && PerguntaLetra == 'c')
-                {
-                    setarTxtPergunta();
-                }
-                if (randomPergunta == 2 && PerguntaLetra == 'd')
-                {
-                    PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
-
-                    PbxBtn1.Location = new Point(335, 106);
-                    PbxBtn2.Location = new Point(621, 106);
-                    PbxBtn3.Location = new Point(766, 106);
-                    PbxBtnCerto.Location = new Point(479, 106);
-                }
-                if (randomPergunta == 2 && PerguntaLetra == 'e')
-                {
-                    setarTxtPergunta();
-                }
-                if (randomPergunta == 2 && PerguntaLetra == 'f')
-                {
-                    setarTxtPergunta();
-                }
-                if (randomPergunta == 2 && PerguntaLetra == 'g')
-                {
-                    PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
-
-                    PbxBtn1.Location = new Point(277, 108);
-                    PbxBtn2.Location = new Point(560, 108);
-                    PbxBtn3.Location = new Point(129, 108);
-                    PbxBtnCerto.Location = new Point(416, 108);
-                }
-                if (randomPergunta == 3 && PerguntaLetra == 'a')
-                {
-                    PbxBtn1.Location = new Point(904, 26);
-                    PbxBtn2.Location = new Point(1050, 111);
-                    PbxBtn3.Location = new Point(904, 111);
-                    PbxBtn4.Location = new Point(764, 111);
-                    PbxBtnCerto.Location = new Point(1050, 26);
-                }
-                if (randomPergunta == 3 && PerguntaLetra == 'b')
-                {
-                    PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
-
-                    PbxBtn1.Location = new Point(916, 23);
-                    PbxBtn2.Location = new Point(1062, 108);
-                    PbxBtn3.Location = new Point(1062, 23);
-                    PbxBtnCerto.Location = new Point(916, 108);
-                }
-                if (randomPergunta == 3 && PerguntaLetra == 'c')
-                {
-                    PbxBtn1.Location = new Point(916, 23);
-                    PbxBtn2.Location = new Point(1062, 108);
-                    PbxBtn3.Location = new Point(1062, 23);
-                    PbxBtn4.Location = new Point(776, 109);
-                    PbxBtnCerto.Location = new Point(916, 108);
-                }
-                if (randomPergunta == 3 && PerguntaLetra == 'd')
-                {
-                    setarTxtPergunta();
-                }
-                if (randomPergunta == 3 && PerguntaLetra == 'e')
-                {
-                    PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
-
-                    PbxBtn1.Location = new Point(362, 101);
-                    PbxBtn2.Location = new Point(508, 101);
-                    PbxBtn3.Location = new Point(792, 101);
-                    PbxBtnCerto.Location = new Point(649, 101);
-                }
-                if (randomPergunta == 3 && PerguntaLetra == 'f')
-                {
-                    SizeX = 389;
-                    SizeY = 53;
-
-                    PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
-
-                    PbxBtn1.Size = new Size(SizeX, SizeY);
-                    PbxBtn2.Size = new Size(SizeX, SizeY);
-                    PbxBtn3.Size = new Size(SizeX, SizeY);
-                    PbxBtnCerto.Size = new Size(SizeX, SizeY);
-
-                    PbxBtn1.Location = new Point(208, 61);
-                    PbxBtn2.Location = new Point(208, 117);
-                    PbxBtn3.Location = new Point(615, 61);
-                    PbxBtnCerto.Location = new Point(615, 117);
-                }
-                if (randomPergunta == 3 && PerguntaLetra == 'g')
-                {
-                    PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
-
-                    PbxBtn1.Location = new Point(651, 87);
-                    PbxBtn2.Location = new Point(794, 86);
-                    PbxBtn3.Location = new Point(510, 86);
-                    PbxBtnCerto.Location = new Point(364, 86);
-                }
-            }
-            else if (fase == 2)
-            {
-
-            }
-            else if (fase == 3)
-            {
-
-            }
-        }
-        public void setarTxtPergunta()
-        {
-            if (fase == 1)
-            {
-                if (randomPergunta == 2 && PerguntaLetra == 'b')
-                {
-                    Lbl_de_Ajuda.Location = new Point(529, 27);
-                    LblResposta.Location = new Point(375, 75);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(507, 75);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(640, 75);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-
-                    Lbl_de_Ajuda.Size = new Size(192, 44);
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-
-                    Lbl_de_Ajuda.Visible = true;
-                    LblResposta.Visible = true;
-                    TxtResposta.Visible = true;
-                    LblResposta2.Visible = true;
-                    TxtResposta2.Visible = true;
-                    LblResposta3.Visible = true;
-                    TxtResposta3.Visible = true;
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-
-                    JustNum = true;
-                }
-                if (randomPergunta == 2 && PerguntaLetra == 'c')
-                {
-                    LblResposta.Location = new Point(314, 53);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(700, 51);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(1086, 54);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-
-                    LblResposta.Visible = true;
-                    TxtResposta.Visible = true;
-                    LblResposta2.Visible = true;
-                    TxtResposta2.Visible = true;
-                    LblResposta3.Visible = true;
-                    TxtResposta3.Visible = true;
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-
-                    JustNum = true;
-                }
-                if (randomPergunta == 2 && PerguntaLetra == 'e')
-                {
-                    LblResposta.Location = new Point(519, 33);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-
-                    LblResposta.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-
-                    LblResposta.Visible = true;
-                    TxtResposta.Visible = true;
-
-                    LblResposta.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-
-                    JustNum = true;
-                }
-                if (randomPergunta == 2 && PerguntaLetra == 'f')
-                {
-                    LblResposta.Location = new Point(382, 85);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(531, 85);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(684, 85);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta4.Location = new Point(829, 86);
-                    TxtResposta4.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-                    LblResposta4.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-                    LblResposta4.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-                    LblResposta4.Text = "Clique aqui";
-
-                    LblResposta.Visible = true;
-                    TxtResposta.Visible = true;
-                    LblResposta2.Visible = true;
-                    TxtResposta2.Visible = true;
-                    LblResposta3.Visible = true;
-                    TxtResposta3.Visible = true;
-                    LblResposta4.Visible = true;
-                    TxtResposta4.Visible = true;
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-                    LblResposta4.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 3;
-                    TxtResposta3.MaxLength = 2;
-                    TxtResposta4.MaxLength = 3;
-
-                    JustNum = true;
-                }
-                if (randomPergunta == 3 && PerguntaLetra == 'd')
-                {
-                    LblResposta.Location = new Point(1055, 98);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-
-                    LblResposta.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-
-                    LblResposta.Visible = true;
-                    TxtResposta.Visible = true;
-
-                    LblResposta.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-
-                    JustNum = true;
-                }
-            }
-            else if (fase == 2)
-            {
-
-            }
-            else if (fase == 3)
-            {
-
-            }
-            else if (fase == 4)
-            {
-
-            }
-            else if (fase == 5)
-            {
-
-            }
-            else if (fase == 6)
-            {
-
-            }
-        }
-        //Resetar o layout das perguntas
-        public void resetarObjetosPergunta()
-        {
-            //Abrir o portão da fase
-            if (contVitaminas == 7)
-            {
-                ControleAnimacao = 800;
-                TmrAnimation.Start();
-            }
-
-            PbxBtn1.Location = new Point(10, 10);
-            PbxBtn2.Location = new Point(10, 10);
-            PbxBtn3.Location = new Point(10, 10);
-            PbxBtn4.Location = new Point(10, 10);
-            PbxBtnCerto.Location = new Point(10, 10);
-            TxtResposta.Location = new Point(10, 10);
-            TxtResposta2.Location = new Point(10, 10);
-            TxtResposta3.Location = new Point(10, 10);
-            TxtResposta4.Location = new Point(10, 10);
-            LblResposta.Location = new Point(10, 10);
-            LblResposta2.Location = new Point(10, 10);
-            LblResposta3.Location = new Point(10, 10);
-            LblResposta4.Location = new Point(10, 10);
-
-            PbxBtn1.Size = new Size(10, 10);
-            PbxBtn2.Size = new Size(10, 10);
-            PbxBtn3.Size = new Size(10, 10);
-            PbxBtn4.Size = new Size(10, 10);
-            PbxBtnCerto.Size = new Size(10, 10);
-            TxtResposta.Size = new Size(3, 42);
-            LblResposta.Size = new Size(10, 10);
-            TxtResposta2.Size = new Size(3, 42);
-            LblResposta2.Size = new Size(10, 10);
-            TxtResposta3.Size = new Size(3, 42);
-            LblResposta3.Size = new Size(10, 10);
-            TxtResposta4.Size = new Size(3, 42);
-            LblResposta4.Size = new Size(10, 10);
-
-            PbxBtn1.BackColor = Color.Transparent;
-            PbxBtn2.BackColor = Color.Transparent;
-            PbxBtn3.BackColor = Color.Transparent;
-            PbxBtn4.BackColor = Color.Transparent;
-            PbxBtnCerto.BackColor = Color.Transparent;
-
-            PbxBtn1.Visible = false;
-            PbxBtn2.Visible = false;
-            PbxBtn3.Visible = false;
-            PbxBtn4.Visible = false;
-            PbxBtnCerto.Visible = false;
-            TxtResposta.Visible = false;
-            LblResposta.Visible = false;
-            TxtResposta2.Visible = false;
-            LblResposta2.Visible = false;
-            TxtResposta3.Visible = false;
-            LblResposta3.Visible = false;
-            TxtResposta4.Visible = false;
-            LblResposta4.Visible = false;
-            Lbl_de_Ajuda.Visible = false;
-
-            TxtResposta.Enabled = false;
-            LblResposta.Enabled = false;
-            TxtResposta2.Enabled = false;
-            LblResposta2.Enabled = false;
-            TxtResposta3.Enabled = false;
-            LblResposta3.Enabled = false;
-            TxtResposta4.Enabled = false;
-            LblResposta4.Enabled = false;
-            Lbl_de_Ajuda.Enabled = false;
-
-            TxtResposta.Clear();
-            TxtResposta2.Clear();
-            TxtResposta3.Clear();
-            TxtResposta4.Clear();
-            LblResposta.Text = "Clique aqui e responda";
-            LblResposta2.Text = "Clique aqui e responda";
-            LblResposta3.Text = "Clique aqui e responda";
-            LblResposta4.Text = "Clique aqui e responda";
-            Lbl_de_Ajuda.Text = "Escreva a frase completa";
-
-            LblResposta.Font = new Font("Snap ITC", 24);
-            LblResposta2.Font = new Font("Snap ITC", 24);
-            LblResposta3.Font = new Font("Snap ITC", 24);
-            LblResposta4.Font = new Font("Snap ITC", 24);
-
-            LblResposta.ForeColor = Color.White;
-            LblResposta2.ForeColor = Color.White;
-            LblResposta3.ForeColor = Color.White;
-            LblResposta4.ForeColor = Color.White;
-
-            TxtResposta.MaxLength = 27;
-            TxtResposta2.MaxLength = 27;
-            TxtResposta3.MaxLength = 27;
-            TxtResposta4.MaxLength = 27;
-
-            tempPergunta = 0;
-
-            JustNum = false;
-
-            this.Focus();
-        }
-
-        public void rodarSaidaPerguntas()
-        {
-            TmrMainGameManager.Start();
-            TMR_Tempo.Start();
-            ControleAnimacao = 1000;
-            TmrAnimation.Start();
-        }
-        #endregion
-
-        #region SETAR IMAGEM DAS VITAMINAS
-        public void setarImagensVitaminas(string img)
-        {
-            PBX_Vitamina1.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PBX_Vitamina2.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PBX_Vitamina3.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PBX_Vitamina4.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PBX_Vitamina5.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PBX_Vitamina6.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PBX_Vitamina7.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-        }
-        #endregion
-
-        #region SETAR POSICAO DAS VITAMINAS
-        public void setPosVitaminas()
-        {
-            if (fase == 1)
-            {
-                PBX_Vitamina1.Location = new Point(486, 655);
-                PBX_Vitamina2.Location = new Point(667, 299);
-                PBX_Vitamina3.Location = new Point(228, 431);
-                PBX_Vitamina4.Location = new Point(1112, 298);
-                PBX_Vitamina5.Location = new Point(230, 321);
-                PBX_Vitamina6.Location = new Point(965, 684);
-                PBX_Vitamina7.Location = new Point(892, 409);
-                PBX_Vitoria.Location = new Point(1170, 674);
-            }
-            if (fase == 2)
-            {
-                PBX_Vitamina1.Location = new Point(60, 263);
-                PBX_Vitamina2.Location = new Point(1195, 212);
-                PBX_Vitamina3.Location = new Point(1037, 547);
-                PBX_Vitamina4.Location = new Point(879, 329);
-                PBX_Vitamina5.Location = new Point(516, 683);
-                PBX_Vitamina6.Location = new Point(345, 383);
-                PBX_Vitamina7.Location = new Point(131, 646);
-                PBX_Vitoria.Location = new Point(1192, 675); 
-            }
-
-            if(fase == 5)
-            {
-
-            }
-        }
-        #endregion
-
-        #region SETAR TAMANHO VITAMINAS
-        public void setVitSize(int tamX, int tamY)
-        {
-            PBX_Vitamina1.Size = new Size(tamX, tamY);
-            PBX_Vitamina2.Size = new Size(tamX, tamY);
-            PBX_Vitamina3.Size = new Size(tamX, tamY);
-            PBX_Vitamina4.Size = new Size(tamX, tamY);
-            PBX_Vitamina5.Size = new Size(tamX, tamY);
-            PBX_Vitamina6.Size = new Size(tamX, tamY);
-            PBX_Vitamina7.Size = new Size(tamX, tamY);
-        }
-        #endregion
-
-        #region Setar a posiçao das imagens do ambiente
-        public void setPosAmbiente()
-        {
-            if (fase == 1) {
-                PBX_Ambiente1.Location = new Point(282, 306);
-                PBX_Ambiente2.Location = new Point(502, 272);
-                PBX_Ambiente3.Location = new Point(720, 235);
-                PBX_Ambiente4.Location = new Point(946, 235);
-                PBX_Ambiente5.Location = new Point(367, 487);
-                PBX_Ambiente6.Location = new Point(224, 642);
-                PBX_Ambiente7.Location = new Point(1092, 503);
-            }
-            if (fase == 2) {
-                PBX_Ambiente1.Location = new Point(118, 561);
-                PBX_Ambiente2.Location = new Point(189, 201);
-                PBX_Ambiente3.Location = new Point(189, 239);
-                PBX_Ambiente4.Location = new Point(406, 462);
-                PBX_Ambiente5.Location = new Point(714, 487);
-                PBX_Ambiente6.Location = new Point(1103, 343);
-                PBX_Ambiente7.Location = new Point(788, 594);
-            }
-
-            if (fase == 5)
-            {
-                PBX_Ambiente1.Location = new Point(137, 266);
-                PBX_Ambiente2.Location = new Point(0, 0);
-                PBX_Ambiente3.Location = new Point(643, 266);
-                PBX_Ambiente4.Location = new Point(0,0);
-                PBX_Ambiente5.Location = new Point(1003, 622);
-                PBX_Ambiente6.Location = new Point(349, 678);
-                PBX_Ambiente7.Location = new Point(137, 419);
-            }
-        }
-        #endregion
-
-        #region SETAR TAMANHO DAS IMAGENS DO AMBIENTE
-        public void setAmbSize(int tamX, int tamY)
-        {
-            PBX_Ambiente1.Size = new Size(tamX, tamY);
-            PBX_Ambiente2.Size = new Size(tamX, tamY);
-            PBX_Ambiente3.Size = new Size(tamX, tamY);
-            PBX_Ambiente4.Size = new Size(tamX, tamY);
-            PBX_Ambiente5.Size = new Size(tamX, tamY);
-            PBX_Ambiente6.Size = new Size(tamX, tamY);
-            PBX_Ambiente7.Size = new Size(tamX, tamY);
-        }
-        #endregion
-
-        #region SETAR IMAGEM DO AMBIENTE
-        public void setAmbImagem(string img)
-        {
-            PBX_Ambiente1.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PBX_Ambiente2.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PBX_Ambiente3.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PBX_Ambiente4.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PBX_Ambiente5.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PBX_Ambiente6.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PBX_Ambiente7.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-        }
-        #endregion
-
-        #region SETAR POSIÇÃO DOS CRISTAIS
-        public void setPosCrist()
-        {
-            if (fase == 1)
-            {
-                PbxCristal1.Location = new Point(525, 297);
-                PbxCristal2.Location = new Point(676, 554);
-                PbxCristal3.Location = new Point(1113, 524);
-            }
-            if (fase == 2)
-            {
-                PbxCristal1.Location = new Point(201, 443);
-                PbxCristal2.Location = new Point(418, 431);
-                PbxCristal3.Location = new Point(1113, 315);
-            }
-            if (fase == 5)
-            {
-                PbxCristal1.Location = new Point(476, 188);
-                PbxCristal2.Location = new Point(669, 288);
-                PbxCristal3.Location = new Point(376, 695);
-            }
-        }
-        #endregion
-
-        #region SETAR TAMANHO CRISTAIS
-        public void setCrisSize(int tamX, int tamY)
-        {
-            PbxCristal1.Size = new Size(tamX, tamY);
-            PbxCristal2.Size = new Size(tamX, tamY);
-            PbxCristal3.Size = new Size(tamX, tamY);
-        }
-        #endregion
-
-        #region SETAR IMAGEM DOS CRISTAIS
-        public void setImagendsCrital(string img)
-        {
-            PbxCristal1.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PbxCristal2.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-            PbxCristal3.Image = Image.FromFile(Directory.GetCurrentDirectory() + img);
-        }
-        #endregion
-
+        #region Funçõe mostrar todas pbx //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         public void mostrarTodasPbx()
         {
             foreach (Control j in this.Controls)
@@ -1973,247 +1338,6 @@ namespace Jogo_Matamática_3_ano
                     }
                 }
             }
-        }
-
-        public void AddTempo(int tempo)
-        {
-            tempSeg = tempSeg + tempo;
-            if(tempo > 0)
-            {
-                LBL_Tempo.ForeColor = Color.GreenYellow;
-                LBL_Tempo.Text += " +" + tempo;
-            }
-            else
-            {
-                LBL_Tempo.ForeColor = Color.IndianRed;
-                LBL_Tempo.Text += " " + tempo;
-            }
-        }
-
-        public void AddScorePonto(int pontos)
-        {
-            if (Score > 0)
-            {
-                Score = Score + pontos;
-            }
-            else if(Score <= 0)
-            {
-                Score = 0;
-            }
-           
-            if (pontos > 0)
-            {
-                LBLScore(520, 510, 500);
-                LblScore.ForeColor = Color.GreenYellow;
-                LblScore.Text += " +" + pontos;
-            }
-            else
-            {
-                LBLScore(520, 510, 500);
-                LblScore.ForeColor = Color.IndianRed;
-                if (Score <= 0)
-                {
-                    LblScore.Text = "0";
-                }
-                else
-                {
-                    LblScore.Text += " " + pontos;
-                }
-               
-            }
-
-        }
-
-        //função que define a posição do LBL SCORE
-        public void LBLScore(int posicao1, int posicao2, int posicao3)
-        {
-            if (LblScore.Text.Length == 1)
-            {
-                LblScore.Location = new Point(posicao1, 23);
-            }
-
-            if (LblScore.Text.Length == 2)
-            {
-                LblScore.Location = new Point(posicao2, 23);
-            }
-
-            if (LblScore.Text.Length == 3)
-            {
-                LblScore.Location = new Point(posicao3, 23);
-            }
-        }
-
-        //Função de Alterar IMG do HELP
-        public void HelpImg(int mapa, int help)
-        {
-            if (help == 1 && mapa == 1)
-            {
-                HelpLBL(189, 281);
-                LBL_txtHelp.Text = "Você deve pegar todas as vitaminas";
-                LBL_txtHelp2.Text = "para passar de fase!";
-            }
-            else if (help == 2 && mapa == 1)
-            {
-                HelpLBL(189, 265);
-                LBL_txtHelp.Text = "Responda corretamente as perguntas";
-                LBL_txtHelp2.Text = "e ganhe pontos e tempo!";
-            }
-            else if (help == 3 && mapa == 1)
-            {
-                HelpLBL(189, 220);
-                LBL_txtHelp.Text = "Os cristais te dão bonus incriveis,";
-                LBL_txtHelp2.Text = "pegue-os e ganhe mais pontos!";
-            }
-            else if (help == 4 && mapa == 1)
-            {
-                HelpLBL(135, 200);
-                LBL_txtHelp.Text = "Cuidado com seu tempo, não deixe ele acabar,";
-                LBL_txtHelp2.Text = "você não vai querer perder tudo!";
-            }
-            PBX_Help.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\help\\mapa_"+mapa+ "\\infoHelp_"+help+".png");   
-        }
-
-        //funçaõ auxiliar, alterar posicao do lbl help
-        public void HelpLBL(int posX1, int posX2)
-        {
-            LBL_txtHelp.Location = new Point(posX1, 348);
-            LBL_txtHelp2.Location = new Point(posX2, 378);
-        }
-
-        #region SETAR O PLACAR
-        public void setPlacar()
-        {
-            Score = 0;
-            LblScore.Text = "0";
-
-            //Setar o texto da fase
-            LblContVitaminas.Text = "0/7";
-            LblContCristais.Text = "x";
-
-            //Setar a visibilidade do placar
-            PbxContVitaminas.Visible = true;
-            PbxContCristais.Visible = true;
-            LblContCristais.Visible = true;
-            LblContVitaminas.Visible = true;
-
-            if (fase == 1)
-            {
-                //Setar a imagen certa
-                PbxContVitaminas.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\maca_animada.gif");
-                PbxContCristais.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\cristal_animado.gif");
-            }
-            if (fase == 2)
-            {
-                //Setar a imagen certa
-                PbxContVitaminas.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\bifeCru_animado.gif");
-                PbxContCristais.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\cristal_animado.gif");
-            }
-
-        }
-        #endregion
-
-        public void Perguntas_entrada()
-        {
-            contVitaminas++;
-            contVitaTotal++;
-            TMR_Tempo.Stop();
-            TmrMainGameManager.Stop();
-
-            //Exibir para o player (Placar)
-            LblContVitaminas.Text = contVitaminas + "/7";
-            LBL_VitaTotal.Text = contVitaTotal + "/48";
-
-            //Aleatorizar as perguntas
-            Random randNum = new Random();
-            randomPergunta = randNum.Next(1, 4);
-
-            //Perguntas fase 1 e verificar se está correta
-            if (fase == 1)
-            {
-                SetarImgPergunta();
-            }
-            else if (fase == 2)
-            {
-                SetarImgPergunta();
-            }
-            else if (fase == 3)
-            {
-                SetarImgPergunta();
-            }
-            else if (fase == 4)
-            {
-                SetarImgPergunta();
-            }
-            else if (fase == 5)
-            {
-                SetarImgPergunta();
-            }
-            else if (fase == 6)
-            {
-                SetarImgPergunta();
-            }
-            ControleAnimacao = 900;
-            TmrAnimation.Start();
-            TmrPergunta.Start();
-        }
-
-        public void SetarImgPergunta()
-        {
-            if (contVitaminas == 1)
-            {
-                PerguntaLetra = 'a';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
-            else if (contVitaminas == 2)
-            {
-                PerguntaLetra = 'b';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
-            else if (contVitaminas == 3)
-            {
-                PerguntaLetra = 'c';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
-            else if (contVitaminas == 4)
-            {
-                PerguntaLetra = 'd';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
-            else if (contVitaminas == 5)
-            {
-                PerguntaLetra = 'e';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
-            else if (contVitaminas == 6)
-            {
-                PerguntaLetra = 'f';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
-            else if (contVitaminas == 7)
-            {
-                PerguntaLetra = 'g';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
-        }
-
-        public void Vinheta()
-        {
-            int TAMANHO_X = 1300;
-            int TAMANHO_Y = 1000;
-            PbxVinheta1.Size = new Size(TAMANHO_X, TAMANHO_Y);
-            PbxVinheta1.Location = new Point(0, 0);
-            PbxVinheta2.Size = new Size(TAMANHO_X, TAMANHO_Y);
-            PbxVinheta2.Location = new Point(TAMANHO_X, 0);
-            PbxVinheta2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\Vinheta\\Logo_UNISANTA.png");
-            ControleAnimacao = 1700;
-            TmrAnimation.Start();
-        }
-
-        public void setMusic(string music)
-        {
-            SomTema.Stop();
-            SomTema.SoundLocation = @Directory.GetCurrentDirectory() + "\\Sons\\" + music + ".wav";
-            SomTema.Play();
         }
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2452,11 +1576,11 @@ namespace Jogo_Matamática_3_ano
                 LblScore.ForeColor = Color.WhiteSmoke;
                 LblScore.Text = Score.ToString();
                 LBL_ScoreTotal.Text = Score.ToString();
-                LBLScore(570, 550, 545);
+                utilits.LBLScore(570, 550, 545);
             }
             else
             {
-                LBLScore(530, 520, 490);
+                utilits.LBLScore(530, 520, 490);
                 if (contCristais == 1)
                 {
                     Score = Score + 3;
@@ -2569,10 +1693,80 @@ namespace Jogo_Matamática_3_ano
         private void TmrAnimation_Tick(object sender, EventArgs e)
         {
             //Contador de todas as animações
-            ControleAnimacao++;
+            ControleAnimacao++; // vai ser removido
 
             //Animação personagem ganhando fase
-            animation.winFasePlayer(escolhaPerson, objPerson, animcaoWin, ControleAnimacao, posXPlayer, posYPlayer);
+            //Olha pro player 
+            if (ControleAnimacao > 0 && ControleAnimacao < 250)
+            {
+                ControleAnimacao++;
+                if (ControleAnimacao == 50 || ControleAnimacao == 100 || ControleAnimacao == 150)
+                {
+                    ControleAnimacao++;
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\frente\\frente_" + animcaoWin + ".png");
+                }
+                if (ControleAnimacao == 200)
+                {
+                    animcaoWin = 1;
+                }
+            }
+            //Dá uns pulo
+            if (ControleAnimacao > 250 && ControleAnimacao < 520) //700 para colocar todos os 5 pulos;
+            {
+                ControleAnimacaoAux++;
+                if (ControleAnimacao == 252)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\frente\\frente_pulo_2.png");
+                }
+                if ((ControleAnimacao > 250 && ControleAnimacao < 295) || (ControleAnimacao > 340 && ControleAnimacao < 385) || (ControleAnimacao > 430 && ControleAnimacao < 475)/* Tirar alguns pulos || (ControleAnimacao > 520 && ControleAnimacao < 565) || (ControleAnimacao > 610 && ControleAnimacao < 655)*/)
+                {
+                    if (ControleAnimacao % 2 == 0)
+                    {
+                        PbxPersonagem.Location = new Point(posXPlayer, posYPlayer - 1);
+                    }
+                }
+                else if ((ControleAnimacao > 295 && ControleAnimacao < 340) || (ControleAnimacao > 385 && ControleAnimacao < 430) || (ControleAnimacao > 475 && ControleAnimacao < 520)/* Tirar alguns pulos || (ControleAnimacao > 565 && ControleAnimacao < 610) || (ControleAnimacao > 655 && ControleAnimacao < 700)*/)
+                {
+                    if (ControleAnimacao % 2 == 0)
+                    {
+                        PbxPersonagem.Location = new Point(posXPlayer, posYPlayer + 1);
+                    }
+                }
+                if (ControleAnimacaoAux % 40 == 0)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\frente\\frente_pulo_" + animcaoWin + ".png");
+                    animcaoWin++;
+                    if (animcaoWin > 2)
+                    {
+                        animcaoWin = 1;
+                    }
+                }
+            }
+            //Sai do mapa
+            if (ControleAnimacao > 520 && ControleAnimacao < 620)
+            {
+                if (ControleAnimacao == 520)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_1.png");
+                }
+                PbxPersonagem.Location = new Point(posXPlayer + 3, posYPlayer);
+                if (ControleAnimacao % 5 == 0)
+                {
+                    animcaoWin = (ControleAnimacao % 2) + 1;
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_" + animcaoWin + ".png");
+                }
+            }
+            //Encerra a animação de saida do mapa
+            if (ControleAnimacao == 670)
+            {
+                PNL_Fases.Enabled = true;
+                PNL_Fases.Visible = true;
+                LBL_Tempo.Text = "";
+                utilits.resetAmbiente();
+                TmrAnimation.Stop();
+                ControleAnimacao = 0;
+            }
+
 
             //ControleAnimacao = 700 | Animações do personagem entrando na fase
             //Entra no mapa 1
@@ -2689,7 +1883,8 @@ namespace Jogo_Matamática_3_ano
             }
             if (ControleAnimacao == 970)
             {
-                setarBtnPergunta();
+                //Esse método irá retornar se as strings só podem conter números
+                JustNum = utilits.setarBtnPergunta(fase);
                 TmrAnimation.Stop();
                 ControleAnimacao = 0;
             }
@@ -2705,12 +1900,18 @@ namespace Jogo_Matamática_3_ano
             {
                 PnlPerguntas.Location = new Point(PnlPerguntas.Location.X, PnlPerguntas.Location.Y + 3);
             }
-            if (ControleAnimacao == 1070)
+            if (ControleAnimacao == 1069)
             {
                 PnlPerguntas.Visible = false;
-                TmrAnimation.Stop();
                 ControleAnimacao = 0;
-                resetarObjetosPergunta();
+                JustNum = false;
+                tempPergunta = 0;
+                this.Focus();
+                ControleAnimacao = utilits.resetarObjetosPergunta(contVitaminas);
+            }
+            else if (ControleAnimacao == 1070)
+            {
+                TmrAnimation.Stop();
             }
 
             //controleAnimações = 1100
@@ -2841,16 +2042,18 @@ namespace Jogo_Matamática_3_ano
 
         private void PbxBtnCerto_Click(object sender, EventArgs e)
         {
-            AddTempo(10);
-            AddScorePonto(20);
-            rodarSaidaPerguntas();
+            tempSeg = utilits.addTempo(10, tempSeg);
+            Score = utilits.addScorePonto(20, Score);
+            ControleAnimacao = utilits.rodarSaidaPerguntas();
+            TmrAnimation.Start();
         }
 
         private void PbxBtn1_Click(object sender, EventArgs e)
         {
-            AddTempo(-5);
-            AddScorePonto(-20);
-            rodarSaidaPerguntas();
+            tempSeg = utilits.addTempo(-5, tempSeg);
+            Score = utilits.addScorePonto(-20, Score);
+            ControleAnimacao = utilits.rodarSaidaPerguntas();
+            TmrAnimation.Start();
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2862,9 +2065,10 @@ namespace Jogo_Matamática_3_ano
             tempPergunta++;
             if (tempPergunta == PrbTempPerg.Maximum - 2)
             {
-                AddTempo(-10);
-                AddScorePonto(-20);
-                rodarSaidaPerguntas();
+                tempSeg = utilits.addTempo(-5, tempSeg);
+                Score = utilits.addScorePonto(-20, Score);
+                ControleAnimacao = utilits.rodarSaidaPerguntas();
+                TmrAnimation.Start();
             }
             if (tempPergunta >= 0 && tempPergunta <= 4000)
             {
@@ -2884,10 +2088,11 @@ namespace Jogo_Matamática_3_ano
                     }
                     if (resultado == 27)
                     {
-                        AddTempo(10);
-                        AddScorePonto(20);
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
                         Lbl_de_Ajuda.Text = "Você Acertou!! ＜（＾－＾）＞";
-                        rodarSaidaPerguntas();
+                        ControleAnimacao = utilits.rodarSaidaPerguntas();
+                        TmrAnimation.Start();
                     }
                     else if (resultado > 17 && resultado < 37)
                     {
@@ -2914,9 +2119,10 @@ namespace Jogo_Matamática_3_ano
                     }
                     if (num1 == 7 * 4 && num2 == 6 * 3 && num3 == 7 * 8)
                     {
-                        AddTempo(10);
-                        AddScorePonto(20);
-                        rodarSaidaPerguntas();
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        ControleAnimacao = utilits.rodarSaidaPerguntas();
+                        TmrAnimation.Start();
                     }
                     if (num1 >= (7 * 4) - 10 && num1 <= (7 * 4) + 10 && num1 != 7 * 4)
                     {
@@ -2963,9 +2169,10 @@ namespace Jogo_Matamática_3_ano
                     }
                     if (num1 == 10)
                     {
-                        AddTempo(10);
-                        AddScorePonto(20);
-                        rodarSaidaPerguntas();
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        ControleAnimacao = utilits.rodarSaidaPerguntas();
+                        TmrAnimation.Start();
                     }
                     if (num1 >= 0 && num1 <= 20 && num1 != 10)
                     {
@@ -2996,9 +2203,10 @@ namespace Jogo_Matamática_3_ano
                     }
                     if (num1 == 64 / 2 && num2 == 448 / 4 && num3 == 93 / 3 && num4 == 535 / 5)
                     {
-                        AddTempo(10);
-                        AddScorePonto(20);
-                        rodarSaidaPerguntas();
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        ControleAnimacao = utilits.rodarSaidaPerguntas();
+                        TmrAnimation.Start();
                     }
                     if (num1 >= (64 / 2) - 10 && num1 <= (64 / 2) + 10 && num1 != 64 / 2)
                     {
@@ -3057,9 +2265,10 @@ namespace Jogo_Matamática_3_ano
                     }
                     if (num1 == 33)
                     {
-                        AddTempo(10);
-                        AddScorePonto(20);
-                        rodarSaidaPerguntas();
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        ControleAnimacao = utilits.rodarSaidaPerguntas();
+                        TmrAnimation.Start();
                     }
                     if (num1 >= 23 && num1 <= 43 && num1 != 33)
                     {
@@ -3105,7 +2314,7 @@ namespace Jogo_Matamática_3_ano
             }
             else
             {
-                HelpImg(fase, helpIndex);
+                 utilits.helpImg(fase, helpIndex);
             }
         }
         private void PBX_btnVoltaHelp_Click(object sender, EventArgs e)
@@ -3115,11 +2324,11 @@ namespace Jogo_Matamática_3_ano
             if (helpIndex == 1)
             {
                 PBX_btnVoltaHelp.Visible = false;
-                HelpImg(fase, helpIndex);
+                utilits.helpImg(fase, helpIndex);
             }
             else
             {
-                HelpImg(fase, helpIndex);
+                utilits.helpImg(fase, helpIndex);
             }   
         }
 
