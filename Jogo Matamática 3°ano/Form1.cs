@@ -26,6 +26,8 @@ namespace Jogo_Matamática_3_ano
 
         //Colocar som no jogo
         public SoundPlayer SomTema;
+        Save salvar;
+        Animation animation;
 
         string escolhaPerson, objPerson;
 
@@ -81,6 +83,7 @@ namespace Jogo_Matamática_3_ano
         public FrmJogo()
         {
             InitializeComponent();
+            SomTema = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\menu.wav");
         }
 
         #region Controles //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -257,10 +260,13 @@ namespace Jogo_Matamática_3_ano
 
         private void FrmJogo_Load(object sender, EventArgs e)
         {
+            //Estanciar as classes
+            salvar = new Save(PBX_Fase2, PBX_Fase3);
+            animation = new Animation(PbxPersonagem, TmrAnimation, PNL_Fases, LBL_Tempo);
+
             //Ocultar qualquer pbx do form
             //ocultarTodasPbx();
 
-            SomTema = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\menu.wav");
             SomTema.PlayLooping();
 
             //Desabilitar btn menu
@@ -285,11 +291,11 @@ namespace Jogo_Matamática_3_ano
             //PBX_Fase6.Enabled = false;
 
             //ESCONDER FASES
-            //PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-            //PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-            //PBX_Fase4.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-            //PBX_Fase5.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-            //PBX_Fase6.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase4.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase5.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase6.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
 
             //PAINEL DE FASES
             PNL_Fases.Visible = false;
@@ -315,9 +321,6 @@ namespace Jogo_Matamática_3_ano
             LblBust.Visible = false;
             LblWallStatus.Visible = false;
 
-            //Colocar contador de animações para 0
-            ControleAnimacao = 0;
-
             //Organizer objetos do pnlPergunta
             resetarObjetosPergunta();
 
@@ -326,6 +329,8 @@ namespace Jogo_Matamática_3_ano
 
             //Definir o que pode digitar nos txt de pergunta
             JustNum = false;
+            
+            salvar.Load();
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2200,7 +2205,7 @@ namespace Jogo_Matamática_3_ano
             PbxVinheta2.Size = new Size(TAMANHO_X, TAMANHO_Y);
             PbxVinheta2.Location = new Point(TAMANHO_X, 0);
             PbxVinheta2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\Vinheta\\Logo_UNISANTA.png");
-            ControleAnimacao = 1100;
+            ControleAnimacao = 1700;
             TmrAnimation.Start();
         }
 
@@ -2369,6 +2374,11 @@ namespace Jogo_Matamática_3_ano
             infoMenu = 3;
             PNL_Info.Visible = true;
             PBX_Info.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\textos\\txtInicio.png");
+        }
+
+        private void PBX_Salvar_Click(object sender, EventArgs e)
+        {
+            salvar.save(fase);
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2561,78 +2571,8 @@ namespace Jogo_Matamática_3_ano
             //Contador de todas as animações
             ControleAnimacao++;
 
-            //ControleAnimacao = 0 | Animação personagem ganhando fase
-            //Olha pro player 
-            if (ControleAnimacao > 0 && ControleAnimacao < 250)
-            {
-                ControleAnimacao++;
-                if (ControleAnimacao == 50 || ControleAnimacao == 100 || ControleAnimacao == 150) {
-                    ControleAnimacao++;
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" +  escolhaPerson + objPerson + "\\frente\\frente_" + animcaoWin + ".png");
-                }
-                if (ControleAnimacao == 200)
-                {
-                    animcaoWin = 1;
-                }
-            }
-
-            //Dá uns pulo
-            if (ControleAnimacao > 250 && ControleAnimacao < 520) //700 para colocar todos os 5 pulos;
-            {
-                ControleAnimacaoAux++;
-                if (ControleAnimacao == 252)
-                {
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\"+ escolhaPerson + objPerson + "\\frente\\frente_pulo_2.png");
-                }
-                if ((ControleAnimacao > 250 && ControleAnimacao < 295) || (ControleAnimacao > 340 && ControleAnimacao < 385) || (ControleAnimacao > 430 && ControleAnimacao < 475)/* Tirar alguns pulos || (ControleAnimacao > 520 && ControleAnimacao < 565) || (ControleAnimacao > 610 && ControleAnimacao < 655)*/)
-                {
-                    if (ControleAnimacao % 2 == 0) {
-                        PbxPersonagem.Location = new Point(posXPlayer, posYPlayer - 1);
-                    }
-                }
-                else if ((ControleAnimacao > 295 && ControleAnimacao < 340) || (ControleAnimacao > 385 && ControleAnimacao < 430) || (ControleAnimacao > 475 && ControleAnimacao < 520)/* Tirar alguns pulos || (ControleAnimacao > 565 && ControleAnimacao < 610) || (ControleAnimacao > 655 && ControleAnimacao < 700)*/)
-                {
-                    if (ControleAnimacao % 2 == 0)
-                    {
-                        PbxPersonagem.Location = new Point(posXPlayer, posYPlayer + 1);
-                    }
-                }
-                if (ControleAnimacaoAux % 40 == 0)
-                {
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +  "\\frente\\frente_pulo_" + animcaoWin + ".png");
-                    animcaoWin++;
-                    if (animcaoWin > 2)
-                    {
-                        animcaoWin = 1;
-                    }
-                }
-            }
-
-            //Sai do mapa
-            if (ControleAnimacao > 520 && ControleAnimacao < 620)
-            {
-                if (ControleAnimacao == 520)
-                {
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\direita\\direita_1.png");
-                }
-                PbxPersonagem.Location = new Point(posXPlayer + 3, posYPlayer);
-                if (ControleAnimacao % 5 == 0)
-                {
-                    animcaoWin = (ControleAnimacao % 2) + 1;
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\direita\\direita_" + animcaoWin + ".png");
-                }
-            }
-
-            //Encerra a animação de saida do mapa
-            if (ControleAnimacao == 670)
-            {
-                PNL_Fases.Enabled = true;
-                PNL_Fases.Visible = true;
-                LBL_Tempo.Text = "";
-                ResetAmbiente();
-                TmrAnimation.Stop();
-                ControleAnimacao = 0;
-            }
+            //Animação personagem ganhando fase
+            animation.winFasePlayer(escolhaPerson, objPerson, animcaoWin, ControleAnimacao, posXPlayer, posYPlayer);
 
             //ControleAnimacao = 700 | Animações do personagem entrando na fase
             //Entra no mapa 1
