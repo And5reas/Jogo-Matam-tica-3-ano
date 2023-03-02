@@ -213,6 +213,7 @@
             this.PBX_Vitoria = new System.Windows.Forms.PictureBox();
             this.PbxVinheta1 = new System.Windows.Forms.PictureBox();
             this.PbxVinheta2 = new System.Windows.Forms.PictureBox();
+            this.TmrDebug = new System.Windows.Forms.Timer(this.components);
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -538,7 +539,7 @@
             this.PNL_Fases.Controls.Add(this.LBL_Person);
             this.PNL_Fases.Controls.Add(this.PBX_Escolha1);
             this.PNL_Fases.ForeColor = System.Drawing.Color.Firebrick;
-            this.PNL_Fases.Location = new System.Drawing.Point(1074, 790);
+            this.PNL_Fases.Location = new System.Drawing.Point(12, 5);
             this.PNL_Fases.Name = "PNL_Fases";
             this.PNL_Fases.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Fases.TabIndex = 3;
@@ -569,6 +570,7 @@
             this.PBX_VoltarFase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_VoltarFase.TabIndex = 11;
             this.PBX_VoltarFase.TabStop = false;
+            this.PBX_VoltarFase.Click += new System.EventHandler(this.PBX_VoltarFase_Click);
             // 
             // panel1
             // 
@@ -665,7 +667,6 @@
             this.PBX_Fase5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Fase5.TabIndex = 0;
             this.PBX_Fase5.TabStop = false;
-            this.PBX_Fase5.Click += new System.EventHandler(this.PBX_Fase5_Click);
             this.PBX_Fase5.MouseLeave += new System.EventHandler(this.PBX_Fase5_MouseLeave);
             this.PBX_Fase5.MouseHover += new System.EventHandler(this.PBX_Fase5_MouseHover);
             // 
@@ -2534,6 +2535,12 @@
             this.PbxVinheta2.TabIndex = 32;
             this.PbxVinheta2.TabStop = false;
             // 
+            // TmrDebug
+            // 
+            this.TmrDebug.Enabled = true;
+            this.TmrDebug.Interval = 1;
+            this.TmrDebug.Tick += new System.EventHandler(this.TmrDebug_Tick);
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2644,7 +2651,7 @@
             this.Name = "FrmJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "Parede";
-            this.Text = "Path Math";
+            this.Text = "Maze Cave";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJogo_FormClosing);
             this.Load += new System.EventHandler(this.FrmJogo_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmJogo_KeyDown);
@@ -2988,6 +2995,7 @@
         public System.Windows.Forms.PictureBox PbxVinheta1;
         public System.Windows.Forms.PictureBox PbxVinheta2;
         public System.Windows.Forms.PictureBox PBX_Salvar;
+        public System.Windows.Forms.Timer TmrDebug;
     }
 }
 

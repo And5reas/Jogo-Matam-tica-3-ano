@@ -1367,6 +1367,13 @@ namespace Jogo_Matamática_3_ano
             LBL_Nome2.ForeColor = Color.Coral;
         }
 
+        //BTN voltar do menu fases
+        private void PBX_VoltarFase_Click(object sender, EventArgs e)
+        {
+            PNL_Fases.Visible = false;
+            PnlMenu.Visible = true;
+        }
+
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         #region Fechar Jogo //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1390,12 +1397,6 @@ namespace Jogo_Matamática_3_ano
         private void PbxPersonagem_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            contVitaminas++;
-            lblOutputRequest.Text = contVitaminas.ToString();
         }
 
         private void FrmJogo_FormClosing(object sender, FormClosingEventArgs e)
@@ -1785,7 +1786,6 @@ namespace Jogo_Matamática_3_ano
                     TmrMainGameManager.Start();
                 }
             }
-
             //Entra no mapa 2
             if (fase == 2)
             {
@@ -1890,7 +1890,7 @@ namespace Jogo_Matamática_3_ano
             {
                 PnlPerguntas.Location = new Point(PnlPerguntas.Location.X, PnlPerguntas.Location.Y + 3);
             }
-            if (ControleAnimacao == 1069)
+            if (ControleAnimacao == 1068)
             {
                 PnlPerguntas.Visible = false;
                 ControleAnimacao = 0;
@@ -1899,13 +1899,14 @@ namespace Jogo_Matamática_3_ano
                 this.Focus();
                 ControleAnimacao = utilits.resetarObjetosPergunta(contVitaminas);
             }
-            else if (ControleAnimacao == 1070)
+            else if (ControleAnimacao == 1072)
             {
                 TmrAnimation.Stop();
+                ControleAnimacao = 0;
             }
 
             //controleAnimações = 1100
-            //Animação da pergunta desaparecendo
+            //Animação da vinheta
             if (ControleAnimacao > 1101 && ControleAnimacao < 1202)
             {
                 PbxVinheta2.Location = new Point(PbxVinheta2.Location.X - 13, 0);
@@ -2332,5 +2333,12 @@ namespace Jogo_Matamática_3_ano
         }
 
         #endregion //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        #region TIMER PARA TESTES
+        private void TmrDebug_Tick(object sender, EventArgs e)
+        {
+            lblOutputRequest.Text = ControleAnimacao.ToString();
+        }
+        #endregion
     }
 }
