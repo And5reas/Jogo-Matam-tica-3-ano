@@ -123,7 +123,6 @@ namespace Jogo_Matamática_3_ano
         PictureBox BTN_SimTempo2;
         Label label2;
         Label LBL_SemTempo2;
-        PictureBox PBX_OpcoesPause;
         PictureBox PBX_Reiniciar;
         Label lblOutputRequest;
         Label LblBust;
@@ -309,7 +308,6 @@ namespace Jogo_Matamática_3_ano
             PictureBox BTN_SimTempo2,
             Label label2,
             Label LBL_SemTempo2,
-            PictureBox PBX_OpcoesPause,
             PictureBox PBX_Reiniciar,
             Label lblOutputRequest,
             Label LblBust,
@@ -495,7 +493,6 @@ namespace Jogo_Matamática_3_ano
             this.BTN_SimTempo2 = BTN_SimTempo2;
             this.label2 = label2;
             this.LBL_SemTempo2 = LBL_SemTempo2;
-            this.PBX_OpcoesPause = PBX_OpcoesPause;
             this.PBX_Reiniciar = PBX_Reiniciar;
             this.lblOutputRequest = lblOutputRequest;
             this.LblBust = LblBust;
@@ -1547,7 +1544,17 @@ namespace Jogo_Matamática_3_ano
         {
             SomTema.Stop();
             SomTema.SoundLocation = @Directory.GetCurrentDirectory() + "\\Sons\\" + music + ".wav";
+            SomTema.PlayLooping();
+        }
+        public void setMusic(string music, SoundPlayer SomTema, string noLoop)
+        {
+            SomTema.Stop();
+            SomTema.SoundLocation = @Directory.GetCurrentDirectory() + "\\Sons\\" + music + ".wav";
             SomTema.Play();
+        }
+        public void setMusicStop(SoundPlayer SomTema)
+        {
+            SomTema.Stop();
         }
 
         //REMOVER PAINEIS DO MENU FASE E REORGANIZAR DENOVO

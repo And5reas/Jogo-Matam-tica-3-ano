@@ -380,7 +380,6 @@ namespace Jogo_Matamática_3_ano
                 BTN_SimTempo2,
                 label2,
                 LBL_SemTempo2,
-                PBX_OpcoesPause,
                 PBX_Reiniciar,
                 lblOutputRequest,
                 LblBust,
@@ -616,6 +615,7 @@ namespace Jogo_Matamática_3_ano
                 PBX_Fase2.Enabled = true;
                 PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
                 PBX_Vitoria.Visible = false;
+                utilits.setMusicStop(SomTema);
                 objPerson = "Tocha";
                 ControleAnimacao = 0;
                 TmrAnimation.Start();
@@ -701,18 +701,12 @@ namespace Jogo_Matamática_3_ano
                             contCrisTotal++;
 
                             //Exibir para o player (Placar)
-                            LblContCristais.Text ="x" + contCristais;
+                            LblContCristais.Text = "x" + contCristais;
                             LBL_CrisTotal.Text = contCrisTotal + "/18";
-                            if (contCristais == 2)
-                            {
-                                andarQtdPx = 8;
-                            }
-                            if (contCristais == 3)
-                            {
-                                LblScore.ForeColor = Color.OrangeRed;
-                                LblScore.Text = Score + " +200";
-                            }
+                            if (contCristais != 3)
                             CristalBuffTime = 6;
+                            if (contCristais == 3)
+                                CristalBuffTime = 2;
                         }
                     }
                 }
@@ -721,9 +715,7 @@ namespace Jogo_Matamática_3_ano
             //Para o Score e o tempo quando pegar todos os "itens"
             if (contCristais == 3 && contVitaminas == 7)
             {
-                Score = Score + 200;
-                LblScore.ForeColor = Color.Black;
-                LblScore.Text = "Score: " + Score;
+                LBL_ScoreTotal.Text = Score.ToString();
                 TMR_Tempo.Stop();
                 contVitaminas = 0;
                 contCristais = 0;
@@ -1447,6 +1439,7 @@ namespace Jogo_Matamática_3_ano
                 PNL_Info.Visible = false;
                 PNL_Pause.Visible = false;
             }
+            //VOLTAR PARA O MENU FASES
             if (infoMenu == 3)
             {
                 ReiniciarJogo();
@@ -1457,6 +1450,8 @@ namespace Jogo_Matamática_3_ano
                 PNL_Info.Visible = false;
                 PNL_Fases.Visible = true;
                 LBL_Tempo.Text = "";
+                esconderTodasPbx();
+                utilits.setMusic("menu", SomTema);
             }
         }
 
@@ -1554,6 +1549,7 @@ namespace Jogo_Matamática_3_ano
                 LblScore.Text = Score.ToString();
                 LBL_ScoreTotal.Text = Score.ToString();
                 utilits.LBLScore(570, 550, 545);
+                andarQtdPx = 6;
             }
             else
             {
@@ -1563,12 +1559,21 @@ namespace Jogo_Matamática_3_ano
                     Score = Score + 3;
                     LblScore.ForeColor = Color.Yellow;
                     LblScore.Text = Score + "+" + (contCristais + 3);
+                    andarQtdPx = 8;
                 }
                 else if (contCristais == 2)
                 {
                     Score = Score + 7;
                     LblScore.ForeColor = Color.Orange;
                     LblScore.Text = Score + "+" + (contCristais + 6);
+                    andarQtdPx = 8;
+                }
+                else if (contCristais == 3)
+                {
+                    Score = Score + 100;
+                    LblScore.ForeColor = Color.Orange;
+                    LblScore.Text = Score + "+" + (contCristais + 6);
+                    andarQtdPx = 8;
                 }
                 LBL_ScoreTotal.Text = Score.ToString();
                 CristalBuffTime--;
@@ -1676,6 +1681,19 @@ namespace Jogo_Matamática_3_ano
                 }
             }
         }
+        public void esconderTodasPbx()
+        {
+            foreach (Control j in this.Controls)
+            {
+                if (j is PictureBox)
+                {
+                    if (j.Visible == true && (string)j.Tag != "Parede" && (string)j.Tag != "Colision")
+                    {
+                        j.Visible = false;
+                    }
+                }
+            }
+        }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1702,6 +1720,8 @@ namespace Jogo_Matamática_3_ano
                 }
             }
             //Dá uns pulo
+            if (ControleAnimacao == 250)
+                utilits.setMusic("win", SomTema, "Sem loop");
             if (ControleAnimacao > 250 && ControleAnimacao < 520) //700 para colocar todos os 5 pulos;
             {
                 ControleAnimacaoAux++;
@@ -1756,6 +1776,7 @@ namespace Jogo_Matamática_3_ano
                 utilits.resetAmbiente();
                 TmrAnimation.Stop();
                 ControleAnimacao = 0;
+                utilits.setMusic("menu", SomTema);
             }
 
 
@@ -2337,7 +2358,7 @@ namespace Jogo_Matamática_3_ano
         #region TIMER PARA TESTES
         private void TmrDebug_Tick(object sender, EventArgs e)
         {
-            lblOutputRequest.Text = ControleAnimacao.ToString();
+            lblOutputRequest.Text = "";
         }
         #endregion
     }
