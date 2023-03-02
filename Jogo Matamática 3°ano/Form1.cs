@@ -1317,22 +1317,6 @@ namespace Jogo_Matamática_3_ano
         }
         #endregion
 
-        #region Funçõe mostrar todas pbx //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        public void mostrarTodasPbx()
-        {
-            foreach (Control j in this.Controls)
-            {
-                if (j is PictureBox)
-                {
-                    if (j.Visible == false && (string)j.Tag != "Parede" && (string)j.Tag != "Colision")
-                    {
-                        j.Visible = true;
-                    }
-                }
-            }
-        }
-        #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
         #region Abertura de jogo/Funções Iniciais //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         private void PBX_Jogar_Click(object sender, EventArgs e)
@@ -1675,6 +1659,20 @@ namespace Jogo_Matamática_3_ano
                 tempSeg = 15;
                 PbxColision.Location = new Point(36, 717);
                 PbxPersonagem.Location = new Point(25, 684);
+            }
+        }
+
+        public void mostrarTodasPbx()
+        {
+            foreach (Control j in this.Controls)
+            {
+                if (j is PictureBox)
+                {
+                    if (j.Visible == false && (string)j.Tag != "Parede" && (string)j.Tag != "Colision")
+                    {
+                        j.Visible = true;
+                    }
+                }
             }
         }
 

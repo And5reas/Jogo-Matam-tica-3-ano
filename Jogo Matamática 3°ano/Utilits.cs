@@ -1148,27 +1148,67 @@ namespace Jogo_Matamática_3_ano
             //Perguntas fase 1 e verificar se está correta
             if (fase == 1)
             {
-                SetarImgPergunta(contVitaminas, fase);
+                SetarImgPergunta();
             }
             else if (fase == 2)
             {
-                SetarImgPergunta(contVitaminas, fase);
+                SetarImgPergunta();
             }
             else if (fase == 3)
             {
-                SetarImgPergunta(contVitaminas, fase);
+                SetarImgPergunta();
             }
             else if (fase == 4)
             {
-                SetarImgPergunta(contVitaminas, fase);
+                SetarImgPergunta();
             }
             else if (fase == 5)
             {
-                SetarImgPergunta(contVitaminas, fase);
+                SetarImgPergunta();
             }
             else if (fase == 6)
             {
-                SetarImgPergunta(contVitaminas, fase);
+                SetarImgPergunta();
+            }
+
+            //FUNÇÃO AUXILIAR DO perguntasEntrada
+            void SetarImgPergunta()
+            {
+                if (contVitaminas == 1)
+                {
+                    PerguntaLetra = 'a';
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
+                }
+                else if (contVitaminas == 2)
+                {
+                    PerguntaLetra = 'b';
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
+                }
+                else if (contVitaminas == 3)
+                {
+                    PerguntaLetra = 'c';
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
+                }
+                else if (contVitaminas == 4)
+                {
+                    PerguntaLetra = 'd';
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
+                }
+                else if (contVitaminas == 5)
+                {
+                    PerguntaLetra = 'e';
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
+                }
+                else if (contVitaminas == 6)
+                {
+                    PerguntaLetra = 'f';
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
+                }
+                else if (contVitaminas == 7)
+                {
+                    PerguntaLetra = 'g';
+                    PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
+                }
             }
             return PerguntaLetra;
         }
@@ -1177,45 +1217,6 @@ namespace Jogo_Matamática_3_ano
         public int getRandom()
         {
             return randomPergunta;
-        }
-
-        public void SetarImgPergunta(int contVitaminas, int fase)
-        {
-            if (contVitaminas == 1)
-            {
-                PerguntaLetra = 'a';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
-            else if (contVitaminas == 2)
-            {
-                PerguntaLetra = 'b';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
-            else if (contVitaminas == 3)
-            {
-                PerguntaLetra = 'c';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
-            else if (contVitaminas == 4)
-            {
-                PerguntaLetra = 'd';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
-            else if (contVitaminas == 5)
-            {
-                PerguntaLetra = 'e';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
-            else if (contVitaminas == 6)
-            {
-                PerguntaLetra = 'f';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
-            else if (contVitaminas == 7)
-            {
-                PerguntaLetra = 'g';
-                PnlPerguntas.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\pergunta_" + randomPergunta + PerguntaLetra + ".png");
-            }
         }
 
         //FECHAR A PERGUNTA
