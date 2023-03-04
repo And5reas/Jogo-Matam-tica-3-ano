@@ -1514,12 +1514,6 @@ namespace Jogo_Matamática_3_ano
             LblContVitaminas.Text = "0/7";
             LblContCristais.Text = "x";
 
-            //Setar a visibilidade do placar
-            PbxContVitaminas.Visible = true;
-            PbxContCristais.Visible = true;
-            LblContCristais.Visible = true;
-            LblContVitaminas.Visible = true;
-
             if (fase == 1)
             {
                 //Setar a imagen certa
@@ -1880,28 +1874,28 @@ namespace Jogo_Matamática_3_ano
 
         #endregion
 
+        //RESETAR FASE
         public Tuple<int, int, int, int, int, int, int> resetFaseInts(int fase)
         {
             if (fase == 1)
             {
+                //Resetar o placar
+                setPlacar(fase);
+
                 //Resetar animação do personagem entrando no
                 TmrAnimation.Start();
-
-                //Resetar placar
-                LblContVitaminas.Text = "0/7";
-                LblContCristais.Text = "x";
-
-                //Resetar Score
-                LblScore.Text = "0";
 
                 //Reset Musica
                 setMusic("floresta_1");
 
                 //Retornar reset de valores
-                return new Tuple<int, int, int, int, int, int, int>(1, 0, 6, 700, 0, 0, 0);
+                return new Tuple<int, int, int, int, int, int, int>(1, 1, 6, 700, 0, 0, -1);
             }
             if (fase == 2)
             {
+                //Resetar o placar
+                setPlacar(fase);
+
                 //Resetar animação do personagem entrando no
                 TmrAnimation.Start();
 
@@ -1916,10 +1910,13 @@ namespace Jogo_Matamática_3_ano
                 setMusic("caverna");
 
                 //Retornar reset de valores
-                return new Tuple<int, int, int, int, int, int, int>(1, 15, 6, 700, 0, 0, 0);
+                return new Tuple<int, int, int, int, int, int, int>(1, 16, 6, 700, 0, 0, -1);
             }
             if (fase == 3)
             {
+                //Resetar o placar
+                setPlacar(fase);
+
                 //Resetar animação do personagem entrando no
                 TmrAnimation.Start();
 
@@ -1934,34 +1931,9 @@ namespace Jogo_Matamática_3_ano
                 setMusic("floresta_1");
 
                 //Retornar reset de valores
-                return new Tuple<int, int, int, int, int, int, int>(1, 15, 6, 700, 0, 0, 0);
+                return new Tuple<int, int, int, int, int, int, int>(1, 16, 6, 700, 0, 0, -1);
             }
             return new Tuple<int, int, int, int, int, int, int>(0, 0, 0, 0, 0, 0, 0);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

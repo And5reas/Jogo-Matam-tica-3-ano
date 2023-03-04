@@ -989,6 +989,8 @@ namespace Jogo_Matamática_3_ano
 
             //Setar a música da fase
             utilits.setMusic("floresta_1");
+
+            PBX_Help.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\help\\mapa_" + fase + "\\infoHelp_" + helpIndex + ".png");
         }
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
