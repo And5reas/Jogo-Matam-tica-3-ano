@@ -1448,7 +1448,8 @@ namespace Jogo_Matamática_3_ano
             //REINICIAR JOGO
             if (infoMenu == 2)
             {
-                ReiniciarJogo();
+                (tempMin, tempSeg, andarQtdPx, ControleAnimacao, contCristais, contVitaminas, Score) = utilits.resetFaseInts(fase);
+                mostrarTodasPbx();
                 ativouMenu = 0;
                 TmrMainGameManager.Start();
                 TMR_Tempo.Start();
@@ -1458,7 +1459,8 @@ namespace Jogo_Matamática_3_ano
             //VOLTAR PARA O MENU FASES
             if (infoMenu == 3)
             {
-                ReiniciarJogo();
+                (tempMin, tempSeg, andarQtdPx, ControleAnimacao, contCristais, contVitaminas, Score) = utilits.resetFaseInts(fase);
+                mostrarTodasPbx();
                 ativouMenu = 0;
                 TmrMainGameManager.Stop();
                 TMR_Tempo.Stop();
@@ -1602,7 +1604,8 @@ namespace Jogo_Matamática_3_ano
             PNL_Pause.Enabled = true;
             PNL_SemTempo.Visible = false;
             PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculino\\direita\\direita_1.png");
-            ReiniciarJogo();
+            (tempMin, tempSeg, andarQtdPx, ControleAnimacao, contCristais, contVitaminas, Score) = utilits.resetFaseInts(fase);
+            mostrarTodasPbx();
             TmrMainGameManager.Start();
             TMR_Tempo.Start();
         }
@@ -1631,76 +1634,9 @@ namespace Jogo_Matamática_3_ano
 
         #region REINICIAR JOGO //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        public void ReiniciarJogo()
-        {
-            //FASE 1
-            if (fase == 1)
-            {
-                //Resetar todas a variáveis para default
-                (tempMin, tempSeg, andarQtdPx, ControleAnimacao, contCristais, contVitaminas, Score) = utilits.resetFaseInts(fase);
-
-                //Resetar animação do personagem entrando no
-                TmrAnimation.Start();
-
-                //Resetar placar
-                LblContVitaminas.Text = "0/7";
-                LblContCristais.Text = "x";
-
-                //Resetar visibilidade dos itens
-                mostrarTodasPbx();
-
-                //Resetar Score
-                LblScore.Text = "0";
-
-                //Reset Musica
-                utilits.setMusic("floresta_1");
-            }
-            //FASE 2
-            if (fase == 2)
-            {
-                //Resetar todas a variáveis para default
-                (tempMin, tempSeg, andarQtdPx, ControleAnimacao, contCristais, contVitaminas, Score) = utilits.resetFaseInts(fase);
-                //Resetar animação do personagem entrando no
-                TmrAnimation.Start();
-
-                //Resetar placar
-                LblContVitaminas.Text = "0/7";
-                LblContCristais.Text = "x";
-
-                //Resetar visibilidade dos itens
-                mostrarTodasPbx();
-
-                //Resetar Score
-                LblScore.Text = "0";
-
-                //Reset Musica
-                utilits.setMusic("caverna");
-            }
-            //FASE 3
-            if (fase == 3)
-            {
-                (tempMin, tempSeg, andarQtdPx, ControleAnimacao, contCristais, contVitaminas, Score) = utilits.resetFaseInts(fase);
-                //Resetar animação do personagem entrando no
-                TmrAnimation.Start();
-
-                //Resetar placar
-                LblContVitaminas.Text = "0/7";
-                LblContCristais.Text = "x";
-
-                //Resetar visibilidade dos itens
-                mostrarTodasPbx();
-
-                //Resetar Score
-                LblScore.Text = "0";
-
-                //Reset Musica
-                utilits.setMusic("caverna");
-            }
-        }
-
         public void mostrarTodasPbx()
         {
-            foreach (Control j in this.Controls)
+            foreach (Control j in Controls)
             {
                 if (j is PictureBox)
                 {
@@ -1713,7 +1649,7 @@ namespace Jogo_Matamática_3_ano
         }
         public void esconderTodasPbx()
         {
-            foreach (Control j in this.Controls)
+            foreach (Control j in Controls)
             {
                 if (j is PictureBox)
                 {
@@ -2124,9 +2060,7 @@ namespace Jogo_Matamática_3_ano
                 TmrAnimation.Start();
             }
             else
-            {
                  utilits.helpImg(fase, helpIndex);
-            }
         }
         private void PBX_btnVoltaHelp_Click(object sender, EventArgs e)
         {
