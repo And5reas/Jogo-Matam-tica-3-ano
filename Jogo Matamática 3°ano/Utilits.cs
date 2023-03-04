@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -11,8 +12,15 @@ namespace Jogo_Matamática_3_ano
 {
     public class Utilits
     {
+        // Variáveis da funções de perguntas
         int randomPergunta;
         char PerguntaLetra;
+        // Variáveis da função ganharFase()
+        public int ControleAnimacaoAux, animcaoWin = 1, andarQtdPx = 3;
+        public int animationSpeed;
+        public int animationPlayer;
+        public int countAnimation;
+
 
         #region Recebendo todas as classes estanciadas do design
         Panel PnlMenu;
@@ -124,7 +132,6 @@ namespace Jogo_Matamática_3_ano
         Label label2;
         Label LBL_SemTempo2;
         PictureBox PBX_Reiniciar;
-        Label lblOutputRequest;
         Label LblBust;
         Timer TmrAnimation;
         PictureBox PBX_Ambiente1;
@@ -198,6 +205,7 @@ namespace Jogo_Matamática_3_ano
         PictureBox PbxVinheta1;
         PictureBox PbxVinheta2;
         PictureBox PBX_Salvar;
+        SoundPlayer SomTema;
         public Utilits
             (
             Panel PnlMenu,
@@ -309,7 +317,6 @@ namespace Jogo_Matamática_3_ano
             Label label2,
             Label LBL_SemTempo2,
             PictureBox PBX_Reiniciar,
-            Label lblOutputRequest,
             Label LblBust,
             Timer TmrAnimation,
             PictureBox PBX_Ambiente1,
@@ -382,7 +389,8 @@ namespace Jogo_Matamática_3_ano
             TextBox TxtResposta4,
             PictureBox PbxVinheta1,
             PictureBox PbxVinheta2,
-            PictureBox PBX_Salvar
+            PictureBox PBX_Salvar,
+            SoundPlayer SomTema
             )
         {
             this.PnlMenu = PnlMenu;
@@ -494,7 +502,6 @@ namespace Jogo_Matamática_3_ano
             this.label2 = label2;
             this.LBL_SemTempo2 = LBL_SemTempo2;
             this.PBX_Reiniciar = PBX_Reiniciar;
-            this.lblOutputRequest = lblOutputRequest;
             this.LblBust = LblBust;
             this.TmrAnimation = TmrAnimation;
             this.PBX_Ambiente1 = PBX_Ambiente1;
@@ -568,6 +575,7 @@ namespace Jogo_Matamática_3_ano
             this.PbxVinheta1 = PbxVinheta1;
             this.PbxVinheta2 = PbxVinheta2;
             this.PBX_Salvar = PBX_Salvar;
+            this.SomTema = SomTema;
         }
         #endregion
 
@@ -1141,6 +1149,7 @@ namespace Jogo_Matamática_3_ano
             //Aleatorizar as perguntas
             Random randNum = new Random();
             randomPergunta = randNum.Next(1, 4);
+            randomPergunta = 2; // IRÁ SER REMOVIDO
 
             //Perguntas fase 1 e verificar se está correta
             if (fase == 1)
@@ -1536,17 +1545,17 @@ namespace Jogo_Matamática_3_ano
             PbxVinheta2.Size = new Size(TAMANHO_X, TAMANHO_Y);
             PbxVinheta2.Location = new Point(TAMANHO_X, 0);
             PbxVinheta2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\Vinheta\\Logo_UNISANTA.png");
-            return 1700;
+            return 1708;
         }
 
         //SETAR A MUSICA
-        public void setMusic(string music, SoundPlayer SomTema)
+        public void setMusic(string music)
         {
             SomTema.Stop();
             SomTema.SoundLocation = @Directory.GetCurrentDirectory() + "\\Sons\\" + music + ".wav";
             SomTema.PlayLooping();
         }
-        public void setMusic(string music, SoundPlayer SomTema, string noLoop)
+        public void setMusic(string music, string noLoop)
         {
             SomTema.Stop();
             SomTema.SoundLocation = @Directory.GetCurrentDirectory() + "\\Sons\\" + music + ".wav";
@@ -1571,6 +1580,317 @@ namespace Jogo_Matamática_3_ano
             panel2.Location = new Point(panel2.Location.X, 280);
             panel3.Location = new Point(panel3.Location.X, 280);
         }
+
+        #region ANIMAÇÕES
+
+        //ANIMAÇÃO DO PERSONAGEM GANHANDO A FASE
+        public int ganharFase(int ControleAnimacao, string escolhaPerson, string objPerson)
+        {
+            //Olha pro player 
+            if (ControleAnimacao > 0 && ControleAnimacao < 250)
+            {
+                ControleAnimacao++;
+                if (ControleAnimacao == 50 || ControleAnimacao == 100 || ControleAnimacao == 150)
+                {
+                    ControleAnimacao++;
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\frente\\frente_" + animcaoWin + ".png");
+                }
+                if (ControleAnimacao == 200)
+                {
+                    animcaoWin = 1;
+                }
+            }
+            //Andar para baixo
+            if (ControleAnimacao > 220 && ControleAnimacao < 250 && ControleAnimacao%3 == 0)
+            {
+                animationSpeed = countAnimation / 4;
+                animationPlayer = (animationSpeed % 3) + 1;
+                countAnimation += 1;
+                PbxPersonagem.Location = new Point(PbxPersonagem.Location.X, PbxPersonagem.Location.Y + andarQtdPx);
+                PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\frente\\frente_" + animationPlayer + ".png");
+            }
+            //Dá uns pulo
+            if (ControleAnimacao == 250)
+                setMusic("win", "Sem loop");
+            if (ControleAnimacao > 250 && ControleAnimacao < 520) //700 para colocar todos os 5 pulos;
+            {
+                ControleAnimacaoAux++;
+                if (ControleAnimacao == 252)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\frente\\frente_pulo_2.png");
+                }
+                if ((ControleAnimacao > 250 && ControleAnimacao < 295) || (ControleAnimacao > 340 && ControleAnimacao < 385) || (ControleAnimacao > 430 && ControleAnimacao < 475)/* Tirar alguns pulos || (ControleAnimacao > 520 && ControleAnimacao < 565) || (ControleAnimacao > 610 && ControleAnimacao < 655)*/)
+                {
+                    if (ControleAnimacao % 2 == 0)
+                    {
+                        PbxPersonagem.Location = new Point(PbxPersonagem.Location.X, PbxPersonagem.Location.Y - 1);
+                    }
+                }
+                else if ((ControleAnimacao > 295 && ControleAnimacao < 340) || (ControleAnimacao > 385 && ControleAnimacao < 430) || (ControleAnimacao > 475 && ControleAnimacao < 520)/* Tirar alguns pulos || (ControleAnimacao > 565 && ControleAnimacao < 610) || (ControleAnimacao > 655 && ControleAnimacao < 700)*/)
+                {
+                    if (ControleAnimacao % 2 == 0)
+                    {
+                        PbxPersonagem.Location = new Point(PbxPersonagem.Location.X, PbxPersonagem.Location.Y + 1);
+                    }
+                }
+                if (ControleAnimacaoAux % 40 == 0)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\frente\\frente_pulo_" + animcaoWin + ".png");
+                    animcaoWin++;
+                    if (animcaoWin > 2)
+                    {
+                        animcaoWin = 1;
+                    }
+                }
+            }
+            //Sai do mapa
+            if (ControleAnimacao > 520 && ControleAnimacao < 620)
+            {
+                if (ControleAnimacao == 520)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_1.png");
+                }
+                PbxPersonagem.Location = new Point(PbxPersonagem.Location.X + 3, PbxPersonagem.Location.Y);
+                if (ControleAnimacao % 5 == 0)
+                {
+                    animcaoWin = (ControleAnimacao % 2) + 1;
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_" + animcaoWin + ".png");
+                }
+            }
+            //Encerra a animação de saida do mapa
+            if (ControleAnimacao == 670)
+            {
+                PNL_Fases.Enabled = true;
+                PNL_Fases.Visible = true;
+                LBL_Tempo.Text = "";
+                resetAmbiente();
+                TmrAnimation.Stop();
+                setMusic("menu");
+                return 0;
+            }
+            return ControleAnimacao += 1;
+        }
+
+        //ANIMAÇÃO DO PERSONAGEM ENTRANDO NA FASE
+        public int entrandoFase(int ControleAnimacao, string escolhaPerson, string objPerson, int fase)
+        {
+            //Entra no mapa 1
+            if (fase == 1)
+            {
+                if (ControleAnimacao == 701)
+                {
+                    PbxPersonagem.Location = new Point(-104, 136);
+                    PbxColision.Location = new Point(59, 169);
+                    TmrMainGameManager.Stop();
+                }
+                if (ControleAnimacao > 701 && ControleAnimacao < 752)
+                {
+                    PbxPersonagem.Location = new Point(PbxPersonagem.Location.X + 3, PbxPersonagem.Location.Y);
+                    if (ControleAnimacao % 5 == 0)
+                    {
+                        animcaoWin = (ControleAnimacao % 2) + 1;
+                        PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_" + animcaoWin + ".png");
+                    }
+                }
+                if (ControleAnimacao == 752)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\frente\\frente_1.png");
+                    TmrAnimation.Stop();
+                    TmrMainGameManager.Start();
+                    return 0;
+                }
+            }
+            //Entra no mapa 2
+            if (fase == 2)
+            {
+                if (ControleAnimacao > 700 && ControleAnimacao < 752)
+                {
+                    PbxPersonagem.Location = new Point(PbxPersonagem.Location.X + 3, PbxPersonagem.Location.Y);
+                    if (ControleAnimacao % 5 == 0)
+                    {
+                        animcaoWin = (ControleAnimacao % 2) + 1;
+                        PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_" + animcaoWin + ".png");
+                    }
+                }
+                if (ControleAnimacao == 752)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\frente\\frente_1.png");
+                    TmrAnimation.Stop();
+                    TmrMainGameManager.Start();
+                    return 0;
+                }
+            }
+
+            //Entra no mapa 3
+            if (fase == 3)
+            {
+                if (ControleAnimacao > 700 && ControleAnimacao < 752)
+                {
+                    PbxPersonagem.Location = new Point(PbxPersonagem.Location.X + 3, PbxPersonagem.Location.Y);
+                    if (ControleAnimacao % 5 == 0)
+                    {
+                        animcaoWin = (ControleAnimacao % 2) + 1;
+                        PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_" + animcaoWin + ".png");
+                    }
+                }
+                if (ControleAnimacao == 752)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\frente\\frente_1.png");
+                    TmrAnimation.Stop();
+                    TmrMainGameManager.Start();
+                    return 0;
+                }
+            }
+
+            //Entra no mapa 5
+            if (fase == 5)
+            {
+                if (ControleAnimacao > 700 && ControleAnimacao < 752)
+                {
+                    PbxPersonagem.Location = new Point(PbxPersonagem.Location.X + 3, PbxPersonagem.Location.Y);
+                    if (ControleAnimacao % 5 == 0)
+                    {
+                        animcaoWin = (ControleAnimacao % 2) + 1;
+                        PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_" + animcaoWin + ".png");
+                    }
+                }
+                if (ControleAnimacao == 752)
+                {
+                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\frente\\frente_1.png");
+                    TmrAnimation.Stop();
+                    TmrMainGameManager.Start();
+                    return 0;
+                }
+            }
+            return ControleAnimacao += 1;
+        }
+
+        //ANIMAÇÃO DO PORTÃO ABRINDO
+        public int doorOpen(int ControleAnimacao)
+        {
+            //Animação do portão
+            if (ControleAnimacao > 800 && ControleAnimacao < 835)
+            {
+                PbxCerca.Location = new Point(PbxCerca.Location.X + 1, PbxCerca.Location.Y);
+            }
+            if (ControleAnimacao == 836)
+            {
+                TmrAnimation.Stop();
+                return 0;
+            }
+            return ControleAnimacao += 1;
+        }
+
+        //ANIMAÇÃO DA PERGUNTA APARECENDO
+        public int aparecendoPergunta(int ControleAnimacao)
+        {
+            if (ControleAnimacao == 901)
+            {
+                PnlPerguntas.Visible = true;
+            }
+            if (ControleAnimacao > 900 && ControleAnimacao < 968)
+            {
+                PnlPerguntas.Location = new Point(PnlPerguntas.Location.X, PnlPerguntas.Location.Y - 3);
+            }
+            if (ControleAnimacao == 970)
+            {
+                //Esse método irá retornar se as strings só podem conter números
+                TmrAnimation.Stop();
+                return 0;
+            }
+            return ControleAnimacao += 1;
+        }
+
+        //ANIMAÇÃO DA PERGUNTA DESAPARECENDO
+        public int aparecendoPergunta(int ControleAnimacao, int contVitaminas)
+        {
+            if (ControleAnimacao == 1000)
+            {
+                TmrPergunta.Stop();
+            }
+            if (ControleAnimacao > 1000 && ControleAnimacao < 1068)
+            {
+                PnlPerguntas.Location = new Point(PnlPerguntas.Location.X, PnlPerguntas.Location.Y + 3);
+            }
+            if (ControleAnimacao == 1068)
+            {
+                PnlPerguntas.Visible = false;
+                if (resetarObjetosPergunta(contVitaminas) == 800)
+                    return 800;
+                TmrAnimation.Stop();
+                return 0;
+            }
+            return ControleAnimacao += 1;
+        }
+
+        //ANIMAÇÃO DA VINHETA
+        public int vinheta(int ControleAnimacao)
+        {
+            if (ControleAnimacao > 1101 && ControleAnimacao < 1202)
+            {
+                PbxVinheta2.Location = new Point(PbxVinheta2.Location.X - 13, 0);
+            }
+            if (ControleAnimacao > 1302 && ControleAnimacao < 1403)
+            {
+                PbxVinheta2.Location = new Point(PbxVinheta2.Location.X - 13, 0);
+            }
+            if (ControleAnimacao == 1404)
+            {
+                PbxVinheta2.Location = new Point(1300, 0);
+                PbxVinheta2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\Vinheta\\Logo_PathMath.png");
+            }
+            if (ControleAnimacao > 1404 && ControleAnimacao < 1505)
+            {
+                PbxVinheta2.Location = new Point(PbxVinheta2.Location.X - 13, 0);
+            }
+            if (ControleAnimacao == 1506)
+            {
+                PbxVinheta1.Visible = false;
+            }
+
+            if (ControleAnimacao > 1606 && ControleAnimacao < 1707)
+            {
+                PbxVinheta2.Location = new Point(PbxVinheta2.Location.X - 13, 0);
+            }
+            if (ControleAnimacao == 1708)
+            {
+                PBX_Jogar.Enabled = true;
+                PBX_Sair.Enabled = true;
+                PBX_Opcoes.Enabled = true;
+                PbxVinheta1.Size = new Size(1, 1);
+                PbxVinheta2.Size = new Size(1, 1);
+                PbxVinheta2.Visible = false;
+                TmrAnimation.Stop();
+                return 0;
+            }
+            return ControleAnimacao += 1;
+        }
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

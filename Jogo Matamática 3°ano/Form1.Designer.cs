@@ -152,7 +152,6 @@
             this.BTN_SimTempo2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.LBL_SemTempo2 = new System.Windows.Forms.Label();
-            this.lblOutputRequest = new System.Windows.Forms.Label();
             this.LblBust = new System.Windows.Forms.Label();
             this.TmrAnimation = new System.Windows.Forms.Timer(this.components);
             this.PBX_Ambiente1 = new System.Windows.Forms.PictureBox();
@@ -1785,16 +1784,6 @@
             this.LBL_SemTempo2.TabIndex = 9;
             this.LBL_SemTempo2.Text = "Tempo Esgotado";
             // 
-            // lblOutputRequest
-            // 
-            this.lblOutputRequest.AutoSize = true;
-            this.lblOutputRequest.BackColor = System.Drawing.Color.GreenYellow;
-            this.lblOutputRequest.Location = new System.Drawing.Point(1071, 56);
-            this.lblOutputRequest.Name = "lblOutputRequest";
-            this.lblOutputRequest.Size = new System.Drawing.Size(77, 13);
-            this.lblOutputRequest.TabIndex = 4;
-            this.lblOutputRequest.Text = "Output request";
-            // 
             // LblBust
             // 
             this.LblBust.AutoSize = true;
@@ -2500,6 +2489,7 @@
             this.PBX_Vitoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBX_Vitoria.TabIndex = 31;
             this.PBX_Vitoria.TabStop = false;
+            this.PBX_Vitoria.Tag = "Vitória";
             this.PBX_Vitoria.Visible = false;
             // 
             // PbxVinheta1
@@ -2554,7 +2544,6 @@
             this.Controls.Add(this.PBX_Ambiente1);
             this.Controls.Add(this.PnlPerguntas);
             this.Controls.Add(this.PBX_Ambiente5);
-            this.Controls.Add(this.lblOutputRequest);
             this.Controls.Add(this.PBX_Ambiente6);
             this.Controls.Add(this.labelY);
             this.Controls.Add(this.PBX_Ambiente7);
@@ -2904,7 +2893,6 @@
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label LBL_SemTempo2;
         public System.Windows.Forms.PictureBox PBX_Reiniciar;
-        public System.Windows.Forms.Label lblOutputRequest;
         public System.Windows.Forms.Label LblBust;
         public System.Windows.Forms.Timer TmrAnimation;
         public System.Windows.Forms.PictureBox PBX_Ambiente1;
