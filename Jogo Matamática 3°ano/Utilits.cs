@@ -1703,7 +1703,13 @@ namespace Jogo_Matamática_3_ano
             //Entra no mapa 2
             if (fase == 2)
             {
-                if (ControleAnimacao > 700 && ControleAnimacao < 752)
+                if (ControleAnimacao == 701)
+                {
+                    PbxColision.Location = new Point(25, 713);
+                    PbxPersonagem.Location = new Point(17 - 150, 680);
+                    TmrMainGameManager.Stop();
+                }
+                if (ControleAnimacao > 701 && ControleAnimacao < 752)
                 {
                     PbxPersonagem.Location = new Point(PbxPersonagem.Location.X + 3, PbxPersonagem.Location.Y);
                     if (ControleAnimacao % 5 == 0)
@@ -1724,7 +1730,13 @@ namespace Jogo_Matamática_3_ano
             //Entra no mapa 3
             if (fase == 3)
             {
-                if (ControleAnimacao > 700 && ControleAnimacao < 752)
+                if (ControleAnimacao == 701)
+                {
+                    PbxColision.Location = new Point(36, 717);
+                    PbxPersonagem.Location = new Point(25 - 150, 684);
+                    TmrMainGameManager.Stop();
+                }
+                if (ControleAnimacao > 701 && ControleAnimacao < 752)
                 {
                     PbxPersonagem.Location = new Point(PbxPersonagem.Location.X + 3, PbxPersonagem.Location.Y);
                     if (ControleAnimacao % 5 == 0)
@@ -1745,7 +1757,7 @@ namespace Jogo_Matamática_3_ano
             //Entra no mapa 5
             if (fase == 5)
             {
-                if (ControleAnimacao > 700 && ControleAnimacao < 752)
+                if (ControleAnimacao > 701 && ControleAnimacao < 752)
                 {
                     PbxPersonagem.Location = new Point(PbxPersonagem.Location.X + 3, PbxPersonagem.Location.Y);
                     if (ControleAnimacao % 5 == 0)
@@ -1867,6 +1879,17 @@ namespace Jogo_Matamática_3_ano
         }
 
         #endregion
+
+        public Tuple<int, int, int, int, int, int, int> resetFaseInts(int fase)
+        {
+            if (fase == 1)
+                return new Tuple<int, int, int, int, int, int, int>(1, 0, 6, 700, 0, 0, 0);
+            if (fase == 2)
+                return new Tuple<int, int, int, int, int, int, int>(1, 15, 6, 700, 0, 0, 0);
+            if (fase == 3)
+                return new Tuple<int, int, int, int, int, int, int>(1, 15, 6, 700, 0, 0, 0);
+            return new Tuple<int, int, int, int, int, int, int>(0, 0, 0, 0, 0, 0, 0);
+        }
 
 
 

@@ -1636,44 +1636,65 @@ namespace Jogo_Matamática_3_ano
             //FASE 1
             if (fase == 1)
             {
-                tempMin = 1;
-                tempSeg = 0;
-
-                //Resetar a velocidade que o player anda
-                andarQtdPx = 6;
+                //Resetar todas a variáveis para default
+                (tempMin, tempSeg, andarQtdPx, ControleAnimacao, contCristais, contVitaminas, Score) = utilits.resetFaseInts(fase);
 
                 //Resetar animação do personagem entrando no
-                ControleAnimacao = 700;
                 TmrAnimation.Start();
 
                 //Resetar placar
                 LblContVitaminas.Text = "0/7";
                 LblContCristais.Text = "x";
-                contCristais = 0;
-                contVitaminas = 0;
 
                 //Resetar visibilidade dos itens
                 mostrarTodasPbx();
 
                 //Resetar Score
-                Score = 0;
                 LblScore.Text = "0";
+
+                //Reset Musica
+                utilits.setMusic("floresta_1");
             }
             //FASE 2
             if (fase == 2)
             {
-                tempMin = 1;
-                tempSeg = 15;
-                PbxColision.Location = new Point(25, 713);
-                PbxPersonagem.Location = new Point(17, 680);
+                //Resetar todas a variáveis para default
+                (tempMin, tempSeg, andarQtdPx, ControleAnimacao, contCristais, contVitaminas, Score) = utilits.resetFaseInts(fase);
+                //Resetar animação do personagem entrando no
+                TmrAnimation.Start();
+
+                //Resetar placar
+                LblContVitaminas.Text = "0/7";
+                LblContCristais.Text = "x";
+
+                //Resetar visibilidade dos itens
+                mostrarTodasPbx();
+
+                //Resetar Score
+                LblScore.Text = "0";
+
+                //Reset Musica
+                utilits.setMusic("caverna");
             }
             //FASE 3
             if (fase == 3)
             {
-                tempMin = 1;
-                tempSeg = 15;
-                PbxColision.Location = new Point(36, 717);
-                PbxPersonagem.Location = new Point(25, 684);
+                (tempMin, tempSeg, andarQtdPx, ControleAnimacao, contCristais, contVitaminas, Score) = utilits.resetFaseInts(fase);
+                //Resetar animação do personagem entrando no
+                TmrAnimation.Start();
+
+                //Resetar placar
+                LblContVitaminas.Text = "0/7";
+                LblContCristais.Text = "x";
+
+                //Resetar visibilidade dos itens
+                mostrarTodasPbx();
+
+                //Resetar Score
+                LblScore.Text = "0";
+
+                //Reset Musica
+                utilits.setMusic("caverna");
             }
         }
 
