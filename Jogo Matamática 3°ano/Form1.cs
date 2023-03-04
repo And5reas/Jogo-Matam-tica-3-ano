@@ -682,7 +682,11 @@ namespace Jogo_Matamática_3_ano
                             if (contCristais != 3)
                             CristalBuffTime = 6;
                             if (contCristais == 3)
-                                CristalBuffTime = 2;
+                            {
+                                Score = Score + 100;
+                                LblScore.ForeColor = Color.Orange;
+                                LblScore.Text = Score.ToString();
+                            }
                         }
                     }
                 }
@@ -1580,13 +1584,6 @@ namespace Jogo_Matamática_3_ano
                     LblScore.Text = Score + "+" + (contCristais + 6);
                     andarQtdPx = 8;
                 }
-                else if (contCristais == 3)
-                {
-                    Score = Score + 100;
-                    LblScore.ForeColor = Color.Orange;
-                    LblScore.Text = Score + "+" + (contCristais + 6);
-                    andarQtdPx = 8;
-                }
                 LBL_ScoreTotal.Text = Score.ToString();
                 CristalBuffTime--;
             }
@@ -2139,8 +2136,7 @@ namespace Jogo_Matamática_3_ano
         #region TIMER PARA TESTES
         private void TmrDebug_Tick(object sender, EventArgs e)
         {
-            if (ControleAnimacao > 0)
-                Console.WriteLine("ControleAnimacao = " + ControleAnimacao + " - " + PerguntaLetra);
+
         }
         #endregion
     }
