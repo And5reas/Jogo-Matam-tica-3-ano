@@ -1559,7 +1559,7 @@ namespace Jogo_Matamática_3_ano
 
             //Sistema de pontos
             Score++;
-            if (CristalBuffTime == 0)
+            if (CristalBuffTime == 0 && DebugSwithB == false)
             {
                 LblScore.ForeColor = Color.WhiteSmoke;
                 LblScore.Text = Score.ToString();
