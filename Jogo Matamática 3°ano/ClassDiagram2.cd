@@ -3,22 +3,22 @@
   <Class Name="Jogo_Matamática_3_ano.FrmJogo" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>+O6lPrdvNi5JC9nrJ0qbd/ajiQ/3f0bK/vv6W812xv8=</HashCode>
+      <HashCode>+M6lPrdvNi7JC9jrJkqbd/ajiQ/3f0LK/vr6Ec12xP8=</HashCode>
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Jogo_Matamática_3_ano.Save">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAQAACAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
       <FileName>Save.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Jogo_Matamática_3_ano.Animation">
-    <Position X="4" Y="0.5" Width="1.5" />
+  <Class Name="Jogo_Matamática_3_ano.Utilits">
+    <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Animation.cs</FileName>
+      <HashCode>TAIkOtNnFiZISZCCJwqKY/ajiANzBWIK/nC8AY1wxN8=</HashCode>
+      <FileName>Utilits.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
