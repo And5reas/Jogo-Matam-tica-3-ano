@@ -212,6 +212,7 @@
             this.PbxVinheta1 = new System.Windows.Forms.PictureBox();
             this.PbxVinheta2 = new System.Windows.Forms.PictureBox();
             this.TmrDebug = new System.Windows.Forms.Timer(this.components);
+            this.PbxPartBaixo = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -352,6 +353,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxPartBaixo)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -1982,9 +1984,9 @@
             // 
             // PnlPerguntas
             // 
-            this.PnlPerguntas.BackColor = System.Drawing.Color.DarkGreen;
+            this.PnlPerguntas.BackColor = System.Drawing.Color.SeaGreen;
             this.PnlPerguntas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PnlPerguntas.BackgroundImage")));
-            this.PnlPerguntas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PnlPerguntas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PnlPerguntas.Controls.Add(this.LblResposta4);
             this.PnlPerguntas.Controls.Add(this.LblResposta3);
             this.PnlPerguntas.Controls.Add(this.LblResposta2);
@@ -2000,9 +2002,9 @@
             this.PnlPerguntas.Controls.Add(this.TxtResposta3);
             this.PnlPerguntas.Controls.Add(this.TxtResposta);
             this.PnlPerguntas.Controls.Add(this.Lbl_de_Ajuda);
-            this.PnlPerguntas.Location = new System.Drawing.Point(6, 949);
+            this.PnlPerguntas.Location = new System.Drawing.Point(-2, 303);
             this.PnlPerguntas.Name = "PnlPerguntas";
-            this.PnlPerguntas.Size = new System.Drawing.Size(1285, 237);
+            this.PnlPerguntas.Size = new System.Drawing.Size(1260, 200);
             this.PnlPerguntas.TabIndex = 24;
             this.PnlPerguntas.Visible = false;
             // 
@@ -2383,7 +2385,7 @@
             this.PNL_Help.Controls.Add(this.PBX_btnVoltaHelp);
             this.PNL_Help.Controls.Add(this.LBL_txtHelp);
             this.PNL_Help.Controls.Add(this.PBX_Help);
-            this.PNL_Help.Location = new System.Drawing.Point(1255, 116);
+            this.PNL_Help.Location = new System.Drawing.Point(1271, 646);
             this.PNL_Help.Name = "PNL_Help";
             this.PNL_Help.Size = new System.Drawing.Size(761, 548);
             this.PNL_Help.TabIndex = 28;
@@ -2516,13 +2518,24 @@
             this.TmrDebug.Interval = 1;
             this.TmrDebug.Tick += new System.EventHandler(this.TmrDebug_Tick);
             // 
+            // PbxPartBaixo
+            // 
+            this.PbxPartBaixo.BackColor = System.Drawing.Color.YellowGreen;
+            this.PbxPartBaixo.Image = ((System.Drawing.Image)(resources.GetObject("PbxPartBaixo.Image")));
+            this.PbxPartBaixo.Location = new System.Drawing.Point(-2, 757);
+            this.PbxPartBaixo.Name = "PbxPartBaixo";
+            this.PbxPartBaixo.Size = new System.Drawing.Size(1352, 258);
+            this.PbxPartBaixo.TabIndex = 33;
+            this.PbxPartBaixo.TabStop = false;
+            this.PbxPartBaixo.Visible = false;
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.BackColor = System.Drawing.Color.DarkGreen;
+            this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
@@ -2618,6 +2631,7 @@
             this.Controls.Add(this.PbxCristal3);
             this.Controls.Add(this.PbxCristal2);
             this.Controls.Add(this.PNL_InfoFase);
+            this.Controls.Add(this.PbxPartBaixo);
             this.DoubleBuffered = true;
             this.Location = new System.Drawing.Point(100, 100);
             this.MaximizeBox = false;
@@ -2778,6 +2792,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxPartBaixo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2967,6 +2982,7 @@
         public System.Windows.Forms.PictureBox PbxVinheta2;
         public System.Windows.Forms.PictureBox PBX_Salvar;
         public System.Windows.Forms.Timer TmrDebug;
+        public System.Windows.Forms.PictureBox PbxPartBaixo;
     }
 }
 
