@@ -176,11 +176,11 @@
             this.LblResposta2 = new System.Windows.Forms.Label();
             this.LblResposta = new System.Windows.Forms.Label();
             this.PrbTempPerg = new System.Windows.Forms.ProgressBar();
-            this.PbxBtnCerto = new System.Windows.Forms.PictureBox();
-            this.PbxBtn2 = new System.Windows.Forms.PictureBox();
-            this.PbxBtn4 = new System.Windows.Forms.PictureBox();
-            this.PbxBtn3 = new System.Windows.Forms.PictureBox();
             this.PbxBtn1 = new System.Windows.Forms.PictureBox();
+            this.PbxBtn2 = new System.Windows.Forms.PictureBox();
+            this.PbxBtn3 = new System.Windows.Forms.PictureBox();
+            this.PbxBtn4 = new System.Windows.Forms.PictureBox();
+            this.PbxBtnCerto = new System.Windows.Forms.PictureBox();
             this.TxtResposta2 = new System.Windows.Forms.TextBox();
             this.TxtResposta4 = new System.Windows.Forms.TextBox();
             this.TxtResposta3 = new System.Windows.Forms.TextBox();
@@ -331,11 +331,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Vitamina7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCerca)).BeginInit();
             this.PnlPerguntas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxBtnCerto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxBtn2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxBtn4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxBtn3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxBtn1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxBtn2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxBtn3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxBtn4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxBtnCerto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal3)).BeginInit();
@@ -1992,11 +1992,11 @@
             this.PnlPerguntas.Controls.Add(this.LblResposta2);
             this.PnlPerguntas.Controls.Add(this.LblResposta);
             this.PnlPerguntas.Controls.Add(this.PrbTempPerg);
-            this.PnlPerguntas.Controls.Add(this.PbxBtnCerto);
-            this.PnlPerguntas.Controls.Add(this.PbxBtn2);
-            this.PnlPerguntas.Controls.Add(this.PbxBtn4);
-            this.PnlPerguntas.Controls.Add(this.PbxBtn3);
             this.PnlPerguntas.Controls.Add(this.PbxBtn1);
+            this.PnlPerguntas.Controls.Add(this.PbxBtn2);
+            this.PnlPerguntas.Controls.Add(this.PbxBtn3);
+            this.PnlPerguntas.Controls.Add(this.PbxBtn4);
+            this.PnlPerguntas.Controls.Add(this.PbxBtnCerto);
             this.PnlPerguntas.Controls.Add(this.TxtResposta2);
             this.PnlPerguntas.Controls.Add(this.TxtResposta4);
             this.PnlPerguntas.Controls.Add(this.TxtResposta3);
@@ -2081,17 +2081,17 @@
             this.PrbTempPerg.TabIndex = 5;
             this.PrbTempPerg.Value = 30;
             // 
-            // PbxBtnCerto
+            // PbxBtn1
             // 
-            this.PbxBtnCerto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PbxBtnCerto.Enabled = false;
-            this.PbxBtnCerto.Location = new System.Drawing.Point(364, 86);
-            this.PbxBtnCerto.Name = "PbxBtnCerto";
-            this.PbxBtnCerto.Size = new System.Drawing.Size(109, 56);
-            this.PbxBtnCerto.TabIndex = 4;
-            this.PbxBtnCerto.TabStop = false;
-            this.PbxBtnCerto.Visible = false;
-            this.PbxBtnCerto.Click += new System.EventHandler(this.PbxBtnCerto_Click);
+            this.PbxBtn1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PbxBtn1.Enabled = false;
+            this.PbxBtn1.Location = new System.Drawing.Point(651, 87);
+            this.PbxBtn1.Name = "PbxBtn1";
+            this.PbxBtn1.Size = new System.Drawing.Size(109, 56);
+            this.PbxBtn1.TabIndex = 3;
+            this.PbxBtn1.TabStop = false;
+            this.PbxBtn1.Visible = false;
+            this.PbxBtn1.Click += new System.EventHandler(this.PbxBtn1_Click);
             // 
             // PbxBtn2
             // 
@@ -2105,18 +2105,6 @@
             this.PbxBtn2.Visible = false;
             this.PbxBtn2.Click += new System.EventHandler(this.PbxBtn1_Click);
             // 
-            // PbxBtn4
-            // 
-            this.PbxBtn4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PbxBtn4.Enabled = false;
-            this.PbxBtn4.Location = new System.Drawing.Point(1061, 39);
-            this.PbxBtn4.Name = "PbxBtn4";
-            this.PbxBtn4.Size = new System.Drawing.Size(109, 56);
-            this.PbxBtn4.TabIndex = 3;
-            this.PbxBtn4.TabStop = false;
-            this.PbxBtn4.Visible = false;
-            this.PbxBtn4.Click += new System.EventHandler(this.PbxBtn1_Click);
-            // 
             // PbxBtn3
             // 
             this.PbxBtn3.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -2129,17 +2117,29 @@
             this.PbxBtn3.Visible = false;
             this.PbxBtn3.Click += new System.EventHandler(this.PbxBtn1_Click);
             // 
-            // PbxBtn1
+            // PbxBtn4
             // 
-            this.PbxBtn1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PbxBtn1.Enabled = false;
-            this.PbxBtn1.Location = new System.Drawing.Point(651, 87);
-            this.PbxBtn1.Name = "PbxBtn1";
-            this.PbxBtn1.Size = new System.Drawing.Size(109, 56);
-            this.PbxBtn1.TabIndex = 3;
-            this.PbxBtn1.TabStop = false;
-            this.PbxBtn1.Visible = false;
-            this.PbxBtn1.Click += new System.EventHandler(this.PbxBtn1_Click);
+            this.PbxBtn4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PbxBtn4.Enabled = false;
+            this.PbxBtn4.Location = new System.Drawing.Point(1061, 39);
+            this.PbxBtn4.Name = "PbxBtn4";
+            this.PbxBtn4.Size = new System.Drawing.Size(109, 56);
+            this.PbxBtn4.TabIndex = 3;
+            this.PbxBtn4.TabStop = false;
+            this.PbxBtn4.Visible = false;
+            this.PbxBtn4.Click += new System.EventHandler(this.PbxBtn1_Click);
+            // 
+            // PbxBtnCerto
+            // 
+            this.PbxBtnCerto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PbxBtnCerto.Enabled = false;
+            this.PbxBtnCerto.Location = new System.Drawing.Point(364, 86);
+            this.PbxBtnCerto.Name = "PbxBtnCerto";
+            this.PbxBtnCerto.Size = new System.Drawing.Size(109, 56);
+            this.PbxBtnCerto.TabIndex = 4;
+            this.PbxBtnCerto.TabStop = false;
+            this.PbxBtnCerto.Visible = false;
+            this.PbxBtnCerto.Click += new System.EventHandler(this.PbxBtnCerto_Click);
             // 
             // TxtResposta2
             // 
@@ -2768,11 +2768,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxCerca)).EndInit();
             this.PnlPerguntas.ResumeLayout(false);
             this.PnlPerguntas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxBtnCerto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxBtn2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxBtn4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxBtn3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxBtn1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxBtn2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxBtn3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxBtn4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxBtnCerto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCristal3)).EndInit();
@@ -2929,11 +2929,11 @@
         public System.Windows.Forms.Panel PnlPerguntas;
         public System.Windows.Forms.TextBox TxtResposta;
         public System.Windows.Forms.Label LblResposta;
-        public System.Windows.Forms.PictureBox PbxBtnCerto;
-        public System.Windows.Forms.PictureBox PbxBtn2;
-        public System.Windows.Forms.PictureBox PbxBtn4;
-        public System.Windows.Forms.PictureBox PbxBtn3;
         public System.Windows.Forms.PictureBox PbxBtn1;
+        public System.Windows.Forms.PictureBox PbxBtn2;
+        public System.Windows.Forms.PictureBox PbxBtn3;
+        public System.Windows.Forms.PictureBox PbxBtn4;
+        public System.Windows.Forms.PictureBox PbxBtnCerto;
         public System.Windows.Forms.ProgressBar PrbTempPerg;
         public System.Windows.Forms.Label Lbl_de_Ajuda;
         public System.Windows.Forms.Timer TmrPergunta;
