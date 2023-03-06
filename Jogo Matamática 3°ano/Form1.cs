@@ -94,23 +94,23 @@ namespace Jogo_Matamática_3_ano
             //Tecla precionada
             if (e.KeyCode == Keys.Down || e.KeyCode == Keys.S)
             {
+                focoNoForm();
                 goDown = true;
-                this.Focus();
             }
             if (e.KeyCode == Keys.Up || e.KeyCode == Keys.W)
             {
+                focoNoForm();
                 goUp = true;
-                this.Focus();
             }
             if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
             {
+                focoNoForm();
                 goLeft = true;
-                this.Focus();
             }
             if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
             {
+                focoNoForm();
                 goRight = true;
-                this.Focus();
             }
         }
         private void FrmJogo_KeyUp(object sender, KeyEventArgs e)
@@ -118,18 +118,22 @@ namespace Jogo_Matamática_3_ano
             //Tecla "solta"
             if (e.KeyCode == Keys.Down || e.KeyCode == Keys.S)
             {
+                focoNoForm();
                 goDown = false;
             }
             if (e.KeyCode == Keys.Up || e.KeyCode == Keys.W)
             {
+                focoNoForm();
                 goUp = false;
             }
             if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
             {
+                focoNoForm();
                 goLeft = false;
             }
             if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
             {
+                focoNoForm();
                 goRight = false;
             }
         }
@@ -220,8 +224,7 @@ namespace Jogo_Matamática_3_ano
             //Pular o tempo da pergunta
             if (e.KeyChar.ToString().ToLower() == "o" && DebugSwithB == true && PnlPerguntas.Visible == true)
             {
-                ControleAnimacao = utilits.rodarSaidaPerguntas();
-                TmrAnimation.Start();
+                sairPergunta();
             }
 
             //Pause
@@ -257,6 +260,7 @@ namespace Jogo_Matamática_3_ano
                 else
                 {
                     e.KeyChar = Convert.ToChar(0);
+                    e.Handled = true;
                 }
             }
             else
@@ -1414,7 +1418,7 @@ namespace Jogo_Matamática_3_ano
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        #region REINICIAR JOGO //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #region Funções //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         public void mostrarTodasPbx()
         {
@@ -1441,6 +1445,18 @@ namespace Jogo_Matamática_3_ano
                     }
                 }
             }
+        }
+
+        public void sairPergunta()
+        {
+            ControleAnimacao = utilits.rodarSaidaPerguntas();
+            focoNoForm();
+            TmrAnimation.Start();
+        }
+
+        public void focoNoForm()
+        {
+            this.Focus();
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1573,16 +1589,14 @@ namespace Jogo_Matamática_3_ano
         {
             tempSeg = utilits.addTempo(10, tempSeg);
             Score = utilits.addScorePonto(20, Score);
-            ControleAnimacao = utilits.rodarSaidaPerguntas();
-            TmrAnimation.Start();
+            sairPergunta();
         }
 
         private void PbxBtn1_Click(object sender, EventArgs e)
         {
             tempSeg = utilits.addTempo(-5, tempSeg);
             Score = utilits.addScorePonto(-20, Score);
-            ControleAnimacao = utilits.rodarSaidaPerguntas();
-            TmrAnimation.Start();
+            sairPergunta();
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1596,8 +1610,7 @@ namespace Jogo_Matamática_3_ano
             {
                 tempSeg = utilits.addTempo(-5, tempSeg);
                 Score = utilits.addScorePonto(-20, Score);
-                ControleAnimacao = utilits.rodarSaidaPerguntas();
-                TmrAnimation.Start();
+                sairPergunta();
             }
             if (tempPergunta >= 0 && tempPergunta <= 4000)
             {
@@ -1620,8 +1633,7 @@ namespace Jogo_Matamática_3_ano
                         tempSeg = utilits.addTempo(10, tempSeg);
                         Score = utilits.addScorePonto(20, Score);
                         Lbl_de_Ajuda.Text = "Você Acertou!! ＜（＾－＾）＞";
-                        ControleAnimacao = utilits.rodarSaidaPerguntas();
-                        TmrAnimation.Start();
+                        sairPergunta();
                     }
                     else if (resultado > 17 && resultado < 37)
                     {
@@ -1650,8 +1662,7 @@ namespace Jogo_Matamática_3_ano
                     {
                         tempSeg = utilits.addTempo(10, tempSeg);
                         Score = utilits.addScorePonto(20, Score);
-                        ControleAnimacao = utilits.rodarSaidaPerguntas();
-                        TmrAnimation.Start();
+                        sairPergunta();
                     }
                     if (num1 >= (7 * 4) - 10 && num1 <= (7 * 4) + 10 && num1 != 7 * 4)
                     {
@@ -1700,8 +1711,7 @@ namespace Jogo_Matamática_3_ano
                     {
                         tempSeg = utilits.addTempo(10, tempSeg);
                         Score = utilits.addScorePonto(20, Score);
-                        ControleAnimacao = utilits.rodarSaidaPerguntas();
-                        TmrAnimation.Start();
+                        sairPergunta();
                     }
                     if (num1 >= 0 && num1 <= 20 && num1 != 10)
                     {
@@ -1734,8 +1744,7 @@ namespace Jogo_Matamática_3_ano
                     {
                         tempSeg = utilits.addTempo(10, tempSeg);
                         Score = utilits.addScorePonto(20, Score);
-                        ControleAnimacao = utilits.rodarSaidaPerguntas();
-                        TmrAnimation.Start();
+                        sairPergunta();
                     }
                     if (num1 >= (64 / 2) - 10 && num1 <= (64 / 2) + 10 && num1 != 64 / 2)
                     {
@@ -1796,8 +1805,7 @@ namespace Jogo_Matamática_3_ano
                     {
                         tempSeg = utilits.addTempo(10, tempSeg);
                         Score = utilits.addScorePonto(20, Score);
-                        ControleAnimacao = utilits.rodarSaidaPerguntas();
-                        TmrAnimation.Start();
+                        sairPergunta();
                     }
                     if (num1 >= 23 && num1 <= 43 && num1 != 33)
                     {

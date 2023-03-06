@@ -585,13 +585,13 @@ namespace Jogo_Matamática_3_ano
         //RESETAR AMBIENTE TORNÁ-LO INVISÍVEL
         public void resetAmbiente()
         {
-            PBX_Ambiente1.Visible = false;
-            PBX_Ambiente2.Visible = false;
-            PBX_Ambiente3.Visible = false;
-            PBX_Ambiente4.Visible = false;
-            PBX_Ambiente5.Visible = false;
-            PBX_Ambiente6.Visible = false;
-            PBX_Ambiente7.Visible = false;
+            PBX_Ambiente1.Hide();
+            PBX_Ambiente2.Hide();
+            PBX_Ambiente3.Hide();
+            PBX_Ambiente4.Hide();
+            PBX_Ambiente5.Hide();
+            PBX_Ambiente6.Hide();
+            PBX_Ambiente7.Hide();
         }
 
         //SETAR TRANSPARENCIA ITENS
@@ -615,11 +615,11 @@ namespace Jogo_Matamática_3_ano
             PbxBtn4.Enabled = true;
             PbxBtnCerto.Enabled = true;
 
-            PbxBtn1.Visible = true;
-            PbxBtn2.Visible = true;
-            PbxBtn3.Visible = true;
-            PbxBtn4.Visible = true;
-            PbxBtnCerto.Visible = true;
+            PbxBtn1.Show();
+            PbxBtn2.Show();
+            PbxBtn3.Show();
+            PbxBtn4.Show();
+            PbxBtnCerto.Show();
 
             PbxBtn1.Size = new Size(SizeX, SizeY);
             PbxBtn2.Size = new Size(SizeX, SizeY);
@@ -632,7 +632,7 @@ namespace Jogo_Matamática_3_ano
                 if (randomPergunta == 1 && PerguntaLetra == 'a')
                 {
                     PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
+                    PbxBtn4.Hide();
 
                     PbxBtn1.Location = new Point(681, 104);
                     PbxBtn2.Location = new Point(835, 104);
@@ -645,7 +645,7 @@ namespace Jogo_Matamática_3_ano
                     SizeY = 53;
 
                     PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
+                    PbxBtn4.Hide();
 
                     PbxBtn1.Size = new Size(SizeX, SizeY);
                     PbxBtn2.Size = new Size(SizeX, SizeY);
@@ -674,9 +674,9 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn3.Enabled = false;
                     PbxBtn4.Enabled = false;
 
-                    PbxBtn2.Visible = false;
-                    PbxBtn3.Visible = false;
-                    PbxBtn4.Visible = false;
+                    PbxBtn2.Hide();
+                    PbxBtn3.Hide();
+                    PbxBtn4.Hide();
 
                     PbxBtn1.Size = new Size(SizeX, SizeY);
                     PbxBtnCerto.Size = new Size(SizeX, SizeY);
@@ -687,7 +687,7 @@ namespace Jogo_Matamática_3_ano
                 if (randomPergunta == 1 && PerguntaLetra == 'e')
                 {
                     PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
+                    PbxBtn4.Hide();
 
                     PbxBtn1.Location = new Point(766, 98);
                     PbxBtn2.Location = new Point(620, 98);
@@ -697,7 +697,7 @@ namespace Jogo_Matamática_3_ano
                 if (randomPergunta == 1 && PerguntaLetra == 'f')
                 {
                     PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
+                    PbxBtn4.Hide();
 
                     PbxBtn1.Location = new Point(792, 97);
                     PbxBtn2.Location = new Point(649, 97);
@@ -710,7 +710,7 @@ namespace Jogo_Matamática_3_ano
                     SizeY = 58;
 
                     PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
+                    PbxBtn4.Hide();
 
                     PbxBtn1.Size = new Size(SizeX, SizeY);
                     PbxBtn2.Size = new Size(SizeX, SizeY);
@@ -725,7 +725,7 @@ namespace Jogo_Matamática_3_ano
                 if (randomPergunta == 2 && PerguntaLetra == 'a')
                 {
                     PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
+                    PbxBtn4.Hide();
 
                     PbxBtn1.Location = new Point(90, 105);
                     PbxBtn2.Location = new Point(385, 105);
@@ -743,7 +743,7 @@ namespace Jogo_Matamática_3_ano
                 if (randomPergunta == 2 && PerguntaLetra == 'd')
                 {
                     PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
+                    PbxBtn4.Hide();
 
                     PbxBtn1.Location = new Point(335, 106);
                     PbxBtn2.Location = new Point(621, 106);
@@ -761,7 +761,7 @@ namespace Jogo_Matamática_3_ano
                 if (randomPergunta == 2 && PerguntaLetra == 'g')
                 {
                     PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
+                    PbxBtn4.Hide();
 
                     PbxBtn1.Location = new Point(277, 108);
                     PbxBtn2.Location = new Point(560, 108);
@@ -779,7 +779,7 @@ namespace Jogo_Matamática_3_ano
                 if (randomPergunta == 3 && PerguntaLetra == 'b')
                 {
                     PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
+                    PbxBtn4.Hide();
 
                     PbxBtn1.Location = new Point(916, 23);
                     PbxBtn2.Location = new Point(1062, 108);
@@ -801,7 +801,7 @@ namespace Jogo_Matamática_3_ano
                 if (randomPergunta == 3 && PerguntaLetra == 'e')
                 {
                     PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
+                    PbxBtn4.Hide();
 
                     PbxBtn1.Location = new Point(362, 101);
                     PbxBtn2.Location = new Point(508, 101);
@@ -814,7 +814,7 @@ namespace Jogo_Matamática_3_ano
                     SizeY = 53;
 
                     PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
+                    PbxBtn4.Hide();
 
                     PbxBtn1.Size = new Size(SizeX, SizeY);
                     PbxBtn2.Size = new Size(SizeX, SizeY);
@@ -829,7 +829,7 @@ namespace Jogo_Matamática_3_ano
                 if (randomPergunta == 3 && PerguntaLetra == 'g')
                 {
                     PbxBtn4.Enabled = false;
-                    PbxBtn4.Visible = false;
+                    PbxBtn4.Hide();
 
                     PbxBtn1.Location = new Point(651, 87);
                     PbxBtn2.Location = new Point(794, 86);
@@ -876,13 +876,13 @@ namespace Jogo_Matamática_3_ano
                     LblResposta2.Text = "Clique aqui";
                     LblResposta3.Text = "Clique aqui";
 
-                    Lbl_de_Ajuda.Visible = true;
-                    LblResposta.Visible = true;
-                    TxtResposta.Visible = true;
-                    LblResposta2.Visible = true;
-                    TxtResposta2.Visible = true;
-                    LblResposta3.Visible = true;
-                    TxtResposta3.Visible = true;
+                    Lbl_de_Ajuda.Show();
+                    LblResposta.Show();
+                    TxtResposta.Show();
+                    LblResposta2.Show();
+                    TxtResposta2.Show();
+                    LblResposta3.Show();
+                    TxtResposta3.Show();
 
                     LblResposta.Enabled = true;
                     LblResposta2.Enabled = true;
@@ -915,12 +915,12 @@ namespace Jogo_Matamática_3_ano
                     LblResposta2.Text = "Clique aqui";
                     LblResposta3.Text = "Clique aqui";
 
-                    LblResposta.Visible = true;
-                    TxtResposta.Visible = true;
-                    LblResposta2.Visible = true;
-                    TxtResposta2.Visible = true;
-                    LblResposta3.Visible = true;
-                    TxtResposta3.Visible = true;
+                    LblResposta.Show();
+                    TxtResposta.Show();
+                    LblResposta2.Show();
+                    TxtResposta2.Show();
+                    LblResposta3.Show();
+                    TxtResposta3.Show();
 
                     LblResposta.Enabled = true;
                     LblResposta2.Enabled = true;
@@ -943,8 +943,8 @@ namespace Jogo_Matamática_3_ano
 
                     LblResposta.Text = "Clique aqui";
 
-                    LblResposta.Visible = true;
-                    TxtResposta.Visible = true;
+                    LblResposta.Show();
+                    TxtResposta.Show();
 
                     LblResposta.Enabled = true;
 
@@ -978,14 +978,14 @@ namespace Jogo_Matamática_3_ano
                     LblResposta3.Text = "Clique aqui";
                     LblResposta4.Text = "Clique aqui";
 
-                    LblResposta.Visible = true;
-                    TxtResposta.Visible = true;
-                    LblResposta2.Visible = true;
-                    TxtResposta2.Visible = true;
-                    LblResposta3.Visible = true;
-                    TxtResposta3.Visible = true;
-                    LblResposta4.Visible = true;
-                    TxtResposta4.Visible = true;
+                    LblResposta.Show();
+                    TxtResposta.Show();
+                    LblResposta2.Show();
+                    TxtResposta2.Show();
+                    LblResposta3.Show();
+                    TxtResposta3.Show();
+                    LblResposta4.Show();
+                    TxtResposta4.Show();
 
                     LblResposta.Enabled = true;
                     LblResposta2.Enabled = true;
@@ -1010,8 +1010,8 @@ namespace Jogo_Matamática_3_ano
 
                     LblResposta.Text = "Clique aqui";
 
-                    LblResposta.Visible = true;
-                    TxtResposta.Visible = true;
+                    LblResposta.Show();
+                    TxtResposta.Show();
 
                     LblResposta.Enabled = true;
 
@@ -1086,20 +1086,20 @@ namespace Jogo_Matamática_3_ano
             PbxBtn4.BackColor = Color.Transparent;
             PbxBtnCerto.BackColor = Color.Transparent;
 
-            PbxBtn1.Visible = false;
-            PbxBtn2.Visible = false;
-            PbxBtn3.Visible = false;
-            PbxBtn4.Visible = false;
-            PbxBtnCerto.Visible = false;
-            TxtResposta.Visible = false;
-            LblResposta.Visible = false;
-            TxtResposta2.Visible = false;
-            LblResposta2.Visible = false;
-            TxtResposta3.Visible = false;
-            LblResposta3.Visible = false;
-            TxtResposta4.Visible = false;
-            LblResposta4.Visible = false;
-            Lbl_de_Ajuda.Visible = false;
+            PbxBtn1.Hide();
+            PbxBtn2.Hide();
+            PbxBtn3.Hide();
+            PbxBtn4.Hide();
+            PbxBtnCerto.Hide();
+            TxtResposta.Hide();
+            LblResposta.Hide();
+            TxtResposta2.Hide();
+            LblResposta2.Hide();
+            TxtResposta3.Hide();
+            LblResposta3.Hide();
+            TxtResposta4.Hide();
+            LblResposta4.Hide();
+            Lbl_de_Ajuda.Hide();
 
             TxtResposta.Enabled = false;
             LblResposta.Enabled = false;
@@ -1566,11 +1566,11 @@ namespace Jogo_Matamática_3_ano
         //REMOVER PAINEIS DO MENU FASE E REORGANIZAR DENOVO
         public void removePnlsFases_4_5_6()
         {
-            panel4.Visible = false;
+            panel4.Hide();
             panel4.Enabled = false;
-            panel5.Visible = false;
+            panel5.Hide();
             panel5.Enabled = false;
-            panel6.Visible = false;
+            panel6.Hide();
             panel6.Enabled = false;
 
             panel1.Location = new Point(panel1.Location.X, 280);
@@ -1658,7 +1658,7 @@ namespace Jogo_Matamática_3_ano
             if (ControleAnimacao == 670)
             {
                 PNL_Fases.Enabled = true;
-                PNL_Fases.Visible = true;
+                PNL_Fases.Show();
                 LBL_Tempo.Text = "";
                 resetAmbiente();
                 TmrAnimation.Stop();
@@ -1795,7 +1795,7 @@ namespace Jogo_Matamática_3_ano
         {
             if (ControleAnimacao == 901)
             {
-                PnlPerguntas.Visible = true;
+                PnlPerguntas.Show();
             }
             if (ControleAnimacao > 900 && ControleAnimacao < 968)
             {
@@ -1823,7 +1823,7 @@ namespace Jogo_Matamática_3_ano
             }
             if (ControleAnimacao == 1068)
             {
-                PnlPerguntas.Visible = false;
+                PnlPerguntas.Hide();
                 if (resetarObjetosPergunta(contVitaminas) == 800)
                     return 800;
                 TmrAnimation.Stop();
@@ -1854,7 +1854,7 @@ namespace Jogo_Matamática_3_ano
             }
             if (ControleAnimacao == 1506)
             {
-                PbxVinheta1.Visible = false;
+                PbxVinheta1.Hide();
             }
 
             if (ControleAnimacao > 1606 && ControleAnimacao < 1707)
@@ -1868,7 +1868,7 @@ namespace Jogo_Matamática_3_ano
                 PBX_Opcoes.Enabled = true;
                 PbxVinheta1.Size = new Size(1, 1);
                 PbxVinheta2.Size = new Size(1, 1);
-                PbxVinheta2.Visible = false;
+                PbxVinheta2.Hide();
                 TmrAnimation.Stop();
                 return 0;
             }
