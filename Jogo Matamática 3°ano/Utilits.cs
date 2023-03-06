@@ -207,6 +207,7 @@ namespace Jogo_Matamática_3_ano
         PictureBox PBX_Salvar;
         SoundPlayer SomTema;
         PictureBox PbxPartBaixo;
+        PictureBox pictureBox61;
         public Utilits
             (
             Panel PnlMenu,
@@ -392,7 +393,8 @@ namespace Jogo_Matamática_3_ano
             PictureBox PbxVinheta2,
             PictureBox PBX_Salvar,
             SoundPlayer SomTema,
-            PictureBox PbxPartBaixo
+            PictureBox PbxPartBaixo,
+            PictureBox pictureBox61
             )
         {
             this.PnlMenu = PnlMenu;
@@ -579,6 +581,7 @@ namespace Jogo_Matamática_3_ano
             this.PBX_Salvar = PBX_Salvar;
             this.SomTema = SomTema;
             this.PbxPartBaixo = PbxPartBaixo;
+            this.pictureBox61 = pictureBox61;
         }
         #endregion
 
@@ -1028,18 +1031,6 @@ namespace Jogo_Matamática_3_ano
             {
 
             }
-            else if (fase == 4)
-            {
-
-            }
-            else if (fase == 5)
-            {
-
-            }
-            else if (fase == 6)
-            {
-
-            }
             return false;
         }
 
@@ -1152,7 +1143,6 @@ namespace Jogo_Matamática_3_ano
             //Aleatorizar as perguntas
             Random randNum = new Random();
             randomPergunta = randNum.Next(1, 4);
-            randomPergunta = 2; // IRÁ SER REMOVIDO
 
             //Perguntas fase 1 e verificar se está correta
             if (fase == 1)
@@ -1164,18 +1154,6 @@ namespace Jogo_Matamática_3_ano
                 SetarImgPergunta();
             }
             else if (fase == 3)
-            {
-                SetarImgPergunta();
-            }
-            else if (fase == 4)
-            {
-                SetarImgPergunta();
-            }
-            else if (fase == 5)
-            {
-                SetarImgPergunta();
-            }
-            else if (fase == 6)
             {
                 SetarImgPergunta();
             }
@@ -1289,8 +1267,7 @@ namespace Jogo_Matamática_3_ano
                 PBX_Vitamina7.Location = new Point(131, 646);
                 PBX_Vitoria.Location = new Point(1192, 675);
             }
-
-            if (fase == 5)
+            if (fase == 3)
             {
 
             }
@@ -1348,7 +1325,7 @@ namespace Jogo_Matamática_3_ano
                 PBX_Ambiente7.Location = new Point(788, 594);
             }
 
-            if (fase == 5)
+            if (fase == 3)
             {
                 PBX_Ambiente1.Location = new Point(137, 266);
                 PBX_Ambiente2.Location = new Point(0, 0);
@@ -1391,7 +1368,7 @@ namespace Jogo_Matamática_3_ano
                 PbxCristal2.Location = new Point(418, 431);
                 PbxCristal3.Location = new Point(1113, 315);
             }
-            if (fase == 5)
+            if (fase == 3)
             {
                 PbxCristal1.Location = new Point(476, 188);
                 PbxCristal2.Location = new Point(669, 288);
@@ -1529,6 +1506,10 @@ namespace Jogo_Matamática_3_ano
                 PbxContVitaminas.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\bifeCru_animado.gif");
                 PbxContCristais.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\cristal_animado.gif");
             }
+            if (fase == 3)
+            {
+
+            }
 
         }
 
@@ -1542,7 +1523,7 @@ namespace Jogo_Matamática_3_ano
             PbxVinheta2.Size = new Size(TAMANHO_X, TAMANHO_Y);
             PbxVinheta2.Location = new Point(TAMANHO_X, 0);
             PbxVinheta2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\Vinheta\\Logo_UNISANTA.png");
-            return 1708;
+            return 1706;
         }
 
         //SETAR A MUSICA
@@ -1676,9 +1657,9 @@ namespace Jogo_Matamática_3_ano
             {
                 if (ControleAnimacao == 701)
                 {
+                    TmrMainGameManager.Stop();
                     PbxPersonagem.Location = new Point(-104, 136);
                     PbxColision.Location = new Point(59, 169);
-                    TmrMainGameManager.Stop();
                 }
                 if (ControleAnimacao > 701 && ControleAnimacao < 752)
                 {
@@ -1702,9 +1683,9 @@ namespace Jogo_Matamática_3_ano
             {
                 if (ControleAnimacao == 701)
                 {
+                    TmrMainGameManager.Stop();
                     PbxColision.Location = new Point(25, 713);
                     PbxPersonagem.Location = new Point(17 - 150, 680);
-                    TmrMainGameManager.Stop();
                 }
                 if (ControleAnimacao > 701 && ControleAnimacao < 752)
                 {
@@ -1729,31 +1710,10 @@ namespace Jogo_Matamática_3_ano
             {
                 if (ControleAnimacao == 701)
                 {
-                    PbxColision.Location = new Point(36, 717);
-                    PbxPersonagem.Location = new Point(25 - 150, 684);
                     TmrMainGameManager.Stop();
+                    PbxColision.Location = new Point(41, 709);
+                    PbxPersonagem.Location = new Point(30 - 150, 676);
                 }
-                if (ControleAnimacao > 701 && ControleAnimacao < 752)
-                {
-                    PbxPersonagem.Location = new Point(PbxPersonagem.Location.X + 3, PbxPersonagem.Location.Y);
-                    if (ControleAnimacao % 5 == 0)
-                    {
-                        animcaoWin = (ControleAnimacao % 2) + 1;
-                        PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_" + animcaoWin + ".png");
-                    }
-                }
-                if (ControleAnimacao == 752)
-                {
-                    PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\frente\\frente_1.png");
-                    TmrAnimation.Stop();
-                    TmrMainGameManager.Start();
-                    return 0;
-                }
-            }
-
-            //Entra no mapa 5
-            if (fase == 5)
-            {
                 if (ControleAnimacao > 701 && ControleAnimacao < 752)
                 {
                     PbxPersonagem.Location = new Point(PbxPersonagem.Location.X + 3, PbxPersonagem.Location.Y);
@@ -2063,67 +2023,6 @@ namespace Jogo_Matamática_3_ano
             }
             if (fase == 3)
             {
-                pictureBox1.Location = new Point(94, 167); pictureBox1.Size = new Size(871, 25);
-                pictureBox2.Location = new Point(323, 195); pictureBox2.Size = new Size(36, 49);
-                pictureBox3.Location = new Point(94, 220); pictureBox3.Size = new Size(223, 24);
-                pictureBox4.Location = new Point(94, 250); pictureBox4.Size = new Size(36, 462);
-                pictureBox5.Location = new Point(136, 272); pictureBox5.Size = new Size(146, 24);
-                pictureBox6.Location = new Point(398, 147); pictureBox6.Size = new Size(37, 14);
-                pictureBox7.Location = new Point(12, 109); pictureBox7.Size = new Size(1264, 32);
-                pictureBox8.Location = new Point(24, 147); pictureBox8.Size = new Size(35, 546);
-                pictureBox9.Location = new Point(-2, 670); pictureBox9.Size = new Size(20, 99);
-
-                pictureBox10.Location = new Point(24, 737); pictureBox10.Size = new Size(1248, 27);
-                pictureBox11.Location = new Point(1227, 205); pictureBox11.Size = new Size(45, 526);
-                pictureBox12.Location = new Point(1278, 128); pictureBox12.Size = new Size(12, 89);
-                pictureBox13.Location = new Point(323, 272); pictureBox13.Size = new Size(36, 389);
-                pictureBox14.Location = new Point(171, 637); pictureBox14.Size = new Size(146, 24);
-                pictureBox15.Location = new Point(171, 324); pictureBox15.Size = new Size(146, 24);
-                pictureBox16.Location = new Point(136, 376); pictureBox16.Size = new Size(146, 24);
-                pictureBox17.Location = new Point(171, 428); pictureBox17.Size = new Size(146, 25);
-                pictureBox18.Location = new Point(136, 480); pictureBox18.Size = new Size(146, 24);
-                pictureBox19.Location = new Point(171, 532); pictureBox19.Size = new Size(146, 25);
-
-                pictureBox20.Location = new Point(136, 584); pictureBox20.Size = new Size(146, 25);
-                pictureBox21.Location = new Point(136, 690); pictureBox21.Size = new Size(223, 22);
-                pictureBox22.Location = new Point(399, 220); pictureBox22.Size = new Size(37, 511);
-                pictureBox23.Location = new Point(365, 272); pictureBox23.Size = new Size(28, 24);
-                pictureBox24.Location = new Point(929, 354); pictureBox24.Size = new Size(36, 358);
-                pictureBox25.Location = new Point(929, 324); pictureBox25.Size = new Size(147, 24);
-                pictureBox26.Location = new Point(1082, 302); pictureBox26.Size = new Size(34, 46);
-                pictureBox27.Location = new Point(854, 220); pictureBox27.Size = new Size(35, 511);
-                pictureBox28.Location = new Point(971, 272); pictureBox28.Size = new Size(145, 24);
-                pictureBox29.Location = new Point(929, 195); pictureBox29.Size = new Size(36, 101);
-
-                pictureBox30.Location = new Point(1005, 220); pictureBox30.Size = new Size(145, 24);
-                pictureBox31.Location = new Point(1005, 167); pictureBox31.Size = new Size(145, 25);
-                pictureBox32.Location = new Point(1156, 147); pictureBox32.Size = new Size(36, 565);
-                pictureBox33.Location = new Point(701, 640); pictureBox33.Size = new Size(36, 19);
-                pictureBox34.Location = new Point(777, 195); pictureBox34.Size = new Size(36, 387);
-                pictureBox35.Location = new Point(549, 663); pictureBox35.Size = new Size(264, 24);
-                pictureBox36.Location = new Point(625, 558); pictureBox36.Size = new Size(146, 24);
-                pictureBox37.Location = new Point(590, 611); pictureBox37.Size = new Size(223, 25);
-                pictureBox38.Location = new Point(474, 272); pictureBox38.Size = new Size(297, 24);
-                pictureBox39.Location = new Point(701, 324); pictureBox39.Size = new Size(36, 180);
-
-                pictureBox40.Location = new Point(590, 508); pictureBox40.Size = new Size(148, 25);
-                pictureBox41.Location = new Point(625, 302); pictureBox41.Size = new Size(35, 177);
-                pictureBox42.Location = new Point(474, 302); pictureBox42.Size = new Size(35, 410);
-                pictureBox43.Location = new Point(549, 324); pictureBox43.Size = new Size(35, 312);
-                pictureBox44.Location = new Point(1082, 458); pictureBox44.Size = new Size(34, 254);
-                pictureBox45.Location = new Point(1005, 376); pictureBox45.Size = new Size(145, 24);
-                pictureBox46.Location = new Point(442, 220); pictureBox46.Size = new Size(296, 24);
-                pictureBox47.Location = new Point(971, 427); pictureBox47.Size = new Size(145, 25);
-                pictureBox48.Location = new Point(1006, 480); pictureBox48.Size = new Size(35, 253);
-                pictureBox49.Location = new Point(777, 692); pictureBox49.Size = new Size(36, 41);
-            }
-            if (fase == 4)
-            {
-
-            }
-            if (fase == 5)
-            {
-
                 pictureBox1.Location = new Point(161, 673); pictureBox1.Size = new Size(22, 31);
                 pictureBox2.Location = new Point(188, 439); pictureBox2.Size = new Size(34, 19);
                 pictureBox3.Location = new Point(189, 254); pictureBox3.Size = new Size(33, 39);
@@ -2184,10 +2083,7 @@ namespace Jogo_Matamática_3_ano
                 pictureBox53.Location = new Point(694, 619); pictureBox53.Size = new Size(138, 28);
                 pictureBox58.Location = new Point(1243, 382); pictureBox58.Size = new Size(47, 35);
                 pictureBox60.Location = new Point(1211, 428); pictureBox60.Size = new Size(47, 258);
-            }
-            if (fase == 6)
-            {
-
+                pictureBox61.Location = new Point(-11, 688); pictureBox61.Size = new Size(31, 44);
             }
         }
 

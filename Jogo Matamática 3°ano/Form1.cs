@@ -94,22 +94,18 @@ namespace Jogo_Matamática_3_ano
             //Tecla precionada
             if (e.KeyCode == Keys.Down || e.KeyCode == Keys.S)
             {
-                focoNoForm();
                 goDown = true;
             }
             if (e.KeyCode == Keys.Up || e.KeyCode == Keys.W)
             {
-                focoNoForm();
                 goUp = true;
             }
             if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
             {
-                focoNoForm();
                 goLeft = true;
             }
             if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
             {
-                focoNoForm();
                 goRight = true;
             }
         }
@@ -118,22 +114,18 @@ namespace Jogo_Matamática_3_ano
             //Tecla "solta"
             if (e.KeyCode == Keys.Down || e.KeyCode == Keys.S)
             {
-                focoNoForm();
                 goDown = false;
             }
             if (e.KeyCode == Keys.Up || e.KeyCode == Keys.W)
             {
-                focoNoForm();
                 goUp = false;
             }
             if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
             {
-                focoNoForm();
                 goLeft = false;
             }
             if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
             {
-                focoNoForm();
                 goRight = false;
             }
         }
@@ -463,7 +455,8 @@ namespace Jogo_Matamática_3_ano
                 PbxVinheta2,
                 PBX_Salvar,
                 SomTema,
-                PbxPartBaixo
+                PbxPartBaixo,
+                pictureBox61
                 );
             #endregion
 
@@ -903,7 +896,11 @@ namespace Jogo_Matamática_3_ano
 
             //Setar o mapa da fase
             this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_1.png");
+            this.BackColor = Color.SeaGreen;
             PBX_Vitoria.Image = Image.FromFile(Directory.GetCurrentDirectory() + diretorioObjeto);
+            PbxPartBaixo.BackColor = Color.SeaGreen;
+            PbxPartBaixo.Location = new Point(-2, 757);
+            PbxPartBaixo.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\Parte de baixo\\fase" + fase + ".png");
 
             //Setar a cerca da fase
             PbxCerca.Location = new Point(1181, 554);
@@ -966,21 +963,17 @@ namespace Jogo_Matamática_3_ano
 
             //Setar o mapa da fase
             this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_2.png");
-            this.BackColor = Color.SeaGreen;
+            this.BackColor = Color.Gray;
             PBX_Vitoria.Image = Image.FromFile(Directory.GetCurrentDirectory() + diretorioObjeto);
-            PbxPartBaixo.BackColor = Color.SeaGreen;
+            PbxPartBaixo.BackColor = Color.Gray;
             PbxPartBaixo.Location = new Point(-2, 757);
             PbxPartBaixo.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\Parte de baixo\\fase" + fase + ".png");
-
-
 
             //Setar a cerca da fase
             PbxCerca.Location = new Point(1191, 650);
             PbxCerca.Visible = true;
 
             //Setar a posição inicial da colisão e personagem e imagen
-            PbxColision.Location = new Point(25, 713);
-            PbxPersonagem.Location = new Point(-133, 680);
             ControleAnimacao = 700;
             TmrAnimation.Start();
 
@@ -1014,6 +1007,11 @@ namespace Jogo_Matamática_3_ano
 
         private void PBX_Fase3_Click(object sender, EventArgs e)
         {
+            //Diretório das imagens que estamos usando para a fase
+            string diretorioVit = "\\img\\itens\\cereja_animada.gif",
+                   diretorioCristal = "\\img\\itens\\cristal_animado.gif",
+                   diretorioAmbiente = "\\img\\ambiente\\mapa_5\\arvoreNeve.png";
+
             //Fase atual
             fase = 3;
 
@@ -1022,12 +1020,9 @@ namespace Jogo_Matamática_3_ano
             tempSeg = 15;
 
             //Setar a posição inicial da colisão e personagem e imagen
-            PbxColision.Location = new Point(36, 717);
-            PbxPersonagem.Location = new Point(-125, 684);
-            PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson +"\\direita\\direita_1.png");
+            PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_1.png");
 
             //Start da fase
-            TmrMainGameManager.Start();
             TMR_Tempo.Start();
             ControleAnimacao = 700;
             TmrAnimation.Start();
@@ -1036,57 +1031,14 @@ namespace Jogo_Matamática_3_ano
             PNL_Fases.Visible = false;
             PnlMenu.Visible = false;
             PNL_Pause.Enabled = true;
-
-            //Setar o mapa da fase
-            this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_3.png");
-
-            //Carregar as paredes
-            utilits.loadWalls(fase);
-
-            //Setar a música da fase
-            utilits.setMusic("caverna"); // ainda não tem musiquinha :(
-        }
-
-        #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        #region Start fase 5 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        private void PBX_Fase5_Click(object sender, EventArgs e)
-        {
-            //Diretório das imagens que estamos usando para a fase
-            string diretorioVit = "\\img\\itens\\cereja_animada.gif",
-                   diretorioCristal = "\\img\\itens\\cristal_animado.gif",
-                   diretorioAmbiente = "\\img\\ambiente\\mapa_5\\arvoreNeve.png";
-
-            //Fase atual
-            fase = 5;
-
-            //TEMPO DE FASE
-            tempMin = 1;
-            tempSeg = 15;
-
-            //Setar a posição inicial da colisão e personagem e imagen
-            PbxColision.Location = new Point(39, 711);
-            PbxPersonagem.Location = new Point(-125, 684);
-            PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_1.png");
-
-            //Start da fase
-            TmrMainGameManager.Start();
-            TMR_Tempo.Start();
-            ControleAnimacao = 700;
-            TmrAnimation.Start(); 
-
-            //Esconder os paineis
-            PNL_Fases.Visible = false;
-            PnlMenu.Visible = false;
-            PNL_Pause.Enabled = true;
             PBX_AmbVilao.Visible = true;
 
             //Setar o mapa da fase
-            this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_5.png");
-            this.BackColor = Color.Gray;
-            PbxPartBaixo.BackColor = Color.Gray;
-            PbxPartBaixo.Location = new Point(-2, 757);
-            PbxPartBaixo.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\Parte de baixo\\fase" + fase + ".png");
+            this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_3.png");
+//            this.BackColor = Color.Gray;
+//            PbxPartBaixo.BackColor = Color.Gray;
+//            PbxPartBaixo.Location = new Point(-2, 757);
+//            PbxPartBaixo.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\Parte de baixo\\fase" + fase + ".png");
 
 
             //SETAR TRANSPARENCIA ITENS
@@ -1108,7 +1060,8 @@ namespace Jogo_Matamática_3_ano
             //Setar a música da fase
             utilits.setMusic("gelo");
         }
-        #endregion
+
+        #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         #region Abertura de jogo/Funções Iniciais //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1821,18 +1774,6 @@ namespace Jogo_Matamática_3_ano
             {
 
             }
-            if (fase == 4) //Resposta de texto da fase 4
-            {
-
-            }
-            if (fase == 5) //Resposta de texto da fase 5
-            {
-
-            }
-            if (fase == 6) //Resposta de texto da fase 6
-            {
-
-            }
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1881,7 +1822,8 @@ namespace Jogo_Matamática_3_ano
         #region TIMER PARA TESTES
         private void TmrDebug_Tick(object sender, EventArgs e)
         {
-
+            Console.WriteLine("X Player = " + PbxPersonagem.Location.X);
+            Console.WriteLine("Y Player = " + PbxPersonagem.Location.Y);
         }
         #endregion
     }
