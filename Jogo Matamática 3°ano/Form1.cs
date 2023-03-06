@@ -95,18 +95,22 @@ namespace Jogo_Matamática_3_ano
             if (e.KeyCode == Keys.Down || e.KeyCode == Keys.S)
             {
                 goDown = true;
+                e.Handled = true; focoNoForm();
             }
             if (e.KeyCode == Keys.Up || e.KeyCode == Keys.W)
             {
                 goUp = true;
+                e.Handled = true; focoNoForm();
             }
             if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
             {
                 goLeft = true;
+                e.Handled = true; focoNoForm();
             }
             if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
             {
                 goRight = true;
+                e.Handled = true; focoNoForm();
             }
         }
         private void FrmJogo_KeyUp(object sender, KeyEventArgs e)
@@ -115,18 +119,22 @@ namespace Jogo_Matamática_3_ano
             if (e.KeyCode == Keys.Down || e.KeyCode == Keys.S)
             {
                 goDown = false;
+                e.Handled = true; focoNoForm();
             }
             if (e.KeyCode == Keys.Up || e.KeyCode == Keys.W)
             {
                 goUp = false;
+                e.Handled = true; focoNoForm();
             }
             if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
             {
                 goLeft = false;
+                e.Handled = true; focoNoForm();
             }
             if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
             {
                 goRight = false;
+                e.Handled = true; focoNoForm();
             }
         }
 
@@ -239,6 +247,7 @@ namespace Jogo_Matamática_3_ano
                     }
                 }
             }
+            focoNoForm();
         }
         //Verificar se são números que estão entrando, apenas.
         private void Verificar(object sender, KeyPressEventArgs e)
@@ -1822,8 +1831,7 @@ namespace Jogo_Matamática_3_ano
         #region TIMER PARA TESTES
         private void TmrDebug_Tick(object sender, EventArgs e)
         {
-            Console.WriteLine("X Player = " + PbxPersonagem.Location.X);
-            Console.WriteLine("Y Player = " + PbxPersonagem.Location.Y);
+            Console.WriteLine("");
         }
         #endregion
     }
