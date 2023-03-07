@@ -637,7 +637,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn4.Enabled = false;
                     PbxBtn4.Hide();
 
-                    setImgBtn(4);
+                    setImgBtn(4, fase);
 
                     PbxBtn1.Location = new Point(681, 104);
                     PbxBtn2.Location = new Point(835, 104);
@@ -652,7 +652,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn4.Enabled = false;
                     PbxBtn4.Hide();
 
-                    setImgBtn(4);
+                    setImgBtn(4, fase);
 
                     PbxBtn1.Size = new Size(SizeX, SizeY);
                     PbxBtn2.Size = new Size(SizeX, SizeY);
@@ -666,7 +666,7 @@ namespace Jogo_Matamática_3_ano
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'c')
                 {
-                    setImgBtn(5);
+                    setImgBtn(5, fase);
 
                     PbxBtn1.Location = new Point(833, 28);
                     PbxBtn2.Location = new Point(1057, 111);
@@ -687,7 +687,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn3.Hide();
                     PbxBtn4.Hide();
 
-                    setImgBtn(2);
+                    setImgBtn(2, fase);
 
                     PbxBtn1.Size = new Size(SizeX, SizeY);
                     PbxBtnCerto.Size = new Size(SizeX, SizeY);
@@ -700,7 +700,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn4.Enabled = false;
                     PbxBtn4.Hide();
 
-                    setImgBtn(4);
+                    setImgBtn(4, fase);
 
                     PbxBtn1.Location = new Point(766, 98);
                     PbxBtn2.Location = new Point(620, 98);
@@ -712,7 +712,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn4.Enabled = false;
                     PbxBtn4.Hide();
 
-                    setImgBtn(4);
+                    setImgBtn(4, fase);
 
                     PbxBtn1.Location = new Point(792, 97);
                     PbxBtn2.Location = new Point(649, 97);
@@ -727,7 +727,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn4.Enabled = false;
                     PbxBtn4.Hide();
 
-                    setImgBtn(4);
+                    setImgBtn(4, fase);
 
                     PbxBtn1.Size = new Size(SizeX, SizeY);
                     PbxBtn2.Size = new Size(SizeX, SizeY);
@@ -744,7 +744,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn4.Enabled = false;
                     PbxBtn4.Hide();
 
-                    setImgBtn(4);
+                    setImgBtn(4, fase);
 
                     PbxBtn1.Location = new Point(90, 105);
                     PbxBtn2.Location = new Point(385, 105);
@@ -764,7 +764,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn4.Enabled = false;
                     PbxBtn4.Hide();
 
-                    setImgBtn(4);
+                    setImgBtn(4, fase);
 
                     PbxBtn1.Location = new Point(335, 106);
                     PbxBtn2.Location = new Point(621, 106);
@@ -784,7 +784,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn4.Enabled = false;
                     PbxBtn4.Hide();
 
-                    setImgBtn(4);
+                    setImgBtn(4, fase);
 
                     PbxBtn1.Location = new Point(277, 108);
                     PbxBtn2.Location = new Point(560, 108);
@@ -793,7 +793,7 @@ namespace Jogo_Matamática_3_ano
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'a')
                 {
-                    setImgBtn(5);
+                    setImgBtn(5, fase);
 
                     PbxBtn1.Location = new Point(904, 26);
                     PbxBtn2.Location = new Point(1050, 111);
@@ -806,7 +806,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn4.Enabled = false;
                     PbxBtn4.Hide();
 
-                    setImgBtn(4);
+                    setImgBtn(4, fase);
 
                     PbxBtn1.Location = new Point(916, 23);
                     PbxBtn2.Location = new Point(1062, 108);
@@ -815,7 +815,7 @@ namespace Jogo_Matamática_3_ano
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'c')
                 {
-                    setImgBtn(5);
+                    setImgBtn(5, fase);
 
                     PbxBtn1.Location = new Point(916, 23);
                     PbxBtn2.Location = new Point(1062, 108);
@@ -832,7 +832,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn4.Enabled = false;
                     PbxBtn4.Hide();
 
-                    setImgBtn(4);
+                    setImgBtn(4, fase);
 
                     PbxBtn1.Location = new Point(362, 101);
                     PbxBtn2.Location = new Point(508, 101);
@@ -847,7 +847,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn4.Enabled = false;
                     PbxBtn4.Hide();
 
-                    setImgBtn(4);
+                    setImgBtn(4, fase);
 
                     PbxBtn1.Size = new Size(SizeX, SizeY);
                     PbxBtn2.Size = new Size(SizeX, SizeY);
@@ -864,7 +864,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn4.Enabled = false;
                     PbxBtn4.Hide();
 
-                    setImgBtn(4);
+                    setImgBtn(4, fase);
 
                     PbxBtn1.Location = new Point(651, 87);
                     PbxBtn2.Location = new Point(794, 86);
@@ -874,7 +874,18 @@ namespace Jogo_Matamática_3_ano
             }
             else if (fase == 2)
             {
+                if (randomPergunta == 1 && PerguntaLetra == 'a')
+                {
+                    PbxBtn4.Enabled = false;
+                    PbxBtn4.Hide();
 
+                    setImgBtn(4, fase);
+
+                    PbxBtn1.Location = new Point(388, 110);
+                    PbxBtn2.Location = new Point(PbxBtn1.Location.X + (SizeX + 20), 110);
+                    PbxBtn3.Location = new Point(PbxBtn2.Location.X + (SizeX + 20), 110);
+                    PbxBtnCerto.Location = new Point(PbxBtn3.Location.X + (SizeX + 20), 110);
+                }
             }
             else if (fase == 3)
             {
@@ -882,27 +893,33 @@ namespace Jogo_Matamática_3_ano
             }
             return false;
         }
-        private void setImgBtn(int qtdBtns)
+        private void setImgBtn(int qtdBtns, int fase)
         {
             if (qtdBtns == 2)
             {
-                PbxBtn1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 1 + ".png");
-                PbxBtnCerto.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\Btns\\" + randomPergunta + PerguntaLetra + "_Certo.png");
+                PbxBtn1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 1 + ".png");
+                PbxBtnCerto.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_Certo.png");
+            }
+            if (qtdBtns == 3)
+            {
+                PbxBtn1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 1 + ".png");
+                PbxBtn2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 2 + ".png");
+                PbxBtnCerto.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_Certo.png");
             }
             if (qtdBtns == 4)
             {
-                PbxBtn1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 1 + ".png");
-                PbxBtn2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 2 + ".png");
-                PbxBtn3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 3 + ".png");
-                PbxBtnCerto.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\Btns\\" + randomPergunta + PerguntaLetra + "_Certo.png");
+                PbxBtn1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 1 + ".png");
+                PbxBtn2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 2 + ".png");
+                PbxBtn3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 3 + ".png");
+                PbxBtnCerto.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_Certo.png");
             }
             if (qtdBtns == 5)
             {
-                PbxBtn1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 1 + ".png");
-                PbxBtn2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 2 + ".png");
-                PbxBtn3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 3 + ".png");
-                PbxBtn4.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 4 + ".png");
-                PbxBtnCerto.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_1\\Btns\\" + randomPergunta + PerguntaLetra + "_Certo.png");
+                PbxBtn1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 1 + ".png");
+                PbxBtn2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 2 + ".png");
+                PbxBtn3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 3 + ".png");
+                PbxBtn4.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_" + 4 + ".png");
+                PbxBtnCerto.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\perguntas\\mapa_" + fase + "\\Btns\\" + randomPergunta + PerguntaLetra + "_Certo.png");
             }
         }
 
@@ -1209,6 +1226,7 @@ namespace Jogo_Matamática_3_ano
             //Aleatorizar as perguntas
             Random randNum = new Random();
             randomPergunta = randNum.Next(1, 4);
+            randomPergunta = 1;
 
             //Perguntas fase 1 e verificar se está correta
             if (fase == 1)
