@@ -1416,11 +1416,6 @@ namespace Jogo_Matamática_3_ano
             TmrAnimation.Start();
         }
 
-        public void focoNoForm()
-        {
-            this.Focus();
-        }
-
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         #region Animações //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1596,6 +1591,8 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         Lbl_de_Ajuda.Text = "Você Acertou!! ＜（＾－＾）＞";
                         sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                     else if (resultado > 17 && resultado < 37)
                     {
@@ -1625,42 +1622,23 @@ namespace Jogo_Matamática_3_ano
                         tempSeg = utilits.addTempo(10, tempSeg);
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
-                    }
-                    if (num1 >= (7 * 4) - 10 && num1 <= (7 * 4) + 10 && num1 != 7 * 4)
-                    {
-                        LblResposta.ForeColor = Color.Yellow;
-                    }
-                    if (num2 >= (6 * 3) - 10 && num2 <= (6 * 3) + 10 && num2 != 6 * 3)
-                    {
-                        LblResposta2.ForeColor = Color.Yellow;
-                    }
-                    if (num3 >= (7 * 8) - 10 && num3 <= (7 * 8) + 10 && num3 != 7 * 8)
-                    {
-                        LblResposta3.ForeColor = Color.Yellow;
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                     if (num1 == 7 * 4)
                     {
-                        LblResposta.ForeColor = Color.GreenYellow;
+                        LblResposta.ForeColor = Color.Green;
+                        TxtResposta.Enabled = false;
                     }
                     if (num2 == 6 * 3)
                     {
-                        LblResposta2.ForeColor = Color.GreenYellow;
+                        LblResposta2.ForeColor = Color.Green;
+                        TxtResposta2.Enabled = false;
                     }
                     if (num3 == 7 * 8)
                     {
-                        LblResposta3.ForeColor = Color.GreenYellow;
-                    }
-                    if (num1 < (7 * 4) - 10 && num1 > (7 * 4) + 10)
-                    {
-                        LblResposta.ForeColor = Color.White;
-                    }
-                    if (num2 < (6 * 3) - 10 && num2 > (6 * 3) + 10)
-                    {
-                        LblResposta2.ForeColor = Color.White;
-                    }
-                    if (num3 < (7 * 8) - 10 && num3 > (7 * 8) + 10)
-                    {
-                        LblResposta3.ForeColor = Color.White;
+                        LblResposta3.ForeColor = Color.Green;
+                        TxtResposta3.Enabled = false;
                     }
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'e')
@@ -1674,14 +1652,8 @@ namespace Jogo_Matamática_3_ano
                         tempSeg = utilits.addTempo(10, tempSeg);
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
-                    }
-                    if (num1 >= 0 && num1 <= 20 && num1 != 10)
-                    {
-                        LblResposta.ForeColor = Color.Yellow;
-                    }
-                    if (num1 < 0 && num1 > 20)
-                    {
-                        LblResposta.ForeColor = Color.White;
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'f')
@@ -1707,54 +1679,28 @@ namespace Jogo_Matamática_3_ano
                         tempSeg = utilits.addTempo(10, tempSeg);
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
-                    if (num1 >= (64 / 2) - 10 && num1 <= (64 / 2) + 10 && num1 != 64 / 2)
+                    if (num1 == 64 / 2) 
                     {
-                        LblResposta.ForeColor = Color.Yellow;
+                        LblResposta.ForeColor = Color.Green;
+                        TxtResposta.Enabled = false;
                     }
-                    if (num2 >= (448 / 4) - 10 && num2 <= (448 / 4) + 10 && num2 != 448 / 4)
-                    {
-                        LblResposta2.ForeColor = Color.Yellow;
-                    }
-                    if (num3 >= (93 / 3) - 10 && num3 <= (93 / 3) + 10 && num3 != 93 / 3)
-                    {
-                        LblResposta3.ForeColor = Color.Yellow;
-                    }
-                    if (num4 >= (535 / 5) - 10 && num4 <= (535 / 5) + 10 && num4 != 535 / 5)
-                    {
-                        LblResposta4.ForeColor = Color.Yellow;
-                    }
-                    if (num1 == 64 / 2)
-                    {
-                        LblResposta.ForeColor = Color.GreenYellow;
-                    }
-                    if (num2 == 448 / 4)
-                    {
-                        LblResposta2.ForeColor = Color.GreenYellow;
+                    if (num2 == 448 / 4) 
+                    { 
+                        LblResposta2.ForeColor = Color.Green;
+                        TxtResposta2.Enabled = false;
                     }
                     if (num3 == 93 / 3)
-                    {
-                        LblResposta3.ForeColor = Color.GreenYellow;
+                    { 
+                        LblResposta3.ForeColor = Color.Green;
+                        TxtResposta3.Enabled = false;
                     }
-                    if (num3 == 535 / 5)
+                    if (num4 == 535 / 5)
                     {
-                        LblResposta3.ForeColor = Color.GreenYellow;
-                    }
-                    if (num1 < (64 / 2) - 10 && num1 > (64 / 2) + 10)
-                    {
-                        LblResposta.ForeColor = Color.White;
-                    }
-                    if (num2 < (448 / 4) - 10 && num2 > (448 / 4) + 10)
-                    {
-                        LblResposta2.ForeColor = Color.White;
-                    }
-                    if (num3 < (93 / 3) - 10 && num3 > (93 / 3) + 10)
-                    {
-                        LblResposta3.ForeColor = Color.White;
-                    }
-                    if (num3 < (535 / 5) - 10 && num3 > (535 / 5) + 10)
-                    {
-                        LblResposta3.ForeColor = Color.White;
+                        LblResposta4.ForeColor = Color.Green;
+                        TxtResposta4.Enabled = false;
                     }
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'd')
@@ -1768,14 +1714,224 @@ namespace Jogo_Matamática_3_ano
                         tempSeg = utilits.addTempo(10, tempSeg);
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
-                    if (num1 >= 23 && num1 <= 43 && num1 != 33)
+                }
+            }
+            if (fase == 2) //Resposta de texto da fase 2
+            {
+                if (randomPergunta == 1 && PerguntaLetra == 'b')
+                {
+                    if (TxtResposta.Text != "")
                     {
-                        LblResposta.ForeColor = Color.Yellow;
+                        num1 = Convert.ToDouble(TxtResposta.Text);
                     }
-                    if (num1 < 23 && num1 > 43)
+                    if (TxtResposta2.Text != "")
                     {
-                        LblResposta.ForeColor = Color.White;
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (TxtResposta3.Text != "")
+                    {
+                        num3 = Convert.ToDouble(TxtResposta3.Text);
+                    }
+                    if (num1 == 10 / 10 && num2 == 10 / 5 && num3 == 10 / 2)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                    if (num1 == 10 / 10)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        TxtResposta.Enabled = false;
+                    }
+                    if (num2 == 10 / 5)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        TxtResposta2.Enabled = false;
+                    }
+                    if (num3 == 10 / 2)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        TxtResposta3.Enabled = false;
+                    }
+                }
+                if (randomPergunta == 1 && PerguntaLetra == 'c')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (TxtResposta2.Text != "")
+                    {
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (TxtResposta3.Text != "")
+                    {
+                        num3 = Convert.ToDouble(TxtResposta3.Text);
+                    }
+                    if (num1 ==  5 * 5 && num2 == 4 * 4 && num3 == 3 * 3)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                    if (num1 == 5 * 5)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        TxtResposta.Enabled = false;
+                    }
+                    if (num2 == 4 * 4)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        TxtResposta2.Enabled = false;
+                    }
+                    if (num3 == 3 * 3)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        TxtResposta3.Enabled = false;
+                    }
+                }
+                if (randomPergunta == 1 && PerguntaLetra == 'd')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (TxtResposta2.Text != "")
+                    {
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (TxtResposta3.Text != "")
+                    {
+                        num3 = Convert.ToDouble(TxtResposta3.Text);
+                    }
+                    if (num1 == 30 / 6 && num2 == 28 / 4 && num3 == 30 / 3)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                    if (num1 == 30 / 6)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        TxtResposta.Enabled = false;
+                    }
+                    if (num2 == 28 / 4)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        TxtResposta2.Enabled = false;
+                    }
+                    if (num3 == 30 / 3)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        TxtResposta3.Enabled = false;
+                    }
+                }
+                if (randomPergunta == 1 && PerguntaLetra == 'e')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 10)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 1 && PerguntaLetra == 'g')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 7)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 2 && PerguntaLetra == 'd')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 45)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 2 && PerguntaLetra == 'f')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 16)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 2 && PerguntaLetra == 'g')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (TxtResposta2.Text != "")
+                    {
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (num1 == 53 && num2 == 5)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                    if (num1 == 53)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        TxtResposta.Enabled = false;
+                    }
+                    if (num2 == 5)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        TxtResposta2.Enabled = false;
+                    }
+                }
+                if (randomPergunta == 3 && PerguntaLetra == 'b')
+                {
+                    if (TxtResposta.Text.ToLower() == "cento e cinquenta e um")
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
                     }
                 }
             }
@@ -1827,6 +1983,17 @@ namespace Jogo_Matamática_3_ano
         }
 
         #endregion //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        #region Foco no form
+        private void FrmJogo_Click(object sender, EventArgs e)
+        {
+            focoNoForm();
+        }
+        public void focoNoForm()
+        {
+            this.Focus();
+        }
+        #endregion
 
         #region TIMER PARA TESTES
         private void TmrDebug_Tick(object sender, EventArgs e)
