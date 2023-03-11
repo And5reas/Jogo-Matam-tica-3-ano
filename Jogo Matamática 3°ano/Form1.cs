@@ -1148,17 +1148,6 @@ namespace Jogo_Matamática_3_ano
         {
             PNL_SairInicio.Visible = false;
         }
-
-        private void PbxPersonagem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmJogo_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         #region MENU PAUSE //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1617,6 +1606,21 @@ namespace Jogo_Matamática_3_ano
                     {
                         num3 = Convert.ToDouble(TxtResposta3.Text);
                     }
+                    if (num1 == 7 * 4)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 6 * 3)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num3 == 7 * 8)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        LblResposta3.Enabled = false;
+                    }
                     if (num1 == 7 * 4 && num2 == 6 * 3 && num3 == 7 * 8)
                     {
                         tempSeg = utilits.addTempo(10, tempSeg);
@@ -1624,21 +1628,6 @@ namespace Jogo_Matamática_3_ano
                         sairPergunta();
                         focoNoForm();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
-                    }
-                    if (num1 == 7 * 4)
-                    {
-                        LblResposta.ForeColor = Color.Green;
-                        TxtResposta.Enabled = false;
-                    }
-                    if (num2 == 6 * 3)
-                    {
-                        LblResposta2.ForeColor = Color.Green;
-                        TxtResposta2.Enabled = false;
-                    }
-                    if (num3 == 7 * 8)
-                    {
-                        LblResposta3.ForeColor = Color.Green;
-                        TxtResposta3.Enabled = false;
                     }
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'e')
@@ -1674,6 +1663,26 @@ namespace Jogo_Matamática_3_ano
                     {
                         num4 = Convert.ToDouble(TxtResposta4.Text);
                     }
+                    if (num1 == 64 / 2) 
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 448 / 4) 
+                    { 
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num3 == 93 / 3)
+                    { 
+                        LblResposta3.ForeColor = Color.Green;
+                        LblResposta3.Enabled = false;
+                    }
+                    if (num4 == 535 / 5)
+                    {
+                        LblResposta4.ForeColor = Color.Green;
+                        LblResposta4.Enabled = false;
+                    }
                     if (num1 == 64 / 2 && num2 == 448 / 4 && num3 == 93 / 3 && num4 == 535 / 5)
                     {
                         tempSeg = utilits.addTempo(10, tempSeg);
@@ -1681,26 +1690,6 @@ namespace Jogo_Matamática_3_ano
                         sairPergunta();
                         focoNoForm();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
-                    }
-                    if (num1 == 64 / 2) 
-                    {
-                        LblResposta.ForeColor = Color.Green;
-                        TxtResposta.Enabled = false;
-                    }
-                    if (num2 == 448 / 4) 
-                    { 
-                        LblResposta2.ForeColor = Color.Green;
-                        TxtResposta2.Enabled = false;
-                    }
-                    if (num3 == 93 / 3)
-                    { 
-                        LblResposta3.ForeColor = Color.Green;
-                        TxtResposta3.Enabled = false;
-                    }
-                    if (num4 == 535 / 5)
-                    {
-                        LblResposta4.ForeColor = Color.Green;
-                        TxtResposta4.Enabled = false;
                     }
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'd')
@@ -1735,6 +1724,21 @@ namespace Jogo_Matamática_3_ano
                     {
                         num3 = Convert.ToDouble(TxtResposta3.Text);
                     }
+                    if (num1 == 10 / 10)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 10 / 5)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num3 == 10 / 2)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        LblResposta3.Enabled = false;
+                    }
                     if (num1 == 10 / 10 && num2 == 10 / 5 && num3 == 10 / 2)
                     {
                         tempSeg = utilits.addTempo(10, tempSeg);
@@ -1742,21 +1746,6 @@ namespace Jogo_Matamática_3_ano
                         sairPergunta();
                         focoNoForm();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
-                    }
-                    if (num1 == 10 / 10)
-                    {
-                        LblResposta.ForeColor = Color.Green;
-                        TxtResposta.Enabled = false;
-                    }
-                    if (num2 == 10 / 5)
-                    {
-                        LblResposta2.ForeColor = Color.Green;
-                        TxtResposta2.Enabled = false;
-                    }
-                    if (num3 == 10 / 2)
-                    {
-                        LblResposta3.ForeColor = Color.Green;
-                        TxtResposta3.Enabled = false;
                     }
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'c')
@@ -1773,28 +1762,28 @@ namespace Jogo_Matamática_3_ano
                     {
                         num3 = Convert.ToDouble(TxtResposta3.Text);
                     }
-                    if (num1 ==  5 * 5 && num2 == 4 * 4 && num3 == 3 * 3)
+                    if (num1 == 5 * 5)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 4 * 4)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num3 == 3 * 3)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        LblResposta3.Enabled = false;
+                    }
+                    if (num1 == 5 * 5 && num2 == 4 * 4 && num3 == 3 * 3)
                     {
                         tempSeg = utilits.addTempo(10, tempSeg);
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
-                    }
-                    if (num1 == 5 * 5)
-                    {
-                        LblResposta.ForeColor = Color.Green;
-                        TxtResposta.Enabled = false;
-                    }
-                    if (num2 == 4 * 4)
-                    {
-                        LblResposta2.ForeColor = Color.Green;
-                        TxtResposta2.Enabled = false;
-                    }
-                    if (num3 == 3 * 3)
-                    {
-                        LblResposta3.ForeColor = Color.Green;
-                        TxtResposta3.Enabled = false;
                     }
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'd')
@@ -1811,6 +1800,21 @@ namespace Jogo_Matamática_3_ano
                     {
                         num3 = Convert.ToDouble(TxtResposta3.Text);
                     }
+                    if (num1 == 30 / 6)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 28 / 4)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num3 == 30 / 3)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        LblResposta3.Enabled = false;
+                    }
                     if (num1 == 30 / 6 && num2 == 28 / 4 && num3 == 30 / 3)
                     {
                         tempSeg = utilits.addTempo(10, tempSeg);
@@ -1818,21 +1822,6 @@ namespace Jogo_Matamática_3_ano
                         sairPergunta();
                         focoNoForm();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
-                    }
-                    if (num1 == 30 / 6)
-                    {
-                        LblResposta.ForeColor = Color.Green;
-                        TxtResposta.Enabled = false;
-                    }
-                    if (num2 == 28 / 4)
-                    {
-                        LblResposta2.ForeColor = Color.Green;
-                        TxtResposta2.Enabled = false;
-                    }
-                    if (num3 == 30 / 3)
-                    {
-                        LblResposta3.ForeColor = Color.Green;
-                        TxtResposta3.Enabled = false;
                     }
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'e')
@@ -1905,6 +1894,16 @@ namespace Jogo_Matamática_3_ano
                     {
                         num2 = Convert.ToDouble(TxtResposta2.Text);
                     }
+                    if (num1 == 53)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 5)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
                     if (num1 == 53 && num2 == 5)
                     {
                         tempSeg = utilits.addTempo(10, tempSeg);
@@ -1912,16 +1911,6 @@ namespace Jogo_Matamática_3_ano
                         sairPergunta();
                         focoNoForm();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
-                    }
-                    if (num1 == 53)
-                    {
-                        LblResposta.ForeColor = Color.Green;
-                        TxtResposta.Enabled = false;
-                    }
-                    if (num2 == 5)
-                    {
-                        LblResposta2.ForeColor = Color.Green;
-                        TxtResposta2.Enabled = false;
                     }
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'b')
@@ -1937,7 +1926,560 @@ namespace Jogo_Matamática_3_ano
             }
             if (fase == 3) //Resposta de texto da fase 3
             {
-
+                if (randomPergunta == 1 && PerguntaLetra == 'a')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 7)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 1 && PerguntaLetra == 'b')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 31549)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 1 && PerguntaLetra == 'c')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (TxtResposta2.Text != "")
+                    {
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (num1 == 75 - 24)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 124 - 34)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num1 == 75 - 24 && num2 == 124 - 34)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 1 && PerguntaLetra == 'd')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 5371)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 1 && PerguntaLetra == 'e')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (TxtResposta2.Text != "")
+                    {
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (TxtResposta3.Text != "")
+                    {
+                        num3 = Convert.ToDouble(TxtResposta3.Text);
+                    }
+                    if (TxtResposta4.Text != "")
+                    {
+                        num4 = Convert.ToDouble(TxtResposta4.Text);
+                    }
+                    if (num1 == 3 + 3)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 3 + 6)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num3 == 3 + 9)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        LblResposta3.Enabled = false;
+                    }
+                    if (num4 == 3 + 12)
+                    {
+                        LblResposta4.ForeColor = Color.Green;
+                        LblResposta4.Enabled = false;
+                    }
+                    if (num1 == 3 + 3 && num2 == 3 + 6 && num3 == 3 + 9 && num4 == 3 + 12)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 1 && PerguntaLetra == 'f')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (TxtResposta2.Text != "")
+                    {
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (TxtResposta3.Text != "")
+                    {
+                        num3 = Convert.ToDouble(TxtResposta3.Text);
+                    }
+                    if (num1 == 10)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 16)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num3 == 23)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        LblResposta3.Enabled = false;
+                    }
+                    if (num1 == 10 && num2 == 16 && num3 == 23)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 1 && PerguntaLetra == 'g')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 5 / 70)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 2 && PerguntaLetra == 'a')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 86)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 2 && PerguntaLetra == 'b')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 54391)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 2 && PerguntaLetra == 'c')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (TxtResposta2.Text != "")
+                    {
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (num1 == 95 - 64)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 24 + 34)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num1 == 95 - 64 && num2 == 24 + 34)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 2 && PerguntaLetra == 'd')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 5344)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 2 && PerguntaLetra == 'e')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (TxtResposta2.Text != "")
+                    {
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (TxtResposta3.Text != "")
+                    {
+                        num3 = Convert.ToDouble(TxtResposta3.Text);
+                    }
+                    if (TxtResposta4.Text != "")
+                    {
+                        num4 = Convert.ToDouble(TxtResposta4.Text);
+                    }
+                    if (num1 == 5 + 5)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 5 + 10)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num3 == 5 + 15)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        LblResposta3.Enabled = false;
+                    }
+                    if (num4 == 5 + 20)
+                    {
+                        LblResposta4.ForeColor = Color.Green;
+                        LblResposta4.Enabled = false;
+                    }
+                    if (num1 == 5 + 5 && num2 == 5 + 10 && num3 == 5 + 15 && num4 == 5 + 20)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 2 && PerguntaLetra == 'f')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (TxtResposta2.Text != "")
+                    {
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (TxtResposta3.Text != "")
+                    {
+                        num3 = Convert.ToDouble(TxtResposta3.Text);
+                    }
+                    if (num1 == 15)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 24)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num3 == 36)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        LblResposta3.Enabled = false;
+                    }
+                    if (num1 == 15 && num2 == 24 && num3 == 36)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 2 && PerguntaLetra == 'g')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 5 * 9)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 3 && PerguntaLetra == 'a')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (TxtResposta2.Text != "")
+                    {
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (TxtResposta3.Text != "")
+                    {
+                        num3 = Convert.ToDouble(TxtResposta3.Text);
+                    }
+                    if (TxtResposta4.Text != "")
+                    {
+                        num4 = Convert.ToDouble(TxtResposta4.Text);
+                    }
+                    if (num1 == 23)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 42)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num3 == 74)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        LblResposta3.Enabled = false;
+                    }
+                    if (num4 == 86)
+                    {
+                        LblResposta4.ForeColor = Color.Green;
+                        TxtResposta4.Enabled = false;
+                    }
+                    if (num1 == 23 && num2 == 42 && num3 == 74 && num4 == 86)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 3 && PerguntaLetra == 'b')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 53194)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 3 && PerguntaLetra == 'c')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (TxtResposta2.Text != "")
+                    {
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (num1 == 75 - 75)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 124 - 96)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num1 == 75 - 75 && num2 == 124 - 96)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 3 && PerguntaLetra == 'd')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 3271)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 3 && PerguntaLetra == 'e')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (TxtResposta2.Text != "")
+                    {
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (TxtResposta3.Text != "")
+                    {
+                        num3 = Convert.ToDouble(TxtResposta3.Text);
+                    }
+                    if (TxtResposta4.Text != "")
+                    {
+                        num4 = Convert.ToDouble(TxtResposta4.Text);
+                    }
+                    if (num1 == 7 + 7)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 7 + 14)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num3 == 7 + 21)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        LblResposta3.Enabled = false;
+                    }
+                    if (num4 == 7 + 28)
+                    {
+                        LblResposta4.ForeColor = Color.Green;
+                        LblResposta4.Enabled = false;
+                    }
+                    if (num1 == 7 + 7 && num2 == 7 + 14 && num3 == 7 + 21 && num4 == 7 + 28)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 3 && PerguntaLetra == 'f')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (TxtResposta2.Text != "")
+                    {
+                        num2 = Convert.ToDouble(TxtResposta2.Text);
+                    }
+                    if (TxtResposta3.Text != "")
+                    {
+                        num3 = Convert.ToDouble(TxtResposta3.Text);
+                    }
+                    if (num1 == 14)
+                    {
+                        LblResposta.ForeColor = Color.Green;
+                        LblResposta.Enabled = false;
+                    }
+                    if (num2 == 25)
+                    {
+                        LblResposta2.ForeColor = Color.Green;
+                        LblResposta2.Enabled = false;
+                    }
+                    if (num3 == 33)
+                    {
+                        LblResposta3.ForeColor = Color.Green;
+                        LblResposta3.Enabled = false;
+                    }
+                    if (num1 == 14 && num2 == 25 && num3 == 33)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
+                if (randomPergunta == 3 && PerguntaLetra == 'g')
+                {
+                    if (TxtResposta.Text != "")
+                    {
+                        num1 = Convert.ToDouble(TxtResposta.Text);
+                    }
+                    if (num1 == 5 + 70)
+                    {
+                        tempSeg = utilits.addTempo(10, tempSeg);
+                        Score = utilits.addScorePonto(20, Score);
+                        sairPergunta();
+                        focoNoForm();
+                        num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                    }
+                }
             }
         }
 
