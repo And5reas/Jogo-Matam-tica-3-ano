@@ -3,7 +3,7 @@
   <Class Name="Jogo_Matamática_3_ano.FrmJogo" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>+M6lPrdvNi7JC9jrJkqbd/ajiQ/3f0LK/vr6Ec12xP8=</HashCode>
+      <HashCode>+M6lPrduNi7JC5jrJlqbd/ajiQ/3XkLK/vr6EcV0xP8=</HashCode>
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -17,8 +17,15 @@
   <Class Name="Jogo_Matamática_3_ano.Utilits">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>TAIkOtNnFiZISZCCJwqKY/ajiANzBWIK/nC8AY1wxN8=</HashCode>
+      <HashCode>XEIkPtNmNiZIS5CCJwqaY/aniANzBGIq/nC8AYVwxN8=</HashCode>
       <FileName>Utilits.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jogo_Matamática_3_ano.SaveScorePlayer">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SaveScorePlayer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

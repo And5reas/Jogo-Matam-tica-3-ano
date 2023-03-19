@@ -53,3 +53,20 @@ C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3�
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.CoreCompileInputs.cache
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.exe
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.pdb
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\Microsoft.Data.Sqlite.dll
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\System.Buffers.dll
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\System.Memory.dll
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\Microsoft.Data.Sqlite.xml
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\System.Buffers.xml
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\System.Memory.xml
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.CopyComplete
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\x86\e_sqlite3.dll
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\x64\e_sqlite3.dll
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll

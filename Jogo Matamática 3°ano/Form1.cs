@@ -28,6 +28,7 @@ namespace Jogo_Matamática_3_ano
         public SoundPlayer SomTema;
         Save salvar;
         Utilits utilits;
+        SaveScorePlayer SSP;
 
         string escolhaPerson, objPerson;
 
@@ -246,6 +247,11 @@ namespace Jogo_Matamática_3_ano
                         ativouMenu = 0;
                     }
                 }
+            }
+
+            if (e.KeyChar.ToString().ToLower() == "j")
+            {
+                SSP.setScore("Andreas", 10);
             }
             focoNoForm();
         }
@@ -468,6 +474,7 @@ namespace Jogo_Matamática_3_ano
                 pictureBox61
                 );
             #endregion
+            SSP = new SaveScorePlayer();
 
             //Ocultar qualquer pbx do form
             //ocultarTodasPbx();

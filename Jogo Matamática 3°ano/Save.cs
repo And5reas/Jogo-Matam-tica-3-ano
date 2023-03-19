@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Data.Sqlite;
 
 namespace Jogo_Matamática_3_ano
 {
@@ -12,6 +13,8 @@ namespace Jogo_Matamática_3_ano
     {
         PictureBox fase2;
         PictureBox fase3;
+        private static byte id = 1;
+        private byte loadSave;
 
         public Save(PictureBox fase2, PictureBox fase3)
         {
@@ -21,28 +24,49 @@ namespace Jogo_Matamática_3_ano
 
         public void Load()
         {
-            string loadSave = File.ReadAllText(Directory.GetCurrentDirectory() + "\\Save.txt");
-            if (loadSave == "2")
+            using (SqliteConnection db = new SqliteConnection($"Filename={SaveScorePlayer.pathFileDB + "//SAVE.db"}"))
             {
-                fase2.Enabled = true;
-                fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
-            }
-            else if (loadSave == "3")
-            {
-                fase2.Enabled = true;
-                fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
-                fase3.Enabled = true;
-                fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_3.png");
+                db.Open();
+
+                SqliteCommand sql = new SqliteCommand("SELECT * FROM Salvar", db);
+                SqliteDataReader leitor = sql.ExecuteReader();
+                if (leitor.Read())
+                    loadSave = Convert.ToByte(leitor["Save"]);
+                if (loadSave == 2)
+                {
+                    fase2.Enabled = true;
+                    fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
+                }
+                else if (loadSave == 3)
+                {
+                    fase2.Enabled = true;
+                    fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
+                    fase3.Enabled = true;
+                    fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_5.png");
+                }
             }
         }
         public void save(int fase)
         {
-            for (int i = 0; i < 2; i++)
+            using (SqliteConnection db = new SqliteConnection($"Filename={SaveScorePlayer.pathFileDB + "//SAVE.db"}"))
             {
-                string filePath = Directory.GetCurrentDirectory() + "\\Save.txt";
-                string Save = File.ReadAllText(filePath);
-                Save.Replace(Save, fase.ToString());
-                File.WriteAllText(filePath, fase.ToString());
+                db.Open();
+
+                StringBuilder sb = new StringBuilder();
+                sb.Append("CREATE TABLE IF NOT EXISTS Salvar (id INTEGER PRIMARY KEY AUTOINCREMENT, Save INTEGER)");
+
+                SqliteCommand sql = new SqliteCommand(sb.ToString(), db);
+                sql.ExecuteNonQuery();
+
+                sb.Clear();
+                sb.Append("UPDATE Salvar SET ");
+                sb.Append("Save = @Save ");
+                sb.Append("WHERE id = @id");
+
+                SqliteCommand sql2 = new SqliteCommand(sb.ToString(), db);
+                sql2.Parameters.AddWithValue("@Save", fase);
+                sql2.Parameters.AddWithValue("@id", id);
+                sql2.ExecuteNonQuery();
             }
         }
     }
