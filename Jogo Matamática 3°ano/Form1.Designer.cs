@@ -36,7 +36,7 @@
             this.PBX_NaoInicio = new System.Windows.Forms.PictureBox();
             this.PBX_SimInicio = new System.Windows.Forms.PictureBox();
             this.PBX_Sair = new System.Windows.Forms.PictureBox();
-            this.PBX_Opcoes = new System.Windows.Forms.PictureBox();
+            this.PBX_Placar = new System.Windows.Forms.PictureBox();
             this.PBX_Jogar = new System.Windows.Forms.PictureBox();
             this.TmrMainGameManager = new System.Windows.Forms.Timer(this.components);
             this.labelX = new System.Windows.Forms.Label();
@@ -220,7 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_NaoInicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_SimInicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Opcoes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Placar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).BeginInit();
             this.PNL_Fases.SuspendLayout();
@@ -368,9 +368,9 @@
             this.PnlMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PnlMenu.Controls.Add(this.PNL_SairInicio);
             this.PnlMenu.Controls.Add(this.PBX_Sair);
-            this.PnlMenu.Controls.Add(this.PBX_Opcoes);
+            this.PnlMenu.Controls.Add(this.PBX_Placar);
             this.PnlMenu.Controls.Add(this.PBX_Jogar);
-            this.PnlMenu.Location = new System.Drawing.Point(1209, 768);
+            this.PnlMenu.Location = new System.Drawing.Point(1217, 784);
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(1314, 1015);
             this.PnlMenu.TabIndex = 1;
@@ -440,19 +440,20 @@
             this.PBX_Sair.MouseLeave += new System.EventHandler(this.PBX_Sair_MouseLeave);
             this.PBX_Sair.MouseHover += new System.EventHandler(this.PBX_Sair_MouseHover);
             // 
-            // PBX_Opcoes
+            // PBX_Placar
             // 
-            this.PBX_Opcoes.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_Opcoes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_Opcoes.BackgroundImage")));
-            this.PBX_Opcoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PBX_Opcoes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PBX_Opcoes.Location = new System.Drawing.Point(547, 449);
-            this.PBX_Opcoes.Name = "PBX_Opcoes";
-            this.PBX_Opcoes.Size = new System.Drawing.Size(220, 120);
-            this.PBX_Opcoes.TabIndex = 1;
-            this.PBX_Opcoes.TabStop = false;
-            this.PBX_Opcoes.MouseLeave += new System.EventHandler(this.PBX_Opcoes_MouseLeave);
-            this.PBX_Opcoes.MouseHover += new System.EventHandler(this.PBX_Opcoes_MouseHover);
+            this.PBX_Placar.BackColor = System.Drawing.Color.Transparent;
+            this.PBX_Placar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBX_Placar.BackgroundImage")));
+            this.PBX_Placar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PBX_Placar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBX_Placar.Location = new System.Drawing.Point(547, 449);
+            this.PBX_Placar.Name = "PBX_Placar";
+            this.PBX_Placar.Size = new System.Drawing.Size(220, 120);
+            this.PBX_Placar.TabIndex = 1;
+            this.PBX_Placar.TabStop = false;
+            this.PBX_Placar.Click += new System.EventHandler(this.PBX_Placar_Click);
+            this.PBX_Placar.MouseLeave += new System.EventHandler(this.PBX_Opcoes_MouseLeave);
+            this.PBX_Placar.MouseHover += new System.EventHandler(this.PBX_Opcoes_MouseHover);
             // 
             // PBX_Jogar
             // 
@@ -2003,7 +2004,7 @@
             this.PnlPerguntas.Controls.Add(this.TxtResposta3);
             this.PnlPerguntas.Controls.Add(this.TxtResposta);
             this.PnlPerguntas.Controls.Add(this.Lbl_de_Ajuda);
-            this.PnlPerguntas.Location = new System.Drawing.Point(-2, 369);
+            this.PnlPerguntas.Location = new System.Drawing.Point(1271, 377);
             this.PnlPerguntas.Name = "PnlPerguntas";
             this.PnlPerguntas.Size = new System.Drawing.Size(1260, 200);
             this.PnlPerguntas.TabIndex = 24;
@@ -2658,6 +2659,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "Parede";
             this.Text = "Maze Cave";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJogo_FormClosing);
             this.Load += new System.EventHandler(this.FrmJogo_Load);
             this.Click += new System.EventHandler(this.FrmJogo_Click);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmJogo_KeyDown);
@@ -2669,7 +2671,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_NaoInicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_SimInicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Opcoes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Placar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).EndInit();
             this.PNL_Fases.ResumeLayout(false);
@@ -2827,7 +2829,7 @@
         public System.Windows.Forms.Label LblY;
         public System.Windows.Forms.PictureBox PbxPersonagem;
         public System.Windows.Forms.PictureBox PBX_Sair;
-        public System.Windows.Forms.PictureBox PBX_Opcoes;
+        public System.Windows.Forms.PictureBox PBX_Placar;
         public System.Windows.Forms.PictureBox PBX_Jogar;
         public System.Windows.Forms.Panel PNL_Fases;
         public System.Windows.Forms.Panel panel4;

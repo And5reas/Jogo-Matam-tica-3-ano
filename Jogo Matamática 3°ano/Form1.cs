@@ -24,11 +24,12 @@ namespace Jogo_Matamática_3_ano
     {
         #region Variáveis Globais //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        //Colocar som no jogo
+        //Classes
         public SoundPlayer SomTema;
         Save salvar;
         Utilits utilits;
         SaveScorePlayer SSP;
+        Thread nt;
 
         string escolhaPerson, objPerson;
 
@@ -251,10 +252,12 @@ namespace Jogo_Matamática_3_ano
 
             if (e.KeyChar.ToString().ToLower() == "j")
             {
-                SSP.setScore("Andreas", 10);
+                z += 1;
+                SSP.setScore("Andreas" + z, 10);
             }
             focoNoForm();
         }
+        int z;
         //Verificar se são números que estão entrando, apenas.
         private void Verificar(object sender, KeyPressEventArgs e)
         {
@@ -296,7 +299,7 @@ namespace Jogo_Matamática_3_ano
                 LblY,
                 PbxPersonagem,
                 PBX_Sair,
-                PBX_Opcoes,
+                PBX_Placar,
                 PBX_Jogar,
                 PNL_Fases,
                 panel4,
@@ -488,7 +491,7 @@ namespace Jogo_Matamática_3_ano
             //Desabilitar btn menu
             PBX_Jogar.Enabled = false;
             PBX_Sair.Enabled = false;
-            PBX_Opcoes.Enabled = false;
+            PBX_Placar.Enabled = false;
 
             //Timers
             TmrMainGameManager.Stop();
@@ -773,14 +776,14 @@ namespace Jogo_Matamática_3_ano
         //ENTRAR E SAIR DO OPCOES
         private void PBX_Opcoes_MouseHover(object sender, EventArgs e)
         {
-            PBX_Opcoes.Size = new Size(250, 150);
-            PBX_Opcoes.Location = new Point(530, 449);
+            PBX_Placar.Size = new Size(250, 150);
+            PBX_Placar.Location = new Point(530, 449);
         }
 
         private void PBX_Opcoes_MouseLeave(object sender, EventArgs e)
         {
-            PBX_Opcoes.Size = new Size(220, 120);
-            PBX_Opcoes.Location = new Point(547, 449);
+            PBX_Placar.Size = new Size(220, 120);
+            PBX_Placar.Location = new Point(547, 449);
         }
 
         //ENTRAR E SAIR DO SAIR
@@ -1088,6 +1091,19 @@ namespace Jogo_Matamática_3_ano
             PNL_MostrarFases.Location = new Point(150, 51);
         }
 
+        // Placar
+        private void PBX_Placar_Click(object sender, EventArgs e)
+        {
+            nt = new Thread(abrirPlacar);
+            nt.SetApartmentState(ApartmentState.STA);
+            nt.Start();
+        }
+
+        private void abrirPlacar()
+        {
+            Application.Run(new FrmPlacar());
+        }
+
         //ESCOLHER GERALDO
         private void PBX_Escolha1_Click(object sender, EventArgs e)
         {
@@ -1149,11 +1165,17 @@ namespace Jogo_Matamática_3_ano
         private void PBX_SimInicio_Click(object sender, EventArgs e)
         {
             Close();
+            nt.Abort();
         }
 
         private void PBX_NaoInicio_Click(object sender, EventArgs e)
         {
             PNL_SairInicio.Visible = false;
+        }
+
+        private void FrmJogo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            nt.Abort();
         }
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

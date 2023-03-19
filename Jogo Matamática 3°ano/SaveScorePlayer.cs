@@ -11,10 +11,8 @@ namespace Jogo_Matamática_3_ano
     public class SaveScorePlayer
     {
         public static string pathFileDB = Path.Combine(Application.LocalUserAppDataPath);
-        public int idPlayer { get; set; }
-        public string namePlayer { get; set; }
-        public int scorePlayer { get; set; }
-        public decimal timePlayer { get; set; }
+        public string Player { get; set; }
+        public int Score { get; set; }
 
         public void setScore(string name, int score)
         {
@@ -24,15 +22,14 @@ namespace Jogo_Matamática_3_ano
 
                 StringBuilder sb = new StringBuilder();
                 sb.Append("CREATE TABLE IF NOT EXISTS SaveScorePlayer (");
-                sb.Append("idPlayer INTEGER PRIMARY KEY AUTOINCREMENT, ");
-                sb.Append("namePlayer VARCHAR(50) NOT NULL, ");
+                sb.Append("namePlayer VARCHAR(10) PRIMARY KEY NOT NULL, ");
                 sb.Append("scorePLayer INTEGER)");
 
                 SqliteCommand sql = new SqliteCommand(sb.ToString(), db);
                 sql.ExecuteNonQuery();
 
                 sb.Clear();
-                sb.Append("INSERT INTO SaveScorePlayer VALUES (NULL, ");
+                sb.Append("INSERT INTO SaveScorePlayer VALUES (");
                 sb.Append("@namePlayer, @scorePLayer)");
 
                 SqliteCommand sql2 = new SqliteCommand(sb.ToString(), db);
@@ -41,11 +38,5 @@ namespace Jogo_Matamática_3_ano
                 sql2.ExecuteNonQuery();
             }
         }
-
-
-
-
-
-
     }
 }

@@ -70,3 +70,4 @@ C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3�
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\x86\e_sqlite3.dll
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\x64\e_sqlite3.dll
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo_Matamática_3_ano.FrmPlacar.resources
