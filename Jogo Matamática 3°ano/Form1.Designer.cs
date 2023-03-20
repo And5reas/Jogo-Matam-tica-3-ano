@@ -1839,7 +1839,7 @@
             // PBX_Ambiente4
             // 
             this.PBX_Ambiente4.BackColor = System.Drawing.Color.DarkGreen;
-            this.PBX_Ambiente4.Location = new System.Drawing.Point(249, 106);
+            this.PBX_Ambiente4.Location = new System.Drawing.Point(28, 646);
             this.PBX_Ambiente4.Name = "PBX_Ambiente4";
             this.PBX_Ambiente4.Size = new System.Drawing.Size(66, 55);
             this.PBX_Ambiente4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2557,13 +2557,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
-            this.Controls.Add(this.PBX_Ambiente2);
-            this.Controls.Add(this.PBX_Ambiente4);
-            this.Controls.Add(this.PBX_Ambiente3);
-            this.Controls.Add(this.PBX_Ambiente1);
-            this.Controls.Add(this.PBX_Ambiente5);
-            this.Controls.Add(this.PBX_Ambiente6);
-            this.Controls.Add(this.PBX_Ambiente7);
             this.Controls.Add(this.PbxVinheta2);
             this.Controls.Add(this.PbxVinheta1);
             this.Controls.Add(this.PBX_Vitoria);
@@ -2584,7 +2577,6 @@
             this.Controls.Add(this.PbxCerca);
             this.Controls.Add(this.PNL_SemTempo2);
             this.Controls.Add(this.PbxColision);
-            this.Controls.Add(this.PbxPersonagem);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox19);
             this.Controls.Add(this.pictureBox20);
@@ -2639,7 +2631,6 @@
             this.Controls.Add(this.pictureBox50);
             this.Controls.Add(this.pictureBox49);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.PbxCristal1);
             this.Controls.Add(this.PBX_Vitamina7);
             this.Controls.Add(this.PBX_Vitamina6);
             this.Controls.Add(this.PBX_Vitamina5);
@@ -2647,10 +2638,19 @@
             this.Controls.Add(this.PBX_Vitamina3);
             this.Controls.Add(this.PBX_Vitamina2);
             this.Controls.Add(this.PBX_Vitamina1);
-            this.Controls.Add(this.PbxCristal3);
-            this.Controls.Add(this.PbxCristal2);
             this.Controls.Add(this.PNL_InfoFase);
             this.Controls.Add(this.PbxPartBaixo);
+            this.Controls.Add(this.PBX_Ambiente2);
+            this.Controls.Add(this.PBX_Ambiente4);
+            this.Controls.Add(this.PBX_Ambiente3);
+            this.Controls.Add(this.PBX_Ambiente1);
+            this.Controls.Add(this.PBX_Ambiente5);
+            this.Controls.Add(this.PBX_Ambiente6);
+            this.Controls.Add(this.PBX_Ambiente7);
+            this.Controls.Add(this.PbxPersonagem);
+            this.Controls.Add(this.PbxCristal1);
+            this.Controls.Add(this.PbxCristal3);
+            this.Controls.Add(this.PbxCristal2);
             this.DoubleBuffered = true;
             this.Location = new System.Drawing.Point(120, 120);
             this.MaximizeBox = false;

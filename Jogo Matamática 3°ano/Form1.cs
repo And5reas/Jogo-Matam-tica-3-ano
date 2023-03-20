@@ -1165,7 +1165,8 @@ namespace Jogo_Matamática_3_ano
         private void PBX_SimInicio_Click(object sender, EventArgs e)
         {
             Close();
-            nt.Abort();
+            if (nt != null)
+                nt.Abort(); 
         }
 
         private void PBX_NaoInicio_Click(object sender, EventArgs e)
@@ -1175,7 +1176,8 @@ namespace Jogo_Matamática_3_ano
 
         private void FrmJogo_FormClosing(object sender, FormClosingEventArgs e)
         {
-            nt.Abort();
+            if (nt != null)
+                nt.Abort();
         }
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

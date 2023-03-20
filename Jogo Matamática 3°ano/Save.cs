@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Data.Sqlite;
+using System.Xml.Linq;
 
 namespace Jogo_Matamática_3_ano
 {
@@ -26,23 +27,42 @@ namespace Jogo_Matamática_3_ano
         {
             using (SqliteConnection db = new SqliteConnection($"Filename={SaveScorePlayer.pathFileDB + "//SAVE.db"}"))
             {
-                db.Open();
+                try
+                {
+                    db.Open();
+                    SqliteCommand sql = new SqliteCommand("SELECT Save FROM Salvar", db);
+                    SqliteDataReader leitor = sql.ExecuteReader();
 
-                SqliteCommand sql = new SqliteCommand("SELECT * FROM Salvar", db);
-                SqliteDataReader leitor = sql.ExecuteReader();
-                if (leitor.Read())
-                    loadSave = Convert.ToByte(leitor["Save"]);
-                if (loadSave == 2)
-                {
-                    fase2.Enabled = true;
-                    fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
+                    if (leitor.Read())
+                        loadSave = Convert.ToByte(leitor["Save"]);
+                    if (loadSave == 2)
+                    {
+                        fase2.Enabled = true;
+                        fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
+                    }
+                    else if (loadSave == 3)
+                    {
+                        fase2.Enabled = true;
+                        fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
+                        fase3.Enabled = true;
+                        fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_5.png");
+                    }
                 }
-                else if (loadSave == 3)
+                catch
                 {
-                    fase2.Enabled = true;
-                    fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
-                    fase3.Enabled = true;
-                    fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_5.png");
+                    db.Open();
+
+                    SqliteCommand sql = new SqliteCommand("CREATE TABLE IF NOT EXISTS Salvar (id INTEGER PRIMARY KEY AUTOINCREMENT, Save INTEGER)", db);
+                    sql.ExecuteNonQuery();
+
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("INSERT INTO Salvar VALUES (");
+                    sb.Append("NULL, @Save)");
+
+                    sql.CommandText = sb.ToString();
+
+                    sql.Parameters.AddWithValue("@Save", 1);
+                    sql.ExecuteNonQuery();
                 }
             }
         }
@@ -53,20 +73,14 @@ namespace Jogo_Matamática_3_ano
                 db.Open();
 
                 StringBuilder sb = new StringBuilder();
-                sb.Append("CREATE TABLE IF NOT EXISTS Salvar (id INTEGER PRIMARY KEY AUTOINCREMENT, Save INTEGER)");
-
-                SqliteCommand sql = new SqliteCommand(sb.ToString(), db);
-                sql.ExecuteNonQuery();
-
-                sb.Clear();
                 sb.Append("UPDATE Salvar SET ");
                 sb.Append("Save = @Save ");
                 sb.Append("WHERE id = @id");
 
-                SqliteCommand sql2 = new SqliteCommand(sb.ToString(), db);
-                sql2.Parameters.AddWithValue("@Save", fase);
-                sql2.Parameters.AddWithValue("@id", id);
-                sql2.ExecuteNonQuery();
+                SqliteCommand sql = new SqliteCommand(sb.ToString(), db);
+                sql.Parameters.AddWithValue("@Save", fase);
+                sql.Parameters.AddWithValue("@id", id);
+                sql.ExecuteNonQuery();
             }
         }
     }
