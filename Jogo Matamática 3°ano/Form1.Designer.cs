@@ -370,7 +370,7 @@
             this.PnlMenu.Controls.Add(this.PBX_Sair);
             this.PnlMenu.Controls.Add(this.PBX_Placar);
             this.PnlMenu.Controls.Add(this.PBX_Jogar);
-            this.PnlMenu.Location = new System.Drawing.Point(1217, 784);
+            this.PnlMenu.Location = new System.Drawing.Point(1204, 780);
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(1314, 1015);
             this.PnlMenu.TabIndex = 1;
@@ -452,8 +452,8 @@
             this.PBX_Placar.TabIndex = 1;
             this.PBX_Placar.TabStop = false;
             this.PBX_Placar.Click += new System.EventHandler(this.PBX_Placar_Click);
-            this.PBX_Placar.MouseLeave += new System.EventHandler(this.PBX_Opcoes_MouseLeave);
-            this.PBX_Placar.MouseHover += new System.EventHandler(this.PBX_Opcoes_MouseHover);
+            this.PBX_Placar.MouseLeave += new System.EventHandler(this.PBX_Placar_MouseLeave);
+            this.PBX_Placar.MouseHover += new System.EventHandler(this.PBX_Placar_MouseHover);
             // 
             // PBX_Jogar
             // 
@@ -2652,6 +2652,7 @@
             this.Controls.Add(this.PbxCristal3);
             this.Controls.Add(this.PbxCristal2);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(120, 120);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

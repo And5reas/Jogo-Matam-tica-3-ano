@@ -23,30 +23,17 @@ namespace Jogo_Matamática_3_ano
 
 
         #region Recebendo todas as classes estanciadas do design
-        Panel PnlMenu;
-        Label label1;
         Timer TmrMainGameManager;
-        Label labelX;
-        Label labelY;
-        Label LblX;
-        Label LblY;
         PictureBox PbxPersonagem;
         PictureBox PBX_Sair;
-        PictureBox PBX_Opcoes;
         PictureBox PBX_Jogar;
         Panel PNL_Fases;
         Panel panel4;
-        PictureBox PBX_Fase6;
         Panel panel3;
-        PictureBox PBX_Fase3;
         Panel panel5;
-        PictureBox PBX_Fase5;
         Panel panel6;
-        PictureBox PBX_Fase4;
         Panel panel2;
-        PictureBox PBX_Fase2;
         Panel panel1;
-        PictureBox PBX_Fase1;
         PictureBox PbxColision;
         PictureBox pictureBox1;
         PictureBox pictureBox2;
@@ -101,38 +88,8 @@ namespace Jogo_Matamática_3_ano
         PictureBox pictureBox51;
         PictureBox pictureBox52;
         PictureBox pictureBox53;
-        Timer TmrColisao;
-        Panel PNL_Pause;
-        PictureBox PBX_SairPause;
-        PictureBox PBX_Inicio;
-        PictureBox PBX_Continuar;
-        Panel panel7;
-        Panel PNL_InfoPause;
-        Panel PNL_Info;
-        PictureBox BTN_NaoInfo;
-        PictureBox BTN_SimInfo;
-        PictureBox PBX_Info;
-        Panel PNL_SairInicio;
-        PictureBox pictureBox55;
-        PictureBox PBX_NaoInicio;
-        PictureBox PBX_SimInicio;
         Timer TMR_Tempo;
         Label LBL_Tempo;
-        PictureBox pictureBox56;
-        Panel PNL_SemTempo;
-        PictureBox BTN_NaoTempo;
-        PictureBox BTN_SimTempo;
-        Label label3;
-        Label LBL_SemTempo;
-        Timer TMR_SemTempo;
-        Panel PNL_SemTempo2;
-        Label label5;
-        PictureBox BTN_NaoTempo2;
-        PictureBox BTN_SimTempo2;
-        Label label2;
-        Label LBL_SemTempo2;
-        PictureBox PBX_Reiniciar;
-        Label LblBust;
         Timer TmrAnimation;
         PictureBox PBX_Ambiente1;
         PictureBox PBX_Ambiente2;
@@ -141,7 +98,6 @@ namespace Jogo_Matamática_3_ano
         PictureBox PBX_Ambiente5;
         PictureBox PBX_Ambiente6;
         PictureBox PBX_Ambiente7;
-        Timer TMR_PulaPula;
         PictureBox PBX_Vitamina1;
         PictureBox PBX_Vitamina2;
         PictureBox PBX_Vitamina3;
@@ -158,14 +114,12 @@ namespace Jogo_Matamática_3_ano
         PictureBox PbxBtn4;
         PictureBox PbxBtn3;
         PictureBox PbxBtn1;
-        ProgressBar PrbTempPerg;
         Label Lbl_de_Ajuda;
         Timer TmrPergunta;
         Label LblResposta2;
         TextBox TxtResposta2;
         Label LblResposta3;
         TextBox TxtResposta3;
-        Label LblWallStatus;
         PictureBox PbxCristal1;
         PictureBox PbxCristal2;
         PictureBox PbxCristal3;
@@ -174,66 +128,32 @@ namespace Jogo_Matamática_3_ano
         Label LblContVitaminas;
         Label LblContCristais;
         Label LblScore;
-        Panel PNL_MostrarFases;
-        PictureBox PBX_Escolha2;
-        Label LBL_Person;
-        PictureBox PBX_Escolha1;
-        PictureBox PBX_VoltarFase;
-        Panel PNL_InfoFase;
-        PictureBox pictureBox54;
-        Panel PNL_Help;
         PictureBox PBX_Help;
-        PictureBox PBX_bntVaiHelp;
-        PictureBox PBX_btnVoltaHelp;
         Label LBL_txtHelp;
-        Label LBL_HelpSair;
         Label LBL_txtHelp2;
-        PictureBox pictureBox57;
-        PictureBox PBX_VitaAtual;
         Label LBL_VitaTotal;
-        Label LBL_CrisTotal;
-        Label LBL_ScoreTotal;
-        PictureBox pictureBox59;
-        Label LBL_Nome2;
-        Label LBL_Nome1;
         PictureBox pictureBox58;
         PictureBox pictureBox60;
-        PictureBox PBX_AmbVilao;
         PictureBox PBX_Vitoria;
         Label LblResposta4;
         TextBox TxtResposta4;
         PictureBox PbxVinheta1;
         PictureBox PbxVinheta2;
-        PictureBox PBX_Salvar;
         SoundPlayer SomTema;
-        PictureBox PbxPartBaixo;
         PictureBox pictureBox61;
         public Utilits
             (
-            Panel PnlMenu,
-            Label label1,
             Timer TmrMainGameManager,
-            Label labelX,
-            Label labelY,
-            Label LblX,
-            Label LblY,
             PictureBox PbxPersonagem,
             PictureBox PBX_Sair,
-            PictureBox PBX_Opcoes,
             PictureBox PBX_Jogar,
             Panel PNL_Fases,
             Panel panel4,
-            PictureBox PBX_Fase6,
             Panel panel3,
-            PictureBox PBX_Fase3,
             Panel panel5,
-            PictureBox PBX_Fase5,
             Panel panel6,
-            PictureBox PBX_Fase4,
             Panel panel2,
-            PictureBox PBX_Fase2,
             Panel panel1,
-            PictureBox PBX_Fase1,
             PictureBox PbxColision,
             PictureBox pictureBox1,
             PictureBox pictureBox2,
@@ -288,38 +208,8 @@ namespace Jogo_Matamática_3_ano
             PictureBox pictureBox51,
             PictureBox pictureBox52,
             PictureBox pictureBox53,
-            Timer TmrColisao,
-            Panel PNL_Pause,
-            PictureBox PBX_SairPause,
-            PictureBox PBX_Inicio,
-            PictureBox PBX_Continuar,
-            Panel panel7,
-            Panel PNL_InfoPause,
-            Panel PNL_Info,
-            PictureBox BTN_NaoInfo,
-            PictureBox BTN_SimInfo,
-            PictureBox PBX_Info,
-            Panel PNL_SairInicio,
-            PictureBox pictureBox55,
-            PictureBox PBX_NaoInicio,
-            PictureBox PBX_SimInicio,
             Timer TMR_Tempo,
             Label LBL_Tempo,
-            PictureBox pictureBox56,
-            Panel PNL_SemTempo,
-            PictureBox BTN_NaoTempo,
-            PictureBox BTN_SimTempo,
-            Label label3,
-            Label LBL_SemTempo,
-            Timer TMR_SemTempo,
-            Panel PNL_SemTempo2,
-            Label label5,
-            PictureBox BTN_NaoTempo2,
-            PictureBox BTN_SimTempo2,
-            Label label2,
-            Label LBL_SemTempo2,
-            PictureBox PBX_Reiniciar,
-            Label LblBust,
             Timer TmrAnimation,
             PictureBox PBX_Ambiente1,
             PictureBox PBX_Ambiente2,
@@ -328,7 +218,6 @@ namespace Jogo_Matamática_3_ano
             PictureBox PBX_Ambiente5,
             PictureBox PBX_Ambiente6,
             PictureBox PBX_Ambiente7,
-            Timer TMR_PulaPula,
             PictureBox PBX_Vitamina1,
             PictureBox PBX_Vitamina2,
             PictureBox PBX_Vitamina3,
@@ -345,14 +234,12 @@ namespace Jogo_Matamática_3_ano
             PictureBox PbxBtn4,
             PictureBox PbxBtn3,
             PictureBox PbxBtn1,
-            ProgressBar PrbTempPerg,
             Label Lbl_de_Ajuda,
             Timer TmrPergunta,
             Label LblResposta2,
             TextBox TxtResposta2,
             Label LblResposta3,
             TextBox TxtResposta3,
-            Label LblWallStatus,
             PictureBox PbxCristal1,
             PictureBox PbxCristal2,
             PictureBox PbxCristal3,
@@ -361,66 +248,31 @@ namespace Jogo_Matamática_3_ano
             Label LblContVitaminas,
             Label LblContCristais,
             Label LblScore,
-            Panel PNL_MostrarFases,
-            PictureBox PBX_Escolha2,
-            Label LBL_Person,
-            PictureBox PBX_Escolha1,
-            PictureBox PBX_VoltarFase,
-            Panel PNL_InfoFase,
-            PictureBox pictureBox54,
-            Panel PNL_Help,
             PictureBox PBX_Help,
-            PictureBox PBX_bntVaiHelp,
-            PictureBox PBX_btnVoltaHelp,
             Label LBL_txtHelp,
-            Label LBL_HelpSair,
             Label LBL_txtHelp2,
-            PictureBox pictureBox57,
-            PictureBox PBX_VitaAtual,
-            Label LBL_VitaTotal,
-            Label LBL_CrisTotal,
-            Label LBL_ScoreTotal,
-            PictureBox pictureBox59,
-            Label LBL_Nome2,
-            Label LBL_Nome1,
             PictureBox pictureBox58,
             PictureBox pictureBox60,
-            PictureBox PBX_AmbVilao,
             PictureBox PBX_Vitoria,
             Label LblResposta4,
             TextBox TxtResposta4,
             PictureBox PbxVinheta1,
             PictureBox PbxVinheta2,
-            PictureBox PBX_Salvar,
             SoundPlayer SomTema,
-            PictureBox PbxPartBaixo,
             PictureBox pictureBox61
             )
         {
-            this.PnlMenu = PnlMenu;
-            this.label1 = label1;
             this.TmrMainGameManager = TmrMainGameManager;
-            this.labelX = labelX;
-            this.labelY = labelY;
-            this.LblX = LblX;
-            this.LblY = LblY;
             this.PbxPersonagem = PbxPersonagem;
             this.PBX_Sair = PBX_Sair;
-            this.PBX_Opcoes = PBX_Opcoes;
             this.PBX_Jogar = PBX_Jogar;
             this.PNL_Fases = PNL_Fases;
             this.panel4 = panel4;
-            this.PBX_Fase6 = PBX_Fase6;
             this.panel3 = panel3;
-            this.PBX_Fase3 = PBX_Fase3;
             this.panel5 = panel5;
-            this.PBX_Fase5 = PBX_Fase5;
             this.panel6 = panel6;
-            this.PBX_Fase4 = PBX_Fase4;
             this.panel2 = panel2;
-            this.PBX_Fase2 = PBX_Fase2;
             this.panel1 = panel1;
-            this.PBX_Fase1 = PBX_Fase1;
             this.PbxColision = PbxColision;
             this.pictureBox1 = pictureBox1;
             this.pictureBox2 = pictureBox2;
@@ -475,38 +327,8 @@ namespace Jogo_Matamática_3_ano
             this.pictureBox51 = pictureBox51;
             this.pictureBox52 = pictureBox52;
             this.pictureBox53 = pictureBox53;
-            this.TmrColisao = TmrColisao;
-            this.PNL_Pause = PNL_Pause;
-            this.PBX_SairPause = PBX_SairPause;
-            this.PBX_Inicio = PBX_Inicio;
-            this.PBX_Continuar = PBX_Continuar;
-            this.panel7 = panel7;
-            this.PNL_InfoPause = PNL_InfoPause;
-            this.PNL_Info = PNL_Info;
-            this.BTN_NaoInfo = BTN_NaoInfo;
-            this.BTN_SimInfo = BTN_SimInfo;
-            this.PBX_Info = PBX_Info;
-            this.PNL_SairInicio = PNL_SairInicio;
-            this.pictureBox55 = pictureBox55;
-            this.PBX_NaoInicio = PBX_NaoInicio;
-            this.PBX_SimInicio = PBX_SimInicio;
             this.TMR_Tempo = TMR_Tempo;
             this.LBL_Tempo = LBL_Tempo;
-            this.pictureBox56 = pictureBox56;
-            this.PNL_SemTempo = PNL_SemTempo;
-            this.BTN_NaoTempo = BTN_NaoTempo;
-            this.BTN_SimTempo = BTN_SimTempo;
-            this.label3 = label3;
-            this.LBL_SemTempo = LBL_SemTempo;
-            this.TMR_SemTempo = TMR_SemTempo;
-            this.PNL_SemTempo2 = PNL_SemTempo2;
-            this.label5 = label5;
-            this.BTN_NaoTempo2 = BTN_NaoTempo2;
-            this.BTN_SimTempo2 = BTN_SimTempo2;
-            this.label2 = label2;
-            this.LBL_SemTempo2 = LBL_SemTempo2;
-            this.PBX_Reiniciar = PBX_Reiniciar;
-            this.LblBust = LblBust;
             this.TmrAnimation = TmrAnimation;
             this.PBX_Ambiente1 = PBX_Ambiente1;
             this.PBX_Ambiente2 = PBX_Ambiente2;
@@ -515,7 +337,6 @@ namespace Jogo_Matamática_3_ano
             this.PBX_Ambiente5 = PBX_Ambiente5;
             this.PBX_Ambiente6 = PBX_Ambiente6;
             this.PBX_Ambiente7 = PBX_Ambiente7;
-            this.TMR_PulaPula = TMR_PulaPula;
             this.PBX_Vitamina1 = PBX_Vitamina1;
             this.PBX_Vitamina2 = PBX_Vitamina2;
             this.PBX_Vitamina3 = PBX_Vitamina3;
@@ -532,14 +353,12 @@ namespace Jogo_Matamática_3_ano
             this.PbxBtn4 = PbxBtn4;
             this.PbxBtn3 = PbxBtn3;
             this.PbxBtn1 = PbxBtn1;
-            this.PrbTempPerg = PrbTempPerg;
             this.Lbl_de_Ajuda = Lbl_de_Ajuda;
             this.TmrPergunta = TmrPergunta;
             this.LblResposta2 = LblResposta2;
             this.TxtResposta2 = TxtResposta2;
             this.LblResposta3 = LblResposta3;
             this.TxtResposta3 = TxtResposta3;
-            this.LblWallStatus = LblWallStatus;
             this.PbxCristal1 = PbxCristal1;
             this.PbxCristal2 = PbxCristal2;
             this.PbxCristal3 = PbxCristal3;
@@ -548,39 +367,17 @@ namespace Jogo_Matamática_3_ano
             this.LblContVitaminas = LblContVitaminas;
             this.LblContCristais = LblContCristais;
             this.LblScore = LblScore;
-            this.PNL_MostrarFases = PNL_MostrarFases;
-            this.PBX_Escolha2 = PBX_Escolha2;
-            this.LBL_Person = LBL_Person;
-            this.PBX_Escolha1 = PBX_Escolha1;
-            this.PBX_VoltarFase = PBX_VoltarFase;
-            this.PNL_InfoFase = PNL_InfoFase;
-            this.pictureBox54 = pictureBox54;
-            this.PNL_Help = PNL_Help;
             this.PBX_Help = PBX_Help;
-            this.PBX_bntVaiHelp = PBX_bntVaiHelp;
-            this.PBX_btnVoltaHelp = PBX_btnVoltaHelp;
             this.LBL_txtHelp = LBL_txtHelp;
-            this.LBL_HelpSair = LBL_HelpSair;
             this.LBL_txtHelp2 = LBL_txtHelp2;
-            this.pictureBox57 = pictureBox57;
-            this.PBX_VitaAtual = PBX_VitaAtual;
-            this.LBL_VitaTotal = LBL_VitaTotal;
-            this.LBL_CrisTotal = LBL_CrisTotal;
-            this.LBL_ScoreTotal = LBL_ScoreTotal;
-            this.pictureBox59 = pictureBox59;
-            this.LBL_Nome2 = LBL_Nome2;
-            this.LBL_Nome1 = LBL_Nome1;
             this.pictureBox58 = pictureBox58;
             this.pictureBox60 = pictureBox60;
-            this.PBX_AmbVilao = PBX_AmbVilao;
             this.PBX_Vitoria = PBX_Vitoria;
             this.LblResposta4 = LblResposta4;
             this.TxtResposta4 = TxtResposta4;
             this.PbxVinheta1 = PbxVinheta1;
             this.PbxVinheta2 = PbxVinheta2;
-            this.PBX_Salvar = PBX_Salvar;
             this.SomTema = SomTema;
-            this.PbxPartBaixo = PbxPartBaixo;
             this.pictureBox61 = pictureBox61;
         }
         #endregion
@@ -2684,8 +2481,8 @@ namespace Jogo_Matamática_3_ano
             PbxVinheta1.Location = new Point(0, 0);
             PbxVinheta2.Size = new Size(TAMANHO_X, TAMANHO_Y);
             PbxVinheta2.Location = new Point(TAMANHO_X, 0);
-            PbxVinheta2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\Vinheta\\Logo_UNISANTA.png");
-            return 1706;
+            PbxVinheta2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\Vinheta\\TELA_PRETA.png");
+            return 1708;
         }
 
         //SETAR A MUSICA
@@ -2961,10 +2758,12 @@ namespace Jogo_Matamática_3_ano
             if (ControleAnimacao > 1101 && ControleAnimacao < 1202)
             {
                 PbxVinheta2.Location = new Point(PbxVinheta2.Location.X - 13, 0);
+                ControleAnimacao += 2;
             }
             if (ControleAnimacao > 1302 && ControleAnimacao < 1403)
             {
                 PbxVinheta2.Location = new Point(PbxVinheta2.Location.X - 13, 0);
+                ControleAnimacao += 2;
             }
             if (ControleAnimacao == 1404)
             {
@@ -2988,11 +2787,11 @@ namespace Jogo_Matamática_3_ano
             {
                 PBX_Jogar.Enabled = true;
                 PBX_Sair.Enabled = true;
-                PBX_Opcoes.Enabled = true;
                 PbxVinheta1.Size = new Size(1, 1);
                 PbxVinheta2.Size = new Size(1, 1);
                 PbxVinheta2.Hide();
                 TmrAnimation.Stop();
+                SomTema.PlayLooping();
                 return 0;
             }
             return ControleAnimacao += 1;

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPlacar));
             this.DgvPlacar = new System.Windows.Forms.DataGridView();
-            this.BtnPesquisar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtProcurar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPlacar)).BeginInit();
@@ -38,33 +38,31 @@
             // 
             // DgvPlacar
             // 
+            this.DgvPlacar.AllowUserToAddRows = false;
+            this.DgvPlacar.AllowUserToDeleteRows = false;
+            this.DgvPlacar.AllowUserToResizeColumns = false;
+            this.DgvPlacar.AllowUserToResizeRows = false;
+            this.DgvPlacar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvPlacar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvPlacar.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvPlacar.DefaultCellStyle = dataGridViewCellStyle1;
             this.DgvPlacar.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DgvPlacar.Location = new System.Drawing.Point(12, 40);
             this.DgvPlacar.Name = "DgvPlacar";
             this.DgvPlacar.Size = new System.Drawing.Size(292, 398);
             this.DgvPlacar.TabIndex = 2;
             // 
-            // BtnPesquisar
-            // 
-            this.BtnPesquisar.Location = new System.Drawing.Point(230, 12);
-            this.BtnPesquisar.Name = "BtnPesquisar";
-            this.BtnPesquisar.Size = new System.Drawing.Size(75, 23);
-            this.BtnPesquisar.TabIndex = 1;
-            this.BtnPesquisar.Text = "Procurar";
-            this.BtnPesquisar.UseVisualStyleBackColor = true;
-            this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
-            // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 17);
             this.label1.Name = "label1";
@@ -74,10 +72,12 @@
             // 
             // txtProcurar
             // 
+            this.txtProcurar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtProcurar.Location = new System.Drawing.Point(122, 14);
             this.txtProcurar.Name = "txtProcurar";
-            this.txtProcurar.Size = new System.Drawing.Size(100, 20);
+            this.txtProcurar.Size = new System.Drawing.Size(182, 20);
             this.txtProcurar.TabIndex = 5;
+            this.txtProcurar.TextChanged += new System.EventHandler(this.txtProcurar_TextChanged);
             // 
             // FrmPlacar
             // 
@@ -86,8 +86,10 @@
             this.ClientSize = new System.Drawing.Size(317, 450);
             this.Controls.Add(this.txtProcurar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BtnPesquisar);
             this.Controls.Add(this.DgvPlacar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmPlacar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Placar";
@@ -101,7 +103,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DgvPlacar;
-        private System.Windows.Forms.Button BtnPesquisar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtProcurar;
     }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Data.Sqlite;
+using Microsoft.Data.Sqlite; 
 
 namespace Jogo_Matamática_3_ano
 {
@@ -16,11 +16,6 @@ namespace Jogo_Matamática_3_ano
         public FrmPlacar()
         {
             InitializeComponent();
-        }
-
-        private void BtnPesquisar_Click(object sender, EventArgs e)
-        {
-            consultar(txtProcurar.Text);
         }
 
         private void consultar(string achar)
@@ -104,6 +99,11 @@ namespace Jogo_Matamática_3_ano
                         MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void txtProcurar_TextChanged(object sender, EventArgs e)
+        {
+            consultar(txtProcurar.Text);
         }
     }
 }

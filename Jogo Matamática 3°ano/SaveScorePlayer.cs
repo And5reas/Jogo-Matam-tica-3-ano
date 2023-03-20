@@ -14,7 +14,7 @@ namespace Jogo_Matamática_3_ano
         public string Player { get; set; }
         public int Score { get; set; }
 
-        public void setScore(string name, int score)
+        public static void setScore(string name, int score)
         {
             using (SqliteConnection db = new SqliteConnection($"Filename={pathFileDB + "//SCORE.db"}"))
             {
@@ -32,10 +32,10 @@ namespace Jogo_Matamática_3_ano
                 sb.Append("INSERT INTO SaveScorePlayer VALUES (");
                 sb.Append("@namePlayer, @scorePLayer)");
 
-                SqliteCommand sql2 = new SqliteCommand(sb.ToString(), db);
-                sql2.Parameters.AddWithValue("@namePlayer", name);
-                sql2.Parameters.AddWithValue("@scorePLayer", score);
-                sql2.ExecuteNonQuery();
+                sql.CommandText = sb.ToString();
+                sql.Parameters.AddWithValue("@namePlayer", name);
+                sql.Parameters.AddWithValue("@scorePLayer", score);
+                sql.ExecuteNonQuery();
             }
         }
     }

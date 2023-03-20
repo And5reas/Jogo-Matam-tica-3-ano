@@ -28,7 +28,6 @@ namespace Jogo_Matamática_3_ano
         public SoundPlayer SomTema;
         Save salvar;
         Utilits utilits;
-        SaveScorePlayer SSP;
         Thread nt;
 
         string escolhaPerson, objPerson;
@@ -43,7 +42,7 @@ namespace Jogo_Matamática_3_ano
         int ativouMenu = 0, infoMenu, helpIndex = 1;
 
         //Alocar a fase que o player está 1, 2 ,3, 4...
-        int fase,
+        int fase, wins,
 
             //Swiths do debugMode
             DebugSwith, DebugSwithBust, DebugParedeSwith,
@@ -63,7 +62,7 @@ namespace Jogo_Matamática_3_ano
             tempPergunta = 0,
 
             //Score do player
-            Score = 0, CristalBuffTime = 0;
+            Score = 0, score_total_player = 0, CristalBuffTime = 0;
 
         //Controles do player
         bool goLeft, goRight, goDown, goUp,
@@ -253,7 +252,7 @@ namespace Jogo_Matamática_3_ano
             if (e.KeyChar.ToString().ToLower() == "j")
             {
                 z += 1;
-                SSP.setScore("Andreas" + z, 10);
+                SaveScorePlayer.setScore("Andreas" + z, 10);
             }
             focoNoForm();
         }
@@ -290,30 +289,17 @@ namespace Jogo_Matamática_3_ano
             #region Estanciar Utilits
             utilits = new Utilits
                 (
-                PnlMenu,
-                label1,
                 TmrMainGameManager,
-                labelX,
-                labelY,
-                LblX,
-                LblY,
                 PbxPersonagem,
                 PBX_Sair,
-                PBX_Placar,
                 PBX_Jogar,
                 PNL_Fases,
                 panel4,
-                PBX_Fase6,
                 panel3,
-                PBX_Fase3,
                 panel5,
-                PBX_Fase5,
                 panel6,
-                PBX_Fase4,
                 panel2,
-                PBX_Fase2,
                 panel1,
-                PBX_Fase1,
                 PbxColision,
                 pictureBox1,
                 pictureBox2,
@@ -368,38 +354,8 @@ namespace Jogo_Matamática_3_ano
                 pictureBox51,
                 pictureBox52,
                 pictureBox53,
-                TmrColisao,
-                PNL_Pause,
-                PBX_SairPause,
-                PBX_Inicio,
-                PBX_Continuar,
-                panel7,
-                PNL_InfoPause,
-                PNL_Info,
-                BTN_NaoInfo,
-                BTN_SimInfo,
-                PBX_Info,
-                PNL_SairInicio,
-                pictureBox55,
-                PBX_NaoInicio,
-                PBX_SimInicio,
                 TMR_Tempo,
                 LBL_Tempo,
-                pictureBox56,
-                PNL_SemTempo,
-                BTN_NaoTempo,
-                BTN_SimTempo,
-                label3,
-                LBL_SemTempo,
-                TMR_SemTempo,
-                PNL_SemTempo2,
-                label5,
-                BTN_NaoTempo2,
-                BTN_SimTempo2,
-                label2,
-                LBL_SemTempo2,
-                PBX_Reiniciar,
-                LblBust,
                 TmrAnimation,
                 PBX_Ambiente1,
                 PBX_Ambiente2,
@@ -408,7 +364,6 @@ namespace Jogo_Matamática_3_ano
                 PBX_Ambiente5,
                 PBX_Ambiente6,
                 PBX_Ambiente7,
-                TMR_PulaPula,
                 PBX_Vitamina1,
                 PBX_Vitamina2,
                 PBX_Vitamina3,
@@ -425,14 +380,12 @@ namespace Jogo_Matamática_3_ano
                 PbxBtn4,
                 PbxBtn3,
                 PbxBtn1,
-                PrbTempPerg,
                 Lbl_de_Ajuda,
                 TmrPergunta,
                 LblResposta2,
                 TxtResposta2,
                 LblResposta3,
                 TxtResposta3,
-                LblWallStatus,
                 PbxCristal1,
                 PbxCristal2,
                 PbxCristal3,
@@ -441,52 +394,23 @@ namespace Jogo_Matamática_3_ano
                 LblContVitaminas,
                 LblContCristais,
                 LblScore,
-                PNL_MostrarFases,
-                PBX_Escolha2,
-                LBL_Person,
-                PBX_Escolha1,
-                PBX_VoltarFase,
-                PNL_InfoFase,
-                pictureBox54,
-                PNL_Help,
                 PBX_Help,
-                PBX_bntVaiHelp,
-                PBX_btnVoltaHelp,
                 LBL_txtHelp,
-                LBL_HelpSair,
                 LBL_txtHelp2,
-                pictureBox57,
-                PBX_VitaAtual,
-                LBL_VitaTotal,
-                LBL_CrisTotal,
-                LBL_ScoreTotal,
-                pictureBox59,
-                LBL_Nome2,
-                LBL_Nome1,
                 pictureBox58,
                 pictureBox60,
-                PBX_AmbVilao,
                 PBX_Vitoria,
                 LblResposta4,
                 TxtResposta4,
                 PbxVinheta1,
                 PbxVinheta2,
-                PBX_Salvar,
                 SomTema,
-                PbxPartBaixo,
                 pictureBox61
                 );
             #endregion
-            SSP = new SaveScorePlayer();
-
-            //Ocultar qualquer pbx do form
-            //ocultarTodasPbx();
 
             //"Remover" os paineis 4 5 e 6
             utilits.removePnlsFases_4_5_6();
-
-            //Manter a musica em loop
-            SomTema.PlayLooping();
 
             //Desabilitar btn menu
             PBX_Jogar.Enabled = false;
@@ -505,18 +429,12 @@ namespace Jogo_Matamática_3_ano
             PNL_Pause.Enabled = false;
 
             //FASES DESATIVADAS
-            //PBX_Fase2.Enabled = false;
-            //PBX_Fase3.Enabled = false;
-            //PBX_Fase4.Enabled = false;
-            //PBX_Fase5.Enabled = false;
-            //PBX_Fase6.Enabled = false;
+            PBX_Fase2.Enabled = false;
+            PBX_Fase3.Enabled = false;
 
             //ESCONDER FASES
             PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
             PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-            PBX_Fase4.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-            PBX_Fase5.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-            PBX_Fase6.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
 
             //PAINEL DE FASES
             PNL_Fases.Visible = false;
@@ -544,7 +462,7 @@ namespace Jogo_Matamática_3_ano
             //Organizer objetos do pnlPergunta
             utilits.resetarObjetosPergunta(contVitaminas);
 
-            //Mostrar a "vinheta"
+            //Mostrar a "vinheta
             ControleAnimacao = utilits.vinheta();
             TmrAnimation.Start();
 
@@ -728,6 +646,11 @@ namespace Jogo_Matamática_3_ano
                             objPerson = "Tocha";
                             ControleAnimacao = 1;
                             TmrAnimation.Start();
+                            if (wins == 0)
+                                wins += 1;
+                            score_total_player += Score;
+                            contVitaminas = 0;
+                            contCristais = 0;
                         }
                         if (PbxColision.Bounds.IntersectsWith(h.Bounds) && fase == 2)
                         {
@@ -740,6 +663,28 @@ namespace Jogo_Matamática_3_ano
                             objPerson = "Flores";
                             ControleAnimacao = 1;
                             TmrAnimation.Start();
+                            if (wins == 1)
+                                wins += 1;
+                            score_total_player += Score;
+                            contVitaminas = 0;
+                            contCristais = 0;
+                        }
+                        if (PbxColision.Bounds.IntersectsWith(h.Bounds) && fase == 3)
+                        {
+                            TmrMainGameManager.Stop();
+                            TMR_Tempo.Stop();
+                            utilits.animcaoWin = 1;
+                            PBX_Fase3.Enabled = true;
+                            PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_3.png");
+                            PBX_Vitoria.Visible = false;
+                            objPerson = "Gelo";
+                            ControleAnimacao = 1;
+                            TmrAnimation.Start();
+                            if (wins == 2)
+                                wins += 1;
+                            score_total_player += Score;
+                            contVitaminas = 0;
+                            contCristais = 0;
                         }
                     }
                 }
@@ -750,9 +695,28 @@ namespace Jogo_Matamática_3_ano
             {
                 LBL_ScoreTotal.Text = Score.ToString();
                 TMR_Tempo.Stop();
-                contVitaminas = 0;
-                contCristais = 0;
             }
+
+            // Para abrir o form de inserção de dados quando o player zerar o jogo
+            if (wins == 3)
+            {
+                this.Enabled = false;
+                
+                nt = new Thread(abrirInsercaoNome);
+                nt.SetApartmentState(ApartmentState.STA);
+                nt.Start();
+                wins += 3;
+            }
+
+            if (!nt.IsAlive)
+            {
+                this.Enabled = true;
+            }
+        }
+
+        private void abrirInsercaoNome()
+        {
+            Application.Run(new FrmInserirScore(score_total_player));
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -774,13 +738,13 @@ namespace Jogo_Matamática_3_ano
 
 
         //ENTRAR E SAIR DO OPCOES
-        private void PBX_Opcoes_MouseHover(object sender, EventArgs e)
+        private void PBX_Placar_MouseHover(object sender, EventArgs e)
         {
             PBX_Placar.Size = new Size(250, 150);
             PBX_Placar.Location = new Point(530, 449);
         }
 
-        private void PBX_Opcoes_MouseLeave(object sender, EventArgs e)
+        private void PBX_Placar_MouseLeave(object sender, EventArgs e)
         {
             PBX_Placar.Size = new Size(220, 120);
             PBX_Placar.Location = new Point(547, 449);
@@ -875,18 +839,6 @@ namespace Jogo_Matamática_3_ano
             PBX_Fase6.Size = new Size(228, 170);
             PBX_Fase6.Location = new Point(14, 14);
         }
-
-        //ENTRAR E SAIR BTN VOLTAR INICIO SETA
-        private void PBX_VoltarInicio_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PBX_VoltarInicio_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         #region Start fase 1 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1029,7 +981,8 @@ namespace Jogo_Matamática_3_ano
             //Diretório das imagens que estamos usando para a fase
             string diretorioVit = "\\img\\itens\\cereja_animada.gif",
                    diretorioCristal = "\\img\\itens\\cristal_animado.gif",
-                   diretorioAmbiente = "\\img\\ambiente\\mapa_5\\arvoreNeve.png";
+                   diretorioAmbiente = "\\img\\ambiente\\mapa_5\\arvoreNeve.png",
+                   diretorioObjeto = "\\img\\itens\\roupaGelo_animada.gif";
 
             //Fase atual
             fase = 3;
@@ -1054,10 +1007,11 @@ namespace Jogo_Matamática_3_ano
 
             //Setar o mapa da fase
             this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_3.png");
-//            this.BackColor = Color.Gray;
-//            PbxPartBaixo.BackColor = Color.Gray;
-//            PbxPartBaixo.Location = new Point(-2, 757);
-//            PbxPartBaixo.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\Parte de baixo\\fase" + fase + ".png");
+            this.BackColor = Color.SeaGreen;
+            PBX_Vitoria.Image = Image.FromFile(Directory.GetCurrentDirectory() + diretorioObjeto);
+            PbxPartBaixo.BackColor = Color.SeaGreen;
+            PbxPartBaixo.Location = new Point(-2, 757);
+            PbxPartBaixo.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\Parte de baixo\\fase" + fase + ".png");
 
 
             //SETAR TRANSPARENCIA ITENS
@@ -1612,6 +1566,7 @@ namespace Jogo_Matamática_3_ano
                         Lbl_de_Ajuda.Text = "Você Acertou!! ＜（＾－＾）＞";
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                     else if (resultado > 17 && resultado < 37)
@@ -1658,6 +1613,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -1673,6 +1629,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -1720,6 +1677,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -1735,6 +1693,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -1776,6 +1735,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -1814,6 +1774,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -1852,6 +1813,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -1867,6 +1829,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -1882,6 +1845,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -1897,6 +1861,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -1912,6 +1877,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -1941,6 +1907,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -1952,6 +1919,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                     }
                 }
             }
@@ -1969,6 +1937,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -1984,6 +1953,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2013,6 +1983,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2028,6 +1999,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2075,6 +2047,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2113,6 +2086,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2128,6 +2102,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2143,6 +2118,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2158,6 +2134,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2187,6 +2164,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2202,6 +2180,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2249,6 +2228,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2287,6 +2267,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2302,6 +2283,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2349,6 +2331,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2364,6 +2347,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2393,6 +2377,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2408,6 +2393,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2455,6 +2441,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2493,6 +2480,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2508,6 +2496,7 @@ namespace Jogo_Matamática_3_ano
                         Score = utilits.addScorePonto(20, Score);
                         sairPergunta();
                         focoNoForm();
+                        TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
                     }
                 }
@@ -2571,7 +2560,7 @@ namespace Jogo_Matamática_3_ano
         #region TIMER PARA TESTES
         private void TmrDebug_Tick(object sender, EventArgs e)
         {
-            Console.WriteLine("");
+
         }
         #endregion
     }
