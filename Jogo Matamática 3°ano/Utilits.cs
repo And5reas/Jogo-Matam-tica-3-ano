@@ -529,13 +529,13 @@ namespace Jogo_Matamática_3_ano
 
                     setImgBtn(4, fase);
 
-                    PbxBtn1.Size = new Size(SizeX, SizeY);
+                    PbxBtn1.Size = new Size(SizeX + 54, SizeY);
                     PbxBtn2.Size = new Size(SizeX, SizeY);
                     PbxBtn3.Size = new Size(SizeX + 9, SizeY);
-                    PbxBtnCerto.Size = new Size(SizeX + 54, SizeY);
+                    PbxBtnCerto.Size = new Size(SizeX, SizeY);
 
                     PbxBtn1.Location = new Point(1053, 78);
-                    PbxBtn2.Location = new Point(208, 117);
+                    PbxBtn2.Location = new Point(946, 78);
                     PbxBtn3.Location = new Point(813, 78);
                     PbxBtnCerto.Location = new Point(689, 78);
                 }

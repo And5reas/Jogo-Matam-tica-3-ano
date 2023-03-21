@@ -1947,7 +1947,7 @@
             this.PnlPerguntas.Controls.Add(this.TxtResposta3);
             this.PnlPerguntas.Controls.Add(this.TxtResposta);
             this.PnlPerguntas.Controls.Add(this.Lbl_de_Ajuda);
-            this.PnlPerguntas.Location = new System.Drawing.Point(1271, 377);
+            this.PnlPerguntas.Location = new System.Drawing.Point(12, 370);
             this.PnlPerguntas.Name = "PnlPerguntas";
             this.PnlPerguntas.Size = new System.Drawing.Size(1260, 200);
             this.PnlPerguntas.TabIndex = 24;
@@ -2030,9 +2030,9 @@
             // 
             this.PbxBtn1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbxBtn1.Enabled = false;
-            this.PbxBtn1.Location = new System.Drawing.Point(932, 96);
+            this.PbxBtn1.Location = new System.Drawing.Point(1053, 78);
             this.PbxBtn1.Name = "PbxBtn1";
-            this.PbxBtn1.Size = new System.Drawing.Size(75, 86);
+            this.PbxBtn1.Size = new System.Drawing.Size(58, 58);
             this.PbxBtn1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbxBtn1.TabIndex = 3;
             this.PbxBtn1.TabStop = false;
@@ -2043,7 +2043,7 @@
             // 
             this.PbxBtn2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbxBtn2.Enabled = false;
-            this.PbxBtn2.Location = new System.Drawing.Point(1111, 112);
+            this.PbxBtn2.Location = new System.Drawing.Point(689, 78);
             this.PbxBtn2.Name = "PbxBtn2";
             this.PbxBtn2.Size = new System.Drawing.Size(127, 70);
             this.PbxBtn2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2056,7 +2056,7 @@
             // 
             this.PbxBtn3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbxBtn3.Enabled = false;
-            this.PbxBtn3.Location = new System.Drawing.Point(978, 105);
+            this.PbxBtn3.Location = new System.Drawing.Point(813, 78);
             this.PbxBtn3.Name = "PbxBtn3";
             this.PbxBtn3.Size = new System.Drawing.Size(127, 70);
             this.PbxBtn3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2069,7 +2069,7 @@
             // 
             this.PbxBtn4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbxBtn4.Enabled = false;
-            this.PbxBtn4.Location = new System.Drawing.Point(277, 152);
+            this.PbxBtn4.Location = new System.Drawing.Point(946, 75);
             this.PbxBtn4.Name = "PbxBtn4";
             this.PbxBtn4.Size = new System.Drawing.Size(40, 28);
             this.PbxBtn4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
