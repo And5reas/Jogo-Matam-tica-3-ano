@@ -2816,7 +2816,7 @@ namespace Jogo_Matamática_3_ano
                 setMusic("floresta_1");
 
                 //Retornar reset de valores
-                return new Tuple<int, int, int, int, int, int, int>(1, 1, 6, 700, 0, 0, -1);
+                return new Tuple<int, int, int, int, int, int, int>(2, 1, 6, 700, 0, 0, -1);
             }
             if (fase == 2)
             {
@@ -2837,7 +2837,7 @@ namespace Jogo_Matamática_3_ano
                 setMusic("caverna");
 
                 //Retornar reset de valores
-                return new Tuple<int, int, int, int, int, int, int>(1, 16, 6, 700, 0, 0, -1);
+                return new Tuple<int, int, int, int, int, int, int>(2, 16, 6, 700, 0, 0, -1);
             }
             if (fase == 3)
             {
@@ -2858,7 +2858,7 @@ namespace Jogo_Matamática_3_ano
                 setMusic("gelo");
 
                 //Retornar reset de valores
-                return new Tuple<int, int, int, int, int, int, int>(1, 16, 6, 700, 0, 0, -1);
+                return new Tuple<int, int, int, int, int, int, int>(2, 16, 6, 700, 0, 0, -1);
             }
             return new Tuple<int, int, int, int, int, int, int>(0, 0, 0, 0, 0, 0, 0);
         }

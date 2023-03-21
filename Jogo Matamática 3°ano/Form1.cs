@@ -854,9 +854,9 @@ namespace Jogo_Matamática_3_ano
             fase = 1;
 
             //TEMPO DE FASE
-            tempMin = 1;
+            tempMin = 2;
             tempSeg = 0;
-            LBL_Tempo.Text = "1:00";
+            LBL_Tempo.Text = "2:00";
 
             //Esconder os paineis
             PNL_Fases.Visible = false;
@@ -920,8 +920,9 @@ namespace Jogo_Matamática_3_ano
             fase = 2;
 
             //TEMPO DE FASE
-            tempMin = 1;
+            tempMin = 2;
             tempSeg = 15;
+            LBL_Tempo.Text = "2:15";
 
             //Start da fase
             TMR_Tempo.Start();
@@ -987,8 +988,9 @@ namespace Jogo_Matamática_3_ano
             fase = 3;
 
             //TEMPO DE FASE
-            tempMin = 1;
+            tempMin = 2;
             tempSeg = 15;
+            LBL_Tempo.Text = "2:15";
 
             //Setar a posição inicial da colisão e personagem e imagen
             PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_1.png");
