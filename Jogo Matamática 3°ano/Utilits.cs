@@ -2526,6 +2526,10 @@ namespace Jogo_Matamática_3_ano
         public int ganharFase(int ControleAnimacao, string escolhaPerson, string objPerson)
         {
             //Olha pro player 
+            if (ControleAnimacao == 1)
+            {
+                setMusicStop(SomTema);
+            }
             if (ControleAnimacao > 0 && ControleAnimacao < 250)
             {
                 ControleAnimacao++;
