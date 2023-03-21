@@ -121,10 +121,6 @@
             this.TmrColisao = new System.Windows.Forms.Timer(this.components);
             this.PNL_Pause = new System.Windows.Forms.Panel();
             this.PNL_InfoPause = new System.Windows.Forms.Panel();
-            this.pictureBox57 = new System.Windows.Forms.PictureBox();
-            this.PBX_VitaAtual = new System.Windows.Forms.PictureBox();
-            this.LBL_VitaTotal = new System.Windows.Forms.Label();
-            this.LBL_CrisTotal = new System.Windows.Forms.Label();
             this.LBL_ScoreTotal = new System.Windows.Forms.Label();
             this.pictureBox59 = new System.Windows.Forms.PictureBox();
             this.PNL_Info = new System.Windows.Forms.Panel();
@@ -296,8 +292,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).BeginInit();
             this.PNL_Pause.SuspendLayout();
             this.PNL_InfoPause.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_VitaAtual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox59)).BeginInit();
             this.PNL_Info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Info)).BeginInit();
@@ -1398,7 +1392,7 @@
             this.PNL_Pause.Controls.Add(this.PNL_InfoPause);
             this.PNL_Pause.Controls.Add(this.PNL_Info);
             this.PNL_Pause.Controls.Add(this.panel7);
-            this.PNL_Pause.Location = new System.Drawing.Point(1074, 911);
+            this.PNL_Pause.Location = new System.Drawing.Point(12, 182);
             this.PNL_Pause.Name = "PNL_Pause";
             this.PNL_Pause.Size = new System.Drawing.Size(1314, 906);
             this.PNL_Pause.TabIndex = 7;
@@ -1407,10 +1401,6 @@
             // 
             this.PNL_InfoPause.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNL_InfoPause.BackgroundImage")));
             this.PNL_InfoPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PNL_InfoPause.Controls.Add(this.pictureBox57);
-            this.PNL_InfoPause.Controls.Add(this.PBX_VitaAtual);
-            this.PNL_InfoPause.Controls.Add(this.LBL_VitaTotal);
-            this.PNL_InfoPause.Controls.Add(this.LBL_CrisTotal);
             this.PNL_InfoPause.Controls.Add(this.LBL_ScoreTotal);
             this.PNL_InfoPause.Controls.Add(this.pictureBox59);
             this.PNL_InfoPause.Location = new System.Drawing.Point(234, 572);
@@ -1418,66 +1408,18 @@
             this.PNL_InfoPause.Size = new System.Drawing.Size(846, 196);
             this.PNL_InfoPause.TabIndex = 5;
             // 
-            // pictureBox57
-            // 
-            this.pictureBox57.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox57.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox57.Image")));
-            this.pictureBox57.Location = new System.Drawing.Point(551, 68);
-            this.pictureBox57.Name = "pictureBox57";
-            this.pictureBox57.Size = new System.Drawing.Size(36, 51);
-            this.pictureBox57.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox57.TabIndex = 29;
-            this.pictureBox57.TabStop = false;
-            this.pictureBox57.Tag = "Cristal";
-            // 
-            // PBX_VitaAtual
-            // 
-            this.PBX_VitaAtual.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_VitaAtual.Image = ((System.Drawing.Image)(resources.GetObject("PBX_VitaAtual.Image")));
-            this.PBX_VitaAtual.Location = new System.Drawing.Point(261, 68);
-            this.PBX_VitaAtual.Name = "PBX_VitaAtual";
-            this.PBX_VitaAtual.Size = new System.Drawing.Size(50, 45);
-            this.PBX_VitaAtual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBX_VitaAtual.TabIndex = 28;
-            this.PBX_VitaAtual.TabStop = false;
-            this.PBX_VitaAtual.Tag = "";
-            // 
-            // LBL_VitaTotal
-            // 
-            this.LBL_VitaTotal.AutoSize = true;
-            this.LBL_VitaTotal.BackColor = System.Drawing.Color.Transparent;
-            this.LBL_VitaTotal.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_VitaTotal.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LBL_VitaTotal.Location = new System.Drawing.Point(178, 81);
-            this.LBL_VitaTotal.Name = "LBL_VitaTotal";
-            this.LBL_VitaTotal.Size = new System.Drawing.Size(77, 27);
-            this.LBL_VitaTotal.TabIndex = 30;
-            this.LBL_VitaTotal.Text = "0/48";
-            // 
-            // LBL_CrisTotal
-            // 
-            this.LBL_CrisTotal.AutoSize = true;
-            this.LBL_CrisTotal.BackColor = System.Drawing.Color.Transparent;
-            this.LBL_CrisTotal.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_CrisTotal.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.LBL_CrisTotal.Location = new System.Drawing.Point(593, 81);
-            this.LBL_CrisTotal.Name = "LBL_CrisTotal";
-            this.LBL_CrisTotal.Size = new System.Drawing.Size(69, 27);
-            this.LBL_CrisTotal.TabIndex = 31;
-            this.LBL_CrisTotal.Text = "0/18";
-            // 
             // LBL_ScoreTotal
             // 
-            this.LBL_ScoreTotal.AutoSize = true;
             this.LBL_ScoreTotal.BackColor = System.Drawing.Color.Transparent;
             this.LBL_ScoreTotal.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBL_ScoreTotal.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.LBL_ScoreTotal.Image = ((System.Drawing.Image)(resources.GetObject("LBL_ScoreTotal.Image")));
-            this.LBL_ScoreTotal.Location = new System.Drawing.Point(419, 73);
+            this.LBL_ScoreTotal.Location = new System.Drawing.Point(314, 73);
             this.LBL_ScoreTotal.Name = "LBL_ScoreTotal";
-            this.LBL_ScoreTotal.Size = new System.Drawing.Size(45, 42);
+            this.LBL_ScoreTotal.Size = new System.Drawing.Size(231, 42);
             this.LBL_ScoreTotal.TabIndex = 32;
-            this.LBL_ScoreTotal.Text = "0";
+            this.LBL_ScoreTotal.Text = "Score total";
+            this.LBL_ScoreTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox59
             // 
@@ -2750,9 +2692,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).EndInit();
             this.PNL_Pause.ResumeLayout(false);
             this.PNL_InfoPause.ResumeLayout(false);
-            this.PNL_InfoPause.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_VitaAtual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox59)).EndInit();
             this.PNL_Info.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Info)).EndInit();
@@ -2987,10 +2926,6 @@
         public System.Windows.Forms.Label LBL_txtHelp;
         public System.Windows.Forms.Label LBL_HelpSair;
         public System.Windows.Forms.Label LBL_txtHelp2;
-        public System.Windows.Forms.PictureBox pictureBox57;
-        public System.Windows.Forms.PictureBox PBX_VitaAtual;
-        public System.Windows.Forms.Label LBL_VitaTotal;
-        public System.Windows.Forms.Label LBL_CrisTotal;
         public System.Windows.Forms.Label LBL_ScoreTotal;
         public System.Windows.Forms.PictureBox pictureBox59;
         public System.Windows.Forms.Label LBL_Nome2;

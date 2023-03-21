@@ -56,7 +56,7 @@ namespace Jogo_Matamática_3_ano
             ControleAnimacao = 0,
 
             //Variáveis de Vitaminas, Cristais e aleatorizar as perguntas
-            contVitaminas = 0, contCristais = 0, contVitaTotal = 0, contCrisTotal = 0, randomPergunta = 0, auxCont = 0,
+            contVitaminas = 0, contCristais = 0, randomPergunta = 0, auxCont = 0,
 
             //Controla o TmrPergunta
             tempPergunta = 0,
@@ -214,8 +214,7 @@ namespace Jogo_Matamática_3_ano
                     contVitaminas = 0;
                 }
                 contVitaminas++;
-                contVitaTotal++;
-                PerguntaLetra = utilits.perguntasEntrada(fase, contVitaminas, contVitaTotal);
+                PerguntaLetra = utilits.perguntasEntrada(fase, contVitaminas);
                 randomPergunta = utilits.getRandom();
                 ControleAnimacao = 900;
                 TmrAnimation.Start();
@@ -397,7 +396,6 @@ namespace Jogo_Matamática_3_ano
                 PBX_Help,
                 LBL_txtHelp,
                 LBL_txtHelp2,
-                LBL_VitaTotal,
                 pictureBox58,
                 pictureBox60,
                 PBX_Vitoria,
@@ -588,8 +586,7 @@ namespace Jogo_Matamática_3_ano
                         {
                             f.Visible = false;
                             contVitaminas++;
-                            contVitaTotal++;
-                            PerguntaLetra = utilits.perguntasEntrada(fase, contVitaminas, contVitaTotal);
+                            PerguntaLetra = utilits.perguntasEntrada(fase, contVitaminas);
                             randomPergunta = utilits.getRandom();
                             ControleAnimacao = 900;
                             TmrAnimation.Start();
@@ -610,11 +607,9 @@ namespace Jogo_Matamática_3_ano
                         {
                             h.Visible = false;
                             contCristais++;
-                            contCrisTotal++;
 
                             //Exibir para o player (Placar)
                             LblContCristais.Text = "x" + contCristais;
-                            LBL_CrisTotal.Text = contCrisTotal + "/18";
                             if (contCristais != 3)
                                 CristalBuffTime = 6;
                             if (contCristais == 3)
@@ -637,55 +632,29 @@ namespace Jogo_Matamática_3_ano
                     {
                         if (PbxColision.Bounds.IntersectsWith(h.Bounds) && fase == 1)
                         {
-                            TmrMainGameManager.Stop();
-                            TMR_Tempo.Stop();
-                            utilits.animcaoWin = 1;
+                            vitoriaSet();
                             PBX_Fase2.Enabled = true;
                             PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
-                            PBX_Vitoria.Visible = false;
                             utilits.setMusicStop(SomTema);
                             objPerson = "Tocha";
-                            ControleAnimacao = 1;
-                            TmrAnimation.Start();
                             if (wins == 0)
                                 wins += 1;
-                            score_total_player += Score;
-                            contVitaminas = 0;
-                            contCristais = 0;
                         }
                         if (PbxColision.Bounds.IntersectsWith(h.Bounds) && fase == 2)
                         {
-                            TmrMainGameManager.Stop();
-                            TMR_Tempo.Stop();
-                            utilits.animcaoWin = 1;
+                            vitoriaSet();
                             PBX_Fase3.Enabled = true;
                             PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_3.png");
-                            PBX_Vitoria.Visible = false;
                             objPerson = "Flores";
-                            ControleAnimacao = 1;
-                            TmrAnimation.Start();
                             if (wins == 1)
                                 wins += 1;
-                            score_total_player += Score;
-                            contVitaminas = 0;
-                            contCristais = 0;
                         }
                         if (PbxColision.Bounds.IntersectsWith(h.Bounds) && fase == 3)
                         {
-                            TmrMainGameManager.Stop();
-                            TMR_Tempo.Stop();
-                            utilits.animcaoWin = 1;
-                            PBX_Fase3.Enabled = true;
-                            PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_3.png");
-                            PBX_Vitoria.Visible = false;
+                            vitoriaSet();
                             objPerson = "Gelo";
-                            ControleAnimacao = 1;
-                            TmrAnimation.Start();
                             if (wins == 2)
                                 wins += 1;
-                            score_total_player += Score;
-                            contVitaminas = 0;
-                            contCristais = 0;
                         }
                     }
                 }
@@ -715,6 +684,21 @@ namespace Jogo_Matamática_3_ano
                     LblScore.Text = Score.ToString();
                 }
             }
+        }
+
+        private void vitoriaSet()
+        {
+            TmrMainGameManager.Stop();
+            TMR_Tempo.Stop();
+            utilits.animcaoWin = 1;
+            PBX_Vitoria.Visible = false;
+            ControleAnimacao = 1;
+            TmrAnimation.Start();
+            score_total_player += Score;
+            contVitaminas = 0;
+            contCristais = 0;
+            // Atualizar o score total
+            LBL_ScoreTotal.Text = score_total_player.ToString();
         }
 
         private void abrirInsercaoNome()
@@ -1285,7 +1269,6 @@ namespace Jogo_Matamática_3_ano
 
                     utilits.LBLScore(530, 520, 490);
                     LblScore.Text = Score.ToString();
-                    LBL_ScoreTotal.Text = Score.ToString();
                 }
             }
             else
@@ -1343,7 +1326,6 @@ namespace Jogo_Matamática_3_ano
                 {
                     LblScore.ForeColor = Color.WhiteSmoke;
                     LblScore.Text = Score.ToString();
-                    LBL_ScoreTotal.Text = Score.ToString();
                     utilits.LBLScore(570, 550, 545);
                     if (DebugSwithB == false)
                         andarQtdPx = 6;
@@ -1365,7 +1347,6 @@ namespace Jogo_Matamática_3_ano
                         LblScore.Text = Score + "+" + (contCristais + 6);
                         andarQtdPx = 8;
                     }
-                    LBL_ScoreTotal.Text = Score.ToString();
                     CristalBuffTime--;
                 }
             }
