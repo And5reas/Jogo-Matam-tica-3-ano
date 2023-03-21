@@ -56,7 +56,7 @@ namespace Jogo_Matamática_3_ano
             ControleAnimacao = 0,
 
             //Variáveis de Vitaminas, Cristais e aleatorizar as perguntas
-            contVitaminas = 0, contCristais = 0, contVitaTotal = 0, contCrisTotal = 0, randomPergunta = 0,
+            contVitaminas = 0, contCristais = 0, contVitaTotal = 0, contCrisTotal = 0, randomPergunta = 0, auxCont = 0,
 
             //Controla o TmrPergunta
             tempPergunta = 0,
@@ -616,10 +616,10 @@ namespace Jogo_Matamática_3_ano
                             LblContCristais.Text = "x" + contCristais;
                             LBL_CrisTotal.Text = contCrisTotal + "/18";
                             if (contCristais != 3)
-                            CristalBuffTime = 6;
+                                CristalBuffTime = 6;
                             if (contCristais == 3)
                             {
-                                Score = Score + 100;
+                                Score += 100;
                                 LblScore.ForeColor = Color.Orange;
                                 LblScore.Text = Score.ToString();
                             }
@@ -691,13 +691,6 @@ namespace Jogo_Matamática_3_ano
                 }
             }
 
-            //Para o Score e o tempo quando pegar todos os "itens"
-            if (contCristais == 3 && contVitaminas == 7)
-            {
-                LBL_ScoreTotal.Text = Score.ToString();
-                TMR_Tempo.Stop();
-            }
-
             // Para abrir o form de inserção de dados quando o player zerar o jogo
             if (wins == 3)
             {
@@ -708,9 +701,20 @@ namespace Jogo_Matamática_3_ano
                 nt.Start();
                 wins += 3;
             }
+            // Reativar o form depois que preencher o insertScore
             if (nt != null)
                 if (!nt.IsAlive)
                     this.Enabled = true;
+
+            if (contVitaminas == 7)
+            {
+                if ((contCristais == 1 || contCristais == 2 || contCristais == 3) && auxCont == 0)
+                {
+                    auxCont += 1;
+                    Score += 100;
+                    LblScore.Text = Score.ToString();
+                }
+            }
         }
 
         private void abrirInsercaoNome()
@@ -1014,6 +1018,13 @@ namespace Jogo_Matamática_3_ano
             PbxPartBaixo.Location = new Point(-2, 757);
             PbxPartBaixo.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\Parte de baixo\\fase" + fase + ".png");
 
+            //Setar a cerca da fase
+            PbxCerca.Location = new Point(1171, 646);
+            PbxCerca.Visible = true;
+
+            //ORGANIZAR O PLACAR DA FASE
+            utilits.setPlacar(fase);
+            Score = 0;
 
             //SETAR TRANSPARENCIA ITENS
             utilits.itensTrans();
@@ -1233,36 +1244,33 @@ namespace Jogo_Matamática_3_ano
 
         private void TMR_Tempo_Tick(object sender, EventArgs e)
         {
-            if (tempSeg <= 60)
+            if (contVitaminas == 7)
             {
-                if (tempSeg == 0)
+                TMR_Tempo.Interval = 70;
+                if (tempSeg <= 60)
                 {
-                    tempMin--;
-
-                    if (tempMin >= 0)
+                    if (tempSeg == 0)
                     {
-                        tempSeg = 60;
+                        tempMin--;
+                        if (tempMin >= 0)
+                        {
+                            tempSeg = 60;
+                        }
                     }
-
-                }
-                if (tempSeg <= 10)
-                {
-                    tempSeg--;
-                    if (tempSeg == -1)
+                    if (tempSeg <= 10)
                     {
-                        PNL_Pause.Enabled = false;
-                        TMR_Tempo.Stop();
-                        TMR_SemTempo.Start();
-                        PNL_SemTempo.Location = new Point(365, 307);
-                        PNL_SemTempo.Visible = true;
-                        TmrMainGameManager.Stop();
+                        tempSeg--;
+                        if (tempSeg == -1)
+                        {
+                            LBL_Tempo.Text = "0:00";
+                            TMR_Tempo.Stop();
+                        }
+                        else
+                        {
+                            LBL_Tempo.ForeColor = Color.White;
+                            LBL_Tempo.Text = tempMin.ToString() + ":" + "0" + tempSeg.ToString();
+                        }
                     }
-                    else
-                    {
-                        LBL_Tempo.ForeColor = Color.White;
-                        LBL_Tempo.Text = tempMin.ToString() + ":" + "0" + tempSeg.ToString();
-                    }
-
                 }
                 if (tempSeg >= 10)
                 {
@@ -1270,47 +1278,96 @@ namespace Jogo_Matamática_3_ano
                     LBL_Tempo.ForeColor = Color.White;
                     LBL_Tempo.Text = tempMin.ToString() + ":" + tempSeg.ToString();
                 }
-            }
 
-            //Correção por conta das vitaminas que add tempo
-            else
-            {
-                tempMin++;
-                tempSeg = tempSeg - 60;
-                LBL_Tempo.ForeColor = Color.White;
-                LBL_Tempo.Text = tempMin.ToString() + ":" + "0" + tempSeg.ToString();
-            }
+                //Sistema de pontos
+                if (tempSeg != -1) {
+                    Score += 2;
 
-            //Sistema de pontos
-            Score++;
-            if (CristalBuffTime == 0)
-            {
-                LblScore.ForeColor = Color.WhiteSmoke;
-                LblScore.Text = Score.ToString();
-                LBL_ScoreTotal.Text = Score.ToString();
-                utilits.LBLScore(570, 550, 545);
-                if (DebugSwithB == false)
-                    andarQtdPx = 6;
+                    utilits.LBLScore(530, 520, 490);
+                    LblScore.Text = Score.ToString();
+                    LBL_ScoreTotal.Text = Score.ToString();
+                }
             }
             else
             {
-                utilits.LBLScore(530, 520, 490);
-                if (contCristais == 1)
+                TMR_Tempo.Interval = 1000;
+                if (tempSeg <= 60)
                 {
-                    Score = Score + 3;
-                    LblScore.ForeColor = Color.Yellow;
-                    LblScore.Text = Score + "+" + (contCristais + 3);
-                    andarQtdPx = 8;
+                    if (tempSeg == 0)
+                    {
+                        tempMin--;
+
+                        if (tempMin >= 0)
+                        {
+                            tempSeg = 60;
+                        }
+                    }
+                    if (tempSeg <= 10)
+                    {
+                        tempSeg--;
+                        if (tempSeg == -1)
+                        {
+                            PNL_Pause.Enabled = false;
+                            TMR_Tempo.Stop();
+                            TMR_SemTempo.Start();
+                            PNL_SemTempo.Location = new Point(365, 307);
+                            PNL_SemTempo.Visible = true;
+                            TmrMainGameManager.Stop();
+                        }
+                        else
+                        {
+                            LBL_Tempo.ForeColor = Color.White;
+                            LBL_Tempo.Text = tempMin.ToString() + ":" + "0" + tempSeg.ToString();
+                        }
+                    }
+                    if (tempSeg >= 10)
+                    {
+                        tempSeg--;
+                        LBL_Tempo.ForeColor = Color.White;
+                        LBL_Tempo.Text = tempMin.ToString() + ":" + tempSeg.ToString();
+                    }
                 }
-                else if (contCristais == 2)
+
+                //Correção por conta das vitaminas que add tempo
+                else
                 {
-                    Score = Score + 7;
-                    LblScore.ForeColor = Color.Orange;
-                    LblScore.Text = Score + "+" + (contCristais + 6);
-                    andarQtdPx = 8;
+                    tempMin++;
+                    tempSeg = tempSeg - 60;
+                    LBL_Tempo.ForeColor = Color.White;
+                    LBL_Tempo.Text = tempMin.ToString() + ":" + "0" + tempSeg.ToString();
                 }
-                LBL_ScoreTotal.Text = Score.ToString();
-                CristalBuffTime--;
+
+                //Sistema de pontos
+                Score++;
+                if (CristalBuffTime == 0)
+                {
+                    LblScore.ForeColor = Color.WhiteSmoke;
+                    LblScore.Text = Score.ToString();
+                    LBL_ScoreTotal.Text = Score.ToString();
+                    utilits.LBLScore(570, 550, 545);
+                    if (DebugSwithB == false)
+                        andarQtdPx = 6;
+                }
+                else
+                {
+                    utilits.LBLScore(530, 520, 490);
+                    if (contCristais == 1)
+                    {
+                        Score += 3;
+                        LblScore.ForeColor = Color.Yellow;
+                        LblScore.Text = Score + "+" + (contCristais + 3);
+                        andarQtdPx = 8;
+                    }
+                    else if (contCristais == 2)
+                    {
+                        Score += 7;
+                        LblScore.ForeColor = Color.Orange;
+                        LblScore.Text = Score + "+" + (contCristais + 6);
+                        andarQtdPx = 8;
+                    }
+                    LBL_ScoreTotal.Text = Score.ToString();
+                    CristalBuffTime--;
+                }
             }
         }
 
@@ -2561,7 +2618,7 @@ namespace Jogo_Matamática_3_ano
         #region TIMER PARA TESTES
         private void TmrDebug_Tick(object sender, EventArgs e)
         {
-
+            Console.WriteLine(Score);
         }
         #endregion
     }

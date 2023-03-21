@@ -2359,7 +2359,7 @@ namespace Jogo_Matamática_3_ano
         {
             if (Score > 0)
             {
-                Score = Score + pontos;
+                Score += pontos;
             }
             else if (Score <= 0)
             {
@@ -2469,7 +2469,9 @@ namespace Jogo_Matamática_3_ano
             }
             if (fase == 3)
             {
-
+                //Setar a imagen certa
+                PbxContVitaminas.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\cereja_animada.gif");
+                PbxContCristais.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\itens\\cristal_animado.gif");
             }
 
         }

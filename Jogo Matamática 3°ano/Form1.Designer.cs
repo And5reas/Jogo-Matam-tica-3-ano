@@ -1976,7 +1976,7 @@
             // 
             this.PbxCerca.BackColor = System.Drawing.Color.Transparent;
             this.PbxCerca.Image = ((System.Drawing.Image)(resources.GetObject("PbxCerca.Image")));
-            this.PbxCerca.Location = new System.Drawing.Point(1194, 648);
+            this.PbxCerca.Location = new System.Drawing.Point(1171, 646);
             this.PbxCerca.Name = "PbxCerca";
             this.PbxCerca.Size = new System.Drawing.Size(30, 16);
             this.PbxCerca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
