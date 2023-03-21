@@ -1414,11 +1414,11 @@
             this.LBL_ScoreTotal.Font = new System.Drawing.Font("Snap ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBL_ScoreTotal.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.LBL_ScoreTotal.Image = ((System.Drawing.Image)(resources.GetObject("LBL_ScoreTotal.Image")));
-            this.LBL_ScoreTotal.Location = new System.Drawing.Point(314, 73);
+            this.LBL_ScoreTotal.Location = new System.Drawing.Point(330, 73);
             this.LBL_ScoreTotal.Name = "LBL_ScoreTotal";
-            this.LBL_ScoreTotal.Size = new System.Drawing.Size(231, 42);
+            this.LBL_ScoreTotal.Size = new System.Drawing.Size(201, 42);
             this.LBL_ScoreTotal.TabIndex = 32;
-            this.LBL_ScoreTotal.Text = "Score total";
+            this.LBL_ScoreTotal.Text = "Score";
             this.LBL_ScoreTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox59

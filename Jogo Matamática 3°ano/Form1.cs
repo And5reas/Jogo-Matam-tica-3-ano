@@ -404,7 +404,8 @@ namespace Jogo_Matamática_3_ano
                 PbxVinheta1,
                 PbxVinheta2,
                 SomTema,
-                pictureBox61
+                pictureBox61,
+                PBX_Placar
                 );
             #endregion
 
@@ -2599,7 +2600,7 @@ namespace Jogo_Matamática_3_ano
         #region TIMER PARA TESTES
         private void TmrDebug_Tick(object sender, EventArgs e)
         {
-            Console.WriteLine(Score);
+            Console.WriteLine();
         }
         #endregion
     }

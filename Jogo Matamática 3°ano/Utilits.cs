@@ -140,6 +140,7 @@ namespace Jogo_Matamática_3_ano
         PictureBox PbxVinheta2;
         SoundPlayer SomTema;
         PictureBox pictureBox61;
+        PictureBox PBX_Placar;
         public Utilits
             (
             Timer TmrMainGameManager,
@@ -258,7 +259,8 @@ namespace Jogo_Matamática_3_ano
             PictureBox PbxVinheta1,
             PictureBox PbxVinheta2,
             SoundPlayer SomTema,
-            PictureBox pictureBox61
+            PictureBox pictureBox61,
+            PictureBox PBX_Placar
             )
         {
             this.TmrMainGameManager = TmrMainGameManager;
@@ -378,6 +380,7 @@ namespace Jogo_Matamática_3_ano
             this.PbxVinheta2 = PbxVinheta2;
             this.SomTema = SomTema;
             this.pictureBox61 = pictureBox61;
+            this.PBX_Placar = PBX_Placar;
         }
         #endregion
 
@@ -2791,6 +2794,7 @@ namespace Jogo_Matamática_3_ano
             {
                 PBX_Jogar.Enabled = true;
                 PBX_Sair.Enabled = true;
+                PBX_Placar.Enabled = true;
                 PbxVinheta1.Size = new Size(1, 1);
                 PbxVinheta2.Size = new Size(1, 1);
                 PbxVinheta2.Hide();
