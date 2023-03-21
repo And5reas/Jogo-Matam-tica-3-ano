@@ -637,7 +637,6 @@ namespace Jogo_Matamática_3_ano
                             PBX_Fase2.Enabled = true;
                             PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
                             utilits.setMusicStop(SomTema);
-                            objPerson = "Tocha";
                             if (wins == 0)
                                 wins += 1;
                         }
@@ -646,7 +645,6 @@ namespace Jogo_Matamática_3_ano
                             vitoriaSet();
                             PBX_Fase3.Enabled = true;
                             PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_3.png");
-                            objPerson = "Flores";
                             if (wins == 1)
                                 wins += 1;
                         }
@@ -903,7 +901,7 @@ namespace Jogo_Matamática_3_ano
             string diretorioVit = "\\img\\itens\\bifeCru_animado.gif",
                    diretorioCristal = "\\img\\itens\\cristal_animado.gif",
                    diretorioAmbiente = "\\img\\ambiente\\mapa_2\\buracos_mapa2.png",
-                   diretorioObjeto = "\\img\\itens\\bastao_flores.gif";
+                   diretorioObjeto = "\\img\\itens\\roupaGelo_animada.gif";
 
             //Fase atual
             fase = 2;
@@ -912,6 +910,9 @@ namespace Jogo_Matamática_3_ano
             tempMin = 2;
             tempSeg = 15;
             LBL_Tempo.Text = "2:15";
+
+            // Setar item que o personagem segura
+            objPerson = "Tocha";
 
             //Start da fase
             TMR_Tempo.Start();
@@ -971,7 +972,7 @@ namespace Jogo_Matamática_3_ano
             string diretorioVit = "\\img\\itens\\cereja_animada.gif",
                    diretorioCristal = "\\img\\itens\\cristal_animado.gif",
                    diretorioAmbiente = "\\img\\ambiente\\mapa_5\\arvoreNeve.png",
-                   diretorioObjeto = "\\img\\itens\\roupaGelo_animada.gif";
+                   diretorioObjeto = "\\img\\itens\\cajado_animada.gif";
 
             //Fase atual
             fase = 3;
@@ -980,6 +981,9 @@ namespace Jogo_Matamática_3_ano
             tempMin = 2;
             tempSeg = 15;
             LBL_Tempo.Text = "2:15";
+
+            // Setar item que o personagem segura
+            objPerson = "Gelo";
 
             //Setar a posição inicial da colisão e personagem e imagen
             PbxPersonagem.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\" + escolhaPerson + objPerson + "\\direita\\direita_1.png");
