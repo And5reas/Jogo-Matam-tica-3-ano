@@ -680,6 +680,7 @@ namespace Jogo_Matamática_3_ano
                 {
                     auxCont += 1;
                     Score += 100;
+                    LblScore.ForeColor = Color.White;
                     LblScore.Text = Score.ToString();
                 }
             }
@@ -1235,7 +1236,7 @@ namespace Jogo_Matamática_3_ano
         {
             if (contVitaminas == 7)
             {
-                TMR_Tempo.Interval = 70;
+                TMR_Tempo.Interval = 40;
                 if (tempSeg <= 60)
                 {
                     if (tempSeg == 0)
@@ -1273,6 +1274,7 @@ namespace Jogo_Matamática_3_ano
                     Score += 2;
 
                     utilits.LBLScore(530, 520, 490);
+                    LblScore.ForeColor = Color.White;
                     LblScore.Text = Score.ToString();
                 }
             }
