@@ -2485,7 +2485,7 @@ namespace Jogo_Matamática_3_ano
             PbxVinheta2.Size = new Size(TAMANHO_X, TAMANHO_Y);
             PbxVinheta2.Location = new Point(TAMANHO_X, 0);
             PbxVinheta2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\Vinheta\\TELA_PRETA.png");
-            return 1708;
+            return 1100;
         }
 
         //SETAR A MUSICA
