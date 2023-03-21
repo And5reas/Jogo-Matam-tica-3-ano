@@ -2810,6 +2810,7 @@ namespace Jogo_Matamática_3_ano
         //RESETAR FASE
         public Tuple<int, int, int, int, int, int, int> resetFaseInts(int fase)
         {
+            PbxColision.Location = new Point(0, 0);
             if (fase == 1)
             {
                 //Resetar o placar
