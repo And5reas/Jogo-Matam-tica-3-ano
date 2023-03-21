@@ -397,6 +397,7 @@ namespace Jogo_Matamática_3_ano
                 PBX_Help,
                 LBL_txtHelp,
                 LBL_txtHelp2,
+                LBL_VitaTotal,
                 pictureBox58,
                 pictureBox60,
                 PBX_Vitoria,
@@ -707,11 +708,9 @@ namespace Jogo_Matamática_3_ano
                 nt.Start();
                 wins += 3;
             }
-
-            if (!nt.IsAlive)
-            {
-                this.Enabled = true;
-            }
+            if (nt != null)
+                if (!nt.IsAlive)
+                    this.Enabled = true;
         }
 
         private void abrirInsercaoNome()

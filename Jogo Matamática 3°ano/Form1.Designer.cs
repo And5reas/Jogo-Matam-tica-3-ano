@@ -800,6 +800,7 @@
             this.PbxColision.TabIndex = 5;
             this.PbxColision.TabStop = false;
             this.PbxColision.Tag = "Colision";
+            this.PbxColision.Visible = false;
             // 
             // pictureBox1
             // 
@@ -1397,7 +1398,7 @@
             this.PNL_Pause.Controls.Add(this.PNL_InfoPause);
             this.PNL_Pause.Controls.Add(this.PNL_Info);
             this.PNL_Pause.Controls.Add(this.panel7);
-            this.PNL_Pause.Location = new System.Drawing.Point(1020, 839);
+            this.PNL_Pause.Location = new System.Drawing.Point(1074, 911);
             this.PNL_Pause.Name = "PNL_Pause";
             this.PNL_Pause.Size = new System.Drawing.Size(1314, 906);
             this.PNL_Pause.TabIndex = 7;

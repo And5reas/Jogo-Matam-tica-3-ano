@@ -251,6 +251,7 @@ namespace Jogo_Matamática_3_ano
             PictureBox PBX_Help,
             Label LBL_txtHelp,
             Label LBL_txtHelp2,
+            Label LBL_VitaTotal,
             PictureBox pictureBox58,
             PictureBox pictureBox60,
             PictureBox PBX_Vitoria,
@@ -370,6 +371,7 @@ namespace Jogo_Matamática_3_ano
             this.PBX_Help = PBX_Help;
             this.LBL_txtHelp = LBL_txtHelp;
             this.LBL_txtHelp2 = LBL_txtHelp2;
+            this.LBL_VitaTotal = LBL_VitaTotal;
             this.pictureBox58 = pictureBox58;
             this.pictureBox60 = pictureBox60;
             this.PBX_Vitoria = PBX_Vitoria;
