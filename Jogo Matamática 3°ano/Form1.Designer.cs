@@ -1947,7 +1947,7 @@
             this.PnlPerguntas.Controls.Add(this.TxtResposta3);
             this.PnlPerguntas.Controls.Add(this.TxtResposta);
             this.PnlPerguntas.Controls.Add(this.Lbl_de_Ajuda);
-            this.PnlPerguntas.Location = new System.Drawing.Point(12, 370);
+            this.PnlPerguntas.Location = new System.Drawing.Point(1258, 532);
             this.PnlPerguntas.Name = "PnlPerguntas";
             this.PnlPerguntas.Size = new System.Drawing.Size(1260, 200);
             this.PnlPerguntas.TabIndex = 24;

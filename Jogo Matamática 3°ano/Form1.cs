@@ -1091,13 +1091,13 @@ namespace Jogo_Matamática_3_ano
         //Animação escolha JOAQUINA
         private void PBX_Escolha2_MouseHover(object sender, EventArgs e)
         {
-            PBX_Escolha2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\feminino\\frente\\frente_pedra_maior2.png");
+            PBX_Escolha2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\femininoMadeira\\frente\\frente_pedra_maior2.png");
             LBL_Nome2.ForeColor = Color.GreenYellow;
         }
 
         private void PBX_Escolha2_MouseLeave(object sender, EventArgs e)
         {
-            PBX_Escolha2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\feminino\\frente\\frente_pedra_maior.png");
+            PBX_Escolha2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\femininoMadeira\\frente\\frente_pedra_maior.png");
             LBL_Nome2.ForeColor = Color.Coral;
         }
 
