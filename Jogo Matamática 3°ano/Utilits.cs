@@ -3057,12 +3057,202 @@ namespace Jogo_Matamática_3_ano
                 pictureBox61.Location = new Point(-11, 688); pictureBox61.Size = new Size(31, 44);
             }
         }
+    }
 
+    public class EfeitoBtnMouseCima
+    {
+        PictureBox PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause;
+        public EfeitoBtnMouseCima(PictureBox PBX_Jogar, PictureBox PbxCarregar, PictureBox PBX_Placar, PictureBox PBX_Sair, PictureBox PBX_SimInicio,
+                                  PictureBox PBX_NaoInicio, PictureBox BTN_SimInfo,PictureBox BTN_NaoInfo, PictureBox PBX_Continuar, PictureBox PBX_Inicio,
+                                  PictureBox PBX_Reiniciar, PictureBox PBX_Salvar, PictureBox PBX_SairPause)
+        {
+            this.PBX_Jogar = PBX_Jogar;
+            this.PbxCarregar = PbxCarregar;
+            this.PBX_Placar = PBX_Placar;
+            this.PBX_Sair = PBX_Sair;
+            this.PBX_SimInicio = PBX_SimInicio;
+            this.PBX_NaoInicio = PBX_NaoInicio;
+            this.BTN_SimInfo = BTN_SimInfo;
+            this.BTN_NaoInfo = BTN_NaoInfo;
+            this.PBX_Continuar = PBX_Continuar;
+            this.PBX_Inicio = PBX_Inicio;
+            this.PBX_Reiniciar = PBX_Reiniciar;
+            this.PBX_Salvar = PBX_Salvar;
+            this.PBX_SairPause = PBX_SairPause;
+        }
+        public void efeitoBtn(int s, string type) {
+            if (s == PBX_Jogar.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PBX_Jogar);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PBX_Jogar);
+                }
+            }
+            else if (s == PbxCarregar.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PbxCarregar);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PbxCarregar);
+                }
+            }
+            else if (s == PBX_Placar.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PBX_Placar);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PBX_Placar);
+                }
+            }
+            else if (s == PBX_Sair.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PBX_Sair);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PBX_Sair);
+                }
+            }
+            else if (s == PBX_SimInicio.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PBX_SimInicio);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PBX_SimInicio);
+                }
+            }
+            else if (s == PBX_NaoInicio.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PBX_NaoInicio);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PBX_NaoInicio);
+                }
+            }
+            else if (s == BTN_SimInfo.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.BTN_SimInfo);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.BTN_SimInfo);
+                }
+            }
+            else if (s == BTN_NaoInfo.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.BTN_NaoInfo);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.BTN_NaoInfo);
+                }
+            }
+            else if (s == PBX_Continuar.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PBX_Continuar);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PBX_Continuar);
+                }
+            }
+            else if (s == PBX_Inicio.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PBX_Inicio);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PBX_Inicio);
+                }
+            }
+            else if (s == PBX_Reiniciar.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PBX_Reiniciar);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PBX_Reiniciar);
+                }
+            }
+            else if (s == PBX_Salvar.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PBX_Salvar);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PBX_Salvar);
+                }
+            }
+            else if (s == PBX_SairPause.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PBX_SairPause);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PBX_SairPause);
+                }
+            }
 
-
-
-
-
-
+            void efeitoBtnHover(PictureBox j)
+            {
+                int saveW = j.Size.Width;
+                int saveH = j.Size.Height;
+                int saveX = j.Location.X;
+                int saveY = j.Location.Y;
+                j.Size = new Size(j.Size.Width + 30, j.Size.Height + 30);
+                j.Location = new Point(j.Location.X - 15, j.Location.Y - 15);
+                if (j.Size.Width < 220 || j.Size.Height < 120)
+                {
+                    j.Size = new Size(saveW, saveH);
+                    j.Location = new Point(saveX, saveY);
+                }
+            }
+            void efeitoBtnLeave(PictureBox j)
+            {
+                int saveW = j.Size.Width;
+                int saveH = j.Size.Height;
+                int saveX = j.Location.X;
+                int saveY = j.Location.Y;
+                j.Size = new Size(j.Size.Width - 30, j.Size.Height - 30);
+                j.Location = new Point(j.Location.X + 15, j.Location.Y + 15);
+                if (j.Size.Width < 220 || j.Size.Height < 120)
+                {
+                    j.Size = new Size(saveW, saveH);
+                    j.Location = new Point(saveX, saveY);
+                }
+            }
+        }
     }
 }

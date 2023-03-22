@@ -29,6 +29,7 @@ namespace Jogo_Matamática_3_ano
         Save salvar;
         Utilits utilits;
         Thread nt;
+        EfeitoBtnMouseCima EBMC;
 
         string escolhaPerson, objPerson;
 
@@ -86,6 +87,200 @@ namespace Jogo_Matamática_3_ano
             InitializeComponent();
             SomTema = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\menu.wav");
         }
+
+        #region Load form //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        private void FrmJogo_Load(object sender, EventArgs e)
+        {
+            //Estanciar as classes
+            salvar = new Save(PBX_Fase2, PBX_Fase3);
+            #region Estanciar Utilits
+            utilits = new Utilits
+                (
+                TmrMainGameManager,
+                PbxPersonagem,
+                PBX_Sair,
+                PBX_Jogar,
+                PNL_Fases,
+                panel4,
+                panel3,
+                panel5,
+                panel6,
+                panel2,
+                panel1,
+                PbxColision,
+                pictureBox1,
+                pictureBox2,
+                pictureBox3,
+                pictureBox4,
+                pictureBox5,
+                pictureBox6,
+                pictureBox7,
+                pictureBox8,
+                pictureBox9,
+                pictureBox10,
+                pictureBox11,
+                pictureBox12,
+                pictureBox13,
+                pictureBox14,
+                pictureBox15,
+                pictureBox16,
+                pictureBox17,
+                pictureBox18,
+                pictureBox19,
+                pictureBox20,
+                pictureBox21,
+                pictureBox22,
+                pictureBox23,
+                pictureBox24,
+                pictureBox25,
+                pictureBox26,
+                pictureBox27,
+                pictureBox28,
+                pictureBox29,
+                pictureBox30,
+                pictureBox31,
+                pictureBox32,
+                pictureBox33,
+                pictureBox34,
+                pictureBox35,
+                pictureBox36,
+                pictureBox37,
+                pictureBox38,
+                pictureBox39,
+                pictureBox40,
+                pictureBox41,
+                pictureBox42,
+                pictureBox43,
+                pictureBox44,
+                pictureBox45,
+                pictureBox46,
+                pictureBox47,
+                pictureBox48,
+                pictureBox49,
+                pictureBox50,
+                pictureBox51,
+                pictureBox52,
+                pictureBox53,
+                TMR_Tempo,
+                LBL_Tempo,
+                TmrAnimation,
+                PBX_Ambiente1,
+                PBX_Ambiente2,
+                PBX_Ambiente3,
+                PBX_Ambiente4,
+                PBX_Ambiente5,
+                PBX_Ambiente6,
+                PBX_Ambiente7,
+                PBX_Vitamina1,
+                PBX_Vitamina2,
+                PBX_Vitamina3,
+                PBX_Vitamina4,
+                PBX_Vitamina5,
+                PBX_Vitamina6,
+                PBX_Vitamina7,
+                PbxCerca,
+                PnlPerguntas,
+                TxtResposta,
+                LblResposta,
+                PbxBtnCerto,
+                PbxBtn2,
+                PbxBtn4,
+                PbxBtn3,
+                PbxBtn1,
+                Lbl_de_Ajuda,
+                TmrPergunta,
+                LblResposta2,
+                TxtResposta2,
+                LblResposta3,
+                TxtResposta3,
+                PbxCristal1,
+                PbxCristal2,
+                PbxCristal3,
+                PbxContVitaminas,
+                PbxContCristais,
+                LblContVitaminas,
+                LblContCristais,
+                LblScore,
+                PBX_Help,
+                LBL_txtHelp,
+                LBL_txtHelp2,
+                pictureBox58,
+                pictureBox60,
+                PBX_Vitoria,
+                LblResposta4,
+                TxtResposta4,
+                PbxVinheta1,
+                PbxVinheta2,
+                SomTema,
+                pictureBox61,
+                PBX_Placar
+                );
+            #endregion
+            EBMC = new EfeitoBtnMouseCima(PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause);
+
+            //"Remover" os paineis 4 5 e 6
+            utilits.removePnlsFases_4_5_6();
+
+            //Desabilitar btn menu
+            PBX_Jogar.Enabled = false;
+            PBX_Sair.Enabled = false;
+            PBX_Placar.Enabled = false;
+
+            //Timers
+            TmrMainGameManager.Stop();
+            TmrDebug.Stop();
+            TmrAnimation.Stop();
+
+            //PAUSE
+            PNL_Pause.Location = new Point(0, 109);
+            PNL_Info.Location = new Point(281, -18);
+            PNL_Pause.Visible = false;
+            PNL_Pause.Enabled = false;
+
+            //FASES DESATIVADAS
+            PBX_Fase2.Enabled = false;
+            PBX_Fase3.Enabled = false;
+
+            //ESCONDER FASES
+            PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+
+            //PAINEL DE FASES
+            PNL_Fases.Visible = false;
+            PNL_Fases.Location = new Point(0, 0);
+
+            //PAINEL MENU
+            PnlMenu.Location = new Point(0, 0);
+            PnlMenu.Visible = true;
+
+            //Painel perguntas
+            PnlPerguntas.Location = new Point(10, 960);
+            PnlPerguntas.Visible = false;
+
+            //Painel de help
+            PNL_Help.Location = new Point(273, 170);
+
+            //Esconder opções debugMode
+            labelX.Visible = false;
+            labelY.Visible = false;
+            LblX.Visible = false;
+            LblY.Visible = false;
+            LblBust.Visible = false;
+            LblWallStatus.Visible = false;
+
+            //Organizer objetos do pnlPergunta
+            utilits.resetarObjetosPergunta(contVitaminas);
+
+            //Mostrar a "vinheta
+            ControleAnimacao = utilits.vinheta();
+            TmrAnimation.Start();
+
+            //Definir o que pode digitar nos txt de pergunta
+            JustNum = false;
+
+            salvar.Load();
+        }
+        #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         #region Controles //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -275,201 +470,6 @@ namespace Jogo_Matamática_3_ano
             {
                 e.KeyChar = e.KeyChar;
             }
-        }
-
-        #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        #region Load form //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        private void FrmJogo_Load(object sender, EventArgs e)
-        {
-            //Estanciar as classes
-            salvar = new Save(PBX_Fase2, PBX_Fase3);
-            #region Estanciar Utilits
-            utilits = new Utilits
-                (
-                TmrMainGameManager,
-                PbxPersonagem,
-                PBX_Sair,
-                PBX_Jogar,
-                PNL_Fases,
-                panel4,
-                panel3,
-                panel5,
-                panel6,
-                panel2,
-                panel1,
-                PbxColision,
-                pictureBox1,
-                pictureBox2,
-                pictureBox3,
-                pictureBox4,
-                pictureBox5,
-                pictureBox6,
-                pictureBox7,
-                pictureBox8,
-                pictureBox9,
-                pictureBox10,
-                pictureBox11,
-                pictureBox12,
-                pictureBox13,
-                pictureBox14,
-                pictureBox15,
-                pictureBox16,
-                pictureBox17,
-                pictureBox18,
-                pictureBox19,
-                pictureBox20,
-                pictureBox21,
-                pictureBox22,
-                pictureBox23,
-                pictureBox24,
-                pictureBox25,
-                pictureBox26,
-                pictureBox27,
-                pictureBox28,
-                pictureBox29,
-                pictureBox30,
-                pictureBox31,
-                pictureBox32,
-                pictureBox33,
-                pictureBox34,
-                pictureBox35,
-                pictureBox36,
-                pictureBox37,
-                pictureBox38,
-                pictureBox39,
-                pictureBox40,
-                pictureBox41,
-                pictureBox42,
-                pictureBox43,
-                pictureBox44,
-                pictureBox45,
-                pictureBox46,
-                pictureBox47,
-                pictureBox48,
-                pictureBox49,
-                pictureBox50,
-                pictureBox51,
-                pictureBox52,
-                pictureBox53,
-                TMR_Tempo,
-                LBL_Tempo,
-                TmrAnimation,
-                PBX_Ambiente1,
-                PBX_Ambiente2,
-                PBX_Ambiente3,
-                PBX_Ambiente4,
-                PBX_Ambiente5,
-                PBX_Ambiente6,
-                PBX_Ambiente7,
-                PBX_Vitamina1,
-                PBX_Vitamina2,
-                PBX_Vitamina3,
-                PBX_Vitamina4,
-                PBX_Vitamina5,
-                PBX_Vitamina6,
-                PBX_Vitamina7,
-                PbxCerca,
-                PnlPerguntas,
-                TxtResposta,
-                LblResposta,
-                PbxBtnCerto,
-                PbxBtn2,
-                PbxBtn4,
-                PbxBtn3,
-                PbxBtn1,
-                Lbl_de_Ajuda,
-                TmrPergunta,
-                LblResposta2,
-                TxtResposta2,
-                LblResposta3,
-                TxtResposta3,
-                PbxCristal1,
-                PbxCristal2,
-                PbxCristal3,
-                PbxContVitaminas,
-                PbxContCristais,
-                LblContVitaminas,
-                LblContCristais,
-                LblScore,
-                PBX_Help,
-                LBL_txtHelp,
-                LBL_txtHelp2,
-                pictureBox58,
-                pictureBox60,
-                PBX_Vitoria,
-                LblResposta4,
-                TxtResposta4,
-                PbxVinheta1,
-                PbxVinheta2,
-                SomTema,
-                pictureBox61,
-                PBX_Placar
-                );
-            #endregion
-
-            //"Remover" os paineis 4 5 e 6
-            utilits.removePnlsFases_4_5_6();
-
-            //Desabilitar btn menu
-            PBX_Jogar.Enabled = false;
-            PBX_Sair.Enabled = false;
-            PBX_Placar.Enabled = false;
-
-            //Timers
-            TmrMainGameManager.Stop();
-            TmrDebug.Stop();
-            TmrAnimation.Stop();
-
-            //PAUSE
-            PNL_Pause.Location = new Point(0, 109);
-            PNL_Info.Location = new Point(281, -18);
-            PNL_Pause.Visible = false;
-            PNL_Pause.Enabled = false;
-
-            //FASES DESATIVADAS
-            PBX_Fase2.Enabled = false;
-            PBX_Fase3.Enabled = false;
-
-            //ESCONDER FASES
-            PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-            PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-
-            //PAINEL DE FASES
-            PNL_Fases.Visible = false;
-            PNL_Fases.Location = new Point(0, 0);
-
-            //PAINEL MENU
-            PnlMenu.Location = new Point(0, 0);
-            PnlMenu.Visible = true;
-
-            //Painel perguntas
-            PnlPerguntas.Location = new Point(10, 960);
-            PnlPerguntas.Visible = false;
-
-            //Painel de help
-            PNL_Help.Location = new Point(273, 170);
-
-            //Esconder opções debugMode
-            labelX.Visible = false;
-            labelY.Visible = false;
-            LblX.Visible = false;
-            LblY.Visible = false;
-            LblBust.Visible = false;
-            LblWallStatus.Visible = false;
-
-            //Organizer objetos do pnlPergunta
-            utilits.resetarObjetosPergunta(contVitaminas);
-
-            //Mostrar a "vinheta
-            ControleAnimacao = utilits.vinheta();
-            TmrAnimation.Start();
-
-            //Definir o que pode digitar nos txt de pergunta
-            JustNum = false;
-            
-            salvar.Load();
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -708,126 +708,6 @@ namespace Jogo_Matamática_3_ano
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        #region EFEITO BOTOES MENU //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        //ENTRAR E SAIR DO JOGAR
-        private void PBX_Jogar_MouseHover(object sender, EventArgs e)
-        {
-            PBX_Jogar.Size = new Size(250, 150);
-            PBX_Jogar.Location = new Point(530, 284);
-        }
-
-        private void PBX_Jogar_MouseLeave(object sender, EventArgs e)
-        {
-            PBX_Jogar.Size = new Size(220, 120);
-            PBX_Jogar.Location = new Point(547, 284);
-        }
-
-
-        //ENTRAR E SAIR DO OPCOES
-        private void PBX_Placar_MouseHover(object sender, EventArgs e)
-        {
-            PBX_Placar.Size = new Size(250, 150);
-            PBX_Placar.Location = new Point(530, 449);
-        }
-
-        private void PBX_Placar_MouseLeave(object sender, EventArgs e)
-        {
-            PBX_Placar.Size = new Size(220, 120);
-            PBX_Placar.Location = new Point(547, 449);
-        }
-
-        //ENTRAR E SAIR DO SAIR
-        private void PBX_Sair_MouseHover(object sender, EventArgs e)
-        {
-            PBX_Sair.Size = new Size(250, 150);
-            PBX_Sair.Location = new Point(530, 611);
-        }
-
-        private void PBX_Sair_MouseLeave(object sender, EventArgs e)
-        {
-            PBX_Sair.Size = new Size(220, 120);
-            PBX_Sair.Location = new Point(547, 611);
-        }
-
-        //ENTRAR E SAIR DA FASE 1
-        private void PBX_Fase1_MouseHover(object sender, EventArgs e)
-        {
-            PBX_Fase1.Size = new Size(256, 196);
-            PBX_Fase1.Location = new Point(0, 0);
-        }
-        private void PBX_Fase1_MouseLeave(object sender, EventArgs e)
-        {
-            PBX_Fase1.Size = new Size(228, 170);
-            PBX_Fase1.Location = new Point(14, 14);
-        }
-
-        //ENTRAR E SAIR DA FASE 2
-        private void PBX_Fase2_MouseHover(object sender, EventArgs e)
-        {
-            PBX_Fase2.Size = new Size(256, 196);
-            PBX_Fase2.Location = new Point(0, 0);
-        }
-
-        private void PBX_Fase2_MouseLeave(object sender, EventArgs e)
-        {
-            PBX_Fase2.Size = new Size(228, 170);
-            PBX_Fase2.Location = new Point(14, 14);
-        }
-
-        //ENTRAR E SAIR DA FASE 3
-        private void PBX_Fase3_MouseHover(object sender, EventArgs e)
-        {
-            PBX_Fase3.Size = new Size(256, 196);
-            PBX_Fase3.Location = new Point(0, 0);
-        }
-
-        private void PBX_Fase3_MouseLeave(object sender, EventArgs e)
-        {
-            PBX_Fase3.Size = new Size(228, 170);
-            PBX_Fase3.Location = new Point(14, 14);
-        }
-
-        //ENTRAR E SAIR DA FASE 4
-        private void PBX_Fase4_MouseHover(object sender, EventArgs e)
-        {
-            PBX_Fase4.Size = new Size(256, 196);
-            PBX_Fase4.Location = new Point(0, 0);
-        }
-
-        private void PBX_Fase4_MouseLeave(object sender, EventArgs e)
-        {
-            PBX_Fase4.Size = new Size(228, 170);
-            PBX_Fase4.Location = new Point(14, 14);
-        }
-
-        //ENTRAR E SAIR DA FASE 5
-        private void PBX_Fase5_MouseHover(object sender, EventArgs e)
-        {
-            PBX_Fase5.Size = new Size(256, 196);
-            PBX_Fase5.Location = new Point(0, 0);
-        }
-
-        private void PBX_Fase5_MouseLeave(object sender, EventArgs e)
-        {
-            PBX_Fase5.Size = new Size(228, 170);
-            PBX_Fase5.Location = new Point(14, 14);
-        }
-
-        //ENTRAR E SAIR DA FASE 6
-        private void PBX_Fase6_MouseHover(object sender, EventArgs e)
-        {
-            PBX_Fase6.Size = new Size(256, 196);
-            PBX_Fase6.Location = new Point(0, 0);
-        }
-
-        private void PBX_Fase6_MouseLeave(object sender, EventArgs e)
-        {
-            PBX_Fase6.Size = new Size(228, 170);
-            PBX_Fase6.Location = new Point(14, 14);
-        }
-        #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
         #region Start fase 1 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         private void PBX_Fase1_Click(object sender, EventArgs e)
@@ -1040,11 +920,18 @@ namespace Jogo_Matamática_3_ano
 
         #region Abertura de jogo/Funções Iniciais //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        //Botão novo jogo
         private void PBX_Jogar_Click(object sender, EventArgs e)
         {
             PNL_Fases.Visible = true;
             PnlMenu.Visible = false;
             PNL_MostrarFases.Location = new Point(150, 51);
+        }
+
+        //Botçao carregar
+        private void PbxCarregar_Click(object sender, EventArgs e)
+        {
+
         }
 
         // Placar
@@ -1054,6 +941,33 @@ namespace Jogo_Matamática_3_ano
             nt.SetApartmentState(ApartmentState.STA);
             nt.Start();
         }
+
+        #region Fechar Jogo //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //SAIR ATRAVES DO INICIO DO JOGO
+        private void PBX_Sair_Click(object sender, EventArgs e)
+        {
+            PNL_SairInicio.Visible = true;
+        }
+
+        private void PBX_SimInicio_Click(object sender, EventArgs e)
+        {
+            Close();
+            if (nt != null)
+                nt.Abort();
+        }
+
+        private void PBX_NaoInicio_Click(object sender, EventArgs e)
+        {
+            PNL_SairInicio.Visible = false;
+        }
+
+        private void FrmJogo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (nt != null)
+                nt.Abort();
+        }
+        #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         private void abrirPlacar()
         {
@@ -1075,19 +989,68 @@ namespace Jogo_Matamática_3_ano
             escolhaPerson = "feminino";
         }
 
+        //BTN voltar do menu fases
+        private void PBX_VoltarFase_Click(object sender, EventArgs e)
+        {
+            PNL_Fases.Visible = false;
+            PnlMenu.Visible = true;
+        }
+
+        #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        #region EFEITO BOTOES MENU //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        private void MouseHover(object sender, EventArgs e) 
+        {
+            EBMC.efeitoBtn(sender.GetHashCode(), "Hover");
+        }
+        private void MouseLeave(object sender, EventArgs e)
+        {
+            EBMC.efeitoBtn(sender.GetHashCode(), "Leave");
+        }
+        //ENTRAR E SAIR DA FASE 1
+        private void PBX_Fase1_MouseHover(object sender, EventArgs e)
+        {
+            PBX_Fase1.Size = new Size(256, 196);
+            PBX_Fase1.Location = new Point(0, 0);
+        }
+        private void PBX_Fase1_MouseLeave(object sender, EventArgs e)
+        {
+            PBX_Fase1.Size = new Size(228, 170);
+            PBX_Fase1.Location = new Point(14, 14);
+        }
+        //ENTRAR E SAIR DA FASE 2
+        private void PBX_Fase2_MouseHover(object sender, EventArgs e)
+        {
+            PBX_Fase2.Size = new Size(256, 196);
+            PBX_Fase2.Location = new Point(0, 0);
+        }
+        private void PBX_Fase2_MouseLeave(object sender, EventArgs e)
+        {
+            PBX_Fase2.Size = new Size(228, 170);
+            PBX_Fase2.Location = new Point(14, 14);
+        }
+        //ENTRAR E SAIR DA FASE 3
+        private void PBX_Fase3_MouseHover(object sender, EventArgs e)
+        {
+            PBX_Fase3.Size = new Size(256, 196);
+            PBX_Fase3.Location = new Point(0, 0);
+        }
+        private void PBX_Fase3_MouseLeave(object sender, EventArgs e)
+        {
+            PBX_Fase3.Size = new Size(228, 170);
+            PBX_Fase3.Location = new Point(14, 14);
+        }
         //Animação escolha GERALDO
         private void PBX_Escolha1_MouseHover(object sender, EventArgs e)
         {
             PBX_Escolha1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculinoMadeira\\frente\\frente_maior2.png");
             LBL_Nome1.ForeColor = Color.GreenYellow;
         }
-
         private void PBX_Escolha1_MouseLeave(object sender, EventArgs e)
         {
             PBX_Escolha1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\masculinoMadeira\\frente\\frente_maior.png");
             LBL_Nome1.ForeColor = Color.Coral;
         }
-
         //Animação escolha JOAQUINA
         private void PBX_Escolha2_MouseHover(object sender, EventArgs e)
         {
@@ -1099,41 +1062,6 @@ namespace Jogo_Matamática_3_ano
         {
             PBX_Escolha2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\personagem\\femininoMadeira\\frente\\frente_pedra_maior.png");
             LBL_Nome2.ForeColor = Color.Coral;
-        }
-
-        //BTN voltar do menu fases
-        private void PBX_VoltarFase_Click(object sender, EventArgs e)
-        {
-            PNL_Fases.Visible = false;
-            PnlMenu.Visible = true;
-        }
-
-        #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        #region Fechar Jogo //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        //SAIR ATRAVES DO INICIO DO JOGO
-        private void PBX_Sair_Click(object sender, EventArgs e)
-        {
-            PNL_SairInicio.Visible = true;
-        }
-
-        private void PBX_SimInicio_Click(object sender, EventArgs e)
-        {
-            Close();
-            if (nt != null)
-                nt.Abort(); 
-        }
-
-        private void PBX_NaoInicio_Click(object sender, EventArgs e)
-        {
-            PNL_SairInicio.Visible = false;
-        }
-
-        private void FrmJogo_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (nt != null)
-                nt.Abort();
         }
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2606,7 +2534,7 @@ namespace Jogo_Matamática_3_ano
         #region TIMER PARA TESTES
         private void TmrDebug_Tick(object sender, EventArgs e)
         {
-            Console.WriteLine();
+
         }
         #endregion
     }
