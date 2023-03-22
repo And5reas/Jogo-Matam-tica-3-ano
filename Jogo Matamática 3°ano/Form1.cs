@@ -278,7 +278,7 @@ namespace Jogo_Matamática_3_ano
             //Definir o que pode digitar nos txt de pergunta
             JustNum = false;
 
-            salvar.Load();
+            salvar.createTableSalvar();
         }
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -924,6 +924,7 @@ namespace Jogo_Matamática_3_ano
         private void PBX_Jogar_Click(object sender, EventArgs e)
         {
             PNL_Fases.Visible = true;
+            PNL_MostrarFases.Visible = false;
             PnlMenu.Visible = false;
             PNL_MostrarFases.Location = new Point(150, 51);
         }
@@ -931,7 +932,20 @@ namespace Jogo_Matamática_3_ano
         //Botçao carregar
         private void PbxCarregar_Click(object sender, EventArgs e)
         {
-
+            (escolhaPerson, objPerson) = salvar.Load();
+            if (escolhaPerson != "Nada" && objPerson != "Nada")
+            {
+                PNL_Fases.Visible = true;
+                PNL_MostrarFases.Visible = true;
+                PnlMenu.Visible = false;
+                PNL_MostrarFases.Location = new Point(150, 51);
+            }
+            else
+            {
+                MessageBox.Show("Ops, parece que não há nenhum save :(", "ERRO",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         // Placar
@@ -987,6 +1001,7 @@ namespace Jogo_Matamática_3_ano
         {
             PNL_MostrarFases.Visible = true;
             escolhaPerson = "feminino";
+            objPerson = "Madeira";
         }
 
         //BTN voltar do menu fases
@@ -1143,7 +1158,7 @@ namespace Jogo_Matamática_3_ano
 
         private void PBX_Salvar_Click(object sender, EventArgs e)
         {
-            salvar.save(fase);
+            salvar.save(fase, escolhaPerson, objPerson);
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
