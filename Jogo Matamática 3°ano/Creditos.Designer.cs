@@ -71,7 +71,7 @@
             // 
             this.LblKaioTitle.BackColor = System.Drawing.Color.Transparent;
             this.LblKaioTitle.Font = new System.Drawing.Font("Snap ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblKaioTitle.Location = new System.Drawing.Point(8, 425);
+            this.LblKaioTitle.Location = new System.Drawing.Point(8, 505);
             this.LblKaioTitle.Margin = new System.Windows.Forms.Padding(3);
             this.LblKaioTitle.Name = "LblKaioTitle";
             this.LblKaioTitle.Size = new System.Drawing.Size(517, 35);
@@ -107,7 +107,7 @@
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Snap ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 613);
+            this.label4.Location = new System.Drawing.Point(8, 693);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(517, 612);
             this.label4.TabIndex = 2;
@@ -120,7 +120,7 @@
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.Location = new System.Drawing.Point(8, 1228);
+            this.pictureBox5.Location = new System.Drawing.Point(8, 1308);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(517, 150);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -131,7 +131,7 @@
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Snap ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 1381);
+            this.label5.Location = new System.Drawing.Point(8, 1461);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
             this.label5.Size = new System.Drawing.Size(517, 153);
@@ -171,7 +171,7 @@
             // 
             this.LblKaio.BackColor = System.Drawing.Color.Transparent;
             this.LblKaio.Font = new System.Drawing.Font("Snap ITC", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblKaio.Location = new System.Drawing.Point(8, 463);
+            this.LblKaio.Location = new System.Drawing.Point(8, 543);
             this.LblKaio.Name = "LblKaio";
             this.LblKaio.Size = new System.Drawing.Size(517, 150);
             this.LblKaio.TabIndex = 8;
@@ -182,7 +182,7 @@
             this.label6.Font = new System.Drawing.Font("Snap ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(8, 387);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(517, 35);
+            this.label6.Size = new System.Drawing.Size(517, 115);
             this.label6.TabIndex = 9;
             this.label6.Text = "Colaboradores";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -194,7 +194,7 @@
             this.BtnSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
             this.BtnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
             this.BtnSair.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSair.Location = new System.Drawing.Point(142, 1537);
+            this.BtnSair.Location = new System.Drawing.Point(142, 1617);
             this.BtnSair.Margin = new System.Windows.Forms.Padding(137, 3, 3, 3);
             this.BtnSair.Name = "BtnSair";
             this.BtnSair.Size = new System.Drawing.Size(250, 42);
@@ -208,7 +208,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Snap ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 1582);
+            this.label1.Location = new System.Drawing.Point(8, 1662);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
             this.label1.Size = new System.Drawing.Size(517, 91);
