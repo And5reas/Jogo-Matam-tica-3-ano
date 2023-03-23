@@ -3061,10 +3061,10 @@ namespace Jogo_Matamática_3_ano
 
     public class EfeitoBtnMouseCima
     {
-        PictureBox PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause;
+        PictureBox PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos;
         public EfeitoBtnMouseCima(PictureBox PBX_Jogar, PictureBox PbxCarregar, PictureBox PBX_Placar, PictureBox PBX_Sair, PictureBox PBX_SimInicio,
                                   PictureBox PBX_NaoInicio, PictureBox BTN_SimInfo,PictureBox BTN_NaoInfo, PictureBox PBX_Continuar, PictureBox PBX_Inicio,
-                                  PictureBox PBX_Reiniciar, PictureBox PBX_Salvar, PictureBox PBX_SairPause)
+                                  PictureBox PBX_Reiniciar, PictureBox PBX_Salvar, PictureBox PBX_SairPause, PictureBox PbxCreditos)
         {
             this.PBX_Jogar = PBX_Jogar;
             this.PbxCarregar = PbxCarregar;
@@ -3079,6 +3079,7 @@ namespace Jogo_Matamática_3_ano
             this.PBX_Reiniciar = PBX_Reiniciar;
             this.PBX_Salvar = PBX_Salvar;
             this.PBX_SairPause = PBX_SairPause;
+            this.PbxCreditos = PbxCreditos;
         }
         public void efeitoBtn(int s, string type) {
             if (s == PBX_Jogar.GetHashCode())
@@ -3224,6 +3225,38 @@ namespace Jogo_Matamática_3_ano
                     efeitoBtnLeave(this.PBX_SairPause);
                 }
             }
+            else if (s == PbxCreditos.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    int saveW = PbxCreditos.Size.Width;
+                    int saveH = PbxCreditos.Size.Height;
+                    int saveX = PbxCreditos.Location.X;
+                    int saveY = PbxCreditos.Location.Y;
+                    PbxCreditos.Size = new Size(PbxCreditos.Size.Width + 20, PbxCreditos.Size.Height + 20);
+                    PbxCreditos.Location = new Point(PbxCreditos.Location.X - 10, PbxCreditos.Location.Y - 10);
+                    if (PbxCreditos.Size.Width < 199 || PbxCreditos.Size.Height < 62)
+                    {
+                        PbxCreditos.Size = new Size(saveW, saveH);
+                        PbxCreditos.Location = new Point(saveX, saveY);
+                    }
+                }
+                else if (type == "Leave")
+                {
+                    int saveW = PbxCreditos.Size.Width;
+                    int saveH = PbxCreditos.Size.Height;
+                    int saveX = PbxCreditos.Location.X;
+                    int saveY = PbxCreditos.Location.Y;
+                    PbxCreditos.Size = new Size(PbxCreditos.Size.Width - 20, PbxCreditos.Size.Height - 20);
+                    PbxCreditos.Location = new Point(PbxCreditos.Location.X + 10, PbxCreditos.Location.Y + 10);
+                    if (PbxCreditos.Size.Width < 199 || PbxCreditos.Size.Height < 62)
+                    {
+                        PbxCreditos.Size = new Size(saveW, saveH);
+                        PbxCreditos.Location = new Point(saveX, saveY);
+                    }
+                }
+            }
+
 
             void efeitoBtnHover(PictureBox j)
             {

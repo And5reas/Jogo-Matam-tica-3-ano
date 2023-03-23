@@ -28,7 +28,7 @@ namespace Jogo_Matamática_3_ano
         public SoundPlayer SomTema;
         Save salvar;
         Utilits utilits;
-        Thread nt;
+        Thread nt, nt2;
         EfeitoBtnMouseCima EBMC;
 
         string escolhaPerson, objPerson;
@@ -219,7 +219,7 @@ namespace Jogo_Matamática_3_ano
                 PBX_Placar
                 );
             #endregion
-            EBMC = new EfeitoBtnMouseCima(PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause);
+            EBMC = new EfeitoBtnMouseCima(PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos);
 
             //"Remover" os paineis 4 5 e 6
             utilits.removePnlsFases_4_5_6();
@@ -982,6 +982,8 @@ namespace Jogo_Matamática_3_ano
             Close();
             if (nt != null)
                 nt.Abort();
+            if (nt2 != null)
+                nt2.Abort();
         }
 
         private void PBX_NaoInicio_Click(object sender, EventArgs e)
@@ -993,6 +995,8 @@ namespace Jogo_Matamática_3_ano
         {
             if (nt != null)
                 nt.Abort();
+            if (nt2 != null)
+                nt2.Abort();
         }
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1023,7 +1027,18 @@ namespace Jogo_Matamática_3_ano
             PNL_Fases.Visible = false;
             PnlMenu.Visible = true;
         }
+        //BTN créditos
+        private void PbxCreditos_Click(object sender, EventArgs e)
+        {
+            nt2 = new Thread(abrirCreditos);
+            nt2.SetApartmentState(ApartmentState.STA);
+            nt2.Start();
+        }
 
+        private void abrirCreditos()
+        {
+            Application.Run(new FrmCreditos());
+        }
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         #region EFEITO BOTOES MENU //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1122,6 +1137,10 @@ namespace Jogo_Matamática_3_ano
             if (infoMenu == 1)
             {
                 Close();
+                if (nt != null)
+                    nt.Abort();
+                if (nt2 != null)
+                    nt2.Abort();
             }
 
             //REINICIAR JOGO
@@ -1338,6 +1357,10 @@ namespace Jogo_Matamática_3_ano
         private void BTN_SimTempo2_Click(object sender, EventArgs e)
         {
             Close();
+            if (nt != null)
+                nt.Abort();
+            if (nt2 != null)
+                nt2.Abort();
         }
 
         //APERTAR NO BOTAO NAO

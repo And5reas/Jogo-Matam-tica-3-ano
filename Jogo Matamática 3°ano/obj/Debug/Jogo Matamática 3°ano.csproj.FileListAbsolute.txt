@@ -76,3 +76,4 @@ C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3�
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.exe.manifest
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.application
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo_Matamática_3_ano.FrmInserirScore.resources
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo_Matamática_3_ano.FrmCreditos.resources
