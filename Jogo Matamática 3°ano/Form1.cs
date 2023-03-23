@@ -630,6 +630,7 @@ namespace Jogo_Matamática_3_ano
                         if (PbxColision.Bounds.IntersectsWith(h.Bounds) && fase == 1)
                         {
                             vitoriaSet();
+                            objPerson = "Tocha";
                             PBX_Fase2.Enabled = true;
                             PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
                             utilits.setMusicStop(SomTema);
@@ -642,6 +643,7 @@ namespace Jogo_Matamática_3_ano
                         if (PbxColision.Bounds.IntersectsWith(h.Bounds) && fase == 2)
                         {
                             vitoriaSet();
+                            objPerson = "Gelo";
                             PBX_Fase3.Enabled = true;
                             PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_3.png");
                             if (wins == 1)
@@ -653,7 +655,7 @@ namespace Jogo_Matamática_3_ano
                         if (PbxColision.Bounds.IntersectsWith(h.Bounds) && fase == 3)
                         {
                             vitoriaSet();
-                            objPerson = "Gelo";
+                            objPerson = "Cajado";
                             if (wins == 2)
                             {
                                 score_total_player += Score;
