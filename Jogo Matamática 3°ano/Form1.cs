@@ -1551,11 +1551,29 @@ namespace Jogo_Matamática_3_ano
                 {
                     if (TxtResposta.Text != "" && TxtResposta2.Text != "" && TxtResposta3.Text != "")
                     {
-                        num1 = Convert.ToDouble(TxtResposta.Text);
-                        num2 = Convert.ToDouble(TxtResposta2.Text);
-                        num3 = Convert.ToDouble(TxtResposta3.Text);
-                        resultado = 0;
-                        resultado = (num1 - (num2 + num3)) * -1;
+                        if (TxtResposta.Text == "0|")
+                        {
+                            MessageBox.Show("Escolha um número diferente de 0");
+                            TxtResposta.Clear();
+                        }
+                        else if (TxtResposta2.Text == "0|")
+                        {
+                            MessageBox.Show("Escolha um número diferente de 0");
+                            TxtResposta2.Clear();
+                        }
+                        else if (TxtResposta3.Text == "0|")
+                        {
+                            MessageBox.Show("Escolha um número diferente de 0");
+                            TxtResposta3.Clear();
+                        }
+                        else
+                        {
+                            num1 = Convert.ToDouble(TxtResposta.Text);
+                            num2 = Convert.ToDouble(TxtResposta2.Text);
+                            num3 = Convert.ToDouble(TxtResposta3.Text);
+                            resultado = 0;
+                            resultado = num1 - num2 + num3;
+                        }
                     }
                     if (resultado == 27)
                     {
@@ -1566,6 +1584,7 @@ namespace Jogo_Matamática_3_ano
                         focoNoForm();
                         TxtResposta.Clear(); TxtResposta2.Clear(); TxtResposta3.Clear(); TxtResposta4.Clear();
                         num1 = 0; num2 = 0; num3 = 0; num4 = 0; resultado = 0;
+                        TxtResposta.Enabled = false; TxtResposta2.Enabled = false; TxtResposta3.Enabled = false; TxtResposta4.Enabled = false;
                     }
                     else if (resultado > 17 && resultado < 37)
                     {
