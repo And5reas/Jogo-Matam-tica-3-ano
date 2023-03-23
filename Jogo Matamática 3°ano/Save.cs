@@ -15,9 +15,9 @@ namespace Jogo_Matamática_3_ano
         PictureBox fase2;
         PictureBox fase3;
         private static byte id = 1;
-        private byte loadSave;
+        private byte loadSave, WinsCtrl;
         private string EscolhaPerson, ObjPerson;
-        private int score_total_player;
+        private int score_total_player = 0;
 
         public Save(PictureBox fase2, PictureBox fase3)
         {
@@ -32,12 +32,12 @@ namespace Jogo_Matamática_3_ano
                 {
                     db.Open();
 
-                    SqliteCommand sql = new SqliteCommand("CREATE TABLE IF NOT EXISTS Salvar (id INTEGER PRIMARY KEY AUTOINCREMENT, Save INTEGER, EscolhaPerson VARCHAR(10), ObjPerson VARCHAR(10), ScoreTotal INTEGER)", db);
+                    SqliteCommand sql = new SqliteCommand("CREATE TABLE IF NOT EXISTS Salvar (id INTEGER PRIMARY KEY AUTOINCREMENT, Save INTEGER, EscolhaPerson VARCHAR(10), ObjPerson VARCHAR(10), ScoreTotal INTEGER, winsCtrl INTEGER)", db);
                     sql.ExecuteNonQuery();
 
                     StringBuilder sb = new StringBuilder();
                     sb.Append("INSERT INTO Salvar VALUES (");
-                    sb.Append("NULL, @Save, NULL, NULL, NULL)");
+                    sb.Append("NULL, @Save, NULL, NULL, NULL, NULL)");
 
                     sql.CommandText = sb.ToString();
 
@@ -45,7 +45,7 @@ namespace Jogo_Matamática_3_ano
                     sql.ExecuteNonQuery();
                 }
         }
-        public Tuple<string, string, int> Load()
+        public Tuple<string, string, int, byte> Load()
         {
             using (SqliteConnection db = new SqliteConnection($"Filename={SaveScorePlayer.pathFileDB + "//SAVE.db"}"))
             {
@@ -59,7 +59,10 @@ namespace Jogo_Matamática_3_ano
                     loadSave = Convert.ToByte(leitor["Save"]);
                     EscolhaPerson = leitor["EscolhaPerson"].ToString();
                     ObjPerson = leitor["ObjPerson"].ToString();
-                    score_total_player = Convert.ToInt32(leitor["ScoreTotal"]);
+                    if (leitor["ScoreTotal"].ToString() != "")
+                        score_total_player = Convert.ToInt32(leitor["ScoreTotal"]);
+                    if (leitor["winsCtrl"].ToString() != "")
+                        WinsCtrl = Convert.ToByte(leitor["winsCtrl"]);
                 }
                 if (EscolhaPerson == "")
                     EscolhaPerson = "Nada";
@@ -79,38 +82,48 @@ namespace Jogo_Matamática_3_ano
                     fase3.Enabled = true;
                     fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_5.png");
                 }
-                return new Tuple<string, string, int>(EscolhaPerson, ObjPerson, score_total_player);
+                return new Tuple<string, string, int, byte>(EscolhaPerson, ObjPerson, score_total_player, WinsCtrl);
             }
         }
-        public void save(int fase, string escolhaPerson, string objPerson)
+        public void save(int fase, string escolhaPerson, string objPerson, int scoreTotal, int winsCtrl)
         {
-            if (File.Exists(SaveScorePlayer.pathFileDB + "//SAVE.db"))
+            (EscolhaPerson, ObjPerson, score_total_player, WinsCtrl) = Load();
+            if (EscolhaPerson != "Nada" && ObjPerson != "Nada")
             {
                 if (MessageBox.Show("Deseja sobrescrever um jogo salvo?", "Salvar",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question,
                     MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    saveScript();
+            }
+            else
+            {
+                saveScript();
+            }
+
+            void saveScript()
+            {
+                using (SqliteConnection db = new SqliteConnection($"Filename={SaveScorePlayer.pathFileDB + "//SAVE.db"}"))
                 {
-                    using (SqliteConnection db = new SqliteConnection($"Filename={SaveScorePlayer.pathFileDB + "//SAVE.db"}"))
-                    {
-                        db.Open();
+                    db.Open();
 
-                        StringBuilder sb = new StringBuilder();
-                        sb.Append("UPDATE Salvar ");
-                        sb.Append("SET Save = @Save, EscolhaPerson = @EscolhaPerson, ObjPerson = @ObjPerson ");
-                        sb.Append("WHERE id = @id");
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("UPDATE Salvar ");
+                    sb.Append("SET Save = @Save, EscolhaPerson = @EscolhaPerson, ObjPerson = @ObjPerson, ScoreTotal = @ScoreTotal, winsCtrl = @winsCtrl ");
+                    sb.Append("WHERE id = @id");
 
-                        SqliteCommand sql = new SqliteCommand(sb.ToString(), db);
-                        sql.Parameters.AddWithValue("@Save", fase);
-                        sql.Parameters.AddWithValue("@EscolhaPerson", escolhaPerson);
-                        sql.Parameters.AddWithValue("@ObjPerson", objPerson);
-                        sql.Parameters.AddWithValue("@id", id);
-                        sql.ExecuteNonQuery();
-                    }
-                    MessageBox.Show("Jogo salvo com sucesso :)", "SALVO",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    SqliteCommand sql = new SqliteCommand(sb.ToString(), db);
+                    sql.Parameters.AddWithValue("@Save", fase);
+                    sql.Parameters.AddWithValue("@EscolhaPerson", escolhaPerson);
+                    sql.Parameters.AddWithValue("@ObjPerson", objPerson);
+                    sql.Parameters.AddWithValue("@ScoreTotal", scoreTotal);
+                    sql.Parameters.AddWithValue("@winsCtrl", winsCtrl);
+                    sql.Parameters.AddWithValue("@id", id);
+                    sql.ExecuteNonQuery();
                 }
+                MessageBox.Show("Jogo salvo com sucesso :)", "SALVO",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
         }
     }

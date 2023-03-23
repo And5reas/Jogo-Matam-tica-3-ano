@@ -42,8 +42,11 @@ namespace Jogo_Matamática_3_ano
         //MENU
         int ativouMenu = 0, infoMenu, helpIndex = 1;
 
+        //Para não acumular pontos de fases já completas
+        byte wins;
+
         //Alocar a fase que o player está 1, 2 ,3, 4...
-        int fase, wins,
+        int fase,
 
             //Swiths do debugMode
             DebugSwith, DebugSwithBust, DebugParedeSwith,
@@ -442,15 +445,8 @@ namespace Jogo_Matamática_3_ano
                     }
                 }
             }
-
-            if (e.KeyChar.ToString().ToLower() == "j")
-            {
-                z += 1;
-                SaveScorePlayer.setScore("Andreas" + z, 10);
-            }
             focoNoForm();
         }
-        int z;
         //Verificar se são números que estão entrando, apenas.
         private void Verificar(object sender, KeyPressEventArgs e)
         {
@@ -638,7 +634,10 @@ namespace Jogo_Matamática_3_ano
                             PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
                             utilits.setMusicStop(SomTema);
                             if (wins == 0)
+                            {
+                                score_total_player += Score;
                                 wins += 1;
+                            }
                         }
                         if (PbxColision.Bounds.IntersectsWith(h.Bounds) && fase == 2)
                         {
@@ -646,14 +645,20 @@ namespace Jogo_Matamática_3_ano
                             PBX_Fase3.Enabled = true;
                             PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_3.png");
                             if (wins == 1)
+                            {
+                                score_total_player += Score;
                                 wins += 1;
+                            }
                         }
                         if (PbxColision.Bounds.IntersectsWith(h.Bounds) && fase == 3)
                         {
                             vitoriaSet();
                             objPerson = "Gelo";
                             if (wins == 2)
+                            {
+                                score_total_player += Score;
                                 wins += 1;
+                            }
                         }
                     }
                 }
@@ -695,7 +700,6 @@ namespace Jogo_Matamática_3_ano
             PBX_Vitoria.Visible = false;
             ControleAnimacao = 1;
             TmrAnimation.Start();
-            score_total_player += Score;
             contVitaminas = 0;
             contCristais = 0;
             // Atualizar o score total
@@ -924,6 +928,10 @@ namespace Jogo_Matamática_3_ano
         //Botão novo jogo
         private void PBX_Jogar_Click(object sender, EventArgs e)
         {
+            escolhaPerson = "";
+            objPerson = "";
+            score_total_player = 0;
+            wins = 0;
             PNL_Fases.Visible = true;
             PNL_MostrarFases.Visible = false;
             PnlMenu.Visible = false;
@@ -933,7 +941,7 @@ namespace Jogo_Matamática_3_ano
         //Botçao carregar
         private void PbxCarregar_Click(object sender, EventArgs e)
         {
-            (escolhaPerson, objPerson, score_total_player) = salvar.Load();
+            (escolhaPerson, objPerson, score_total_player, wins) = salvar.Load();
             if (escolhaPerson != "Nada" && objPerson != "Nada")
             {
                 PNL_Fases.Visible = true;
@@ -1159,7 +1167,7 @@ namespace Jogo_Matamática_3_ano
 
         private void PBX_Salvar_Click(object sender, EventArgs e)
         {
-            salvar.save(fase, escolhaPerson, objPerson, score_total_player);
+            salvar.save(fase, escolhaPerson, objPerson, score_total_player, wins);
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
