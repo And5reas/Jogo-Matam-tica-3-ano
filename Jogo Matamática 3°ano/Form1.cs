@@ -684,6 +684,7 @@ namespace Jogo_Matamática_3_ano
                     LblScore.Text = Score.ToString();
                 }
             }
+            LBL_ScoreTotal.Text = score_total_player.ToString();
         }
 
         private void vitoriaSet()
@@ -932,7 +933,7 @@ namespace Jogo_Matamática_3_ano
         //Botçao carregar
         private void PbxCarregar_Click(object sender, EventArgs e)
         {
-            (escolhaPerson, objPerson) = salvar.Load();
+            (escolhaPerson, objPerson, score_total_player) = salvar.Load();
             if (escolhaPerson != "Nada" && objPerson != "Nada")
             {
                 PNL_Fases.Visible = true;
@@ -1158,7 +1159,7 @@ namespace Jogo_Matamática_3_ano
 
         private void PBX_Salvar_Click(object sender, EventArgs e)
         {
-            salvar.save(fase, escolhaPerson, objPerson);
+            salvar.save(fase, escolhaPerson, objPerson, score_total_player);
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -17,6 +17,7 @@ namespace Jogo_Matamática_3_ano
         private static byte id = 1;
         private byte loadSave;
         private string EscolhaPerson, ObjPerson;
+        private int score_total_player;
 
         public Save(PictureBox fase2, PictureBox fase3)
         {
@@ -31,12 +32,12 @@ namespace Jogo_Matamática_3_ano
                 {
                     db.Open();
 
-                    SqliteCommand sql = new SqliteCommand("CREATE TABLE IF NOT EXISTS Salvar (id INTEGER PRIMARY KEY AUTOINCREMENT, Save INTEGER, EscolhaPerson VARCHAR(10), ObjPerson VARCHAR(10))", db);
+                    SqliteCommand sql = new SqliteCommand("CREATE TABLE IF NOT EXISTS Salvar (id INTEGER PRIMARY KEY AUTOINCREMENT, Save INTEGER, EscolhaPerson VARCHAR(10), ObjPerson VARCHAR(10), ScoreTotal INTEGER)", db);
                     sql.ExecuteNonQuery();
 
                     StringBuilder sb = new StringBuilder();
                     sb.Append("INSERT INTO Salvar VALUES (");
-                    sb.Append("NULL, @Save, NULL, NULL)");
+                    sb.Append("NULL, @Save, NULL, NULL, NULL)");
 
                     sql.CommandText = sb.ToString();
 
@@ -44,7 +45,7 @@ namespace Jogo_Matamática_3_ano
                     sql.ExecuteNonQuery();
                 }
         }
-        public Tuple<string, string> Load()
+        public Tuple<string, string, int> Load()
         {
             using (SqliteConnection db = new SqliteConnection($"Filename={SaveScorePlayer.pathFileDB + "//SAVE.db"}"))
             {
@@ -58,7 +59,12 @@ namespace Jogo_Matamática_3_ano
                     loadSave = Convert.ToByte(leitor["Save"]);
                     EscolhaPerson = leitor["EscolhaPerson"].ToString();
                     ObjPerson = leitor["ObjPerson"].ToString();
+                    score_total_player = Convert.ToInt32(leitor["ScoreTotal"]);
                 }
+                if (EscolhaPerson == "")
+                    EscolhaPerson = "Nada";
+                if (ObjPerson == "")
+                    ObjPerson = "Nada";
 
 
                 if (loadSave == 2)
@@ -73,30 +79,39 @@ namespace Jogo_Matamática_3_ano
                     fase3.Enabled = true;
                     fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_5.png");
                 }
-                return new Tuple<string, string>(EscolhaPerson, ObjPerson);
+                return new Tuple<string, string, int>(EscolhaPerson, ObjPerson, score_total_player);
             }
         }
         public void save(int fase, string escolhaPerson, string objPerson)
         {
-            using (SqliteConnection db = new SqliteConnection($"Filename={SaveScorePlayer.pathFileDB + "//SAVE.db"}"))
+            if (File.Exists(SaveScorePlayer.pathFileDB + "//SAVE.db"))
             {
-                db.Open();
+                if (MessageBox.Show("Deseja sobrescrever um jogo salvo?", "Salvar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    using (SqliteConnection db = new SqliteConnection($"Filename={SaveScorePlayer.pathFileDB + "//SAVE.db"}"))
+                    {
+                        db.Open();
 
-                StringBuilder sb = new StringBuilder();
-                sb.Append("UPDATE Salvar ");
-                sb.Append("SET Save = @Save, EscolhaPerson = @EscolhaPerson, ObjPerson = @ObjPerson ");
-                sb.Append("WHERE id = @id");
+                        StringBuilder sb = new StringBuilder();
+                        sb.Append("UPDATE Salvar ");
+                        sb.Append("SET Save = @Save, EscolhaPerson = @EscolhaPerson, ObjPerson = @ObjPerson ");
+                        sb.Append("WHERE id = @id");
 
-                SqliteCommand sql = new SqliteCommand(sb.ToString(), db);
-                sql.Parameters.AddWithValue("@Save", fase);
-                sql.Parameters.AddWithValue("@EscolhaPerson", escolhaPerson);
-                sql.Parameters.AddWithValue("@ObjPerson", objPerson);
-                sql.Parameters.AddWithValue("@id", id);
-                sql.ExecuteNonQuery();
+                        SqliteCommand sql = new SqliteCommand(sb.ToString(), db);
+                        sql.Parameters.AddWithValue("@Save", fase);
+                        sql.Parameters.AddWithValue("@EscolhaPerson", escolhaPerson);
+                        sql.Parameters.AddWithValue("@ObjPerson", objPerson);
+                        sql.Parameters.AddWithValue("@id", id);
+                        sql.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Jogo salvo com sucesso :)", "SALVO",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
             }
-            MessageBox.Show("Jogo salvo com sucesso :)", "SALVO",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
         }
     }
 }
