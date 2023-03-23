@@ -18,6 +18,7 @@ namespace Jogo_Matamática_3_ano
         {
             InitializeComponent();
             this.scorePlayer = scorePlayer;
+            LblScore.Text = "Seus pontos: " + scorePlayer;
         }
 
         private void BtnInserir_Click(object sender, EventArgs e)
