@@ -2604,13 +2604,6 @@
             this.Controls.Add(this.pictureBox50);
             this.Controls.Add(this.pictureBox49);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.PBX_Vitamina7);
-            this.Controls.Add(this.PBX_Vitamina6);
-            this.Controls.Add(this.PBX_Vitamina5);
-            this.Controls.Add(this.PBX_Vitamina4);
-            this.Controls.Add(this.PBX_Vitamina3);
-            this.Controls.Add(this.PBX_Vitamina2);
-            this.Controls.Add(this.PBX_Vitamina1);
             this.Controls.Add(this.PNL_InfoFase);
             this.Controls.Add(this.PbxPartBaixo);
             this.Controls.Add(this.PBX_Ambiente2);
@@ -2624,6 +2617,13 @@
             this.Controls.Add(this.PbxCristal1);
             this.Controls.Add(this.PbxCristal3);
             this.Controls.Add(this.PbxCristal2);
+            this.Controls.Add(this.PBX_Vitamina7);
+            this.Controls.Add(this.PBX_Vitamina6);
+            this.Controls.Add(this.PBX_Vitamina5);
+            this.Controls.Add(this.PBX_Vitamina4);
+            this.Controls.Add(this.PBX_Vitamina3);
+            this.Controls.Add(this.PBX_Vitamina2);
+            this.Controls.Add(this.PBX_Vitamina1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(120, 120);
