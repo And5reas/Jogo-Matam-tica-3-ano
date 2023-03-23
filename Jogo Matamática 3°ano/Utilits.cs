@@ -1065,7 +1065,7 @@ namespace Jogo_Matamática_3_ano
                     TxtResposta4.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
 
                     LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
+                    LblResposta2.Size = new Size(86, 46);
                     LblResposta3.Size = new Size(75, 46);
                     LblResposta4.Size = new Size(86, 46);
 
