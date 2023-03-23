@@ -240,14 +240,6 @@ namespace Jogo_Matamática_3_ano
             PNL_Pause.Visible = false;
             PNL_Pause.Enabled = false;
 
-            //FASES DESATIVADAS
-            PBX_Fase2.Enabled = false;
-            PBX_Fase3.Enabled = false;
-
-            //ESCONDER FASES
-            PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-            PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
-
             //PAINEL DE FASES
             PNL_Fases.Visible = false;
             PNL_Fases.Location = new Point(0, 0);
@@ -525,6 +517,11 @@ namespace Jogo_Matamática_3_ano
                     }
                 }
             }
+
+            // Reativar o form depois que preencher o insertScore (GABIARRA '-')
+            if (nt != null)
+                if (!nt.IsAlive)
+                    this.Enabled = true;
         }
 
         private void TmrMainGameManager_Tick(object sender, EventArgs e)
@@ -676,10 +673,6 @@ namespace Jogo_Matamática_3_ano
                 nt.Start();
                 wins += 3;
             }
-            // Reativar o form depois que preencher o insertScore
-            if (nt != null)
-                if (!nt.IsAlive)
-                    this.Enabled = true;
 
             if (contVitaminas == 7)
             {
@@ -934,6 +927,15 @@ namespace Jogo_Matamática_3_ano
             objPerson = "";
             score_total_player = 0;
             wins = 0;
+
+            //FASES DESATIVADAS
+            PBX_Fase2.Enabled = false;
+            PBX_Fase3.Enabled = false;
+
+            //ESCONDER FASES
+            PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+            PBX_Fase3.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\imgInter.png");
+
             PNL_Fases.Visible = true;
             PNL_MostrarFases.Visible = false;
             PnlMenu.Visible = false;
