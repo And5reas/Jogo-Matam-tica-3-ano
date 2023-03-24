@@ -42,17 +42,11 @@ C:\Users\and5r\Desktop\Jogo Matemática 3°ano\Jogo\Jogo Matamática 3°ano\obj\
 C:\Users\and5r\Desktop\Jogo Matemática 3°ano\Jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.CoreCompileInputs.cache
 C:\Users\and5r\Desktop\Jogo Matemática 3°ano\Jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.exe
 C:\Users\and5r\Desktop\Jogo Matemática 3°ano\Jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.pdb
-C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\Jogo Matamática 3°ano.exe.config
-C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\Jogo Matamática 3°ano.exe
-C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\Jogo Matamática 3°ano.pdb
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.AssemblyReference.cache
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.SuggestedBindingRedirects.cache
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo_Matamática_3_ano.FrmJogo.resources
-C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo_Matamática_3_ano.Properties.Resources.resources
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.GenerateResource.cache
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.csproj.CoreCompileInputs.cache
-C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.exe
-C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.pdb
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\Microsoft.Data.Sqlite.dll
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\SQLitePCLRaw.batteries_v2.dll
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\SQLitePCLRaw.core.dll
@@ -71,9 +65,15 @@ C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3�
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\x64\e_sqlite3.dll
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo_Matamática_3_ano.FrmPlacar.resources
-C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\Jogo Matamática 3°ano.exe.manifest
-C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\Jogo Matamática 3°ano.application
-C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.exe.manifest
-C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo Matamática 3°ano.application
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo_Matamática_3_ano.FrmInserirScore.resources
 C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Jogo_Matamática_3_ano.FrmCreditos.resources
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\MazeCave.exe.config
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\MazeCave.exe.manifest
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\MazeCave.application
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\MazeCave.exe
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\bin\Debug\MazeCave.pdb
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\Maze_Cave.Properties.Resources.resources
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\MazeCave.exe.manifest
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\MazeCave.application
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\MazeCave.exe
+C:\Users\and5r\Desktop\Jogos\Programming games\C# games\jogo\Jogo Matamática 3°ano\obj\Debug\MazeCave.pdb

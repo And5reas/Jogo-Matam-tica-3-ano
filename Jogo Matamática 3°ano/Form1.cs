@@ -72,10 +72,7 @@ namespace Jogo_Matamática_3_ano
         bool goLeft, goRight, goDown, goUp,
 
             //Variável para ver se o debug está ativo ou não
-            DebugSwithB,
-
-            //Ativar apenas números
-            JustNum;
+            DebugSwithB;
 
         //Tirar as paredes no modo degub
         string paredesStatusDebug = "Parede";
@@ -219,7 +216,7 @@ namespace Jogo_Matamática_3_ano
                 PBX_Placar
                 );
             #endregion
-            EBMC = new EfeitoBtnMouseCima(PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos);
+            EBMC = new EfeitoBtnMouseCima(PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos, PbxSalvarMenu);
 
             //"Remover" os paineis 4 5 e 6
             utilits.removePnlsFases_4_5_6();
@@ -269,9 +266,6 @@ namespace Jogo_Matamática_3_ano
             //Mostrar a "vinheta
             ControleAnimacao = utilits.vinheta();
             TmrAnimation.Start();
-
-            //Definir o que pode digitar nos txt de pergunta
-            JustNum = false;
 
             salvar.createTableSalvar();
         }
@@ -402,6 +396,7 @@ namespace Jogo_Matamática_3_ano
                 if (contVitaminas == 8)
                 {
                     contVitaminas = 0;
+                    utilits.randomPergunta = 1;
                 }
                 contVitaminas++;
                 PerguntaLetra = utilits.perguntasEntrada(fase, contVitaminas);
@@ -409,6 +404,10 @@ namespace Jogo_Matamática_3_ano
                 ControleAnimacao = 900;
                 TmrAnimation.Start();
                 TmrPergunta.Start();
+            }
+            if (e.KeyChar.ToString().ToLower() == "i" && DebugSwithB == true && PnlPerguntas.Visible != true)
+            {
+                utilits.randomPergunta += 1;
             }
 
             //Pular o tempo da pergunta
@@ -437,26 +436,18 @@ namespace Jogo_Matamática_3_ano
                     }
                 }
             }
-            focoNoForm();
         }
         //Verificar se são números que estão entrando, apenas.
         private void Verificar(object sender, KeyPressEventArgs e)
         {
-            if (JustNum == true)
+            if (e.KeyChar == 8 || e.KeyChar == 46 || e.KeyChar == 45 || (e.KeyChar > 47 && e.KeyChar < 58))
             {
-                if (e.KeyChar == 8 || e.KeyChar == 46 || e.KeyChar == 45 || (e.KeyChar > 47 && e.KeyChar < 58))
-                {
-                    e.KeyChar = e.KeyChar;
-                }
-                else
-                {
-                    e.KeyChar = Convert.ToChar(0);
-                    e.Handled = true;
-                }
+                e.KeyChar = e.KeyChar;
             }
             else
             {
-                e.KeyChar = e.KeyChar;
+                e.KeyChar = Convert.ToChar(0);
+                e.Handled = true;
             }
         }
 
@@ -522,6 +513,9 @@ namespace Jogo_Matamática_3_ano
             if (nt != null)
                 if (!nt.IsAlive)
                     this.Enabled = true;
+
+            if (wins > 0 && PbxSalvarMenu.Visible != true)
+                PbxSalvarMenu.Visible = true;
         }
 
         private void TmrMainGameManager_Tick(object sender, EventArgs e)
@@ -878,7 +872,6 @@ namespace Jogo_Matamática_3_ano
             PNL_Fases.Visible = false;
             PnlMenu.Visible = false;
             PNL_Pause.Enabled = true;
-            PBX_AmbVilao.Visible = true;
 
             //Setar o mapa da fase
             this.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\mapa_3.png");
@@ -940,6 +933,8 @@ namespace Jogo_Matamática_3_ano
             PNL_MostrarFases.Visible = false;
             PnlMenu.Visible = false;
             PNL_MostrarFases.Location = new Point(150, 51);
+
+            PbxSalvarMenu.Visible = false;
         }
 
         //Botçao carregar
@@ -1038,6 +1033,10 @@ namespace Jogo_Matamática_3_ano
         private void abrirCreditos()
         {
             Application.Run(new FrmCreditos());
+        }
+        private void PbxSalvarMenu_Click(object sender, EventArgs e)
+        {
+            salvar.save(fase, escolhaPerson, objPerson, score_total_player, wins);
         }
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1435,17 +1434,14 @@ namespace Jogo_Matamática_3_ano
 
             //controleAnimações = 900 | Animação da pergunta aparecendo
             if (ControleAnimacao == 970)
-                JustNum = utilits.setarBtnPergunta(fase);
+                utilits.setarBtnPergunta(fase);
             if (ControleAnimacao > 837 && ControleAnimacao < 971)
                 ControleAnimacao = utilits.aparecendoPergunta(ControleAnimacao);
 
 
             //controleAnimações = 1000 | Animação da pergunta desaparecendo
             if (ControleAnimacao == 1068)
-            {
-                JustNum = false;
                 tempPergunta = 0;
-            }
             if (ControleAnimacao > 971 && ControleAnimacao < 1069)
                 ControleAnimacao = utilits.aparecendoPergunta(ControleAnimacao, contVitaminas);
 
@@ -1462,77 +1458,56 @@ namespace Jogo_Matamática_3_ano
 
         private void TxtResposta_TextChanged(object sender, EventArgs e)
         {
-            if (TxtResposta.MaxLength <= 4)
-            {
-                LblResposta.Text = TxtResposta.Text;
-            }
-            else
-            {
-                LblResposta.Text = TxtResposta.Text + "|";
-            }
+            LblResposta.Text = TxtResposta.Text;
+            LblResposta.Text += "|";
         }
+
         private void TxtResposta2_TextChanged(object sender, EventArgs e)
         {
-            if (TxtResposta2.MaxLength <= 4)
-            {
-                LblResposta2.Text = TxtResposta2.Text;
-            }
-            else
-            {
-                LblResposta2.Text = TxtResposta2.Text + "|";
-            }
+            LblResposta2.Text = TxtResposta2.Text;
+            LblResposta2.Text += "|";
         }
+
         private void TxtResposta3_TextChanged(object sender, EventArgs e)
         {
-            if (TxtResposta3.MaxLength <= 4)
-            {
-                LblResposta3.Text = TxtResposta3.Text;
-            }
-            else
-            {
-                LblResposta3.Text = TxtResposta3.Text + "|";
-            }
+            LblResposta3.Text = TxtResposta3.Text;
+            LblResposta3.Text += "|";
         }
+
         private void TxtResposta4_TextChanged(object sender, EventArgs e)
         {
-            if (TxtResposta4.MaxLength <= 4)
-            {
-                LblResposta4.Text = TxtResposta4.Text;
-            }
-            else
-            {
-                LblResposta4.Text = TxtResposta4.Text + "|";
-            }
+            LblResposta4.Text = TxtResposta4.Text;
+            LblResposta4.Text += "|";
         }
         private void LblResposta_Click(object sender, EventArgs e)
         {
+            TxtResposta.Enabled = true;
             LblResposta.Font = new Font("Snap ITC", 24);
             LblResposta.Text = "|";
-            TxtResposta.Enabled = true;
             TxtResposta.Focus();
             TxtResposta.Clear();
         }
         private void LblResposta2_Click(object sender, EventArgs e)
         {
+            TxtResposta2.Enabled = true;
             LblResposta2.Font = new Font("Snap ITC", 24);
             LblResposta2.Text = "|";
-            TxtResposta2.Enabled = true;
             TxtResposta2.Focus();
             TxtResposta2.Clear();
         }
         private void LblResposta3_Click(object sender, EventArgs e)
         {
+            TxtResposta3.Enabled = true;
             LblResposta3.Font = new Font("Snap ITC", 24);
             LblResposta3.Text = "|";
-            TxtResposta3.Enabled = true;
             TxtResposta3.Focus();
             TxtResposta3.Clear();
         }
         private void LblResposta4_Click(object sender, EventArgs e)
         {
+            TxtResposta4.Enabled = true;
             LblResposta4.Font = new Font("Snap ITC", 24);
             LblResposta4.Text = "|";
-            TxtResposta4.Enabled = true;
             TxtResposta4.Focus();
             TxtResposta4.Clear();
         }
@@ -1562,6 +1537,7 @@ namespace Jogo_Matamática_3_ano
         private void TmrPergunta_Tick(object sender, EventArgs e)
         {
             tempPergunta++;
+
             if (tempPergunta == PrbTempPerg.Maximum - 2)
             {
                 tempSeg = utilits.addTempo(-5, tempSeg);
@@ -2597,14 +2573,22 @@ namespace Jogo_Matamática_3_ano
         }
         public void focoNoForm()
         {
-            this.Focus();
+            Focus();
         }
         #endregion
 
         #region TIMER PARA TESTES
         private void TmrDebug_Tick(object sender, EventArgs e)
         {
-
+            Console.WriteLine(utilits.randomPergunta);
+            Console.WriteLine("lbl1.enable = " + LblResposta.Enabled);
+            Console.WriteLine("lbl2.enable = " + LblResposta2.Enabled);
+            Console.WriteLine("lbl3.enable = " + LblResposta3.Enabled);
+            Console.WriteLine("lbl4.enable = " + LblResposta4.Enabled);
+            Console.WriteLine("txt1.enable = " + TxtResposta.Enabled + " | txt1.text = " + TxtResposta.Text);
+            Console.WriteLine("txt2.enable = " + TxtResposta2.Enabled + " | txt2.text = " + TxtResposta2.Text);
+            Console.WriteLine("txt3.enable = " + TxtResposta3.Enabled + " | txt3.text = " + TxtResposta3.Text);
+            Console.WriteLine("txt4.enable = " + TxtResposta4.Enabled + " | txt4.text = " + TxtResposta4.Text);
         }
         #endregion
     }

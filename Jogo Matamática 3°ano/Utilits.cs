@@ -13,14 +13,15 @@ namespace Jogo_Matamática_3_ano
     public class Utilits
     {
         // Variáveis da funções de perguntas
-        int randomPergunta;
+        public int randomPergunta = 1;
         char PerguntaLetra;
         // Variáveis da função ganharFase()
         public int ControleAnimacaoAux, animcaoWin = 1, andarQtdPx = 3;
         public int animationSpeed;
         public int animationPlayer;
         public int countAnimation;
-
+        public Label[] labels;
+        public TextBox[] texts;
 
         #region Recebendo todas as classes estanciadas do design
         Timer TmrMainGameManager;
@@ -107,8 +108,6 @@ namespace Jogo_Matamática_3_ano
         PictureBox PBX_Vitamina7;
         PictureBox PbxCerca;
         Panel PnlPerguntas;
-        TextBox TxtResposta;
-        Label LblResposta;
         PictureBox PbxBtnCerto;
         PictureBox PbxBtn2;
         PictureBox PbxBtn4;
@@ -116,10 +115,6 @@ namespace Jogo_Matamática_3_ano
         PictureBox PbxBtn1;
         Label Lbl_de_Ajuda;
         Timer TmrPergunta;
-        Label LblResposta2;
-        TextBox TxtResposta2;
-        Label LblResposta3;
-        TextBox TxtResposta3;
         PictureBox PbxCristal1;
         PictureBox PbxCristal2;
         PictureBox PbxCristal3;
@@ -134,8 +129,6 @@ namespace Jogo_Matamática_3_ano
         PictureBox pictureBox58;
         PictureBox pictureBox60;
         PictureBox PBX_Vitoria;
-        Label LblResposta4;
-        TextBox TxtResposta4;
         PictureBox PbxVinheta1;
         PictureBox PbxVinheta2;
         SoundPlayer SomTema;
@@ -263,6 +256,8 @@ namespace Jogo_Matamática_3_ano
             PictureBox PBX_Placar
             )
         {
+            labels = new Label[4];
+            texts = new TextBox[4];
             this.TmrMainGameManager = TmrMainGameManager;
             this.PbxPersonagem = PbxPersonagem;
             this.PBX_Sair = PBX_Sair;
@@ -347,8 +342,8 @@ namespace Jogo_Matamática_3_ano
             this.PBX_Vitamina7 = PBX_Vitamina7;
             this.PbxCerca = PbxCerca;
             this.PnlPerguntas = PnlPerguntas;
-            this.TxtResposta = TxtResposta;
-            this.LblResposta = LblResposta;
+            texts[0] = TxtResposta;
+            labels[0] = LblResposta;
             this.PbxBtnCerto = PbxBtnCerto;
             this.PbxBtn2 = PbxBtn2;
             this.PbxBtn4 = PbxBtn4;
@@ -356,10 +351,10 @@ namespace Jogo_Matamática_3_ano
             this.PbxBtn1 = PbxBtn1;
             this.Lbl_de_Ajuda = Lbl_de_Ajuda;
             this.TmrPergunta = TmrPergunta;
-            this.LblResposta2 = LblResposta2;
-            this.TxtResposta2 = TxtResposta2;
-            this.LblResposta3 = LblResposta3;
-            this.TxtResposta3 = TxtResposta3;
+            labels[1] = LblResposta2;
+            texts[1] = TxtResposta2;
+            labels[2] = LblResposta3;
+            texts[2] = TxtResposta3;
             this.PbxCristal1 = PbxCristal1;
             this.PbxCristal2 = PbxCristal2;
             this.PbxCristal3 = PbxCristal3;
@@ -374,8 +369,8 @@ namespace Jogo_Matamática_3_ano
             this.pictureBox58 = pictureBox58;
             this.pictureBox60 = pictureBox60;
             this.PBX_Vitoria = PBX_Vitoria;
-            this.LblResposta4 = LblResposta4;
-            this.TxtResposta4 = TxtResposta4;
+            labels[3] = LblResposta;
+            texts[3] = TxtResposta4;
             this.PbxVinheta1 = PbxVinheta1;
             this.PbxVinheta2 = PbxVinheta2;
             this.SomTema = SomTema;
@@ -406,7 +401,7 @@ namespace Jogo_Matamática_3_ano
         }
 
         //SETAR O LAYOUT DOS BOTÕES DE ACORDO COM A PERGUNTA
-        public bool setarBtnPergunta(int fase)
+        public void setarBtnPergunta(int fase)
         {
             int SizeX = 127,
                 SizeY = 70;
@@ -554,9 +549,9 @@ namespace Jogo_Matamática_3_ano
                     PbxBtnCerto.Location = new Point(532, 105);
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'b')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 2 && PerguntaLetra == 'c')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 2 && PerguntaLetra == 'd')
                 {
                     PbxBtn4.Enabled = false;
@@ -570,9 +565,9 @@ namespace Jogo_Matamática_3_ano
                     PbxBtnCerto.Location = new Point(479, 106);
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'e')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 2 && PerguntaLetra == 'f')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 2 && PerguntaLetra == 'g')
                 {
                     PbxBtn4.Enabled = false;
@@ -620,7 +615,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtnCerto.Location = new Point(916, 108);
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'd')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 3 && PerguntaLetra == 'e')
                 {
                     PbxBtn4.Enabled = false;
@@ -683,13 +678,13 @@ namespace Jogo_Matamática_3_ano
                     PbxBtnCerto.Location = new Point(PbxBtn3.Location.X + (SizeX + 20), 110);
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'b')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 1 && PerguntaLetra == 'c')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 1 && PerguntaLetra == 'd')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 1 && PerguntaLetra == 'e')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 1 && PerguntaLetra == 'f')
                 {
                     PbxBtn4.Enabled = false;
@@ -703,7 +698,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn3.Location = new Point(PbxBtnCerto.Location.X + (SizeX + 20), PbxBtnCerto.Location.Y + (SizeY + 20));
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'g')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 #endregion
                 #region randomPergunta == 2
                 if (randomPergunta == 2 && PerguntaLetra == 'a')
@@ -743,7 +738,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn3.Location = new Point(PbxBtn2.Location.X + (SizeX + 20), PbxBtn2.Location.Y + (SizeY + 20));
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'd')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 2 && PerguntaLetra == 'e')
                 {
                     PbxBtn3.Enabled = false;
@@ -758,9 +753,9 @@ namespace Jogo_Matamática_3_ano
                     PbxBtn1.Location = new Point(PbxBtnCerto.Location.X + (SizeX + 20), 110);
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'f')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 2 && PerguntaLetra == 'g')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 #endregion
                 #region randomPergunta == 3
                 if (randomPergunta == 3 && PerguntaLetra == 'a')
@@ -792,7 +787,7 @@ namespace Jogo_Matamática_3_ano
                     PbxBtnCerto.Location = new Point(959, 94);
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'b')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 3 && PerguntaLetra == 'c')
                 {
                     PbxBtn4.Enabled = false;
@@ -859,54 +854,53 @@ namespace Jogo_Matamática_3_ano
             {
                 #region randomPergunta == 1
                 if (randomPergunta == 1 && PerguntaLetra == 'a')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 1 && PerguntaLetra == 'b')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 1 && PerguntaLetra == 'c')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 1 && PerguntaLetra == 'd')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 1 && PerguntaLetra == 'e')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 1 && PerguntaLetra == 'f')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 1 && PerguntaLetra == 'g')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 #endregion
                 #region randomPergunta == 2
                 if (randomPergunta == 2 && PerguntaLetra == 'a')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 2 && PerguntaLetra == 'b')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 2 && PerguntaLetra == 'c')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 2 && PerguntaLetra == 'd')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 2 && PerguntaLetra == 'e')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 2 && PerguntaLetra == 'f')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 2 && PerguntaLetra == 'g')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 #endregion
                 #region randomPergunta == 3
                 if (randomPergunta == 3 && PerguntaLetra == 'a')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 3 && PerguntaLetra == 'b')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 3 && PerguntaLetra == 'c')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 3 && PerguntaLetra == 'd')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 3 && PerguntaLetra == 'e')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 3 && PerguntaLetra == 'f')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 if (randomPergunta == 3 && PerguntaLetra == 'g')
-                    return setarTxtPergunta(fase);
+                    setarTxtPergunta(fase);
                 #endregion
             }
-            return false;
         }
         private void setImgBtn(int qtdBtns, int fase)
         {
@@ -938,8 +932,31 @@ namespace Jogo_Matamática_3_ano
             }
         }
 
+        private void setLabelText(string exNomeLbl, string exNomeTxt)
+        {
+            foreach (Label x in labels)
+            {
+                if (x.Name == exNomeLbl)
+                    break;
+                x.Enabled = true;
+                x.Show();
+                x.Text = "Clique aqui";
+                x.Font = new Font("Snap ITC", 12);
+                x.Size = new Size(86, 46);
+            }
+
+            foreach (TextBox x in texts)
+            {
+                if (x.Name == exNomeTxt)
+                    break;
+                x.Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
+                x.MaxLength = 3;
+                x.Show();
+            }
+        }
+
         //SETAR O LAYOUT DOS TEXTOS DE ACORDO COM A PERGUNTA
-        public bool setarTxtPergunta(int fase)
+        public void setarTxtPergunta(int fase)
         {
             PbxBtn1.Enabled = false;
             PbxBtn2.Enabled = false;
@@ -957,414 +974,192 @@ namespace Jogo_Matamática_3_ano
                 if (randomPergunta == 2 && PerguntaLetra == 'b')
                 {
                     Lbl_de_Ajuda.Location = new Point(529, 27);
-                    LblResposta.Location = new Point(392, 76);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(529, 77);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(667, 77);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(392, 76);
+                    labels[1].Location = new Point(529, 77);
+                    labels[2].Location = new Point(667, 77);
 
                     Lbl_de_Ajuda.Size = new Size(192, 44);
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
 
                     Lbl_de_Ajuda.Show();
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-                    LblResposta3.Show();
-                    TxtResposta3.Show();
 
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-
-                    return true;
+                    setLabelText("LblResposta4", "TxtResposta4");
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'c')
                 {
-                    LblResposta.Location = new Point(327, 57);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(732, 56);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(1134, 56);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(327, 57);
+                    labels[1].Location = new Point(732, 56);
+                    labels[2].Location = new Point(1134, 56);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-                    LblResposta3.Show();
-                    TxtResposta3.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-
-                    return true;
+                    setLabelText("LblResposta4", "TxtResposta4");
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'e')
                 {
-                    LblResposta.Location = new Point(518, 32);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(518, 32);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(75, 46);
+                    labels[0].Size = new Size(75, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 2;
-
-                    return true;
+                    texts[0].MaxLength = 2;
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'f')
                 {
-                    LblResposta.Location = new Point(382, 85);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(531, 85);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(684, 85);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta4.Location = new Point(829, 86);
-                    TxtResposta4.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(382, 85);
+                    labels[1].Location = new Point(531, 85);
+                    labels[2].Location = new Point(684, 85);
+                    labels[3].Location = new Point(829, 86);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(86, 46);
-                    LblResposta3.Size = new Size(75, 46);
-                    LblResposta4.Size = new Size(86, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-                    LblResposta4.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-                    LblResposta4.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-                    LblResposta3.Show();
-                    TxtResposta3.Show();
-                    LblResposta4.Show();
-                    TxtResposta4.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-                    LblResposta4.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 3;
-                    TxtResposta3.MaxLength = 2;
-                    TxtResposta4.MaxLength = 3;
-
-                    return true;
+                    setLabelText("nada", "nada");
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'd')
                 {
-                    LblResposta.Location = new Point(1101, 103);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(1101, 103);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(75, 46);
+                    labels[0].Size = new Size(75, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 2;
-
-                    return true;
+                    texts[0].MaxLength = 2;
                 }
             }
             else if (fase == 2)
             {
                 if (randomPergunta == 1 && PerguntaLetra == 'b')
                 {
-                    LblResposta.Location = new Point(327, 57);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(732, 57);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(1134, 57);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(327, 57);
+                    labels[1].Location = new Point(732, 57);
+                    labels[2].Location = new Point(1134, 57);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-                    LblResposta3.Show();
-                    TxtResposta3.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-
-                    return true;
+                    setLabelText("LblResposta4", "TxtResposta4");
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'c')
                 {
-                    LblResposta.Location = new Point(327 - 284, 57);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(732 - 284, 57);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(1134 - 284, 57);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(327 - 284, 57);
+                    labels[1].Location = new Point(732 - 284, 57);
+                    labels[2].Location = new Point(1134 - 284, 57);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-                    LblResposta3.Show();
-                    TxtResposta3.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-
-                    return true;
+                    setLabelText("LblResposta4", "TxtResposta4");
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'd')
                 {
-                    LblResposta.Location = new Point(327 - 284, 57);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(732 - 284, 57);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(1134 - 284, 57);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(327 - 284, 57);
+                    labels[1].Location = new Point(732 - 284, 57);
+                    labels[2].Location = new Point(1134 - 284, 57);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-                    LblResposta3.Show();
-                    TxtResposta3.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-
-                    return true;
+                    setLabelText("LblResposta4", "TxtResposta4");
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'e')
                 {
-                    LblResposta.Location = new Point(737, 106);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(737, 106);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(75, 46);
+                    labels[0].Size = new Size(75, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 2;
-
-                    return true;
+                    texts[0].MaxLength = 2;
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'g')
                 {
-                    LblResposta.Location = new Point(594, 109);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(594, 109);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(75, 46);
+                    labels[0].Size = new Size(75, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 2;
-
-                    return true;
+                    texts[0].MaxLength = 2;
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'd')
                 {
-                    LblResposta.Location = new Point(500, 107);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(500, 107);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(75, 46);
+                    labels[0].Size = new Size(75, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 2;
-
-                    return true;
+                    texts[0].MaxLength = 2;
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'f')
                 {
-                    LblResposta.Location = new Point(1010, 81);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(1010, 81);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(75, 46);
+                    labels[0].Size = new Size(75, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 2;
-
-                    return true;
+                    texts[0].MaxLength = 2;
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'g')
                 {
-                    LblResposta.Location = new Point(843, 118);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(1096, 38);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(843, 118);
+                    labels[1].Location = new Point(1096, 38);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-
-                    return true;
+                    setLabelText("LblResposta3", "TxtResposta3");
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'b')
                 {
-                    LblResposta.Location = new Point(350, 77);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(350, 77);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(564, 46);
+                    labels[0].Size = new Size(564, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 27;
-
-                    return true;
+                    texts[0].MaxLength = 27;
                 }
             }
             else if (fase == 3)
@@ -1372,620 +1167,289 @@ namespace Jogo_Matamática_3_ano
                 #region randomPergunta == 1
                 if (randomPergunta == 1 && PerguntaLetra == 'a')
                 {
-                    LblResposta.Location = new Point(595, 75);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(595, 75);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(75, 46);
+                    labels[0].Size = new Size(75, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 27;
-
-                    return true;
+                    texts[0].MaxLength = 27;
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'b')
                 {
-                    LblResposta.Location = new Point(365, 115);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(365, 115);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(571, 46);
+                    labels[0].Size = new Size(571, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 27;
-
-                    return true;
+                    texts[0].MaxLength = 27;
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'c')
                 {
-                    LblResposta.Location = new Point(761, 54);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(767, 123);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(761, 54);
+                    labels[1].Location = new Point(767, 123);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-
-                    return true;
+                    setLabelText("LblResposta3", "TxtResposta3");
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'd')
                 {
-                    LblResposta.Location = new Point(790, 75);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(790, 75);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(124, 46);
+                    labels[0].Size = new Size(124, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 4;
-
-                    return true;
+                    texts[0].MaxLength = 4;
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'e')
                 {
-                    LblResposta.Location = new Point(398, 86);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(567, 86);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(741, 86);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta4.Location = new Point(908, 86);
-                    TxtResposta4.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(398, 86);
+                    labels[1].Location = new Point(567, 86);
+                    labels[2].Location = new Point(741, 86);
+                    labels[3].Location = new Point(908, 86);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-                    LblResposta4.Size = new Size(86, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-                    LblResposta4.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-                    LblResposta4.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-                    LblResposta3.Show();
-                    TxtResposta3.Show();
-                    LblResposta4.Show();
-                    TxtResposta4.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-                    LblResposta4.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-                    TxtResposta4.MaxLength = 2;
-
-                    return true;
+                    setLabelText("nada", "nada");
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'f')
                 {
-                    LblResposta.Location = new Point(354, 82);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(726, 83);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(1070, 82);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(354, 82);
+                    labels[1].Location = new Point(726, 83);
+                    labels[2].Location = new Point(1070, 82);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-                    LblResposta3.Show();
-                    TxtResposta3.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-
-                    return true;
+                    setLabelText("LblResposta4", "TxtResposta4");
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'g')
                 {
-                    LblResposta.Location = new Point(607, 94);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(607, 94);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(75, 46);
+                    labels[0].Size = new Size(75, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 27;
-
-                    return true;
+                    texts[0].MaxLength = 27;
                 }
                 #endregion
                 #region randomPergunta == 2
                 if (randomPergunta == 2 && PerguntaLetra == 'a')
                 {
-                    LblResposta.Location = new Point(595, 75);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(595, 75);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(75, 46);
+                    labels[0].Size = new Size(75, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 27;
-
-                    return true;
+                    texts[0].MaxLength = 27;
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'b')
                 {
-                    LblResposta.Location = new Point(365, 115);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(365, 115);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(571, 46);
+                    labels[0].Size = new Size(571, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 27;
-
-                    return true;
+                    texts[0].MaxLength = 27;
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'c')
                 {
-                    LblResposta.Location = new Point(761, 54);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(767, 123);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(761, 54);
+                    labels[1].Location = new Point(767, 123);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-
-                    return true;
+                    setLabelText("LblResposta3", "TxtResposta3");
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'd')
                 {
-                    LblResposta.Location = new Point(790, 75);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(790, 75);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(124, 46);
+                    labels[0].Size = new Size(124, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 4;
-
-                    return true;
+                    texts[0].MaxLength = 4;
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'e')
                 {
-                    LblResposta.Location = new Point(398, 86);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(567, 86);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(741, 86);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta4.Location = new Point(908, 86);
-                    TxtResposta4.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(398, 86);
+                    labels[1].Location = new Point(567, 86);
+                    labels[2].Location = new Point(741, 86);
+                    labels[3].Location = new Point(908, 86);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-                    LblResposta4.Size = new Size(86, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-                    LblResposta4.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-                    LblResposta4.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-                    LblResposta3.Show();
-                    TxtResposta3.Show();
-                    LblResposta4.Show();
-                    TxtResposta4.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-                    LblResposta4.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-                    TxtResposta4.MaxLength = 2;
-
-                    return true;
+                    setLabelText("nada", "nada");
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'f')
                 {
-                    LblResposta.Location = new Point(354, 88);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(726, 88);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(1070, 88);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(354, 88);
+                    labels[1].Location = new Point(726, 88);
+                    labels[2].Location = new Point(1070, 88);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-                    LblResposta3.Show();
-                    TxtResposta3.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-
-                    return true;
+                    setLabelText("LblResposta4", "TxtResposta4");
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'g')
                 {
-                    LblResposta.Location = new Point(607, 94);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(607, 94);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(75, 46);
+                    labels[0].Size = new Size(75, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 27;
-
-                    return true;
+                    texts[0].MaxLength = 27;
                 }
                 #endregion
                 #region randomPergunta == 3
                 if (randomPergunta == 3 && PerguntaLetra == 'a')
                 {
-                    LblResposta.Location = new Point(546, 86);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(714, 86);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(889, 86);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta4.Location = new Point(1057, 86);
-                    TxtResposta4.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(546, 86);
+                    labels[1].Location = new Point(714, 86);
+                    labels[2].Location = new Point(889, 86);
+                    labels[3].Location = new Point(1057, 86);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-                    LblResposta4.Size = new Size(86, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-                    LblResposta4.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-                    LblResposta4.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-                    LblResposta3.Show();
-                    TxtResposta3.Show();
-                    LblResposta4.Show();
-                    TxtResposta4.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-                    LblResposta4.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-                    TxtResposta4.MaxLength = 2;
-
-                    return true;
+                    setLabelText("nada", "nada");
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'b')
                 {
-                    LblResposta.Location = new Point(365, 115);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(365, 115);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(571, 46);
+                    labels[0].Size = new Size(571, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 27;
-
-                    return true;
+                    texts[0].MaxLength = 27;
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'c')
                 {
-                    LblResposta.Location = new Point(761, 54);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(767, 123);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(761, 54);
+                    labels[1].Location = new Point(767, 123);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-
-                    return true;
+                    setLabelText("LblResposta3", "TxtResposta3");
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'd')
                 {
-                    LblResposta.Location = new Point(790, 75);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(790, 75);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(124, 46);
+                    labels[0].Size = new Size(124, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 4;
-
-                    return true;
+                    texts[0].MaxLength = 4;
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'e')
                 {
-                    LblResposta.Location = new Point(398, 86);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(567, 86);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(741, 86);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta4.Location = new Point(908, 86);
-                    TxtResposta4.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(398, 86);
+                    labels[1].Location = new Point(567, 86);
+                    labels[2].Location = new Point(741, 86);
+                    labels[3].Location = new Point(908, 86);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-                    LblResposta4.Size = new Size(86, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-                    LblResposta4.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-                    LblResposta4.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-                    LblResposta3.Show();
-                    TxtResposta3.Show();
-                    LblResposta4.Show();
-                    TxtResposta4.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-                    LblResposta4.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-                    TxtResposta4.MaxLength = 2;
-
-                    return true;
+                    setLabelText("nada", "nada");
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'f')
                 {
-                    LblResposta.Location = new Point(371, 84);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta2.Location = new Point(745, 84);
-                    TxtResposta2.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
-                    LblResposta3.Location = new Point(1089, 84);
-                    TxtResposta3.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(371, 84);
+                    labels[1].Location = new Point(745, 84);
+                    labels[2].Location = new Point(1089, 84);
 
-                    LblResposta.Size = new Size(75, 46);
-                    LblResposta2.Size = new Size(75, 46);
-                    LblResposta3.Size = new Size(75, 46);
-
-                    LblResposta.Font = new Font("Snap ITC", 12);
-                    LblResposta2.Font = new Font("Snap ITC", 12);
-                    LblResposta3.Font = new Font("Snap ITC", 12);
-
-                    LblResposta.Text = "Clique aqui";
-                    LblResposta2.Text = "Clique aqui";
-                    LblResposta3.Text = "Clique aqui";
-
-                    LblResposta.Show();
-                    TxtResposta.Show();
-                    LblResposta2.Show();
-                    TxtResposta2.Show();
-                    LblResposta3.Show();
-                    TxtResposta3.Show();
-
-                    LblResposta.Enabled = true;
-                    LblResposta2.Enabled = true;
-                    LblResposta3.Enabled = true;
-
-                    TxtResposta.MaxLength = 2;
-                    TxtResposta2.MaxLength = 2;
-                    TxtResposta3.MaxLength = 2;
-
-                    return true;
+                    setLabelText("LblResposta4", "TxtResposta4");
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'g')
                 {
-                    LblResposta.Location = new Point(607, 94);
-                    TxtResposta.Location = new Point(LblResposta.Location.X + 3, LblResposta.Location.Y);
+                    labels[0].Location = new Point(607, 94);
+                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
 
-                    LblResposta.Size = new Size(75, 46);
+                    labels[0].Size = new Size(75, 46);
 
-                    LblResposta.Font = new Font("Snap ITC", 12);
+                    labels[0].Font = new Font("Snap ITC", 12);
 
-                    LblResposta.Text = "Clique aqui";
+                    labels[0].Text = "Clique aqui";
 
-                    LblResposta.Show();
-                    TxtResposta.Show();
+                    labels[0].Show();
+                    texts[0].Show();
 
-                    LblResposta.Enabled = true;
+                    labels[0].Enabled = true;
 
-                    TxtResposta.MaxLength = 27;
-
-                    return true;
+                    texts[0].MaxLength = 27;
                 }
                 #endregion
             }
-            return false;
         }
 
         //RESETAR O LAYOUT DAS PERGUNTAS
@@ -2002,28 +1466,12 @@ namespace Jogo_Matamática_3_ano
             PbxBtn3.Location = new Point(10, 10);
             PbxBtn4.Location = new Point(10, 10);
             PbxBtnCerto.Location = new Point(10, 10);
-            TxtResposta.Location = new Point(10, 10);
-            TxtResposta2.Location = new Point(10, 10);
-            TxtResposta3.Location = new Point(10, 10);
-            TxtResposta4.Location = new Point(10, 10);
-            LblResposta.Location = new Point(10, 10);
-            LblResposta2.Location = new Point(10, 10);
-            LblResposta3.Location = new Point(10, 10);
-            LblResposta4.Location = new Point(10, 10);
 
             PbxBtn1.Size = new Size(10, 10);
             PbxBtn2.Size = new Size(10, 10);
             PbxBtn3.Size = new Size(10, 10);
             PbxBtn4.Size = new Size(10, 10);
             PbxBtnCerto.Size = new Size(10, 10);
-            TxtResposta.Size = new Size(3, 42);
-            LblResposta.Size = new Size(10, 10);
-            TxtResposta2.Size = new Size(3, 42);
-            LblResposta2.Size = new Size(10, 10);
-            TxtResposta3.Size = new Size(3, 42);
-            LblResposta3.Size = new Size(10, 10);
-            TxtResposta4.Size = new Size(3, 42);
-            LblResposta4.Size = new Size(10, 10);
 
             PbxBtn1.BackColor = Color.Transparent;
             PbxBtn2.BackColor = Color.Transparent;
@@ -2036,50 +1484,29 @@ namespace Jogo_Matamática_3_ano
             PbxBtn3.Hide();
             PbxBtn4.Hide();
             PbxBtnCerto.Hide();
-            TxtResposta.Hide();
-            LblResposta.Hide();
-            TxtResposta2.Hide();
-            LblResposta2.Hide();
-            TxtResposta3.Hide();
-            LblResposta3.Hide();
-            TxtResposta4.Hide();
-            LblResposta4.Hide();
             Lbl_de_Ajuda.Hide();
 
-            TxtResposta.Enabled = false;
-            LblResposta.Enabled = false;
-            TxtResposta2.Enabled = false;
-            LblResposta2.Enabled = false;
-            TxtResposta3.Enabled = false;
-            LblResposta3.Enabled = false;
-            TxtResposta4.Enabled = false;
-            LblResposta4.Enabled = false;
             Lbl_de_Ajuda.Enabled = false;
 
-            TxtResposta.Clear();
-            TxtResposta2.Clear();
-            TxtResposta3.Clear();
-            TxtResposta4.Clear();
-            LblResposta.Text = "Clique aqui e responda";
-            LblResposta2.Text = "Clique aqui e responda";
-            LblResposta3.Text = "Clique aqui e responda";
-            LblResposta4.Text = "Clique aqui e responda";
-            Lbl_de_Ajuda.Text = "Escreva a frase completa";
-
-            LblResposta.Font = new Font("Snap ITC", 24);
-            LblResposta2.Font = new Font("Snap ITC", 24);
-            LblResposta3.Font = new Font("Snap ITC", 24);
-            LblResposta4.Font = new Font("Snap ITC", 24);
-
-            LblResposta.ForeColor = Color.White;
-            LblResposta2.ForeColor = Color.White;
-            LblResposta3.ForeColor = Color.White;
-            LblResposta4.ForeColor = Color.White;
-
-            TxtResposta.MaxLength = 27;
-            TxtResposta2.MaxLength = 27;
-            TxtResposta3.MaxLength = 27;
-            TxtResposta4.MaxLength = 27;
+            foreach (TextBox x in texts)
+            {
+                x.Location = new Point(10, 10);
+                x.Size = new Size(3, 42);
+                x.Hide();
+                x.Enabled = false;
+                x.Clear();
+                x.MaxLength = 27;
+            }
+            foreach (Label x in labels)
+            {
+                x.Location = new Point(10, 10);
+                x.Size = new Size(10, 10);
+                x.Hide();
+                x.Enabled = false;
+                x.Text = "Clique aqui e responda";
+                x.Font = new Font("Snap ITC", 24);
+                x.ForeColor = Color.White;
+            }
 
             return 1070;
         }
@@ -2094,8 +1521,8 @@ namespace Jogo_Matamática_3_ano
             LblContVitaminas.Text = contVitaminas + "/7";
 
             //Aleatorizar as perguntas
-            Random randNum = new Random();
-            randomPergunta = randNum.Next(1, 4);
+            //Random randNum = new Random();
+            //randomPergunta = randNum.Next(1, 4);
 
             //Perguntas fase 1 e verificar se está correta
             if (fase == 1)
@@ -2730,7 +2157,6 @@ namespace Jogo_Matamática_3_ano
             }
             if (ControleAnimacao == 970)
             {
-                //Esse método irá retornar se as strings só podem conter números
                 TmrAnimation.Stop();
                 return 0;
             }
@@ -3061,10 +2487,10 @@ namespace Jogo_Matamática_3_ano
 
     public class EfeitoBtnMouseCima
     {
-        PictureBox PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos;
+        PictureBox PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos, PbxSalvarMenu;
         public EfeitoBtnMouseCima(PictureBox PBX_Jogar, PictureBox PbxCarregar, PictureBox PBX_Placar, PictureBox PBX_Sair, PictureBox PBX_SimInicio,
                                   PictureBox PBX_NaoInicio, PictureBox BTN_SimInfo,PictureBox BTN_NaoInfo, PictureBox PBX_Continuar, PictureBox PBX_Inicio,
-                                  PictureBox PBX_Reiniciar, PictureBox PBX_Salvar, PictureBox PBX_SairPause, PictureBox PbxCreditos)
+                                  PictureBox PBX_Reiniciar, PictureBox PBX_Salvar, PictureBox PBX_SairPause, PictureBox PbxCreditos, PictureBox PbxSalvarMenu)
         {
             this.PBX_Jogar = PBX_Jogar;
             this.PbxCarregar = PbxCarregar;
@@ -3080,6 +2506,7 @@ namespace Jogo_Matamática_3_ano
             this.PBX_Salvar = PBX_Salvar;
             this.PBX_SairPause = PBX_SairPause;
             this.PbxCreditos = PbxCreditos;
+            this.PbxSalvarMenu = PbxSalvarMenu;
         }
         public void efeitoBtn(int s, string type) {
             if (s == PBX_Jogar.GetHashCode())
@@ -3254,6 +2681,17 @@ namespace Jogo_Matamática_3_ano
                         PbxCreditos.Size = new Size(saveW, saveH);
                         PbxCreditos.Location = new Point(saveX, saveY);
                     }
+                }
+            }
+            else if (s == PbxSalvarMenu.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PbxSalvarMenu);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PbxSalvarMenu);
                 }
             }
 

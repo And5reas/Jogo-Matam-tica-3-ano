@@ -36,6 +36,7 @@
             this.PBX_NaoInicio = new System.Windows.Forms.PictureBox();
             this.PBX_SimInicio = new System.Windows.Forms.PictureBox();
             this.PBX_Sair = new System.Windows.Forms.PictureBox();
+            this.PbxCreditos = new System.Windows.Forms.PictureBox();
             this.PbxCarregar = new System.Windows.Forms.PictureBox();
             this.PBX_Placar = new System.Windows.Forms.PictureBox();
             this.PBX_Jogar = new System.Windows.Forms.PictureBox();
@@ -47,6 +48,7 @@
             this.PbxPersonagem = new System.Windows.Forms.PictureBox();
             this.PNL_Fases = new System.Windows.Forms.Panel();
             this.PNL_MostrarFases = new System.Windows.Forms.Panel();
+            this.PbxSalvarMenu = new System.Windows.Forms.PictureBox();
             this.PBX_VoltarFase = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PBX_Fase1 = new System.Windows.Forms.PictureBox();
@@ -195,7 +197,6 @@
             this.LblScore = new System.Windows.Forms.Label();
             this.PNL_InfoFase = new System.Windows.Forms.Panel();
             this.pictureBox54 = new System.Windows.Forms.PictureBox();
-            this.PBX_AmbVilao = new System.Windows.Forms.PictureBox();
             this.PNL_Help = new System.Windows.Forms.Panel();
             this.LBL_txtHelp2 = new System.Windows.Forms.Label();
             this.LBL_HelpSair = new System.Windows.Forms.Label();
@@ -211,19 +212,20 @@
             this.TmrDebug = new System.Windows.Forms.Timer(this.components);
             this.PbxPartBaixo = new System.Windows.Forms.PictureBox();
             this.pictureBox61 = new System.Windows.Forms.PictureBox();
-            this.PbxCreditos = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_NaoInicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_SimInicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxCreditos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCarregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Placar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPersonagem)).BeginInit();
             this.PNL_Fases.SuspendLayout();
             this.PNL_MostrarFases.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxSalvarMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_VoltarFase)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase1)).BeginInit();
@@ -341,7 +343,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxContCristais)).BeginInit();
             this.PNL_InfoFase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_AmbVilao)).BeginInit();
             this.PNL_Help.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_bntVaiHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_btnVoltaHelp)).BeginInit();
@@ -353,7 +354,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPartBaixo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxCreditos)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -370,7 +370,7 @@
             this.PnlMenu.Controls.Add(this.PbxCarregar);
             this.PnlMenu.Controls.Add(this.PBX_Placar);
             this.PnlMenu.Controls.Add(this.PBX_Jogar);
-            this.PnlMenu.Location = new System.Drawing.Point(-2, 4);
+            this.PnlMenu.Location = new System.Drawing.Point(1219, 795);
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(1314, 1015);
             this.PnlMenu.TabIndex = 1;
@@ -443,6 +443,21 @@
             this.PBX_Sair.Click += new System.EventHandler(this.PBX_Sair_Click);
             this.PBX_Sair.MouseLeave += new System.EventHandler(this.MouseLeave);
             this.PBX_Sair.MouseHover += new System.EventHandler(this.MouseHover);
+            // 
+            // PbxCreditos
+            // 
+            this.PbxCreditos.BackColor = System.Drawing.Color.Transparent;
+            this.PbxCreditos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbxCreditos.BackgroundImage")));
+            this.PbxCreditos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbxCreditos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PbxCreditos.Location = new System.Drawing.Point(15, 884);
+            this.PbxCreditos.Name = "PbxCreditos";
+            this.PbxCreditos.Size = new System.Drawing.Size(199, 62);
+            this.PbxCreditos.TabIndex = 6;
+            this.PbxCreditos.TabStop = false;
+            this.PbxCreditos.Click += new System.EventHandler(this.PbxCreditos_Click);
+            this.PbxCreditos.MouseLeave += new System.EventHandler(this.MouseLeave);
+            this.PbxCreditos.MouseHover += new System.EventHandler(this.MouseHover);
             // 
             // PbxCarregar
             // 
@@ -559,7 +574,7 @@
             this.PNL_Fases.Controls.Add(this.LBL_Person);
             this.PNL_Fases.Controls.Add(this.PBX_Escolha1);
             this.PNL_Fases.ForeColor = System.Drawing.Color.Firebrick;
-            this.PNL_Fases.Location = new System.Drawing.Point(1169, 869);
+            this.PNL_Fases.Location = new System.Drawing.Point(1180, 912);
             this.PNL_Fases.Name = "PNL_Fases";
             this.PNL_Fases.Size = new System.Drawing.Size(1314, 1015);
             this.PNL_Fases.TabIndex = 3;
@@ -567,6 +582,7 @@
             // PNL_MostrarFases
             // 
             this.PNL_MostrarFases.BackColor = System.Drawing.Color.Transparent;
+            this.PNL_MostrarFases.Controls.Add(this.PbxSalvarMenu);
             this.PNL_MostrarFases.Controls.Add(this.PBX_VoltarFase);
             this.PNL_MostrarFases.Controls.Add(this.panel1);
             this.PNL_MostrarFases.Controls.Add(this.panel4);
@@ -579,6 +595,22 @@
             this.PNL_MostrarFases.Size = new System.Drawing.Size(992, 756);
             this.PNL_MostrarFases.TabIndex = 11;
             this.PNL_MostrarFases.Visible = false;
+            // 
+            // PbxSalvarMenu
+            // 
+            this.PbxSalvarMenu.BackColor = System.Drawing.Color.Transparent;
+            this.PbxSalvarMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbxSalvarMenu.BackgroundImage")));
+            this.PbxSalvarMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbxSalvarMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PbxSalvarMenu.Location = new System.Drawing.Point(386, 40);
+            this.PbxSalvarMenu.Name = "PbxSalvarMenu";
+            this.PbxSalvarMenu.Size = new System.Drawing.Size(220, 120);
+            this.PbxSalvarMenu.TabIndex = 12;
+            this.PbxSalvarMenu.TabStop = false;
+            this.PbxSalvarMenu.Visible = false;
+            this.PbxSalvarMenu.Click += new System.EventHandler(this.PbxSalvarMenu_Click);
+            this.PbxSalvarMenu.MouseLeave += new System.EventHandler(this.MouseLeave);
+            this.PbxSalvarMenu.MouseHover += new System.EventHandler(this.MouseHover);
             // 
             // PBX_VoltarFase
             // 
@@ -1411,7 +1443,7 @@
             this.PNL_Pause.Controls.Add(this.PNL_InfoPause);
             this.PNL_Pause.Controls.Add(this.PNL_Info);
             this.PNL_Pause.Controls.Add(this.panel7);
-            this.PNL_Pause.Location = new System.Drawing.Point(1109, 921);
+            this.PNL_Pause.Location = new System.Drawing.Point(1109, 941);
             this.PNL_Pause.Name = "PNL_Pause";
             this.PNL_Pause.Size = new System.Drawing.Size(1314, 906);
             this.PNL_Pause.TabIndex = 7;
@@ -1980,7 +2012,7 @@
             this.PnlPerguntas.Controls.Add(this.TxtResposta3);
             this.PnlPerguntas.Controls.Add(this.TxtResposta);
             this.PnlPerguntas.Controls.Add(this.Lbl_de_Ajuda);
-            this.PnlPerguntas.Location = new System.Drawing.Point(1258, 532);
+            this.PnlPerguntas.Location = new System.Drawing.Point(-2, 346);
             this.PnlPerguntas.Name = "PnlPerguntas";
             this.PnlPerguntas.Size = new System.Drawing.Size(1260, 200);
             this.PnlPerguntas.TabIndex = 24;
@@ -2201,7 +2233,6 @@
             this.Lbl_de_Ajuda.TabIndex = 1;
             this.Lbl_de_Ajuda.Text = "Escreva a frase completa";
             this.Lbl_de_Ajuda.Visible = false;
-            this.Lbl_de_Ajuda.Click += new System.EventHandler(this.LblResposta_Click);
             // 
             // TmrPergunta
             // 
@@ -2329,7 +2360,6 @@
             this.PNL_InfoFase.Controls.Add(this.pictureBox56);
             this.PNL_InfoFase.Controls.Add(this.LBL_Tempo);
             this.PNL_InfoFase.Controls.Add(this.pictureBox54);
-            this.PNL_InfoFase.Controls.Add(this.PBX_AmbVilao);
             this.PNL_InfoFase.Location = new System.Drawing.Point(55, 15);
             this.PNL_InfoFase.Name = "PNL_InfoFase";
             this.PNL_InfoFase.Size = new System.Drawing.Size(1184, 85);
@@ -2344,18 +2374,6 @@
             this.pictureBox54.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox54.TabIndex = 27;
             this.pictureBox54.TabStop = false;
-            // 
-            // PBX_AmbVilao
-            // 
-            this.PBX_AmbVilao.BackColor = System.Drawing.Color.Transparent;
-            this.PBX_AmbVilao.Image = ((System.Drawing.Image)(resources.GetObject("PBX_AmbVilao.Image")));
-            this.PBX_AmbVilao.Location = new System.Drawing.Point(827, 3);
-            this.PBX_AmbVilao.Name = "PBX_AmbVilao";
-            this.PBX_AmbVilao.Size = new System.Drawing.Size(71, 64);
-            this.PBX_AmbVilao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBX_AmbVilao.TabIndex = 31;
-            this.PBX_AmbVilao.TabStop = false;
-            this.PBX_AmbVilao.Visible = false;
             // 
             // PNL_Help
             // 
@@ -2523,21 +2541,6 @@
             this.pictureBox61.Tag = "Parede";
             this.pictureBox61.Visible = false;
             // 
-            // PbxCreditos
-            // 
-            this.PbxCreditos.BackColor = System.Drawing.Color.Transparent;
-            this.PbxCreditos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbxCreditos.BackgroundImage")));
-            this.PbxCreditos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbxCreditos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PbxCreditos.Location = new System.Drawing.Point(15, 884);
-            this.PbxCreditos.Name = "PbxCreditos";
-            this.PbxCreditos.Size = new System.Drawing.Size(199, 62);
-            this.PbxCreditos.TabIndex = 6;
-            this.PbxCreditos.TabStop = false;
-            this.PbxCreditos.Click += new System.EventHandler(this.PbxCreditos_Click);
-            this.PbxCreditos.MouseLeave += new System.EventHandler(this.MouseLeave);
-            this.PbxCreditos.MouseHover += new System.EventHandler(this.MouseHover);
-            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2663,6 +2666,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_NaoInicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_SimInicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Sair)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxCreditos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxCarregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Placar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Jogar)).EndInit();
@@ -2670,6 +2674,7 @@
             this.PNL_Fases.ResumeLayout(false);
             this.PNL_Fases.PerformLayout();
             this.PNL_MostrarFases.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PbxSalvarMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_VoltarFase)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Fase1)).EndInit();
@@ -2791,7 +2796,6 @@
             this.PNL_InfoFase.ResumeLayout(false);
             this.PNL_InfoFase.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_AmbVilao)).EndInit();
             this.PNL_Help.ResumeLayout(false);
             this.PNL_Help.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_bntVaiHelp)).EndInit();
@@ -2804,7 +2808,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPartBaixo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbxCreditos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2982,7 +2985,6 @@
         public System.Windows.Forms.Label LBL_Nome1;
         public System.Windows.Forms.PictureBox pictureBox58;
         public System.Windows.Forms.PictureBox pictureBox60;
-        public System.Windows.Forms.PictureBox PBX_AmbVilao;
         public System.Windows.Forms.PictureBox PBX_Vitoria;
         public System.Windows.Forms.Label LblResposta4;
         public System.Windows.Forms.TextBox TxtResposta4;
@@ -2994,6 +2996,7 @@
         public System.Windows.Forms.PictureBox pictureBox61;
         public System.Windows.Forms.PictureBox PbxCarregar;
         public System.Windows.Forms.PictureBox PbxCreditos;
+        public System.Windows.Forms.PictureBox PbxSalvarMenu;
     }
 }
 

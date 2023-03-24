@@ -16,7 +16,7 @@ namespace Jogo_Matamática_3_ano
         {
             InitializeComponent();
             LblAndreas.Text = "Programação\nDesign de jogo\nModelagem\nDesign de nível\nDesign de interface de usuário\nAnimação\nGestão de projeto";
-            LblPhilip.Text = "Programação\nDesign de jogo\nArte de conceito\nPintura\nModelagem\nDesign de interface de usuário\nAnimação";
+            LblPhilip.Text = "Programação\nDesign de jogo\nArte de conceito\nPintura\nModelagem\nDesign de interface de usuário\nAnimação\nDesign de fase";
             LblKaio.Text = "Design de som\nMúsicas";
         }
 
