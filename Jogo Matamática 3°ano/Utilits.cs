@@ -1295,7 +1295,6 @@ namespace Jogo_Matamática_3_ano
             //Aleatorizar as perguntas
             Random randNum = new Random();
             randomPergunta = randNum.Next(1, 4);
-            randomPergunta = 3;//REVOME
 
             //Perguntas fase 1 e verificar se está correta
             if (fase == 1)
