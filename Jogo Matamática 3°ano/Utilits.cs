@@ -2473,13 +2473,13 @@ namespace Jogo_Matamática_3_ano
     public class EfeitoBtnMouseCima
     {
         private PictureBox PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos, PbxSalvarMenu,
-            PbxSomEnable, PbxSomEnablePause;
+            PbxSomEnable, PbxSomEnablePause, PbxEfeitoEnable, PbxEfeitoEnablePause;
         private int Width = 220, Height = 120;
 
         public EfeitoBtnMouseCima(PictureBox PBX_Jogar, PictureBox PbxCarregar, PictureBox PBX_Placar, PictureBox PBX_Sair, PictureBox PBX_SimInicio,
                                   PictureBox PBX_NaoInicio, PictureBox BTN_SimInfo,PictureBox BTN_NaoInfo, PictureBox PBX_Continuar, PictureBox PBX_Inicio,
                                   PictureBox PBX_Reiniciar, PictureBox PBX_Salvar, PictureBox PBX_SairPause, PictureBox PbxCreditos, PictureBox PbxSalvarMenu,
-                                  PictureBox PbxSomEnable, PictureBox PbxSomEnablePause)
+                                  PictureBox PbxSomEnable, PictureBox PbxSomEnablePause, PictureBox PbxEfeitoEnable, PictureBox PbxEfeitoEnablePause)
         {
             this.PBX_Jogar = PBX_Jogar;
             this.PbxCarregar = PbxCarregar;
@@ -2498,6 +2498,8 @@ namespace Jogo_Matamática_3_ano
             this.PbxSalvarMenu = PbxSalvarMenu;
             this.PbxSomEnable = PbxSomEnable;
             this.PbxSomEnablePause = PbxSomEnablePause;
+            this.PbxEfeitoEnable = PbxEfeitoEnable;
+            this.PbxEfeitoEnablePause = PbxEfeitoEnablePause;
         }
         public void efeitoBtn(int s, string type) {
             if (s == PBX_Jogar.GetHashCode())
@@ -2687,6 +2689,28 @@ namespace Jogo_Matamática_3_ano
                     efeitoBtnLeave(this.PbxSomEnablePause, 60, 40, 10, 10, 5, 5);
                 }
             }
+            else if (s == PbxEfeitoEnable.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PbxEfeitoEnable, 60, 40, 10, 10, 5, 5);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PbxEfeitoEnable, 60, 40, 10, 10, 5, 5);
+                }
+            }
+            else if (s == PbxEfeitoEnablePause.GetHashCode())
+            {
+                if (type == "Hover")
+                {
+                    efeitoBtnHover(this.PbxEfeitoEnablePause, 60, 40, 10, 10, 5, 5);
+                }
+                else if (type == "Leave")
+                {
+                    efeitoBtnLeave(this.PbxEfeitoEnablePause, 60, 40, 10, 10, 5, 5);
+                }
+            }
         }
         private void efeitoBtnHover(PictureBox j, int Width, int Height)
         {
@@ -2750,9 +2774,11 @@ namespace Jogo_Matamática_3_ano
     {
         private SoundPlayer efeito;
         private AxWindowsMediaPlayer MpSons;
-        public Sons(AxWindowsMediaPlayer MpSons)
+        private PictureBox PbxSomEnable;
+        public Sons(AxWindowsMediaPlayer MpSons, PictureBox PbxSomEnable)
         {
             this.MpSons = MpSons;
+            this.PbxSomEnable = PbxSomEnable;
             efeito = new SoundPlayer();
         }
         //SETAR A MUSICA
@@ -2767,9 +2793,12 @@ namespace Jogo_Matamática_3_ano
         }
         public void setEfeito(string efeitoNome)
         {
-            efeito.Stop();
-            efeito.SoundLocation = @Directory.GetCurrentDirectory() + "\\Sons\\" + efeitoNome + ".wav";
-            efeito.Play();
+            if (PbxSomEnable.Tag == "Ativo")
+            {
+                efeito.Stop();
+                efeito.SoundLocation = @Directory.GetCurrentDirectory() + "\\Sons\\" + efeitoNome + ".wav";
+                efeito.Play();
+            }
         }
     }
 }

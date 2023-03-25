@@ -75,9 +75,9 @@ namespace Jogo_Matamática_3_ano
         {
             //Estanciar as classes
             salvar = new Save(PBX_Fase2, PBX_Fase3);
-            EBMC = new EfeitoBtnMouseCima(PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos, PbxSalvarMenu, PbxSomEnable, PbxSomEnablePause);
+            EBMC = new EfeitoBtnMouseCima(PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos, PbxSalvarMenu, PbxSomEnable, PbxSomEnablePause, PbxEfeitoEnable, PbxEfeitoEnablePause);
             musica = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\menu.wav");
-            sons = new Sons(MpSons);
+            sons = new Sons(MpSons, PbxEfeitoEnable);
             #region Estanciar Utilits
             utilits = new Utilits
                 (
@@ -1042,6 +1042,24 @@ namespace Jogo_Matamática_3_ano
                     PbxSomEnable.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\som_true.png");
                     PbxSomEnablePause.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\som_true.png");
                     MpSons.settings.mute = false;
+                    break;
+            }
+        }
+
+        private void PbxEfeitoEnable_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(PbxEfeitoEnable.Tag);
+            switch (PbxEfeitoEnable.Tag)
+            {
+                case "Ativo":
+                    PbxEfeitoEnable.Tag = "Desativo";
+                    PbxEfeitoEnable.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\efeito_false.png");
+                    PbxEfeitoEnablePause.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\efeito_false.png");
+                    break;
+                case "Desativo":
+                    PbxEfeitoEnable.Tag = "Ativo";
+                    PbxEfeitoEnable.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\efeito_true.png");
+                    PbxEfeitoEnablePause.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\efeito_true.png");
                     break;
             }
         }
