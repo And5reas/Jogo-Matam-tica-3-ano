@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmJogo));
             this.PnlMenu = new System.Windows.Forms.Panel();
+            this.PbxSomEnable = new System.Windows.Forms.PictureBox();
             this.PNL_SairInicio = new System.Windows.Forms.Panel();
             this.pictureBox55 = new System.Windows.Forms.PictureBox();
             this.PBX_NaoInicio = new System.Windows.Forms.PictureBox();
@@ -206,7 +207,9 @@
             this.PbxPartBaixo = new System.Windows.Forms.PictureBox();
             this.pictureBox61 = new System.Windows.Forms.PictureBox();
             this.MpSons = new AxWMPLib.AxWindowsMediaPlayer();
+            this.PbxSomEnablePause = new System.Windows.Forms.PictureBox();
             this.PnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxSomEnable)).BeginInit();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_NaoInicio)).BeginInit();
@@ -349,6 +352,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxPartBaixo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MpSons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxSomEnablePause)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -359,16 +363,33 @@
             this.PnlMenu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.PnlMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PnlMenu.BackgroundImage")));
             this.PnlMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PnlMenu.Controls.Add(this.PbxSomEnable);
             this.PnlMenu.Controls.Add(this.PNL_SairInicio);
             this.PnlMenu.Controls.Add(this.PBX_Sair);
             this.PnlMenu.Controls.Add(this.PbxCreditos);
             this.PnlMenu.Controls.Add(this.PbxCarregar);
             this.PnlMenu.Controls.Add(this.PBX_Placar);
             this.PnlMenu.Controls.Add(this.PBX_Jogar);
-            this.PnlMenu.Location = new System.Drawing.Point(1219, 795);
+            this.PnlMenu.Location = new System.Drawing.Point(25, 266);
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(1314, 1015);
             this.PnlMenu.TabIndex = 1;
+            // 
+            // PbxSomEnable
+            // 
+            this.PbxSomEnable.BackColor = System.Drawing.Color.Transparent;
+            this.PbxSomEnable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbxSomEnable.BackgroundImage")));
+            this.PbxSomEnable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbxSomEnable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PbxSomEnable.Location = new System.Drawing.Point(1205, 20);
+            this.PbxSomEnable.Name = "PbxSomEnable";
+            this.PbxSomEnable.Size = new System.Drawing.Size(60, 40);
+            this.PbxSomEnable.TabIndex = 9;
+            this.PbxSomEnable.TabStop = false;
+            this.PbxSomEnable.Tag = "Ativo";
+            this.PbxSomEnable.Click += new System.EventHandler(this.PbxSomEnable_Click);
+            this.PbxSomEnable.MouseLeave += new System.EventHandler(this.MouseLeave);
+            this.PbxSomEnable.MouseHover += new System.EventHandler(this.MouseHover);
             // 
             // PNL_SairInicio
             // 
@@ -1398,7 +1419,7 @@
             this.PNL_Pause.Controls.Add(this.PNL_InfoPause);
             this.PNL_Pause.Controls.Add(this.PNL_Info);
             this.PNL_Pause.Controls.Add(this.panel7);
-            this.PNL_Pause.Location = new System.Drawing.Point(1109, 941);
+            this.PNL_Pause.Location = new System.Drawing.Point(1255, 825);
             this.PNL_Pause.Name = "PNL_Pause";
             this.PNL_Pause.Size = new System.Drawing.Size(1314, 906);
             this.PNL_Pause.TabIndex = 7;
@@ -1496,6 +1517,7 @@
             this.panel7.BackColor = System.Drawing.Color.Transparent;
             this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel7.Controls.Add(this.PbxSomEnablePause);
             this.panel7.Controls.Add(this.PBX_Reiniciar);
             this.panel7.Controls.Add(this.PBX_Continuar);
             this.panel7.Controls.Add(this.PBX_Salvar);
@@ -2479,6 +2501,21 @@
             this.MpSons.Size = new System.Drawing.Size(211, 157);
             this.MpSons.TabIndex = 34;
             // 
+            // PbxSomEnablePause
+            // 
+            this.PbxSomEnablePause.BackColor = System.Drawing.Color.Transparent;
+            this.PbxSomEnablePause.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbxSomEnablePause.BackgroundImage")));
+            this.PbxSomEnablePause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbxSomEnablePause.Location = new System.Drawing.Point(58, 536);
+            this.PbxSomEnablePause.Name = "PbxSomEnablePause";
+            this.PbxSomEnablePause.Size = new System.Drawing.Size(60, 40);
+            this.PbxSomEnablePause.TabIndex = 10;
+            this.PbxSomEnablePause.TabStop = false;
+            this.PbxSomEnablePause.Tag = "";
+            this.PbxSomEnablePause.Click += new System.EventHandler(this.PbxSomEnable_Click);
+            this.PbxSomEnablePause.MouseLeave += new System.EventHandler(this.MouseLeave);
+            this.PbxSomEnablePause.MouseHover += new System.EventHandler(this.MouseHover);
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2594,6 +2631,7 @@
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmJogo_KeyPress);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmJogo_KeyUp);
             this.PnlMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PbxSomEnable)).EndInit();
             this.PNL_SairInicio.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_NaoInicio)).EndInit();
@@ -2742,6 +2780,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxPartBaixo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MpSons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxSomEnablePause)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2925,6 +2964,8 @@
         public System.Windows.Forms.PictureBox PbxCreditos;
         public System.Windows.Forms.PictureBox PbxSalvarMenu;
         public AxWMPLib.AxWindowsMediaPlayer MpSons;
+        private System.Windows.Forms.PictureBox PbxSomEnable;
+        private System.Windows.Forms.PictureBox PbxSomEnablePause;
     }
 }
 

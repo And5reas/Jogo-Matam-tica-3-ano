@@ -68,12 +68,6 @@ namespace Jogo_Matamática_3_ano
         public FrmJogo()
         {
             InitializeComponent();
-            #region Colocar música de fundo
-            MpSons.URL = @Directory.GetCurrentDirectory() + "\\Sons\\menu.wav";
-            MpSons.settings.playCount = 9999;
-            MpSons.Ctlcontrols.stop();
-            MpSons.Visible = false;
-            #endregion
         }
 
         #region Load form //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -81,7 +75,7 @@ namespace Jogo_Matamática_3_ano
         {
             //Estanciar as classes
             salvar = new Save(PBX_Fase2, PBX_Fase3);
-            EBMC = new EfeitoBtnMouseCima(PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos, PbxSalvarMenu);
+            EBMC = new EfeitoBtnMouseCima(PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos, PbxSalvarMenu, PbxSomEnable, PbxSomEnablePause);
             musica = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\menu.wav");
             sons = new Sons(MpSons);
             #region Estanciar Utilits
@@ -206,6 +200,13 @@ namespace Jogo_Matamática_3_ano
                 PBX_Placar,
                 sons
                 );
+            #endregion
+
+            #region Colocar música de fundo
+            MpSons.URL = @Directory.GetCurrentDirectory() + "\\Sons\\menu.wav";
+            MpSons.settings.playCount = 9999;
+            MpSons.Ctlcontrols.stop();
+            MpSons.Visible = false;
             #endregion
 
             //"Remover" os paineis 4 5 e 6
@@ -937,11 +938,11 @@ namespace Jogo_Matamática_3_ano
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         #region EFEITO BOTOES MENU //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        private void MouseHover(object sender, EventArgs e) 
+        private new void MouseHover(object sender, EventArgs e) 
         {
             EBMC.efeitoBtn(sender.GetHashCode(), "Hover");
         }
-        private void MouseLeave(object sender, EventArgs e)
+        private new void MouseLeave(object sender, EventArgs e)
         {
             EBMC.efeitoBtn(sender.GetHashCode(), "Leave");
         }
@@ -1024,6 +1025,25 @@ namespace Jogo_Matamática_3_ano
         private void BTN_NaoInfo_Click(object sender, EventArgs e)
         {
             PNL_Info.Visible = false;
+        }
+
+        private void PbxSomEnable_Click(object sender, EventArgs e)
+        {
+            switch (PbxSomEnable.Tag)
+            {
+                case "Ativo":
+                    PbxSomEnable.Tag = "Desativo";
+                    PbxSomEnable.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\som_false.png");
+                    PbxSomEnablePause.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\som_false.png");
+                    MpSons.settings.mute = true;
+                    break;
+                case "Desativo":
+                    PbxSomEnable.Tag = "Ativo";
+                    PbxSomEnable.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\som_true.png");
+                    PbxSomEnablePause.BackgroundImage = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\utilidades\\som_true.png");
+                    MpSons.settings.mute = false;
+                    break;
+            }
         }
 
         private void BTN_SimInfo_Click(object sender, EventArgs e)
