@@ -41,10 +41,6 @@
             this.PBX_Placar = new System.Windows.Forms.PictureBox();
             this.PBX_Jogar = new System.Windows.Forms.PictureBox();
             this.TmrMainGameManager = new System.Windows.Forms.Timer(this.components);
-            this.labelX = new System.Windows.Forms.Label();
-            this.labelY = new System.Windows.Forms.Label();
-            this.LblX = new System.Windows.Forms.Label();
-            this.LblY = new System.Windows.Forms.Label();
             this.PbxPersonagem = new System.Windows.Forms.PictureBox();
             this.PNL_Fases = new System.Windows.Forms.Panel();
             this.PNL_MostrarFases = new System.Windows.Forms.Panel();
@@ -151,7 +147,6 @@
             this.BTN_SimTempo2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.LBL_SemTempo2 = new System.Windows.Forms.Label();
-            this.LblBust = new System.Windows.Forms.Label();
             this.TmrAnimation = new System.Windows.Forms.Timer(this.components);
             this.PBX_Ambiente1 = new System.Windows.Forms.PictureBox();
             this.PBX_Ambiente2 = new System.Windows.Forms.PictureBox();
@@ -186,7 +181,6 @@
             this.TxtResposta = new System.Windows.Forms.TextBox();
             this.Lbl_de_Ajuda = new System.Windows.Forms.Label();
             this.TmrPergunta = new System.Windows.Forms.Timer(this.components);
-            this.LblWallStatus = new System.Windows.Forms.Label();
             this.PbxCristal1 = new System.Windows.Forms.PictureBox();
             this.PbxCristal2 = new System.Windows.Forms.PictureBox();
             this.PbxCristal3 = new System.Windows.Forms.PictureBox();
@@ -509,46 +503,6 @@
             this.TmrMainGameManager.Enabled = true;
             this.TmrMainGameManager.Interval = 40;
             this.TmrMainGameManager.Tick += new System.EventHandler(this.TmrMainGameManager_Tick);
-            // 
-            // labelX
-            // 
-            this.labelX.AutoSize = true;
-            this.labelX.BackColor = System.Drawing.Color.GreenYellow;
-            this.labelX.Location = new System.Drawing.Point(1071, 106);
-            this.labelX.Name = "labelX";
-            this.labelX.Size = new System.Drawing.Size(55, 13);
-            this.labelX.TabIndex = 4;
-            this.labelX.Text = "Posição X";
-            // 
-            // labelY
-            // 
-            this.labelY.AutoSize = true;
-            this.labelY.BackColor = System.Drawing.Color.GreenYellow;
-            this.labelY.Location = new System.Drawing.Point(1071, 86);
-            this.labelY.Name = "labelY";
-            this.labelY.Size = new System.Drawing.Size(55, 13);
-            this.labelY.TabIndex = 4;
-            this.labelY.Text = "Posição Y";
-            // 
-            // LblX
-            // 
-            this.LblX.AutoSize = true;
-            this.LblX.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblX.Location = new System.Drawing.Point(1132, 106);
-            this.LblX.Name = "LblX";
-            this.LblX.Size = new System.Drawing.Size(14, 13);
-            this.LblX.TabIndex = 4;
-            this.LblX.Text = "X";
-            // 
-            // LblY
-            // 
-            this.LblY.AutoSize = true;
-            this.LblY.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblY.Location = new System.Drawing.Point(1132, 86);
-            this.LblY.Name = "LblY";
-            this.LblY.Size = new System.Drawing.Size(14, 13);
-            this.LblY.TabIndex = 4;
-            this.LblY.Text = "Y";
             // 
             // PbxPersonagem
             // 
@@ -1796,16 +1750,6 @@
             this.LBL_SemTempo2.TabIndex = 9;
             this.LBL_SemTempo2.Text = "Tempo Esgotado";
             // 
-            // LblBust
-            // 
-            this.LblBust.AutoSize = true;
-            this.LblBust.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblBust.Location = new System.Drawing.Point(1071, 33);
-            this.LblBust.Name = "LblBust";
-            this.LblBust.Size = new System.Drawing.Size(28, 13);
-            this.LblBust.TabIndex = 4;
-            this.LblBust.Text = "Bust";
-            // 
             // TmrAnimation
             // 
             this.TmrAnimation.Interval = 1;
@@ -2012,7 +1956,7 @@
             this.PnlPerguntas.Controls.Add(this.TxtResposta3);
             this.PnlPerguntas.Controls.Add(this.TxtResposta);
             this.PnlPerguntas.Controls.Add(this.Lbl_de_Ajuda);
-            this.PnlPerguntas.Location = new System.Drawing.Point(-2, 346);
+            this.PnlPerguntas.Location = new System.Drawing.Point(1271, 369);
             this.PnlPerguntas.Name = "PnlPerguntas";
             this.PnlPerguntas.Size = new System.Drawing.Size(1260, 200);
             this.PnlPerguntas.TabIndex = 24;
@@ -2238,16 +2182,6 @@
             // 
             this.TmrPergunta.Interval = 10;
             this.TmrPergunta.Tick += new System.EventHandler(this.TmrPergunta_Tick);
-            // 
-            // LblWallStatus
-            // 
-            this.LblWallStatus.AutoSize = true;
-            this.LblWallStatus.BackColor = System.Drawing.Color.GreenYellow;
-            this.LblWallStatus.Location = new System.Drawing.Point(1071, 9);
-            this.LblWallStatus.Name = "LblWallStatus";
-            this.LblWallStatus.Size = new System.Drawing.Size(64, 13);
-            this.LblWallStatus.TabIndex = 4;
-            this.LblWallStatus.Text = "WallSatatus";
             // 
             // PbxCristal1
             // 
@@ -2559,13 +2493,7 @@
             this.Controls.Add(this.PNL_Fases);
             this.Controls.Add(this.PNL_Pause);
             this.Controls.Add(this.PNL_Help);
-            this.Controls.Add(this.LblY);
-            this.Controls.Add(this.LblX);
-            this.Controls.Add(this.LblWallStatus);
-            this.Controls.Add(this.LblBust);
             this.Controls.Add(this.PnlPerguntas);
-            this.Controls.Add(this.labelY);
-            this.Controls.Add(this.labelX);
             this.Controls.Add(this.PnlMenu);
             this.Controls.Add(this.PNL_SemTempo);
             this.Controls.Add(this.PbxCerca);
@@ -2817,10 +2745,6 @@
         public System.Windows.Forms.Panel PnlMenu;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Timer TmrMainGameManager;
-        public System.Windows.Forms.Label labelX;
-        public System.Windows.Forms.Label labelY;
-        public System.Windows.Forms.Label LblX;
-        public System.Windows.Forms.Label LblY;
         public System.Windows.Forms.PictureBox PbxPersonagem;
         public System.Windows.Forms.PictureBox PBX_Sair;
         public System.Windows.Forms.PictureBox PBX_Placar;
@@ -2923,7 +2847,6 @@
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label LBL_SemTempo2;
         public System.Windows.Forms.PictureBox PBX_Reiniciar;
-        public System.Windows.Forms.Label LblBust;
         public System.Windows.Forms.Timer TmrAnimation;
         public System.Windows.Forms.PictureBox PBX_Ambiente1;
         public System.Windows.Forms.PictureBox PBX_Ambiente2;
@@ -2956,7 +2879,6 @@
         public System.Windows.Forms.TextBox TxtResposta2;
         public System.Windows.Forms.Label LblResposta3;
         public System.Windows.Forms.TextBox TxtResposta3;
-        public System.Windows.Forms.Label LblWallStatus;
         public System.Windows.Forms.PictureBox PbxCristal1;
         public System.Windows.Forms.PictureBox PbxCristal2;
         public System.Windows.Forms.PictureBox PbxCristal3;

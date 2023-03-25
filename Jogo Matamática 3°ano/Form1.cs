@@ -48,9 +48,6 @@ namespace Jogo_Matamática_3_ano
         //Alocar a fase que o player está 1, 2 ,3, 4...
         int fase,
 
-            //Swiths do debugMode
-            DebugSwith, DebugSwithBust, DebugParedeSwith,
-
             //Variáveis de posição do player
             andarQtdPx = 6,
             posXPlayer, posYPlayer, posXColision, posYColision, posX2Player, posY2Player,
@@ -69,10 +66,7 @@ namespace Jogo_Matamática_3_ano
             Score = 0, score_total_player = 0, CristalBuffTime = 0;
 
         //Controles do player
-        bool goLeft, goRight, goDown, goUp,
-
-            //Variável para ver se o debug está ativo ou não
-            DebugSwithB;
+        bool goLeft, goRight, goDown, goUp;
 
         //Tirar as paredes no modo degub
         string paredesStatusDebug = "Parede";
@@ -252,14 +246,6 @@ namespace Jogo_Matamática_3_ano
             //Painel de help
             PNL_Help.Location = new Point(273, 170);
 
-            //Esconder opções debugMode
-            labelX.Visible = false;
-            labelY.Visible = false;
-            LblX.Visible = false;
-            LblY.Visible = false;
-            LblBust.Visible = false;
-            LblWallStatus.Visible = false;
-
             //Organizer objetos do pnlPergunta
             utilits.resetarObjetosPergunta(contVitaminas);
 
@@ -325,97 +311,6 @@ namespace Jogo_Matamática_3_ano
 
         private void FrmJogo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Ativar e desativar o Debug Mode
-            if (e.KeyChar.ToString().ToLower() == "y")
-            {
-                //Debug ativo
-                if (DebugSwith % 2 == 0)
-                {
-                    //Mostrar posição do personagem
-                    DebugSwith++;
-                    labelX.Visible = true;
-                    labelY.Visible = true;
-                    LblX.Visible = true;
-                    LblY.Visible = true;
-                    LblBust.Visible = true;
-                    LblWallStatus.Visible = true;
-                    DebugSwithB = true;
-                    TmrDebug.Start();
-                }
-                //Debug Desativo
-                else
-                {
-                    //Esconder posição do personagem
-                    DebugSwith++;
-                    labelX.Visible = false;
-                    labelY.Visible = false;
-                    LblX.Visible = false;
-                    LblY.Visible = false;
-                    LblBust.Visible = false;
-                    LblWallStatus.Visible = false;
-                    DebugSwithB = false;
-                    TmrDebug.Stop();
-                }
-            }
-
-            //Fazer o Personagem andar mais rápido
-            if (e.KeyChar.ToString().ToLower() == "b" && DebugSwithB == true)
-            {
-                DebugSwithBust++;
-                if (DebugSwithBust % 2 != 0)
-                {
-                    andarQtdPx = 50;
-                    LblBust.Text = "Busted";
-                }
-                else
-                {
-                    andarQtdPx = 6;
-                    LblBust.Text = "Normal";
-                }
-            }
-
-            //Fazer o Personagem andar pelas paredes
-            if (e.KeyChar.ToString().ToLower() == "n" && DebugSwithB == true)
-            {
-                DebugParedeSwith++;
-                if (DebugParedeSwith % 2 != 0)
-                {
-                    paredesStatusDebug = "Sem paredes";
-                    LblWallStatus.Text = "Paredes desativadas";
-                }
-                else
-                {
-                    paredesStatusDebug = "Parede";
-                    LblWallStatus.Text = "Ativas";
-                }
-            }
-
-            //Mostrar a pergunta sem pegar vitaminas
-            if (e.KeyChar.ToString().ToLower() == "p" && DebugSwithB == true && PnlPerguntas.Visible != true)
-            {
-                if (contVitaminas == 8)
-                {
-                    contVitaminas = 0;
-                    utilits.randomPergunta = 1;
-                }
-                contVitaminas++;
-                PerguntaLetra = utilits.perguntasEntrada(fase, contVitaminas);
-                randomPergunta = utilits.getRandom();
-                ControleAnimacao = 900;
-                TmrAnimation.Start();
-                TmrPergunta.Start();
-            }
-            if (e.KeyChar.ToString().ToLower() == "i" && DebugSwithB == true && PnlPerguntas.Visible != true)
-            {
-                utilits.randomPergunta += 1;
-            }
-
-            //Pular o tempo da pergunta
-            if (e.KeyChar.ToString().ToLower() == "o" && DebugSwithB == true && PnlPerguntas.Visible == true)
-            {
-                sairPergunta();
-            }
-
             //Pause
             if (e.KeyChar == 27 && (PNL_SemTempo.Visible != true && PNL_Fases.Visible != true && PnlPerguntas.Visible != true))
             {
@@ -440,14 +335,22 @@ namespace Jogo_Matamática_3_ano
         //Verificar se são números que estão entrando, apenas.
         private void Verificar(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 8 || e.KeyChar == 46 || e.KeyChar == 45 || (e.KeyChar > 47 && e.KeyChar < 58))
+            if (randomPergunta == 3 && PerguntaLetra == 'b' && fase == 2)
             {
                 e.KeyChar = e.KeyChar;
+                e.Handled = true;
             }
             else
             {
-                e.KeyChar = Convert.ToChar(0);
-                e.Handled = true;
+                if (e.KeyChar == 8 || e.KeyChar == 46 || e.KeyChar == 45 || (e.KeyChar > 47 && e.KeyChar < 58))
+                {
+                    e.KeyChar = e.KeyChar;
+                }
+                else
+                {
+                    e.KeyChar = Convert.ToChar(0);
+                    e.Handled = true;
+                }
             }
         }
 
@@ -523,10 +426,6 @@ namespace Jogo_Matamática_3_ano
             //Coletar a informação de onde o pesonagem está nas posições X2 e Y2
             posX2Player = PbxPersonagem.Location.X;
             posY2Player = PbxPersonagem.Location.Y;
-
-            //Coletar insformação para o degubMode "y"
-            labelX.Text = posXPlayer.ToString();
-            labelY.Text = posYPlayer.ToString();
 
             //Mudar a animação do Player
             animationSpeed = countAnimation / 4;
@@ -1308,8 +1207,6 @@ namespace Jogo_Matamática_3_ano
                     LblScore.ForeColor = Color.WhiteSmoke;
                     LblScore.Text = Score.ToString();
                     utilits.LBLScore(570, 550, 545);
-                    if (DebugSwithB == false)
-                        andarQtdPx = 6;
                 }
                 else
                 {
