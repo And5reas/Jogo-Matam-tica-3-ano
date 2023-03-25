@@ -7,13 +7,14 @@ using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using AxWMPLib;
 
 namespace Jogo_Matamática_3_ano
 {
     public class Utilits
     {
         // Variáveis da funções de perguntas
-        public int randomPergunta = 1;
+        public int randomPergunta;
         char PerguntaLetra;
         // Variáveis da função ganharFase()
         public int ControleAnimacaoAux, animcaoWin = 1, andarQtdPx = 3;
@@ -131,9 +132,10 @@ namespace Jogo_Matamática_3_ano
         PictureBox PBX_Vitoria;
         PictureBox PbxVinheta1;
         PictureBox PbxVinheta2;
-        SoundPlayer SomTema;
         PictureBox pictureBox61;
         PictureBox PBX_Placar;
+        Sons sons;
+        
         public Utilits
             (
             Timer TmrMainGameManager,
@@ -247,13 +249,13 @@ namespace Jogo_Matamática_3_ano
             PictureBox pictureBox58,
             PictureBox pictureBox60,
             PictureBox PBX_Vitoria,
-            Label LblResposta4,
             TextBox TxtResposta4,
+            Label LblResposta4,
             PictureBox PbxVinheta1,
             PictureBox PbxVinheta2,
-            SoundPlayer SomTema,
             PictureBox pictureBox61,
-            PictureBox PBX_Placar
+            PictureBox PBX_Placar,
+            Sons sons
             )
         {
             labels = new Label[4];
@@ -369,13 +371,13 @@ namespace Jogo_Matamática_3_ano
             this.pictureBox58 = pictureBox58;
             this.pictureBox60 = pictureBox60;
             this.PBX_Vitoria = PBX_Vitoria;
-            labels[3] = LblResposta;
+            labels[3] = LblResposta4;
             texts[3] = TxtResposta4;
             this.PbxVinheta1 = PbxVinheta1;
             this.PbxVinheta2 = PbxVinheta2;
-            this.SomTema = SomTema;
             this.pictureBox61 = pictureBox61;
             this.PBX_Placar = PBX_Placar;
+            this.sons = sons;
         }
         #endregion
 
@@ -902,6 +904,7 @@ namespace Jogo_Matamática_3_ano
                 #endregion
             }
         }
+
         private void setImgBtn(int qtdBtns, int fase)
         {
             if (qtdBtns == 2)
@@ -1521,8 +1524,8 @@ namespace Jogo_Matamática_3_ano
             LblContVitaminas.Text = contVitaminas + "/7";
 
             //Aleatorizar as perguntas
-            //Random randNum = new Random();
-            //randomPergunta = randNum.Next(1, 4);
+            Random randNum = new Random();
+            randomPergunta = randNum.Next(1, 4);
 
             //Perguntas fase 1 e verificar se está correta
             if (fase == 1)
@@ -1915,24 +1918,6 @@ namespace Jogo_Matamática_3_ano
             return 1100;
         }
 
-        //SETAR A MUSICA
-        public void setMusic(string music)
-        {
-            SomTema.Stop();
-            SomTema.SoundLocation = @Directory.GetCurrentDirectory() + "\\Sons\\" + music + ".wav";
-            SomTema.PlayLooping();
-        }
-        public void setMusic(string music, string noLoop)
-        {
-            SomTema.Stop();
-            SomTema.SoundLocation = @Directory.GetCurrentDirectory() + "\\Sons\\" + music + ".wav";
-            SomTema.Play();
-        }
-        public void setMusicStop(SoundPlayer SomTema)
-        {
-            SomTema.Stop();
-        }
-
         //REMOVER PAINEIS DO MENU FASE E REORGANIZAR DENOVO
         public void removePnlsFases_4_5_6()
         {
@@ -1956,7 +1941,7 @@ namespace Jogo_Matamática_3_ano
             //Olha pro player 
             if (ControleAnimacao == 1)
             {
-                setMusicStop(SomTema);
+                sons.setMusicStop();
             }
             if (ControleAnimacao > 0 && ControleAnimacao < 250)
             {
@@ -1982,7 +1967,7 @@ namespace Jogo_Matamática_3_ano
             }
             //Dá uns pulo
             if (ControleAnimacao == 250)
-                setMusic("win", "Sem loop");
+                sons.setEfeito("win");
             if (ControleAnimacao > 250 && ControleAnimacao < 520) //700 para colocar todos os 5 pulos;
             {
                 ControleAnimacaoAux++;
@@ -2036,7 +2021,7 @@ namespace Jogo_Matamática_3_ano
                 LBL_Tempo.Text = "";
                 resetAmbiente();
                 TmrAnimation.Stop();
-                setMusic("menu");
+                sons.setMusic("menu");
                 return 0;
             }
             return ControleAnimacao += 1;
@@ -2225,7 +2210,7 @@ namespace Jogo_Matamática_3_ano
                 PbxVinheta2.Size = new Size(1, 1);
                 PbxVinheta2.Hide();
                 TmrAnimation.Stop();
-                SomTema.PlayLooping();
+                sons.setMusic("menu");
                 return 0;
             }
             return ControleAnimacao += 1;
@@ -2246,7 +2231,7 @@ namespace Jogo_Matamática_3_ano
                 TmrAnimation.Start();
 
                 //Reset Musica
-                setMusic("floresta_1");
+                sons.setMusic("floresta_1");
 
                 //Retornar reset de valores
                 return new Tuple<int, int, int, int, int, int, int>(2, 1, 6, 700, 0, 0, -1);
@@ -2267,7 +2252,7 @@ namespace Jogo_Matamática_3_ano
                 LblScore.Text = "0";
 
                 //Reset Musica
-                setMusic("caverna");
+                sons.setMusic("caverna");
 
                 //Retornar reset de valores
                 return new Tuple<int, int, int, int, int, int, int>(2, 16, 6, 700, 0, 0, -1);
@@ -2288,7 +2273,7 @@ namespace Jogo_Matamática_3_ano
                 LblScore.Text = "0";
 
                 //Reset Musica
-                setMusic("gelo");
+                sons.setMusic("gelo");
 
                 //Retornar reset de valores
                 return new Tuple<int, int, int, int, int, int, int>(2, 16, 6, 700, 0, 0, -1);
@@ -2724,6 +2709,34 @@ namespace Jogo_Matamática_3_ano
                     j.Location = new Point(saveX, saveY);
                 }
             }
+        }
+    }
+
+    public class Sons
+    {
+        private SoundPlayer efeito;
+        AxWindowsMediaPlayer MpSons;
+        public Sons(AxWindowsMediaPlayer MpSons)
+        {
+            this.MpSons = MpSons;
+            efeito = new SoundPlayer();
+        }
+        //SETAR A MUSICA
+        public void setMusic(string music)
+        {
+            MpSons.URL = @Directory.GetCurrentDirectory() + "\\Sons\\" + music + ".wav";
+            MpSons.Ctlcontrols.play();
+            MpSons.Visible = false;
+        }
+        public void setMusicStop()
+        {
+            MpSons.Ctlcontrols.stop();
+        }
+        public void setEfeito(string efeitoNome)
+        {
+            efeito.Stop();
+            efeito.SoundLocation = @Directory.GetCurrentDirectory() + "\\Sons\\" + efeitoNome + ".wav";
+            efeito.Play();
         }
     }
 }

@@ -203,9 +203,9 @@
             this.PBX_Vitoria = new System.Windows.Forms.PictureBox();
             this.PbxVinheta1 = new System.Windows.Forms.PictureBox();
             this.PbxVinheta2 = new System.Windows.Forms.PictureBox();
-            this.TmrDebug = new System.Windows.Forms.Timer(this.components);
             this.PbxPartBaixo = new System.Windows.Forms.PictureBox();
             this.pictureBox61 = new System.Windows.Forms.PictureBox();
+            this.MpSons = new AxWMPLib.AxWindowsMediaPlayer();
             this.PnlMenu.SuspendLayout();
             this.PNL_SairInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
@@ -348,6 +348,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPartBaixo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MpSons)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlMenu
@@ -2447,12 +2448,6 @@
             this.PbxVinheta2.TabIndex = 32;
             this.PbxVinheta2.TabStop = false;
             // 
-            // TmrDebug
-            // 
-            this.TmrDebug.Enabled = true;
-            this.TmrDebug.Interval = 1000;
-            this.TmrDebug.Tick += new System.EventHandler(this.TmrDebug_Tick);
-            // 
             // PbxPartBaixo
             // 
             this.PbxPartBaixo.BackColor = System.Drawing.Color.YellowGreen;
@@ -2475,6 +2470,15 @@
             this.pictureBox61.Tag = "Parede";
             this.pictureBox61.Visible = false;
             // 
+            // MpSons
+            // 
+            this.MpSons.Enabled = true;
+            this.MpSons.Location = new System.Drawing.Point(0, 0);
+            this.MpSons.Name = "MpSons";
+            this.MpSons.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("MpSons.OcxState")));
+            this.MpSons.Size = new System.Drawing.Size(211, 157);
+            this.MpSons.TabIndex = 34;
+            // 
             // FrmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2485,6 +2489,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.Controls.Add(this.MpSons);
             this.Controls.Add(this.PbxVinheta2);
             this.Controls.Add(this.PbxVinheta1);
             this.Controls.Add(this.PBX_Vitoria);
@@ -2736,6 +2741,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxVinheta2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxPartBaixo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MpSons)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2913,12 +2919,12 @@
         public System.Windows.Forms.PictureBox PbxVinheta1;
         public System.Windows.Forms.PictureBox PbxVinheta2;
         public System.Windows.Forms.PictureBox PBX_Salvar;
-        public System.Windows.Forms.Timer TmrDebug;
         public System.Windows.Forms.PictureBox PbxPartBaixo;
         public System.Windows.Forms.PictureBox pictureBox61;
         public System.Windows.Forms.PictureBox PbxCarregar;
         public System.Windows.Forms.PictureBox PbxCreditos;
         public System.Windows.Forms.PictureBox PbxSalvarMenu;
+        public AxWMPLib.AxWindowsMediaPlayer MpSons;
     }
 }
 

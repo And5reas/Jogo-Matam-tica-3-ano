@@ -1,21 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Reflection.Emit;
-using System.Net.Http.Headers;
-using System.Security.AccessControl;
 using System.Threading;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Web;
-using System.Security.Cryptography.X509Certificates;
-using System.Runtime.InteropServices;
 using System.Media;
 
 namespace Jogo_Matamática_3_ano
@@ -25,11 +12,13 @@ namespace Jogo_Matamática_3_ano
         #region Variáveis Globais //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         //Classes
-        public SoundPlayer SomTema;
+        SoundPlayer musica;
+        
         Save salvar;
         Utilits utilits;
         Thread nt, nt2;
         EfeitoBtnMouseCima EBMC;
+        Sons sons;
 
         string escolhaPerson, objPerson;
 
@@ -79,7 +68,12 @@ namespace Jogo_Matamática_3_ano
         public FrmJogo()
         {
             InitializeComponent();
-            SomTema = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\menu.wav");
+            #region Colocar música de fundo
+            MpSons.URL = @Directory.GetCurrentDirectory() + "\\Sons\\menu.wav";
+            MpSons.settings.playCount = 9999;
+            MpSons.Ctlcontrols.stop();
+            MpSons.Visible = false;
+            #endregion
         }
 
         #region Load form //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -87,6 +81,9 @@ namespace Jogo_Matamática_3_ano
         {
             //Estanciar as classes
             salvar = new Save(PBX_Fase2, PBX_Fase3);
+            EBMC = new EfeitoBtnMouseCima(PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos, PbxSalvarMenu);
+            musica = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\menu.wav");
+            sons = new Sons(MpSons);
             #region Estanciar Utilits
             utilits = new Utilits
                 (
@@ -201,16 +198,15 @@ namespace Jogo_Matamática_3_ano
                 pictureBox58,
                 pictureBox60,
                 PBX_Vitoria,
-                LblResposta4,
                 TxtResposta4,
+                LblResposta4,
                 PbxVinheta1,
                 PbxVinheta2,
-                SomTema,
                 pictureBox61,
-                PBX_Placar
+                PBX_Placar,
+                sons
                 );
             #endregion
-            EBMC = new EfeitoBtnMouseCima(PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos, PbxSalvarMenu);
 
             //"Remover" os paineis 4 5 e 6
             utilits.removePnlsFases_4_5_6();
@@ -222,7 +218,6 @@ namespace Jogo_Matamática_3_ano
 
             //Timers
             TmrMainGameManager.Stop();
-            TmrDebug.Stop();
             TmrAnimation.Stop();
 
             //PAUSE
@@ -495,6 +490,8 @@ namespace Jogo_Matamática_3_ano
                             h.Visible = false;
                             contCristais++;
 
+                            sons.setEfeito("Cristais");
+
                             //Exibir para o player (Placar)
                             LblContCristais.Text = "x" + contCristais;
                             if (contCristais != 3)
@@ -523,7 +520,7 @@ namespace Jogo_Matamática_3_ano
                             objPerson = "Tocha";
                             PBX_Fase2.Enabled = true;
                             PBX_Fase2.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\labirinto\\exemplos\\mapa_2.png");
-                            utilits.setMusicStop(SomTema);
+                            sons.setMusicStop();
                             if (wins == 0)
                             {
                                 score_total_player += Score;
@@ -661,7 +658,7 @@ namespace Jogo_Matamática_3_ano
             utilits.loadWalls(fase);
 
             //Setar a música da fase
-            utilits.setMusic("floresta_1");
+            sons.setMusic("floresta_1");
 
             PBX_Help.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\img\\help\\mapa_" + fase + "\\infoHelp_" + helpIndex + ".png");
         }
@@ -733,7 +730,7 @@ namespace Jogo_Matamática_3_ano
             utilits.loadWalls(fase);
 
             //Setar a música da fase
-            utilits.setMusic("caverna");
+            sons.setMusic("caverna");
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -805,7 +802,7 @@ namespace Jogo_Matamática_3_ano
             utilits.loadWalls(fase);
 
             //Setar a música da fase
-            utilits.setMusic("gelo");
+            sons.setMusic("gelo");
         }
 
         #endregion //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1065,7 +1062,7 @@ namespace Jogo_Matamática_3_ano
                 PNL_Fases.Visible = true;
                 LBL_Tempo.Text = "";
                 esconderTodasPbx();
-                utilits.setMusic("menu");
+                sons.setMusic("menu");
             }
         }
 
@@ -1207,6 +1204,7 @@ namespace Jogo_Matamática_3_ano
                     LblScore.ForeColor = Color.WhiteSmoke;
                     LblScore.Text = Score.ToString();
                     utilits.LBLScore(570, 550, 545);
+                    andarQtdPx = 6;
                 }
                 else
                 {
@@ -2471,21 +2469,6 @@ namespace Jogo_Matamática_3_ano
         public void focoNoForm()
         {
             Focus();
-        }
-        #endregion
-
-        #region TIMER PARA TESTES
-        private void TmrDebug_Tick(object sender, EventArgs e)
-        {
-            Console.WriteLine(utilits.randomPergunta);
-            Console.WriteLine("lbl1.enable = " + LblResposta.Enabled);
-            Console.WriteLine("lbl2.enable = " + LblResposta2.Enabled);
-            Console.WriteLine("lbl3.enable = " + LblResposta3.Enabled);
-            Console.WriteLine("lbl4.enable = " + LblResposta4.Enabled);
-            Console.WriteLine("txt1.enable = " + TxtResposta.Enabled + " | txt1.text = " + TxtResposta.Text);
-            Console.WriteLine("txt2.enable = " + TxtResposta2.Enabled + " | txt2.text = " + TxtResposta2.Text);
-            Console.WriteLine("txt3.enable = " + TxtResposta3.Enabled + " | txt3.text = " + TxtResposta3.Text);
-            Console.WriteLine("txt4.enable = " + TxtResposta4.Enabled + " | txt4.text = " + TxtResposta4.Text);
         }
         #endregion
     }
