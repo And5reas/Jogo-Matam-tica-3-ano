@@ -935,11 +935,11 @@ namespace Jogo_Matamática_3_ano
             }
         }
 
-        private void setLabelText(string exNomeLbl, string exNomeTxt)
+        private void setLabelText(Label exNomeLbl, TextBox exNomeTxt)
         {
             foreach (Label x in labels)
             {
-                if (x.Name == exNomeLbl)
+                if (x == exNomeLbl)
                     break;
                 x.Enabled = true;
                 x.Show();
@@ -950,10 +950,29 @@ namespace Jogo_Matamática_3_ano
 
             foreach (TextBox x in texts)
             {
-                if (x.Name == exNomeTxt)
+                if (x == exNomeTxt)
                     break;
-                x.Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
                 x.MaxLength = 3;
+                x.Show();
+                x.Enabled = true;
+            }
+        }
+        private void setLabelText()
+        {
+            foreach (Label x in labels)
+            {
+                x.Enabled = true;
+                x.Show();
+                x.Text = "Clique aqui";
+                x.Font = new Font("Snap ITC", 12);
+                x.Size = new Size(86, 46);
+            }
+
+            foreach (TextBox x in texts)
+            {
+                x.MaxLength = 3;
+                x.Text = "";
+                x.Enabled = true;
                 x.Show();
             }
         }
@@ -972,6 +991,17 @@ namespace Jogo_Matamática_3_ano
             PbxBtn3.Hide();
             PbxBtn4.Hide();
             PbxBtnCerto.Hide();
+
+            //Setar como default
+            labels[0].Size = new Size(75, 46);
+            labels[0].Font = new Font("Snap ITC", 12);
+            labels[0].Text = "Clique aqui";
+            labels[0].Show();
+            texts[0].Show();
+            labels[0].Enabled = true;
+            texts[0].MaxLength = 2;
+            texts[0].Enabled = true;
+
             if (fase == 1)
             {
                 if (randomPergunta == 2 && PerguntaLetra == 'b')
@@ -985,7 +1015,7 @@ namespace Jogo_Matamática_3_ano
 
                     Lbl_de_Ajuda.Show();
 
-                    setLabelText("LblResposta4", "TxtResposta4");
+                    setLabelText(labels[3], texts[3]);
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'c')
                 {
@@ -993,26 +1023,10 @@ namespace Jogo_Matamática_3_ano
                     labels[1].Location = new Point(732, 56);
                     labels[2].Location = new Point(1134, 56);
 
-                    setLabelText("LblResposta4", "TxtResposta4");
+                    setLabelText(labels[3], texts[3]);
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'e')
-                {
                     labels[0].Location = new Point(518, 32);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
-                    labels[0].Size = new Size(75, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
-                    texts[0].MaxLength = 2;
-                }
                 if (randomPergunta == 2 && PerguntaLetra == 'f')
                 {
                     labels[0].Location = new Point(382, 85);
@@ -1020,26 +1034,10 @@ namespace Jogo_Matamática_3_ano
                     labels[2].Location = new Point(684, 85);
                     labels[3].Location = new Point(829, 86);
 
-                    setLabelText("nada", "nada");
+                    setLabelText();
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'd')
-                {
                     labels[0].Location = new Point(1101, 103);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
-                    labels[0].Size = new Size(75, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
-                    texts[0].MaxLength = 2;
-                }
             }
             else if (fase == 2)
             {
@@ -1049,7 +1047,7 @@ namespace Jogo_Matamática_3_ano
                     labels[1].Location = new Point(732, 57);
                     labels[2].Location = new Point(1134, 57);
 
-                    setLabelText("LblResposta4", "TxtResposta4");
+                    setLabelText(labels[3], texts[3]);
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'c')
                 {
@@ -1057,7 +1055,7 @@ namespace Jogo_Matamática_3_ano
                     labels[1].Location = new Point(732 - 284, 57);
                     labels[2].Location = new Point(1134 - 284, 57);
 
-                    setLabelText("LblResposta4", "TxtResposta4");
+                    setLabelText(labels[3], texts[3]);
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'd')
                 {
@@ -1065,103 +1063,27 @@ namespace Jogo_Matamática_3_ano
                     labels[1].Location = new Point(732 - 284, 57);
                     labels[2].Location = new Point(1134 - 284, 57);
 
-                    setLabelText("LblResposta4", "TxtResposta4");
+                    setLabelText(labels[3], texts[3]);
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'e')
-                {
                     labels[0].Location = new Point(737, 106);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
-                    labels[0].Size = new Size(75, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
-                    texts[0].MaxLength = 2;
-                }
                 if (randomPergunta == 1 && PerguntaLetra == 'g')
-                {
                     labels[0].Location = new Point(594, 109);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
-                    labels[0].Size = new Size(75, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
-                    texts[0].MaxLength = 2;
-                }
                 if (randomPergunta == 2 && PerguntaLetra == 'd')
-                {
                     labels[0].Location = new Point(500, 107);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
-                    labels[0].Size = new Size(75, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
-                    texts[0].MaxLength = 2;
-                }
                 if (randomPergunta == 2 && PerguntaLetra == 'f')
-                {
                     labels[0].Location = new Point(1010, 81);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
-                    labels[0].Size = new Size(75, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
-                    texts[0].MaxLength = 2;
-                }
                 if (randomPergunta == 2 && PerguntaLetra == 'g')
                 {
                     labels[0].Location = new Point(843, 118);
                     labels[1].Location = new Point(1096, 38);
 
-                    setLabelText("LblResposta3", "TxtResposta3");
+                    setLabelText(labels[2], texts[2]);
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'b')
                 {
                     labels[0].Location = new Point(350, 77);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
                     labels[0].Size = new Size(564, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
                     texts[0].MaxLength = 27;
                 }
             }
@@ -1169,39 +1091,11 @@ namespace Jogo_Matamática_3_ano
             {
                 #region randomPergunta == 1
                 if (randomPergunta == 1 && PerguntaLetra == 'a')
-                {
                     labels[0].Location = new Point(595, 75);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
-                    labels[0].Size = new Size(75, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
-                    texts[0].MaxLength = 27;
-                }
                 if (randomPergunta == 1 && PerguntaLetra == 'b')
                 {
                     labels[0].Location = new Point(365, 115);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
                     labels[0].Size = new Size(571, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
                     texts[0].MaxLength = 27;
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'c')
@@ -1209,26 +1103,12 @@ namespace Jogo_Matamática_3_ano
                     labels[0].Location = new Point(761, 54);
                     labels[1].Location = new Point(767, 123);
 
-                    setLabelText("LblResposta3", "TxtResposta3");
+                    setLabelText(labels[2], texts[2]);
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'd')
-                {
                     labels[0].Location = new Point(790, 75);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
                     labels[0].Size = new Size(124, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
                     texts[0].MaxLength = 4;
-                }
                 if (randomPergunta == 1 && PerguntaLetra == 'e')
                 {
                     labels[0].Location = new Point(398, 86);
@@ -1236,7 +1116,7 @@ namespace Jogo_Matamática_3_ano
                     labels[2].Location = new Point(741, 86);
                     labels[3].Location = new Point(908, 86);
 
-                    setLabelText("nada", "nada");
+                    setLabelText();
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'f')
                 {
@@ -1244,62 +1124,18 @@ namespace Jogo_Matamática_3_ano
                     labels[1].Location = new Point(726, 83);
                     labels[2].Location = new Point(1070, 82);
 
-                    setLabelText("LblResposta4", "TxtResposta4");
+                    setLabelText(labels[3], texts[3]);
                 }
                 if (randomPergunta == 1 && PerguntaLetra == 'g')
-                {
                     labels[0].Location = new Point(607, 94);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
-                    labels[0].Size = new Size(75, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
-                    texts[0].MaxLength = 27;
-                }
                 #endregion
                 #region randomPergunta == 2
                 if (randomPergunta == 2 && PerguntaLetra == 'a')
-                {
                     labels[0].Location = new Point(595, 75);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
-                    labels[0].Size = new Size(75, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
-                    texts[0].MaxLength = 27;
-                }
                 if (randomPergunta == 2 && PerguntaLetra == 'b')
                 {
                     labels[0].Location = new Point(365, 115);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
                     labels[0].Size = new Size(571, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
                     texts[0].MaxLength = 27;
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'c')
@@ -1307,24 +1143,12 @@ namespace Jogo_Matamática_3_ano
                     labels[0].Location = new Point(761, 54);
                     labels[1].Location = new Point(767, 123);
 
-                    setLabelText("LblResposta3", "TxtResposta3");
+                    setLabelText(labels[2], texts[2]);
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'd')
                 {
                     labels[0].Location = new Point(790, 75);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
                     labels[0].Size = new Size(124, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
                     texts[0].MaxLength = 4;
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'e')
@@ -1334,7 +1158,7 @@ namespace Jogo_Matamática_3_ano
                     labels[2].Location = new Point(741, 86);
                     labels[3].Location = new Point(908, 86);
 
-                    setLabelText("nada", "nada");
+                    setLabelText();
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'f')
                 {
@@ -1342,26 +1166,10 @@ namespace Jogo_Matamática_3_ano
                     labels[1].Location = new Point(726, 88);
                     labels[2].Location = new Point(1070, 88);
 
-                    setLabelText("LblResposta4", "TxtResposta4");
+                    setLabelText(labels[3], texts[3]);
                 }
                 if (randomPergunta == 2 && PerguntaLetra == 'g')
-                {
                     labels[0].Location = new Point(607, 94);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
-                    labels[0].Size = new Size(75, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
-                    texts[0].MaxLength = 27;
-                }
                 #endregion
                 #region randomPergunta == 3
                 if (randomPergunta == 3 && PerguntaLetra == 'a')
@@ -1371,24 +1179,12 @@ namespace Jogo_Matamática_3_ano
                     labels[2].Location = new Point(889, 86);
                     labels[3].Location = new Point(1057, 86);
 
-                    setLabelText("nada", "nada");
+                    setLabelText();
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'b')
                 {
                     labels[0].Location = new Point(365, 115);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
                     labels[0].Size = new Size(571, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
                     texts[0].MaxLength = 27;
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'c')
@@ -1396,24 +1192,12 @@ namespace Jogo_Matamática_3_ano
                     labels[0].Location = new Point(761, 54);
                     labels[1].Location = new Point(767, 123);
 
-                    setLabelText("LblResposta3", "TxtResposta3");
+                    setLabelText(labels[2], texts[2]);
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'd')
                 {
                     labels[0].Location = new Point(790, 75);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
                     labels[0].Size = new Size(124, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
                     texts[0].MaxLength = 4;
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'e')
@@ -1423,7 +1207,7 @@ namespace Jogo_Matamática_3_ano
                     labels[2].Location = new Point(741, 86);
                     labels[3].Location = new Point(908, 86);
 
-                    setLabelText("nada", "nada");
+                    setLabelText();
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'f')
                 {
@@ -1431,39 +1215,18 @@ namespace Jogo_Matamática_3_ano
                     labels[1].Location = new Point(745, 84);
                     labels[2].Location = new Point(1089, 84);
 
-                    setLabelText("LblResposta4", "TxtResposta4");
+                    setLabelText(labels[3], texts[3]);
                 }
                 if (randomPergunta == 3 && PerguntaLetra == 'g')
-                {
                     labels[0].Location = new Point(607, 94);
-                    texts[0].Location = new Point(labels[0].Location.X + 3, labels[0].Location.Y);
-
-                    labels[0].Size = new Size(75, 46);
-
-                    labels[0].Font = new Font("Snap ITC", 12);
-
-                    labels[0].Text = "Clique aqui";
-
-                    labels[0].Show();
-                    texts[0].Show();
-
-                    labels[0].Enabled = true;
-
-                    texts[0].MaxLength = 27;
-                }
                 #endregion
             }
+
         }
 
         //RESETAR O LAYOUT DAS PERGUNTAS
         public int resetarObjetosPergunta(int contVitaminas)
         {
-            //Abrir o portão da fase
-            if (contVitaminas == 7)
-            {
-                return 800;
-            }
-
             PbxBtn1.Location = new Point(10, 10);
             PbxBtn2.Location = new Point(10, 10);
             PbxBtn3.Location = new Point(10, 10);
@@ -1493,7 +1256,7 @@ namespace Jogo_Matamática_3_ano
 
             foreach (TextBox x in texts)
             {
-                x.Location = new Point(10, 10);
+                x.Location = new Point(-10, -10);
                 x.Size = new Size(3, 42);
                 x.Hide();
                 x.Enabled = false;
@@ -1511,7 +1274,13 @@ namespace Jogo_Matamática_3_ano
                 x.ForeColor = Color.White;
             }
 
-            return 1070;
+            //Abrir o portão da fase
+            if (contVitaminas == 7)
+            {
+                return 800;
+            }
+
+            return 0;
         }
 
         //ENTRAR PERGUNTA
@@ -1526,6 +1295,7 @@ namespace Jogo_Matamática_3_ano
             //Aleatorizar as perguntas
             Random randNum = new Random();
             randomPergunta = randNum.Next(1, 4);
+            randomPergunta = 3;//REVOME
 
             //Perguntas fase 1 e verificar se está correta
             if (fase == 1)
@@ -2793,11 +2563,12 @@ namespace Jogo_Matamática_3_ano
         }
         public void setEfeito(string efeitoNome)
         {
-            if (PbxSomEnable.Tag == "Ativo")
-            {
-                efeito.Stop();
-                efeito.SoundLocation = @Directory.GetCurrentDirectory() + "\\Sons\\" + efeitoNome + ".wav";
-                efeito.Play();
+            switch (PbxSomEnable.Tag) {
+                case "Ativo":
+                    efeito.Stop();
+                    efeito.SoundLocation = @Directory.GetCurrentDirectory() + "\\Sons\\" + efeitoNome + ".wav";
+                    efeito.Play();
+                    break;
             }
         }
     }
