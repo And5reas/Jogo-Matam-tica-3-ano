@@ -558,7 +558,7 @@ namespace Jogo_Matamática_3_ano
             if (wins == 3)
             {
                 this.Enabled = false;
-                
+                salvar.save(fase, escolhaPerson, objPerson, score_total_player, wins);
                 nt = new Thread(abrirInsercaoNome);
                 nt.SetApartmentState(ApartmentState.STA);
                 nt.Start();
