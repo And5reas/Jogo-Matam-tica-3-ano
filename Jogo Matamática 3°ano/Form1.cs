@@ -921,6 +921,7 @@ namespace Jogo_Matamática_3_ano
         //BTN créditos
         private void PbxCreditos_Click(object sender, EventArgs e)
         {
+            FrmCreditos.point = this.Location;
             nt2 = new Thread(abrirCreditos);
             nt2.SetApartmentState(ApartmentState.STA);
             nt2.Start();
