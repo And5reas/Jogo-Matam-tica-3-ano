@@ -68,6 +68,13 @@ namespace Jogo_Matamática_3_ano
         public FrmJogo()
         {
             InitializeComponent();
+            Console.WriteLine(!FontHandling.IsFontInstalled("Snap ITC"));
+            if (!FontHandling.IsFontInstalled("Snap ITC"))
+            {
+                FontHandling.InstallFont(Directory.GetCurrentDirectory() + "\\snap-itc.ttf");
+                Application.Restart();
+                Environment.Exit(0);
+            }
         }
 
         #region Load form //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Media;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows.Forms;
 using AxWMPLib;
 
@@ -2569,6 +2565,24 @@ namespace Jogo_Matamática_3_ano
                     efeito.Play();
                     break;
             }
+        }
+    }
+
+    public static class FontHandling
+    {
+        public static bool IsFontInstalled(string fontName)
+        {
+            using (var testFont = new System.Drawing.Font(fontName, 8))
+                return 0 == string.Compare(fontName, testFont.Name, StringComparison.InvariantCultureIgnoreCase);
+        }
+
+        public static void InstallFont(string fontSourcePath)
+        {
+            var shellAppType = Type.GetTypeFromProgID("Shell.Application");
+            var shell = Activator.CreateInstance(shellAppType);
+            var fontFolder = (Shell32.Folder)shellAppType.InvokeMember("NameSpace", System.Reflection.BindingFlags.InvokeMethod, null, shell, new object[] { Environment.GetFolderPath(Environment.SpecialFolder.Fonts) });
+            if (File.Exists(fontSourcePath))
+                fontFolder.CopyHere(fontSourcePath);
         }
     }
 }
