@@ -8,7 +8,6 @@ namespace Jogo_Matamática_3_ano
     public partial class FrmCreditos : Form
     {
         public static Point point;
-        private int i = 0;
 
         public FrmCreditos()
         {
@@ -29,11 +28,14 @@ namespace Jogo_Matamática_3_ano
         {
             if (PbxCretitos.Location.Y == -2645)
             {
-                Thread.Sleep(2000);
+                Thread.Sleep(3000);
                 Close();
             }
-            i -= 5;
-            PbxCretitos.Location = new Point(-27, i);
+            if (PbxCretitos.Location.Y == 500)
+            {
+                Thread.Sleep(1500);
+            }
+            PbxCretitos.Location = new Point(-27, PbxCretitos.Location.Y - 5);
         }
 
         private void FrmCreditos_KeyPress(object sender, KeyPressEventArgs e)
@@ -42,6 +44,16 @@ namespace Jogo_Matamática_3_ano
             {
                 Close();
             }
+        }
+
+        private void PbxCretitos_MouseDown(object sender, MouseEventArgs e)
+        {
+            TmrRolar.Stop();
+        }
+
+        private void PbxCretitos_MouseUp(object sender, MouseEventArgs e)
+        {
+            TmrRolar.Start();
         }
     }
 }

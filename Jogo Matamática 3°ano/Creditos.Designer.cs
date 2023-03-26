@@ -43,6 +43,8 @@
             this.PbxCretitos.Size = new System.Drawing.Size(1354, 3646);
             this.PbxCretitos.TabIndex = 0;
             this.PbxCretitos.TabStop = false;
+            this.PbxCretitos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbxCretitos_MouseDown);
+            this.PbxCretitos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PbxCretitos_MouseUp);
             // 
             // TmrRolar
             // 
