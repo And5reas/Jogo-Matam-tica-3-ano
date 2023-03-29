@@ -14,7 +14,7 @@ namespace Jogo_Matamática_3_ano
             InitializeComponent();
             Console.WriteLine();
             this.Location = point;
-            PbxCretitos.Location = new Point(-27, 500);
+            PbxCretitos.Location = new Point(0, 500);
             BackColor = Color.FromArgb(76, 57, 42);
             TmrRolar.Start();
         }
@@ -26,7 +26,7 @@ namespace Jogo_Matamática_3_ano
 
         private void TmrRolar_Tick(object sender, EventArgs e)
         {
-            if (PbxCretitos.Location.Y == -2645)
+            if (PbxCretitos.Location.Y == -3290)
             {
                 Thread.Sleep(3000);
                 Close();
@@ -35,7 +35,7 @@ namespace Jogo_Matamática_3_ano
             {
                 Thread.Sleep(1500);
             }
-            PbxCretitos.Location = new Point(-27, PbxCretitos.Location.Y - 5);
+            PbxCretitos.Location = new Point(0, PbxCretitos.Location.Y - 5);
         }
 
         private void FrmCreditos_KeyPress(object sender, KeyPressEventArgs e)

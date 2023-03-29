@@ -38,9 +38,9 @@
             // PbxCretitos
             // 
             this.PbxCretitos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbxCretitos.BackgroundImage")));
-            this.PbxCretitos.Location = new System.Drawing.Point(-27, 500);
+            this.PbxCretitos.Location = new System.Drawing.Point(0, -3290);
             this.PbxCretitos.Name = "PbxCretitos";
-            this.PbxCretitos.Size = new System.Drawing.Size(1354, 3646);
+            this.PbxCretitos.Size = new System.Drawing.Size(1300, 4292);
             this.PbxCretitos.TabIndex = 0;
             this.PbxCretitos.TabStop = false;
             this.PbxCretitos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbxCretitos_MouseDown);
