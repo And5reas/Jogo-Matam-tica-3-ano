@@ -12,8 +12,6 @@ namespace Jogo_Matamática_3_ano
         #region Variáveis Globais
 
         //Classes
-        SoundPlayer musica;
-        
         Save salvar;
         Utilits utilits;
         Thread nt, nt2;
@@ -61,14 +59,13 @@ namespace Jogo_Matamática_3_ano
         string paredesStatusDebug = "Parede";
 
         //Variáveis para as osperações matemáticas de perguntas
-        Double num1 = -11, num2 = -11, num3 = -11, num4 = -11, resultado;
+        Double num1 = 0, num2 = 0, num3 = 0, num4 = 0, resultado;
 
         #endregion
 
         public FrmJogo()
         {
             InitializeComponent();
-            Console.WriteLine(!FontHandling.IsFontInstalled("Snap ITC"));
             if (!FontHandling.IsFontInstalled("Snap ITC"))
             {
                 FontHandling.InstallFont(Directory.GetCurrentDirectory() + "\\snap-itc.ttf");
@@ -83,7 +80,6 @@ namespace Jogo_Matamática_3_ano
             //Estanciar as classes
             salvar = new Save(PBX_Fase2, PBX_Fase3);
             EBMC = new EfeitoBtnMouseCima(PBX_Jogar, PbxCarregar, PBX_Placar, PBX_Sair, PBX_SimInicio, PBX_NaoInicio, BTN_SimInfo, BTN_NaoInfo, PBX_Continuar, PBX_Inicio, PBX_Reiniciar, PBX_Salvar, PBX_SairPause, PbxCreditos, PbxSalvarMenu, PbxSomEnable, PbxSomEnablePause, PbxEfeitoEnable, PbxEfeitoEnablePause);
-            musica = new SoundPlayer(@Directory.GetCurrentDirectory() + "\\Sons\\menu.wav");
             sons = new Sons(MpSons, PbxEfeitoEnable);
             #region Estanciar Utilits
             utilits = new Utilits
@@ -340,7 +336,6 @@ namespace Jogo_Matamática_3_ano
             if (randomPergunta == 3 && PerguntaLetra == 'b' && fase == 2)
             {
                 e.KeyChar = e.KeyChar;
-                e.Handled = true;
             }
             else
             {
@@ -1049,7 +1044,6 @@ namespace Jogo_Matamática_3_ano
 
         private void PbxEfeitoEnable_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(PbxEfeitoEnable.Tag);
             switch (PbxEfeitoEnable.Tag)
             {
                 case "Ativo":
@@ -1440,7 +1434,6 @@ namespace Jogo_Matamática_3_ano
         {
             if (TxtResposta4.Enabled == true)
             {
-                TxtResposta4.Enabled = true;
                 LblResposta4.Font = new Font("Snap ITC", 24);
                 LblResposta4.Text = "|";
                 TxtResposta4.Focus();
@@ -1481,9 +1474,7 @@ namespace Jogo_Matamática_3_ano
                 sairPergunta();
             }
             if (tempPergunta >= 0 && tempPergunta <= 4000)
-            {
                 PrbTempPerg.Value = tempPergunta;
-            }
             if (fase == 1) //Resposta de texto da fase 1
             {
                 if (randomPergunta == 2 && PerguntaLetra == 'b')
@@ -2474,7 +2465,9 @@ namespace Jogo_Matamática_3_ano
                 TmrAnimation.Start();
             }
             else
-                 utilits.helpImg(fase, helpIndex);
+            {
+                utilits.helpImg(fase, helpIndex);
+            }
         }
         private void PBX_btnVoltaHelp_Click(object sender, EventArgs e)
         {
