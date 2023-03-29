@@ -1562,13 +1562,11 @@ namespace Jogo_Matamática_3_ano
 
             if (pontos > 0)
             {
-                LBLScore(520, 510, 500);
                 LblScore.ForeColor = Color.GreenYellow;
                 LblScore.Text += " +" + pontos;
             }
             else
             {
-                LBLScore(520, 510, 500);
                 LblScore.ForeColor = Color.IndianRed;
                 if (Score <= 0)
                 {
@@ -1582,25 +1580,6 @@ namespace Jogo_Matamática_3_ano
             }
             return Score;
 
-        }
-
-        //FUNÇÃO QUE DEFINE A POSIÇÃO DA LBL SCORE
-        public void LBLScore(int posicao1, int posicao2, int posicao3)
-        {
-            if (LblScore.Text.Length == 1)
-            {
-                LblScore.Location = new Point(posicao1, 23);
-            }
-
-            if (LblScore.Text.Length == 2)
-            {
-                LblScore.Location = new Point(posicao2, 23);
-            }
-
-            if (LblScore.Text.Length == 3)
-            {
-                LblScore.Location = new Point(posicao3, 23);
-            }
         }
 
         //FUNÇÃO DE ALTERAR IMG DO HELP

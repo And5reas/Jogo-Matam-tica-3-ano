@@ -1180,7 +1180,6 @@ namespace Jogo_Matamática_3_ano
                 if (tempSeg != -1) {
                     Score += 2;
 
-                    utilits.LBLScore(530, 520, 490);
                     LblScore.ForeColor = Color.White;
                     LblScore.Text = Score.ToString();
                 }
@@ -1240,12 +1239,10 @@ namespace Jogo_Matamática_3_ano
                 {
                     LblScore.ForeColor = Color.WhiteSmoke;
                     LblScore.Text = Score.ToString();
-                    utilits.LBLScore(570, 550, 545);
                     andarQtdPx = 6;
                 }
                 else
                 {
-                    utilits.LBLScore(530, 520, 490);
                     if (contCristais == 1)
                     {
                         Score += 3;
